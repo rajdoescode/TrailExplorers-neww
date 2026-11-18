@@ -113,6 +113,25 @@ rgba(0,0,0,0.45)                      Hero Video / Image Scrim Overlay
 - **Labels:** Font weight 600, size `14px`, text `#14140f`, margin-bottom `6px`.
 - **Error Messages:** Text color `#e0455a`, size `13px`, margin-top `4px`.
 
+### 4.4 Floating Action Launcher Widgets (Bottom-Right)
+- **Banjara Mascot Tile:**
+  - Dimensions: `58px × 58px`, squircle radius `rounded-[18px]`.
+  - Background: Radial gradient `radial-gradient(circle at 50% 35%, #2d2d24 0%, #14140f 72%)`.
+  - Character Peeking: `banjara-standing.webp` centered, head and cap protruding ~22px above the top border, sides and bottom clipped to the 18px border radius using `clipPath: inset(-35px 0 0 0 round 0 0 18px 18px)`.
+  - Online Status Dot: `12px × 12px` rounded-full, fill `#b8ff00`, border `2.5px solid #14140f`, pulsing glow animation `animate-banjara-online`.
+- **WhatsApp Tile:**
+  - Dimensions: `58px × 58px`, matching `rounded-[18px]` radius.
+  - Background: Brand green `#25d366`.
+  - Icon: Centered crisp white WhatsApp icon (`32px × 32px`).
+  - Hover: `hover:scale-105 active:scale-95 transition-all duration-200`.
+- **Speech Bubble Prompt:**
+  - Floating above the launchers with rotating travel prompts and close `×` button.
+
+### 4.5 Regional Destination Icons
+- **Icon Artwork:** Transparent high-res PNG line-art illustrations (Stupa, Monastery, Toy Train, Shikara, Temple) rendered free-standing at `clamp(100px, 14vw, 170px)` without any circular borders or background container fills.
+- **Typography:** `font-size: clamp(11px, 1.3vw, 14px); font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #14140f`.
+- **Hover Micro-interaction:** `group-hover:-translate-y-1.5 group-hover:scale-105 transition-transform duration-250`.
+
 ---
 
 ## 5. Animation & Motion Design
@@ -122,4 +141,12 @@ rgba(0,0,0,0.45)                      Hero Video / Image Scrim Overlay
   - Image Zooms: `400ms cubic-bezier(0.16, 1, 0.3, 1)`
   - Modals / Drawers: `300ms cubic-bezier(0.25, 0.8, 0.25, 1)`
 - **Hover Micro-transforms:** `translateY(-2px)` on buttons, `translateY(-6px)` on cards.
+- **Trip Planner Staggered Pop-in Animation (`/plan-your-trip`):**
+  - `@keyframes pc-pop`: `from { opacity: 0; transform: translateY(6px) scale(0.96); } to { opacity: 1; transform: none; }`
+  - `.pc-pop-1`: Delay `0.00s`, duration `0.32s` (Bubble 1).
+  - `.pc-pop-2`: Delay `0.45s`, duration `0.32s` (Bubble 2, bold font).
+  - `.pc-pop-3`: Delay `0.90s`, duration `0.32s` (Bubble 3).
+  - `.pc-pop-starts`: Delay `1.30s`, duration `0.40s` (Starter cards).
+  - `⟲ New trip` reset: Increments `welcomeKey` to cleanly replay the entrance sequence.
+  - Layout: `h-auto` with zero internal card scrollbar; screen/window scrolling handles natural overflow.
 - **Accessibility:** Full support for `prefers-reduced-motion: reduce` disabling transform springs.
