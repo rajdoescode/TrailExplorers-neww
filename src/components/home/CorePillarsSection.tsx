@@ -1,76 +1,86 @@
 import React from "react";
-import { Container } from "@/components/layout/Container";
-import { SectionHeading } from "@/components/common/SectionHeading";
-import { ShieldCheck, HeartHandshake, Leaf, ReceiptText, Headphones } from "lucide-react";
-
-const PILLARS = [
-  {
-    icon: ShieldCheck,
-    title: "SAFETY FIRST, ALWAYS",
-    description:
-      "Certified mountain captains, emergency oxygen cylinders on high altitude passes, and comprehensive medical kits on all trips.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "DEEP CULTURAL ROOTS & LOCAL SUPPORT",
-    description:
-      "We partner directly with native Himalayan village hosts and local drivers, ensuring your travel spend directly benefits native valley families.",
-  },
-  {
-    icon: Leaf,
-    title: "LEAVING NO TRACE BEHIND (ECO TRAVEL)",
-    description:
-      "Zero single-use plastic policy on trails. We practice strict eco-habits and educate our travellers to preserve fragile Himalayan ecology.",
-  },
-  {
-    icon: ReceiptText,
-    title: "100% FINANCIAL TRANSPARENCY",
-    description:
-      "No surprise charges or hidden add-ons. Clear token confirmations, guaranteed vehicle standards, and transparent refund schedules.",
-  },
-  {
-    icon: Headphones,
-    title: "24×7 SUPPORT ON EVERY TRIP",
-    description:
-      "Live operational desk in Manali and Delhi tracking weather, roadblocks, and permits with round-the-clock emergency assistance.",
-  },
-];
+import { ShieldCheck, Users, Compass, HeartHandshake, IndianRupee } from "lucide-react";
 
 export const CorePillarsSection: React.FC = () => {
-  return (
-    <section className="w-full py-16 bg-[#f6f6f1]">
-      <Container>
-        <SectionHeading
-          eyebrow="OUR COMMITMENT"
-          title="Core Pillars"
-          subtitle="The non-negotiable principles guiding every single departure across the mountains."
-          align="center"
-        />
+  const pillars = [
+    {
+      title: "SAFETY FIRST, ALWAYS",
+      icon: (
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+      ),
+    },
+    {
+      title: "GENUINE COMMUNITY",
+      icon: (
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      ),
+    },
+    {
+      title: "RAW & OFFBEAT",
+      icon: (
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+        </svg>
+      ),
+    },
+    {
+      title: "RESPONSIBLE WANDERING",
+      icon: (
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+        </svg>
+      ),
+    },
+    {
+      title: "TRANSPARENT PRICING",
+      icon: (
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23" />
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>
+      ),
+    },
+  ];
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-          {PILLARS.map((pillar, i) => {
-            const Icon = pillar.icon;
-            return (
-              <div
-                key={i}
-                className="bg-white rounded-[18px] p-7 border border-[#e2e2dc] shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col gap-4"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#14140f] text-[#d6ff3f] flex items-center justify-center shrink-0">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-[#14140f] font-heading mb-2">
-                    {pillar.title}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-[#6b6b63] leading-relaxed">
-                    {pillar.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+  return (
+    <section className="w-full py-12 sm:py-16 bg-white text-center">
+      <div className="max-w-[1280px] mx-auto px-6">
+        {/* Head */}
+        <div className="text-center mb-10 sm:mb-14">
+          <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#14140f] tracking-tight m-0">
+            Core Pillars
+          </h2>
+          <p className="text-base sm:text-lg text-[#6b6b63] font-semibold mt-2.5">
+            Why We Are Different
+          </p>
         </div>
-      </Container>
+
+        {/* 5 Pillars Grid */}
+        <div className="flex flex-wrap justify-center items-start gap-6 sm:gap-8 md:gap-10">
+          {pillars.map((pillar) => (
+            <div
+              key={pillar.title}
+              className="group flex flex-col items-center flex-1 min-w-[140px] max-w-[200px]"
+            >
+              <div className="w-[100px] h-[100px] rounded-full bg-[#14140f] flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(20,20,15,0.18)] transition-transform duration-250 group-hover:-translate-y-1 group-hover:scale-105">
+                {pillar.icon}
+              </div>
+              <h4 className="text-[13px] font-bold uppercase tracking-[0.5px] text-[#14140f] leading-snug max-w-[180px]">
+                {pillar.title}
+              </h4>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

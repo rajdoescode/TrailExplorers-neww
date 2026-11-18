@@ -1,28 +1,34 @@
 import React from "react";
-import { Container } from "@/components/layout/Container";
-import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 
 export const EscapeOrdinaryBanner: React.FC = () => {
   return (
-    <section className="w-full py-12 bg-[#ffffff]">
-      <Container>
-        <div className="rounded-[24px] bg-[#f6f6f1] border-2 border-[#14140f] p-8 sm:p-14 text-center flex flex-col items-center justify-center gap-5 shadow-card">
-          <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3.5 py-1 rounded-full border border-[#14140f]">
-            Wanderlust Calling
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#14140f] font-heading">
-            Escape the ordinary.
-          </h2>
-          <p className="text-sm sm:text-base text-[#6b6b63] max-w-xl mx-auto leading-relaxed">
-            Leave behind crowded tour buses and cookie-cutter tourist traps. Join real travellers who explore with curiosity, respect, and camaraderie.
-          </p>
-          <div className="pt-2">
-            <Button href="/community-trips" variant="primary" size="lg" className="shadow-lime-btn px-8 font-bold">
-              Join Our Next Journey
-            </Button>
+    <section className="w-full py-8 sm:py-12 bg-white">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="relative rounded-[28px] overflow-hidden h-[clamp(320px,42vw,520px)] flex items-center justify-center text-center text-white shadow-xl">
+          {/* Background Image */}
+          <picture className="absolute inset-0 w-full h-full">
+            <source srcSet="/assets/images/home/untitled-design.webp" type="image/webp" />
+            <Image
+              src="/assets/images/home/escape-ordinary.webp"
+              alt="Escape the ordinary"
+              fill
+              priority
+              className="object-cover"
+            />
+          </picture>
+
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-[#14140f]/45 z-1" />
+
+          {/* Banner Content */}
+          <div className="relative z-2 px-6">
+            <h2 className="text-[clamp(36px,6vw,76px)] font-extrabold tracking-[-0.03em] m-0 text-white">
+              Escape the ordinary.
+            </h2>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
