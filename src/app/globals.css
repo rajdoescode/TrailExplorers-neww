@@ -190,10 +190,62 @@
   animation: pc-bounce 1.2s infinite ease-in-out;
   animation-delay: 0.15s;
 }
-.pc-bounce-3 {
-  animation: pc-bounce 1.2s infinite ease-in-out;
-  animation-delay: 0.3s;
+@keyframes pc-glow { 
+  0%, 100% { transform: scale(0.9); opacity: 0.55; }
+  50% { transform: scale(1.06); opacity: 1; }
 }
+
+@keyframes pc-dot { 
+  0% { opacity: 0; transform: translateY(4px) scale(0.6); }
+  35%, 70% { opacity: 1; transform: translateY(0px) scale(1); }
+  100% { opacity: 0; transform: translateY(-4px) scale(0.8); }
+}
+
+@keyframes pc-hop { 
+  0% { transform: translateY(0px) scale(1, 1); }
+  18% { transform: translateY(0px) scale(1.06, 0.92); }
+  45% { transform: translateY(-14%) scale(0.96, 1.05); }
+  72% { transform: translateY(0px) scale(1.03, 0.97); }
+  100% { transform: translateY(0px) scale(1, 1); }
+}
+
+@keyframes pc-spin { 
+  0% { transform: rotateY(0deg) translateY(0px); }
+  40% { transform: rotateY(180deg) translateY(-8%); }
+  100% { transform: rotateY(360deg) translateY(0px); }
+}
+
+@keyframes pc-flash { 
+  0% { background: rgba(214, 255, 63, 0.25); }
+  100% { background: transparent; }
+}
+
+.pc-budget-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #d6ff3f var(--pc-fill, 15%), rgba(255, 255, 255, 0.18) var(--pc-fill, 15%));
+  outline: none;
+  cursor: pointer;
+}
+.pc-budget-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d6ff3f;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  border: 2px solid #14140f;
+  transition: transform 0.15s;
+}
+.pc-budget-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
 
 
 
