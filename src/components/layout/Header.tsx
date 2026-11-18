@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Phone, Search, Menu, X, ArrowUpRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/data/site-config";
@@ -14,7 +13,7 @@ interface HeaderProps {
   transparentAtTop?: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
+export const Header: React.FC<HeaderProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -47,27 +46,25 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-300 w-full border-b",
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md border-[#e6e6df] shadow-xs py-3.5"
-            : "bg-white border-[#e6e6df] py-4"
+          "sticky top-0 z-50 transition-all duration-250 w-full bg-white border-b border-[#e6e6df]",
+          isScrolled ? "shadow-[0_6px_20px_rgba(20,20,15,0.08)]" : "shadow-none"
         )}
       >
-        <Container className="flex items-center justify-between">
+        <div className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="relative flex items-center shrink-0">
+          <Link href="/" className="logo inline-flex items-center shrink-0 transition-opacity hover:opacity-75">
             <Image
               src="/assets/images/logo/logo-black-full.png"
               alt="Awara Banjara"
               width={200}
               height={40}
               priority
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-[40px] w-auto block object-contain"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-[28px]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -75,30 +72,27 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "text-[15px] font-medium tracking-tight transition-colors duration-150 relative py-1",
+                    "font-medium text-[15px] pb-1 border-b-2 transition-all duration-180",
                     isActive
-                      ? "text-[#14140f]"
-                      : "text-[#14140f]/80 hover:text-[#14140f]"
+                      ? "text-[#14140f] border-[#d6ff3f]"
+                      : "text-[#14140f] border-transparent hover:border-[#d6ff3f]"
                   )}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#d6ff3f] rounded-full" />
-                  )}
                 </Link>
               );
             })}
           </nav>
 
           {/* Right Action Badges (Exact 2 Black Circles) */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-[12px] shrink-0">
             {/* Phone Call Circle */}
             <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
               aria-label="Call Awara Banjara"
-              className="w-10 h-10 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shadow-xs"
+              className="w-[40px] h-[40px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)] hover:scale-105 transition-transform"
             >
-              <Phone className="w-4 h-4 fill-white text-white" />
+              <Phone className="w-[18px] h-[18px] text-white stroke-[2.2]" />
             </a>
 
             {/* Search Circle */}
@@ -106,9 +100,9 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search itineraries"
-              className="w-10 h-10 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shadow-xs cursor-pointer"
+              className="w-[40px] h-[40px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)] hover:scale-105 transition-transform cursor-pointer border-none"
             >
-              <Search className="w-4 h-4 text-white stroke-[2.2]" />
+              <Search className="w-[18px] h-[18px] text-white stroke-[2.2]" />
             </button>
           </div>
 
@@ -117,18 +111,18 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
             <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
               aria-label="Call Awara Banjara"
-              className="w-9 h-9 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shrink-0"
+              className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
             >
-              <Phone className="w-3.5 h-3.5 fill-white text-white" />
+              <Phone className="w-[16px] h-[16px] text-white stroke-[2.2]" />
             </a>
 
             <button
               type="button"
               onClick={() => setSearchOpen(true)}
               aria-label="Search itineraries"
-              className="w-9 h-9 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shrink-0"
+              className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
             >
-              <Search className="w-3.5 h-3.5 text-white stroke-[2.2]" />
+              <Search className="w-[16px] h-[16px] text-white stroke-[2.2]" />
             </button>
 
             <button
@@ -139,111 +133,116 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-        </Container>
+        </div>
       </header>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[108px] z-40 bg-white flex flex-col p-6 overflow-y-auto lg:hidden animate-in fade-in slide-in-from-top-4 duration-200">
-          <nav className="flex flex-col gap-4 text-lg font-bold">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="py-2.5 border-b border-[#f0f0eb] flex items-center justify-between text-[#14140f]"
+        <div className="fixed inset-0 z-50 lg:hidden bg-black/60 backdrop-blur-xs flex flex-col justify-end">
+          <div className="bg-white rounded-t-3xl p-6 shadow-2xl flex flex-col gap-6 animate-in slide-in-from-bottom duration-300 max-h-[85vh] overflow-y-auto">
+            <div className="flex items-center justify-between border-b border-gray-100 pb-4">
+              <Image
+                src="/assets/images/logo/logo-black-full.png"
+                alt="Awara Banjara"
+                width={160}
+                height={32}
+                className="h-[32px] w-auto object-contain"
+              />
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 text-gray-500 hover:text-black rounded-full hover:bg-gray-100"
               >
-                <span>{link.label}</span>
-                <ArrowUpRight className="w-4 h-4 text-[#6b6b63]" />
-              </Link>
-            ))}
-            <Link
-              href="/winter-spiti"
-              className="py-2.5 border-b border-[#f0f0eb] flex items-center justify-between text-[#14140f]"
-            >
-              <span>❄️ Winter Spiti Expeditions</span>
-              <span className="text-xs font-bold bg-[#d6ff3f] text-[#14140f] px-2 py-0.5 rounded-full">
-                Active
-              </span>
-            </Link>
-            <Link
-              href="/founder"
-              className="py-2.5 border-b border-[#f0f0eb] flex items-center justify-between text-[#14140f]"
-            >
-              <span>Founder&apos;s Story</span>
-              <ArrowUpRight className="w-4 h-4 text-[#6b6b63]" />
-            </Link>
-            <Link
-              href="/reviews"
-              className="py-2.5 border-b border-[#f0f0eb] flex items-center justify-between text-[#14140f]"
-            >
-              <span>Traveller Reviews (4.9★)</span>
-              <ArrowUpRight className="w-4 h-4 text-[#6b6b63]" />
-            </Link>
-            <Link
-              href="/contact"
-              className="py-2.5 border-b border-[#f0f0eb] flex items-center justify-between text-[#14140f]"
-            >
-              <span>Contact Us</span>
-              <ArrowUpRight className="w-4 h-4 text-[#6b6b63]" />
-            </Link>
-          </nav>
+                <X className="w-6 h-6" />
+              </button>
+            </div>
 
-          <div className="mt-8 flex flex-col gap-3">
-            <Button href="/plan-your-trip" variant="primary" size="lg" fullWidth>
-              Build Custom Itinerary
-            </Button>
-            <Button
-              href={`https://wa.me/${SITE_CONFIG.whatsapp_number.replace(/[^0-9]/g, "")}`}
-              external
-              variant="whatsapp"
-              size="lg"
-              fullWidth
-            >
-              Chat on WhatsApp
-            </Button>
+            <nav className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-lg font-bold text-[#14140f] py-2 px-3 rounded-lg hover:bg-[#f6f6f1] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="border-t border-gray-100 pt-4 flex flex-col gap-3">
+              <a
+                href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-[#14140f] text-white font-bold text-sm"
+              >
+                <Phone className="w-4 h-4 stroke-[2.2]" />
+                Call Us: {SITE_CONFIG.site_phone}
+              </a>
+              <Link
+                href="/plan-your-trip"
+                className="flex items-center justify-center w-full py-3 rounded-full bg-[#d6ff3f] text-[#14140f] font-bold text-sm"
+              >
+                Plan Your Trip
+              </Link>
+            </div>
           </div>
         </div>
       )}
 
       {/* Global Search Modal */}
       {searchOpen && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-start justify-center pt-20 px-4">
-          <div className="bg-white w-full max-w-xl rounded-2xl p-6 shadow-2xl relative border-2 border-[#14140f]">
-            <div className="flex items-center justify-between pb-4 border-b border-gray-200">
-              <h3 className="text-lg font-bold text-[#14140f]">Search Trips & Destinations</h3>
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start justify-center pt-20 px-4">
+          <div className="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <div className="p-4 border-b border-gray-100 flex items-center gap-3">
+              <Search className="w-5 h-5 text-gray-400 shrink-0 stroke-[2.2]" />
+              <input
+                type="text"
+                placeholder="Search Spiti, Ladakh, Kashmir, Treks..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                autoFocus
+                className="w-full text-base font-medium outline-hidden text-[#14140f]"
+              />
               <button
                 onClick={() => setSearchOpen(false)}
-                className="p-1 hover:bg-[#f6f6f1] rounded-full"
+                className="p-1.5 text-gray-400 hover:text-black rounded-lg hover:bg-gray-100"
               >
-                <X className="w-5 h-5 text-[#14140f]" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="mt-4 relative">
-              <Search className="absolute left-3.5 top-3.5 w-5 h-5 text-gray-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search Spiti, Ladakh, Kashmir, Manali, Trek..."
-                className="w-full bg-[#f6f6f1] border-2 border-[#14140f] rounded-xl pl-11 pr-4 py-3 text-sm font-semibold outline-none focus:ring-2 focus:ring-[#d6ff3f]"
-                autoFocus
-              />
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              <span className="text-xs font-bold text-gray-500 mr-2 py-1">Popular:</span>
-              {["Winter Spiti", "Zanskar Expedition", "Kashmir Snow", "Hamta Pass", "Bir Billing"].map(
-                (term) => (
-                  <Link
-                    key={term}
-                    href={`/community-trips?q=${encodeURIComponent(term)}`}
-                    onClick={() => setSearchOpen(false)}
-                    className="text-xs font-bold bg-[#f6f6f1] hover:bg-[#d6ff3f] border border-[#14140f] px-3 py-1 rounded-full transition-colors"
-                  >
-                    {term}
-                  </Link>
-                )
+            <div className="p-4 max-h-[60vh] overflow-y-auto">
+              {searchQuery.trim() === "" ? (
+                <div className="text-center py-8 text-gray-400 text-sm">
+                  Start typing destination, state, or trek name to search expeditions...
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 py-1">
+                    Quick Destinations
+                  </div>
+                  {[
+                    { name: "Winter Spiti 4x4 Expedition", href: "/winter-spiti" },
+                    { name: "Spiti Valley Community Trips", href: "/spiti" },
+                    { name: "Leh Ladakh Bike Tours", href: "/ladakh" },
+                    { name: "Kashmir Great Lakes & Valleys", href: "/kashmir" },
+                    { name: "Himachal Offbeat Escapes", href: "/himachal" },
+                    { name: "Uttarakhand Spiritual Treks", href: "/uttarakhand" },
+                  ]
+                    .filter((item) =>
+                      item.name.toLowerCase().includes(searchQuery.toLowerCase())
+                    )
+                    .map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="flex items-center justify-between p-3 rounded-xl hover:bg-[#f6f6f1] transition-colors group"
+                      >
+                        <span className="font-semibold text-sm text-[#14140f]">
+                          {item.name}
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
+                      </Link>
+                    ))}
+                </div>
               )}
             </div>
           </div>

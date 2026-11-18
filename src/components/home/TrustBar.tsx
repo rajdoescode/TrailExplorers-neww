@@ -3,17 +3,17 @@ import { Container } from "@/components/layout/Container";
 
 export const TrustBar: React.FC = () => {
   return (
-    <section className="w-full bg-[#fbfbf9] border-b border-[#e6e6df] py-4 sm:py-5">
-      <Container>
-        <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-12 md:gap-16">
+    <section className="w-full bg-[#f6f6f1] border-b border-[#e6e6df]">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="flex flex-wrap justify-center items-center gap-x-[48px] gap-y-[20px] py-[20px]">
           {/* Stat 1: Instagram */}
           <a
-            className="flex items-center gap-2.5 text-[14px] sm:text-[15px] font-semibold text-[#14140f] hover:opacity-85 transition-opacity"
+            className="flex items-center gap-[10px] text-[#14140f] no-underline text-[15px] font-semibold whitespace-nowrap hover:opacity-80 transition-opacity"
             href="https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA=="
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-[28px] h-[28px] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
               <defs>
                 <linearGradient id="trustIgGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#feda75" />
@@ -35,12 +35,12 @@ export const TrustBar: React.FC = () => {
 
           {/* Stat 2: Google Reviews */}
           <a
-            className="flex items-center gap-2.5 text-[14px] sm:text-[15px] font-semibold text-[#14140f] hover:opacity-85 transition-opacity"
+            className="flex items-center gap-[10px] text-[#14140f] no-underline text-[15px] font-semibold whitespace-nowrap hover:opacity-80 transition-opacity"
             href="https://share.google/iuuImIepaTHvLgaxm"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-[28px] h-[28px] shrink-0" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="#4285F4" d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.47a5.54 5.54 0 0 1-2.4 3.64v3h3.88c2.27-2.09 3.57-5.17 3.57-8.83z" />
               <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.95-2.9l-3.88-3c-1.08.73-2.46 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.27v3.09A12 12 0 0 0 12 24z" />
               <path fill="#FBBC05" d="M5.27 14.29a7.2 7.2 0 0 1 0-4.58V6.62H1.27a12 12 0 0 0 0 10.76l4-3.09z" />
@@ -53,8 +53,8 @@ export const TrustBar: React.FC = () => {
           </a>
 
           {/* Stat 3: Travellers */}
-          <div className="flex items-center gap-2.5 text-[14px] sm:text-[15px] font-semibold text-[#14140f]">
-            <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="flex items-center gap-[10px] text-[#14140f] text-[15px] font-semibold whitespace-nowrap">
+            <svg className="w-[28px] h-[28px] shrink-0" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="8.5" cy="8" r="3" />
               <path d="M2 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1" />
               <circle cx="17" cy="8.5" r="2.5" />
@@ -66,7 +66,7 @@ export const TrustBar: React.FC = () => {
             </span>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
