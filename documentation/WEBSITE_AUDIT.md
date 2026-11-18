@@ -3,7 +3,7 @@
 > **Audit Date:** November 2026  
 > **Reference Website:** [https://awarabanjara.in/](https://awarabanjara.in/)  
 > **Auditor:** Antigravity AI Engineering Team  
-> **Target Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React
+> **Target Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React  
 
 ---
 
@@ -12,7 +12,6 @@
 Awara Banjara (`awarabanjara.in`) is an experiential youth travel community and adventure travel company specializing in Himalayan group expeditions, motorbike tours, festival journeys, and custom offbeat trips across Ladakh, Spiti Valley, Himachal Pradesh, Kashmir, Uttarakhand, and Northeast India.
 
 The website is architected with a distinctive modern high-contrast aesthetic:
-
 - **Base Canvas:** Clean white (`#ffffff`) and soft off-white muted surfaces (`#f6f6f1`).
 - **Typography & Dark Contrast:** Pitch-tinted carbon black (`#14140f`) for text, borders, headers, and buttons.
 - **Brand Accent:** High-energy neon lime green (`#d6ff3f`) for primary call-to-actions, badges, highlight tags, and interactive hover glows.
@@ -72,7 +71,7 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 - **Background:** Dark charcoal black (`#14140f`) with white text (`#ffffff`) and muted gray secondary links (`#a0a09a`).
 - **Layout:** 4-Column responsive grid:
-  - **Column 1 (Brand):** Awara Banjara full logo, tagline "Made by wanderers, for wanderers", Registered Entity: _Awara Banjara Adventure (OPC) Pvt. Ltd._, Government Registered MSME & Tourism Recognized.
+  - **Column 1 (Brand):** Awara Banjara full logo, tagline "Made by wanderers, for wanderers", Registered Entity: *Awara Banjara Adventure (OPC) Pvt. Ltd.*, Government Registered MSME & Tourism Recognized.
   - **Column 2 (Quick Links):** Community Trips, Experiences, Group Trips, Educational Trips, Winter Spiti.
   - **Column 3 (Destinations):** Ladakh, Spiti, Himachal, Kashmir, Uttarakhand.
   - **Column 4 (Company & Legal):** About Us, Founder's Story, Postcards, Reviews, Careers, Contact Us, Booking T&C, Cancellation Policy, Privacy Policy, Payment Details.
@@ -156,10 +155,10 @@ The website is architected with a distinctive modern high-contrast aesthetic:
   - Dubai (City of Gold), Bhutan (Thunder Dragon Land), Nepal (Himalayan Kingdom), Bali (Island of Gods), Africa (Wild Safari Expedition).
 - **Section 13: Watch & Read / Podcasts & Stories (`#watch-read-section`)**
   - Video and editorial stories:
-    - _Zanskar Full Circuit Experience_
-    - _Jibhi–Tirthan: An 8 Day Odyssey_
-    - _Thailand: The Enchanted Land_
-    - _The African Dream Vacation_
+    - *Zanskar Full Circuit Experience*
+    - *Jibhi–Tirthan: An 8 Day Odyssey*
+    - *Thailand: The Enchanted Land*
+    - *The African Dream Vacation*
 - **Section 14: Customer Reviews (`#reviews`)**
   - Verified traveller testimonial cards with initial avatars, 5-star badges, quote text, and linked booked trip tag.
 
@@ -265,7 +264,7 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 - **URL:** `https://awarabanjara.in/contact`
 - **Page Title:** `Contact Awara Banjara — Plan Your Himalayan Trip`
 - **Registered Office Details:**
-  - Company: _Awara Banjara Adventure (OPC) Pvt. Ltd._
+  - Company: *Awara Banjara Adventure (OPC) Pvt. Ltd.*
   - Phone: `+91 9103910523`
   - WhatsApp: `+91 9103910523`
   - Email: `hello@awarabanjara.in` / `support@awarabanjara.in`
@@ -304,7 +303,6 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 - `/uttarakhand`: Rishikesh, Kedarnath, Chopta-Tungnath, Valley of Flowers.
 
 Each regional page features:
-
 - Region banner with altitude and best season.
 - Curated community group departures for that region.
 - Private customized tour packages.
