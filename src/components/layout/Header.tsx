@@ -45,17 +45,12 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
 
   return (
     <>
-      {/* Optional Top Announcement Strip */}
-      <div className="bg-[#14140f] text-white text-[12px] font-semibold py-1.5 px-4 text-center tracking-wide">
-        <span>✨ Escape the ordinary — Explore handpicked Himalayan group trips!</span>
-      </div>
-
       <header
         className={cn(
           "sticky top-0 z-50 transition-all duration-300 w-full border-b",
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-[#14140f]/10 shadow-xs py-3"
-            : "bg-white border-[#14140f]/10 py-4"
+            ? "bg-white/95 backdrop-blur-md border-[#e6e6df] shadow-xs py-3.5"
+            : "bg-white border-[#e6e6df] py-4"
         )}
       >
         <Container className="flex items-center justify-between">
@@ -64,10 +59,10 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
             <Image
               src="/assets/images/logo/logo-black-full.png"
               alt="Awara Banjara"
-              width={220}
-              height={44}
+              width={200}
+              height={40}
               priority
-              className="h-9 sm:h-10 w-auto object-contain"
+              className="h-8 sm:h-9 w-auto object-contain"
             />
           </Link>
 
@@ -80,7 +75,7 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "text-[14.5px] font-bold tracking-tight transition-colors duration-150 relative py-1",
+                    "text-[15px] font-medium tracking-tight transition-colors duration-150 relative py-1",
                     isActive
                       ? "text-[#14140f]"
                       : "text-[#14140f]/80 hover:text-[#14140f]"
@@ -88,67 +83,57 @@ export const Header: React.FC<HeaderProps> = ({ transparentAtTop = false }) => {
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#d6ff3f] rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#d6ff3f] rounded-full" />
                   )}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Right Action Buttons */}
+          {/* Right Action Badges (Exact 2 Black Circles) */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* Search Button */}
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="p-2 text-[#14140f] hover:bg-[#f6f6f1] rounded-full transition-colors"
-              aria-label="Search trips"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
-            {/* Direct Phone Call */}
-            <Button
+            {/* Phone Call Circle */}
+            <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
-              variant="outline"
-              size="sm"
-              leftIcon={<Phone className="w-3.5 h-3.5" />}
-              className="border-gray-300 font-bold text-xs"
+              aria-label="Call Awara Banjara"
+              className="w-10 h-10 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shadow-xs"
             >
-              {SITE_CONFIG.site_phone}
-            </Button>
+              <Phone className="w-4 h-4 fill-white text-white" />
+            </a>
 
-            {/* Plan Your Trip CTA */}
-            <Button
-              href="/plan-your-trip"
-              variant="primary"
-              size="sm"
-              className="font-bold text-xs shadow-xs"
+            {/* Search Circle */}
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search itineraries"
+              className="w-10 h-10 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shadow-xs cursor-pointer"
             >
-              Plan Your Trip
-            </Button>
+              <Search className="w-4 h-4 text-white stroke-[2.2]" />
+            </button>
           </div>
 
           {/* Mobile Right Controls */}
           <div className="flex items-center gap-2 lg:hidden">
-            <button
-              onClick={() => setSearchOpen(true)}
-              className="p-2 text-[#14140f] hover:bg-[#f6f6f1] rounded-full transition-colors"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
-
             <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
-              className="p-2 text-[#14140f] hover:bg-[#f6f6f1] rounded-full transition-colors"
-              aria-label="Call Us"
+              aria-label="Call Awara Banjara"
+              className="w-9 h-9 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shrink-0"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-3.5 h-3.5 fill-white text-white" />
             </a>
 
             <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label="Search itineraries"
+              className="w-9 h-9 rounded-full bg-[#14140f] text-white flex items-center justify-center hover:opacity-85 transition-all shrink-0"
+            >
+              <Search className="w-3.5 h-3.5 text-white stroke-[2.2]" />
+            </button>
+
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#14140f] hover:bg-[#f6f6f1] rounded-full transition-colors"
+              className="p-1.5 text-[#14140f] hover:bg-[#f6f6f1] rounded-lg transition-colors ml-1"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

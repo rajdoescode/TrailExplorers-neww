@@ -13,30 +13,31 @@ const REGIONS = [
 
 export const RegionIcons: React.FC = () => {
   return (
-    <section className="w-full py-8 bg-[#ffffff]">
+    <section className="w-full pt-10 sm:pt-14 md:pt-16 pb-10 bg-white" aria-label="Destinations">
       <Container>
-        <div className="flex items-center justify-between sm:justify-center gap-4 sm:gap-10 md:gap-16 overflow-x-auto no-scrollbar py-2">
+        <ul className="list-none m-0 p-0 flex flex-nowrap sm:flex-wrap justify-between sm:justify-center items-center gap-4 sm:gap-8 md:gap-14 overflow-x-auto no-scrollbar py-2">
           {REGIONS.map((region) => (
-            <Link
-              key={region.name}
-              href={region.href}
-              className="flex flex-col items-center gap-2 group shrink-0"
-            >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#f6f6f1] border-2 border-[#14140f] flex items-center justify-center p-3 shadow-sm group-hover:scale-110 group-hover:bg-[#d6ff3f] transition-all duration-200">
-                <Image
-                  src={region.icon}
-                  alt={region.name}
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain filter group-hover:brightness-90 transition-all"
-                />
-              </div>
-              <span className="text-xs sm:text-sm font-bold text-[#14140f] tracking-tight group-hover:underline underline-offset-2">
-                {region.name}
-              </span>
-            </Link>
+            <li key={region.name} className="flex-none sm:flex-1 max-w-[150px] min-w-[90px] text-center">
+              <Link
+                href={region.href}
+                className="group flex flex-col items-center gap-3 text-inherit no-underline"
+              >
+                <div className="w-full aspect-square relative transition-transform duration-250 ease-out group-hover:-translate-y-1.5">
+                  <Image
+                    src={region.icon}
+                    alt={region.name}
+                    width={170}
+                    height={170}
+                    className="w-full h-full object-contain filter group-hover:opacity-80 transition-opacity"
+                  />
+                </div>
+                <span className="text-[clamp(12px,1.3vw,16px)] font-medium tracking-[0.12em] uppercase text-[#14140f] group-hover:text-black transition-colors">
+                  {region.name}
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </Container>
     </section>
   );
