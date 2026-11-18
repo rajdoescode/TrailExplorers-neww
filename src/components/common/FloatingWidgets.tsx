@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface BubbleLine {
   say: string;
@@ -18,11 +20,14 @@ const BUBBLE_LINES: BubbleLine[] = [
 ];
 
 export const FloatingWidgets: React.FC = () => {
+  const pathname = usePathname();
   const [lineIndex, setLineIndex] = useState(0);
   const [bubbleOpen, setBubbleOpen] = useState(false);
   const [isHop, setIsHop] = useState(false);
   const [isWiggle, setIsWiggle] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+
+  if (pathname === "/plan-your-trip") return null;
 
   useEffect(() => {
     // Show speech bubble after 2.5 seconds
@@ -112,7 +117,7 @@ export const FloatingWidgets: React.FC = () => {
       </div>
 
       {/* Stack of Floating Launcher Tiles: Banjara Mascot + WhatsApp */}
-      <div className="flex flex-col items-center gap-3">
+      <div className="flex flex-col items-center gap-2.5">
         {/* Top: Banjara Mascot Launcher Tile */}
         <Link
           href="/plan-your-trip"
@@ -122,40 +127,40 @@ export const FloatingWidgets: React.FC = () => {
             setTimeout(() => setIsHop(false), 800);
             setBubbleOpen(true);
           }}
-          className={`relative block w-[56px] h-[56px] rounded-[12px] shadow-[0_8px_20px_rgba(20,20,15,0.24),0_2px_6px_rgba(20,20,15,0.14)] hover:shadow-[0_12px_26px_rgba(20,20,15,0.32)] transition-all duration-200 group cursor-pointer ${
+          className={`relative block w-[58px] h-[58px] rounded-[18px] shadow-[0_10px_25px_rgba(20,20,15,0.26),0_2px_6px_rgba(20,20,15,0.12)] hover:shadow-[0_14px_30px_rgba(20,20,15,0.36)] transition-all duration-200 group cursor-pointer ${
             isWiggle ? "animate-banjara-wiggle" : ""
           }`}
           style={{
-            background: "radial-gradient(circle at 50% 30%, #3a3a30 0%, #14140f 70%)",
+            background: "radial-gradient(circle at 50% 35%, #2d2d24 0%, #14140f 72%)",
           }}
         >
-          {/* Character Peeking Window (overflow clips sides/bottom to 12px, leaves top open for head & cap) */}
+          {/* Character Peeking Window (overflow clips sides/bottom to 18px rounded, leaves top open for head & cap) */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              clipPath: "inset(-56px 0 0 0 round 0 0 12px 12px)",
+              clipPath: "inset(-35px 0 0 0 round 0 0 18px 18px)",
             }}
           >
             <div
-              className={`absolute left-[-22px] top-[-30px] w-[101px] h-[128px] group-hover:-translate-y-1.5 transition-transform duration-300 ${
+              className={`absolute left-1/2 -translate-x-1/2 -top-[20px] w-[64px] h-[82px] group-hover:-translate-y-1.5 transition-transform duration-300 ${
                 isHop ? "animate-banjara-hop" : ""
               }`}
             >
-              <div
-                className="w-full h-full animate-banjara-breathe"
-                style={{
-                  backgroundImage: "url('/assets/images/mascot/banjara-idle.webp')",
-                  backgroundPosition: "100% 0",
-                  backgroundSize: "1400% 100%",
-                  backgroundRepeat: "no-repeat",
-                }}
-              />
+              <div className="w-full h-full animate-banjara-breathe relative">
+                <Image
+                  src="/assets/images/mascot/banjara-standing.webp"
+                  alt="Banjara"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
           {/* Neon-Lime Online Dot */}
           <span
-            className="absolute bottom-[5px] right-[5px] w-[10px] h-[10px] rounded-full bg-[#b8ff00] border-2 border-[#14140f] z-20 animate-banjara-online pointer-events-none shadow-sm"
+            className="absolute bottom-[4px] right-[4px] w-[12px] h-[12px] rounded-full bg-[#b8ff00] border-[2.5px] border-[#14140f] z-20 animate-banjara-online pointer-events-none shadow-sm"
             aria-hidden="true"
           />
         </Link>
@@ -166,7 +171,7 @@ export const FloatingWidgets: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat with us on WhatsApp"
-          className="relative w-[56px] h-[56px] rounded-[12px] bg-[#25d366] text-white flex items-center justify-center shadow-[0_8px_20px_rgba(20,20,15,0.24),0_2px_6px_rgba(20,20,15,0.14)] hover:scale-105 active:scale-95 hover:shadow-[0_12px_26px_rgba(37,211,102,0.36)] transition-all duration-200 group cursor-pointer"
+          className="relative w-[58px] h-[58px] rounded-[18px] bg-[#25d366] text-white flex items-center justify-center shadow-[0_10px_25px_rgba(37,211,102,0.32),0_2px_6px_rgba(20,20,15,0.12)] hover:scale-105 active:scale-95 hover:shadow-[0_14px_30px_rgba(37,211,102,0.42)] transition-all duration-200 group cursor-pointer"
         >
           <svg
             className="w-[32px] h-[32px] fill-current text-white transform group-hover:scale-105 transition-transform"

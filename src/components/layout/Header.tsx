@@ -122,29 +122,33 @@ export const Header: React.FC<HeaderProps> = () => {
 
           {/* Mobile Right Controls */}
           <div className="flex items-center gap-2 lg:hidden">
-            <a
-              href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
-              aria-label="Call Awara Banjara"
-              className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
-            >
-              <Phone className="w-[16px] h-[16px] text-white stroke-[2.2]" />
-            </a>
+            {pathname !== "/plan-your-trip" && (
+              <>
+                <a
+                  href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
+                  aria-label="Call Awara Banjara"
+                  className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
+                >
+                  <Phone className="w-[16px] h-[16px] text-white stroke-[2.2]" />
+                </a>
 
-            <button
-              type="button"
-              onClick={() => setSearchOpen(true)}
-              aria-label="Search itineraries"
-              className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
-            >
-              <Search className="w-[16px] h-[16px] text-white stroke-[2.2]" />
-            </button>
+                <button
+                  type="button"
+                  onClick={() => setSearchOpen(true)}
+                  aria-label="Search itineraries"
+                  className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
+                >
+                  <Search className="w-[16px] h-[16px] text-white stroke-[2.2]" />
+                </button>
+              </>
+            )}
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 text-[#14140f] hover:bg-[#f6f6f1] rounded-lg transition-colors ml-1"
+              className="w-[38px] h-[38px] border border-[#e6e6df] rounded-xl flex items-center justify-center text-[#14140f] hover:bg-[#f6f6f1] transition-colors"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 stroke-[2.2]" />}
             </button>
           </div>
         </div>

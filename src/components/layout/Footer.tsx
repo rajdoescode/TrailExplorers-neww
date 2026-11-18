@@ -11,13 +11,9 @@ import { SITE_CONFIG } from "@/data/site-config";
 export const Footer: React.FC = () => {
   const pathname = usePathname();
 
-  // On /plan-your-trip, only the sleek minimal copyright line appears on top of the mountain backdrop
+  // On /plan-your-trip, minimal footer is rendered inside the mountain page container
   if (pathname === "/plan-your-trip") {
-    return (
-      <footer className="w-full py-5 text-center text-xs text-white/60 tracking-wider bg-transparent border-0 select-none">
-        © 2026 Awara Banjara · Made in India ✦
-      </footer>
-    );
+    return null;
   }
 
   return (
