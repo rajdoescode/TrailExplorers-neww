@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Your Himalayan Trip — Build a Private Itinerary | Awara Banjara</title>
+<meta name="description" content="Build your own private Himalayan trip to Spiti, Ladakh, Zanskar, Himachal, Kashmir, Uttarakhand or the Northeast, day by day. Send it to us and a trip expert calls you back with a price.">
+<link rel="canonical" href="https://awarabanjara.in/plan-your-trip">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://awarabanjara.in/plan-your-trip">
+<meta property="og:title" content="Plan Your Himalayan Trip — Awara Banjara">
+<meta property="og:description" content="Build your own private Himalayan itinerary day by day. A trip expert calls you back with a price.">
+<meta property="og:image" content="https://awarabanjara.in/assets/images/home/hero-poster.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plan Your Himalayan Trip — Awara Banjara">
+<meta name="twitter:description" content="Build your own private Himalayan itinerary day by day. A trip expert calls you back with a price.">
+<meta name="twitter:image" content="https://awarabanjara.in/assets/images/home/hero-poster.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/images/logo/favicon.png?v=2.0">
+<link rel="stylesheet" href="assets/css/style.css?v=5a89ac55c9">
+<link rel="stylesheet" href="assets/css/trip-builder.css?v=663e6f346a">
+<link rel="stylesheet" href="assets/css/trip-chat.css?v=5139a8dfc3">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1441451964722155');
+fbq('track', 'PageView');
+// Other standard events (ViewContent, InitiateCheckout) go through here.
+window.awaraTrack = function (event, params) {
+  try { fbq('track', event, params || {}); } catch (e) {}
+};
+// Contact: taps on any WhatsApp or call link, sitewide.
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var href = a.getAttribute('href') || '';
+  var channel = /^tel:/i.test(href) ? 'call'
+    : /wa.me|whatsapp.com/i.test(href) ? 'whatsapp' : '';
+  if (channel) window.awaraTrack('Contact', { content_category: channel, content_name: location.pathname });
+}, true);
+// Lead event for a confirmed inquiry save. Sends only the trip and lead
+// type, never the visitor's name, phone or email.
+window.awaraTrackLead = function (lead) {
+  try {
+    if (!lead || lead.website) return;
+    fbq('track', 'Lead', {
+      content_name: lead.trip_title || '',
+      content_category: lead.type || 'enquiry'
+    });
+  } catch (e) {}
+};
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1441451964722155&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body class="tb-page pc-pending">
+<script>
+  // Hide both planners until trip-chat.js picks one (avoids a flash of the form)
+  setTimeout(function () { document.body.classList.remove('pc-pending'); }, 4000);
+</script>
+
+<!-- SVG Sprite Icons -->
+<svg style="display:none;" aria-hidden="true">
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.25 3.7 8.25 8.25 0 2.2-.86 4.27-2.42 5.82a8.196 8.196 0 0 1-5.83 2.42c-1.46 0-2.89-.39-4.14-1.13l-.3-.18-3.08.81.82-3-.19-.31A8.204 8.204 0 0 1 3.8 11.91c0-4.55 3.7-8.24 8.25-8.24z"/></symbol>
+</svg>
+
+<!-- ============ SITE HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="assets/images/logo/logo-black-full.png" alt="Awara Banjara">
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="community-trips">Community Trips</a>
+      <a href="experiences">Experiences</a>
+      <a href="tour-packages">Tour Packages</a>
+      <a href="about">About Us</a>
+      <a href="postcards">Postcards</a>
+    </nav>
+
+    <div class="header-contact">
+      <span class="icon-badge" style="color:#fff"><svg><use href="#icon-phone"/></svg></span>
+      <span>+91- 9103910523</span>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="tb-main">
+
+  <section class="container tb-intro">
+    <span class="tb-kicker">Private trip planner</span>
+    <h1>Plan your Himalayan trip<span class="tb-dot">.</span></h1>
+    <p>Chat with our trip planner about where, when and how you like to travel. Together you'll shape a day-by-day plan, and a trip expert will call you back with a price for your group, no matter its size.</p>
+  </section>
+
+  <!-- ============ AI TRIP PLANNER CHAT ============ -->
+  <section class="pc-stage" id="pcShell" hidden>
+    <div class="pc-stage-head container">
+      <span class="pc-stage-kicker">Private trip planner</span>
+      <h1>Plan your Himalayan trip<span>.</span></h1>
+      <p>Chat with Banjara, shape it day by day, and our trip expert calls you with the price.</p>
+    </div>
+
+    <div class="pc-app container">
+      <!-- Chat -->
+      <div class="pc-chat">
+        <header class="pc-chat-head">
+          <span class="pc-avatar pc-avatar-lg pc-avatar-face" aria-hidden="true"></span>
+          <div class="pc-chat-id">
+            <strong>Banjara</strong>
+            <small><span class="pc-online"></span>Trip planner · usually replies in seconds</small>
+          </div>
+          <button type="button" class="pc-icon-btn" id="pcRestart" title="Start a new trip" aria-label="Start a new trip">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>New trip</span>
+          </button>
+        </header>
+
+        <div class="pc-thread" id="pcThread">
+          <div class="pc-messages" id="pcMessages" role="log" aria-live="polite"></div>
+          <!-- Banjara mascot; trip-chat.js drives its state -->
+          <span class="pc-mascot pc-mascot-dock" aria-hidden="true"><span class="pc-mascot-sprite"></span><span class="pc-mascot-dots"><i></i><i></i><i></i></span></span>
+        </div>
+
+        <div class="pc-compose">
+          <div class="pc-fallback" id="pcFallback" hidden>
+            <button type="button" class="btn btn-dark btn-sm" id="pcFallbackForm">Use the quick form instead</button>
+          </div>
+          <div class="pc-suggestions" id="pcSuggestions"></div>
+          <button type="button" class="pc-trip-pill" id="pcTripPill" hidden>
+            <span class="pc-trip-pill-dot"></span><span id="pcTripPillText">Your trip</span><span aria-hidden="true">↑</span>
+          </button>
+          <form class="pc-input" id="pcForm">
+            <textarea id="pcText" rows="1" maxlength="1500" placeholder="Tell Banjara about your trip…" aria-label="Your message"></textarea>
+            <button type="submit" class="pc-send" id="pcSend" aria-label="Send message">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+          <p class="pc-alt"><span class="pc-hint">Enter to send · Shift + Enter for a new line ·</span> Prefer clicking? <button type="button" class="pc-link" id="pcUseForm">Use the step-by-step form</button></p>
+        </div>
+      </div>
+
+      <!-- Trip ticket -->
+      <aside class="pc-trip" id="pcTrip" aria-label="Your trip so far">
+        <div class="pc-trip-head">
+          <div>
+            <span class="pc-trip-kicker">Your trip ticket</span>
+            <strong id="pcTripTitle">Your trip</strong>
+            <small id="pcTripSummary">Taking shape as you chat</small>
+          </div>
+          <button type="button" class="pc-trip-close" id="pcTripToggle" aria-label="Close trip details">×</button>
+        </div>
+        <div class="pc-trip-body" id="pcTripBody"></div>
+        <div class="pc-trip-foot">
+          <button type="button" class="pc-cta" id="pcTripSend" disabled>Plan a few days first</button>
+          <small>No payment now · our expert calls you with the exact price</small>
+        </div>
+      </aside>
+      <div class="pc-sheet-scrim" id="pcScrim" hidden></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <button type="button" class="pc-link pc-back" id="pcBackToChat" hidden>← Back to the chat planner</button>
+  </div>
+
+  <!-- Send the chat plan to the team -->
+  <dialog class="pc-dialog" id="pcSendDialog" aria-labelledby="pcSendTitle">
+    <form id="pcSendForm" novalidate>
+      <button type="button" class="pc-dialog-close" id="pcSendClose" aria-label="Close">×</button>
+      <h2 id="pcSendTitle">Where should our trip expert call you?</h2>
+      <label class="pc-field">Your name
+        <input type="text" id="pcName" class="tb-input" autocomplete="name" required>
+      </label>
+      <label class="pc-field">Mobile (WhatsApp)
+        <input type="tel" id="pcPhone" class="tb-input" autocomplete="tel" inputmode="tel" placeholder="98765 43210" required>
+      </label>
+      <label class="pc-field">Email <small>(optional)</small>
+        <input type="email" id="pcEmail" class="tb-input" autocomplete="email">
+      </label>
+      <label class="pc-field">Best time to call
+        <select id="pcCallTime" class="tb-input"></select>
+      </label>
+      <div class="pc-field">Budget per person <small>(excluding travel to the starting city)</small>
+        <div id="pcBudgetField"></div>
+      </div>
+      <label class="pc-field">Anything else? <small>(optional)</small>
+        <textarea id="pcNotes" class="tb-input" rows="2" placeholder="A birthday on the trip, dietary needs…"></textarea>
+      </label>
+      <div class="tb-hp" aria-hidden="true">
+        <label for="pcWebsite">Website</label>
+        <input type="text" id="pcWebsite" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="tb-callback" id="pcCallbackNote"></p>
+      <p class="tb-error" id="pcSendError" role="alert" hidden></p>
+      <button type="submit" class="btn btn-primary btn-block" id="pcSubmit">Send my itinerary</button>
+    </form>
+    <div class="pc-done" id="pcSendDone" hidden>
+      <div class="tb-done-icon" aria-hidden="true">✓</div>
+      <h2>Itinerary received!</h2>
+      <p class="tb-done-lead" id="pcDoneLead"></p>
+      <p class="tb-done-ref">Your reference: <strong id="pcDoneRef"></strong></p>
+      <a class="btn tb-wa-btn" id="pcDoneWhatsApp" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+        Also send it to us on WhatsApp
+      </a>
+      <button type="button" class="pc-link" id="pcDoneClose">Back to the chat</button>
+    </div>
+  </dialog>
+
+  <section class="container tb-shell" aria-live="polite">
+
+    <!-- Progress -->
+    <ol class="tb-progress" id="tbProgress">
+      <li data-step="0">Where</li>
+      <li data-step="1">When &amp; who</li>
+      <li data-step="2">Style</li>
+      <li data-step="3">Day by day</li>
+      <li data-step="4">Send</li>
+    </ol>
+
+    <form id="tbForm" novalidate>
+
+      <!-- STEP 1: WHERE -->
+      <div class="tb-step" data-step="0">
+        <h2>Where in the Himalayas?</h2>
+        <p class="tb-help">Pick one or more. Combining neighbours (like Spiti + Himachal, or Ladakh + Zanskar) works best.</p>
+        <div class="tb-region-grid" id="tbRegions"></div>
+      </div>
+
+      <!-- STEP 2: WHEN & WHO -->
+      <div class="tb-step" data-step="1" hidden>
+        <h2>When, how long &amp; who's coming?</h2>
+
+        <div class="tb-row">
+          <div class="tb-field">
+            <label for="tbStartDate">Start date</label>
+            <input type="date" id="tbStartDate" class="tb-input">
+            <label class="tb-check"><input type="checkbox" id="tbFlexible"> My dates are flexible</label>
+          </div>
+          <div class="tb-field">
+            <label for="tbDays">Number of days: <strong id="tbDaysOut">7</strong></label>
+            <input type="range" id="tbDays" min="2" max="21" value="7" class="tb-range">
+            <div class="tb-range-scale"><span>2</span><span>21</span></div>
+          </div>
+        </div>
+
+        <div class="tb-row">
+          <div class="tb-field">
+            <span class="tb-label">Adults</span>
+            <div class="tb-stepper" data-target="adults">
+              <button type="button" data-delta="-1" aria-label="Fewer adults">−</button>
+              <output id="tbAdults">2</output>
+              <button type="button" data-delta="1" aria-label="More adults">+</button>
+            </div>
+          </div>
+          <div class="tb-field">
+            <span class="tb-label">Children (under 12)</span>
+            <div class="tb-stepper" data-target="children">
+              <button type="button" data-delta="-1" aria-label="Fewer children">−</button>
+              <output id="tbChildren">0</output>
+              <button type="button" data-delta="1" aria-label="More children">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tb-field">
+          <span class="tb-label">Who's travelling?</span>
+          <div class="tb-chips" id="tbGroupTypes" data-single="groupType"></div>
+        </div>
+
+        <div class="tb-field">
+          <label for="tbStartPoint">Where will you start from?</label>
+          <select id="tbStartPoint" class="tb-input"></select>
+        </div>
+
+        <div class="tb-warnings" id="tbSeasonWarnings"></div>
+      </div>
+
+      <!-- STEP 3: STYLE -->
+      <div class="tb-step" data-step="2" hidden>
+        <h2>How do you like to travel?</h2>
+
+        <div class="tb-field">
+          <span class="tb-label">Stays</span>
+          <div class="tb-options" id="tbStays" data-single="stay"></div>
+        </div>
+        <div class="tb-field">
+          <span class="tb-label">Getting around</span>
+          <div class="tb-options" id="tbTransport" data-single="transport"></div>
+        </div>
+        <div class="tb-field">
+          <span class="tb-label">Pace</span>
+          <div class="tb-options" id="tbPaces" data-single="pace"></div>
+        </div>
+        <div class="tb-field">
+          <span class="tb-label">Things you'd love to do <small>(optional)</small></span>
+          <div class="tb-chips" id="tbActivities" data-multi="activities"></div>
+        </div>
+      </div>
+
+      <!-- STEP 4: DAY BY DAY -->
+      <div class="tb-step" data-step="3" hidden>
+        <h2>Shape it day by day</h2>
+        <p class="tb-help">Start from a suggestion and make it yours. Don't worry about getting it perfect — our expert will fine-tune routes and timings with you on the call.</p>
+
+        <div class="tb-starters">
+          <button type="button" class="tb-starter" id="tbUseSuggested">
+            <strong>Suggest a route</strong><span>Our classic route for the places you picked</span>
+          </button>
+          <div class="tb-starter tb-starter-select">
+            <label for="tbFromTrip"><strong>Start from one of our trips</strong><span>Then change anything you like</span></label>
+            <select id="tbFromTrip" class="tb-input"><option value="">Choose a trip…</option></select>
+          </div>
+          <button type="button" class="tb-starter" id="tbStartBlank">
+            <strong>Start blank</strong><span>I know exactly what I want</span>
+          </button>
+        </div>
+
+        <div class="tb-warnings" id="tbRouteWarnings"></div>
+
+        <ol class="tb-days" id="tbDayList"></ol>
+        <button type="button" class="btn btn-outline btn-sm tb-add-day" id="tbAddDay">+ Add a day</button>
+
+        <datalist id="tbPlaceList"></datalist>
+      </div>
+
+      <!-- STEP 5: REVIEW & SEND -->
+      <div class="tb-step" data-step="4" hidden>
+        <h2>Your trip, ready to send</h2>
+        <div class="tb-review" id="tbReview"></div>
+
+        <div class="tb-contact">
+          <h3>Where should our trip expert call you?</h3>
+          <div class="tb-row">
+            <div class="tb-field">
+              <label for="tbName">Your name</label>
+              <input type="text" id="tbName" class="tb-input" autocomplete="name" required>
+            </div>
+            <div class="tb-field">
+              <label for="tbPhone">Mobile (WhatsApp)</label>
+              <input type="tel" id="tbPhone" class="tb-input" autocomplete="tel" inputmode="tel" placeholder="98765 43210" required>
+            </div>
+          </div>
+          <div class="tb-row">
+            <div class="tb-field">
+              <label for="tbEmail">Email <small>(optional)</small></label>
+              <input type="email" id="tbEmail" class="tb-input" autocomplete="email">
+            </div>
+            <div class="tb-field">
+              <label for="tbCallTime">Best time to call</label>
+              <select id="tbCallTime" class="tb-input"></select>
+            </div>
+          </div>
+          <div class="tb-field">
+            <label for="tbNotes">Anything else we should know? <small>(optional)</small></label>
+            <textarea id="tbNotes" class="tb-input" rows="3" placeholder="Budget in mind, a birthday on the trip, elderly parents, dietary needs…"></textarea>
+          </div>
+          <!-- Spam trap: hidden from people, bots fill it in -->
+          <div class="tb-hp" aria-hidden="true">
+            <label for="tbWebsite">Website</label>
+            <input type="text" id="tbWebsite" tabindex="-1" autocomplete="off">
+          </div>
+          <p class="tb-callback" id="tbCallbackNote"></p>
+        </div>
+      </div>
+
+      <p class="tb-error" id="tbError" role="alert" hidden></p>
+
+      <!-- Nav -->
+      <div class="tb-nav">
+        <button type="button" class="btn btn-outline" id="tbBack" hidden>Back</button>
+        <button type="button" class="btn btn-dark" id="tbNext">Next</button>
+        <button type="submit" class="btn btn-primary" id="tbSubmit" hidden>Send my itinerary</button>
+      </div>
+    </form>
+
+    <!-- Confirmation -->
+    <div class="tb-done" id="tbDone" hidden>
+      <div class="tb-done-icon" aria-hidden="true">✓</div>
+      <h2>Itinerary received!</h2>
+      <p class="tb-done-lead" id="tbDoneLead"></p>
+      <p class="tb-done-ref">Your reference: <strong id="tbDoneRef"></strong></p>
+      <a class="btn tb-wa-btn" id="tbDoneWhatsApp" href="#" target="_blank" rel="noopener">
+        <svg width="20" height="20" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+        Also send it to us on WhatsApp
+      </a>
+      <p class="tb-help">Starting a WhatsApp chat means you'll have your itinerary and our expert's number in one place.</p>
+      <button type="button" class="tb-link" id="tbPlanAnother">Plan another trip</button>
+    </div>
+
+  </section>
+</main>
+
+<!-- ============ SITE FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="assets/images/logo/logo-black-full.png" alt="Awara Banjara"></a>
+        <p>Curated journeys for curious minds. We handle the details so you can focus on the memory.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="community-trips">Community Trips</a></li>
+            <li><a href="experiences">Experiences</a></li>
+            <li><a href="plan-your-trip">Plan Your Trip</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="founder">Founder's Story</a></li>
+            <li><a href="postcards">Postcards</a></li>
+            <li><a href="careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="booking-terms">Booking T&amp;C</a></li>
+            <li><a href="cancellation-policy">Cancellation Policy</a></li>
+            <li><a href="privacy-policy">Privacy Policy</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="payment-details">Payment Details</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Awara Banjara · Made in India ✦</div>
+  </div>
+</footer>
+
+<script src="assets/js/db-engine.js?v=3da85c62ff"></script>
+<script src="assets/js/main.js?v=747d842b40"></script>
+<script src="assets/js/trip-builder-data.js?v=1bdc03b3fb"></script>
+<script src="assets/js/lead-utils.js?v=a3b73ec829"></script>
+<script src="assets/js/trip-chat.js?v=c7a654682b"></script>
+<script src="assets/js/trip-builder.js?v=9270d69d2b"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #14140f;
+  --color-text-muted: #6b6b63;
+  --color-border: #14140f;
+  --color-accent: #d6ff3f;
+  --color-accent-dark: #a9cc2a;
+  --color-black: #14140f;
+  --color-whatsapp: #25d366;
+  --color-success: #2fa84f;
+  --color-danger: #e0455a;
+  --color-surface-muted: #f6f6f1;
+
+  --font-heading: 'Plus Jakarta Sans', 'Poppins', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius-card: 18px;
+  --radius-pill: 999px;
+  --radius-sm: 10px;
+
+  --shadow-card: 0 10px 24px rgba(20, 20, 15, 0.08);
+  --shadow-glow: 0 6px 0 rgba(214, 255, 63, 0.55);
+
+  --container-max: 1280px;
+  --section-gap: clamp(56px, 8vw, 96px);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #d6ff3f;
+    color: #14140f;
+  }
+}
+
+/* Custom scrollbar hiding utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

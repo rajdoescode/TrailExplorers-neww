@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Awara Banjara — A Himalayan Travel Community Born in Manali</title>
+<meta name="description" content="Awara Banjara is a Manali-born travel community, raised in the Himalayas. Local crews, local homestays and mountain know-how on every Spiti, Ladakh and Kashmir trip.">
+<link rel="canonical" href="https://awarabanjara.in/about">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://awarabanjara.in/about">
+<meta property="og:title" content="About Awara Banjara — A Himalayan Travel Community Born in Manali">
+<meta property="og:description" content="Awara Banjara is a Manali-born travel community, raised in the Himalayas. Local crews, local homestays and mountain know-how on every Spiti, Ladakh and Kashmir trip.">
+<meta property="og:image" content="https://awarabanjara.in/assets/images/home/hero-poster.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Awara Banjara — A Himalayan Travel Community Born in Manali">
+<meta name="twitter:description" content="Awara Banjara is a Manali-born travel community, raised in the Himalayas. Local crews, local homestays and mountain know-how on every Spiti, Ladakh and Kashmir trip.">
+<meta name="twitter:image" content="https://awarabanjara.in/assets/images/home/hero-poster.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="assets/images/logo/favicon.png?v=2.0">
+<link rel="stylesheet" href="assets/css/style.css?v=5a89ac55c9">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1441451964722155');
+fbq('track', 'PageView');
+// Other standard events (ViewContent, InitiateCheckout) go through here.
+window.awaraTrack = function (event, params) {
+  try { fbq('track', event, params || {}); } catch (e) {}
+};
+// Contact: taps on any WhatsApp or call link, sitewide.
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest && e.target.closest('a[href]');
+  if (!a) return;
+  var href = a.getAttribute('href') || '';
+  var channel = /^tel:/i.test(href) ? 'call'
+    : /wa.me|whatsapp.com/i.test(href) ? 'whatsapp' : '';
+  if (channel) window.awaraTrack('Contact', { content_category: channel, content_name: location.pathname });
+}, true);
+// Lead event for a confirmed inquiry save. Sends only the trip and lead
+// type, never the visitor's name, phone or email.
+window.awaraTrackLead = function (lead) {
+  try {
+    if (!lead || lead.website) return;
+    fbq('track', 'Lead', {
+      content_name: lead.trip_title || '',
+      content_category: lead.type || 'enquiry'
+    });
+  } catch (e) {}
+};
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1441451964722155&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- SVG Sprite Icons -->
+<svg style="display:none;" aria-hidden="true">
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 12h16M4 6h16M4 18h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  
+  <!-- Core Pillars SVG Icons -->
+  <symbol id="icon-shield-check" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-flower-hands" viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4c0 2 2 4 4 6 2-2 4-4 4-6a4 4 0 0 0-4-4z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 14c0 4 6 8 6 8s6-4 6-8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 12v6" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="icon-leaf-globe" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 4 13a7 7 0 0 1 7-7c3.87 0 7 3.13 7 7 0 2.5-1.3 4.7-3.3 6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="icon-eye-shield" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+
+  <!-- Service Line Art Icons -->
+  <symbol id="icon-ticket" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 5v14" stroke="currentColor" stroke-width="2" stroke-dasharray="2 2"/></symbol>
+  <symbol id="icon-bike" viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18.5" cy="17.5" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 6h4l-3 4M5.5 17.5l3.5-7.5h6l3 7.5M9 10h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-fire" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-mountain" viewBox="0 0 24 24"><path d="M8 3l4 8 5-5 5 15H2L8 3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-youtube" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></symbol>
+  <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="4" cy="4" r="2" fill="currentColor"/></symbol>
+</svg>
+
+<!-- ============ SITE HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="assets/images/logo/logo-black-full.png" alt="Awara Banjara">
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="community-trips">Community Trips</a>
+      <a href="experiences">Experiences</a>
+      <a href="tour-packages">Tour Packages</a>
+      <a href="about" aria-current="page">About Us</a>
+      <a href="postcards">Postcards</a>
+    </nav>
+
+    <div class="header-contact">
+      <span class="icon-badge" style="color:#fff"><svg><use href="#icon-phone"/></svg></span>
+      <span>+91- 9103910523</span>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ ABOUT US HERO SECTION ============ -->
+  <section class="section container about-hero">
+    <h1>About Us</h1>
+
+    <div class="about-intro-grid">
+      <div class="about-intro-brand">
+        <a href="/" class="logo">
+          <img src="assets/images/logo/logo-black-full.png" alt="Awara Banjara">
+        </a>
+        <p>Curated journeys for curious minds. We handle the details so you can focus on the memory.</p>
+      </div>
+      <div class="about-intro-text">
+        <p class="about-intro-kicker">Raised in the Himalayas. Built from its soil.</p>
+        <p>Awara Banjara isn't a city company that discovered the mountains on a long weekend. We were born in Manali, grew up on these roads, and have worked these valleys all our lives. The Himalayas aren't our destination. They're home, and we'd love to show you around.</p>
+      </div>
+    </div>
+
+    <a href="tour-packages" class="btn btn-join-us">JOIN US</a>
+
+    <!-- Neon Lime Backdrop Frame with Pagoda Hero -->
+    <div class="neon-backdrop-frame">
+      <img src="assets/images/about/pagoda-hero.jpg" alt="Nepalese Pagoda Temple Architecture" onerror="this.onerror=null;this.src='assets/images/placeholder-hero.svg'">
+    </div>
+  </section>
+
+
+  <!-- ============ ROOTED IN THE HIMALAYAS ============ -->
+  <section class="section container about-rooted">
+    <div class="section-head center">
+      <h2>Locals, Not Outsiders</h2>
+      <p>Plenty of companies sell the Himalayas. We're from here.</p>
+    </div>
+
+    <div class="rooted-grid">
+      <div class="rooted-card">
+        <span class="rooted-num">01</span>
+        <h3>Raised in the Valley</h3>
+        <p>Our roots run through Manali, the Kullu Valley and the Pir Panjal. We grew up on these passes, so we know the roads, the weather and the people.</p>
+      </div>
+      <div class="rooted-card">
+        <span class="rooted-num">02</span>
+        <h3>Planned on the Ground</h3>
+        <p>No one plans our trips from an office in a faraway city. When a pass gets snowed in or a landslide blocks the road, our local network already knows the way around.</p>
+      </div>
+      <div class="rooted-card">
+        <span class="rooted-num">03</span>
+        <h3>Your Trip Stays Local</h3>
+        <p>We work with local drivers, guides, homestays, dhabas and village families. When you travel with us, your money stays in the mountains and helps the people who live here.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ FOUNDER TEASER ============ -->
+  <section class="section container founder-teaser-section">
+    <a href="founder" class="founder-teaser">
+      <div class="founder-teaser-badge">
+        <img src="assets/images/about/founder-viru.jpg" alt="Viru Thakur, founder of Awara Banjara, at Dal Lake in Kashmir" width="480" height="480" loading="lazy">
+        <span class="founder-teaser-pin" aria-hidden="true">📍 Manali</span>
+      </div>
+      <div class="founder-teaser-body">
+        <p class="founder-teaser-eyebrow">Founder's Note</p>
+        <h2>Meet the Original Awara</h2>
+        <p>Viru Thakur grew up in Manali watching travellers rush past the mountains he called home. They left with full camera rolls and empty hearts, so he started a company to change that. Here's his story, and why he gave it such a cheeky name.</p>
+        <span class="founder-teaser-cta">Meet Viru Thakur, our founder <span aria-hidden="true">&rarr;</span></span>
+      </div>
+    </a>
+  </section>
+
+
+  <!-- ============ OUR PHILOSOPHY ============ -->
+  <section class="section container about-feature-section">
+    <div class="about-feature-row">
+      <div class="about-feature-text">
+        <h2>Our Philosophy</h2>
+        <h3>Community Over Crowds</h3>
+        <p>We believe travel is best experienced in small, intimate groups where strangers turn into lifelong travel companions. By keeping our group sizes capped, we protect fragile high-altitude ecosystems and foster real camaraderie.</p>
+        <p>Instead of overcrowded commercial hubs, we take you deep into remote valleys, sacred mountain passes, and authentic village homestays where warmth and hospitality are genuine.</p>
+      </div>
+      <div class="lime-card-frame">
+        <img src="assets/images/about/community-group.jpg" alt="Cheering group of travelers on mountain peak" onerror="this.onerror=null;this.src='assets/images/placeholder-card-1.svg'">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ AUTHENTIC EXPLORATION VS COMMERCIAL TOURISM ============ -->
+  <section class="section container about-feature-section">
+    <div class="about-feature-row">
+      <div class="lime-card-frame left-accent">
+        <img src="assets/images/about/cultural-dancers.jpg" alt="Traditional masked cultural performers" onerror="this.onerror=null;this.src='assets/images/placeholder-card-2.svg'">
+      </div>
+      <div class="about-feature-text">
+        <h2>Authentic Exploration vs. Commercial Tourism</h2>
+        <p>Commercial tourism often reduces rich indigenous cultures into quick photo stops. At Awara Banjara, we immerse you in living traditions, ancient monastic festivals, local folk rituals, and traditional culinary feasts.</p>
+        <p>Because we're from here, these aren't "contacts" we found online. They're our neighbours, the elders and guides we grew up with, and they share their stories, myths and mountain heritage with pride.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ RESPONSIBLE & IMPACT-DRIVEN TRAVEL ============ -->
+  <section class="section container about-feature-section">
+    <div class="about-feature-row">
+      <div class="about-feature-text">
+        <h2>Responsible &amp; Impact-Driven Travel</h2>
+        <p>We practice strict Leave-No-Trace principles across every trek, expedition, and homestay. A significant portion of your booking directly supports remote Himalayan village economies, local porters, and women-led homestay cooperatives.</p>
+        <p>We actively minimize single-use plastics, support local eco-sanitation initiatives, and ensure that every footprint we leave leaves the mountains cleaner and greener.</p>
+      </div>
+      <div class="lime-card-frame">
+        <img src="assets/images/about/responsible-puppet.jpg" alt="Traditional puppet performer cultural art" onerror="this.onerror=null;this.src='assets/images/placeholder-card-3.svg'">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ RAW ADVENTURE, PREMIUM EXECUTION ============ -->
+  <section class="section container about-feature-section">
+    <div class="about-feature-row">
+      <div class="lime-card-frame left-accent">
+        <img src="assets/images/about/raw-adventure-trekkers.jpg" alt="Trekkers ascending mountain ridge" onerror="this.onerror=null;this.src='assets/images/placeholder-card-4.svg'">
+      </div>
+      <div class="about-feature-text">
+        <h2>Raw Adventure, Premium Execution</h2>
+        <p>Adventure requires courage, but execution requires uncompromised safety and precision. Our expeditions are led by certified mountaineers, Wilderness First Responders, and experienced road captains equipped with satellite communication and emergency oxygen.</p>
+        <p>From high-grade camping gear and backup support vehicles to curated homestays with hot meals, we handle every detail so you can embrace the raw wild with complete peace of mind.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CORE PILLARS ============ -->
+  <section class="section container" style="text-align: center;">
+    <div class="section-head center">
+      <h2>Core Pillars</h2>
+      <p style="font-size: 18px; color: var(--color-text-muted); font-weight: 600;">Why We Are Different</p>
+    </div>
+
+    <div class="core-pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-circle">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h4>SAFETY FIRST, ALWAYS</h4>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-circle">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>DEEP CULTURAL ROOTS &amp; LOCAL SUPPORT</h4>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-circle">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 16a3.5 3.5 0 0 0 3.5-3.5c0-1.8-1.5-3.5-3.5-6.5-2 3-3.5 4.7-3.5 6.5A3.5 3.5 0 0 0 12 16z"/></svg>
+        </div>
+        <h4>LEAVING NO TRACE BEHIND (ECO TRAVEL)</h4>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-circle">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h4>100% FINANCIAL TRANSPARENCY</h4>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-circle">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></svg>
+        </div>
+        <h4>24&times;7 SUPPORT ON EVERY TRIP</h4>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ OUR SERVICES ============ -->
+  <section class="section container" style="text-align: center; padding-bottom: 40px;">
+    <div class="section-head center">
+      <h2>Our Services</h2>
+    </div>
+
+    <div class="services-row">
+      <div class="service-icon-box" title="Group Trips">
+        <svg><use href="#icon-ticket"/></svg>
+      </div>
+      <div class="service-icon-box" title="Bike Expeditions">
+        <svg><use href="#icon-bike"/></svg>
+      </div>
+      <div class="service-icon-box" title="Camping &amp; Festivals">
+        <svg><use href="#icon-fire"/></svg>
+      </div>
+      <div class="service-icon-box" title="Treks &amp; Nature">
+        <svg><use href="#icon-mountain"/></svg>
+      </div>
+      <div class="service-icon-box" title="Women-Only Trips">
+        <svg><use href="#icon-heart"/></svg>
+      </div>
+    </div>
+
+    <!-- ============ WHATSAPP / SOCIAL BAR ============ -->
+    <div class="whatsapp-bar" style="margin-top: 48px; margin-bottom: 20px;">
+      <a href="https://wa.me/919103910523" target="_blank" class="wa-left">
+        <span class="icon-badge" style="background:var(--color-whatsapp)"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.9 9.9 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41"/></svg></span>
+        <span><small>Instant WhatsApp Booking:</small><strong>+91-91 03 910 523</strong></span>
+      </a>
+      <div class="wa-right">
+        <span class="label">FOLLOW TRAILS ON:</span>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA==" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a>
+          <a href="https://youtube.com/@awarabanjara.travel?si=pvucdi12kuNIf2Z8" target="_blank" rel="noopener" aria-label="YouTube"><svg><use href="#icon-youtube"/></svg></a>
+          <a href="https://share.google/UcwoxEcVj5gfu0Izq" target="_blank" rel="noopener" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ SITE FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo"><img src="assets/images/logo/logo-black-full.png" alt="Awara Banjara"></a>
+        <p>Curated journeys for curious minds. We handle the details so you can focus on the memory.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="community-trips">Community Trips</a></li>
+            <li><a href="experiences">Experiences</a></li>
+            <li><a href="tour-packages">Group Trips</a></li>
+            <li><a href="tour-packages#educational-trips">Educational Trips</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <!-- FOOTER-REGIONS:START -->
+            <li><a href="/ladakh">Ladakh</a></li>
+            <li><a href="/spiti">Spiti</a></li>
+            <li><a href="/himachal">Himachal</a></li>
+            <li><a href="/kashmir">Kashmir</a></li>
+            <li><a href="/uttarakhand">Uttarakhand</a></li>
+            <li><a href="/winter-spiti">Winter Spiti</a></li>
+<!-- FOOTER-REGIONS:END -->
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="founder">Founder's Story</a></li>
+            <li><a href="postcards">Postcards</a></li>
+            <li><a href="careers">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="booking-terms">Booking T&amp;C</a></li>
+            <li><a href="cancellation-policy">Cancellation Policy</a></li>
+            <li><a href="privacy-policy">Privacy Policy</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="payment-details">Payment Details</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Awara Banjara · Made in India ✦</div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js?v=747d842b40"></script>
+</body>
+</html>
