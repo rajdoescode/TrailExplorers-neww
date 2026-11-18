@@ -1948,9 +1948,9 @@ export default function PlanYourTripPage() {
       {/* Main App Frame */}
       <main className="max-w-[1180px] w-full mx-auto px-2 sm:px-4 pb-2 sm:pb-4 flex-1 flex flex-col justify-center">
         {/* App Container: Single Column on Mobile, Two Columns on Desktop */}
-        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_370px] h-[calc(100dvh-130px)] sm:h-[720px] relative">
+        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_370px] min-h-[560px] h-auto relative">
           {/* Left Column: Chat App */}
-          <div className="flex flex-col min-w-0 min-h-0 bg-white">
+          <div className="flex flex-col min-w-0 bg-white">
             {/* Chat Header */}
             <div className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3 border-b border-[#e8e8e0] shrink-0 bg-white">
               <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
@@ -1982,11 +1982,11 @@ export default function PlanYourTripPage() {
             </div>
 
             {/* Chat Messages Thread */}
-            <div className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3.5 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white">
+            <div className="flex-1 px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white">
               {conversationStage === 0 ? (
                 <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
                   {/* Standing Character in Welcome State */}
-                  <div className="w-[100px] h-[130px] sm:w-[125px] sm:h-[155px] mx-auto my-1 relative shrink-0 pointer-events-none">
+                  <div className="w-[95px] h-[125px] sm:w-[115px] sm:h-[145px] mx-auto my-1 relative shrink-0 pointer-events-none">
                     <div className="w-full h-full animate-banjara-breathe relative">
                       <Image
                         src="/assets/images/mascot/banjara-standing.webp"
@@ -2031,7 +2031,7 @@ export default function PlanYourTripPage() {
                         key={start.id}
                         type="button"
                         onClick={() => handleSelectTrip(start)}
-                        className="relative shrink-0 min-w-[124px] w-[124px] h-[124px] sm:min-w-0 sm:w-auto sm:aspect-[4/5] sm:min-h-[210px] rounded-[16px] sm:rounded-[18px] overflow-hidden p-0 text-left bg-[#14140f] text-white shadow-[0_10px_24px_-14px_rgba(20,20,15,0.6)] hover:-translate-y-1 transition-all duration-200 group cursor-pointer border-none"
+                        className="relative shrink-0 min-w-[124px] w-[124px] h-[124px] sm:min-w-0 sm:w-auto sm:aspect-[4/5] sm:min-h-[190px] rounded-[16px] sm:rounded-[18px] overflow-hidden p-0 text-left bg-[#14140f] text-white shadow-[0_10px_24px_-14px_rgba(20,20,15,0.6)] hover:-translate-y-1 transition-all duration-200 group cursor-pointer border-none"
                       >
                         <Image
                           src={start.image}
@@ -2264,7 +2264,7 @@ export default function PlanYourTripPage() {
           </div>
 
           {/* Desktop Right Column: Your Trip Ticket */}
-          <aside className="hidden lg:flex bg-[#14140f] text-white flex-col min-h-0 relative select-none">
+          <aside className="hidden lg:flex bg-[#14140f] text-white flex-col relative select-none">
             {/* Ticket Head with Cutout Notches */}
             <div
               className={`relative p-5 sm:p-6 border-b-2 border-dashed border-white/15 transition-all ${
@@ -2292,7 +2292,7 @@ export default function PlanYourTripPage() {
             </div>
 
             {/* Ticket Body with Ultra-thin Custom Scrollbar */}
-            <div className="ticket-scroll flex-1 min-h-0 overflow-y-auto p-5 sm:p-6 flex flex-col gap-5">
+            <div className="ticket-scroll flex-1 p-5 sm:p-6 flex flex-col gap-5">
               {renderTicketContent()}
             </div>
 
