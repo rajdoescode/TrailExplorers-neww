@@ -86,3 +86,75 @@
   animation-delay: 0.3s;
 }
 
+/* Banjara Float Mascot & Online Status Animations */
+@keyframes banjara-online {
+  0%, 100% {
+    box-shadow: 0 0 0 2px #14140f, 0 0 0 2px rgba(184, 255, 0, 0.65);
+  }
+  50% {
+    box-shadow: 0 0 0 2px #14140f, 0 0 0 7px rgba(184, 255, 0, 0);
+  }
+}
+
+@keyframes banjara-breathe {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.025, 1.035);
+  }
+}
+
+@keyframes banjara-hop {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  18% {
+    transform: translateY(4px) scale(1.06, 0.92);
+  }
+  45% {
+    transform: translateY(-16px) scale(0.96, 1.05);
+  }
+  75% {
+    transform: translateY(0) scale(1.04, 0.96);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+@keyframes banjara-wiggle {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(6deg);
+  }
+  60% {
+    transform: rotate(-4deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
+.animate-banjara-online {
+  animation: banjara-online 2.4s ease-in-out infinite;
+}
+
+.animate-banjara-breathe {
+  animation: banjara-breathe 3.2s ease-in-out infinite;
+}
+
+.animate-banjara-hop {
+  animation: banjara-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.animate-banjara-wiggle {
+  animation: banjara-wiggle 0.8s ease-in-out;
+}
+
+
