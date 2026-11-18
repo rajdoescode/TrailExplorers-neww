@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const REGIONS = [
   { name: "Ladakh", href: "/ladakh", icon: "/assets/images/destinations/icons/ladakh.png" },
@@ -11,30 +12,25 @@ const REGIONS = [
 
 export const RegionIcons: React.FC = () => {
   return (
-    <section
-      className="w-full bg-white pt-[clamp(40px,6vw,72px)] pb-[clamp(32px,4vw,56px)]"
-      aria-label="Destinations"
-    >
+    <section className="w-full bg-white py-8 sm:py-10" aria-label="Destinations">
       <div className="max-w-[1280px] mx-auto px-6">
-        <ul className="list-none m-0 p-0 flex flex-wrap justify-center items-center gap-[clamp(16px,4vw,56px)]">
+        <ul className="list-none m-0 p-0 flex flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-14">
           {REGIONS.map((region) => (
-            <li
-              key={region.name}
-              className="flex flex-col items-center gap-[14px] w-[clamp(96px,14vw,170px)] shrink-0"
-            >
+            <li key={region.name} className="flex flex-col items-center">
               <Link
                 href={region.href}
-                className="group flex flex-col items-center gap-[14px] w-full text-inherit no-underline"
+                className="group flex flex-col items-center gap-2.5 text-inherit no-underline"
               >
-                <span
-                  className="block w-full aspect-square bg-[#14140f] transition-transform duration-250 ease-out group-hover:-translate-y-1"
-                  style={{
-                    WebkitMask: `url('${region.icon}') center / contain no-repeat`,
-                    mask: `url('${region.icon}') center / contain no-repeat`,
-                  }}
-                  aria-hidden="true"
-                />
-                <span className="text-[clamp(12px,1.4vw,17px)] font-medium tracking-[0.12em] uppercase text-[#14140f] text-center">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-black bg-white flex items-center justify-center p-3 transition-transform duration-200 group-hover:scale-105 group-hover:shadow-sm">
+                  <Image
+                    src={region.icon}
+                    alt={region.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="text-sm font-semibold text-[#14140f] text-center">
                   {region.name}
                 </span>
               </Link>

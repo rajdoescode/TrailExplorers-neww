@@ -1,39 +1,37 @@
 import React from "react";
 import Link from "next/link";
 import { Snowflake, ArrowRight } from "lucide-react";
-import { Container } from "@/components/layout/Container";
 
 export const WinterStripHome: React.FC = () => {
   return (
-    <div className="w-full pb-6">
-      <Container>
+    <div className="w-full pb-8 pt-2">
+      <div className="max-w-[1280px] mx-auto px-6">
         <Link
           href="/winter-spiti"
-          className="group block w-full bg-[#14140f] text-white rounded-2xl p-4 sm:p-5 border-2 border-[#14140f] hover:border-[#d6ff3f] shadow-card hover:shadow-card-hover transition-all duration-300"
+          className="group flex items-center justify-between gap-4 p-2 sm:p-2.5 rounded-full bg-[#14140f] text-white hover:bg-black transition-all shadow-md"
         >
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="w-10 h-10 rounded-xl bg-white/10 text-[#d6ff3f] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#d6ff3f] group-hover:text-[#14140f] transition-all">
-                <Snowflake className="w-5 h-5 animate-pulse" />
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-                <span className="text-base sm:text-lg font-extrabold text-white tracking-tight">
-                  Winter Spiti is open
-                </span>
-                <span className="hidden sm:inline text-white/40">·</span>
-                <span className="text-xs sm:text-sm font-medium text-white/80">
-                  Fixed departures &amp; private 4x4 snow expeditions available now.
-                </span>
-              </div>
+          {/* Left Icon + Text */}
+          <div className="flex items-center gap-3.5 pl-1.5 sm:pl-2 min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#d6ff3f] text-[#14140f] flex items-center justify-center shrink-0">
+              <Snowflake className="w-5 h-5 stroke-[2.2]" />
             </div>
-
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#d6ff3f] shrink-0 group-hover:translate-x-1 transition-transform">
-              <span className="hidden md:inline">View Dates &amp; Details</span>
-              <ArrowRight className="w-4 h-4" />
+            <div className="text-[14px] sm:text-[15px] truncate">
+              <strong className="font-bold text-white">Winter Spiti is open</strong>
+              <span className="text-white/75 font-normal ml-1.5 hidden sm:inline">
+                · Group trips from Delhi · Nov - Mar · from ₹17,499
+              </span>
             </div>
           </div>
+
+          {/* Right Explore Button */}
+          <div className="shrink-0 pr-1">
+            <span className="inline-flex items-center gap-1.5 px-5 py-2 rounded-full bg-[#d6ff3f] text-[#14140f] text-xs sm:text-sm font-bold group-hover:bg-[#ccff00] transition-colors">
+              Explore
+              <ArrowRight className="w-4 h-4 stroke-[2.5] group-hover:translate-x-0.5 transition-transform" />
+            </span>
+          </div>
         </Link>
-      </Container>
+      </div>
     </div>
   );
 };
