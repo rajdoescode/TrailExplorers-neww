@@ -10,17 +10,19 @@ export const FloatingWidgets: React.FC = () => {
       {/* Banjara Avatar Trip Planner Launcher */}
       <Link
         href="/plan-your-trip"
-        className="w-13 h-13 rounded-2xl bg-[#14140f] border-2 border-[#d6ff3f] p-1 flex items-center justify-center shadow-[0_8px_24px_rgba(20,20,15,0.35)] hover:scale-110 active:scale-95 transition-all duration-200 group"
+        className="relative w-14 h-14 rounded-2xl bg-[#14140f] border-2 border-white/20 p-1 flex items-center justify-center shadow-[0_8px_24px_rgba(20,20,15,0.35)] hover:scale-110 active:scale-95 transition-all duration-200 group"
         aria-label="Plan your trip with Banjara"
       >
-        <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#14140f]">
+        <div className="relative w-full h-full rounded-xl overflow-hidden bg-[#1f201a]">
           <Image
-            src="/assets/images/mascot/banjara-face.webp"
+            src="/assets/images/mascot/banjara-sprite.webp"
             alt="Banjara Mascot"
             fill
-            className="object-cover group-hover:scale-105 transition-transform"
+            className="object-cover object-top scale-110 group-hover:scale-115 transition-transform"
           />
         </div>
+        {/* Online Status Dot */}
+        <span className="absolute bottom-1 right-1 w-3.5 h-3.5 bg-[#d6ff3f] rounded-full border-2 border-[#14140f] shadow-sm" />
       </Link>
 
       {/* Floating WhatsApp Button */}

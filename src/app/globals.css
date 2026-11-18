@@ -62,3 +62,27 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Plan Your Trip Banner typing animation */
+@keyframes pbc-dot {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+.pbc-dot-1 {
+  animation: pbc-dot 1.2s infinite ease-in-out;
+}
+.pbc-dot-2 {
+  animation: pbc-dot 1.2s infinite ease-in-out;
+  animation-delay: 0.15s;
+}
+.pbc-dot-3 {
+  animation: pbc-dot 1.2s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
+
