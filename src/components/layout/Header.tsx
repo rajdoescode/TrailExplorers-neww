@@ -84,26 +84,40 @@ export const Header: React.FC<HeaderProps> = () => {
             })}
           </nav>
 
-          {/* Right Action Badges (Exact 2 Black Circles) */}
+          {/* Right Action Badges */}
           <div className="hidden lg:flex items-center gap-[12px] shrink-0">
-            {/* Phone Call Circle */}
+            {/* Phone Call Button / Pill */}
             <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
               aria-label="Call Awara Banjara"
-              className="w-[40px] h-[40px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)] hover:scale-105 transition-transform"
+              className={cn(
+                "inline-flex items-center transition-all duration-200",
+                pathname === "/plan-your-trip"
+                  ? "gap-2.5 font-bold text-[15px] text-[#14140f] hover:opacity-85"
+                  : "w-[40px] h-[40px] rounded-full bg-[#14140f] text-white justify-center shadow-[0_4px_12px_rgba(20,20,15,0.15)] hover:scale-105"
+              )}
             >
-              <Phone className="w-[18px] h-[18px] text-white stroke-[2.2]" />
+              <span className="w-[40px] h-[40px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]">
+                <Phone className="w-[18px] h-[18px] text-white stroke-[2.2]" />
+              </span>
+              {pathname === "/plan-your-trip" && (
+                <span className="font-bold text-[15px] tracking-tight text-[#14140f] whitespace-nowrap">
+                  +91- 9103910523
+                </span>
+              )}
             </a>
 
-            {/* Search Circle */}
-            <button
-              type="button"
-              onClick={() => setSearchOpen(true)}
-              aria-label="Search itineraries"
-              className="w-[40px] h-[40px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)] hover:scale-105 transition-transform cursor-pointer border-none"
-            >
-              <Search className="w-[18px] h-[18px] text-white stroke-[2.2]" />
-            </button>
+            {/* Search Circle (hidden on plan-your-trip to match screenshot) */}
+            {pathname !== "/plan-your-trip" && (
+              <button
+                type="button"
+                onClick={() => setSearchOpen(true)}
+                aria-label="Search itineraries"
+                className="w-[40px] h-[40px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)] hover:scale-105 transition-transform cursor-pointer border-none"
+              >
+                <Search className="w-[18px] h-[18px] text-white stroke-[2.2]" />
+              </button>
+            )}
           </div>
 
           {/* Mobile Right Controls */}

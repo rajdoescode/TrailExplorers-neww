@@ -157,4 +157,43 @@
   animation: banjara-wiggle 0.8s ease-in-out;
 }
 
+/* Trip Chat animations */
+@keyframes pc-pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+    transform-origin: left bottom;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-pc-pop {
+  animation: pc-pop 0.35s cubic-bezier(0.2, 0.8, 0.3, 1.2) both;
+}
+
+@keyframes pc-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+.pc-bounce-1 {
+  animation: pc-bounce 1.2s infinite ease-in-out;
+}
+.pc-bounce-2 {
+  animation: pc-bounce 1.2s infinite ease-in-out;
+  animation-delay: 0.15s;
+}
+.pc-bounce-3 {
+  animation: pc-bounce 1.2s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
+
+
 

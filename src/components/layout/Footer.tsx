@@ -1,11 +1,25 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Instagram, Youtube, Facebook, Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SITE_CONFIG } from "@/data/site-config";
 
 export const Footer: React.FC = () => {
+  const pathname = usePathname();
+
+  // On /plan-your-trip, only the sleek minimal copyright line appears on top of the mountain backdrop
+  if (pathname === "/plan-your-trip") {
+    return (
+      <footer className="w-full py-5 text-center text-xs text-white/60 tracking-wider bg-transparent border-0 select-none">
+        © 2026 Awara Banjara · Made in India ✦
+      </footer>
+    );
+  }
+
   return (
     <footer className="bg-[#14140f] text-white pt-16 pb-12 border-t border-white/10">
       <Container>
