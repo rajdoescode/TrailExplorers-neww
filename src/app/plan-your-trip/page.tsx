@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import {
   ArrowUp,
@@ -1170,7 +1171,7 @@ export default function PlanYourTripPage() {
                             : "border-transparent hover:border-gray-300"
                         }`}
                       >
-                        <Image
+                        <SkeletonImage
                           src={reg.image}
                           alt={reg.name}
                           fill
@@ -1984,7 +1985,7 @@ export default function PlanYourTripPage() {
             {/* Chat Header */}
             <div className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3 border-b border-[#e8e8e0] shrink-0 bg-white">
               <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
-                <Image
+                <SkeletonImage
                   src="/assets/images/mascot/explorer-face.webp"
                   alt="Trip Planner Avatar"
                   fill
@@ -2060,7 +2061,7 @@ export default function PlanYourTripPage() {
                         onClick={() => handleSelectTrip(start)}
                         className="relative shrink-0 min-w-[124px] w-[124px] h-[124px] sm:min-w-0 sm:w-auto sm:aspect-[4/5] sm:min-h-[190px] rounded-[16px] sm:rounded-[18px] overflow-hidden p-0 text-left bg-[#14140f] text-white shadow-[0_10px_24px_-14px_rgba(20,20,15,0.6)] hover:-translate-y-1 transition-all duration-200 group cursor-pointer border-none"
                       >
-                        <Image
+                        <SkeletonImage
                           src={start.image}
                           alt={start.title}
                           fill
@@ -2100,7 +2101,7 @@ export default function PlanYourTripPage() {
                     {/* Bot Avatar Icon: only shown for active conversation bot replies */}
                     {msg.sender === "bot" && !isInitialBotMsg && (
                       <div className="w-7 h-7 rounded-full bg-[#14140f] overflow-hidden shrink-0 mb-1 border border-[#14140f] shadow-xs relative">
-                        <Image
+                        <SkeletonImage
                           src="/assets/images/mascot/explorer-face.webp"
                           alt="Trip Planner"
                           fill

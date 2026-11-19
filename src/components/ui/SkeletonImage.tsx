@@ -51,6 +51,12 @@ export const SkeletonImage: React.FC<SkeletonImageProps> = ({
       : `/${src}`
     : src;
 
+  // Auto-detect animated webp or gif to avoid Next.js unoptimized warning
+  const isAnimatedAsset =
+    typeof imageSrc === "string" &&
+    (imageSrc.includes("escape-ordinary.webp") || imageSrc.endsWith(".gif"));
+  const isUnoptimized = props.unoptimized ?? (isAnimatedAsset ? true : undefined);
+
   // Check if image is already cached/complete on mount
   useEffect(() => {
     if (imgRef.current && imgRef.current.complete) {
@@ -119,6 +125,7 @@ export const SkeletonImage: React.FC<SkeletonImageProps> = ({
           alt={alt || "Image"}
           fill
           priority={priority}
+          unoptimized={isUnoptimized}
           sizes={sizes || "(max-width: 768px) 100vw, 1200px"}
           className={cn(
             className,
@@ -182,6 +189,7 @@ export const SkeletonImage: React.FC<SkeletonImageProps> = ({
         width={width}
         height={height}
         priority={priority}
+        unoptimized={isUnoptimized}
         sizes={sizes}
         className={cn(
           className,

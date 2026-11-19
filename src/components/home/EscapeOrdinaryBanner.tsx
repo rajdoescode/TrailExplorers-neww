@@ -13,6 +13,7 @@ export const EscapeOrdinaryBanner: React.FC = () => {
               alt="Escape the ordinary"
               fill
               priority
+              unoptimized
               sizes="(max-width: 1280px) 100vw, 1280px"
               className="object-cover"
               skeletonClassName="rounded-[24px] sm:rounded-[28px]"

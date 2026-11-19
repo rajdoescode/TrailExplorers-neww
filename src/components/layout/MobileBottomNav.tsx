@@ -14,8 +14,8 @@ export const MobileBottomNav: React.FC = () => {
   }
 
   const isHomeActive = pathname === "/";
-  const isTripsActive = pathname === "/community-trips";
-  const isPackagesActive = pathname === "/tour-packages";
+  const isTripsActive = pathname === "/community-trips" || pathname.startsWith("/community-trips/");
+  const isPackagesActive = pathname === "/tour-packages" || pathname.startsWith("/tour-packages/");
 
   return (
     <nav
@@ -32,28 +32,39 @@ export const MobileBottomNav: React.FC = () => {
           href="/"
           className={cn(
             "flex flex-col items-center justify-center flex-1 h-full py-1 transition-all active:scale-95 group",
-            isHomeActive ? "text-[#111827]" : "text-[#4b5563] hover:text-[#111827]"
+            isHomeActive ? "text-[#111827]" : "text-[#6b7280] hover:text-[#111827]"
           )}
           aria-label="Home"
         >
-          <svg
-            className={cn(
-              "w-6 h-6 transition-transform group-hover:scale-105",
-              isHomeActive ? "stroke-[2.4]" : "stroke-[2.1]"
-            )}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M3 10.5L12 3l9 7.5" />
-            <path d="M5.5 9v11.5h4v-5a2.5 2.5 0 0 1 5 0v5h4V9" />
-          </svg>
+          {isHomeActive ? (
+            <svg
+              className="w-6 h-6 transition-transform group-hover:scale-105"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M12 3L2 11h3v9a1 1 0 0 0 1 1h4v-5a2 2 0 0 1 4 0v5h4a1 1 0 0 0 1-1v-9h3L12 3z" />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 transition-transform group-hover:scale-105 stroke-[2]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 10.5L12 3l9 7.5" />
+              <path d="M5.5 9v11.5h4v-5a2.5 2.5 0 0 1 5 0v5h4V9" />
+            </svg>
+          )}
           <span
             className={cn(
               "text-[10.5px] mt-1 tracking-tight leading-none",
-              isHomeActive ? "font-bold text-[#111827]" : "font-semibold text-[#111827]"
+              isHomeActive
+                ? "font-bold text-[#111827]"
+                : "font-medium text-[#6b7280] group-hover:text-[#111827]"
             )}
           >
             Home
@@ -65,28 +76,43 @@ export const MobileBottomNav: React.FC = () => {
           href="/community-trips"
           className={cn(
             "flex flex-col items-center justify-center flex-1 h-full py-1 transition-all active:scale-95 group",
-            isTripsActive ? "text-[#111827]" : "text-[#4b5563] hover:text-[#111827]"
+            isTripsActive ? "text-[#111827]" : "text-[#6b7280] hover:text-[#111827]"
           )}
           aria-label="Trips"
         >
-          <svg
-            className={cn(
-              "w-6 h-6 transition-transform group-hover:scale-105",
-              isTripsActive ? "text-[#111827]" : "text-[#111827]"
-            )}
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12.5 8 12.5s8-7.25 8-12.5c0-4.42-3.58-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
-            />
-          </svg>
+          {isTripsActive ? (
+            <svg
+              className="w-6 h-6 transition-transform group-hover:scale-105"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 12.5 8 12.5s8-7.25 8-12.5c0-4.42-3.58-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+              />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 transition-transform group-hover:scale-105 stroke-[2]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          )}
           <span
             className={cn(
               "text-[10.5px] mt-1 tracking-tight leading-none",
-              isTripsActive ? "font-bold text-[#111827]" : "font-semibold text-[#111827]"
+              isTripsActive
+                ? "font-bold text-[#111827]"
+                : "font-medium text-[#6b7280] group-hover:text-[#111827]"
             )}
           >
             Trips
@@ -152,27 +178,42 @@ export const MobileBottomNav: React.FC = () => {
           href="/tour-packages"
           className={cn(
             "flex flex-col items-center justify-center flex-1 h-full py-1 transition-all active:scale-95 group",
-            isPackagesActive ? "text-[#111827]" : "text-[#4b5563] hover:text-[#111827]"
+            isPackagesActive ? "text-[#111827]" : "text-[#6b7280] hover:text-[#111827]"
           )}
           aria-label="Packages"
         >
-          <svg
-            className={cn(
-              "w-6 h-6 transition-transform group-hover:scale-105",
-              isPackagesActive ? "stroke-[2.4]" : "stroke-[2.1]"
-            )}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.6-.1-1.2.2-1.5.7l-.6 1 5.8 3.5-3 3-2.2-.4c-.4-.1-.8.1-1 .4l-.6.9 3.2 2 2 3.2.9-.6c.3-.2.5-.6.4-1l-.4-2.2 3-3 3.5 5.8 1-.6c.5-.3.8-.9.7-1.5z" />
-          </svg>
+          {isPackagesActive ? (
+            <svg
+              className="w-6 h-6 transition-transform group-hover:scale-105"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              stroke="currentColor"
+              strokeWidth="0.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.6-.1-1.2.2-1.5.7l-.6 1 5.8 3.5-3 3-2.2-.4c-.4-.1-.8.1-1 .4l-.6.9 3.2 2 2 3.2.9-.6c.3-.2.5-.6.4-1l-.4-2.2 3-3 3.5 5.8 1-.6c.5-.3.8-.9.7-1.5z" />
+            </svg>
+          ) : (
+            <svg
+              className="w-6 h-6 transition-transform group-hover:scale-105 stroke-[2]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.6-.1-1.2.2-1.5.7l-.6 1 5.8 3.5-3 3-2.2-.4c-.4-.1-.8.1-1 .4l-.6.9 3.2 2 2 3.2.9-.6c.3-.2.5-.6.4-1l-.4-2.2 3-3 3.5 5.8 1-.6c.5-.3.8-.9.7-1.5z" />
+            </svg>
+          )}
           <span
             className={cn(
               "text-[10.5px] mt-1 tracking-tight leading-none",
-              isPackagesActive ? "font-bold text-[#111827]" : "font-semibold text-[#111827]"
+              isPackagesActive
+                ? "font-bold text-[#111827]"
+                : "font-medium text-[#6b7280] group-hover:text-[#111827]"
             )}
           >
             Packages

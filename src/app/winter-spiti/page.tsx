@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { TRIPS_DATA } from "@/data/trips";
 import { TripCard } from "@/components/trips/TripCard";
@@ -75,7 +76,7 @@ export default function WinterSpitiPage() {
           </nav>
 
           <div className="relative w-[clamp(80px,10vw,120px)] h-auto aspect-square mb-3.5">
-            <Image
+            <SkeletonImage
               src="/assets/images/destinations/icons/spiti.png"
               alt="Winter Spiti"
               fill
@@ -139,7 +140,7 @@ export default function WinterSpitiPage() {
               href={`/trips/${gatewayTrip.slug || "spiti-tours-spiti-valley-group-trip-from-delhi-winter-expedition-9-days-1790411548930"}`}
               className="relative min-h-[260px] sm:min-h-[320px] block"
             >
-              <Image
+              <SkeletonImage
                 src={gatewayTrip.image_url || "/assets/images/trips/trip_103_image_url.jpg"}
                 alt={gatewayTrip.title}
                 fill
@@ -402,7 +403,7 @@ export default function WinterSpitiPage() {
 
           <div className="relative z-10 shrink-0 flex items-center justify-center order-first md:order-last">
             <div className="relative w-[110px] sm:w-[clamp(160px,22vw,240px)] aspect-square filter invert opacity-90">
-              <Image
+              <SkeletonImage
                 src="/assets/images/destinations/icons/spiti.png"
                 alt="Winter Spiti"
                 fill

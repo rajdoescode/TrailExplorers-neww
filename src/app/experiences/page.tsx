@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EXPERIENCES_DATA } from "@/data/experiences";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 
 export const metadata: Metadata = {
   title: "Travel Experiences: Festivals & Himalayan Expeditions | Trail Explorers",
@@ -69,12 +70,13 @@ export default function ExperiencesPage() {
               {EXPERIENCES_DATA.map((trip) => (
                 <article key={trip.id} className="trip-card">
                   <div className="thumb">
-                    <Link href={trip.detailUrl}>
-                      <img
+                    <Link href={trip.detailUrl} className="relative block w-full h-full">
+                      <SkeletonImage
                         src={trip.image}
                         alt={trip.title}
-                        loading="lazy"
-                        decoding="async"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
                     </Link>
                   </div>

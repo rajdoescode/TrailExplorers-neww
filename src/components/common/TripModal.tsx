@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface TripModalDetail {
@@ -184,14 +185,14 @@ export const TripModal: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.15fr] p-3.5 sm:p-4 gap-3 sm:gap-5 max-h-[85dvh] overflow-y-auto md:max-h-none md:overflow-visible pb-[calc(18px+env(safe-area-inset-bottom,0px))] md:pb-4">
             {/* Left Side: Visual Destination Card */}
             <div className="relative rounded-[18px] overflow-hidden min-h-[170px] sm:min-h-[190px] md:min-h-[440px] bg-[#14140f]">
-              <img
-                id="modalDestImg"
+              <SkeletonImage
+                key={imageSrc}
                 src={imageSrc}
                 alt={title}
-                className="w-full h-full object-cover block absolute inset-0"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "/assets/images/home/escape-ordinary.webp";
-                }}
+                fill
+                className="object-cover"
+                fallbackSrc="/assets/images/home/escape-ordinary.webp"
+                sizes="(max-width: 768px) 100vw, 400px"
               />
               {/* Scrim gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/75 pointer-events-none z-[1]" />

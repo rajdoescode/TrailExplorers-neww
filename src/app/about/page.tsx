@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Heading, Paragraph } from "@/components/ui/Heading";
@@ -73,14 +74,14 @@ export default function AboutPage() {
           >
             <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-[20px] overflow-hidden shrink-0 border-2 border-[#14140f]">
-                <Image
+                <SkeletonImage
                   src="/assets/images/about/founder-viru.jpg"
                   alt="Viru Thakur - Founder of Trail Explorers"
                   fill
                   sizes="(max-width: 640px) 144px, 176px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute bottom-2 left-2 bg-[#14140f]/80 backdrop-blur-xs text-white text-[11px] font-bold px-2 py-0.5 rounded-full">
+                <span className="absolute bottom-2 left-2 bg-[#14140f]/80 backdrop-blur-xs text-white text-[11px] font-bold px-2 py-0.5 rounded-full z-10">
                   📍 Manali
                 </span>
               </div>
@@ -110,7 +111,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#14140f] shadow-card">
-              <Image
+              <SkeletonImage
                 src="/assets/images/about/community-group.jpg"
                 alt="Trail Explorers Campfire Community"
                 fill

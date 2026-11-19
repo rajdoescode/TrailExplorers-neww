@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { usePathname } from "next/navigation";
 import { Phone, Search, Menu, X, ArrowUpRight, MapPin, Sparkles, ChevronRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
@@ -458,14 +459,13 @@ export const Header: React.FC<HeaderProps> = () => {
                         >
                           <div className="flex items-center gap-3 min-w-0">
                             <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-[#e2e6ec] shrink-0">
-                              <img
+                              <SkeletonImage
                                 src={trip.image_url || "/assets/images/home/hero-poster.jpg"}
                                 alt={trip.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                onError={(e) => {
-                                  (e.currentTarget as HTMLImageElement).src =
-                                    "/assets/images/home/hero-poster.jpg";
-                                }}
+                                fill
+                                sizes="44px"
+                                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                fallbackSrc="/assets/images/home/hero-poster.jpg"
                               />
                             </div>
                             <div className="flex flex-col min-w-0">

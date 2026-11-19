@@ -201,6 +201,22 @@ export const COMMUNITY_TRIPS: CommunityTrip[] = [
     route: "Udaipur — Lake Pichola — City Palace — Kumbhalgarh Fort — Saheliyon Ki Bari — Fateh Sagar Lake",
     tags: "Royal Rajasthan, Cultural Tour, Weekend Getaway, Forts & Palaces, Lake City",
   },
+  {
+    id: "1786216631459",
+    title: "6 Days Kashmir Snow Experience: Gulmarg Gondola & Houseboat Stay",
+    slug: "6-days-kashmir-snow-experience-gulmarg-gondola-houseboat-stay-1786216631459",
+    detailUrl: "/trips/6-days-kashmir-snow-experience-gulmarg-gondola-houseboat-stay-1786216631459",
+    duration: "6 Days / 5 Nights",
+    price: null,
+    priceDisplay: "On Request",
+    priceLabel: "Price",
+    image: "/assets/images/trips/img_1786216504243_img_1786216398063_Gulmarg__A_delight_for_travelers_on_a_wanderlust_.jpg",
+    isComingSoon: false,
+    categories: ["kashmir_tours"],
+    destinations: ["Kashmir", "Srinagar", "Gulmarg", "Pahalgam", "Drung", "Aru Valley"],
+    route: "Srinagar — Gulmarg — Drung — Pahalgam — Aru Valley — Betaab Valley — Chandanwari — Srinagar",
+    tags: "Winter Expedition, Snow Experience, Houseboat Stay, Valley Exploration, Kashmir",
+  },
 ];
 
 export const COMMUNITY_CATEGORIES: CommunityCategoryOption[] = [
@@ -251,6 +267,12 @@ export const COMMUNITY_SECTIONS: CommunitySection[] = [
     title: "Himachal Tours",
     categoryKey: "himachal_tours",
     tripIds: ["1793300342070", "1790411548930", "1789277670644", "108", "118", "103", "120"],
+  },
+  {
+    id: "kashmir-tours",
+    title: "Kashmir Tours",
+    categoryKey: "kashmir_tours",
+    tripIds: ["1786216631459"],
   },
   {
     id: "ladakh-tours",

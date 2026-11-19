@@ -1,10 +1,18 @@
 import React from "react";
 
-export const CommunityTripsHero: React.FC = () => {
+export interface CommunityTripsHeroProps {
+  title?: string;
+  subtitle?: string;
+}
+
+export const CommunityTripsHero: React.FC<CommunityTripsHeroProps> = ({
+  title = "Community Trips",
+  subtitle = "Immersive Travel, More human connection.",
+}) => {
   return (
     <div className="packages-hero">
-      <h1>Community Trips</h1>
-      <p>Immersive Travel, More human connection.</p>
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
     </div>
   );
 };

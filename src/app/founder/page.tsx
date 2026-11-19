@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { Container } from "@/components/layout/Container";
 import { Heading, Paragraph } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
@@ -31,7 +32,7 @@ export default function FounderPage() {
         <Container size="narrow">
           <div className="flex flex-col md:flex-row gap-10 items-start mb-12">
             <div className="relative w-full md:w-72 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-[#14140f] shadow-card shrink-0 mx-auto">
-              <Image
+              <SkeletonImage
                 src="/assets/images/about/founder-viru.jpg"
                 alt="Viru Thakur - Founder of Trail Explorers"
                 fill

@@ -294,15 +294,13 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
 
           <div className="relative shrink-0 flex items-center justify-center">
             <div className="relative w-36 h-36 sm:w-44 sm:h-44">
-              <Image
+              <SkeletonImage
                 src="/assets/images/mascot/explorer-standing.webp"
                 alt="Trail Explorers Trip Planner"
                 fill
                 sizes="(max-width: 640px) 144px, 176px"
                 className="object-contain"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "/assets/images/mascot/explorer-face.webp";
-                }}
+                fallbackSrc="/assets/images/mascot/explorer-face.webp"
               />
             </div>
           </div>
@@ -369,7 +367,7 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
 
           <div className="relative z-10 shrink-0 flex items-center justify-center order-first md:order-last">
             <div className="relative w-[110px] sm:w-[clamp(160px,22vw,240px)] aspect-square filter invert opacity-90">
-              <Image
+              <SkeletonImage
                 src={iconSrc}
                 alt={regionName}
                 fill

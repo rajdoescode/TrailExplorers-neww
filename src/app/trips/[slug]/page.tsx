@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Container } from "@/components/layout/Container";
@@ -725,16 +726,21 @@ export default function TripDetailPage() {
 
           {/* LEFT COLUMN: Dynamic Hero Card */}
           <div
-            className="booking-popup-hero"
+            className="booking-popup-hero relative overflow-hidden"
             id="bookingPopupHero"
-            style={{
-              backgroundImage: `url(${trip.image_url || "/assets/images/home/hero-poster.jpg"})`,
-            }}
           >
-            <h2 className="booking-popup-headline">
+            <SkeletonImage
+              src={trip.image_url || "/assets/images/home/hero-poster.jpg"}
+              alt={trip.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 400px"
+              containerClassName="absolute inset-0 z-0"
+            />
+            <h2 className="booking-popup-headline relative z-10">
               Escape the<br />ordinary.
             </h2>
-            <div className="booking-popup-badge" id="bookingHeroBadge">
+            <div className="booking-popup-badge relative z-10" id="bookingHeroBadge">
               <div style={{ fontSize: "11px", opacity: 0.85, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>
                 Selected Batch
               </div>
