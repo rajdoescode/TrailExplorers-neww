@@ -206,10 +206,21 @@ export function getTripWeather(trip: Trip): WeatherInfo {
  * Extract full gallery of photos for a trip
  */
 export function getTripGallery(trip: Trip): string[] {
+  // If trip has full 5-bento set (like Spiti), preserve that exact 5-tile arrangement
+  if (trip.bento_img_1 && trip.bento_img_2 && trip.bento_img_3 && trip.bento_img_4 && trip.bento_img_5) {
+    return [
+      trip.bento_img_1,
+      trip.bento_img_2,
+      trip.bento_img_3,
+      trip.bento_img_4,
+      trip.bento_img_5,
+    ].map((u) => (u.startsWith("/") || u.startsWith("http") ? u : `/${u}`));
+  }
+
   const list: string[] = [];
   if (trip.image_url) list.push(trip.image_url);
-  if (trip.bento_img_1) list.push(trip.bento_img_1);
   if (trip.bento_img_2) list.push(trip.bento_img_2);
+  if (trip.bento_img_1) list.push(trip.bento_img_1);
   if (trip.bento_img_3) list.push(trip.bento_img_3);
   if (trip.bento_img_4) list.push(trip.bento_img_4);
   if (trip.bento_img_5) list.push(trip.bento_img_5);

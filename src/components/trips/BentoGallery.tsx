@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface BentoGalleryProps {
   images: string[];
@@ -10,11 +10,12 @@ interface BentoGalleryProps {
 }
 
 export function BentoGallery({ images, title }: BentoGalleryProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
 
   const totalPhotos = images.length;
-  const displayImages = images.slice(0, 5);
+  const isFiveTileBento = totalPhotos === 5;
 
   const openLightbox = (idx: number) => {
     setActiveIdx(idx);
@@ -49,68 +50,158 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
   }, [lightboxOpen, nextPhoto, prevPhoto]);
 
   return (
-    <section className="relative w-full py-4 bg-white border-b border-[#e2e2dc]">
+    <section className="relative w-full py-4 sm:py-6 bg-white border-b border-[#e2e2dc]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Bento Grid */}
-        <div className="relative rounded-2xl overflow-hidden border border-[#e2e2dc] bg-[#f6f6f1] h-[340px] sm:h-[420px] md:h-[460px]">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-2 h-full p-2">
-            {/* Primary Main Photo (col-span-2 or 3) */}
+        {/* CASE A: EXACT 5-PHOTO BENTO (Spiti Valley - Screenshots 1 & 2) */}
+        {isFiveTileBento ? (
+          <div className="relative">
             <div
-              onClick={() => openLightbox(0)}
-              className="md:col-span-2 lg:col-span-3 relative h-full rounded-xl overflow-hidden cursor-pointer group bg-[#e8e8e2]"
+              className={`relative grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 transition-all duration-500 ${
+                isExpanded
+                  ? "h-[480px] sm:h-[540px]"
+                  : "h-[380px] sm:h-[440px] overflow-hidden"
+              }`}
             >
-              <Image
-                src={displayImages[0] || "/assets/images/home/hero-poster.jpg"}
-                alt={`${title} - Main photo`}
-                fill
-                priority
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+              {/* Column 1 (Left Tall Tile) */}
+              <div
+                onClick={() => openLightbox(0)}
+                className="relative h-full rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
+              >
+                <Image
+                  src={images[0]}
+                  alt={`${title} - Photo 1`}
+                  fill
+                  priority
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+              </div>
+
+              {/* Column 2 (Stacked 2 Tiles) */}
+              <div className="flex flex-col gap-3 sm:gap-4 h-full">
+                <div
+                  onClick={() => openLightbox(1)}
+                  className="relative flex-1 rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
+                >
+                  <Image
+                    src={images[1]}
+                    alt={`${title} - Photo 2`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                </div>
+                <div
+                  onClick={() => openLightbox(2)}
+                  className="relative flex-1 rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
+                >
+                  <Image
+                    src={images[2]}
+                    alt={`${title} - Photo 3`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                </div>
+              </div>
+
+              {/* Column 3 (Middle-Right Tall Tile) */}
+              <div
+                onClick={() => openLightbox(3)}
+                className="relative h-full rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
+              >
+                <Image
+                  src={images[3]}
+                  alt={`${title} - Photo 4`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+              </div>
+
+              {/* Column 4 (Right Tall Tile) */}
+              <div
+                onClick={() => openLightbox(4)}
+                className="relative h-full rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
+              >
+                <Image
+                  src={images[4]}
+                  alt={`${title} - Photo 5`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+              </div>
             </div>
 
-            {/* Right Stack (2 images on medium, or hidden on small) */}
-            <div className="hidden md:grid grid-rows-2 gap-2 h-full lg:col-span-1">
-              <div
-                onClick={() => openLightbox(1)}
-                className="relative h-full rounded-xl overflow-hidden cursor-pointer group bg-[#e8e8e2]"
+            {/* Bottom Gradient Fade when collapsed */}
+            {!isExpanded && (
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/95 via-white/60 to-transparent pointer-events-none rounded-b-2xl" />
+            )}
+
+            {/* Centered Show all / Show fewer Button */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
+              <button
+                type="button"
+                onClick={() => setIsExpanded((prev) => !prev)}
+                className="inline-flex items-center justify-center bg-[#14140f] text-[#d6ff3f] hover:bg-black px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-lg transition-all hover:scale-105 cursor-pointer font-heading tracking-wide border border-[#14140f]"
               >
-                <Image
-                  src={displayImages[1] || displayImages[0]}
-                  alt={`${title} - Photo 2`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-              </div>
-              <div
-                onClick={() => openLightbox(2)}
-                className="relative h-full rounded-xl overflow-hidden cursor-pointer group bg-[#e8e8e2]"
-              >
-                <Image
-                  src={displayImages[2] || displayImages[0]}
-                  alt={`${title} - Photo 3`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
-              </div>
+                {isExpanded ? "Show fewer photos" : `Show all ${totalPhotos} photos`}
+              </button>
             </div>
           </div>
+        ) : (
+          /* CASE B: MULTI-PHOTO GALLERY WALL (Naggar 16 photos - Screenshots 3, 4, 5) */
+          <div className="relative">
+            <div
+              className={`grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 transition-all duration-500 ${
+                isExpanded ? "max-h-none" : "max-h-[460px] overflow-hidden relative"
+              }`}
+            >
+              {images.map((img, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => openLightbox(idx)}
+                  className="relative h-[200px] sm:h-[260px] rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
+                >
+                  <Image
+                    src={img}
+                    alt={`${title} - Photo ${idx + 1}`}
+                    fill
+                    loading={idx < 4 ? "eager" : "lazy"}
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                </div>
+              ))}
+            </div>
 
-          {/* Show all photos Button Pill */}
-          <button
-            type="button"
-            onClick={() => openLightbox(0)}
-            className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 inline-flex items-center gap-2 bg-[#14140f]/90 hover:bg-[#14140f] text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg backdrop-blur-sm transition-all hover:scale-105 cursor-pointer"
-          >
-            <Camera className="w-4 h-4 text-[#d6ff3f]" />
-            <span>Show all {totalPhotos} photos</span>
-          </button>
-        </div>
+            {/* Bottom Gradient Fade when collapsed */}
+            {!isExpanded && (
+              <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/80 to-transparent pointer-events-none rounded-b-2xl z-10" />
+            )}
+
+            {/* Centered Show all / Show fewer Button */}
+            <div
+              className={
+                isExpanded
+                  ? "mt-6 flex justify-center"
+                  : "absolute bottom-4 left-1/2 -translate-x-1/2 z-20"
+              }
+            >
+              <button
+                type="button"
+                onClick={() => setIsExpanded((prev) => !prev)}
+                className="inline-flex items-center justify-center bg-[#14140f] text-[#d6ff3f] hover:bg-black px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold shadow-lg transition-all hover:scale-105 cursor-pointer font-heading tracking-wide border border-[#14140f]"
+              >
+                {isExpanded ? "Show fewer photos" : `Show all ${totalPhotos} photos`}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* Fullscreen Lightbox Modal */}
+      {/* FULLSCREEN LIGHTBOX MODAL (When any photo tile is clicked) */}
       {lightboxOpen && (
         <div
           role="dialog"
@@ -120,12 +211,15 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
           {/* Top Bar */}
           <div className="flex items-center justify-between text-white z-10 pb-3 border-b border-white/10">
             <div>
-              <h3 className="text-sm sm:text-base font-bold text-white truncate max-w-md">{title}</h3>
-              <p className="text-xs text-white/70">
+              <h3 className="text-sm sm:text-base font-bold text-white truncate max-w-md">
+                {title}
+              </h3>
+              <p className="text-xs text-[#d6ff3f] font-semibold mt-0.5">
                 Photo {activeIdx + 1} of {totalPhotos}
               </p>
             </div>
             <button
+              type="button"
               onClick={closeLightbox}
               className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
               aria-label="Close lightbox"
@@ -146,7 +240,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
               />
             </div>
 
-            {/* Prev / Next Buttons */}
+            {/* Prev / Next Navigation Buttons */}
             {totalPhotos > 1 && (
               <>
                 <button
@@ -176,17 +270,19 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
           </div>
 
           {/* Bottom Thumbnails Strip */}
-          <div className="flex items-center justify-center gap-2 overflow-x-auto py-2 z-10 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-2 overflow-x-auto py-2 z-10 max-w-4xl mx-auto no-scrollbar">
             {images.map((img, idx) => (
               <button
                 key={idx}
                 type="button"
                 onClick={() => setActiveIdx(idx)}
                 className={`relative w-14 h-12 sm:w-16 sm:h-14 rounded-lg overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
-                  activeIdx === idx ? "border-[#d6ff3f] scale-105" : "border-transparent opacity-50 hover:opacity-100"
+                  activeIdx === idx
+                    ? "border-[#d6ff3f] scale-105"
+                    : "border-transparent opacity-50 hover:opacity-100"
                 }`}
               >
-                <Image src={img} alt={`Thumb ${idx + 1}`} fill className="object-cover" />
+                <Image src={img} alt={`Thumbnail ${idx + 1}`} fill className="object-cover" />
               </button>
             ))}
           </div>
