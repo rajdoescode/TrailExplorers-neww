@@ -145,6 +145,9 @@ export const ReviewsSection: React.FC = () => {
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
+                      width="16"
+                      height="16"
+                      style={{ width: "16px", height: "16px" }}
                       viewBox="0 0 24 24"
                       className="w-4 h-4 fill-[#facc15]"
                     >

@@ -42,6 +42,9 @@ export const CommunityTripCard: React.FC<CommunityTripCardProps> = ({ trip }) =>
         </h3>
         <div className="meta">
           <svg
+            width="14"
+            height="14"
+            style={{ width: "14px", height: "14px" }}
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

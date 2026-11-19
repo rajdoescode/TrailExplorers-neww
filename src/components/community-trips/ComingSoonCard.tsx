@@ -23,7 +23,13 @@ export const ComingSoonCard: React.FC<ComingSoonCardProps> = ({ trip }) => {
           }}
         />
         <span className="coming-soon-pill">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            width="14"
+            height="14"
+            style={{ width: "14px", height: "14px" }}
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <circle cx="12" cy="12" r="9" />
             <path d="M12 7v5l3 2" />
           </svg>
@@ -35,6 +41,9 @@ export const ComingSoonCard: React.FC<ComingSoonCardProps> = ({ trip }) => {
         <div className="coming-soon-blur" aria-hidden="true">
           <div className="meta">
             <svg
+              width="14"
+              height="14"
+              style={{ width: "14px", height: "14px" }}
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Button } from "@/components/ui/Button";
@@ -49,7 +49,25 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
   };
 
   return (
-    <div className="w-full bg-white p-4 sm:p-5 rounded-2xl border border-[#e0e0d8] shadow-[0_4px_16px_rgba(0,0,0,0.04)] mb-8">
+    <div className="w-full bg-white p-4 sm:p-5 rounded-2xl border border-[#e0e0d8] shadow-[0_4px_16px_rgba(0,0,0,0.04)] mb-8 relative">
+      {/* Cross Icon Clear Button (Top-Right of the filter card) */}
+      {isFiltered && (
+        <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3.5 z-20">
+          <Button
+            id="resetFiltersBtn"
+            type="button"
+            variant="dark"
+            size="icon"
+            onClick={onResetFilters}
+            title="Clear all filters"
+            aria-label="Clear all filters"
+            className="w-7 h-7 min-w-7 min-h-7 rounded-full bg-[#14140f] text-white hover:bg-[#d6ff3f] hover:text-[#14140f] border-0 shadow-xs transition-transform duration-200 hover:rotate-90 p-0 flex items-center justify-center cursor-pointer"
+          >
+            <X className="w-3.5 h-3.5 stroke-[2.5]" />
+          </Button>
+        </div>
+      )}
+
       <form
         onSubmit={handleSearchSubmit}
         className="w-full flex flex-col lg:flex-row items-stretch lg:items-end gap-3"
@@ -126,23 +144,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
           />
         </div>
 
-        {/* 6. Clear Filters Button (shown when active) using UI Button component */}
-        {isFiltered && (
-          <div className="shrink-0 flex items-end">
-            <Button
-              id="resetFiltersBtn"
-              type="button"
-              variant="secondary"
-              size="md"
-              onClick={onResetFilters}
-              className="h-[44px] px-4 rounded-xl text-xs font-extrabold whitespace-nowrap bg-[#14140f] text-[#b8ff00] border-2 border-[#14140f] hover:bg-black shadow-sm"
-            >
-              ↻ Clear
-            </Button>
-          </div>
-        )}
-
-        {/* 7. Results Count Badge using UI Badge component */}
+        {/* 6. Results Count Badge using UI Badge component */}
         <div className="shrink-0 flex items-end">
           <Badge
             id="filterResultsBadge"

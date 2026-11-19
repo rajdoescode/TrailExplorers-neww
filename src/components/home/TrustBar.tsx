@@ -108,7 +108,14 @@ export const TrustBar: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
           >
-            <svg className="w-5 h-5 sm:w-7 sm:h-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <svg
+              width="28"
+              height="28"
+              style={{ width: "28px", height: "28px" }}
+              className="w-5 h-5 sm:w-7 sm:h-7 shrink-0"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <defs>
                 <linearGradient id="trustIgGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#feda75" />
@@ -137,7 +144,14 @@ export const TrustBar: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
           >
-            <svg className="w-5 h-5 sm:w-7 sm:h-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <svg
+              width="28"
+              height="28"
+              style={{ width: "28px", height: "28px" }}
+              className="w-5 h-5 sm:w-7 sm:h-7 shrink-0"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
               <path
                 fill="#4285F4"
                 d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.47a5.54 5.54 0 0 1-2.4 3.64v3h3.88c2.27-2.09 3.57-5.17 3.57-8.83z"
@@ -166,6 +180,9 @@ export const TrustBar: React.FC = () => {
           {/* Stat 3: Travellers */}
           <div className="inline-flex items-center gap-2 sm:gap-2.5">
             <svg
+              width="28"
+              height="28"
+              style={{ width: "28px", height: "28px" }}
               className="w-5 h-5 sm:w-7 sm:h-7 shrink-0 text-[#14140f]"
               viewBox="0 0 24 24"
               aria-hidden="true"
