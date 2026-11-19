@@ -100,15 +100,15 @@ export const TrustBar: React.FC = () => {
       className="w-full bg-[#f6f6f1] border-b border-[#e6e6df] overflow-x-auto no-scrollbar"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 py-3.5 sm:py-5">
-        <div className="flex flex-nowrap sm:flex-wrap justify-center items-center gap-5 sm:gap-x-12 sm:gap-y-5 text-[14px] sm:text-[15px] font-semibold text-[#14140f] whitespace-nowrap min-w-max sm:min-w-0 mx-auto">
+        <div className="flex flex-nowrap sm:flex-wrap justify-center items-center gap-4 sm:gap-x-12 sm:gap-y-5 text-[14px] sm:text-[15px] font-semibold text-[#14140f] whitespace-nowrap mx-auto">
           {/* Stat 1: Instagram */}
           <a
             href="https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA=="
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
+            className="inline-flex items-center gap-2 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
           >
-            <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-5 h-5 sm:w-7 sm:h-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
               <defs>
                 <linearGradient id="trustIgGradient" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#feda75" />
@@ -123,10 +123,10 @@ export const TrustBar: React.FC = () => {
               <circle cx="17.5" cy="6.5" r="1.3" fill="#fff" />
             </svg>
             <span>
-              <strong className="font-extrabold text-[15px] tabular-nums">
+              <strong className="font-extrabold text-[14px] sm:text-[15px] tabular-nums">
                 {igCount.toLocaleString("en-IN")}+
               </strong>{" "}
-              <span className="font-medium text-[#14140f]">Instagram Community</span>
+              <span className="font-medium text-[#14140f] hidden sm:inline">Instagram Community</span>
             </span>
           </a>
 
@@ -135,9 +135,9 @@ export const TrustBar: React.FC = () => {
             href="https://share.google/iuuImIepaTHvLgaxm"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
+            className="inline-flex items-center gap-2 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
           >
-            <svg className="w-7 h-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-5 h-5 sm:w-7 sm:h-7 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
               <path
                 fill="#4285F4"
                 d="M23.52 12.27c0-.85-.08-1.67-.22-2.45H12v4.64h6.47a5.54 5.54 0 0 1-2.4 3.64v3h3.88c2.27-2.09 3.57-5.17 3.57-8.83z"
@@ -156,17 +156,17 @@ export const TrustBar: React.FC = () => {
               />
             </svg>
             <span>
-              <strong className="font-extrabold text-[15px] tabular-nums">
+              <strong className="font-extrabold text-[14px] sm:text-[15px] tabular-nums">
                 {ratingCount.toFixed(1)}★
               </strong>{" "}
-              <span className="font-medium text-[#14140f]">Google Reviews</span>
+              <span className="font-medium text-[#14140f] hidden sm:inline">Google Reviews</span>
             </span>
           </a>
 
           {/* Stat 3: Travellers */}
-          <div className="inline-flex items-center gap-2.5">
+          <div className="inline-flex items-center gap-2 sm:gap-2.5">
             <svg
-              className="w-7 h-7 shrink-0 text-[#14140f]"
+              className="w-5 h-5 sm:w-7 sm:h-7 shrink-0 text-[#14140f]"
               viewBox="0 0 24 24"
               aria-hidden="true"
               fill="none"
@@ -181,10 +181,10 @@ export const TrustBar: React.FC = () => {
               <path d="M15.5 12a4.5 4.5 0 0 1 4.5 4.5V19" />
             </svg>
             <span>
-              <strong className="font-extrabold text-[15px] tabular-nums">
+              <strong className="font-extrabold text-[14px] sm:text-[15px] tabular-nums">
                 {travellersCount.toLocaleString("en-IN")}+
               </strong>{" "}
-              <span className="font-medium text-[#14140f]">Travellers</span>
+              <span className="font-medium text-[#14140f] hidden sm:inline">Travellers</span>
             </span>
           </div>
         </div>

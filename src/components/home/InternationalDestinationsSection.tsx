@@ -16,6 +16,8 @@ export const InternationalDestinationsSection: React.FC = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(2);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const prevDest = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + destinations.length) % destinations.length);
@@ -25,6 +27,25 @@ export const InternationalDestinationsSection: React.FC = () => {
     setActiveIndex((prev) => (prev + 1) % destinations.length);
   }, [destinations.length]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > 45) {
+      nextDest();
+    } else if (distance < -45) {
+      prevDest();
+    }
+  };
+
   // Auto-scroll every 3.5s
   useEffect(() => {
     const timer = setInterval(nextDest, 3500);
@@ -33,7 +54,7 @@ export const InternationalDestinationsSection: React.FC = () => {
 
   return (
     <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" id="intl-dest-section">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-[1280px] mx-auto px-0 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#14140f] tracking-tight m-0">
             International Destinations
@@ -41,17 +62,22 @@ export const InternationalDestinationsSection: React.FC = () => {
         </div>
 
         {/* 3D Coverflow Stage Carousel */}
-        <div className="relative flex items-center justify-center gap-2 max-w-full">
+        <div className="relative flex items-center justify-center max-w-full">
           <button
             type="button"
             onClick={prevDest}
             aria-label="Previous destination"
-            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white hidden md:flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
           </button>
 
-          <div className="relative flex-1 h-[430px] overflow-hidden">
+          <div
+            className="carousel-stage relative flex-1 h-[400px] sm:h-[430px] overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {destinations.map((dest, idx) => {
               let offset = idx - activeIndex;
               if (offset > destinations.length / 2) offset -= destinations.length;
@@ -71,12 +97,12 @@ export const InternationalDestinationsSection: React.FC = () => {
                 opacity = 1;
                 boxShadow = "0 22px 44px rgba(20, 20, 15, 0.20)";
               } else if (offset === 1) {
-                transform = "translate(-50%, -50%) translateX(96.5%) scale(0.87)";
+                transform = "translate(-50%, -50%) translateX(94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
                 boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
               } else if (offset === -1) {
-                transform = "translate(-50%, -50%) translateX(-96.5%) scale(0.87)";
+                transform = "translate(-50%, -50%) translateX(-94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
                 boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
@@ -108,7 +134,7 @@ export const InternationalDestinationsSection: React.FC = () => {
                     }
                   }}
                   className={cn(
-                    "trip-card dest-card-simple absolute left-1/2 top-1/2 w-[clamp(240px,20vw,256px)] h-[380px] rounded-[28px] overflow-hidden block bg-[#14140f] transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)]",
+                    "trip-card dest-card-simple absolute left-1/2 top-1/2 w-[clamp(210px,58vw,256px)] h-[370px] sm:h-[380px] rounded-[28px] overflow-hidden block bg-[#14140f] transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)]",
                     !isCenter && "cursor-pointer"
                   )}
                   style={{
@@ -129,20 +155,18 @@ export const InternationalDestinationsSection: React.FC = () => {
                     />
 
                     {/* Top gradient for title readability */}
-                    <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#14140f]/75 via-[#14140f]/30 to-transparent z-1" />
+                    <div className="dest-gradient-top" />
 
-                    <h3 className="dest-top-title absolute top-6 left-6 right-6 text-white text-2xl font-extrabold z-2 drop-shadow-md">
+                    <h3 className="dest-top-title">
                       {dest.name}
                     </h3>
 
                     {/* Watermark logo at bottom */}
-                    <div className="dest-watermark absolute bottom-5 left-6 right-6 z-2 opacity-85">
-                      <Image
-                        src="/assets/images/logo/logo-white-full.png"
+                    <div className="dest-watermark">
+                      <img
+                        src="/assets/images/logo/awara-banjara-white-logo.png"
                         alt="Awara Banjara"
-                        width={120}
-                        height={24}
-                        className="h-5 w-auto object-contain"
+                        className="watermark-logo-img"
                       />
                     </div>
                   </div>

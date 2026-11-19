@@ -46,7 +46,7 @@ export const ExperiencesSection: React.FC = () => {
   const activeExp = experiences[activeIndex];
 
   return (
-    <section className="w-full py-10 sm:py-14 bg-white" id="experiences-section">
+    <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" id="experiences-section">
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Head */}
         <div className="text-center mb-8">

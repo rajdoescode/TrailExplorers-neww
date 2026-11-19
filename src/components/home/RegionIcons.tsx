@@ -26,7 +26,7 @@ export const RegionIcons: React.FC = () => {
   };
 
   return (
-    <section className="region-icons" aria-label="Destinations">
+    <section className="region-icons overflow-hidden" aria-label="Destinations">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         <ul className="region-icons-list">
           {REGIONS.map((region) => {

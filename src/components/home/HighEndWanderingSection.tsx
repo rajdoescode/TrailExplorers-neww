@@ -56,6 +56,8 @@ export const HighEndWanderingSection: React.FC = () => {
   ];
 
   const [activeIndex, setActiveIndex] = useState(1);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const prevTrip = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + trips.length) % trips.length);
@@ -65,11 +67,30 @@ export const HighEndWanderingSection: React.FC = () => {
     setActiveIndex((prev) => (prev + 1) % trips.length);
   }, [trips.length]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > 45) {
+      nextTrip();
+    } else if (distance < -45) {
+      prevTrip();
+    }
+  };
+
   return (
     <section className="w-full py-10 sm:py-14 bg-white overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-[1280px] mx-auto px-0 sm:px-6">
         {/* Section Head */}
-        <div className="text-center mb-8 sm:mb-12">
+        <div className="text-center mb-8 sm:mb-12 px-4 sm:px-0">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#14140f] tracking-tight m-0">
             High-End Wandering on a Lemonade Budget
           </h2>
@@ -79,17 +100,22 @@ export const HighEndWanderingSection: React.FC = () => {
         </div>
 
         {/* 3D Coverflow Stage Carousel */}
-        <div className="relative flex items-center justify-center gap-2 max-w-full">
+        <div className="relative flex items-center justify-center max-w-full">
           <button
             type="button"
             onClick={prevTrip}
             aria-label="Previous trip"
-            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white hidden md:flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
           </button>
 
-          <div className="relative flex-1 h-[440px] overflow-hidden">
+          <div
+            className="carousel-stage relative flex-1 h-[440px] overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {trips.map((trip, idx) => {
               let offset = idx - activeIndex;
               if (offset > trips.length / 2) offset -= trips.length;
@@ -109,12 +135,12 @@ export const HighEndWanderingSection: React.FC = () => {
                 opacity = 1;
                 boxShadow = "0 22px 44px rgba(20, 20, 15, 0.20)";
               } else if (offset === 1) {
-                transform = "translate(-50%, -50%) translateX(96.5%) scale(0.87)";
+                transform = "translate(-50%, -50%) translateX(94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
                 boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
               } else if (offset === -1) {
-                transform = "translate(-50%, -50%) translateX(-96.5%) scale(0.87)";
+                transform = "translate(-50%, -50%) translateX(-94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
                 boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
@@ -135,7 +161,7 @@ export const HighEndWanderingSection: React.FC = () => {
                   key={trip.id}
                   onClick={() => !isCenter && setActiveIndex(idx)}
                   className={cn(
-                    "trip-card absolute left-1/2 top-1/2 w-[clamp(240px,20vw,252px)] h-[374px] bg-white rounded-[18px] overflow-hidden flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] border border-gray-100",
+                    "trip-card absolute left-1/2 top-1/2 w-[clamp(210px,58vw,252px)] h-[374px] bg-white rounded-[18px] overflow-hidden flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] border border-gray-100",
                     !isCenter && "cursor-pointer"
                   )}
                   style={{

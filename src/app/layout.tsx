@@ -72,10 +72,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} ${poppins.variable} ${baloo2.variable}`}>
-      <body className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased">
+    <html lang="en" className={`${plusJakarta.variable} ${poppins.variable} ${baloo2.variable} overflow-x-hidden max-w-full`}>
+      <body className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-hidden max-w-full">
         <Header />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full overflow-x-hidden max-w-full">{children}</main>
         <Footer />
         <FloatingWidgets />
         <TripModal />

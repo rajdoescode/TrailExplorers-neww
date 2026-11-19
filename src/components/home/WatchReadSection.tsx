@@ -13,6 +13,8 @@ export const WatchReadSection: React.FC = () => {
 
   const postcards = POSTCARDS_DATA.slice(0, 6);
   const [activeIndex, setActiveIndex] = useState(2);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const prevReel = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + postcards.length) % postcards.length);
@@ -22,11 +24,30 @@ export const WatchReadSection: React.FC = () => {
     setActiveIndex((prev) => (prev + 1) % postcards.length);
   }, [postcards.length]);
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > 45) {
+      nextReel();
+    } else if (distance < -45) {
+      prevReel();
+    }
+  };
+
   return (
     <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" id="watch-read-section">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-[1280px] mx-auto px-0 sm:px-6">
         {/* Section Head */}
-        <div className="flex justify-between items-end flex-wrap gap-4 mb-7">
+        <div className="flex justify-between items-end flex-wrap gap-4 mb-7 px-4 sm:px-0">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#14140f] tracking-tight m-0">
             Watch &amp; Read
           </h2>
@@ -39,17 +60,22 @@ export const WatchReadSection: React.FC = () => {
         </div>
 
         {/* 3D Coverflow Stage Carousel */}
-        <div className="relative flex items-center justify-center gap-2 max-w-full">
+        <div className="relative flex items-center justify-center max-w-full">
           <button
             type="button"
             onClick={prevReel}
             aria-label="Previous reel"
-            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white hidden md:flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
           </button>
 
-          <div className="relative flex-1 h-[430px] overflow-hidden">
+          <div
+            className="carousel-stage relative flex-1 h-[430px] overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {postcards.map((card, idx) => {
               let offset = idx - activeIndex;
               if (offset > postcards.length / 2) offset -= postcards.length;
@@ -69,12 +95,12 @@ export const WatchReadSection: React.FC = () => {
                 opacity = 1;
                 boxShadow = "0 22px 44px rgba(20, 20, 15, 0.20)";
               } else if (offset === 1) {
-                transform = "translate(-50%, -50%) translateX(96.5%) scale(0.87)";
+                transform = "translate(-50%, -50%) translateX(94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
                 boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
               } else if (offset === -1) {
-                transform = "translate(-50%, -50%) translateX(-96.5%) scale(0.87)";
+                transform = "translate(-50%, -50%) translateX(-94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
                 boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
@@ -98,7 +124,7 @@ export const WatchReadSection: React.FC = () => {
                     else setActiveIndex(idx);
                   }}
                   className={cn(
-                    "trip-card dest-card-simple absolute left-1/2 top-1/2 w-[clamp(240px,20vw,256px)] h-[380px] rounded-[28px] overflow-hidden block bg-[#14140f] transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] cursor-pointer group",
+                    "trip-card dest-card-simple absolute left-1/2 top-1/2 w-[clamp(210px,58vw,256px)] h-[370px] sm:h-[380px] rounded-[28px] overflow-hidden block bg-[#14140f] transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] cursor-pointer group",
                   )}
                   style={{
                     transform,
