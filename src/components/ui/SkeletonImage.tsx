@@ -54,7 +54,9 @@ export const SkeletonImage: React.FC<SkeletonImageProps> = ({
   // Auto-detect animated webp or gif to avoid Next.js unoptimized warning
   const isAnimatedAsset =
     typeof imageSrc === "string" &&
-    (imageSrc.includes("escape-ordinary.webp") || imageSrc.endsWith(".gif"));
+    (imageSrc.includes("escape-ordinary.webp") ||
+      imageSrc.includes("untitled-design.webp") ||
+      imageSrc.endsWith(".gif"));
   const isUnoptimized = props.unoptimized ?? (isAnimatedAsset ? true : undefined);
 
   // Check if image is already cached/complete on mount
