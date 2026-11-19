@@ -6,7 +6,8 @@ import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { TRIPS_DATA } from "@/data/trips";
 import { TripCard } from "@/components/trips/TripCard";
-import { ChevronDown, ArrowRight, MessageCircle } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export interface RegionPageProps {
   regionId: string;
@@ -347,7 +348,7 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/5 transition-all text-[14px] font-bold min-h-[48px] active:scale-95"
               >
-                <MessageCircle className="w-4 h-4 text-[#25d366]" />
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] shrink-0" />
                 <span>WhatsApp us</span>
               </a>
             </div>

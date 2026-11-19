@@ -1,143 +1,493 @@
 import React from "react";
-import Image from "next/image";
-import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
-import { Container } from "@/components/layout/Container";
-import { Heading, Paragraph } from "@/components/ui/Heading";
-import { Button } from "@/components/ui/Button";
-import { Mountain, Users, HeartHandshake, Shield, Sparkles } from "lucide-react";
+import Image from "next/image";
+import type { Metadata } from "next";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
+import { WhatsAppSocialBar } from "@/components/common/WhatsAppSocialBar";
+import { TEAM_MEMBERS } from "@/data/team";
+import { ArrowRight } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us — Raised in the Himalayas | Trail Explorers",
+  description:
+    "Trail Explorers is a Manali-born travel community, raised in the Himalayas. Local crews, local homestays and mountain know-how on every Spiti, Ladakh and Kashmir trip.",
+  openGraph: {
+    title: "About Us — Raised in the Himalayas | Trail Explorers",
+    description:
+      "Trail Explorers is a Manali-born travel community, raised in the Himalayas. Local crews, local homestays and mountain know-how on every Spiti, Ladakh and Kashmir trip.",
+    images: [{ url: "/assets/images/about/pagoda-hero.jpg" }],
+  },
+};
 
 export default function AboutPage() {
+  const founder = TEAM_MEMBERS[0];
+
   return (
-    <div className="w-full bg-[#ffffff] min-h-screen pb-20">
-      {/* Hero */}
-      <section className="bg-[#14140f] text-white py-16 sm:py-24 border-b border-white/10">
-        <Container>
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 bg-[#d6ff3f] text-[#14140f] text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full mb-4">
-              <Mountain className="w-3.5 h-3.5" />
-              <span>Native Valley Roots</span>
-            </span>
-            <Heading level={1} className="text-white text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-              Locals, Not Outsiders.
-            </Heading>
-            <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">
-              We did not start this company sitting in an air-conditioned metro office looking at tourism data. We were born with the sound of pine trees, high snow passes, and roaring rivers.
-            </Paragraph>
-          </div>
-        </Container>
-      </section>
+    <div className="w-full bg-[#ffffff] min-h-screen text-[#14140f]">
+      {/* ============ ABOUT US HERO SECTION ============ */}
+      <section className="max-w-[1200px] mx-auto px-4 pt-10 pb-12 text-center">
+        <h1 className="font-heading font-extrabold text-[clamp(38px,5.5vw,64px)] text-[#14140f] mb-8 sm:mb-10 tracking-tight">
+          About Us
+        </h1>
 
-      {/* Narrative Section with 3 Pillars */}
-      <section className="py-16 bg-[#f6f6f1]">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-3">
-              <span className="text-3xl font-extrabold text-[#d6ff3f] bg-[#14140f] w-12 h-12 rounded-xl flex items-center justify-center font-heading">
-                01
-              </span>
-              <h3 className="text-xl font-bold text-[#14140f]">Raised in the Valley</h3>
-              <p className="text-sm text-[#6b6b63] leading-relaxed">
-                Our founders and team leaders grew up navigating these treacherous passes before highways were paved. We know every hairpin turn, every local elder, and every seasonal river crossing.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-3">
-              <span className="text-3xl font-extrabold text-[#d6ff3f] bg-[#14140f] w-12 h-12 rounded-xl flex items-center justify-center font-heading">
-                02
-              </span>
-              <h3 className="text-xl font-bold text-[#14140f]">Planned on the Ground</h3>
-              <p className="text-sm text-[#6b6b63] leading-relaxed">
-                We do not resell third-party aggregated packages. Every single itinerary is scouted personally by our team, tested through harsh winters and heavy rains before a traveller ever sets foot.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-3">
-              <span className="text-3xl font-extrabold text-[#d6ff3f] bg-[#14140f] w-12 h-12 rounded-xl flex items-center justify-center font-heading">
-                03
-              </span>
-              <h3 className="text-xl font-bold text-[#14140f]">Your Trip Stays Local</h3>
-              <p className="text-sm text-[#6b6b63] leading-relaxed">
-                When you travel with Trail Explorers, your money directly funds indigenous homestay mothers, local mechanics, mountain youth guides, and village cooperative kitchens.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ============ FOUNDER TEASER ============ */}
-      <section className="py-12 bg-white">
-        <Container>
-          <Link
-            href="/founder"
-            className="group block p-6 sm:p-8 rounded-[24px] bg-[#f8f8f5] border border-[#e2e2dc] hover:border-[#14140f] transition-all duration-300 shadow-sm hover:shadow-md"
-          >
-            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-[20px] overflow-hidden shrink-0 border-2 border-[#14140f]">
-                <SkeletonImage
-                  src="/assets/images/about/founder-viru.jpg"
-                  alt="Viru Thakur - Founder of Trail Explorers"
-                  fill
-                  sizes="(max-width: 640px) 144px, 176px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <span className="absolute bottom-2 left-2 bg-[#14140f]/80 backdrop-blur-xs text-white text-[11px] font-bold px-2 py-0.5 rounded-full z-10">
-                  📍 Manali
-                </span>
-              </div>
-
-              <div className="flex flex-col items-start gap-2 text-left">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full">
-                  Founder&apos;s Note
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f] group-hover:text-black transition-colors m-0">
-                  Meet the Lead Explorer
-                </h2>
-                <p className="text-sm sm:text-base text-[#6b6b63] leading-relaxed m-0">
-                  Viru Thakur grew up in Manali watching travellers rush past the mountains he called home. They left with full camera rolls and empty hearts, so he started a company to change that. Here&apos;s his story, and the passion behind the journeys.
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#14140f] group-hover:translate-x-1 transition-transform mt-2">
-                  <span>Meet Viru Thakur, our founder</span>
-                  <span aria-hidden="true">&rarr;</span>
-                </span>
-              </div>
-            </div>
-          </Link>
-        </Container>
-      </section>
-
-      {/* Story & Visual Gallery */}
-      <section className="py-16 bg-white">
-        <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#14140f] shadow-card">
-              <SkeletonImage
-                src="/assets/images/about/community-group.jpg"
-                alt="Trail Explorers Campfire Community"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.25fr] gap-8 md:gap-12 items-center text-left max-w-[960px] mx-auto mb-8">
+          {/* Brand Intro Column */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <Link href="/" className="inline-block mb-3.5">
+              <Image
+                src="/assets/images/logo/logo.svg"
+                alt="Trail Explorers"
+                width={240}
+                height={55}
+                className="w-[clamp(190px,22vw,240px)] h-auto object-contain"
+                priority
               />
+            </Link>
+            <p className="text-[15px] text-[#6b6b63] leading-relaxed font-medium">
+              Curated journeys for curious minds. We handle the details so you can focus on the memory.
+            </p>
+          </div>
+
+          {/* Intro Narrative Column */}
+          <div className="text-center md:text-left">
+            <p className="text-[17px] sm:text-[19px] font-bold text-[#14140f] leading-snug mb-2.5">
+              Raised in the Himalayas. Built from its soil.
+            </p>
+            <p className="text-[14.5px] sm:text-[15px] text-[#44443f] leading-[1.7]">
+              Trail Explorers isn&apos;t a city company that discovered the mountains on a long weekend.
+              We were born in Manali, grew up on these roads, and have worked these valleys all our lives.
+              The Himalayas aren&apos;t our destination. They&apos;re home, and we&apos;d love to show you around.
+            </p>
+          </div>
+        </div>
+
+        {/* Join Us CTA */}
+        <div className="mb-10 sm:mb-14">
+          <Link
+            href="/tour-packages"
+            className="inline-block bg-[#d6ff3f] text-[#14140f] font-extrabold text-[15px] px-11 py-3.5 rounded-full shadow-[0_4px_14px_rgba(214,255,63,0.4)] hover:scale-105 hover:shadow-[0_8px_24px_rgba(214,255,63,0.65)] active:scale-95 transition-all uppercase tracking-[0.5px]"
+          >
+            JOIN US
+          </Link>
+        </div>
+
+        {/* Neon Lime Backdrop Frame with Pagoda Hero */}
+        <div className="neon-backdrop-frame">
+          <SkeletonImage
+            src="/assets/images/about/pagoda-hero.jpg"
+            alt="Himalayan Pagoda Temple Architecture"
+            width={760}
+            height={520}
+            priority
+            sizes="(max-width: 768px) 100vw, 760px"
+            className="w-full h-auto object-contain block mx-auto rounded-sm"
+          />
+        </div>
+      </section>
+
+      {/* ============ ROOTED IN THE HIMALAYAS: LOCALS, NOT OUTSIDERS ============ */}
+      <section className="max-w-[1200px] mx-auto px-4 py-16 sm:py-20">
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="font-heading font-extrabold text-[clamp(28px,3.8vw,44px)] text-[#14140f] tracking-tight">
+            Locals, Not Outsiders
+          </h2>
+          <p className="text-[15px] sm:text-[16px] text-[#6b6b63] mt-2 font-medium">
+            Plenty of companies sell the Himalayas. We&apos;re from here.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-7">
+          {/* Card 01 */}
+          <div className="rooted-card">
+            <span className="rooted-num">01</span>
+            <h3 className="font-heading font-bold text-xl text-[#14140f] mb-2">
+              Raised in the Valley
+            </h3>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.65]">
+              Our roots run through Manali, the Kullu Valley and the Pir Panjal. We grew up on these passes, so we know the roads, the weather and the people.
+            </p>
+          </div>
+
+          {/* Card 02 */}
+          <div className="rooted-card">
+            <span className="rooted-num">02</span>
+            <h3 className="font-heading font-bold text-xl text-[#14140f] mb-2">
+              Planned on the Ground
+            </h3>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.65]">
+              No one plans our trips from an office in a faraway city. When a pass gets snowed in or a landslide blocks the road, our local network already knows the way around.
+            </p>
+          </div>
+
+          {/* Card 03 */}
+          <div className="rooted-card">
+            <span className="rooted-num">03</span>
+            <h3 className="font-heading font-bold text-xl text-[#14140f] mb-2">
+              Your Trip Stays Local
+            </h3>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.65]">
+              We work with local drivers, guides, homestays, dhabas and village families. When you travel with us, your money stays in the mountains and helps the people who live here.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FOUNDER TEASER SECTION ============ */}
+      <section className="max-w-[1020px] mx-auto px-4 py-8 sm:py-12">
+        <div className="founder-teaser">
+          <div className="founder-teaser-badge">
+            <SkeletonImage
+              src="/assets/images/about/harsh-thakkar.avif"
+              alt={`${founder.name} - ${founder.designation}`}
+              fill
+              sizes="(max-width: 640px) 140px, 168px"
+              className="rounded-full object-cover"
+              skeletonClassName="rounded-full"
+            />
+            <span className="founder-teaser-pin" aria-hidden="true">
+              📍 {founder.favouriteDestination}
+            </span>
+          </div>
+
+          <div className="flex flex-col items-start justify-center">
+            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+              <span className="founder-eyebrow text-[12px] font-extrabold uppercase tracking-[1.5px] text-[#d6ff3f]">
+                {founder.badge}
+              </span>
+              <span className="text-white/40 text-xs font-bold">·</span>
+              <span className="text-[12px] font-bold text-white/70 uppercase tracking-wider">
+                {founder.experience} Experience
+              </span>
             </div>
 
-            <div className="flex flex-col gap-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3.5 py-1 rounded-full w-fit">
-                Our Philosophy
-              </span>
-              <Heading level={2} className="text-3xl sm:text-4xl font-extrabold leading-tight">
-                Travel That Creates Brothers, Not Just Photos.
-              </Heading>
-              <Paragraph className="text-sm sm:text-base text-[#6b6b63] leading-relaxed">
-                Modern tourism has reduced journeys to checklist selfies and rush tours. We believe travel should be raw, unhurried, and deeply restorative. Sitting around a crackling woodfire under the Milky Way with strangers who quickly become family is at the very core of what we do.
-              </Paragraph>
-              <div className="pt-2">
-                <Button href="/community-trips" variant="primary" size="lg" className="shadow-lime-btn font-bold">
-                  Explore Our Group Departures
-                </Button>
-              </div>
-            </div>
+            <h2 className="font-heading font-extrabold text-[clamp(24px,3vw,34px)] text-white mb-2 leading-tight">
+              Meet {founder.name}
+            </h2>
+
+            <p className="text-[#d6ff3f] text-[15px] font-bold mb-2">
+              {founder.designation} — <span className="italic font-normal text-white/90">&ldquo;{founder.headline}&rdquo;</span>
+            </p>
+
+            <p className="text-white/85 text-[14.5px] sm:text-[15px] leading-relaxed">
+              {founder.description}
+            </p>
           </div>
-        </Container>
+        </div>
+      </section>
+
+      {/* ============ ALTERNATING FEATURE SECTIONS ============ */}
+      {/* 1. Our Philosophy: Community Over Crowds */}
+      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full inline-block mb-3">
+              Our Ethos
+            </span>
+            <h2 className="font-heading font-extrabold text-[clamp(26px,3.2vw,38px)] text-[#14140f] mb-2 leading-tight">
+              Our Philosophy
+            </h2>
+            <h3 className="text-lg font-semibold text-[#6b6b63] mb-4">
+              Community Over Crowds
+            </h3>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7] mb-3">
+              We believe travel is best experienced in small, intimate groups where strangers turn into lifelong travel companions. By keeping our group sizes capped, we protect fragile high-altitude ecosystems and foster real camaraderie.
+            </p>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7]">
+              Instead of overcrowded commercial hubs, we take you deep into remote valleys, sacred mountain passes, and authentic village homestays where warmth and hospitality are genuine.
+            </p>
+          </div>
+
+          <div className="lime-card-frame">
+            <SkeletonImage
+              src="/assets/images/about/community-group.jpg"
+              alt="Cheering group of travelers on mountain peak"
+              width={520}
+              height={310}
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="w-full h-[310px] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Authentic Exploration vs. Commercial Tourism */}
+      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
+          <div className="lime-card-frame left-accent order-last md:order-first">
+            <SkeletonImage
+              src="/assets/images/about/cultural-dancers.jpg"
+              alt="Authentic exploration and traditional cultural rituals"
+              width={520}
+              height={310}
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="w-full h-[310px] object-cover"
+            />
+          </div>
+
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full inline-block mb-3">
+              Culture First
+            </span>
+            <h2 className="font-heading font-extrabold text-[clamp(26px,3.2vw,38px)] text-[#14140f] mb-4 leading-tight">
+              Authentic Exploration vs. Commercial Tourism
+            </h2>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7] mb-3">
+              Commercial tourism often reduces rich indigenous cultures into quick photo stops. At Trail Explorers, we immerse you in living traditions, ancient monastic festivals, local folk rituals, and traditional culinary feasts.
+            </p>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7]">
+              Because we&apos;re from here, these aren&apos;t &ldquo;contacts&rdquo; we found online. They&apos;re our neighbours, the elders and guides we grew up with, and they share their stories, myths and mountain heritage with pride.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Responsible & Impact-Driven Travel */}
+      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full inline-block mb-3">
+              Eco Stewardship
+            </span>
+            <h2 className="font-heading font-extrabold text-[clamp(26px,3.2vw,38px)] text-[#14140f] mb-4 leading-tight">
+              Responsible &amp; Impact-Driven Travel
+            </h2>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7] mb-3">
+              We practice strict Leave-No-Trace principles across every trek, expedition, and homestay. A significant portion of your booking directly supports remote Himalayan village economies, local porters, and women-led homestay cooperatives.
+            </p>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7]">
+              We actively minimize single-use plastics, support local eco-sanitation initiatives, and ensure that every footprint we leave leaves the mountains cleaner and greener.
+            </p>
+          </div>
+
+          <div className="lime-card-frame">
+            <SkeletonImage
+              src="/assets/images/about/responsible-puppet.jpg"
+              alt="Responsible and community-based sustainable travel"
+              width={520}
+              height={310}
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="w-full h-[310px] object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Raw Adventure, Premium Execution */}
+      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
+          <div className="lime-card-frame left-accent order-last md:order-first">
+            <SkeletonImage
+              src="/assets/images/about/raw-adventure-trekkers.jpg"
+              alt="Raw adventure expeditions with premium ground execution"
+              width={520}
+              height={310}
+              sizes="(max-width: 768px) 100vw, 500px"
+              className="w-full h-[310px] object-cover"
+            />
+          </div>
+
+          <div>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full inline-block mb-3">
+              Field Safety
+            </span>
+            <h2 className="font-heading font-extrabold text-[clamp(26px,3.2vw,38px)] text-[#14140f] mb-4 leading-tight">
+              Raw Adventure, Premium Execution
+            </h2>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7] mb-3">
+              Adventure requires courage, but execution requires uncompromised safety and precision. Our expeditions are led by certified mountaineers, Wilderness First Responders, and experienced road captains equipped with satellite communication and emergency oxygen.
+            </p>
+            <p className="text-[14.5px] text-[#44443f] leading-[1.7]">
+              From high-grade camping gear and backup support vehicles to curated homestays with hot meals, we handle every detail so you can embrace the raw wild with complete peace of mind.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ CORE PILLARS ============ */}
+      <section className="max-w-[1200px] mx-auto px-4 py-16 sm:py-20 border-t border-[#f0f0eb]">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-extrabold text-[clamp(28px,3.8vw,44px)] text-[#14140f] tracking-tight">
+            Core Pillars
+          </h2>
+          <p className="text-[15px] sm:text-[16px] text-[#6b6b63] mt-2 font-medium">
+            Why We Are Different
+          </p>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-6 text-center max-w-[1080px] mx-auto">
+          {/* Pillar 1 */}
+          <div className="flex flex-col items-center flex-1 min-w-[150px] max-w-[200px]">
+            <div className="w-[96px] h-[96px] rounded-full bg-[#14140f] flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(20,20,15,0.18)] hover:-translate-y-1.5 transition-transform cursor-pointer">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h4 className="font-bold text-[12.5px] sm:text-[13px] uppercase tracking-[0.5px] text-[#14140f] leading-snug">
+              SAFETY FIRST, ALWAYS
+            </h4>
+          </div>
+
+          {/* Pillar 2 */}
+          <div className="flex flex-col items-center flex-1 min-w-[150px] max-w-[200px]">
+            <div className="w-[96px] h-[96px] rounded-full bg-[#14140f] flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(20,20,15,0.18)] hover:-translate-y-1.5 transition-transform cursor-pointer">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h4 className="font-bold text-[12.5px] sm:text-[13px] uppercase tracking-[0.5px] text-[#14140f] leading-snug">
+              DEEP CULTURAL ROOTS &amp; LOCAL SUPPORT
+            </h4>
+          </div>
+
+          {/* Pillar 3 */}
+          <div className="flex flex-col items-center flex-1 min-w-[150px] max-w-[200px]">
+            <div className="w-[96px] h-[96px] rounded-full bg-[#14140f] flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(20,20,15,0.18)] hover:-translate-y-1.5 transition-transform cursor-pointer">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M12 16a3.5 3.5 0 0 0 3.5-3.5c0-1.8-1.5-3.5-3.5-6.5-2 3-3.5 4.7-3.5 6.5A3.5 3.5 0 0 0 12 16z" />
+              </svg>
+            </div>
+            <h4 className="font-bold text-[12.5px] sm:text-[13px] uppercase tracking-[0.5px] text-[#14140f] leading-snug">
+              LEAVING NO TRACE BEHIND (ECO TRAVEL)
+            </h4>
+          </div>
+
+          {/* Pillar 4 */}
+          <div className="flex flex-col items-center flex-1 min-w-[150px] max-w-[200px]">
+            <div className="w-[96px] h-[96px] rounded-full bg-[#14140f] flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(20,20,15,0.18)] hover:-translate-y-1.5 transition-transform cursor-pointer">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </div>
+            <h4 className="font-bold text-[12.5px] sm:text-[13px] uppercase tracking-[0.5px] text-[#14140f] leading-snug">
+              100% FINANCIAL TRANSPARENCY
+            </h4>
+          </div>
+
+          {/* Pillar 5 */}
+          <div className="flex flex-col items-center flex-1 min-w-[150px] max-w-[200px]">
+            <div className="w-[96px] h-[96px] rounded-full bg-[#14140f] flex items-center justify-center mb-4 shadow-[0_8px_20px_rgba(20,20,15,0.18)] hover:-translate-y-1.5 transition-transform cursor-pointer">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d6ff3f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z" />
+                <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+              </svg>
+            </div>
+            <h4 className="font-bold text-[12.5px] sm:text-[13px] uppercase tracking-[0.5px] text-[#14140f] leading-snug">
+              24&times;7 SUPPORT ON EVERY TRIP
+            </h4>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ OUR SERVICES ============ */}
+      <section className="max-w-[1200px] mx-auto px-4 pt-6 pb-16 text-center">
+        <h2 className="font-heading font-extrabold text-[clamp(28px,3.8vw,42px)] text-[#14140f] mb-10 tracking-tight">
+          Our Services
+        </h2>
+
+        {/* 5 Line Art Outline Icons matching exact reference design without boxes */}
+        <div className="flex justify-center items-center gap-10 sm:gap-16 md:gap-20 flex-wrap mb-14 text-[#14140f]">
+          {/* Ticket Icon */}
+          <div
+            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
+            title="Group Trips"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z" />
+              <path d="M12 5v14" strokeDasharray="2 2" />
+            </svg>
+          </div>
+
+          {/* Bike Icon */}
+          <div
+            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
+            title="Bike Expeditions"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="5.5" cy="17.5" r="3.5" />
+              <circle cx="18.5" cy="17.5" r="3.5" />
+              <path d="M15 6h4l-3 4M5.5 17.5l3.5-7.5h6l3 7.5M9 10h5" />
+            </svg>
+          </div>
+
+          {/* Flame / Fire Icon */}
+          <div
+            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
+            title="Camping & Festivals"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3.5z" />
+            </svg>
+          </div>
+
+          {/* Mountain Icon */}
+          <div
+            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
+            title="Treks & Nature"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M8 3l4 8 5-5 5 15H2L8 3z" />
+            </svg>
+          </div>
+
+          {/* Heart Icon */}
+          <div
+            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
+            title="Women-Only Trips"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+          </div>
+        </div>
+
+        {/* WhatsApp Social Bar */}
+        <WhatsAppSocialBar />
       </section>
     </div>
   );

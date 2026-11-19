@@ -112,6 +112,8 @@ export interface Postcard {
   video_url?: string;
   embed_url?: string;
   author?: string;
+  author_avatar?: string;
+  read_time?: string;
   content?: string;
   related_trip_ids?: any;
   updated_at?: string;

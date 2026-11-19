@@ -48,7 +48,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   "hero-ghost":
     "bg-black/30 text-white border-2 border-white backdrop-blur-md hover:bg-white hover:text-[#14140f] hover:translate-y-[-2px] font-bold",
   whatsapp:
-    "bg-[#25d366] text-white border-2 border-[#128c7e] hover:bg-[#20ba59] hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(37,211,102,0.4)] active:translate-y-0 font-bold",
+    "bg-[#25D366] text-white border-2 border-[#25D366] hover:bg-[#20ba59] hover:border-[#20ba59] hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(37,211,102,0.45)] active:translate-y-0 font-bold",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

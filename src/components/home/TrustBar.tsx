@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 function useCountUp(target: number, start: number = 1000, duration: number = 2000, trigger: boolean = true) {
   const [count, setCount] = useState(start);
@@ -102,12 +103,7 @@ export const TrustBar: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 py-3.5 sm:py-5">
         <div className="flex flex-nowrap justify-between sm:justify-center items-center gap-2 sm:gap-x-12 sm:gap-y-5 text-[12px] sm:text-[15px] font-semibold text-[#14140f] mx-auto">
           {/* Stat 1: Instagram */}
-          <a
-            href="https://www.instagram.com/trail_explorers_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
-          >
+          <div className="inline-flex items-center gap-1.5 sm:gap-2.5 text-inherit select-none">
             <svg
               width="28"
               height="28"
@@ -129,22 +125,20 @@ export const TrustBar: React.FC = () => {
               <circle cx="12" cy="12" r="5" fill="none" stroke="#fff" strokeWidth="2" />
               <circle cx="17.5" cy="6.5" r="1.3" fill="#fff" />
             </svg>
-            <span>
-              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums">
+            <span className="flex flex-col sm:inline leading-tight sm:leading-normal">
+              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums whitespace-nowrap">
                 {igCount.toLocaleString("en-IN")}+
               </strong>{" "}
-              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px]">
+              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px] whitespace-nowrap">
                 <span className="sm:hidden">IG Tribe</span>
                 <span className="hidden sm:inline">Instagram Community</span>
               </span>
             </span>
-          </a>
+          </div>
 
-          {/* Stat 2: Google Reviews */}
-          <a
-            href="https://share.google/iuuImIepaTHvLgaxm"
-            target="_blank"
-            rel="noopener noreferrer"
+          {/* Stat 2: Google Reviews (Links to internal /reviews page) */}
+          <Link
+            href="/reviews"
             className="inline-flex items-center gap-1.5 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
           >
             <svg
@@ -172,16 +166,16 @@ export const TrustBar: React.FC = () => {
                 d="M12 4.75c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.27 6.62l4 3.09C6.22 6.86 8.87 4.75 12 4.75z"
               />
             </svg>
-            <span>
-              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums">
+            <span className="flex flex-col sm:inline leading-tight sm:leading-normal">
+              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums whitespace-nowrap">
                 {ratingCount.toFixed(1)}★
               </strong>{" "}
-              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px]">
+              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px] whitespace-nowrap">
                 <span className="sm:hidden">Google</span>
                 <span className="hidden sm:inline">Google Reviews</span>
               </span>
             </span>
-          </a>
+          </Link>
 
           {/* Stat 3: Travellers */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2.5">
@@ -203,11 +197,11 @@ export const TrustBar: React.FC = () => {
               <circle cx="17" cy="8.5" r="2.5" />
               <path d="M15.5 12a4.5 4.5 0 0 1 4.5 4.5V19" />
             </svg>
-            <span>
-              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums">
+            <span className="flex flex-col sm:inline leading-tight sm:leading-normal">
+              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums whitespace-nowrap">
                 {travellersCount.toLocaleString("en-IN")}+
               </strong>{" "}
-              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px]">
+              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px] whitespace-nowrap">
                 <span className="sm:hidden">Travellers</span>
                 <span className="hidden sm:inline">Travellers</span>
               </span>

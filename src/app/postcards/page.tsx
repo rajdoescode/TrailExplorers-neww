@@ -2,135 +2,256 @@
 
 import React, { useState, useMemo } from "react";
 import { Container } from "@/components/layout/Container";
-import { Heading, Paragraph } from "@/components/ui/Heading";
-import { PostcardCard } from "@/components/postcards/PostcardCard";
-import { Button } from "@/components/ui/Button";
 import { POSTCARDS_DATA } from "@/data/postcards";
-import { BookOpen, Film, Compass, X } from "lucide-react";
 import { Postcard } from "@/types";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { PostcardRow } from "@/components/postcards/PostcardRow";
+import { AttractionCard } from "@/components/postcards/AttractionCard";
+import { GuideCard } from "@/components/postcards/GuideCard";
+// import { ReelCard } from "@/components/postcards/ReelCard";
+import { PostcardReaderModal } from "@/components/postcards/PostcardReaderModal";
+// import { PostcardVideoModal } from "@/components/postcards/PostcardVideoModal";
+import { ArrowLeft } from "lucide-react";
+
+type CategoryFilter = "all" | "attraction" | "travel_guide" | "field_guide" | "video";
 
 export default function PostcardsPage() {
-  const [filterType, setFilterType] = useState<"all" | "reel" | "blog" | "guide">("all");
+  const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("all");
   const [activeStory, setActiveStory] = useState<Postcard | null>(null);
+  // const [activeVideo, setActiveVideo] = useState<Postcard | null>(null);
 
-  // Global reference-counted scroll lock for story reader modal
+  // Global reference-counted scroll lock for modals
   useScrollLock(Boolean(activeStory));
 
-  const filtered = useMemo(() => {
-    if (filterType === "all") return POSTCARDS_DATA;
-    return POSTCARDS_DATA.filter((p) => p.type === filterType);
-  }, [filterType]);
+  // Partition postcards according to their category / type
+  const attractions = useMemo(
+    () => POSTCARDS_DATA.filter((p) => p.type === "attraction" || p.category === "Attraction"),
+    []
+  );
+
+  const travelGuides = useMemo(
+    () =>
+      POSTCARDS_DATA.filter(
+        (p) => p.category === "Travel Guide" || (p.type === "blog" && p.category !== "Field Guide")
+      ),
+    []
+  );
+
+  const fieldGuides = useMemo(
+    () => POSTCARDS_DATA.filter((p) => p.category === "Field Guide"),
+    []
+  );
+
+  // Videos commented out for now as requested
+  /*
+  const videos = useMemo(
+    () =>
+      POSTCARDS_DATA.filter(
+        (p) => p.type === "reel" || p.type === "video" || p.category === "Instagram Reel"
+      ),
+    []
+  );
+  */
+
+  const filterChips: { id: CategoryFilter; label: string; count: number }[] = [
+    { id: "all", label: "All", count: attractions.length + travelGuides.length + fieldGuides.length },
+    { id: "attraction", label: "Attractions", count: attractions.length },
+    { id: "travel_guide", label: "Travel Guide", count: travelGuides.length },
+    { id: "field_guide", label: "Field Guide", count: fieldGuides.length },
+    // Videos section & chip commented out for now as requested:
+    // { id: "video", label: "Videos", count: videos.length },
+  ];
+
+  const handleCardClick = (postcard: Postcard) => {
+    // If reel/video, can open video modal if enabled; otherwise open story reader
+    setActiveStory(postcard);
+  };
+
+  // Get current filtered list when a specific category is active
+  const activeList = useMemo(() => {
+    switch (selectedCategory) {
+      case "attraction":
+        return attractions;
+      case "travel_guide":
+        return travelGuides;
+      case "field_guide":
+        return fieldGuides;
+      /*
+      case "video":
+        return videos;
+      */
+      default:
+        return [...attractions, ...travelGuides, ...fieldGuides];
+    }
+  }, [selectedCategory, attractions, travelGuides, fieldGuides]);
+
+  const currentCategoryInfo = filterChips.find((c) => c.id === selectedCategory);
 
   return (
-    <div className="w-full bg-[#f6f6f1] min-h-screen pb-20">
+    <div className="w-full bg-white min-h-screen pb-20">
       {/* Hero Header */}
-      <section className="bg-[#14140f] text-white py-16 sm:py-20 border-b border-white/10">
+      <section className="pt-10 sm:pt-14 md:pt-16 pb-6 text-center">
         <Container>
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-1.5 bg-[#d6ff3f] text-[#14140f] text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full mb-4">
-              <Compass className="w-3.5 h-3.5" />
-              <span>Himalayan Field Journal</span>
-            </span>
-            <Heading level={1} className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
-              Postcards &amp; Field Guides
-            </Heading>
-            <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">
-              Expedition dispatches, mountain route guides, cinematic travel reels, and honest field insights written by our leaders on the road.
-            </Paragraph>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-[#14140f] tracking-tight font-heading mb-2.5">
+            Postcards
+          </h1>
+          <p className="text-sm sm:text-base md:text-lg text-[#6b6b63] max-w-xl mx-auto font-medium">
+            Perspectives, guides, and untold stories from the frontier.
+          </p>
+
+          {/* Category Chips Bar */}
+          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar pt-6 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            {filterChips.map((chip) => {
+              const isActive = selectedCategory === chip.id;
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  onClick={() => setSelectedCategory(chip.id)}
+                  className={`inline-flex items-center gap-1.5 px-4 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold border transition-all duration-200 shrink-0 cursor-pointer select-none active:scale-95 ${
+                    isActive
+                      ? "bg-[#14140f] text-white border-[#14140f] shadow-xs"
+                      : "bg-white text-[#14140f] border-[#e2e2da] hover:border-[#14140f]"
+                  }`}
+                >
+                  <span>{chip.label}</span>
+                  <span
+                    className={`text-[11px] sm:text-xs font-semibold ${
+                      isActive ? "text-white/70" : "text-[#777]"
+                    }`}
+                  >
+                    {chip.count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </Container>
       </section>
 
-      {/* Filter Bar */}
-      <div className="sticky top-[64px] sm:top-[72px] z-30 bg-white/95 backdrop-blur-md border-b border-[#e2e2dc] py-3 sm:py-4 shadow-2xs">
-        <Container>
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
-            {[
-              { id: "all", label: "All Dispatches" },
-              { id: "reel", label: "Reels & Documentaries" },
-              { id: "blog", label: "Stories & Blogs" },
-              { id: "guide", label: "Field Guides & Tips" },
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setFilterType(tab.id as any)}
-                className={`text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full min-h-[44px] transition-all duration-200 shrink-0 cursor-pointer active:scale-95 ${
-                  filterType === tab.id
-                    ? "bg-[#14140f] text-[#d6ff3f] shadow-xs"
-                    : "bg-[#f6f6f1] text-[#14140f] hover:bg-[#e4e4dd]"
-                }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </Container>
-      </div>
-
-      {/* Grid */}
-      <Container className="py-8 sm:py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
-          {filtered.map((postcard) => (
-            <PostcardCard
-              key={postcard.id}
-              postcard={postcard}
-              onClick={(p) => setActiveStory(p)}
+      {/* Main Browse Area */}
+      <Container className="pt-4 sm:pt-6">
+        {selectedCategory === "all" ? (
+          /* Multi-Row Browse View */
+          <div>
+            {/* Section 1: Attractions (68) */}
+            <PostcardRow
+              title="Attractions"
+              count={attractions.length}
+              items={attractions}
+              categoryKey="attraction"
+              onViewAll={() => setSelectedCategory("attraction")}
+              onCardClick={handleCardClick}
             />
-          ))}
-        </div>
+
+            {/* Section 2: Travel Guide (6) */}
+            <PostcardRow
+              title="Travel Guide"
+              count={travelGuides.length}
+              items={travelGuides}
+              categoryKey="travel_guide"
+              onViewAll={() => setSelectedCategory("travel_guide")}
+              onCardClick={handleCardClick}
+            />
+
+            {/* Section 3: Field Guide (1) */}
+            <PostcardRow
+              title="Field Guide"
+              count={fieldGuides.length}
+              items={fieldGuides}
+              categoryKey="field_guide"
+              onViewAll={() => setSelectedCategory("field_guide")}
+              onCardClick={handleCardClick}
+            />
+
+            {/* Section 4: Videos (5) - Commented out for now as requested */}
+            {/*
+            <PostcardRow
+              title="Videos"
+              count={videos.length}
+              items={videos}
+              categoryKey="video"
+              onViewAll={() => setSelectedCategory("video")}
+              onCardClick={handleCardClick}
+            />
+            */}
+          </div>
+        ) : (
+          /* Filtered Category Grid View */
+          <div>
+            {/* Breadcrumb / Back button & Title */}
+            <div className="flex items-center justify-between gap-4 mb-6 sm:mb-8 pb-4 border-b border-[#f0f0ea]">
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedCategory("all")}
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#6b6b63] hover:text-[#14140f] transition-colors mb-2 cursor-pointer group"
+                >
+                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+                  <span>Back to all postcards</span>
+                </button>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f] flex items-baseline gap-2.5 font-heading">
+                  <span>{currentCategoryInfo?.label}</span>
+                  <span className="text-sm sm:text-base font-semibold text-[#8e8e86] font-sans">
+                    ({activeList.length})
+                  </span>
+                </h2>
+              </div>
+            </div>
+
+            {/* Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
+              {activeList.map((postcard) => {
+                if (selectedCategory === "attraction") {
+                  return (
+                    <AttractionCard
+                      key={postcard.id}
+                      postcard={postcard}
+                      onClick={handleCardClick}
+                    />
+                  );
+                }
+                /*
+                if (selectedCategory === "video") {
+                  return (
+                    <ReelCard
+                      key={postcard.id}
+                      postcard={postcard}
+                      onClick={handleCardClick}
+                    />
+                  );
+                }
+                */
+                return (
+                  <GuideCard
+                    key={postcard.id}
+                    postcard={postcard}
+                    onClick={handleCardClick}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
       </Container>
 
-      {/* Modal */}
+      {/* Reader Modal */}
       {activeStory && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={activeStory.title}
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 touch-none overscroll-contain transition-opacity"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setActiveStory(null);
-          }}
-        >
-          <div className="bg-white rounded-t-[28px] sm:rounded-2xl max-w-2xl w-full p-5 sm:p-8 relative border-t-2 sm:border-2 border-[#14140f] max-h-[88dvh] sm:max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y shadow-2xl pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-8">
-            {/* Mobile drag handle */}
-            <div className="w-10 h-1 bg-[#d5d5cd] rounded-full mx-auto mb-3 block sm:hidden" />
-
-            <button
-              onClick={() => setActiveStory(null)}
-              className="absolute top-4 right-4 w-10 h-10 min-w-[40px] min-h-[40px] flex items-center justify-center bg-[#f6f6f1] hover:bg-[#d6ff3f] active:scale-95 rounded-full transition-all cursor-pointer"
-              aria-label="Close story reader"
-            >
-              <X className="w-5 h-5 text-[#14140f]" />
-            </button>
-
-            <span className="text-xs font-bold uppercase tracking-wider text-[#d6ff3f] bg-[#14140f] px-3 py-1 rounded-full inline-block mb-3">
-              {activeStory.category || "Himalayan Story"}
-            </span>
-
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#14140f] mb-3">
-              {activeStory.title}
-            </h3>
-
-            {activeStory.subtitle && (
-              <p className="text-sm text-[#6b6b63] mb-4 font-medium italic">
-                {activeStory.subtitle}
-              </p>
-            )}
-
-            <div className="mt-4 text-sm text-[#14140f] leading-relaxed whitespace-pre-line border-t border-gray-100 pt-4">
-              {activeStory.content ||
-                "A captivating field report documenting genuine high-altitude experiences across the Indian Himalayas. Trail Explorers champions conscious, slow-paced exploration and authentic human connection."}
-            </div>
-
-            <div className="mt-6 flex justify-end">
-              <Button variant="primary" size="sm" onClick={() => setActiveStory(null)}>
-                Close Reader
-              </Button>
-            </div>
-          </div>
-        </div>
+        <PostcardReaderModal
+          postcard={activeStory}
+          onClose={() => setActiveStory(null)}
+        />
       )}
+
+      {/* Video Reel Modal - Commented out for now as requested */}
+      {/*
+      {activeVideo && (
+        <PostcardVideoModal
+          postcard={activeVideo}
+          onClose={() => setActiveVideo(null)}
+        />
+      )}
+      */}
     </div>
   );
 }

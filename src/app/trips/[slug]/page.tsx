@@ -23,6 +23,7 @@ import { useScrollLock } from "@/hooks/useScrollLock";
 import { StickySecondaryNav } from "@/components/trips/StickySecondaryNav";
 import { PackingListSection } from "@/components/trips/PackingListSection";
 import { DepartureDatesSection } from "@/components/trips/DepartureDatesSection";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import { AttractionsCarousel } from "@/components/trips/AttractionsCarousel";
 import { FaqsAccordion } from "@/components/trips/FaqsAccordion";
 import { TripReviewsSection } from "@/components/trips/TripReviewsSection";
@@ -607,18 +608,7 @@ export default function TripDetailPage() {
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-4 rounded-[14px] border-[1.5px] border-[#14140f] bg-white text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-[#f8f8f5] hover:-translate-y-0.5 transition-all"
               >
-                <svg
-                  className="w-[18px] h-[18px] text-[#14140f] shrink-0"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-                </svg>
+                <WhatsAppIcon className="w-5 h-5 text-[#25D366] shrink-0" />
                 <span>WhatsApp Us</span>
               </a>
             </aside>

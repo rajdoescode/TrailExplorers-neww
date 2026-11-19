@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 export interface WhatsAppSocialBarProps {
@@ -11,24 +13,25 @@ export interface WhatsAppSocialBarProps {
 
 export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
   className = "",
-  phone = "+91-91 03 910 523",
-  whatsappLink = "https://wa.me/919103910523",
-  instagramLink = "https://www.instagram.com/trail_explorers_",
+  phone = "+91 70166 40870",
+  whatsappLink = "https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B%20I'm%20interested%20in%20planning%20a%20Himalayan%20trip%20with%20you.",
+  instagramLink = "#",
   youtubeLink = "https://www.youtube.com/@Trail_Explorers",
-  facebookLink = "https://facebook.com",
+  facebookLink = "#",
 }) => {
+  const isExternal = (url?: string) => Boolean(url && url !== "#" && url.startsWith("http"));
   return (
     <div
-      className={`w-full bg-white border-2 border-[#14140f] rounded-[22px] sm:rounded-full px-5 py-4 sm:px-8 sm:py-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-5 transition-all duration-200 ${className}`}
+      className={`w-full max-w-[820px] mx-auto bg-white border-[1.5px] border-[#14140f] rounded-full px-5 py-3 sm:px-7 sm:py-3 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-6 transition-all duration-200 ${className}`}
     >
       {/* WhatsApp Left Side */}
       <a
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex items-center justify-center sm:justify-start gap-3.5 text-[#14140f] no-underline w-full sm:w-auto hover:opacity-95 transition-opacity"
+        className="group flex items-center justify-center sm:justify-start gap-3.5 text-[#14140f] no-underline hover:opacity-95 transition-opacity"
       >
-        <span className="w-10 h-10 sm:w-[42px] sm:h-[42px] rounded-full bg-[#25d366] flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(37,211,102,0.25)] text-white">
+        <span className="w-10 h-10 rounded-full bg-[#25d366] flex items-center justify-center shrink-0 shadow-[0_3px_10px_rgba(37,211,102,0.3)] text-white">
           <svg
             viewBox="0 0 24 24"
             fill="currentColor"
@@ -39,35 +42,35 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
           </svg>
         </span>
         <span className="flex flex-col text-left">
-          <small className="text-[11px] font-bold uppercase tracking-[0.05em] text-[#66665c] leading-tight block">
+          <small className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#6b6b63] leading-tight block">
             INSTANT WHATSAPP BOOKING:
           </small>
-          <strong className="text-[17px] sm:text-[18px] font-extrabold text-[#14140f] tracking-tight group-hover:text-[#16a34a] transition-colors leading-tight mt-0.5">
+          <strong className="text-[16px] sm:text-[17px] font-extrabold text-[#14140f] tracking-tight group-hover:text-[#16a34a] transition-colors leading-tight mt-0.5">
             {phone}
           </strong>
         </span>
       </a>
 
-      {/* Subtle Divider on Mobile */}
-      <div className="w-full border-t border-[#f0f0e8] sm:hidden my-1" />
-
       {/* Social Right Side */}
-      <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-4 w-full sm:w-auto">
-        <span className="text-[11px] font-bold uppercase tracking-[0.06em] text-[#66665c] whitespace-nowrap leading-none">
+      <div className="flex items-center gap-3 sm:gap-3.5">
+        <span className="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.06em] text-[#6b6b63] whitespace-nowrap leading-none">
           FOLLOW TRAILS ON:
         </span>
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center gap-2">
           {/* Instagram */}
           <a
             href={instagramLink}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={isExternal(instagramLink) ? "_blank" : undefined}
+            rel={isExternal(instagramLink) ? "noopener noreferrer" : undefined}
+            onClick={(e) => {
+              if (!isExternal(instagramLink)) e.preventDefault();
+            }}
             aria-label="Instagram"
-            className="w-9 h-9 sm:w-9 sm:h-9 rounded-full border-2 border-[#14140f] bg-white text-[#14140f] inline-flex items-center justify-center hover:bg-[#14140f] hover:text-[#d6ff3f] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 active:scale-95"
+            className="w-8 h-8 rounded-full border border-[#14140f] bg-white text-[#14140f] inline-flex items-center justify-center hover:bg-[#14140f] hover:text-[#d6ff3f] hover:scale-105 transition-all duration-200"
           >
             <svg
               viewBox="0 0 24 24"
-              className="w-4 h-4"
+              className="w-3.5 h-3.5"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -83,14 +86,17 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
           {/* YouTube */}
           <a
             href={youtubeLink}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={isExternal(youtubeLink) ? "_blank" : undefined}
+            rel={isExternal(youtubeLink) ? "noopener noreferrer" : undefined}
+            onClick={(e) => {
+              if (!isExternal(youtubeLink)) e.preventDefault();
+            }}
             aria-label="YouTube"
-            className="w-9 h-9 sm:w-9 sm:h-9 rounded-full border-2 border-[#14140f] bg-white text-[#14140f] inline-flex items-center justify-center hover:bg-[#14140f] hover:text-[#d6ff3f] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 active:scale-95"
+            className="w-8 h-8 rounded-full border border-[#14140f] bg-white text-[#14140f] inline-flex items-center justify-center hover:bg-[#14140f] hover:text-[#d6ff3f] hover:scale-105 transition-all duration-200"
           >
             <svg
               viewBox="0 0 24 24"
-              className="w-4 h-4"
+              className="w-3.5 h-3.5"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
@@ -105,14 +111,17 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
           {/* Facebook */}
           <a
             href={facebookLink}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={isExternal(facebookLink) ? "_blank" : undefined}
+            rel={isExternal(facebookLink) ? "noopener noreferrer" : undefined}
+            onClick={(e) => {
+              if (!isExternal(facebookLink)) e.preventDefault();
+            }}
             aria-label="Facebook"
-            className="w-9 h-9 sm:w-9 sm:h-9 rounded-full border-2 border-[#14140f] bg-white text-[#14140f] inline-flex items-center justify-center hover:bg-[#14140f] hover:text-[#d6ff3f] hover:-translate-y-0.5 hover:shadow-md transition-all duration-200 active:scale-95"
+            className="w-8 h-8 rounded-full border border-[#14140f] bg-white text-[#14140f] inline-flex items-center justify-center hover:bg-[#14140f] hover:text-[#d6ff3f] hover:scale-105 transition-all duration-200"
           >
             <svg
               viewBox="0 0 24 24"
-              className="w-4 h-4"
+              className="w-3.5 h-3.5"
               fill="none"
               stroke="currentColor"
               strokeWidth="2"

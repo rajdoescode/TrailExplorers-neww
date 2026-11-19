@@ -1225,8 +1225,8 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "author": "Trail Explorers Community",
-    "video_url": "https://www.instagram.com/reel/DaF1pIctEcq/?igsh=MzlmbmhuNzZqNGw%3D",
-    "embed_url": "https://www.instagram.com/reel/DaF1pIctEcq/embed",
+    "video_url": "", // Commented out awarabanjara reel redirect
+    "embed_url": "", // Commented out awarabanjara reel embed
     "image_url": "/assets/images/trips/img_1786622470768_IMG_0175.jpg",
     "read_time": "1 min watch",
     "featured_in_watch_read": true,
@@ -1256,8 +1256,8 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "author": "Trail Explorers Community",
-    "video_url": "https://www.instagram.com/reel/DaIvb8RtiRT/?igsh=bmZrNDRpNXh5dnh1",
-    "embed_url": "https://www.instagram.com/reel/DaIvb8RtiRT/embed",
+    "video_url": "", // Commented out awarabanjara reel redirect
+    "embed_url": "", // Commented out awarabanjara reel embed
     "image_url": "/assets/images/trips/img_1786784948655_IMG_0176.jpg",
     "read_time": "1 min watch",
     "featured_in_watch_read": true,
@@ -1271,8 +1271,8 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "image_url": "/assets/images/trips/img_1786784967421_IMG_0178.jpg",
-    "video_url": "https://www.instagram.com/reel/DbLq0VmhmuNt33jnF6TfurXRZHIFH6COWalo4E0/?igsh=czduM3R6Y3p5cXhq",
-    "embed_url": "https://www.instagram.com/reel/DbLq0VmhmuNt33jnF6TfurXRZHIFH6COWalo4E0/embed",
+    "video_url": "", // Commented out awarabanjara reel redirect
+    "embed_url": "", // Commented out awarabanjara reel embed
     "read_time": "1 min watch",
     "author": "Trail Explorers Community",
     "author_avatar": "/assets/images/reviews/pfp-karan.jpg",
@@ -1288,8 +1288,8 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "image_url": "/assets/images/trips/img_1789401380012_Zanskar___.jpg",
-    "video_url": "https://www.instagram.com/reel/Dac_sGtN4nQ/?igsh=MXZ6OGE2Z2VwanVjOQ==",
-    "embed_url": "https://www.instagram.com/reel/Dac_sGtN4nQ/embed",
+    "video_url": "", // Commented out awarabanjara reel redirect
+    "embed_url": "", // Commented out awarabanjara reel embed
     "read_time": "1 min watch",
     "author": "Trail Explorers Community",
     "author_avatar": "/assets/images/reviews/pfp-rohit.jpg",
@@ -1305,8 +1305,8 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "image_url": "/assets/images/trips/img_1786614302886_IMG_0177.jpg",
-    "video_url": "https://www.instagram.com/reel/DaiPSYDzbvl/?igsh=MWk5bjVpd2k2Nm9xag==",
-    "embed_url": "https://www.instagram.com/reel/DaiPSYDzbvl/embed",
+    "video_url": "", // Commented out awarabanjara reel redirect
+    "embed_url": "", // Commented out awarabanjara reel embed
     "read_time": "1 min watch",
     "author": "Trail Explorers Community",
     "author_avatar": "/assets/images/reviews/pfp-priya.jpg",

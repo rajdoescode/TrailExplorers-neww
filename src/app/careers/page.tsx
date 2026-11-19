@@ -1,3 +1,11 @@
+import { notFound } from "next/navigation";
+
+// Page commented out as requested
+export default function CareersPage() {
+  notFound();
+}
+
+/*
 import React from "react";
 import { Container } from "@/components/layout/Container";
 import { Heading, Paragraph } from "@/components/ui/Heading";
@@ -31,7 +39,7 @@ const JOBS = [
   },
 ];
 
-export default function CareersPage() {
+export function OriginalCareersPage() {
   return (
     <div className="w-full bg-[#f6f6f1] min-h-screen pb-20">
       <section className="bg-[#14140f] text-white py-16 sm:py-20 border-b border-white/10">
@@ -90,3 +98,4 @@ export default function CareersPage() {
     </div>
   );
 }
+*/

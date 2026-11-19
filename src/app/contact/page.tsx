@@ -7,7 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { SITE_CONFIG } from "@/data/site-config";
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -104,7 +105,7 @@ export default function ContactPage() {
                 variant="whatsapp"
                 size="md"
                 fullWidth
-                leftIcon={<MessageSquare className="w-4 h-4" />}
+                leftIcon={<WhatsAppIcon className="w-5 h-5 fill-current text-white shrink-0" />}
               >
                 Chat on WhatsApp Now
               </Button>

@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
                   <li>
                     <Link href="/about">About Us</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/founder">Founder&apos;s Story</Link>
                   </li>
                   <li>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
                   </li>
                   <li>
                     <Link href="/careers">Careers</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
 

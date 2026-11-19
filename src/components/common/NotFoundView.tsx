@@ -131,7 +131,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
             <span>Private, group and educational trips.</span>
           </a>
           <a
-            href="https://wa.me/919103910523"
+            href="https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B"
             target="_blank"
             rel="noopener noreferrer"
             className="nf-link nf-link-wa cursor-pointer"

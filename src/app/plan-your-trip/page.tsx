@@ -1923,9 +1923,9 @@ export default function PlanYourTripPage() {
               <ul className="space-y-1.5 text-xs text-gray-600 font-medium">
                 <li><Link href="/" className="hover:text-black">Home</Link></li>
                 <li><Link href="/about" className="hover:text-black">About Us</Link></li>
-                <li><Link href="/founder" className="hover:text-black">Founder&apos;s Story</Link></li>
+                {/* <li><Link href="/founder" className="hover:text-black">Founder&apos;s Story</Link></li>
                 <li><Link href="/postcards" className="hover:text-black">Postcards</Link></li>
-                <li><Link href="/careers" className="hover:text-black">Careers</Link></li>
+                <li><Link href="/careers" className="hover:text-black">Careers</Link></li> */}
               </ul>
             </div>
             <div>
