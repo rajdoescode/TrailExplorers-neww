@@ -531,18 +531,18 @@ export default function TripDetailPage() {
 
           {/* Sticky Right Booking Sidebar (1 Column) */}
           <div className="sticky top-[135px] sm:top-[140px] flex flex-col gap-5 transition-all">
-            <aside className="bg-white rounded-3xl p-6 border-[1.5px] border-[#e8e8e2] shadow-[0_12px_32px_rgba(214,255,63,0.35)] flex flex-col gap-4">
+            <aside className="bg-white rounded-[28px] p-7 border-[1.5px] border-[#ecece6] shadow-[0_16px_40px_rgba(214,255,63,0.38)] flex flex-col gap-5">
               <div className="text-left">
-                <span className="text-[13px] text-[#77776f] font-semibold block">
+                <span className="text-[13px] text-[#707068] font-semibold block mb-1">
                   Starting From
                 </span>
-                <div className="flex items-baseline gap-2 mt-0.5">
-                  <span className="text-3xl sm:text-[34px] font-extrabold text-[#14140f] font-heading leading-tight">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-[34px] sm:text-[36px] font-extrabold text-[#14140f] font-heading tracking-tight leading-none">
                     {formatPrice(selectedPrice)}
                   </span>
-                  <span className="text-[13px] text-[#77776f] font-medium">per person</span>
+                  <span className="text-[13px] text-[#707068] font-medium">per person</span>
                 </div>
-                <span className="text-[13px] text-[#77776f] font-semibold block mt-0.5">
+                <span className="text-[12.5px] text-[#707068] font-semibold block mt-1.5">
                   + 5% GST
                 </span>
               </div>
@@ -551,22 +551,22 @@ export default function TripDetailPage() {
               <button
                 type="button"
                 onClick={() => setIsBookModalOpen(true)}
-                className="w-full bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] font-extrabold text-base py-3.5 px-4 rounded-xl border-2 border-[#14140f] shadow-[0_6px_18px_rgba(214,255,63,0.45)] hover:-translate-y-0.5 transition-all cursor-pointer font-heading text-center"
+                className="w-full bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] font-black text-[15px] sm:text-[16px] py-3.5 px-4 rounded-[14px] border-[1.5px] border-[#14140f] shadow-[0_6px_20px_rgba(214,255,63,0.5)] hover:shadow-[0_8px_24px_rgba(214,255,63,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer font-heading text-center uppercase tracking-wide"
               >
                 BOOK NOW
               </button>
 
               {/* Private Trip Option */}
-              <div className="bg-[#f8f8f5] border-[1.5px] border-[#e8e8e2] rounded-2xl p-4 text-left">
-                <h4 className="text-sm font-bold text-[#14140f] mb-1">
+              <div className="bg-[#f8f8f5] border-[1.5px] border-[#ecece6] rounded-[20px] p-5 text-left">
+                <h4 className="text-[14.5px] font-extrabold text-[#14140f] mb-1.5 leading-snug">
                   Private Trip Available
                 </h4>
-                <p className="text-[12.5px] text-[#66665c] leading-relaxed mb-3">
+                <p className="text-[12.5px] text-[#6b6b63] font-medium leading-[1.4] mb-3.5">
                   Customized itinerary for groups of 4+ travelers.
                 </p>
                 <Link
                   href="/plan-your-trip"
-                  className="inline-block bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] text-[13px] font-bold py-2 px-4 rounded-lg border-[1.5px] border-[#14140f] transition-all cursor-pointer text-center"
+                  className="inline-flex items-center justify-center bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] text-[13px] font-bold py-2.5 px-4 rounded-[12px] border-[1.5px] border-[#14140f] shadow-[0_2px_8px_rgba(214,255,63,0.35)] hover:-translate-y-0.5 transition-all cursor-pointer text-center"
                 >
                   Chat with our Trip Planner
                 </Link>
@@ -577,9 +577,20 @@ export default function TripDetailPage() {
                 href={getWhatsAppBookingLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 px-4 rounded-xl border-[1.5px] border-[#14140f] bg-white text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(214,255,63,0.3)] hover:-translate-y-0.5 transition-all"
+                className="w-full py-3.5 px-4 rounded-[14px] border-[1.5px] border-[#14140f] bg-white text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-[#f8f8f5] hover:-translate-y-0.5 transition-all"
               >
-                <MessageSquare className="w-5 h-5 text-[#25d366]" />
+                <svg
+                  className="w-[18px] h-[18px] text-[#14140f] shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+                </svg>
                 <span>WhatsApp Us</span>
               </a>
             </aside>
