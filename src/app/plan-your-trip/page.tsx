@@ -17,6 +17,10 @@ import {
   ArrowDown,
   X,
 } from "lucide-react";
+import {
+  BanjaraChatMascot,
+  BanjaraMascotHandle,
+} from "@/components/chat/BanjaraChatMascot";
 
 // ==========================================
 // CHAT MODE DATA TYPES & PRESETS
@@ -473,6 +477,8 @@ export default function PlanYourTripPage() {
 
   const stageRef = useRef(0);
   const regionRef = useRef("ladakh");
+  const mascotRef = useRef<BanjaraMascotHandle>(null);
+  const welcomeMascotRef = useRef<BanjaraMascotHandle>(null);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [mobileTicketOpen, setMobileTicketOpen] = useState(false);
@@ -523,6 +529,7 @@ export default function PlanYourTripPage() {
   const [builderRef, setBuilderRef] = useState("AB-9182");
 
   const threadEndRef = useRef<HTMLDivElement>(null);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
 
   // Sync body class: .pc-mode-chat in Chat mode, standard white background in Step mode
   useEffect(() => {
@@ -537,10 +544,17 @@ export default function PlanYourTripPage() {
   }, [stepMode]);
 
   useEffect(() => {
-    if (messages.length > 3 || isTyping) {
-      threadEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (conversationStage > 0 || messages.length > 3 || isTyping) {
+      if (chatScrollRef.current) {
+        chatScrollRef.current.scrollTo({
+          top: chatScrollRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      } else {
+        threadEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }
     }
-  }, [messages, isTyping]);
+  }, [messages, isTyping, conversationStage]);
 
   // Toggle region selection in step 1
   const toggleRegion = (id: string) => {
@@ -648,6 +662,7 @@ export default function PlanYourTripPage() {
 
     setMessages((prev) => [...prev, { id: "user-" + Date.now(), sender: "user", text: start.say }]);
     setIsTyping(true);
+    mascotRef.current?.sit();
 
     const preset = PRESETS[key] || PRESETS.ladakh;
 
@@ -684,12 +699,14 @@ export default function PlanYourTripPage() {
       }
 
       setMessages((prev) => [...prev, { id: "bot-" + Date.now(), sender: "bot", text: replyText, chips }]);
+      mascotRef.current?.rise(true);
     }, 700);
   };
 
   const handleChipClick = (chip: string) => {
     setMessages((prev) => [...prev, { id: "user-" + Date.now(), sender: "user", text: chip }]);
     setIsTyping(true);
+    mascotRef.current?.sit();
 
     const currentKey = regionRef.current;
     const preset = PRESETS[currentKey] || PRESETS.ladakh;
@@ -869,7 +886,8 @@ export default function PlanYourTripPage() {
           },
         ]);
       }
-    }, 600);
+      mascotRef.current?.rise(true);
+    }, 700);
   };
 
   const handleSetBudget = () => {
@@ -922,6 +940,8 @@ export default function PlanYourTripPage() {
     setInputText("");
     setIsTyping(false);
     setMobileTicketOpen(false);
+    mascotRef.current?.idle();
+    welcomeMascotRef.current?.idle();
   };
 
   // Reusable ticket body component for desktop right column and mobile slide-up sheet
@@ -1982,20 +2002,16 @@ export default function PlanYourTripPage() {
             </div>
 
             {/* Chat Messages Thread */}
-            <div className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white">
+            <div className="relative flex-1 min-h-0 flex flex-col bg-white">
+              <div
+                ref={chatScrollRef}
+                className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white"
+              >
               {conversationStage === 0 ? (
                 <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
-                  {/* Standing Character in Welcome State */}
-                  <div className="w-[95px] h-[125px] sm:w-[115px] sm:h-[145px] mx-auto my-1 relative shrink-0 pointer-events-none">
-                    <div className="w-full h-full animate-banjara-breathe relative">
-                      <Image
-                        src="/assets/images/mascot/banjara-standing.webp"
-                        alt="Banjara Mascot"
-                        fill
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
+                  {/* Standing Animated Character in Welcome State */}
+                  <div className="mx-auto my-1 flex justify-center">
+                    <BanjaraChatMascot ref={welcomeMascotRef} variant="lg" />
                   </div>
 
                   {/* Sender label */}
@@ -2193,18 +2209,6 @@ export default function PlanYourTripPage() {
                 </div>
               );
             })}
-
-                  {/* Docked Mascot Character at bottom of thread (matching live site) */}
-                  <div className="flex items-center gap-2 mt-auto pt-2 shrink-0 select-none pointer-events-none">
-                    <div className="w-[34px] h-[46px] relative shrink-0 animate-banjara-breathe">
-                      <Image
-                        src="/assets/images/mascot/banjara-standing.webp"
-                        alt="Banjara Mascot"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
                 </>
               )}
 
@@ -2218,8 +2222,25 @@ export default function PlanYourTripPage() {
                 </div>
               )}
 
+              {/* Bottom Spacer so chat messages and chips sit comfortably above the docked mascot */}
+              {conversationStage > 0 && (
+                <div
+                  className="h-[135px] sm:h-[145px] w-full shrink-0 pointer-events-none"
+                  aria-hidden="true"
+                />
+              )}
+
               <div ref={threadEndRef} />
             </div>
+
+            {/* Soft floor fade and docked animated Banjara mascot (active chat mode) */}
+            {conversationStage > 0 && (
+              <>
+                <div className="absolute left-0 right-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent pointer-events-none z-[5]" />
+                <BanjaraChatMascot ref={mascotRef} variant="dock" />
+              </>
+            )}
+          </div>
 
             {/* Composer */}
             <div className="p-2.5 sm:p-4 bg-white border-t border-[#e8e8e0] shrink-0">

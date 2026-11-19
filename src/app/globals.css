@@ -356,6 +356,10 @@ body.pc-mode-chat main {
   animation: pc-bounce 1.2s infinite ease-in-out;
   animation-delay: 0.15s;
 }
+.pc-bounce-3 {
+  animation: pc-bounce 1.2s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
 @keyframes pc-glow { 
   0%, 100% { transform: scale(0.9); opacity: 0.55; }
   50% { transform: scale(1.06); opacity: 1; }
@@ -410,6 +414,118 @@ body.pc-mode-chat main {
 }
 .pc-budget-range::-webkit-slider-thumb:hover {
   transform: scale(1.15);
+}
+
+/* ---------- Plan-Your-Trip Banjara Chat Mascot ---------- */
+.pc-mascot {
+  position: relative;
+  display: block;
+  height: 100px;
+  aspect-ratio: 190 / 240;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.pc-mascot-lg {
+  height: 145px;
+  margin-bottom: -4px;
+}
+.pc-mascot-dock {
+  position: absolute;
+  left: clamp(12px, 2.5vw, 24px);
+  bottom: 6px;
+  z-index: 10;
+  height: 100px;
+}
+
+.pc-mascot-sprite {
+  position: absolute;
+  inset: 0;
+  background: url('/assets/images/mascot/banjara-sprite.webp?v=1') 0 0 / 1000% 600% no-repeat;
+  transform-origin: 50% 100%;
+  animation: pc-breathe 3.2s ease-in-out infinite;
+}
+.pc-mascot-sprite.is-move {
+  background-image: url('/assets/images/mascot/banjara-moves.webp?v=1');
+  background-size: 1000% 900%;
+}
+.pc-mascot[data-state="think"] .pc-mascot-sprite { animation-duration: 4.8s; }
+.pc-mascot[data-state="sit"] .pc-mascot-sprite,
+.pc-mascot[data-state="rise"] .pc-mascot-sprite { animation: none; }
+
+@keyframes pc-breathe {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1.012, 1.022); }
+}
+
+/* Calm glow under him while he meditates */
+.pc-mascot::before {
+  content: '';
+  position: absolute;
+  left: -14%;
+  right: -14%;
+  bottom: -4%;
+  height: 46%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(214, 255, 63, 0.55), rgba(214, 255, 63, 0));
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+.pc-mascot[data-state="think"]::before { opacity: 1; animation: pc-glow 2.6s ease-in-out infinite; }
+
+/* Thought dots drifting up beside his head */
+.pc-mascot-dots {
+  position: absolute;
+  left: 74%;
+  top: 22%;
+  width: 34px;
+  height: 30px;
+  pointer-events: none;
+}
+.pc-mascot-dots i {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1.5px #14140f;
+  opacity: 0;
+}
+.pc-mascot-dots i:nth-child(1) { left: 0; bottom: 0; width: 5px; height: 5px; }
+.pc-mascot-dots i:nth-child(2) { left: 8px; bottom: 9px; width: 7px; height: 7px; }
+.pc-mascot-dots i:nth-child(3) { left: 18px; bottom: 19px; width: 10px; height: 10px; }
+.pc-mascot[data-state="think"] .pc-mascot-dots i { animation: pc-dot 1.8s ease-in-out infinite; }
+.pc-mascot[data-state="think"] .pc-mascot-dots i:nth-child(2) { animation-delay: 0.3s; }
+.pc-mascot[data-state="think"] .pc-mascot-dots i:nth-child(3) { animation-delay: 0.6s; }
+
+/* Reply landed: a happy cheer hop */
+.pc-mascot.is-cheer { animation: pc-hop 0.65s cubic-bezier(0.3, 0.7, 0.4, 1); }
+
+/* Click tricks: a spin and a quip bubble */
+.pc-mascot.is-spin { animation: pc-spin 0.8s ease-in-out; }
+
+.pc-mascot-bubble {
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  margin-bottom: 4px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: #fff;
+  color: #14140f;
+  box-shadow: 0 0 0 1.5px #14140f;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: pc-bubble 2.2s ease both;
+  z-index: 30;
+}
+@keyframes pc-bubble {
+  0% { opacity: 0; transform: translate(-50%, 6px) scale(0.8); }
+  10%, 85% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -4px) scale(1); }
 }
 
 /* =========================================================
