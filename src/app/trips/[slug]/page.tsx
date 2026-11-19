@@ -43,8 +43,18 @@ export default function TripDetailPage() {
   }, [slug]);
 
   const [expandedDay, setExpandedDay] = useState<number | null>(1);
-  const [reserveModalOpen, setReserveModalOpen] = useState(false);
-  const [selectedSharing, setSelectedSharing] = useState<string>("quad");
+  const [isBookModalOpen, setIsBookModalOpen] = useState(false);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [bookingForm, setBookingForm] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    departureDate: "On Request Departure Date",
+    travelers: 1,
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedSharing, setSelectedSharing] = useState<string>("triple");
 
   if (!trip) {
     return (
@@ -314,82 +324,73 @@ export default function TripDetailPage() {
             )}
           </div>
 
-          {/* Sticky Booking Sidebar (1 Col) */}
+          {/* Sticky Booking Sidebar (1 Col) matching Live Reference */}
           <div className="sticky top-[100px] flex flex-col gap-5">
-            <div className="bg-white rounded-2xl p-6 sm:p-7 border-2 border-[#14140f] shadow-2xl flex flex-col gap-5">
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-4">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#6b6b63] block">
-                  Guaranteed Departure
+                <span className="text-xs text-[#6b6b63] font-medium block">
+                  Starting From
                 </span>
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[#14140f]">
+                <div className="flex items-baseline gap-2 mt-0.5">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-[#14140f] font-heading">
                     {formatPrice(trip.price)}
                   </span>
-                  <span className="text-xs text-[#6b6b63] font-semibold">/ per person</span>
+                  <span className="text-xs text-[#6b6b63] font-medium">per person</span>
                 </div>
+                <span className="text-[11px] text-[#6b6b63] font-semibold block mt-0.5">
+                  + 5% GST
+                </span>
               </div>
 
-              {/* Occupancy Selector */}
-              <div className="flex flex-col gap-2 pt-2 border-t border-[#f0f0eb]">
-                <label className="text-xs font-bold text-[#14140f]">Select Sharing Occupancy:</label>
-                <div className="grid grid-cols-3 gap-2 text-xs font-bold">
-                  {[
-                    { id: "quad", label: "Quad", tag: "Best Value" },
-                    { id: "triple", label: "Triple", tag: "Popular" },
-                    { id: "double", label: "Double", tag: "Private" },
-                  ].map((s) => (
-                    <button
-                      key={s.id}
-                      onClick={() => setSelectedSharing(s.id)}
-                      className={`py-2 px-2 rounded-xl border text-center transition-all cursor-pointer ${
-                        selectedSharing === s.id
-                          ? "bg-[#14140f] text-[#d6ff3f] border-[#14140f]"
-                          : "bg-[#f6f6f1] text-[#14140f] border-[#e2e2dc] hover:bg-[#e8e8e2]"
-                      }`}
-                    >
-                      <div>{s.label}</div>
-                      <div className="text-[10px] font-medium opacity-80">{s.tag}</div>
-                    </button>
-                  ))}
-                </div>
-              </div>
+              {/* BOOK NOW Primary Button */}
+              <button
+                type="button"
+                onClick={() => setIsBookModalOpen(true)}
+                className="w-full bg-[#d6ff3f] text-[#14140f] font-extrabold text-base py-3.5 rounded-xl border border-[#14140f] shadow-lime-btn hover:bg-[#ccff00] hover:shadow-lg transition-all cursor-pointer text-center font-heading"
+              >
+                BOOK NOW
+              </button>
 
-              {/* Action Buttons */}
-              <div className="flex flex-col gap-3 pt-2">
-                <Button
-                  onClick={() => setReserveModalOpen(true)}
-                  variant="primary"
-                  size="lg"
-                  fullWidth
-                  className="shadow-lime-btn font-extrabold text-sm sm:text-base py-3.5"
+              {/* Private Trip Option */}
+              <div className="pt-3 border-t border-[#f0f0eb] text-left">
+                <span className="text-xs font-bold text-[#14140f] block">
+                  Private Trip Available
+                </span>
+                <span className="text-[11px] text-[#6b6b63] block mt-0.5">
+                  Customised itinerary for groups of 4+ travelers
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setIsBookModalOpen(true)}
+                  className="mt-2 w-full py-2.5 px-3 rounded-xl border border-[#14140f] text-xs font-bold text-[#14140f] hover:bg-[#14140f] hover:text-[#d6ff3f] transition-all cursor-pointer text-center"
                 >
-                  Reserve Your Spot (10% Token)
-                </Button>
-
-                <Button
-                  href={getWhatsAppBookingLink()}
-                  external
-                  variant="whatsapp"
-                  size="md"
-                  fullWidth
-                  leftIcon={<MessageSquare className="w-4 h-4" />}
-                >
-                  Quick Inquire on WhatsApp
-                </Button>
+                  Chat with our Trip Planner
+                </button>
               </div>
+
+              {/* WhatsApp Us Button */}
+              <a
+                href={getWhatsAppBookingLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 px-3 rounded-xl border border-[#e2e2dc] text-xs font-bold text-[#14140f] flex items-center justify-center gap-2 hover:bg-[#f6f6f1] transition-all"
+              >
+                <MessageSquare className="w-4 h-4 text-[#25d366]" />
+                <span>WhatsApp Us</span>
+              </a>
 
               {/* Guarantee badges */}
-              <div className="flex flex-col gap-2 pt-4 border-t border-[#f0f0eb] text-xs text-[#6b6b63]">
+              <div className="flex flex-col gap-2 pt-3 border-t border-[#f0f0eb] text-xs text-[#6b6b63]">
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#2fa84f]" />
+                  <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
                   <span>Lock seat with only 10% advance</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#2fa84f]" />
+                  <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
                   <span>Full refund up to 30 days before departure</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#2fa84f]" />
+                  <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
                   <span>Zero hidden costs or permit charges</span>
                 </div>
               </div>
@@ -412,72 +413,247 @@ export default function TripDetailPage() {
         )}
       </Container>
 
-      {/* Reservation Modal */}
-      {reserveModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative border-2 border-[#14140f] shadow-2xl">
+      {/* Mobile Sticky Bottom Action Bar */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#e2e2dc] p-3 px-4 flex items-center justify-between shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
+        <div>
+          <span className="text-[10px] text-[#6b6b63] font-semibold block uppercase">Starting From</span>
+          <div className="flex items-baseline gap-1">
+            <span className="text-lg font-extrabold text-[#14140f] font-heading">{formatPrice(trip.price)}</span>
+            <span className="text-[10px] text-[#6b6b63]">/ person</span>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={() => setIsBookModalOpen(true)}
+          className="bg-[#d6ff3f] text-[#14140f] font-extrabold text-sm px-6 py-2.5 rounded-full border border-[#14140f] shadow-lime-btn hover:bg-[#ccff00] cursor-pointer font-heading"
+        >
+          BOOK NOW
+        </button>
+      </div>
+
+      {/* ============ PLAN YOUR NEXT TRIP MODAL (Matching awarabanjara.in) ============ */}
+      {isBookModalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-5 bg-black/70 backdrop-blur-sm transition-all duration-300"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setIsBookModalOpen(false);
+          }}
+        >
+          <div className="relative bg-white rounded-[24px] sm:rounded-[28px] max-w-[800px] w-full shadow-[0_24px_60px_rgba(0,0,0,0.38)] overflow-hidden transition-all duration-300 animate-in fade-in zoom-in-95">
+            {/* Close Button Top Right */}
             <button
-              onClick={() => setReserveModalOpen(false)}
-              className="absolute top-4 right-4 p-2 bg-[#f6f6f1] hover:bg-[#d6ff3f] rounded-full transition-colors"
+              type="button"
+              onClick={() => setIsBookModalOpen(false)}
+              className="absolute top-3.5 right-4 w-8 h-8 rounded-full flex items-center justify-center text-[#14140f] hover:bg-black/5 transition-all z-20 cursor-pointer"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5 text-[#14140f]" />
             </button>
 
-            <span className="text-xs font-bold uppercase tracking-wider text-[#d6ff3f] bg-[#14140f] px-3 py-1 rounded-full inline-block mb-3">
-              Seat Reservation
-            </span>
-
-            <h3 className="text-xl sm:text-2xl font-extrabold text-[#14140f] mb-1">
-              Lock Your Seat: {trip.title}
-            </h3>
-            <p className="text-xs text-[#6b6b63] mb-6">
-              Lock your departure date with a flexible 10% token. Balance payable 7 days before departure.
-            </p>
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Thank you! Your booking reservation request has been dispatched to our booking desk.");
-                setReserveModalOpen(false);
-              }}
-              className="flex flex-col gap-4 text-left"
-            >
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs font-bold text-[#14140f] block mb-1">Full Name</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Your Name"
-                    className="w-full bg-[#f6f6f1] border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 text-xs font-semibold outline-none focus:border-[#14140f]"
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-bold text-[#14140f] block mb-1">WhatsApp No.</label>
-                  <input
-                    type="tel"
-                    required
-                    placeholder="+91 98765 43210"
-                    className="w-full bg-[#f6f6f1] border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 text-xs font-semibold outline-none focus:border-[#14140f]"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="text-xs font-bold text-[#14140f] block mb-1">Preferred Travel Month / Batch</label>
-                <input
-                  type="text"
-                  placeholder="e.g. Next upcoming weekend or Dec 15"
-                  className="w-full bg-[#f6f6f1] border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 text-xs font-semibold outline-none focus:border-[#14140f]"
+            <div className="grid grid-cols-1 md:grid-cols-2 p-3 sm:p-4 gap-3 sm:gap-4 max-h-[90dvh] overflow-y-auto md:max-h-none md:overflow-visible">
+              {/* Left Column: Visual Trip Card */}
+              <div className="relative rounded-[18px] sm:rounded-[22px] overflow-hidden min-h-[260px] md:min-h-[440px] bg-[#14140f] flex flex-col justify-between p-5">
+                <Image
+                  src={trip.image_url || "/assets/images/home/hero-poster.jpg"}
+                  alt={trip.title}
+                  fill
+                  priority
+                  className="object-cover absolute inset-0"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/60 pointer-events-none" />
+
+                {/* Heading Top */}
+                <div className="relative z-10 text-left">
+                  <h2 className="text-white font-extrabold text-2xl sm:text-3xl leading-[1.15] font-heading drop-shadow-md">
+                    Escape the<br />ordinary.
+                  </h2>
+                </div>
+
+                {/* Bottom Selected Batch Box */}
+                <div className="relative z-10 bg-black/60 backdrop-blur-md rounded-2xl p-3.5 border border-white/15 text-white text-left shadow-lg">
+                  <span className="text-[10px] font-bold text-gray-300 uppercase tracking-wider block mb-1">
+                    SELECTED BATCH
+                  </span>
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-white">
+                    <span>🗓️</span>
+                    <span>{bookingForm.departureDate}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gray-200 mt-1">
+                    <span>📦</span>
+                    <span>Triple/Quad Sharing</span>
+                  </div>
+                  <div className="text-[#d6ff3f] text-xl sm:text-2xl font-extrabold mt-1.5 font-heading">
+                    {formatPrice(trip.price)}
+                  </div>
+                </div>
               </div>
 
-              <div className="pt-2">
-                <Button type="submit" variant="primary" size="lg" fullWidth className="font-extrabold shadow-lime-btn">
-                  Confirm Reservation Request
-                </Button>
+              {/* Right Column: Trip Planning Form */}
+              <div className="p-2 sm:p-3 md:py-2 md:pr-2 flex flex-col justify-center">
+                <div className="mb-3 text-left">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#14140f] font-heading">
+                    Plan Your Next Trip
+                  </h3>
+                </div>
+
+                <form
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setIsSubmitting(true);
+                    const inquiry = {
+                      id: "TRIP_INQ_" + Date.now(),
+                      trip_title: trip.title,
+                      trip_price: trip.price,
+                      customer_name: bookingForm.name,
+                      phone: bookingForm.phone,
+                      email: bookingForm.email,
+                      departure_date: bookingForm.departureDate,
+                      travelers: bookingForm.travelers,
+                      message: bookingForm.message,
+                      created_at: new Date().toISOString(),
+                    };
+                    try {
+                      const list = JSON.parse(localStorage.getItem("awara_inquiries") || "[]");
+                      list.push(inquiry);
+                      localStorage.setItem("awara_inquiries", JSON.stringify(list));
+                    } catch {}
+                    await new Promise((r) => setTimeout(r, 600));
+                    setIsSubmitting(false);
+                    setIsBookModalOpen(false);
+                    setIsSuccessOpen(true);
+                  }}
+                  className="flex flex-col gap-2.5 sm:gap-3 text-left"
+                >
+                  {/* Your Name */}
+                  <div>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Your Name"
+                      value={bookingForm.name}
+                      onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
+                      className="w-full border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-[#14140f] bg-white outline-none placeholder:text-gray-400 focus:border-[#14140f] transition-all"
+                    />
+                  </div>
+
+                  {/* Mobile No. */}
+                  <div className="flex items-center border border-[#e2e2dc] rounded-xl overflow-hidden focus-within:border-[#14140f] transition-all bg-white">
+                    <span className="px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-gray-700 bg-[#f8f8f5] border-r border-[#e2e2dc] shrink-0">
+                      +91
+                    </span>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="Mobile No."
+                      value={bookingForm.phone}
+                      onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                      className="w-full px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-[#14140f] placeholder:text-gray-400 outline-none bg-transparent"
+                    />
+                  </div>
+
+                  {/* Email (optional) */}
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email (optional)"
+                      value={bookingForm.email}
+                      onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
+                      className="w-full border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-[#14140f] bg-white outline-none placeholder:text-gray-400 focus:border-[#14140f] transition-all"
+                    />
+                  </div>
+
+                  {/* Date & Travelers Count */}
+                  <div className="grid grid-cols-[1fr_88px] gap-2">
+                    <input
+                      type="text"
+                      readOnly
+                      value={bookingForm.departureDate}
+                      className="w-full bg-[#f8f8f5] border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-[#14140f] outline-none"
+                    />
+                    <div className="flex items-center justify-between border border-[#e2e2dc] rounded-xl px-2.5 py-2 bg-white">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setBookingForm({
+                            ...bookingForm,
+                            travelers: Math.max(1, bookingForm.travelers - 1),
+                          })
+                        }
+                        className="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-black font-bold text-base cursor-pointer select-none"
+                      >
+                        -
+                      </button>
+                      <span className="font-bold text-xs sm:text-sm text-[#14140f]">
+                        {bookingForm.travelers}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setBookingForm({
+                            ...bookingForm,
+                            travelers: bookingForm.travelers + 1,
+                          })
+                        }
+                        className="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-black font-bold text-base cursor-pointer select-none"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Message (optional) */}
+                  <div>
+                    <textarea
+                      rows={2}
+                      placeholder="Message (optional)"
+                      value={bookingForm.message}
+                      onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
+                      className="w-full border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-[#14140f] bg-white outline-none placeholder:text-gray-400 focus:border-[#14140f] resize-none transition-all"
+                    />
+                  </div>
+
+                  {/* Connect with Expert Button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#d6ff3f] text-[#14140f] font-extrabold text-sm sm:text-base py-3 sm:py-3.5 rounded-xl border border-[#14140f] shadow-lime-btn hover:bg-[#ccff00] hover:shadow-lg transition-all cursor-pointer flex items-center justify-center font-heading mt-1"
+                  >
+                    {isSubmitting ? "Connecting..." : "Connect with Expert"}
+                  </button>
+                </form>
               </div>
-            </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ============ INQUIRY SUCCESS CONFIRMATION MODAL ============ */}
+      {isSuccessOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-[999999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-all duration-200"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setIsSuccessOpen(false);
+          }}
+        >
+          <div className="relative bg-white rounded-[28px] max-w-[460px] w-[92%] p-7 sm:p-9 text-center shadow-2xl overflow-hidden animate-in fade-in zoom-in-95">
+            <div className="text-[52px] mb-3 select-none">🎉</div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#14140f] mb-2 font-heading">
+              Thank You for Contacting!
+            </h3>
+            <p className="text-xs sm:text-sm text-[#6b6b63] leading-relaxed mb-6 font-medium">
+              We have received your booking inquiry for <strong>{trip.title}</strong>. Our Himalayan expedition specialist will reach out to you shortly via WhatsApp / call.
+            </p>
+            <button
+              type="button"
+              onClick={() => setIsSuccessOpen(false)}
+              className="w-full sm:w-auto px-8 py-3 font-extrabold cursor-pointer rounded-xl bg-[#d6ff3f] text-[#14140f] border border-[#14140f] hover:bg-[#ccff00] transition-all font-heading"
+            >
+              OK, GOT IT
+            </button>
           </div>
         </div>
       )}

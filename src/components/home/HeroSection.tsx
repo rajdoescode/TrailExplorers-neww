@@ -43,13 +43,12 @@ export const HeroSection: React.FC = () => {
 
         {/* Hero Actions */}
         <div className="flex flex-wrap justify-center items-center gap-[12px] mt-1">
-          <button
-            type="button"
-            id="heroBookNowBtn"
+          <Link
+            href="#community-trips"
             className="inline-flex items-center justify-center font-heading font-bold text-[15px] px-[28px] py-[12px] rounded-full bg-[#d6ff3f] text-[#14140f] border border-[#14140f] hover:bg-[#ccff00] hover:-translate-y-[1px] hover:shadow-[0_6px_18px_rgba(214,255,63,0.45)] transition-all duration-180 cursor-pointer"
           >
             Book Now
-          </button>
+          </Link>
 
           <Link
             href="/plan-your-trip"

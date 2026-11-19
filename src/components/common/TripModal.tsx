@@ -63,44 +63,10 @@ export const TripModal: React.FC = () => {
 
     window.addEventListener("open-trip-modal" as any, handleCustomOpen);
 
-    // Deep link #book listener
-    if (window.location.hash === "#book") {
-      openModal("Let's Plan Your Next Journey.", "/assets/images/home/escape-ordinary.webp");
-    }
-
-    const handleHashChange = () => {
-      if (window.location.hash === "#book") {
-        openModal("Let's Plan Your Next Journey.", "/assets/images/home/escape-ordinary.webp");
-      }
-    };
-    window.addEventListener("hashchange", handleHashChange);
-
-    // Auto-open after 10s on first visit if not shown yet
-    const AUTO_BOOK_DELAY_MS = 10000;
-    let timer: NodeJS.Timeout | null = null;
-    try {
-      const alreadyShown = localStorage.getItem("awara_auto_book_shown") === "1";
-      if (!alreadyShown) {
-        timer = setTimeout(() => {
-          openModal("Let's Plan Your Next Journey.", "/assets/images/home/escape-ordinary.webp");
-        }, AUTO_BOOK_DELAY_MS);
-      }
-    } catch {
-      // ignore
-    }
-
-    // Global click listener for .btn-connect-expert, #heroBookNowBtn, or [data-open-trip-modal]
+    // Global click listener for .btn-connect-expert or [data-open-trip-modal]
     const handleGlobalClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;
-
-      // Hero Book Now button
-      const heroBtn = target.closest("#heroBookNowBtn");
-      if (heroBtn) {
-        e.preventDefault();
-        openModal("Let's Plan Your Next Journey.", "/assets/images/home/escape-ordinary.webp");
-        return;
-      }
 
       // Connect with expert buttons anywhere on page
       const expertBtn = target.closest(".btn-connect-expert, [data-open-trip-modal]");
@@ -130,10 +96,8 @@ export const TripModal: React.FC = () => {
 
     return () => {
       window.removeEventListener("open-trip-modal" as any, handleCustomOpen);
-      window.removeEventListener("hashchange", handleHashChange);
       document.removeEventListener("click", handleGlobalClick);
       window.removeEventListener("keydown", handleKeyDown);
-      if (timer) clearTimeout(timer);
     };
   }, [openModal, closeModal, closeSuccessModal]);
 
