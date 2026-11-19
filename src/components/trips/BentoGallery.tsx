@@ -140,7 +140,13 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
             )}
 
             {/* Centered Show all / Show fewer Button */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
+            <div
+              className={
+                isExpanded
+                  ? "mt-6 flex justify-center"
+                  : "absolute bottom-4 left-1/2 -translate-x-1/2 z-20"
+              }
+            >
               <button
                 type="button"
                 onClick={() => setIsExpanded((prev) => !prev)}

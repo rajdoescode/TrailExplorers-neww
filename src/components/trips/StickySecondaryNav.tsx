@@ -57,8 +57,8 @@ export function StickySecondaryNav() {
   }, []);
 
   return (
-    <div className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-[#e2e2dc] py-2 px-4 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center gap-1 sm:gap-2 overflow-x-auto no-scrollbar">
+    <div className="sticky top-0 z-30 bg-white border-b border-[#e2e2dc] py-2.5 sm:py-3 shadow-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-6 sm:gap-8 lg:gap-10 overflow-x-auto no-scrollbar">
         {NAV_ITEMS.map((item) => {
           const isActive = activeId === item.id;
           return (
@@ -66,10 +66,10 @@ export function StickySecondaryNav() {
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => scrollToSection(e, item.id)}
-              className={`px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer ${
+              className={`shrink-0 text-sm font-bold tracking-wide transition-all duration-200 cursor-pointer ${
                 isActive
-                  ? "bg-[#14140f] text-[#d6ff3f] shadow-sm scale-[1.02]"
-                  : "text-[#6b6b63] hover:text-[#14140f] hover:bg-[#f0f0ea]"
+                  ? "bg-[#14140f] text-[#d6ff3f] px-5 py-2 rounded-full shadow-sm"
+                  : "text-[#555550] hover:text-[#14140f] py-2"
               }`}
             >
               {item.label}
