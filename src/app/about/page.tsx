@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
-import { WhatsAppSocialBar } from "@/components/common/WhatsAppSocialBar";
 import { TEAM_MEMBERS } from "@/data/team";
 import { ArrowRight } from "lucide-react";
 
@@ -382,112 +381,6 @@ export default function AboutPage() {
             </h4>
           </div>
         </div>
-      </section>
-
-      {/* ============ OUR SERVICES ============ */}
-      <section className="max-w-[1200px] mx-auto px-4 pt-6 pb-16 text-center">
-        <h2 className="font-heading font-extrabold text-[clamp(28px,3.8vw,42px)] text-[#14140f] mb-10 tracking-tight">
-          Our Services
-        </h2>
-
-        {/* 5 Line Art Outline Icons matching exact reference design without boxes */}
-        <div className="flex justify-center items-center gap-10 sm:gap-16 md:gap-20 flex-wrap mb-14 text-[#14140f]">
-          {/* Ticket Icon */}
-          <div
-            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
-            title="Group Trips"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2z" />
-              <path d="M12 5v14" strokeDasharray="2 2" />
-            </svg>
-          </div>
-
-          {/* Bike Icon */}
-          <div
-            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
-            title="Bike Expeditions"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="5.5" cy="17.5" r="3.5" />
-              <circle cx="18.5" cy="17.5" r="3.5" />
-              <path d="M15 6h4l-3 4M5.5 17.5l3.5-7.5h6l3 7.5M9 10h5" />
-            </svg>
-          </div>
-
-          {/* Flame / Fire Icon */}
-          <div
-            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
-            title="Camping & Festivals"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3.5z" />
-            </svg>
-          </div>
-
-          {/* Mountain Icon */}
-          <div
-            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
-            title="Treks & Nature"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M8 3l4 8 5-5 5 15H2L8 3z" />
-            </svg>
-          </div>
-
-          {/* Heart Icon */}
-          <div
-            className="flex flex-col items-center cursor-pointer transition-transform duration-200 hover:-translate-y-2 hover:scale-110 group"
-            title="Women-Only Trips"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="w-16 h-16 sm:w-20 sm:h-20 text-[#14140f] group-hover:text-black transition-colors"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-            </svg>
-          </div>
-        </div>
-
-        {/* WhatsApp Social Bar */}
-        <WhatsAppSocialBar />
       </section>
     </div>
   );

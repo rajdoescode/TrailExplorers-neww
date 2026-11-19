@@ -100,7 +100,15 @@ export default function PostcardsPage() {
           </p>
 
           {/* Category Chips Bar */}
-          <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar pt-6 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div
+            className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar pt-6 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 scroll-pl-4 select-none cursor-grab active:cursor-grabbing"
+            style={{
+              WebkitOverflowScrolling: "touch",
+              touchAction: "pan-x pan-y",
+              overscrollBehaviorX: "contain",
+              scrollbarWidth: "none",
+            }}
+          >
             {filterChips.map((chip) => {
               const isActive = selectedCategory === chip.id;
               return (
@@ -125,6 +133,8 @@ export default function PostcardsPage() {
                 </button>
               );
             })}
+            {/* End spacer for chips bar */}
+            <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
           </div>
         </Container>
       </section>

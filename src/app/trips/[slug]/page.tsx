@@ -710,9 +710,20 @@ export default function TripDetailPage() {
           if (e.target === e.currentTarget) setIsBookModalOpen(false);
         }}
       >
-        <div className="booking-popup-card">
+        <div className="booking-popup-card relative">
           {/* Mobile drag handle */}
-          <div className="w-10 h-1 bg-[#d5d5cd] rounded-full mx-auto my-1 block md:hidden" />
+          <div className="w-12 h-1 bg-[#d5d5cd] rounded-full mx-auto mb-2 block md:hidden" />
+
+          {/* Close button */}
+          <button
+            type="button"
+            className="share-modal-close"
+            id="closeBookingModal"
+            aria-label="Close modal"
+            onClick={() => setIsBookModalOpen(false)}
+          >
+            ✕
+          </button>
 
           {/* LEFT COLUMN: Dynamic Hero Card */}
           <div
@@ -727,6 +738,9 @@ export default function TripDetailPage() {
               sizes="(max-width: 768px) 100vw, 400px"
               containerClassName="absolute inset-0 z-0"
             />
+            {/* Scrim gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80 pointer-events-none z-[1]" />
+
             <h2 className="booking-popup-headline relative z-10">
               Escape the<br />ordinary.
             </h2>
@@ -750,19 +764,11 @@ export default function TripDetailPage() {
           <div className="booking-popup-form">
             <div className="booking-popup-header">
               <h3 className="booking-popup-title">Plan Your Next Trip</h3>
-              <button
-                type="button"
-                className="share-modal-close"
-                id="closeBookingModal"
-                aria-label="Close modal"
-                onClick={() => setIsBookModalOpen(false)}
-              >
-                ✕
-              </button>
             </div>
 
             <form
               id="bookingForm"
+              style={{ display: "flex", flexDirection: "column", gap: "10px" }}
               onSubmit={async (e) => {
                 e.preventDefault();
                 setIsSubmitting(true);
@@ -802,61 +808,72 @@ export default function TripDetailPage() {
                 }, 400);
               }}
             >
-              <div className="form-group-popup">
+              <div className="booking-field-group">
                 <input
                   type="text"
                   required
                   placeholder="Your Name"
+                  className="booking-input"
                   value={bookingForm.name}
                   onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
                 />
               </div>
 
-              <div className="form-group-popup">
-                <input
-                  type="tel"
-                  required
-                  placeholder="+91 Mobile No."
-                  value={bookingForm.phone}
-                  onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                />
+              <div className="booking-field-group">
+                <div className="phone-input-group">
+                  <span className="country-code-tag">+91</span>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="Mobile No."
+                    className="booking-input"
+                    value={bookingForm.phone}
+                    onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                  />
+                </div>
               </div>
 
-              <div className="form-group-popup">
+              <div className="booking-field-group">
                 <input
                   type="email"
                   placeholder="Email (optional)"
+                  className="booking-input"
                   value={bookingForm.email}
                   onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
                 />
               </div>
 
-              <div className="form-row-popup">
-                <div className="form-group-popup" style={{ flex: 2 }}>
+              <div className="booking-grid-2 booking-field-group">
+                <div>
                   <input
                     type="text"
                     readOnly
                     value={selectedBatchDate}
-                    className="bg-[#fafaf7] cursor-not-allowed"
+                    title="Selected Batch Departure Date"
+                    className="booking-input bg-[#f8fafc] text-[#475569] font-bold cursor-not-allowed"
                   />
                 </div>
-                <div className="form-group-popup" style={{ flex: 1 }}>
+                <div>
                   <input
                     type="number"
                     min="1"
                     max="50"
                     required
                     placeholder="Travelers"
+                    title="Number of Travelers"
+                    className="booking-input"
                     value={bookingForm.travelers}
                     onChange={(e) => setBookingForm({ ...bookingForm, travelers: parseInt(e.target.value) || 1 })}
                   />
                 </div>
               </div>
 
-              <div className="form-group-popup">
+              <div className="booking-field-group">
                 <textarea
                   rows={2}
                   placeholder="Message (optional)"
+                  className="booking-input"
+                  style={{ resize: "none" }}
                   value={bookingForm.message}
                   onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
                 />

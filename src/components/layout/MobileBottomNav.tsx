@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const MobileBottomNav: React.FC = () => {
@@ -130,44 +131,9 @@ export const MobileBottomNav: React.FC = () => {
             }}
             aria-label="Plan Trip"
           >
-            {/* Map with Neon Lime Green Pin Icon */}
-            <svg
-              className="w-7 h-7 -mt-0.5"
-              viewBox="0 0 28 28"
-              fill="none"
-              aria-hidden="true"
-            >
-              {/* 3-Panel Folded Map in White */}
-              <path
-                d="M3.5 7L10 3.5L18 7.5L24.5 4V21L18 24.5L10 20.5L3.5 24V7Z"
-                stroke="#ffffff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M10 3.5V20.5"
-                stroke="#ffffff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M18 7.5V24.5"
-                stroke="#ffffff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {/* Neon Lime Green Location Pin on Right Panel */}
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M21 2C19.34 2 18 3.34 18 5C18 7.3 21 10.5 21 10.5C21 10.5 24 7.3 24 5C24 3.34 22.66 2 21 2ZM21 6.3C20.28 6.3 19.7 5.72 19.7 5C19.7 4.28 20.28 3.7 21 3.7C21.72 3.7 22.3 4.28 22.3 5C22.3 5.72 21.72 6.3 21 6.3Z"
-                fill="#d6ff3f"
-              />
-            </svg>
-            <span className="text-[10px] font-bold text-white tracking-tight mt-0.5 leading-none">
+            {/* Sparkles Icon from reference */}
+            <Sparkles className="w-6 h-6 text-[#d6ff3f] stroke-[2.2] -mt-0.5" />
+            <span className="text-[10px] font-bold text-white tracking-tight mt-1 leading-none">
               Plan Trip
             </span>
           </Link>
