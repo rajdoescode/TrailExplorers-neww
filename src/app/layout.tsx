@@ -1,31 +1,9 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Poppins, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWidgets } from "@/components/common/FloatingWidgets";
 import { TripModal } from "@/components/common/TripModal";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const baloo2 = Baloo_2({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-accent",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://awarabanjara.in"),
@@ -72,7 +50,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakarta.variable} ${poppins.variable} ${baloo2.variable} overflow-x-hidden max-w-full`}>
+    <html lang="en" className="overflow-x-hidden max-w-full">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-hidden max-w-full">
         <Header />
         <main className="flex-1 w-full overflow-x-hidden max-w-full">{children}</main>
