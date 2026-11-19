@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Heading, Paragraph } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
@@ -60,6 +61,46 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* ============ FOUNDER TEASER ============ */}
+      <section className="py-12 bg-white">
+        <Container>
+          <Link
+            href="/founder"
+            className="group block p-6 sm:p-8 rounded-[24px] bg-[#f8f8f5] border border-[#e2e2dc] hover:border-[#14140f] transition-all duration-300 shadow-sm hover:shadow-md"
+          >
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-[20px] overflow-hidden shrink-0 border-2 border-[#14140f]">
+                <Image
+                  src="/assets/images/about/founder-viru.jpg"
+                  alt="Viru Thakur - Founder of Awara Banjara"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute bottom-2 left-2 bg-[#14140f]/80 backdrop-blur-xs text-white text-[11px] font-bold px-2 py-0.5 rounded-full">
+                  📍 Manali
+                </span>
+              </div>
+
+              <div className="flex flex-col items-start gap-2 text-left">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full">
+                  Founder&apos;s Note
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f] group-hover:text-black transition-colors m-0">
+                  Meet the Original Awara
+                </h2>
+                <p className="text-sm sm:text-base text-[#6b6b63] leading-relaxed m-0">
+                  Viru Thakur grew up in Manali watching travellers rush past the mountains he called home. They left with full camera rolls and empty hearts, so he started a company to change that. Here&apos;s his story, and why he gave it such a cheeky name.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#14140f] group-hover:translate-x-1 transition-transform mt-2">
+                  <span>Meet Viru Thakur, our founder</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </span>
+              </div>
+            </div>
+          </Link>
         </Container>
       </section>
 

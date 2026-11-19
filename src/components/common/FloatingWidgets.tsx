@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 interface BubbleLine {
@@ -11,177 +10,280 @@ interface BubbleLine {
   chips?: string[];
 }
 
-const BUBBLE_LINES: BubbleLine[] = [
+const LINES: BubbleLine[] = [
   { say: "Where do you want to go? 🏔️", chips: ["Spiti", "Ladakh", "Kashmir"] },
   { say: "Psst… planning a trip?", sub: "Tap me, let's plan it together!" },
   { say: "Snow peaks or green valleys?", chips: ["Snow peaks", "Green valleys"] },
   { say: "Who's coming along?", chips: ["Friends", "Family", "Just me"] },
   { say: "Got a few days off? 🎒", sub: "Tell me, I'll shape a day-by-day plan." },
+  { say: "Bike, road trip or trek?", chips: ["Bike trip", "Road trip", "Trek"] },
+  { say: "Chai and a mountain view? ☕", sub: "Chat with me about your dream trip." },
 ];
+
+const CHIP_ASK: Record<string, string> = {
+  Spiti: "Spiti Valley road trip",
+  Ladakh: "Ladakh trip",
+  Kashmir: "Kashmir trip",
+  "Snow peaks": "I want a trip with snow peaks",
+  "Green valleys": "I want a trip through green valleys",
+  Friends: "A Himalayan trip with friends",
+  Family: "A Himalayan trip with family",
+  "Just me": "A solo Himalayan trip",
+  "Bike trip": "A Himalayan bike trip",
+  "Road trip": "A Himalayan road trip",
+  Trek: "A Himalayan trek",
+};
+
+const FRAMES = 14;
+const STAND = 13;
+const TRICKS = ["is-hop", "is-spin", "is-wiggle", "look", "is-hop"];
 
 export const FloatingWidgets: React.FC = () => {
   const pathname = usePathname();
-  const [lineIndex, setLineIndex] = useState(0);
+
+  const [isVisible, setIsVisible] = useState(false);
   const [bubbleOpen, setBubbleOpen] = useState(false);
-  const [isHop, setIsHop] = useState(false);
-  const [isWiggle, setIsWiggle] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const [lineIndex, setLineIndex] = useState(0);
+  const [activeTrick, setActiveTrick] = useState<string | null>(null);
+  const [spriteFrame, setSpriteFrame] = useState(STAND);
   const [dismissed, setDismissed] = useState(false);
 
+  const bubbleTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const queueRef = useRef<number[]>([]);
+  const lineIdxRef = useRef(0);
+  const lastTrickRef = useRef(-1);
+
+  // Don't show on /plan-your-trip page (it has its own in-app chat mascot)
   if (pathname === "/plan-your-trip") return null;
 
+  // 1. Scroll visibility toggle
   useEffect(() => {
-    // Show speech bubble after 2.5 seconds
-    const initialTimer = setTimeout(() => {
-      if (!dismissed) setBubbleOpen(true);
-    }, 2500);
-
-    // Periodic tricks (hop / wiggle / cycle question)
-    const interval = setInterval(() => {
-      if (dismissed) return;
-      // Trigger subtle hop or wiggle trick
-      const rand = Math.random();
-      if (rand > 0.5) {
-        setIsHop(true);
-        setTimeout(() => setIsHop(false), 800);
-      } else {
-        setIsWiggle(true);
-        setTimeout(() => setIsWiggle(false), 900);
-      }
-
-      // Cycle bubble text
-      setLineIndex((prev) => (prev + 1) % BUBBLE_LINES.length);
-      setBubbleOpen(true);
-    }, 12000);
-
-    return () => {
-      clearTimeout(initialTimer);
-      clearInterval(interval);
+    const handleScroll = () => {
+      const show = window.scrollY > 80;
+      setIsVisible(show);
     };
-  }, [dismissed]);
 
-  const currentLine = BUBBLE_LINES[lineIndex];
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 2. Sprite fidgeting & lookAround animation
+  const lookAround = () => {
+    const q: number[] = [];
+    for (let i = STAND - 1; i >= 0; i--) q.push(i);
+    for (let j = 1; j <= STAND; j++) q.push(j);
+    queueRef.current = q;
+  };
+
+  useEffect(() => {
+    let animId: number;
+    let lastTime = 0;
+    const fps = 15;
+    const step = 1000 / fps;
+    let nextFidget = performance.now() + 3000;
+
+    const tick = (now: number) => {
+      animId = requestAnimationFrame(tick);
+      if (!isVisible || document.hidden) return;
+
+      if (now - lastTime < step) return;
+      lastTime = now;
+
+      if (queueRef.current.length > 0) {
+        const nextFrame = queueRef.current.shift()!;
+        setSpriteFrame(nextFrame);
+      } else if (now > nextFidget) {
+        nextFidget = now + 6000 + Math.random() * 5000;
+        lookAround();
+      }
+    };
+
+    animId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(animId);
+  }, [isVisible]);
+
+  // 3. Periodic tricks (hop, spin, wiggle)
+  const triggerTrick = (cls: string, ms = 900) => {
+    setActiveTrick(cls);
+    setTimeout(() => setActiveTrick(null), ms);
+  };
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const trickInterval = setInterval(() => {
+      if (document.hidden) return;
+      let t: number;
+      do {
+        t = Math.floor(Math.random() * TRICKS.length);
+      } while (t === lastTrickRef.current);
+      lastTrickRef.current = t;
+
+      const chosen = TRICKS[t];
+      if (chosen === "look") {
+        lookAround();
+      } else {
+        triggerTrick(chosen, 900);
+      }
+    }, 7000);
+
+    return () => clearInterval(trickInterval);
+  }, [isVisible]);
+
+  // 4. Speech bubble typing & cycling sequence
+  const showLine = (line: BubbleLine) => {
+    if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
+    setIsTyping(false);
+    setBubbleOpen(true);
+    // Chips need more time to read and tap (9s), plain lines move sooner (6s)
+    bubbleTimerRef.current = setTimeout(hideLine, line.chips ? 9000 : 6000);
+  };
+
+  const hideLine = () => {
+    if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
+    setBubbleOpen(false);
+    setIsTyping(false);
+    if (!dismissed) {
+      bubbleTimerRef.current = setTimeout(nextLine, 4500);
+    }
+  };
+
+  const nextLine = () => {
+    if (dismissed || !isVisible) return;
+    const nextIdx = lineIdxRef.current % LINES.length;
+    lineIdxRef.current += 1;
+    setLineIndex(nextIdx);
+
+    // 1. Show typing dots pill first (1.1s)
+    setBubbleOpen(true);
+    setIsTyping(true);
+
+    bubbleTimerRef.current = setTimeout(() => {
+      showLine(LINES[nextIdx]);
+      triggerTrick("is-hop", 850);
+    }, 1100);
+  };
+
+  useEffect(() => {
+    if (isVisible && !dismissed) {
+      const initialTimer = setTimeout(nextLine, 1200);
+      return () => clearTimeout(initialTimer);
+    }
+  }, [isVisible, dismissed]);
+
+  const handleClose = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDismissed(true);
+    if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
+    setBubbleOpen(false);
+    setIsTyping(false);
+  };
+
+  const currentLine = LINES[lineIndex];
 
   return (
-    <aside
-      className="fixed bottom-5 right-5 z-[9001] flex flex-col items-end gap-3 select-none"
-      aria-label="Floating contact & assistance"
-    >
-      {/* Speech Bubble */}
+    <>
+      {/* Floating Banjara Mascot Widget */}
       <div
-        className={`relative transition-all duration-300 origin-bottom-right mb-[-2px] ${
-          bubbleOpen && !dismissed
-            ? "opacity-100 scale-100 pointer-events-auto"
-            : "opacity-0 scale-90 pointer-events-none"
-        }`}
+        className={`banjara-float is-loaded ${isVisible ? "is-visible" : ""}`}
+        aria-label="Ask Banjara"
       >
+        {/* Speech Bubble (pops up to the left of the avatar) */}
         <div
-          className="relative max-w-[250px] p-3 sm:p-3.5 pr-8 rounded-[16px_16px_4px_16px] bg-white text-[#14140f] border-[1.5px] border-[#14140f] shadow-[0_10px_28px_rgba(20,20,15,0.2)] font-sans"
-          onMouseEnter={() => setBubbleOpen(true)}
+          className={`banjara-float__bubble ${bubbleOpen ? "is-open" : ""} ${
+            isTyping ? "is-typing" : ""
+          }`}
+          role="status"
+          aria-live="polite"
+          onMouseEnter={() => {
+            if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
+          }}
+          onMouseLeave={() => {
+            if (bubbleOpen && !isTyping) {
+              bubbleTimerRef.current = setTimeout(hideLine, 3000);
+            }
+          }}
         >
-          <button
-            type="button"
-            onClick={() => {
-              setBubbleOpen(false);
-              setDismissed(true);
-            }}
-            aria-label="Close"
-            className="absolute top-1.5 right-2 text-gray-400 hover:text-black font-bold text-base leading-none p-1 cursor-pointer"
-          >
-            &times;
-          </button>
+          {/* Animated 3 Dots for typing state */}
+          <span className="banjara-float__dots" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
 
-          <p className="font-bold text-[13.5px] leading-tight m-0 text-[#14140f]">
+          {/* Question Text */}
+          <p className="banjara-float__text">
             {currentLine.say}
+            {currentLine.sub && <small>{currentLine.sub}</small>}
           </p>
 
-          {currentLine.sub && (
-            <p className="text-[11.5px] text-[#55554d] font-normal mt-1 leading-snug">
-              {currentLine.sub}
-            </p>
-          )}
-
+          {/* Quick Choice Chips */}
           {currentLine.chips && currentLine.chips.length > 0 && (
-            <div className="flex flex-wrap gap-1.5 mt-2.5">
+            <div className="banjara-float__chips">
               {currentLine.chips.map((chip) => (
                 <Link
                   key={chip}
-                  href={`/plan-your-trip?ask=${encodeURIComponent(chip + " trip")}`}
-                  className="px-2.5 py-1 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] text-[11px] font-bold border border-[#14140f] transition-all hover:-translate-y-0.5"
+                  href={`/plan-your-trip?ask=${encodeURIComponent(CHIP_ASK[chip] || chip)}`}
+                  className="banjara-float__chip"
                 >
                   {chip}
                 </Link>
               ))}
             </div>
           )}
-        </div>
-      </div>
 
-      {/* Stack of Floating Launcher Tiles: Banjara Mascot + WhatsApp */}
-      <div className="flex flex-col items-center gap-2.5">
-        {/* Top: Banjara Mascot Launcher Tile */}
+          {/* Close X Button */}
+          <button
+            type="button"
+            onClick={handleClose}
+            className="banjara-float__close"
+            aria-label="Hide questions"
+          >
+            &times;
+          </button>
+        </div>
+
+        {/* Mascot Avatar Launcher Tile */}
         <Link
           href="/plan-your-trip"
-          aria-label="Plan your trip with Banjara"
+          className={`banjara-float__avatar ${activeTrick || ""}`}
+          aria-label="Plan your trip with Banjara, our trip planner"
           onMouseEnter={() => {
-            setIsHop(true);
-            setTimeout(() => setIsHop(false), 800);
-            setBubbleOpen(true);
-          }}
-          className={`relative block w-[58px] h-[58px] rounded-[18px] shadow-[0_10px_25px_rgba(20,20,15,0.26),0_2px_6px_rgba(20,20,15,0.12)] hover:shadow-[0_14px_30px_rgba(20,20,15,0.36)] transition-all duration-200 group cursor-pointer ${
-            isWiggle ? "animate-banjara-wiggle" : ""
-          }`}
-          style={{
-            background: "radial-gradient(circle at 50% 35%, #2d2d24 0%, #14140f 72%)",
+            triggerTrick("is-hop", 850);
           }}
         >
-          {/* Character Peeking Window (overflow clips sides/bottom to 18px rounded, leaves top open for head & cap) */}
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              clipPath: "inset(-35px 0 0 0 round 0 0 18px 18px)",
-            }}
-          >
-            <div
-              className={`absolute left-1/2 -translate-x-1/2 -top-[20px] w-[64px] h-[82px] group-hover:-translate-y-1.5 transition-transform duration-300 ${
-                isHop ? "animate-banjara-hop" : ""
-              }`}
-            >
-              <div className="w-full h-full animate-banjara-breathe relative">
-                <Image
-                  src="/assets/images/mascot/banjara-standing.webp"
-                  alt="Banjara"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Neon-Lime Online Dot */}
-          <span
-            className="absolute bottom-[4px] right-[4px] w-[12px] h-[12px] rounded-full bg-[#b8ff00] border-[2.5px] border-[#14140f] z-20 animate-banjara-online pointer-events-none shadow-sm"
-            aria-hidden="true"
-          />
+          <span className="banjara-float__window">
+            <span className="banjara-float__peek">
+              <span
+                className="banjara-float__sprite"
+                style={{
+                  backgroundPosition: `${(spriteFrame / (FRAMES - 1)) * 100}% 0`,
+                }}
+              />
+            </span>
+          </span>
         </Link>
-
-        {/* Bottom: WhatsApp Chat Button */}
-        <a
-          href="https://wa.me/919103910523?text=Hi%20Awara%20Banjara!%20%F0%9F%91%8B%20I'm%20interested%20in%20planning%20a%20Himalayan%20trip%20with%20you.%20Could%20you%20share%20more%20details%3F"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat with us on WhatsApp"
-          className="relative w-[58px] h-[58px] rounded-[18px] bg-[#25d366] text-white flex items-center justify-center shadow-[0_10px_25px_rgba(37,211,102,0.32),0_2px_6px_rgba(20,20,15,0.12)] hover:scale-105 active:scale-95 hover:shadow-[0_14px_30px_rgba(37,211,102,0.42)] transition-all duration-200 group cursor-pointer"
-        >
-          <svg
-            className="w-[32px] h-[32px] fill-current text-white transform group-hover:scale-105 transition-transform"
-            viewBox="0 32 448 448"
-            aria-hidden="true"
-          >
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-          </svg>
-        </a>
       </div>
-    </aside>
+
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/919103910523?text=Hi%20Awara%20Banjara!%20%F0%9F%91%8B%20I'm%20interested%20in%20planning%20a%20Himalayan%20trip%20with%20you.%20Could%20you%20share%20more%20details%3F"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
+        className="floating-whatsapp"
+      >
+        <svg
+          className="w-[30px] h-[30px] fill-current text-white"
+          viewBox="0 32 448 448"
+          aria-hidden="true"
+        >
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+      </a>
+    </>
   );
 };

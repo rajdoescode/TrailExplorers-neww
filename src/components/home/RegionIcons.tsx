@@ -1,6 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const REGIONS = [
   { name: "LADAKH", href: "/ladakh", icon: "/assets/images/destinations/icons/ladakh.png" },
@@ -11,35 +13,44 @@ const REGIONS = [
 ];
 
 export const RegionIcons: React.FC = () => {
+  const router = useRouter();
+  const [pickedRegion, setPickedRegion] = useState<string | null>(null);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, name: string) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    setPickedRegion(name);
+    setTimeout(() => {
+      router.push(href);
+    }, 380);
+  };
+
   return (
-    <section className="w-full bg-white pt-10 sm:pt-14 md:pt-16 pb-6 sm:pb-8" aria-label="Destinations">
+    <section className="region-icons" aria-label="Destinations">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
-        <ul className="list-none m-0 p-0 flex flex-nowrap overflow-x-auto sm:overflow-visible sm:flex-wrap justify-start sm:justify-center items-end gap-5 sm:gap-8 md:gap-12 lg:gap-14 no-scrollbar">
-          {REGIONS.map((region) => (
-            <li
-              key={region.name}
-              className="shrink-0 w-[110px] sm:w-[130px] md:w-[150px] lg:w-[170px] flex flex-col items-center"
-            >
-              <Link
-                href={region.href}
-                className="group flex flex-col items-center gap-3 sm:gap-3.5 w-full text-inherit no-underline cursor-pointer"
-              >
-                <div className="relative w-full aspect-square flex items-center justify-center transition-transform duration-250 ease-out group-hover:-translate-y-1.5 group-hover:scale-105">
-                  <Image
-                    src={region.icon}
-                    alt={region.name}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-contain pointer-events-none"
-                    priority
+        <ul className="region-icons-list">
+          {REGIONS.map((region) => {
+            const isPicked = pickedRegion === region.name;
+            return (
+              <li key={region.name} className="region-icon">
+                <Link
+                  href={region.href}
+                  onClick={(e) => handleClick(e, region.href, region.name)}
+                  className={isPicked ? "is-picked" : ""}
+                >
+                  <span
+                    className="region-icon-art"
+                    style={{
+                      WebkitMaskImage: `url('${region.icon}')`,
+                      maskImage: `url('${region.icon}')`,
+                    }}
+                    aria-hidden="true"
                   />
-                </div>
-                <span className="text-[11px] sm:text-[12.5px] md:text-[14px] font-semibold tracking-[0.14em] uppercase text-[#14140f] text-center transition-colors group-hover:text-black">
-                  {region.name}
-                </span>
-              </Link>
-            </li>
-          ))}
+                  <span className="region-icon-name">{region.name}</span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

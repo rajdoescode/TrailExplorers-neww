@@ -1921,7 +1921,7 @@ export default function PlanYourTripPage() {
   // ==========================================
   return (
     <div
-      className="min-h-[calc(100vh-73px)] w-full flex flex-col justify-between font-sans selection:bg-[#d6ff3f] selection:text-[#14140f]"
+      className="min-h-screen w-full flex flex-col justify-between font-sans selection:bg-[#d6ff3f] selection:text-[#14140f]"
       style={{
         backgroundColor: "#14140f",
         backgroundImage:
@@ -1948,9 +1948,9 @@ export default function PlanYourTripPage() {
       {/* Main App Frame */}
       <main className="max-w-[1180px] w-full mx-auto px-2 sm:px-4 pb-2 sm:pb-4 flex-1 flex flex-col justify-center">
         {/* App Container: Single Column on Mobile, Two Columns on Desktop */}
-        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_370px] min-h-[560px] h-auto relative">
+        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_360px] h-[min(780px,calc(100vh-120px))] min-h-[560px] relative">
           {/* Left Column: Chat App */}
-          <div className="flex flex-col min-w-0 bg-white">
+          <div className="flex flex-col min-w-0 min-h-0 h-full bg-white">
             {/* Chat Header */}
             <div className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3 border-b border-[#e8e8e0] shrink-0 bg-white">
               <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
@@ -1982,7 +1982,7 @@ export default function PlanYourTripPage() {
             </div>
 
             {/* Chat Messages Thread */}
-            <div className="flex-1 px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white">
+            <div className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white">
               {conversationStage === 0 ? (
                 <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
                   {/* Standing Character in Welcome State */}
@@ -2194,23 +2194,17 @@ export default function PlanYourTripPage() {
               );
             })}
 
-                  {/* Mobile Floating Pill Button: "Your trip so far ↑" */}
-                  {activeTrip && (
-                    <div className="lg:hidden flex items-center justify-start py-1">
-                      <button
-                        type="button"
-                        onClick={() => setMobileTicketOpen(true)}
-                        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#14140f] text-white hover:bg-black font-bold text-[12px] shadow-md border border-white/10 active:scale-95 transition-all cursor-pointer"
-                      >
-                        <span className="w-2 h-2 rounded-full bg-[#d6ff3f]" />
-                        <span>
-                          {activeTrip.stage === 6 && activeTrip.days
-                            ? `Your trip · ${activeTrip.days} days ↑`
-                            : "Your trip so far ↑"}
-                        </span>
-                      </button>
+                  {/* Docked Mascot Character at bottom of thread (matching live site) */}
+                  <div className="flex items-center gap-2 mt-auto pt-2 shrink-0 select-none pointer-events-none">
+                    <div className="w-[34px] h-[46px] relative shrink-0 animate-banjara-breathe">
+                      <Image
+                        src="/assets/images/mascot/banjara-standing.webp"
+                        alt="Banjara Mascot"
+                        fill
+                        className="object-contain"
+                      />
                     </div>
-                  )}
+                  </div>
                 </>
               )}
 
@@ -2229,6 +2223,24 @@ export default function PlanYourTripPage() {
 
             {/* Composer */}
             <div className="p-2.5 sm:p-4 bg-white border-t border-[#e8e8e0] shrink-0">
+              {/* Mobile Drawer Pill: "Your trip so far ↑" pinned above input */}
+              {activeTrip && (
+                <div className="lg:hidden flex items-center justify-start pb-2">
+                  <button
+                    type="button"
+                    onClick={() => setMobileTicketOpen(true)}
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#14140f] text-white hover:bg-black font-bold text-[12px] shadow-md border border-white/10 active:scale-95 transition-all cursor-pointer"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-[#d6ff3f]" />
+                    <span>
+                      {activeTrip.stage === 6 && activeTrip.days
+                        ? `Your trip · ${activeTrip.days} days ↑`
+                        : "Your trip so far ↑"}
+                    </span>
+                  </button>
+                </div>
+              )}
+
               <form
                 onSubmit={handleSendMessage}
                 className="flex items-center gap-2 bg-white rounded-full p-1 pl-4 sm:pl-5 shadow-[0_0_0_1.5px_#e8e8e0,0_8px_24px_-14px_rgba(20,20,15,0.35)] focus-within:shadow-[0_0_0_2px_#14140f,0_8px_24px_-14px_rgba(20,20,15,0.35)] transition-shadow"
@@ -2264,10 +2276,10 @@ export default function PlanYourTripPage() {
           </div>
 
           {/* Desktop Right Column: Your Trip Ticket */}
-          <aside className="hidden lg:flex bg-[#14140f] text-white flex-col relative select-none">
+          <aside className="hidden lg:flex bg-[#14140f] text-white flex-col min-h-0 h-full relative select-none">
             {/* Ticket Head with Cutout Notches */}
             <div
-              className={`relative p-5 sm:p-6 border-b-2 border-dashed border-white/15 transition-all ${
+              className={`relative p-5 sm:p-6 border-b-2 border-dashed border-white/15 shrink-0 transition-all ${
                 ticketFlash ? "bg-white/10" : ""
               }`}
             >
@@ -2292,12 +2304,12 @@ export default function PlanYourTripPage() {
             </div>
 
             {/* Ticket Body with Ultra-thin Custom Scrollbar */}
-            <div className="ticket-scroll flex-1 p-5 sm:p-6 flex flex-col gap-5">
+            <div className="ticket-scroll flex-1 min-h-0 overflow-y-auto p-5 sm:p-6 flex flex-col gap-5">
               {renderTicketContent()}
             </div>
 
             {/* Ticket Footer */}
-            <div className="p-5 sm:p-6 border-t border-white/10 flex flex-col gap-2 text-center bg-[#14140f]">
+            <div className="p-5 sm:p-6 border-t border-white/10 flex flex-col gap-2 text-center bg-[#14140f] shrink-0">
               <button
                 type="button"
                 disabled={activeTrip?.stage !== 6}

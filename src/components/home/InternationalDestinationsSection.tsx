@@ -100,6 +100,11 @@ export const InternationalDestinationsSection: React.FC = () => {
                     if (!isCenter) {
                       e.preventDefault();
                       setActiveIndex(idx);
+                    } else {
+                      e.preventDefault();
+                      if (typeof window !== "undefined" && window.openTripModal) {
+                        window.openTripModal(dest.name, dest.image);
+                      }
                     }
                   }}
                   className={cn(

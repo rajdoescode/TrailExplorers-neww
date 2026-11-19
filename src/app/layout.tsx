@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingWidgets } from "@/components/common/FloatingWidgets";
+import { TripModal } from "@/components/common/TripModal";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -77,6 +78,7 @@ export default function RootLayout({
         <main className="flex-1 w-full">{children}</main>
         <Footer />
         <FloatingWidgets />
+        <TripModal />
       </body>
     </html>
   );
