@@ -38,8 +38,12 @@ const FRAMES = 14;
 const STAND = 13;
 const TRICKS = ["is-hop", "is-spin", "is-wiggle", "look", "is-hop"];
 
+// Once closed with [x], bubble remains closed in this page session until browser refresh
+let bubbleDismissedThisSession = false;
+
 export const FloatingWidgets: React.FC = () => {
   const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const [isVisible, setIsVisible] = useState(false);
   const [bubbleOpen, setBubbleOpen] = useState(false);
@@ -47,13 +51,19 @@ export const FloatingWidgets: React.FC = () => {
   const [lineIndex, setLineIndex] = useState(0);
   const [activeTrick, setActiveTrick] = useState<string | null>(null);
   const [spriteFrame, setSpriteFrame] = useState(STAND);
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState(bubbleDismissedThisSession);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const dismissedRef = useRef(bubbleDismissedThisSession);
   const bubbleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const queueRef = useRef<number[]>([]);
   const lineIdxRef = useRef(0);
   const lastTrickRef = useRef(-1);
+
+  // Keep dismissedRef in sync
+  useEffect(() => {
+    dismissedRef.current = dismissed;
+  }, [dismissed]);
 
   // Detect if mobile menu drawer or modal is open to hide floating buttons
   useEffect(() => {
@@ -70,7 +80,7 @@ export const FloatingWidgets: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // 1. Scroll visibility toggle
+  // 1. Scroll visibility toggle (only needed for home page mascot or global scroll behavior)
   useEffect(() => {
     const handleScroll = () => {
       if (pathname === "/plan-your-trip") return;
@@ -83,7 +93,7 @@ export const FloatingWidgets: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  // 2. Sprite fidgeting & lookAround animation
+  // 2. Sprite fidgeting & lookAround animation (only on Home page)
   const lookAround = () => {
     const q: number[] = [];
     for (let i = STAND - 1; i >= 0; i--) q.push(i);
@@ -92,6 +102,8 @@ export const FloatingWidgets: React.FC = () => {
   };
 
   useEffect(() => {
+    if (!isHomePage) return;
+
     let animId: number;
     let lastTime = 0;
     const fps = 15;
@@ -100,7 +112,7 @@ export const FloatingWidgets: React.FC = () => {
 
     const tick = (now: number) => {
       animId = requestAnimationFrame(tick);
-      if (!isVisible || document.hidden || pathname === "/plan-your-trip" || isMenuOpen) return;
+      if (!isVisible || document.hidden || isMenuOpen) return;
 
       if (now - lastTime < step) return;
       lastTime = now;
@@ -116,16 +128,16 @@ export const FloatingWidgets: React.FC = () => {
 
     animId = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animId);
-  }, [isVisible]);
+  }, [isVisible, isHomePage, isMenuOpen]);
 
-  // 3. Periodic tricks (hop, spin, wiggle)
+  // 3. Periodic tricks (hop, spin, wiggle) (only on Home page)
   const triggerTrick = (cls: string, ms = 900) => {
     setActiveTrick(cls);
     setTimeout(() => setActiveTrick(null), ms);
   };
 
   useEffect(() => {
-    if (!isVisible || pathname === "/plan-your-trip" || isMenuOpen) return;
+    if (!isHomePage || !isVisible || isMenuOpen) return;
 
     const trickInterval = setInterval(() => {
       if (document.hidden) return;
@@ -144,10 +156,11 @@ export const FloatingWidgets: React.FC = () => {
     }, 7000);
 
     return () => clearInterval(trickInterval);
-  }, [isVisible, pathname, isMenuOpen]);
+  }, [isVisible, isHomePage, isMenuOpen]);
 
-  // 4. Speech bubble typing & cycling sequence
+  // 4. Speech bubble typing & cycling sequence (only on Home page)
   const showLine = (line: BubbleLine) => {
+    if (dismissedRef.current || bubbleDismissedThisSession) return;
     if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
     setIsTyping(false);
     setBubbleOpen(true);
@@ -159,39 +172,45 @@ export const FloatingWidgets: React.FC = () => {
     if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
     setBubbleOpen(false);
     setIsTyping(false);
-    if (!dismissed) {
+    if (!dismissedRef.current && !bubbleDismissedThisSession) {
       bubbleTimerRef.current = setTimeout(nextLine, 4500);
     }
   };
 
   const nextLine = () => {
-    if (dismissed || !isVisible || pathname === "/plan-your-trip" || isMenuOpen) return;
+    if (dismissedRef.current || bubbleDismissedThisSession || !isVisible || !isHomePage || isMenuOpen) return;
     const nextIdx = lineIdxRef.current % LINES.length;
     lineIdxRef.current += 1;
     setLineIndex(nextIdx);
 
-    // 1. Show typing dots pill first (1.1s)
+    // Show typing dots pill first (1.1s)
     setBubbleOpen(true);
     setIsTyping(true);
 
     bubbleTimerRef.current = setTimeout(() => {
+      if (dismissedRef.current || bubbleDismissedThisSession) return;
       showLine(LINES[nextIdx]);
       triggerTrick("is-hop", 850);
     }, 1100);
   };
 
   useEffect(() => {
-    if (isVisible && !dismissed && pathname !== "/plan-your-trip" && !isMenuOpen) {
+    if (isHomePage && isVisible && !dismissed && !bubbleDismissedThisSession && !isMenuOpen) {
       const initialTimer = setTimeout(nextLine, 1200);
       return () => clearTimeout(initialTimer);
     }
-  }, [isVisible, dismissed, pathname, isMenuOpen]);
+  }, [isHomePage, isVisible, dismissed, isMenuOpen]);
 
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    bubbleDismissedThisSession = true;
+    dismissedRef.current = true;
     setDismissed(true);
-    if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
+    if (bubbleTimerRef.current) {
+      clearTimeout(bubbleTimerRef.current);
+      bubbleTimerRef.current = null;
+    }
     setBubbleOpen(false);
     setIsTyping(false);
   };
@@ -200,22 +219,22 @@ export const FloatingWidgets: React.FC = () => {
 
   const isTripPage = pathname?.startsWith("/trips/");
 
-  // Don't show on /plan-your-trip page (it has its own in-app chat mascot) or when mobile drawer / modal is open
+  // Don't show anything on /plan-your-trip page (it has its own in-app chat mascot) or when mobile drawer / modal is open
   if (pathname === "/plan-your-trip" || isMenuOpen) {
     return null;
   }
 
   return (
     <>
-      {/* Floating Mascot Widget (Hidden on trip detail pages to prevent obstruction of the mobile booking bar and WhatsApp button) */}
-      {!isTripPage && (
+      {/* Floating Mascot Widget: ONLY on Home Page ('/') and not on trip pages */}
+      {isHomePage && (
         <div
           className={`explorer-float is-loaded ${isVisible ? "is-visible" : ""}`}
           aria-label="Ask Trail Explorers"
         >
           {/* Speech Bubble (pops up to the left of the avatar) */}
           <div
-            className={`explorer-float__bubble ${bubbleOpen ? "is-open" : ""} ${
+            className={`explorer-float__bubble ${bubbleOpen && !dismissed ? "is-open" : ""} ${
               isTyping ? "is-typing" : ""
             }`}
             role="status"
@@ -224,7 +243,7 @@ export const FloatingWidgets: React.FC = () => {
               if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
             }}
             onMouseLeave={() => {
-              if (bubbleOpen && !isTyping) {
+              if (bubbleOpen && !isTyping && !dismissed) {
                 bubbleTimerRef.current = setTimeout(hideLine, 3000);
               }
             }}
