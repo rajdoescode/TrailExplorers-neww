@@ -50,7 +50,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
   }, [lightboxOpen, nextPhoto, prevPhoto]);
 
   return (
-    <section className="relative w-full py-4 sm:py-6 bg-white border-b border-[#e2e2dc]">
+    <section className="relative w-full py-4 sm:py-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CASE A: EXACT 5-PHOTO BENTO (Spiti Valley - Screenshots 1 & 2) */}
         {isFiveTileBento ? (

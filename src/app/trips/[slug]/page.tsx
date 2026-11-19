@@ -179,7 +179,7 @@ export default function TripDetailPage() {
     : "Himachal";
 
   return (
-    <div className="w-full bg-[#f6f6f1] min-h-screen pb-24">
+    <div className="w-full bg-white min-h-screen pb-24">
       {/* 1. Bento Image Gallery with Lightbox */}
       <BentoGallery images={galleryImages} title={trip.title} />
 
