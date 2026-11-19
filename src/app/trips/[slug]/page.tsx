@@ -3,30 +3,42 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import { Container } from "@/components/layout/Container";
-import { Heading, Paragraph } from "@/components/ui/Heading";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { TripCard } from "@/components/trips/TripCard";
 import { TRIPS_DATA } from "@/data/trips";
 import { SITE_CONFIG } from "@/data/site-config";
 import { formatPrice } from "@/lib/utils";
 import {
+  getTripWeather,
+  getTripGallery,
+  getTripAttractions,
+  getTripReviews,
+  getTripPackingList,
+} from "@/lib/trip-helpers";
+import { BentoGallery } from "@/components/trips/BentoGallery";
+import { WeatherCard } from "@/components/trips/WeatherCard";
+import { StickySecondaryNav } from "@/components/trips/StickySecondaryNav";
+import { PackingListSection } from "@/components/trips/PackingListSection";
+import { DepartureDatesSection } from "@/components/trips/DepartureDatesSection";
+import { AttractionsCarousel } from "@/components/trips/AttractionsCarousel";
+import { FaqsAccordion } from "@/components/trips/FaqsAccordion";
+import { TripReviewsSection } from "@/components/trips/TripReviewsSection";
+import { ShareModal } from "@/components/trips/ShareModal";
+import { PdfLeadModal } from "@/components/trips/PdfLeadModal";
+import {
   Clock,
   MapPin,
-  Mountain,
-  Calendar,
   Check,
   X,
   ChevronDown,
   ChevronUp,
   MessageSquare,
-  ShieldCheck,
-  Sparkles,
-  ArrowRight,
   Share2,
-  Users,
+  Download,
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
 } from "lucide-react";
 
 export default function TripDetailPage() {
@@ -42,203 +54,296 @@ export default function TripDetailPage() {
     );
   }, [slug]);
 
+  // Derived datasets
+  const weather = useMemo(() => (trip ? getTripWeather(trip) : null), [trip]);
+  const galleryImages = useMemo(() => (trip ? getTripGallery(trip) : []), [trip]);
+  const attractions = useMemo(() => (trip ? getTripAttractions(trip) : []), [trip]);
+  const reviews = useMemo(() => (trip ? getTripReviews(trip) : []), [trip]);
+  const packingCategories = useMemo(() => (trip ? getTripPackingList(trip) : []), [trip]);
+
+  // Related trips in the same destination / category (up to 4)
+  const relatedTrips = useMemo(() => {
+    if (!trip) return [];
+    const dest = (trip.category || "").toLowerCase();
+    const primary = TRIPS_DATA.filter((t) => t.id !== trip.id && (t.category === trip.category || t.category.includes(dest)));
+    if (primary.length >= 4) return primary.slice(0, 4);
+    const fallbacks = TRIPS_DATA.filter((t) => t.id !== trip.id && !primary.some((p) => p.id === t.id));
+    return [...primary, ...fallbacks].slice(0, 4);
+  }, [trip]);
+
+  // Interactive states
   const [expandedDay, setExpandedDay] = useState<number | null>(1);
+  const [areAllDaysExpanded, setAreAllDaysExpanded] = useState(false);
+  const [isAboutExpanded, setIsAboutExpanded] = useState(false);
+
+  // Selected package option
+  const initialPackage = trip?.package_options?.[0]?.title || "Triple/Quad Sharing";
+  const [selectedPackage, setSelectedPackage] = useState<string>(initialPackage);
+  const [selectedPrice, setSelectedPrice] = useState<string>(trip ? String(trip.price) : "0");
+
+  // Selected departure batch
+  const initialBatch = trip?.departure_dates?.[0]?.dates?.[0]?.range || "On Request Departure Date";
+  const [selectedBatchDate, setSelectedBatchDate] = useState<string>(initialBatch);
+
+  // Modals state
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
+  const [isShareModalOpen, setIsShareModalOpen] = useState(false);
+  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+
+  // Booking Form State
   const [bookingForm, setBookingForm] = useState({
     name: "",
     phone: "",
     email: "",
-    departureDate: "On Request Departure Date",
+    departureDate: initialBatch,
     travelers: 1,
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selectedSharing, setSelectedSharing] = useState<string>("triple");
 
   if (!trip) {
     return (
       <div className="py-24 text-center">
         <Container>
-          <Heading level={2}>Trip Itinerary Not Found</Heading>
+          <h2 className="text-2xl font-bold text-[#14140f]">Trip Itinerary Not Found</h2>
           <p className="mt-2 text-[#6b6b63]">The requested Himalayan departure could not be loaded.</p>
           <div className="mt-6">
-            <Button href="/community-trips" variant="primary">
+            <Link
+              href="/community-trips"
+              className="inline-flex items-center px-6 py-3 rounded-xl bg-[#d6ff3f] text-[#14140f] font-bold border border-[#14140f] shadow-lime-btn"
+            >
               Browse All Trips
-            </Button>
+            </Link>
           </div>
         </Container>
       </div>
     );
   }
 
-  // Related trips
-  const relatedTrips = TRIPS_DATA.filter(
-    (t) => t.id !== trip.id && (t.category === trip.category || t.category.includes("spiti"))
-  ).slice(0, 3);
+  // Handle package selection
+  const handlePackageSelect = (pkgTitle: string, pkgPrice: string) => {
+    setSelectedPackage(pkgTitle);
+    setSelectedPrice(pkgPrice);
+  };
 
+  // Handle batch selection & open modal
+  const handleSelectBatchAndBook = (batchDate: string, batchPrice: string) => {
+    setSelectedBatchDate(batchDate);
+    if (batchPrice) setSelectedPrice(batchPrice);
+    setBookingForm((prev) => ({ ...prev, departureDate: batchDate }));
+    setIsBookModalOpen(true);
+  };
+
+  // Toggle day accordion
   const toggleDay = (dayNum: number) => {
     setExpandedDay(expandedDay === dayNum ? null : dayNum);
   };
 
+  // Toggle all days
+  const toggleAllDays = () => {
+    if (areAllDaysExpanded) {
+      setExpandedDay(null);
+      setAreAllDaysExpanded(false);
+    } else {
+      setExpandedDay(-1); // -1 indicates all open
+      setAreAllDaysExpanded(true);
+    }
+  };
+
   const getWhatsAppBookingLink = () => {
-    const text = `Hi Awara Banjara! I would like to inquire about booking: "${trip.title}" (${trip.duration}). Starting price: ${trip.price}. Please share upcoming batch dates and seat availability.`;
+    const text = `Hi Awara Banjara! I would like to inquire about booking: "${trip.title}" (${trip.duration}). Selected Package: ${selectedPackage} (${formatPrice(selectedPrice)}). Batch: ${selectedBatchDate}. Please share seat availability.`;
     return `https://wa.me/${SITE_CONFIG.whatsapp_number.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(text)}`;
   };
 
+  const tripTags = Array.isArray(trip.tags)
+    ? trip.tags
+    : typeof trip.tags === "string" && trip.tags.length > 0
+    ? trip.tags.split(",").map((t: string) => t.trim())
+    : ["Group Tour", "High Altitude", "Scenic Drive"];
+
+  const destinationLabel = trip.category?.includes("spiti")
+    ? "Spiti"
+    : trip.category?.includes("kashmir")
+    ? "Kashmir"
+    : trip.category?.includes("zanskar")
+    ? "Zanskar"
+    : trip.category?.includes("ladakh")
+    ? "Ladakh"
+    : "Himachal";
+
   return (
-    <div className="w-full bg-[#f6f6f1] min-h-screen pb-20">
-      {/* Breadcrumb Bar */}
-      <div className="bg-white border-b border-[#e2e2dc] py-3">
-        <Container>
-          <nav className="flex items-center gap-2 text-xs text-[#6b6b63] font-semibold">
-            <Link href="/" className="hover:text-[#14140f]">Home</Link>
-            <span>/</span>
-            <Link href="/community-trips" className="hover:text-[#14140f]">Trips</Link>
-            <span>/</span>
-            <span className="text-[#14140f] truncate max-w-sm">{trip.title}</span>
-          </nav>
-        </Container>
-      </div>
+    <div className="w-full bg-[#f6f6f1] min-h-screen pb-24">
+      {/* 1. Bento Image Gallery with Lightbox */}
+      <BentoGallery images={galleryImages} title={trip.title} />
 
-      {/* Hero Header */}
-      <section className="bg-white border-b border-[#e2e2dc] py-8 sm:py-12">
-        <Container>
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <Badge variant="lime" size="md">
-                Verified Departure
-              </Badge>
-              <Badge variant="dark" size="md">
-                Small Group
-              </Badge>
-              {trip.route && (
-                <span className="text-xs text-[#6b6b63] font-bold flex items-center gap-1 ml-2">
-                  <MapPin className="w-3.5 h-3.5 text-[#14140f]" />
-                  <span>{trip.route}</span>
+      {/* 2. Secondary Sticky Navigation */}
+      <StickySecondaryNav />
+
+      {/* Main Content & Sticky Sidebar Layout */}
+      <Container className="py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          {/* Main Column (2 Columns) */}
+          <div className="lg:col-span-2 flex flex-col gap-8">
+            {/* 3. Title Card */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+              {/* Breadcrumb */}
+              <nav className="flex items-center gap-1.5 text-xs text-[#6b6b63] font-medium mb-3">
+                <Link href="/" className="hover:text-[#14140f]">Home</Link>
+                <span>›</span>
+                <Link href={`/${destinationLabel.toLowerCase()}`} className="hover:text-[#14140f]">
+                  {destinationLabel}
+                </Link>
+                <span>›</span>
+                <span className="text-[#14140f] font-semibold truncate max-w-xs sm:max-w-md">
+                  {trip.title}
                 </span>
-              )}
-            </div>
+              </nav>
 
-            <Heading level={1} className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#14140f] leading-tight">
-              {trip.title}
-            </Heading>
-
-            {/* Quick Meta Row */}
-            <div className="flex flex-wrap items-center gap-6 pt-2 text-xs sm:text-sm font-semibold text-[#14140f]">
-              <div className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-[#d6ff3f] fill-[#14140f]" />
+              {/* Meta Duration Row */}
+              <div className="flex items-center gap-2 text-xs font-bold text-[#14140f] mb-2.5">
+                <Clock className="w-4 h-4 text-[#14140f]" />
                 <span>{trip.duration}</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-[#14140f]" />
-                <span>12 - 16 Wanderers</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#2fa84f]" />
-                <span>Certified Mountain Captain</span>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
 
-      {/* Image Gallery Bento Grid */}
-      <section className="py-6 bg-white border-b border-[#e2e2dc]">
-        <Container>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-[340px] sm:h-[440px]">
-            {/* Primary Main Image */}
-            <div className="md:col-span-3 relative h-full rounded-2xl overflow-hidden border border-[#e2e2dc]">
-              <Image
-                src={trip.image_url || "/assets/images/home/hero-poster.jpg"}
-                alt={trip.title}
-                fill
-                priority
-                className="object-cover"
-              />
-            </div>
-            {/* Secondary Thumbnail Stacks */}
-            <div className="hidden md:flex flex-col gap-4 h-full">
-              <div className="relative flex-1 rounded-2xl overflow-hidden border border-[#e2e2dc]">
-                <Image
-                  src={trip.bento_img_1 || trip.image_url || "/assets/images/destinations/domestic/himachal.jpg"}
-                  alt="Trip highlight 1"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative flex-1 rounded-2xl overflow-hidden border border-[#e2e2dc]">
-                <Image
-                  src={trip.bento_img_2 || "/assets/images/about/community-group.jpg"}
-                  alt="Trip highlight 2"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+              {/* Title */}
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#14140f] font-heading leading-tight mb-3">
+                {trip.title}
+              </h1>
 
-      {/* Main Content & Sticky Sidebar Container */}
-      <Container className="py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-          {/* Main Column (2 Cols) */}
-          <div className="lg:col-span-2 flex flex-col gap-10">
-            {/* About / Overview */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
-              <Heading level={2} className="text-xl sm:text-2xl font-bold mb-4">
-                About This Expedition
-              </Heading>
-              <div className="text-sm text-[#14140f] leading-relaxed whitespace-pre-line">
-                {trip.about_text ||
-                  "A masterfully planned Himalayan odyssey designed to immerse you into raw alpine landscapes, ancient valley traditions, and high altitude thrills. Accompanied by certified mountain leaders and experienced native drivers."}
+              {/* Route */}
+              {trip.route && (
+                <p className="text-xs sm:text-sm text-[#6b6b63] font-medium leading-relaxed mb-4">
+                  {trip.route}
+                </p>
+              )}
+
+              {/* Tags & Action Buttons */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-[#f0f0eb]">
+                <div className="flex flex-wrap items-center gap-2">
+                  {tripTags.map((tag: string, idx: number) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 rounded-lg bg-[#f0f0ea] text-[#14140f] text-xs font-bold"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-2.5">
+                  <button
+                    type="button"
+                    onClick={() => setIsShareModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#14140f] text-white text-xs font-bold hover:bg-[#2c2c24] transition-all cursor-pointer shadow-sm"
+                  >
+                    <Share2 className="w-3.5 h-3.5" />
+                    <span>Share</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setIsPdfModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#d6ff3f] text-[#14140f] text-xs font-bold hover:bg-[#ccff00] border border-[#14140f] transition-all cursor-pointer shadow-lime-btn"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download PDF</span>
+                  </button>
+                </div>
               </div>
             </div>
 
-            {/* Day-by-Day Accordion Itinerary */}
+            {/* 4. Weather Card */}
+            {weather && <WeatherCard weather={weather} />}
+
+            {/* 5. About This Trip */}
+            <div id="about" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
+                About This Trip
+              </h2>
+
+              <div
+                className={`text-xs sm:text-sm text-[#3b3b33] leading-relaxed transition-all duration-300 ${
+                  !isAboutExpanded ? "max-h-[140px] overflow-hidden relative" : ""
+                }`}
+              >
+                {trip.about_text ? (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: trip.about_text }}
+                    className="rich-text flex flex-col gap-3"
+                  />
+                ) : (
+                  <p>
+                    An extraordinary Himalayan journey meticulously crafted by Awara Banjara, designed to take you far beyond the ordinary tourist trails. This exclusive expedition is a perfect blend of rich cultural heritage, adrenaline-pumping high-altitude drives, and soul-soothing mountain vistas. Travel with seasoned mountain drivers, certified expedition leaders, and a community of like-minded explorers.
+                  </p>
+                )}
+
+                {!isAboutExpanded && (
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                )}
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsAboutExpanded((prev) => !prev)}
+                className="mt-3 text-xs sm:text-sm font-extrabold text-[#14140f] hover:underline cursor-pointer"
+              >
+                {isAboutExpanded ? "Read Less" : "Read More"}
+              </button>
+            </div>
+
+            {/* 6. Itinerary Accordion */}
             {trip.itinerary && trip.itinerary.length > 0 && (
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+              <div id="itinerary" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
                 <div className="flex items-center justify-between mb-6">
-                  <Heading level={2} className="text-xl sm:text-2xl font-bold">
-                    Detailed Day-by-Day Itinerary
-                  </Heading>
-                  <span className="text-xs font-bold text-[#6b6b63]">
-                    {trip.itinerary.length} Days Planned
-                  </span>
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading">
+                      Itinerary
+                    </h2>
+                    <span className="text-xs font-semibold text-[#6b6b63]">
+                      {trip.itinerary.length} Days Planned
+                    </span>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={toggleAllDays}
+                    className="text-xs font-bold text-[#14140f] px-3 py-1.5 rounded-lg border border-[#e2e2dc] bg-[#fafaf7] hover:bg-[#f0f0ea] transition-all cursor-pointer"
+                  >
+                    {areAllDaysExpanded ? "Collapse All" : "Expand All"}
+                  </button>
                 </div>
 
                 <div className="flex flex-col gap-3">
                   {trip.itinerary.map((day) => {
-                    const isExpanded = expandedDay === day.day;
+                    const isOpen = areAllDaysExpanded || expandedDay === day.day;
                     return (
                       <div
                         key={day.day}
-                        className="border border-[#e2e2dc] rounded-xl overflow-hidden transition-all duration-200"
+                        className="border border-[#e2e2dc] rounded-xl overflow-hidden transition-all"
                       >
                         <button
+                          type="button"
                           onClick={() => toggleDay(day.day)}
-                          className="w-full p-4 sm:p-5 text-left bg-[#fcfcf9] hover:bg-[#f6f6f1] flex items-center justify-between gap-4 cursor-pointer transition-colors"
+                          className="w-full p-4 sm:p-5 text-left bg-[#fafaf7] hover:bg-[#f0f0ea] flex items-center justify-between gap-4 cursor-pointer transition-colors"
                         >
                           <div className="flex items-center gap-3">
                             <span className="w-8 h-8 rounded-lg bg-[#14140f] text-[#d6ff3f] flex items-center justify-center font-extrabold text-xs shrink-0">
                               D{day.day}
                             </span>
-                            <span className="font-bold text-sm sm:text-base text-[#14140f]">
+                            <span className="font-bold text-xs sm:text-sm text-[#14140f]">
                               {day.title}
                             </span>
                           </div>
-                          {isExpanded ? (
-                            <ChevronUp className="w-5 h-5 text-[#14140f] shrink-0" />
+                          {isOpen ? (
+                            <ChevronUp className="w-4 h-4 text-[#14140f] shrink-0" />
                           ) : (
-                            <ChevronDown className="w-5 h-5 text-[#6b6b63] shrink-0" />
+                            <ChevronDown className="w-4 h-4 text-[#6b6b63] shrink-0" />
                           )}
                         </button>
 
-                        {isExpanded && (
-                          <div className="p-5 bg-white border-t border-[#e2e2dc] text-sm text-[#14140f] leading-relaxed">
+                        {isOpen && (
+                          <div className="p-5 bg-white border-t border-[#e2e2dc] text-xs sm:text-sm text-[#3b3b33] leading-relaxed">
                             <p className="mb-3">{day.desc || day.description}</p>
-                            <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#6b6b63] pt-2 border-t border-[#f0f0eb]">
+                            <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#6b6b63] pt-3 border-t border-[#f0f0eb]">
                               {day.distance && <span>🚗 Distance: {day.distance}</span>}
                               {day.altitude && <span>⛰️ Altitude: {day.altitude}</span>}
                               {day.stay && <span>🏡 Stay: {day.stay}</span>}
@@ -253,15 +358,17 @@ export default function TripDetailPage() {
               </div>
             )}
 
-            {/* Inclusions & Exclusions */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* 7. Inclusions & Exclusions */}
+            <div id="inclusions" className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Inclusions */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e2e2dc] shadow-card">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card">
                 <div className="flex items-center gap-2 mb-4 text-[#2fa84f] font-bold">
-                  <Check className="w-5 h-5" />
-                  <h3 className="text-base text-[#14140f] font-bold">What&apos;s Included</h3>
+                  <Check className="w-5 h-5 stroke-[2.5]" />
+                  <h3 className="text-base sm:text-lg text-[#14140f] font-extrabold font-heading">
+                    Inclusions
+                  </h3>
                 </div>
-                <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-[#14140f]">
+                <ul className="flex flex-col gap-3 text-xs sm:text-sm text-[#14140f]">
                   {(trip.inclusions && trip.inclusions.length > 0
                     ? trip.inclusions
                     : [
@@ -273,67 +380,114 @@ export default function TripDetailPage() {
                         "Emergency oxygen cylinder support on high passes",
                       ]
                   ).map((inc: any, i: number) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-[#2fa84f] shrink-0 mt-0.5" />
-                      <span>{String(inc)}</span>
+                    <li key={i} className="flex items-start gap-2.5">
+                      <span className="text-[#2fa84f] font-bold mt-0.5 shrink-0">✔</span>
+                      <span className="leading-relaxed">{String(inc)}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Exclusions */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e2e2dc] shadow-card">
+              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card">
                 <div className="flex items-center gap-2 mb-4 text-[#e0455a] font-bold">
-                  <X className="w-5 h-5" />
-                  <h3 className="text-base text-[#14140f] font-bold">What&apos;s Excluded</h3>
+                  <X className="w-5 h-5 stroke-[2.5]" />
+                  <h3 className="text-base sm:text-lg text-[#14140f] font-extrabold font-heading">
+                    Exclusions
+                  </h3>
                 </div>
-                <ul className="flex flex-col gap-2.5 text-xs sm:text-sm text-[#14140f]">
+                <ul className="flex flex-col gap-3 text-xs sm:text-sm text-[#14140f]">
                   {(trip.exclusions && trip.exclusions.length > 0
                     ? trip.exclusions
                     : [
-                        "Personal meals or café lunches en route",
-                        "Personal shopping, laundry, and heating charges",
-                        "Adventure activity tickets (paragliding, rafting)",
+                        "5% GST applicable on the total package cost",
+                        "Any flights, train tickets, or transit expenses to starting city",
+                        "Lunches, midday snacks, and bottled drinking water",
+                        "Room heater charges at homestays / hotels",
+                        "Personal expenses such as laundry, phone calls, tips",
                         "Unforeseen roadblock evacuation or flight delay costs",
                       ]
                   ).map((exc: any, i: number) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <X className="w-4 h-4 text-[#e0455a] shrink-0 mt-0.5" />
-                      <span>{String(exc)}</span>
+                    <li key={i} className="flex items-start gap-2.5">
+                      <span className="text-[#e0455a] font-bold mt-0.5 shrink-0">✘</span>
+                      <span className="leading-relaxed">{String(exc)}</span>
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
 
-            {/* FAQs */}
-            {trip.faqs && trip.faqs.length > 0 && (
-              <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
-                <Heading level={2} className="text-xl sm:text-2xl font-bold mb-6">
-                  Frequently Asked Questions
-                </Heading>
-                <div className="flex flex-col gap-4">
-                  {trip.faqs.map((faq: any, i: number) => (
-                    <div key={i} className="border-b border-[#f0f0eb] pb-4">
-                      <h4 className="text-sm font-bold text-[#14140f] mb-1.5">{faq.question}</h4>
-                      <p className="text-xs sm:text-sm text-[#6b6b63] leading-relaxed">{faq.answer}</p>
-                    </div>
-                  ))}
-                </div>
+            {/* 8. Package Options */}
+            <div id="packages" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
+                Package Options
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {(trip.package_options && trip.package_options.length > 0
+                  ? trip.package_options
+                  : [
+                      { title: "Quad Sharing", price: trip.price },
+                      { title: "Triple Sharing", price: trip.price },
+                    ]
+                ).map((pkg: any) => {
+                  const isSelected = selectedPackage === pkg.title;
+                  return (
+                    <button
+                      key={pkg.title}
+                      type="button"
+                      onClick={() => handlePackageSelect(pkg.title, pkg.price)}
+                      className={`p-4 sm:p-5 rounded-xl border text-left transition-all cursor-pointer ${
+                        isSelected
+                          ? "bg-[#d6ff3f] border-[#14140f] shadow-lime-btn scale-[1.02]"
+                          : "bg-[#fafaf7] border-[#e2e2dc] hover:border-[#14140f]/40"
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-xs sm:text-sm font-bold text-[#14140f]">
+                          {pkg.title}
+                        </span>
+                        {isSelected && <CheckCircle2 className="w-4 h-4 text-[#14140f]" />}
+                      </div>
+                      <div className="text-lg sm:text-xl font-extrabold text-[#14140f] font-heading">
+                        {formatPrice(pkg.price)}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
-            )}
+            </div>
+
+            {/* 9. What to Pack Section */}
+            <PackingListSection categories={packingCategories} tripId={trip.id} />
+
+            {/* 10. Departure Dates Section */}
+            <DepartureDatesSection
+              departureDates={trip.departure_dates}
+              defaultPrice={selectedPrice}
+              onSelectBatchAndBook={handleSelectBatchAndBook}
+            />
+
+            {/* 11. Attractions Carousel */}
+            <AttractionsCarousel attractions={attractions} />
+
+            {/* 12. FAQs Accordion */}
+            <FaqsAccordion faqs={trip.faqs} />
+
+            {/* 13. Customer Reviews Section */}
+            <TripReviewsSection reviews={reviews} tripTitle={trip.title} />
           </div>
 
-          {/* Sticky Booking Sidebar (1 Col) matching Live Reference */}
-          <div className="sticky top-[100px] flex flex-col gap-5">
-            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-4">
+          {/* Sticky Right Booking Sidebar (1 Column) */}
+          <div className="sticky top-[90px] flex flex-col gap-5">
+            <aside className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-5">
               <div>
                 <span className="text-xs text-[#6b6b63] font-medium block">
                   Starting From
                 </span>
                 <div className="flex items-baseline gap-2 mt-0.5">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-[#14140f] font-heading">
-                    {formatPrice(trip.price)}
+                  <span className="text-3xl sm:text-4xl font-extrabold text-[#14140f] font-heading">
+                    {formatPrice(selectedPrice)}
                   </span>
                   <span className="text-xs text-[#6b6b63] font-medium">per person</span>
                 </div>
@@ -342,27 +496,27 @@ export default function TripDetailPage() {
                 </span>
               </div>
 
-              {/* BOOK NOW Primary Button */}
+              {/* BOOK NOW Button */}
               <button
                 type="button"
                 onClick={() => setIsBookModalOpen(true)}
-                className="w-full bg-[#d6ff3f] text-[#14140f] font-extrabold text-base py-3.5 rounded-xl border border-[#14140f] shadow-lime-btn hover:bg-[#ccff00] hover:shadow-lg transition-all cursor-pointer text-center font-heading"
+                className="w-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-extrabold text-base py-3.5 px-4 rounded-xl border border-[#14140f] shadow-lime-btn hover:shadow-lg transition-all cursor-pointer font-heading text-center"
               >
                 BOOK NOW
               </button>
 
               {/* Private Trip Option */}
-              <div className="pt-3 border-t border-[#f0f0eb] text-left">
+              <div className="pt-4 border-t border-[#f0f0eb] text-left">
                 <span className="text-xs font-bold text-[#14140f] block">
                   Private Trip Available
                 </span>
                 <span className="text-[11px] text-[#6b6b63] block mt-0.5">
-                  Customised itinerary for groups of 4+ travelers
+                  Customised itinerary for groups of 4+ travelers.
                 </span>
                 <button
                   type="button"
                   onClick={() => setIsBookModalOpen(true)}
-                  className="mt-2 w-full py-2.5 px-3 rounded-xl border border-[#14140f] text-xs font-bold text-[#14140f] hover:bg-[#14140f] hover:text-[#d6ff3f] transition-all cursor-pointer text-center"
+                  className="mt-2.5 w-full py-2.5 px-3 rounded-xl border border-[#14140f] text-xs font-bold text-[#14140f] hover:bg-[#14140f] hover:text-[#d6ff3f] transition-all cursor-pointer text-center"
                 >
                   Chat with our Trip Planner
                 </button>
@@ -373,14 +527,14 @@ export default function TripDetailPage() {
                 href={getWhatsAppBookingLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-3 rounded-xl border border-[#e2e2dc] text-xs font-bold text-[#14140f] flex items-center justify-center gap-2 hover:bg-[#f6f6f1] transition-all"
+                className="w-full py-2.5 px-3 rounded-xl border border-[#e2e2dc] text-xs font-bold text-[#14140f] flex items-center justify-center gap-2 hover:bg-[#fafaf7] transition-all"
               >
                 <MessageSquare className="w-4 h-4 text-[#25d366]" />
                 <span>WhatsApp Us</span>
               </a>
 
               {/* Guarantee badges */}
-              <div className="flex flex-col gap-2 pt-3 border-t border-[#f0f0eb] text-xs text-[#6b6b63]">
+              <div className="flex flex-col gap-2.5 pt-4 border-t border-[#f0f0eb] text-xs text-[#6b6b63]">
                 <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
                   <span>Lock seat with only 10% advance</span>
@@ -394,17 +548,26 @@ export default function TripDetailPage() {
                   <span>Zero hidden costs or permit charges</span>
                 </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
 
-        {/* Related Departures */}
+        {/* 14. More Trips in Destination */}
         {relatedTrips.length > 0 && (
-          <div className="mt-20 pt-12 border-t border-[#e2e2dc]">
-            <Heading level={2} className="text-2xl font-bold mb-6">
-              You May Also Like
-            </Heading>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div id="more-trips" className="mt-16 pt-12 border-t border-[#e2e2dc]">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading">
+                More trips in {destinationLabel}
+              </h2>
+              <Link
+                href="/community-trips"
+                className="text-xs sm:text-sm font-bold text-[#14140f] hover:underline flex items-center gap-1"
+              >
+                See all {destinationLabel} trips <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedTrips.map((rel) => (
                 <TripCard key={rel.id} trip={rel} />
               ))}
@@ -413,12 +576,16 @@ export default function TripDetailPage() {
         )}
       </Container>
 
-      {/* Mobile Sticky Bottom Action Bar */}
+      {/* 15. Mobile Sticky Bottom Action Bar */}
       <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#e2e2dc] p-3 px-4 flex items-center justify-between shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
         <div>
-          <span className="text-[10px] text-[#6b6b63] font-semibold block uppercase">Starting From</span>
+          <span className="text-[10px] text-[#6b6b63] font-semibold block uppercase">
+            Starting From
+          </span>
           <div className="flex items-baseline gap-1">
-            <span className="text-lg font-extrabold text-[#14140f] font-heading">{formatPrice(trip.price)}</span>
+            <span className="text-lg font-extrabold text-[#14140f] font-heading">
+              {formatPrice(selectedPrice)}
+            </span>
             <span className="text-[10px] text-[#6b6b63]">/ person</span>
           </div>
         </div>
@@ -431,7 +598,7 @@ export default function TripDetailPage() {
         </button>
       </div>
 
-      {/* ============ PLAN YOUR NEXT TRIP MODAL (Exact awarabanjara.in Structure & Styling) ============ */}
+      {/* 16. PLAN YOUR NEXT TRIP MODAL (Exact awarabanjara.in 2-Column Structure) */}
       <div
         className={`share-modal-overlay ${isBookModalOpen ? "active" : ""}`}
         id="bookingModal"
@@ -458,13 +625,13 @@ export default function TripDetailPage() {
                 Selected Batch
               </div>
               <div id="bookingSelectedBatch" style={{ fontSize: "14px", fontWeight: 800, marginTop: "2px" }}>
-                🗓️ On Request Departure Date
+                🗓️ {selectedBatchDate}
               </div>
               <div id="bookingSelectedPackage" style={{ fontSize: "12px", fontWeight: 700, marginTop: "2px", opacity: 0.9 }}>
-                📦 Triple/Quad Sharing
+                📦 {selectedPackage}
               </div>
               <div id="bookingSelectedPrice" style={{ fontSize: "17px", fontWeight: 800, color: "#d6ff3f", marginTop: "3px" }}>
-                {formatPrice(trip.price)}
+                {formatPrice(selectedPrice)}
               </div>
             </div>
           </div>
@@ -492,32 +659,42 @@ export default function TripDetailPage() {
                 const inquiry = {
                   id: "TRIP_INQ_" + Date.now(),
                   trip_title: trip.title,
-                  trip_price: trip.price,
+                  trip_price: selectedPrice,
+                  selected_package: selectedPackage,
                   customer_name: bookingForm.name,
                   phone: bookingForm.phone,
                   email: bookingForm.email,
-                  departure_date: bookingForm.departureDate,
+                  departure_date: selectedBatchDate,
                   travelers: bookingForm.travelers,
-                  message: bookingForm.message,
+                  requests: bookingForm.message,
+                  status: "Pending Lead",
                   created_at: new Date().toISOString(),
                 };
                 try {
-                  const list = JSON.parse(localStorage.getItem("awara_inquiries") || "[]");
-                  list.push(inquiry);
-                  localStorage.setItem("awara_inquiries", JSON.stringify(list));
-                } catch {}
-                await new Promise((r) => setTimeout(r, 600));
-                setIsSubmitting(false);
-                setIsBookModalOpen(false);
-                setIsSuccessOpen(true);
+                  const existing = JSON.parse(localStorage.getItem("trip_inquiries") || "[]");
+                  existing.push(inquiry);
+                  localStorage.setItem("trip_inquiries", JSON.stringify(existing));
+                } catch (err) {
+                  console.error(err);
+                }
+                setTimeout(() => {
+                  setIsSubmitting(false);
+                  setIsBookModalOpen(false);
+                  setIsSuccessOpen(true);
+                  setBookingForm({
+                    name: "",
+                    phone: "",
+                    email: "",
+                    departureDate: selectedBatchDate,
+                    travelers: 1,
+                    message: "",
+                  });
+                }, 400);
               }}
-              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
             >
-              <div className="booking-field-group">
+              <div className="form-group-popup">
                 <input
                   type="text"
-                  id="custName"
-                  className="booking-input"
                   required
                   placeholder="Your Name"
                   value={bookingForm.name}
@@ -525,70 +702,51 @@ export default function TripDetailPage() {
                 />
               </div>
 
-              <div className="booking-field-group">
-                <div className="phone-input-group">
-                  <span className="country-code-tag">+91</span>
-                  <input
-                    type="tel"
-                    id="custPhone"
-                    className="booking-input"
-                    required
-                    placeholder="Mobile No."
-                    value={bookingForm.phone}
-                    onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                  />
-                </div>
+              <div className="form-group-popup">
+                <input
+                  type="tel"
+                  required
+                  placeholder="+91 Mobile No."
+                  value={bookingForm.phone}
+                  onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                />
               </div>
 
-              <div className="booking-field-group">
+              <div className="form-group-popup">
                 <input
                   type="email"
-                  id="custEmail"
-                  className="booking-input"
                   placeholder="Email (optional)"
                   value={bookingForm.email}
                   onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
                 />
               </div>
 
-              <div className="booking-grid-2 booking-field-group">
-                <div>
+              <div className="form-row-popup">
+                <div className="form-group-popup" style={{ flex: 2 }}>
                   <input
                     type="text"
-                    id="custDateDisplay"
-                    className="booking-input"
                     readOnly
-                    value="On Request Departure Date"
-                    style={{ background: "#f8fafc", fontWeight: 700 }}
+                    value={selectedBatchDate}
+                    className="bg-[#fafaf7] cursor-not-allowed"
                   />
                 </div>
-                <div>
+                <div className="form-group-popup" style={{ flex: 1 }}>
                   <input
                     type="number"
-                    id="custTravelers"
-                    className="booking-input"
-                    min={1}
-                    max={20}
+                    min="1"
+                    max="50"
+                    required
+                    placeholder="Travelers"
                     value={bookingForm.travelers}
-                    onChange={(e) =>
-                      setBookingForm({
-                        ...bookingForm,
-                        travelers: parseInt(e.target.value) || 1,
-                      })
-                    }
-                    placeholder="No. of Travelers"
-                    title="Number of Travelers"
+                    onChange={(e) => setBookingForm({ ...bookingForm, travelers: parseInt(e.target.value) || 1 })}
                   />
                 </div>
               </div>
 
-              <div className="booking-field-group">
+              <div className="form-group-popup">
                 <textarea
-                  id="custRequests"
-                  className="booking-input"
-                  rows={3}
+                  rows={2}
                   placeholder="Message (optional)"
-                  style={{ resize: "none" }}
                   value={bookingForm.message}
                   onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
                 />
@@ -596,46 +754,59 @@ export default function TripDetailPage() {
 
               <button
                 type="submit"
-                id="submitBookingBtn"
-                className="btn-popup-submit"
                 disabled={isSubmitting}
+                className="btn-popup-submit"
+                id="submitBookingBtn"
               >
-                {isSubmitting ? "Connecting..." : "Connect with Expert"}
+                {isSubmitting ? "Submitting Inquiry..." : "Connect with Expert"}
               </button>
             </form>
           </div>
         </div>
       </div>
 
-      {/* ============ INQUIRY SUCCESS CONFIRMATION MODAL ============ */}
-      <div
-        className={`share-modal-overlay ${isSuccessOpen ? "active" : ""}`}
-        id="inquirySuccessModal"
-        role="dialog"
-        aria-hidden={!isSuccessOpen}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) setIsSuccessOpen(false);
-        }}
-      >
-        <div className="inquiry-success-card">
-          <div style={{ fontSize: "54px", marginBottom: "12px" }}>🎉</div>
-          <h3 style={{ fontSize: "24px", fontWeight: 800, color: "#0f172a", marginBottom: "12px", letterSpacing: "-0.3px", fontFamily: "var(--font-heading)" }}>
-            Thank You for Contacting!
-          </h3>
-          <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.6, marginBottom: "24px", fontWeight: 500 }}>
-            Thank you for contacting, you will get a call back soon from our expert with your itinerary for <strong>{trip.title}</strong>.
-          </p>
-          <button
-            type="button"
-            id="closeSuccessModalBtn"
-            className="btn-popup-submit"
-            style={{ marginTop: 0 }}
-            onClick={() => setIsSuccessOpen(false)}
-          >
-            OK, GOT IT
-          </button>
+      {/* SUCCESS CONFIRMATION MODAL */}
+      {isSuccessOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-sm"
+          onClick={() => setIsSuccessOpen(false)}
+        >
+          <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl border border-[#e2e2dc]">
+            <div className="w-14 h-14 rounded-full bg-[#d6ff3f] text-[#14140f] flex items-center justify-center mx-auto mb-4 border border-[#14140f] shadow-lime-btn">
+              <Check className="w-7 h-7 stroke-[3]" />
+            </div>
+            <h3 className="font-extrabold text-xl text-[#14140f] font-heading mb-2">
+              Inquiry Received!
+            </h3>
+            <p className="text-xs sm:text-sm text-[#6b6b63] mb-6">
+              Thank you! Our Himalayan destination lead will call or WhatsApp you within 15 minutes to confirm details.
+            </p>
+            <button
+              type="button"
+              onClick={() => setIsSuccessOpen(false)}
+              className="w-full bg-[#14140f] text-white py-3 rounded-xl font-bold text-sm hover:bg-[#2c2c24] transition-all cursor-pointer"
+            >
+              Continue Exploring
+            </button>
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* Share Modal */}
+      <ShareModal
+        isOpen={isShareModalOpen}
+        onClose={() => setIsShareModalOpen(false)}
+        title={trip.title}
+      />
+
+      {/* PDF Download Lead Modal */}
+      <PdfLeadModal
+        isOpen={isPdfModalOpen}
+        onClose={() => setIsPdfModalOpen(false)}
+        title={trip.title}
+      />
     </div>
   );
 }
