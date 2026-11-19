@@ -133,27 +133,27 @@ export const HighEndWanderingSection: React.FC = () => {
                 transform = "translate(-50%, -50%) scale(1)";
                 zIndex = 10;
                 opacity = 1;
-                boxShadow = "0 28px 56px -12px rgba(20, 20, 15, 0.28), 0 12px 24px -8px rgba(20, 20, 15, 0.16)";
+                boxShadow = "0 16px 36px -4px rgba(20, 20, 15, 0.22), 0 6px 16px rgba(20, 20, 15, 0.10)";
               } else if (offset === 1) {
                 transform = "translate(-50%, -50%) translateX(94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
-                boxShadow = "0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06)";
+                boxShadow = "0 10px 24px -4px rgba(20, 20, 15, 0.12), 0 4px 10px rgba(20, 20, 15, 0.06)";
               } else if (offset === -1) {
                 transform = "translate(-50%, -50%) translateX(-94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
-                boxShadow = "0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06)";
+                boxShadow = "0 10px 24px -4px rgba(20, 20, 15, 0.12), 0 4px 10px rgba(20, 20, 15, 0.06)";
               } else if (offset === 2) {
                 transform = "translate(-50%, -50%) translateX(179.5%) scale(0.73)";
                 zIndex = 6;
                 opacity = 0.92;
-                boxShadow = "0 8px 20px rgba(20, 20, 15, 0.08)";
+                boxShadow = "0 6px 14px rgba(20, 20, 15, 0.08)";
               } else if (offset === -2) {
                 transform = "translate(-50%, -50%) translateX(-179.5%) scale(0.73)";
                 zIndex = 6;
                 opacity = 0.92;
-                boxShadow = "0 8px 20px rgba(20, 20, 15, 0.08)";
+                boxShadow = "0 6px 14px rgba(20, 20, 15, 0.08)";
               }
 
               return (

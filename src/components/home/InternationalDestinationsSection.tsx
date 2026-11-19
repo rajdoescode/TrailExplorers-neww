@@ -73,7 +73,7 @@ export const InternationalDestinationsSection: React.FC = () => {
           </button>
 
           <div
-            className="carousel-stage relative flex-1 h-[400px] sm:h-[430px] overflow-hidden"
+            className="carousel-stage relative flex-1 h-[440px] sm:h-[460px] overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -95,27 +95,27 @@ export const InternationalDestinationsSection: React.FC = () => {
                 transform = "translate(-50%, -50%) scale(1)";
                 zIndex = 10;
                 opacity = 1;
-                boxShadow = "0 22px 44px rgba(20, 20, 15, 0.20)";
+                boxShadow = "0 16px 36px -4px rgba(20, 20, 15, 0.22), 0 6px 16px rgba(20, 20, 15, 0.10)";
               } else if (offset === 1) {
                 transform = "translate(-50%, -50%) translateX(94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
-                boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
+                boxShadow = "0 10px 24px -4px rgba(20, 20, 15, 0.12), 0 4px 10px rgba(20, 20, 15, 0.06)";
               } else if (offset === -1) {
                 transform = "translate(-50%, -50%) translateX(-94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
-                boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
+                boxShadow = "0 10px 24px -4px rgba(20, 20, 15, 0.12), 0 4px 10px rgba(20, 20, 15, 0.06)";
               } else if (offset === 2) {
                 transform = "translate(-50%, -50%) translateX(179.5%) scale(0.73)";
                 zIndex = 6;
                 opacity = 0.92;
-                boxShadow = "0 8px 18px rgba(20, 20, 15, 0.09)";
+                boxShadow = "0 6px 14px rgba(20, 20, 15, 0.08)";
               } else if (offset === -2) {
                 transform = "translate(-50%, -50%) translateX(-179.5%) scale(0.73)";
                 zIndex = 6;
                 opacity = 0.92;
-                boxShadow = "0 8px 18px rgba(20, 20, 15, 0.09)";
+                boxShadow = "0 6px 14px rgba(20, 20, 15, 0.08)";
               }
 
               return (
@@ -134,7 +134,7 @@ export const InternationalDestinationsSection: React.FC = () => {
                     }
                   }}
                   className={cn(
-                    "trip-card dest-card-simple absolute left-1/2 top-1/2 w-[clamp(210px,58vw,256px)] h-[370px] sm:h-[380px] rounded-[28px] overflow-hidden block bg-[#14140f] transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)]",
+                    "trip-card dest-card-simple absolute left-1/2 top-1/2 w-[clamp(210px,58vw,256px)] h-[370px] sm:h-[380px] rounded-[24px] overflow-hidden block bg-[#14140f] transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)]",
                     !isCenter && "cursor-pointer"
                   )}
                   style={{
@@ -146,14 +146,14 @@ export const InternationalDestinationsSection: React.FC = () => {
                   }}
                   data-offset={offset}
                 >
-                  <div className="thumb w-full h-full relative overflow-hidden rounded-[28px]">
+                  <div className="w-full h-full relative overflow-hidden rounded-[24px] bg-[#14140f]">
                     <SkeletonImage
                       src={dest.image}
                       alt={dest.name}
                       fill
                       sizes="(max-width: 768px) 58vw, 256px"
-                      className="object-cover rounded-[28px] transition-transform duration-500 hover:scale-105"
-                      skeletonClassName="rounded-[28px]"
+                      className="object-cover rounded-[24px] transition-transform duration-500 hover:scale-105"
+                      skeletonClassName="rounded-[24px]"
                     />
 
                     {/* Top gradient for title readability */}
