@@ -1,6 +1,7 @@
 # Awara Banjara – Himalayan Travel Community Website
 
 > **Live Reference:** [https://awarabanjara.in/](https://awarabanjara.in/)  
+> **Vercel Deployment:** [https://latest.trailexplorers.co/](https://latest.trailexplorers.co/)  
 > **Recreation Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React Icons  
 
 A pixel-accurate, high-performance web platform recreating the complete user experience, visual design system, navigation, animations, and booking flow of **Awara Banjara** — India's premier youth travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and women-only departures.
@@ -128,6 +129,11 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 npm run build
 npm start
 ```
+
+### Live Deployment (Vercel)
+The project is deployed and hosted on **Vercel**:
+- **Live Vercel Production URL:** [https://latest.trailexplorers.co/](https://latest.trailexplorers.co/)
+- **GitHub Repository:** [https://github.com/rajdoescode/TrailExplorers-neww.git](https://github.com/rajdoescode/TrailExplorers-neww.git)
 
 ---
 
