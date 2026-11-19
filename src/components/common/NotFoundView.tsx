@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 interface NotFoundViewProps {
@@ -39,7 +38,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
   ];
 
   return (
-    <div className="w-full bg-white">
+    <main className="w-full bg-white">
       {/* ============ LOST HERO ============ */}
       <section className="nf-hero">
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 nf-inner">
@@ -50,7 +49,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
             </h1>
             <p>
               This page doesn&apos;t exist. Maybe the link is old, or the road got washed out.
-              Even the best explorers take a wrong turn.
+              Even the best banjaras take a wrong turn.
             </p>
             {displayPath && (
               <p className="nf-missing mt-2">
@@ -58,12 +57,12 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
               </p>
             )}
             <div className="nf-actions">
-              <Link href="/" className="btn btn-primary">
+              <a href="/" className="btn btn-primary cursor-pointer">
                 Take me home
-              </Link>
-              <Link href="/community-trips" className="btn btn-outline">
+              </a>
+              <a href="/community-trips" className="btn btn-outline cursor-pointer">
                 Browse all trips
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -115,31 +114,33 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
         <ul className="nf-road-list">
           {roads.map((road) => (
             <li key={road.href}>
-              <Link href={road.href}>{road.label}</Link>
+              <a href={road.href} className="cursor-pointer">
+                {road.label}
+              </a>
             </li>
           ))}
         </ul>
 
         <div className="nf-links">
-          <Link href="/plan-your-trip" className="nf-link">
+          <a href="/plan-your-trip" className="nf-link cursor-pointer">
             <strong>Plan your trip</strong>
             <span>Build your own Himalayan route in a few taps.</span>
-          </Link>
-          <Link href="/tour-packages" className="nf-link">
+          </a>
+          <a href="/tour-packages" className="nf-link cursor-pointer">
             <strong>Tour packages</strong>
             <span>Private, group and educational trips.</span>
-          </Link>
+          </a>
           <a
-            href="https://wa.me/917016640870"
+            href="https://wa.me/919103910523"
             target="_blank"
             rel="noopener noreferrer"
-            className="nf-link nf-link-wa"
+            className="nf-link nf-link-wa cursor-pointer"
           >
             <strong>Ask a local on WhatsApp</strong>
             <span>Looking for a specific trip? We&apos;ll point the way.</span>
           </a>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
