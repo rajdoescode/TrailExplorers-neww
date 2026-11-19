@@ -111,7 +111,7 @@ export const HighEndWanderingSection: React.FC = () => {
           </button>
 
           <div
-            className="carousel-stage relative flex-1 h-[440px] overflow-hidden"
+            className="carousel-stage relative flex-1 h-[460px] overflow-hidden"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -133,27 +133,27 @@ export const HighEndWanderingSection: React.FC = () => {
                 transform = "translate(-50%, -50%) scale(1)";
                 zIndex = 10;
                 opacity = 1;
-                boxShadow = "0 22px 44px rgba(20, 20, 15, 0.20)";
+                boxShadow = "0 28px 56px -12px rgba(20, 20, 15, 0.28), 0 12px 24px -8px rgba(20, 20, 15, 0.16)";
               } else if (offset === 1) {
                 transform = "translate(-50%, -50%) translateX(94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
-                boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
+                boxShadow = "0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06)";
               } else if (offset === -1) {
                 transform = "translate(-50%, -50%) translateX(-94%) scale(0.87)";
                 zIndex = 8;
                 opacity = 1;
-                boxShadow = "0 12px 26px rgba(20, 20, 15, 0.11)";
+                boxShadow = "0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06)";
               } else if (offset === 2) {
                 transform = "translate(-50%, -50%) translateX(179.5%) scale(0.73)";
                 zIndex = 6;
                 opacity = 0.92;
-                boxShadow = "0 8px 18px rgba(20, 20, 15, 0.09)";
+                boxShadow = "0 8px 20px rgba(20, 20, 15, 0.08)";
               } else if (offset === -2) {
                 transform = "translate(-50%, -50%) translateX(-179.5%) scale(0.73)";
                 zIndex = 6;
                 opacity = 0.92;
-                boxShadow = "0 8px 18px rgba(20, 20, 15, 0.09)";
+                boxShadow = "0 8px 20px rgba(20, 20, 15, 0.08)";
               }
 
               return (
@@ -161,7 +161,7 @@ export const HighEndWanderingSection: React.FC = () => {
                   key={trip.id}
                   onClick={() => !isCenter && setActiveIndex(idx)}
                   className={cn(
-                    "trip-card absolute left-1/2 top-1/2 w-[clamp(210px,58vw,252px)] h-[374px] bg-white rounded-[18px] overflow-hidden flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] border border-gray-100",
+                    "trip-card absolute left-1/2 top-1/2 w-[clamp(215px,58vw,252px)] h-[384px] bg-white rounded-[20px] overflow-hidden flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] border-0",
                     !isCenter && "cursor-pointer"
                   )}
                   style={{
@@ -173,7 +173,7 @@ export const HighEndWanderingSection: React.FC = () => {
                   }}
                   data-offset={offset}
                 >
-                  <div className="thumb aspect-[4/3] relative overflow-hidden shrink-0 bg-gray-100">
+                  <div className="thumb aspect-[4/3] relative overflow-hidden shrink-0 bg-gray-100 rounded-t-[20px]">
                     <Image
                       src={trip.image_url}
                       alt={trip.title}
@@ -183,38 +183,36 @@ export const HighEndWanderingSection: React.FC = () => {
                     />
                   </div>
 
-                  <div className="body p-4 flex flex-col gap-2.5 flex-1 min-h-0 justify-between">
-                    <h3 className="text-[16px] font-bold text-[#14140f] leading-tight line-clamp-2 min-h-[40px] m-0">
+                  <div className="body p-4 sm:p-[18px] flex flex-col flex-1 min-h-0">
+                    <h3 className="text-[15px] sm:text-[16px] font-bold text-[#14140f] leading-snug line-clamp-2 min-h-[42px] m-0">
                       {trip.title}
                     </h3>
 
-                    <div className="flex flex-col gap-2 mt-auto">
-                      <div className="meta flex items-center gap-1.5 text-xs font-semibold text-[#6b6b63]">
-                        <Clock className="w-3.5 h-3.5" />
-                        <span>
-                          {trip.duration_days} Days / {trip.duration_nights} Nights
+                    <div className="meta flex items-center gap-1.5 text-xs font-semibold text-[#6b6b63] mt-2">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>
+                        {trip.duration_days} Days / {trip.duration_nights} Nights
+                      </span>
+                    </div>
+
+                    <hr className="border-t border-[#ecece5] my-2.5" />
+
+                    <div className="price-row flex items-center justify-between mt-auto pt-1 pb-0.5">
+                      <div>
+                        <span className="price-label text-[11px] font-bold tracking-wider uppercase text-[#6b6b63] block">
+                          Starts from
+                        </span>
+                        <span className="price text-[16px] sm:text-[17px] font-extrabold text-[#14140f]">
+                          {formatPrice(trip.price)}
                         </span>
                       </div>
 
-                      <hr className="border-t border-[#ecece5] my-0" />
-
-                      <div className="price-row flex items-center justify-between">
-                        <div>
-                          <span className="price-label text-[11px] font-bold tracking-wider uppercase text-[#6b6b63] block">
-                            Starts from
-                          </span>
-                          <span className="price text-[15px] font-extrabold text-[#14140f]">
-                            {formatPrice(trip.price)}
-                          </span>
-                        </div>
-
-                        <Link
-                          href={`/trips/${trip.slug}`}
-                          className="btn btn-dark text-xs font-bold px-4 py-2 rounded-full bg-[#14140f] text-white hover:bg-black transition-colors"
-                        >
-                          Book Now
-                        </Link>
-                      </div>
+                      <Link
+                        href={`/trips/${trip.slug}`}
+                        className="btn btn-dark text-xs font-bold px-4 py-2 rounded-full bg-[#14140f] text-white hover:bg-black transition-colors shrink-0"
+                      >
+                        Book Now
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -226,10 +224,26 @@ export const HighEndWanderingSection: React.FC = () => {
             type="button"
             onClick={nextTrip}
             aria-label="Next trip"
-            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white hidden md:flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronRight className="w-6 h-6 stroke-[2.5]" />
           </button>
+        </div>
+
+        {/* Mobile Swipe Indicators */}
+        <div className="flex md:hidden items-center justify-center gap-1.5 mt-2">
+          {trips.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Go to trip ${i + 1}`}
+              className={cn(
+                "h-1.5 rounded-full transition-all duration-300 cursor-pointer p-0 border-0",
+                i === activeIndex ? "w-6 bg-[#14140f]" : "w-1.5 bg-[#d4d4cb]"
+              )}
+            />
+          ))}
         </div>
       </div>
     </section>

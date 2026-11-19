@@ -1,9 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { FloatingWidgets } from "@/components/common/FloatingWidgets";
 import { TripModal } from "@/components/common/TripModal";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#14140f",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://trailexplorers.in"),
@@ -61,12 +70,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-clip max-w-full"
+        className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-clip max-w-full relative"
         suppressHydrationWarning
       >
         <Header />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full pb-16 md:pb-0">{children}</main>
         <Footer />
+        <MobileBottomNav />
         <FloatingWidgets />
         <TripModal />
       </body>

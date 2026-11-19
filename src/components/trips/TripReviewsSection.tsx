@@ -9,6 +9,18 @@ interface TripReviewsSectionProps {
   tripTitle?: string;
 }
 
+function normalizeAvatarUrl(url?: string | null): string {
+  if (!url || typeof url !== "string") {
+    return "/assets/images/reviews/dhruv_shergill_avatar.png";
+  }
+  const clean = url.trim();
+  if (!clean) return "/assets/images/reviews/dhruv_shergill_avatar.png";
+  if (clean.startsWith("http://") || clean.startsWith("https://") || clean.startsWith("/")) {
+    return clean;
+  }
+  return "/" + clean;
+}
+
 export function TripReviewsSection({ reviews, tripTitle }: TripReviewsSectionProps) {
   if (!reviews || reviews.length === 0) return null;
 
@@ -37,7 +49,7 @@ export function TripReviewsSection({ reviews, tripTitle }: TripReviewsSectionPro
               <div className="flex items-center gap-3 mb-3">
                 <div className="relative w-11 h-11 rounded-full overflow-hidden bg-[#e2e2dc] shrink-0 border border-[#c4c4bc]">
                   <Image
-                    src={rev.avatar_url || "/assets/images/reviews/dhruv_shergill_avatar.png"}
+                    src={normalizeAvatarUrl(rev.avatar_url)}
                     alt={rev.customer_name}
                     fill
                     className="object-cover"

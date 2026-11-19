@@ -114,11 +114,11 @@ rgba(0,0,0,0.45)                      Hero Video / Image Scrim Overlay
 - **Error Messages:** Text color `#e0455a`, size `13px`, margin-top `4px`.
 
 ### 4.4 Floating Action Launcher Widgets (Bottom-Right)
-- **Banjara Mascot Tile:**
+- **Explorer Mascot Tile:**
   - Dimensions: `58px × 58px`, squircle radius `rounded-[18px]`.
   - Background: Radial gradient `radial-gradient(circle at 50% 35%, #2d2d24 0%, #14140f 72%)`.
-  - Character Peeking: `banjara-standing.webp` centered, head and cap protruding ~22px above the top border, sides and bottom clipped to the 18px border radius using `clipPath: inset(-35px 0 0 0 round 0 0 18px 18px)`.
-  - Online Status Dot: `12px × 12px` rounded-full, fill `#b8ff00`, border `2.5px solid #14140f`, pulsing glow animation `animate-banjara-online`.
+  - Character Peeking: `explorer-standing.webp` centered, head and cap protruding ~22px above the top border, sides and bottom clipped to the 18px border radius using `clipPath: inset(-35px 0 0 0 round 0 0 18px 18px)`.
+  - Online Status Dot: `12px × 12px` rounded-full, fill `#b8ff00`, border `2.5px solid #14140f`, pulsing glow animation `animate-explorer-online`.
 - **WhatsApp Tile:**
   - Dimensions: `58px × 58px`, matching `rounded-[18px]` radius.
   - Background: Brand green `#25d366`.

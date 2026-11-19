@@ -57,6 +57,19 @@
     background-color: #d6ff3f;
     color: #14140f;
   }
+
+  /* Prevent iOS Safari auto-zoom on form inputs */
+  @media (max-width: 768px) {
+    input:not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+
+  button, a, input, select, textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 
@@ -223,10 +236,12 @@
 
 .share-modal-close {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   background: transparent;
   border: none;
   font-size: 24px;
@@ -237,11 +252,16 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 10;
 }
 
 .share-modal-close:hover {
   background: #f0f0eb;
+}
+
+.share-modal-close:active {
+  transform: scale(0.92);
 }
 
 .booking-field-group {
@@ -347,27 +367,57 @@
 }
 
 @media (max-width: 768px) {
+  .share-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
   .booking-popup-card {
     grid-template-columns: 1fr;
-    max-width: 480px;
-    padding: 12px;
+    max-width: 100%;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    padding: 16px 16px calc(24px + env(safe-area-inset-bottom, 0px)) 16px;
     gap: 16px;
-    max-height: 90vh;
+    max-height: 92dvh;
     overflow-y: auto;
+    transform: translateY(100%);
+  }
+
+  .share-modal-overlay.active .booking-popup-card {
+    transform: translateY(0);
+  }
+
+  .inquiry-success-card {
+    max-width: 100%;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    padding: 28px 20px calc(28px + env(safe-area-inset-bottom, 0px)) 20px;
+    transform: translateY(100%);
+  }
+
+  .share-modal-overlay.active .inquiry-success-card {
+    transform: translateY(0);
   }
 
   .booking-popup-hero {
-    min-height: 200px;
-    padding: 20px;
+    min-height: 180px;
+    padding: 18px;
     border-radius: 16px;
   }
 
   .booking-popup-headline {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .booking-popup-form {
-    padding: 0 8px 8px 8px;
+    padding: 0 4px 4px 4px;
   }
 }
 
@@ -435,21 +485,21 @@
   .region-icons-list {
     flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 20px;
-    margin: 0 -24px;
-    padding: 4px 24px 8px;
+    gap: 16px;
+    margin: 0 -16px;
+    padding: 4px 16px 8px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 24px;
+    scroll-padding: 0 16px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .region-icons-list::-webkit-scrollbar { display: none; }
   .region-icon {
     flex: 0 0 auto;
-    width: 30vw;
-    max-width: 140px;
+    width: clamp(88px, 28vw, 130px);
     scroll-snap-align: start;
+    gap: 8px;
   }
 }
 
@@ -492,8 +542,8 @@ body.pc-mode-chat main {
   animation-delay: 0.3s;
 }
 
-/* Banjara Float Mascot & Online Status Animations */
-@keyframes banjara-online {
+/* Explorer Float Mascot & Online Status Animations */
+@keyframes explorer-online {
   0%, 100% {
     box-shadow: 0 0 0 2px #14140f, 0 0 0 2px rgba(184, 255, 0, 0.65);
   }
@@ -502,7 +552,7 @@ body.pc-mode-chat main {
   }
 }
 
-@keyframes banjara-breathe {
+@keyframes explorer-breathe {
   0%, 100% {
     transform: scale(1, 1);
   }
@@ -511,7 +561,7 @@ body.pc-mode-chat main {
   }
 }
 
-@keyframes banjara-hop {
+@keyframes explorer-hop {
   0% {
     transform: translateY(0) scale(1, 1);
   }
@@ -529,7 +579,7 @@ body.pc-mode-chat main {
   }
 }
 
-@keyframes banjara-wiggle {
+@keyframes explorer-wiggle {
   0%, 100% {
     transform: rotate(0);
   }
@@ -547,20 +597,20 @@ body.pc-mode-chat main {
   }
 }
 
-.animate-banjara-online {
-  animation: banjara-online 2.4s ease-in-out infinite;
+.animate-explorer-online {
+  animation: explorer-online 2.4s ease-in-out infinite;
 }
 
-.animate-banjara-breathe {
-  animation: banjara-breathe 3.2s ease-in-out infinite;
+.animate-explorer-breathe {
+  animation: explorer-breathe 3.2s ease-in-out infinite;
 }
 
-.animate-banjara-hop {
-  animation: banjara-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
+.animate-explorer-hop {
+  animation: explorer-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
-.animate-banjara-wiggle {
-  animation: banjara-wiggle 0.8s ease-in-out;
+.animate-explorer-wiggle {
+  animation: explorer-wiggle 0.8s ease-in-out;
 }
 
 /* Trip Chat animations */
@@ -668,7 +718,7 @@ body.pc-mode-chat main {
   transform: scale(1.15);
 }
 
-/* ---------- Plan-Your-Trip Banjara Chat Mascot ---------- */
+/* ---------- Plan-Your-Trip Explorer Chat Mascot ---------- */
 .pc-mascot {
   position: relative;
   display: block;
@@ -693,12 +743,12 @@ body.pc-mode-chat main {
 .pc-mascot-sprite {
   position: absolute;
   inset: 0;
-  background: url('/assets/images/mascot/banjara-sprite.webp?v=1') 0 0 / 1000% 600% no-repeat;
+  background: url('/assets/images/mascot/explorer-sprite.webp?v=1') 0 0 / 1000% 600% no-repeat;
   transform-origin: 50% 100%;
   animation: pc-breathe 3.2s ease-in-out infinite;
 }
 .pc-mascot-sprite.is-move {
-  background-image: url('/assets/images/mascot/banjara-moves.webp?v=1');
+  background-image: url('/assets/images/mascot/explorer-moves.webp?v=1');
   background-size: 1000% 900%;
 }
 .pc-mascot[data-state="think"] .pc-mascot-sprite { animation-duration: 4.8s; }
@@ -869,8 +919,10 @@ body.pc-mode-chat main {
 }
 
 .social-icons a {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
   border: 2px solid #14140f;
   display: inline-flex;
@@ -1064,10 +1116,10 @@ body.pc-mode-chat main {
 }
 
 /* =========================================================
-   Banjara Floating Avatar & Speech Bubble (Sitewide)
+   Explorer Floating Avatar & Speech Bubble (Sitewide)
    ========================================================= */
 
-.banjara-float {
+.explorer-float {
   position: fixed;
   right: 20px;
   bottom: 88px;
@@ -1082,11 +1134,11 @@ body.pc-mode-chat main {
     visibility 0s linear 0.55s;
 }
 
-.banjara-float:not(.is-visible) {
+.explorer-float:not(.is-visible) {
   display: none !important;
 }
 
-.banjara-float.is-visible {
+.explorer-float.is-visible {
   display: block !important;
   opacity: 1;
   visibility: visible;
@@ -1097,7 +1149,7 @@ body.pc-mode-chat main {
     visibility 0s;
 }
 
-.banjara-float__avatar {
+.explorer-float__avatar {
   position: relative;
   display: block;
   width: 56px;
@@ -1114,14 +1166,14 @@ body.pc-mode-chat main {
   text-decoration: none;
 }
 
-.banjara-float__avatar:hover {
+.explorer-float__avatar:hover {
   box-shadow:
     0 12px 26px rgba(20, 20, 15, 0.3),
     0 3px 8px rgba(20, 20, 15, 0.18);
 }
 
 /* Lime online dot */
-.banjara-float__avatar::after {
+.explorer-float__avatar::after {
   content: '';
   position: absolute;
   bottom: 5px;
@@ -1131,17 +1183,17 @@ body.pc-mode-chat main {
   border-radius: 50%;
   background: #b8ff00;
   box-shadow: 0 0 0 2px #14140f;
-  animation: banjara-online 2.4s ease-in-out infinite;
+  animation: explorer-online 2.4s ease-in-out infinite;
   z-index: 2;
 }
 
-.banjara-float__window {
+.explorer-float__window {
   position: absolute;
   inset: 0;
   clip-path: inset(-56px 0 0 0 round 0 0 12px 12px);
 }
 
-.banjara-float__peek {
+.explorer-float__peek {
   position: absolute;
   left: -20px;
   top: -27px;
@@ -1150,22 +1202,22 @@ body.pc-mode-chat main {
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.banjara-float__avatar:hover .banjara-float__peek,
-.banjara-float__avatar:focus-visible .banjara-float__peek {
+.explorer-float__avatar:hover .explorer-float__peek,
+.explorer-float__avatar:focus-visible .explorer-float__peek {
   transform: translateY(-7px);
 }
 
-.banjara-float__sprite {
+.explorer-float__sprite {
   position: absolute;
   inset: 0;
   background: no-repeat 100% 0 / 1400% 100%;
-  background-image: url('/assets/images/mascot/banjara-idle.webp?v=1');
+  background-image: url('/assets/images/mascot/explorer-idle.webp?v=1');
   transform-origin: 50% 100%;
-  animation: banjara-breathe 3.2s ease-in-out infinite;
+  animation: explorer-breathe 3.2s ease-in-out infinite;
 }
 
-.banjara-float__avatar.is-hop .banjara-float__sprite { animation: banjara-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1); }
-@keyframes banjara-hop {
+.explorer-float__avatar.is-hop .explorer-float__sprite { animation: explorer-hop 0.7s cubic-bezier(0.3, 0.7, 0.4, 1); }
+@keyframes explorer-hop {
   0% { transform: translateY(0) scale(1, 1); }
   18% { transform: translateY(4px) scale(1.06, 0.92); }
   45% { transform: translateY(-16px) scale(0.96, 1.05); }
@@ -1173,8 +1225,8 @@ body.pc-mode-chat main {
   100% { transform: translateY(0) scale(1, 1); }
 }
 
-.banjara-float__avatar.is-spin .banjara-float__sprite { animation: banjara-spin 0.85s ease-in-out; }
-@keyframes banjara-spin {
+.explorer-float__avatar.is-spin .explorer-float__sprite { animation: explorer-spin 0.85s ease-in-out; }
+@keyframes explorer-spin {
   0% { transform: scaleX(1); }
   25% { transform: translateY(-6px) scaleX(0); }
   50% { transform: translateY(-9px) scaleX(-1); }
@@ -1182,8 +1234,8 @@ body.pc-mode-chat main {
   100% { transform: scaleX(1); }
 }
 
-.banjara-float__avatar.is-wiggle { animation: banjara-wiggle 0.8s ease-in-out; }
-@keyframes banjara-wiggle {
+.explorer-float__avatar.is-wiggle { animation: explorer-wiggle 0.8s ease-in-out; }
+@keyframes explorer-wiggle {
   0%, 100% { transform: rotate(0); }
   20% { transform: rotate(-8deg); }
   40% { transform: rotate(6deg); }
@@ -1192,7 +1244,7 @@ body.pc-mode-chat main {
 }
 
 /* Speech bubble to the LEFT of the avatar tile */
-.banjara-float__bubble {
+.explorer-float__bubble {
   position: absolute;
   right: calc(100% + 12px);
   bottom: 6px;
@@ -1213,13 +1265,13 @@ body.pc-mode-chat main {
   font-family: inherit;
 }
 
-.banjara-float__bubble.is-open {
+.explorer-float__bubble.is-open {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
-.banjara-float__text {
+.explorer-float__text {
   margin: 0;
   font-size: 14px;
   font-weight: 700;
@@ -1227,7 +1279,7 @@ body.pc-mode-chat main {
   color: #14140f;
 }
 
-.banjara-float__text small {
+.explorer-float__text small {
   display: block;
   margin-top: 3px;
   font-size: 12px;
@@ -1235,15 +1287,15 @@ body.pc-mode-chat main {
   color: #55554d;
 }
 
-.banjara-float__chips {
+.explorer-float__chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-.banjara-float__chips:not(:empty) { margin-top: 9px; }
+.explorer-float__chips:not(:empty) { margin-top: 9px; }
 
-.banjara-float__chip {
+.explorer-float__chip {
   padding: 4px 10px;
   border-radius: 999px;
   background: #d6ff3f;
@@ -1256,12 +1308,12 @@ body.pc-mode-chat main {
   display: inline-block;
 }
 
-.banjara-float__chip:hover,
-.banjara-float__chip:focus-visible {
+.explorer-float__chip:hover,
+.explorer-float__chip:focus-visible {
   transform: translateY(-1px);
 }
 
-.banjara-float__close {
+.explorer-float__close {
   position: absolute;
   top: 5px;
   right: 6px;
@@ -1277,35 +1329,35 @@ body.pc-mode-chat main {
   cursor: pointer;
 }
 
-.banjara-float__close:hover { background: #f1f1ec; color: #14140f; }
+.explorer-float__close:hover { background: #f1f1ec; color: #14140f; }
 
 /* Typing state with 3 animated dots */
-.banjara-float__dots { display: none; gap: 4px; padding: 4px 2px; }
-.banjara-float__dots i {
+.explorer-float__dots { display: none; gap: 4px; padding: 4px 2px; }
+.explorer-float__dots i {
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #14140f;
   opacity: 0.3;
-  animation: banjara-dot 1s ease-in-out infinite;
+  animation: explorer-dot 1s ease-in-out infinite;
   display: inline-block;
 }
-.banjara-float__dots i:nth-child(2) { animation-delay: 0.15s; }
-.banjara-float__dots i:nth-child(3) { animation-delay: 0.3s; }
+.explorer-float__dots i:nth-child(2) { animation-delay: 0.15s; }
+.explorer-float__dots i:nth-child(3) { animation-delay: 0.3s; }
 
-@keyframes banjara-dot {
+@keyframes explorer-dot {
   0%, 100% { opacity: 0.25; transform: translateY(0); }
   50% { opacity: 0.9; transform: translateY(-3px); }
 }
 
-.banjara-float__bubble.is-typing {
+.explorer-float__bubble.is-typing {
   padding: 8px 14px;
   max-width: fit-content;
 }
-.banjara-float__bubble.is-typing .banjara-float__dots { display: flex; }
-.banjara-float__bubble.is-typing .banjara-float__text,
-.banjara-float__bubble.is-typing .banjara-float__chips,
-.banjara-float__bubble.is-typing .banjara-float__close { display: none; }
+.explorer-float__bubble.is-typing .explorer-float__dots { display: flex; }
+.explorer-float__bubble.is-typing .explorer-float__text,
+.explorer-float__bubble.is-typing .explorer-float__chips,
+.explorer-float__bubble.is-typing .explorer-float__close { display: none; }
 
 /* WhatsApp floating button */
 .floating-whatsapp {
@@ -1322,7 +1374,7 @@ body.pc-mode-chat main {
   justify-content: center;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35), 0 2px 6px rgba(20, 20, 15, 0.14);
   z-index: 9000;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, bottom 0.25s ease;
   text-decoration: none;
 }
 .floating-whatsapp:hover {
@@ -1330,38 +1382,38 @@ body.pc-mode-chat main {
   box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
 }
 
-@media (max-width: 640px) {
-  .banjara-float {
-    right: 16px;
-    bottom: 76px;
+@media (max-width: 768px) {
+  .explorer-float {
+    right: 14px;
+    bottom: calc(130px + env(safe-area-inset-bottom, 0px));
   }
-  .banjara-float__avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 11px;
+  .explorer-float__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
   }
-  .banjara-float__window { clip-path: inset(-52px 0 0 0 round 0 0 11px 11px); }
-  .banjara-float__peek {
+  .explorer-float__window { clip-path: inset(-52px 0 0 0 round 0 0 12px 12px); }
+  .explorer-float__peek {
     left: -18px;
     top: -24px;
-    width: 90px;
-    height: 114px;
+    width: 86px;
+    height: 110px;
   }
-  .banjara-float__bubble {
-    max-width: min(200px, calc(100vw - 96px));
+  .explorer-float__bubble {
+    max-width: min(210px, calc(100vw - 92px));
     right: calc(100% + 10px);
-    padding: 8px 26px 8px 11px;
-    border-radius: 13px 13px 4px 13px;
+    padding: 8px 24px 8px 11px;
+    border-radius: 14px 14px 4px 14px;
   }
-  .banjara-float__text { font-size: 12.5px; }
-  .banjara-float__chips { gap: 5px; }
-  .banjara-float__chips:not(:empty) { margin-top: 7px; }
-  .banjara-float__chip {
+  .explorer-float__text { font-size: 12px; }
+  .explorer-float__chips { gap: 5px; }
+  .explorer-float__chips:not(:empty) { margin-top: 7px; }
+  .explorer-float__chip {
     padding: 3px 9px;
     font-size: 11px;
     box-shadow: inset 0 0 0 1.2px #14140f;
   }
-  .banjara-float__close {
+  .explorer-float__close {
     top: 3px;
     right: 4px;
     width: 20px;
@@ -1371,18 +1423,38 @@ body.pc-mode-chat main {
   }
   .floating-whatsapp {
     right: 16px;
-    bottom: 16px;
-    width: 50px;
-    height: 50px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 48px;
+    height: 48px;
     border-radius: 14px;
   }
 }
 
-/* Hide floating WhatsApp button and mascot widget when mobile drawer or modal is open */
+/* Hide floating WhatsApp button on mobile when mobile sticky book bar is present */
+@media (max-width: 1023px) {
+  body.has-mobile-book-bar .floating-whatsapp,
+  .floating-whatsapp.has-mobile-book-bar {
+    display: none !important;
+  }
+
+  body.has-mobile-book-bar .explorer-float {
+    display: none !important;
+  }
+}
+
+/* Background scroll lock and hide floating elements when mobile drawer or modal is open */
+body.mobile-menu-open,
+body.modal-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 body.mobile-menu-open .floating-whatsapp,
-body.mobile-menu-open .banjara-float,
+body.mobile-menu-open .explorer-float,
+body.mobile-menu-open .mobile-book-bar,
 body.modal-open .floating-whatsapp,
-body.modal-open .banjara-float {
+body.modal-open .explorer-float,
+body.modal-open .mobile-book-bar {
   display: none !important;
   opacity: 0 !important;
   pointer-events: none !important;
@@ -1414,7 +1486,7 @@ body.modal-open .banjara-float {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, bottom 0.25s ease;
 }
 
 .rating-badge:hover {
@@ -1750,6 +1822,20 @@ body.modal-open .banjara-float {
 
 @media (max-width: 480px) {
   .pillar-card { flex-basis: calc((100% - 24px) / 2); min-width: 0; }
+  .pillar-circle {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+  .pillar-circle svg {
+    width: 36px;
+    height: 36px;
+  }
+  .pillar-card h4 {
+    font-size: 11.5px;
+    letter-spacing: 0.3px;
+    line-height: 1.3;
+  }
 }
 
 .pillar-circle {
@@ -1795,7 +1881,7 @@ body.modal-open .banjara-float {
 .dest-gradient-top {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.45) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 38%, rgba(0,0,0,0.18) 65%, rgba(0,0,0,0.72) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -1833,11 +1919,12 @@ body.modal-open .banjara-float {
 
 .dest-watermark img,
 .watermark-logo-img {
-  height: clamp(28px, 3.6vw, 36px) !important;
+  height: clamp(30px, 3.8vw, 38px) !important;
   max-width: 65% !important;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.75));
+  overflow: visible;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.9)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85));
 }
 
 /* =========================================================
@@ -1864,43 +1951,45 @@ body.modal-open .banjara-float {
     width: 100% !important;
     max-width: 100% !important;
     margin-inline: 0 !important;
-    height: 440px !important;
+    height: 460px !important;
     overflow: hidden !important;
     touch-action: pan-y !important;
   }
 
-  /* Responsive card sizing on mobile matching live 272px */
-  .carousel-stage .trip-card {
-    width: clamp(220px, 64vw, 272px) !important;
+  /* Responsive card sizing on mobile */
+  .carousel-stage .trip-card:not(.dest-card-simple) {
+    width: clamp(215px, 62vw, 252px) !important;
     height: 384px !important;
+    border-radius: 20px !important;
+    border: none !important;
   }
 
   .carousel-stage .trip-card.dest-card-simple {
     height: 380px !important;
   }
 
-  /* Center card: perfectly centered, scale 1 */
+  /* Center card: perfectly centered, scale 1 with deep soft drop shadow */
   .carousel-stage .trip-card[data-offset="0"] {
     transform: translate(-50%, -50%) scale(1) !important;
     z-index: 10 !important;
     opacity: 1 !important;
-    box-shadow: 0 22px 44px rgba(20, 20, 15, 0.20) !important;
+    box-shadow: 0 28px 56px -12px rgba(20, 20, 15, 0.28), 0 12px 24px -8px rgba(20, 20, 15, 0.16) !important;
   }
 
-  /* Right card: touches 378px and bleeds off right edge (to 614px), scale 0.87 */
+  /* Right card: scale 0.87 */
   .carousel-stage .trip-card[data-offset="1"] {
     transform: translate(-50%, -50%) translateX(102%) scale(0.87) !important;
     z-index: 8 !important;
     opacity: 1 !important;
-    box-shadow: 0 12px 26px rgba(20, 20, 15, 0.11) !important;
+    box-shadow: 0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06) !important;
   }
 
-  /* Left card: touches 62px and bleeds off left edge (to -174px), scale 0.87 */
+  /* Left card: scale 0.87 */
   .carousel-stage .trip-card[data-offset="-1"] {
     transform: translate(-50%, -50%) translateX(-102%) scale(0.87) !important;
     z-index: 8 !important;
     opacity: 1 !important;
-    box-shadow: 0 12px 26px rgba(20, 20, 15, 0.11) !important;
+    box-shadow: 0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06) !important;
   }
 
   /* Outer cards hidden on mobile */
@@ -1912,6 +2001,73 @@ body.modal-open .banjara-float {
     pointer-events: none !important;
     transform: translate(-50%, -50%) scale(0.6) !important;
   }
+}
+
+.carousel-stage .trip-card:not(.dest-card-simple) {
+  width: clamp(215px, 58vw, 252px);
+  height: 384px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: none;
+}
+
+.carousel-stage .trip-card:not(.dest-card-simple) .body {
+  padding: 16px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.carousel-stage .trip-card:not(.dest-card-simple) h3 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.28;
+  min-height: 40px;
+  margin: 0;
+  color: #14140f;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.carousel-stage .trip-card:not(.dest-card-simple) .meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b6b63;
+  margin-top: 8px;
+}
+
+.carousel-stage .trip-card:not(.dest-card-simple) hr {
+  border: none;
+  border-top: 1px solid #ecece5;
+  margin: 10px 0;
+}
+
+.carousel-stage .trip-card:not(.dest-card-simple) .price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 4px;
+}
+
+.carousel-stage .trip-card[data-offset="0"] {
+  box-shadow: 0 28px 56px -12px rgba(20, 20, 15, 0.28), 0 12px 24px -8px rgba(20, 20, 15, 0.16) !important;
+}
+
+.carousel-stage .trip-card[data-offset="1"],
+.carousel-stage .trip-card[data-offset="-1"] {
+  box-shadow: 0 16px 32px rgba(20, 20, 15, 0.13), 0 4px 12px rgba(20, 20, 15, 0.06) !important;
+}
+
+.carousel-stage .trip-card[data-offset="2"],
+.carousel-stage .trip-card[data-offset="-2"] {
+  box-shadow: 0 8px 20px rgba(20, 20, 15, 0.08) !important;
 }
 
 /* =========================================================
@@ -2550,3 +2706,44 @@ body.modal-open .banjara-float {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 600px) {
+  .nf-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nf-actions .btn-primary,
+  .nf-actions .btn-outline {
+    width: 100%;
+    min-height: 48px;
+  }
+  .community-card .book-btn,
+  .trip-card .book-btn,
+  .trip-card .btn-dark.btn-sm,
+  .btn-dark.btn-sm {
+    min-height: 44px;
+    padding: 10px 18px;
+  }
+}
+
+/* =========================================================
+   GLOBAL MODAL SCROLL LOCK & INTERNAL SCROLLING
+   ========================================================= */
+
+body.modal-open {
+  overflow: hidden !important;
+}
+
+.share-modal-overlay {
+  overscroll-behavior: contain;
+  touch-action: none;
+}
+
+.modal-scrollable-content {
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+

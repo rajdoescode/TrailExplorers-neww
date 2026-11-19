@@ -8,7 +8,7 @@ import React, {
   forwardRef,
 } from "react";
 
-export interface BanjaraMascotHandle {
+export interface ExplorerMascotHandle {
   sit: () => void;
   think: () => void;
   rise: (cheer?: boolean) => void;
@@ -16,7 +16,7 @@ export interface BanjaraMascotHandle {
   poke: () => void;
 }
 
-interface BanjaraChatMascotProps {
+interface ExplorerChatMascotProps {
   variant?: "lg" | "dock";
   className?: string;
   onStateChange?: (state: "idle" | "sit" | "think" | "rise" | "trick") => void;
@@ -67,9 +67,9 @@ function range(a: number, b: number): number[] {
   return out;
 }
 
-export const BanjaraChatMascot = forwardRef<
-  BanjaraMascotHandle,
-  BanjaraChatMascotProps
+export const ExplorerChatMascot = forwardRef<
+  ExplorerMascotHandle,
+  ExplorerChatMascotProps
 >(({ variant = "dock", className = "", onStateChange }, ref) => {
   const [mode, setMode] = useState<"idle" | "sit" | "think" | "rise" | "trick">("idle");
   const [frame, setFrame] = useState(STAND);
@@ -310,7 +310,7 @@ export const BanjaraChatMascot = forwardRef<
       className={`pc-mascot ${sizeClass} ${activeTrick || ""} ${className}`}
       data-state={mode}
       onClick={poke}
-      title="Click Banjara to interact!"
+      title="Click Explorer to interact!"
       aria-hidden="true"
     >
       <span
@@ -327,4 +327,4 @@ export const BanjaraChatMascot = forwardRef<
   );
 });
 
-BanjaraChatMascot.displayName = "BanjaraChatMascot";
+ExplorerChatMascot.displayName = "ExplorerChatMascot";

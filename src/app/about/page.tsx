@@ -17,7 +17,7 @@ export default function AboutPage() {
               <Mountain className="w-3.5 h-3.5" />
               <span>Native Valley Roots</span>
             </span>
-            <Heading level={1} className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+            <Heading level={1} className="text-white text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
               Locals, Not Outsiders.
             </Heading>
             <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">

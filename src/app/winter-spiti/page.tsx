@@ -364,12 +364,12 @@ export default function WinterSpitiPage() {
               Tell us your month and group size. We&apos;ll call you back within 24 hours with dates and a price.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
               <button
                 type="button"
                 id="winterBookBtn"
                 onClick={handleOpenBookModal}
-                className="px-8 py-3 rounded-full bg-[#d6ff3f] text-[#14140f] font-heading font-extrabold text-[15px] border border-[#d6ff3f] hover:bg-[#ccff00] hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-[0_4px_16px_rgba(214,255,63,0.3)]"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-[#d6ff3f] text-[#14140f] font-heading font-extrabold text-[15px] border border-[#d6ff3f] hover:bg-[#ccff00] hover:scale-105 active:scale-95 transition-all cursor-pointer shadow-[0_4px_16px_rgba(214,255,63,0.3)] min-h-[48px] flex items-center justify-center"
               >
                 Book Now
               </button>
@@ -378,7 +378,7 @@ export default function WinterSpitiPage() {
                 href="https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B%20I'm%20interested%20in%20a%20winter%20Spiti%20trip.%20Could%20you%20share%20the%20details%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/5 transition-all text-[14px] font-bold"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/5 transition-all text-[14px] font-bold min-h-[48px] active:scale-95"
               >
                 <MessageCircle className="w-4 h-4 text-[#25d366]" />
                 <span>WhatsApp us</span>
@@ -439,7 +439,7 @@ export default function WinterSpitiPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-8 h-8 rounded-full bg-[#f4f4ee] flex items-center justify-center text-[#14140f] hover:bg-[#d6ff3f] transition-colors"
+                className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-[#f4f4ee] flex items-center justify-center text-[#14140f] hover:bg-[#d6ff3f] active:scale-95 transition-all"
               >
                 📸
               </a>
@@ -448,7 +448,7 @@ export default function WinterSpitiPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="w-8 h-8 rounded-full bg-[#f4f4ee] flex items-center justify-center text-[#14140f] hover:bg-[#d6ff3f] transition-colors"
+                className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-[#f4f4ee] flex items-center justify-center text-[#14140f] hover:bg-[#d6ff3f] active:scale-95 transition-all"
               >
                 ▶️
               </a>

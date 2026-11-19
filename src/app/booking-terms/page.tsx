@@ -13,18 +13,18 @@ export default function BookingTermsPage() {
               <FileText className="w-3.5 h-3.5" />
               <span>Official Agreement</span>
             </span>
-            <Heading level={1} className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+            <Heading level={1} className="text-white text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4">
               Booking Terms &amp; Conditions
             </Heading>
-            <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">
+            <Paragraph className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
               Please review these guidelines before confirming your reservation with Trail Explorers.
             </Paragraph>
           </div>
         </Container>
       </section>
 
-      <Container size="narrow" className="py-14">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#e2e2dc] shadow-card flex flex-col gap-8 text-[#14140f]">
+      <Container size="narrow" className="py-8 sm:py-14">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 border border-[#e2e2dc] shadow-card flex flex-col gap-6 sm:gap-8 text-[#14140f]">
           <div>
             <h3 className="text-lg font-bold mb-2">1. Age Limit and Eligibility</h3>
             <p className="text-sm text-[#6b6b63] leading-relaxed">

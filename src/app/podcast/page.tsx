@@ -66,18 +66,18 @@ export default function PodcastPage() {
       </section>
 
       {/* Episodes Listing */}
-      <Container className="py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <Container className="py-8 sm:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {EPISODES.map((ep) => (
             <div
               key={ep.id}
-              className="bg-white rounded-[20px] p-6 sm:p-7 border border-[#e2e2dc] shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              className="bg-white rounded-[20px] p-4 sm:p-7 border border-[#e2e2dc] shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 border border-[#e2e2dc]">
                   <Image src={ep.image} alt={ep.title} fill className="object-cover" />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-[#d6ff3f] text-[#14140f] flex items-center justify-center shadow-lg">
+                    <div className="w-12 h-12 rounded-full bg-[#d6ff3f] text-[#14140f] flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                       <Play className="w-5 h-5 fill-current ml-0.5" />
                     </div>
                   </div>
@@ -93,7 +93,7 @@ export default function PodcastPage() {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#14140f] mb-2 leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-[#14140f] mb-2 leading-snug">
                   {ep.title}
                 </h3>
                 <p className="text-xs text-[#d6ff3f] bg-[#14140f] px-2.5 py-1 rounded-md font-semibold w-fit mb-3">

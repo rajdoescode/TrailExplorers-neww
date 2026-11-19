@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative w-full min-h-[560px] flex items-center justify-center overflow-hidden bg-[#14140f] text-white text-center">
+    <section className="relative w-full min-h-[480px] sm:min-h-[560px] flex items-center justify-center overflow-hidden bg-[#14140f] text-white text-center">
       {/* Background Video */}
       <video
         autoPlay
@@ -22,13 +22,13 @@ export const HeroSection: React.FC = () => {
       <div className="absolute inset-0 bg-[#14140f]/[0.42] z-1" />
 
       {/* Hero Content Box */}
-      <div className="relative z-2 max-w-[1100px] w-full mx-auto px-6 py-6 flex flex-col items-center text-center gap-[22px]">
+      <div className="relative z-2 max-w-[1100px] w-full mx-auto px-4 sm:px-6 py-8 sm:py-6 flex flex-col items-center text-center gap-4 sm:gap-[22px]">
         {/* Hero Title */}
         <h1
-          className="font-heading font-bold text-white text-[clamp(34px,5.5vw,72px)] leading-[1.05] tracking-[-0.025em] m-0"
+          className="font-heading font-bold text-white text-[clamp(28px,6.5vw,72px)] leading-[1.1] tracking-[-0.025em] m-0"
           style={{ fontFamily: "'Plus Jakarta Sans', 'Poppins', -apple-system, sans-serif" }}
         >
-          <span className="inline-block whitespace-nowrap sm:whitespace-normal">Made by wanderers,</span>
+          <span className="inline-block">Made by wanderers,</span>
           <br />
           <span className="inline-block">
             for wanderers
@@ -37,22 +37,22 @@ export const HeroSection: React.FC = () => {
         </h1>
 
         {/* Tagline */}
-        <p className="text-[clamp(15px,2vw,19px)] font-medium text-white/95 m-0 opacity-95">
+        <p className="text-[clamp(14px,2vw,19px)] font-medium text-white/95 m-0 opacity-95 max-w-[400px] sm:max-w-none">
           Community-led trips across the Himalayas.
         </p>
 
         {/* Hero Actions */}
-        <div className="flex flex-wrap justify-center items-center gap-[12px] mt-1">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mt-2 w-full max-w-[340px] sm:max-w-none sm:w-auto">
           <Link
             href="#community-trips"
-            className="inline-flex items-center justify-center font-heading font-bold text-[15px] px-[28px] py-[12px] rounded-full bg-[#d6ff3f] text-[#14140f] border border-[#14140f] hover:bg-[#ccff00] hover:-translate-y-[1px] hover:shadow-[0_6px_18px_rgba(214,255,63,0.45)] transition-all duration-180 cursor-pointer"
+            className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center font-heading font-bold text-[15px] px-[28px] py-[12px] rounded-full bg-[#d6ff3f] text-[#14140f] border border-[#14140f] hover:bg-[#ccff00] hover:-translate-y-[1px] hover:shadow-[0_6px_18px_rgba(214,255,63,0.45)] active:scale-95 transition-all duration-180 cursor-pointer shadow-sm"
           >
             Book Now
           </Link>
 
           <Link
             href="/plan-your-trip"
-            className="inline-flex items-center justify-center font-heading font-bold text-[15px] px-[28px] py-[12px] rounded-full bg-[#14140f]/35 text-white border border-white backdrop-blur-[4px] hover:bg-[#14140f]/65 hover:-translate-y-[1px] transition-all duration-180"
+            className="w-full sm:w-auto min-h-[46px] inline-flex items-center justify-center font-heading font-bold text-[15px] px-[28px] py-[12px] rounded-full bg-[#14140f]/40 text-white border border-white/80 backdrop-blur-[6px] hover:bg-[#14140f]/70 hover:-translate-y-[1px] active:scale-95 transition-all duration-180"
           >
             Plan your own trip
           </Link>

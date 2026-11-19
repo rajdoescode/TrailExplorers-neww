@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -18,6 +18,7 @@ import {
 } from "@/lib/trip-helpers";
 import { BentoGallery } from "@/components/trips/BentoGallery";
 import { WeatherCard } from "@/components/trips/WeatherCard";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import { StickySecondaryNav } from "@/components/trips/StickySecondaryNav";
 import { PackingListSection } from "@/components/trips/PackingListSection";
 import { DepartureDatesSection } from "@/components/trips/DepartureDatesSection";
@@ -92,6 +93,17 @@ export default function TripDetailPage() {
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
   const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
   const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+
+  // Set class on body for mobile responsive bottom bar positioning (e.g. lift WhatsApp float)
+  useEffect(() => {
+    document.body.classList.add("has-mobile-book-bar");
+    return () => {
+      document.body.classList.remove("has-mobile-book-bar");
+    };
+  }, []);
+
+  // Global reference-counted scroll lock for booking & success modals (handles iOS Safari & touch gestures)
+  useScrollLock(isBookModalOpen || isSuccessOpen);
 
   // Booking Form State
   const [bookingForm, setBookingForm] = useState({
@@ -175,7 +187,7 @@ export default function TripDetailPage() {
       <StickySecondaryNav />
 
       {/* Main Content & Sticky Sidebar Layout */}
-      <Container className="py-8">
+      <Container className="py-8 pb-32 lg:pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Main Column (2 Columns) */}
           <div className="lg:col-span-2 flex flex-col gap-8">
@@ -609,39 +621,59 @@ export default function TripDetailPage() {
         )}
       </Container>
 
-      {/* 15. Mobile Sticky Bottom Action Bar */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#e2e2dc] p-3 px-4 flex items-center justify-between shadow-[0_-4px_16px_rgba(0,0,0,0.08)]">
-        <div>
-          <span className="text-[10px] text-[#6b6b63] font-semibold block uppercase">
+      {/* 15. Mobile Sticky Bottom Action Bar (Floating Pill/Card matching original design) */}
+      <div className="mobile-book-bar lg:hidden fixed left-2.5 right-2.5 sm:left-4 sm:right-4 bottom-[calc(10px+env(safe-area-inset-bottom,0px))] z-40 bg-white/95 backdrop-blur-md border border-[#14140f]/10 rounded-[20px] p-3 pl-4 sm:p-4 sm:pl-6 flex items-center justify-between gap-2.5 sm:gap-3 shadow-[0_12px_32px_rgba(20,20,15,0.18)] transition-all">
+        <div className="flex flex-col min-w-0">
+          <span className="text-[11px] sm:text-[12px] font-semibold text-[#66665c] leading-tight block">
             Starting From
           </span>
-          <div className="flex items-baseline gap-1">
-            <span className="text-lg font-extrabold text-[#14140f] font-heading">
+          <div className="flex items-baseline gap-1 mt-0.5">
+            <span className="text-[19px] sm:text-[23px] font-extrabold text-[#14140f] font-heading leading-tight tracking-tight whitespace-nowrap">
               {formatPrice(selectedPrice)}
             </span>
-            <span className="text-[10px] text-[#6b6b63]">/ person</span>
+            <span className="text-[11.5px] sm:text-[12px] font-medium text-[#66665c] whitespace-nowrap">
+              / person
+            </span>
           </div>
+          <span className="text-[10.5px] sm:text-[11.5px] font-semibold text-[#66665c] leading-tight mt-0.5 block">
+            + 5% GST
+          </span>
         </div>
-        <button
-          type="button"
-          onClick={() => setIsBookModalOpen(true)}
-          className="bg-[#d6ff3f] text-[#14140f] font-extrabold text-sm px-6 py-2.5 rounded-full border border-[#14140f] shadow-lime-btn hover:bg-[#ccff00] cursor-pointer font-heading"
-        >
-          BOOK NOW
-        </button>
+        <div className="flex items-center gap-2 shrink-0">
+          <a
+            href="https://wa.me/919971829262?text=Hi%2C%20I'm%20interested%20in%20Trail%20Explorer%20trips!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp Inquiry"
+            className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-[14px] bg-[#25D366] text-white flex items-center justify-center shadow-md active:scale-95 transition-transform shrink-0"
+          >
+            <MessageSquare className="w-5 h-5 fill-white text-white" />
+          </a>
+          <button
+            type="button"
+            onClick={() => setIsBookModalOpen(true)}
+            className="bg-[#d6ff3f] hover:bg-[#cbf52a] active:scale-95 text-[#14140f] font-extrabold text-[14px] sm:text-[16px] px-4 sm:px-6 h-[44px] sm:h-[48px] rounded-[14px] border-[1.5px] border-[#14140f] shadow-[0_4px_14px_rgba(214,255,63,0.45)] cursor-pointer font-heading transition-all whitespace-nowrap flex items-center justify-center"
+          >
+            Book Now
+          </button>
+        </div>
       </div>
 
       {/* 16. PLAN YOUR NEXT TRIP MODAL (Exact trailexplorers.in 2-Column Structure) */}
       <div
-        className={`share-modal-overlay ${isBookModalOpen ? "active" : ""}`}
+        className={`share-modal-overlay touch-none overscroll-contain ${isBookModalOpen ? "active" : ""}`}
         id="bookingModal"
         role="dialog"
+        aria-modal="true"
         aria-hidden={!isBookModalOpen}
         onClick={(e) => {
           if (e.target === e.currentTarget) setIsBookModalOpen(false);
         }}
       >
         <div className="booking-popup-card">
+          {/* Mobile drag handle */}
+          <div className="w-10 h-1 bg-[#d5d5cd] rounded-full mx-auto my-1 block md:hidden" />
+
           {/* LEFT COLUMN: Dynamic Hero Card */}
           <div
             className="booking-popup-hero"
@@ -803,7 +835,7 @@ export default function TripDetailPage() {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-sm touch-none overscroll-contain"
           onClick={() => setIsSuccessOpen(false)}
         >
           <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl border border-[#e2e2dc]">

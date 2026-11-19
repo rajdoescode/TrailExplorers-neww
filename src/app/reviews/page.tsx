@@ -16,15 +16,15 @@ export default function ReviewsPage() {
               <Star className="w-3.5 h-3.5 fill-current" />
               <span>Verified Traveller Testimonials</span>
             </span>
-            <Heading level={1} className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+            <Heading level={1} className="text-white text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4">
               Customer Stories &amp; Reviews
             </Heading>
-            <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">
+            <Paragraph className="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed">
               Read honest stories and memories shared by adventurers who travelled with us across Spiti, Ladakh, Kashmir, and Himachal Pradesh.
             </Paragraph>
 
             {/* Scorecard */}
-            <div className="mt-8 flex flex-wrap items-center gap-6 pt-6 border-t border-white/10">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-4 sm:gap-6 pt-5 sm:pt-6 border-t border-white/10">
               <div className="flex items-center gap-3">
                 <span className="text-4xl font-extrabold text-[#d6ff3f]">4.9</span>
                 <div>

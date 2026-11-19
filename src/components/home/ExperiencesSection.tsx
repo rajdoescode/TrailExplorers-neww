@@ -71,8 +71,8 @@ export const ExperiencesSection: React.FC = () => {
             onClick={nextCard}
             role="button"
             tabIndex={0}
-            aria-label="Show next experience"
-            className="card-stack relative w-[min(680px,94vw)] aspect-[1.55/1] mx-auto cursor-pointer select-none"
+            aria-label="Show next experience (tap to flip)"
+            className="card-stack relative w-[min(680px,88vw)] aspect-[1.5/1] sm:aspect-[1.55/1] mx-auto cursor-pointer select-none active:scale-[0.98] transition-transform"
           >
             {experiences.map((exp, idx) => {
               let pos = (idx - activeIndex + experiences.length) % experiences.length;
@@ -86,15 +86,15 @@ export const ExperiencesSection: React.FC = () => {
                 zIndex = 10;
                 opacity = 1;
               } else if (pos === 1) {
-                transform = "translateY(-14px) translateX(28px) rotate(6deg) scale(0.96)";
+                transform = "translateY(-8px) sm:translateY(-14px) translateX(14px) sm:translateX(28px) rotate(4deg) sm:rotate(6deg) scale(0.96)";
                 zIndex = 8;
                 opacity = 0.95;
               } else if (pos === 2) {
-                transform = "translateY(-10px) translateX(-32px) rotate(-7deg) scale(0.92)";
+                transform = "translateY(-6px) sm:translateY(-10px) translateX(-16px) sm:translateX(-32px) rotate(-4deg) sm:rotate(-7deg) scale(0.92)";
                 zIndex = 6;
                 opacity = 0.9;
               } else if (pos === 3) {
-                transform = "translateY(12px) translateX(8px) rotate(11deg) scale(0.85)";
+                transform = "translateY(8px) sm:translateY(12px) translateX(6px) sm:translateX(8px) rotate(6deg) sm:rotate(11deg) scale(0.85)";
                 zIndex = 4;
                 opacity = 0.6;
               }
@@ -102,7 +102,7 @@ export const ExperiencesSection: React.FC = () => {
               return (
                 <div
                   key={exp.id}
-                  className="card-stack-item absolute inset-0 rounded-[24px] overflow-hidden shadow-[0_18px_45px_rgba(20,20,15,0.22)] transition-all duration-450 ease-[cubic-bezier(0.25,1,0.5,1)] bg-[#f6f6f1]"
+                  className="card-stack-item absolute inset-0 rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-[0_14px_38px_rgba(20,20,15,0.18)] transition-all duration-450 ease-[cubic-bezier(0.25,1,0.5,1)] bg-[#f6f6f1]"
                   style={{ transform, zIndex, opacity }}
                   data-pos={pos}
                 >
@@ -111,12 +111,28 @@ export const ExperiencesSection: React.FC = () => {
                     alt={exp.title}
                     width={800}
                     height={520}
-                    className="w-full h-full object-cover rounded-[24px]"
+                    className="w-full h-full object-cover rounded-[20px] sm:rounded-[24px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 </div>
               );
             })}
+          </div>
+
+          {/* Indicator dots */}
+          <div className="flex items-center justify-center gap-1.5 mt-4">
+            {experiences.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActiveIndex(i)}
+                aria-label={`Show experience ${i + 1}`}
+                className={cn(
+                  "h-1.5 rounded-full transition-all duration-300 cursor-pointer p-0 border-0",
+                  i === activeIndex ? "w-6 bg-[#14140f]" : "w-1.5 bg-[#d4d4cb]"
+                )}
+              />
+            ))}
           </div>
 
           {/* Caption Below Stack */}

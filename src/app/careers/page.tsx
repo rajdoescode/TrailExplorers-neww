@@ -51,12 +51,12 @@ export default function CareersPage() {
         </Container>
       </section>
 
-      <Container size="narrow" className="py-14">
-        <div className="flex flex-col gap-6">
+      <Container size="narrow" className="py-8 sm:py-14">
+        <div className="flex flex-col gap-5 sm:gap-6">
           {JOBS.map((job, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card hover:shadow-card-hover transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-6"
+              className="bg-white rounded-2xl p-5 sm:p-8 border border-[#e2e2dc] shadow-card hover:shadow-card-hover transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6"
             >
               <div className="flex flex-col gap-2 max-w-xl">
                 <div className="flex flex-wrap items-center gap-2">
@@ -67,15 +67,17 @@ export default function CareersPage() {
                     {job.type}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-[#14140f]">{job.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-[#14140f]">{job.title}</h3>
                 <p className="text-xs sm:text-sm text-[#6b6b63] leading-relaxed">{job.desc}</p>
               </div>
 
-              <div className="shrink-0">
+              <div className="shrink-0 w-full md:w-auto">
                 <Button
                   href={`mailto:trailexplorers@gmail.com?subject=Application for ${encodeURIComponent(job.title)}`}
                   variant="primary"
-                  size="sm"
+                  size="md"
+                  fullWidth
+                  className="md:w-auto min-h-[44px]"
                   rightIcon={<Send className="w-3.5 h-3.5" />}
                 >
                   Apply Now

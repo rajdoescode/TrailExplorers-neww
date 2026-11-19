@@ -23,21 +23,21 @@ export default function PaymentDetailsPage() {
         </Container>
       </section>
 
-      <Container size="narrow" className="py-14">
-        <div className="flex flex-col gap-8">
+      <Container size="narrow" className="py-8 sm:py-14">
+        <div className="flex flex-col gap-6 sm:gap-8">
           {/* Bank Transfer Box */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#14140f] shadow-card flex flex-col gap-6">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-[#14140f] shadow-card flex flex-col gap-6">
             <div className="flex items-center gap-3 border-b border-[#f0f0eb] pb-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#14140f] text-[#d6ff3f] flex items-center justify-center font-bold">
+              <div className="w-12 h-12 rounded-2xl bg-[#14140f] text-[#d6ff3f] flex items-center justify-center font-bold shrink-0">
                 <Building2 className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-extrabold text-[#14140f]">Bank Transfer (NEFT / RTGS / IMPS)</h3>
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#14140f]">Bank Transfer (NEFT / RTGS / IMPS)</h3>
                 <span className="text-xs text-[#6b6b63] font-semibold">Current Account for Corporate Invoicing</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 text-sm">
               <div className="bg-[#f6f6f1] p-4 rounded-xl border border-[#e2e2dc]">
                 <span className="text-xs font-bold text-[#6b6b63] uppercase tracking-wider block mb-1">Beneficiary Name</span>
                 <strong className="text-base font-extrabold text-[#14140f]">Trail Explorers</strong>
@@ -50,34 +50,34 @@ export default function PaymentDetailsPage() {
 
               <div className="bg-[#f6f6f1] p-4 rounded-xl border border-[#e2e2dc]">
                 <span className="text-xs font-bold text-[#6b6b63] uppercase tracking-wider block mb-1">Account Number</span>
-                <strong className="text-base font-extrabold text-[#14140f] font-mono">50200084920194</strong>
+                <strong className="text-base font-extrabold text-[#14140f] font-mono break-all">50200084920194</strong>
               </div>
 
               <div className="bg-[#f6f6f1] p-4 rounded-xl border border-[#e2e2dc]">
                 <span className="text-xs font-bold text-[#6b6b63] uppercase tracking-wider block mb-1">IFSC Code</span>
-                <strong className="text-base font-extrabold text-[#14140f] font-mono">HDFC0001234</strong>
+                <strong className="text-base font-extrabold text-[#14140f] font-mono break-all">HDFC0001234</strong>
               </div>
             </div>
           </div>
 
           {/* UPI Payments */}
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#14140f] shadow-card flex flex-col gap-6">
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-[#14140f] shadow-card flex flex-col gap-6">
             <div className="flex items-center gap-3 border-b border-[#f0f0eb] pb-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#d6ff3f] text-[#14140f] flex items-center justify-center font-bold border border-[#14140f]">
+              <div className="w-12 h-12 rounded-2xl bg-[#d6ff3f] text-[#14140f] flex items-center justify-center font-bold border border-[#14140f] shrink-0">
                 <QrCode className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-extrabold text-[#14140f]">UPI Payments</h3>
+                <h3 className="text-lg sm:text-xl font-extrabold text-[#14140f]">UPI Payments</h3>
                 <span className="text-xs text-[#6b6b63] font-semibold">Google Pay · PhonePe · Paytm · BHIM</span>
               </div>
             </div>
 
-            <div className="bg-[#f6f6f1] p-6 rounded-2xl border border-[#e2e2dc] flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-[#f6f6f1] p-4 sm:p-6 rounded-2xl border border-[#e2e2dc] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
                 <span className="text-xs font-bold text-[#6b6b63] uppercase tracking-wider block mb-1">Verified UPI ID</span>
-                <strong className="text-lg sm:text-xl font-extrabold text-[#14140f] font-mono">trailexplorers@hdfcbank</strong>
+                <strong className="text-base sm:text-xl font-extrabold text-[#14140f] font-mono break-all">trailexplorers@hdfcbank</strong>
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold bg-[#14140f] text-[#d6ff3f] px-4 py-2 rounded-xl">
+              <div className="flex items-center gap-2 text-xs font-bold bg-[#14140f] text-[#d6ff3f] px-3.5 py-2 rounded-xl shrink-0">
                 <ShieldCheck className="w-4 h-4 text-[#2fa84f]" />
                 <span>Verified Business Merchant</span>
               </div>

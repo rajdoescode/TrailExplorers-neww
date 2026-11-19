@@ -4,8 +4,8 @@ import Image from "next/image";
 export const EscapeOrdinaryBanner: React.FC = () => {
   return (
     <section className="w-full py-8 sm:py-12 bg-white">
-      <div className="max-w-[1280px] mx-auto px-6">
-        <div className="relative rounded-[28px] overflow-hidden h-[clamp(320px,42vw,520px)] flex items-center justify-center text-center text-white shadow-xl">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+        <div className="relative rounded-[24px] sm:rounded-[28px] overflow-hidden h-[clamp(240px,42vw,520px)] flex items-center justify-center text-center text-white shadow-xl">
           {/* Background Image */}
           <picture className="absolute inset-0 w-full h-full">
             <source srcSet="/assets/images/home/untitled-design.webp" type="image/webp" />
@@ -22,8 +22,8 @@ export const EscapeOrdinaryBanner: React.FC = () => {
           <div className="absolute inset-0 bg-[#14140f]/45 z-1" />
 
           {/* Banner Content */}
-          <div className="relative z-2 px-6">
-            <h2 className="text-[clamp(36px,6vw,76px)] font-extrabold tracking-[-0.03em] m-0 text-white">
+          <div className="relative z-2 px-4 sm:px-6">
+            <h2 className="text-[clamp(26px,6vw,76px)] font-extrabold tracking-[-0.03em] m-0 text-white">
               Escape the ordinary.
             </h2>
           </div>

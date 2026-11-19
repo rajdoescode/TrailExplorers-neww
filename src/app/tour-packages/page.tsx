@@ -49,16 +49,16 @@ export default function TourPackagesPage() {
       </section>
 
       {/* Tabs Bar */}
-      <div className="sticky top-[72px] z-30 bg-white/95 backdrop-blur-md border-b border-[#e2e2dc] py-4 shadow-2xs">
+      <div className="sticky top-[64px] sm:top-[72px] z-30 bg-white/95 backdrop-blur-md border-b border-[#e2e2dc] py-3 sm:py-4 shadow-2xs">
         <Container>
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 scroll-smooth">
             {REGION_TABS.map((tab) => {
               const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`inline-flex items-center gap-2 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full transition-all duration-200 shrink-0 cursor-pointer ${
+                  className={`inline-flex items-center gap-2 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-full min-h-[44px] transition-all duration-200 shrink-0 cursor-pointer active:scale-95 ${
                     activeTab === tab.id
                       ? "bg-[#14140f] text-[#d6ff3f] shadow-xs"
                       : "bg-[#f6f6f1] text-[#14140f] hover:bg-[#e4e4dd]"

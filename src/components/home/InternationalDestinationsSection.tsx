@@ -179,10 +179,26 @@ export const InternationalDestinationsSection: React.FC = () => {
             type="button"
             onClick={nextDest}
             aria-label="Next destination"
-            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white hidden md:flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronRight className="w-6 h-6 stroke-[2.5]" />
           </button>
+        </div>
+
+        {/* Mobile Swipe Indicators */}
+        <div className="flex md:hidden items-center justify-center gap-1.5 mt-2">
+          {destinations.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Go to destination ${i + 1}`}
+              className={cn(
+                "h-1.5 rounded-full transition-all duration-300 cursor-pointer p-0 border-0",
+                i === activeIndex ? "w-6 bg-[#14140f]" : "w-1.5 bg-[#d4d4cb]"
+              )}
+            />
+          ))}
         </div>
       </div>
     </section>

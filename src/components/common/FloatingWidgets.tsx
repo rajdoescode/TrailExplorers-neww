@@ -48,18 +48,32 @@ export const FloatingWidgets: React.FC = () => {
   const [activeTrick, setActiveTrick] = useState<string | null>(null);
   const [spriteFrame, setSpriteFrame] = useState(STAND);
   const [dismissed, setDismissed] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const bubbleTimerRef = useRef<NodeJS.Timeout | null>(null);
   const queueRef = useRef<number[]>([]);
   const lineIdxRef = useRef(0);
   const lastTrickRef = useRef(-1);
 
-  // Don't show on /plan-your-trip page (it has its own in-app chat mascot)
-  if (pathname === "/plan-your-trip") return null;
+  // Detect if mobile menu drawer or modal is open to hide floating buttons
+  useEffect(() => {
+    const checkMenu = () => {
+      setIsMenuOpen(
+        document.body.classList.contains("mobile-menu-open") ||
+        document.body.classList.contains("modal-open")
+      );
+    };
+
+    checkMenu();
+    const observer = new MutationObserver(checkMenu);
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   // 1. Scroll visibility toggle
   useEffect(() => {
     const handleScroll = () => {
+      if (pathname === "/plan-your-trip") return;
       const show = window.scrollY > 80;
       setIsVisible(show);
     };
@@ -67,7 +81,7 @@ export const FloatingWidgets: React.FC = () => {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   // 2. Sprite fidgeting & lookAround animation
   const lookAround = () => {
@@ -86,7 +100,7 @@ export const FloatingWidgets: React.FC = () => {
 
     const tick = (now: number) => {
       animId = requestAnimationFrame(tick);
-      if (!isVisible || document.hidden) return;
+      if (!isVisible || document.hidden || pathname === "/plan-your-trip" || isMenuOpen) return;
 
       if (now - lastTime < step) return;
       lastTime = now;
@@ -111,7 +125,7 @@ export const FloatingWidgets: React.FC = () => {
   };
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || pathname === "/plan-your-trip" || isMenuOpen) return;
 
     const trickInterval = setInterval(() => {
       if (document.hidden) return;
@@ -130,7 +144,7 @@ export const FloatingWidgets: React.FC = () => {
     }, 7000);
 
     return () => clearInterval(trickInterval);
-  }, [isVisible]);
+  }, [isVisible, pathname, isMenuOpen]);
 
   // 4. Speech bubble typing & cycling sequence
   const showLine = (line: BubbleLine) => {
@@ -151,7 +165,7 @@ export const FloatingWidgets: React.FC = () => {
   };
 
   const nextLine = () => {
-    if (dismissed || !isVisible) return;
+    if (dismissed || !isVisible || pathname === "/plan-your-trip" || isMenuOpen) return;
     const nextIdx = lineIdxRef.current % LINES.length;
     lineIdxRef.current += 1;
     setLineIndex(nextIdx);
@@ -167,11 +181,11 @@ export const FloatingWidgets: React.FC = () => {
   };
 
   useEffect(() => {
-    if (isVisible && !dismissed) {
+    if (isVisible && !dismissed && pathname !== "/plan-your-trip" && !isMenuOpen) {
       const initialTimer = setTimeout(nextLine, 1200);
       return () => clearTimeout(initialTimer);
     }
-  }, [isVisible, dismissed]);
+  }, [isVisible, dismissed, pathname, isMenuOpen]);
 
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -184,89 +198,98 @@ export const FloatingWidgets: React.FC = () => {
 
   const currentLine = LINES[lineIndex];
 
+  const isTripPage = pathname?.startsWith("/trips/");
+
+  // Don't show on /plan-your-trip page (it has its own in-app chat mascot) or when mobile drawer / modal is open
+  if (pathname === "/plan-your-trip" || isMenuOpen) {
+    return null;
+  }
+
   return (
     <>
-      {/* Floating Mascot Widget */}
-      <div
-        className={`banjara-float is-loaded ${isVisible ? "is-visible" : ""}`}
-        aria-label="Ask Trail Explorers"
-      >
-        {/* Speech Bubble (pops up to the left of the avatar) */}
+      {/* Floating Mascot Widget (Hidden on trip detail pages to prevent obstruction of the mobile booking bar and WhatsApp button) */}
+      {!isTripPage && (
         <div
-          className={`banjara-float__bubble ${bubbleOpen ? "is-open" : ""} ${
-            isTyping ? "is-typing" : ""
-          }`}
-          role="status"
-          aria-live="polite"
-          onMouseEnter={() => {
-            if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
-          }}
-          onMouseLeave={() => {
-            if (bubbleOpen && !isTyping) {
-              bubbleTimerRef.current = setTimeout(hideLine, 3000);
-            }
-          }}
+          className={`explorer-float is-loaded ${isVisible ? "is-visible" : ""}`}
+          aria-label="Ask Trail Explorers"
         >
-          {/* Animated 3 Dots for typing state */}
-          <span className="banjara-float__dots" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-
-          {/* Question Text */}
-          <p className="banjara-float__text">
-            {currentLine.say}
-            {currentLine.sub && <small>{currentLine.sub}</small>}
-          </p>
-
-          {/* Quick Choice Chips */}
-          {currentLine.chips && currentLine.chips.length > 0 && (
-            <div className="banjara-float__chips">
-              {currentLine.chips.map((chip) => (
-                <Link
-                  key={chip}
-                  href={`/plan-your-trip?ask=${encodeURIComponent(CHIP_ASK[chip] || chip)}`}
-                  className="banjara-float__chip"
-                >
-                  {chip}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          {/* Close X Button */}
-          <button
-            type="button"
-            onClick={handleClose}
-            className="banjara-float__close"
-            aria-label="Hide questions"
+          {/* Speech Bubble (pops up to the left of the avatar) */}
+          <div
+            className={`explorer-float__bubble ${bubbleOpen ? "is-open" : ""} ${
+              isTyping ? "is-typing" : ""
+            }`}
+            role="status"
+            aria-live="polite"
+            onMouseEnter={() => {
+              if (bubbleTimerRef.current) clearTimeout(bubbleTimerRef.current);
+            }}
+            onMouseLeave={() => {
+              if (bubbleOpen && !isTyping) {
+                bubbleTimerRef.current = setTimeout(hideLine, 3000);
+              }
+            }}
           >
-            &times;
-          </button>
-        </div>
-
-        {/* Mascot Avatar Launcher Tile */}
-        <Link
-          href="/plan-your-trip"
-          className={`banjara-float__avatar ${activeTrick || ""}`}
-          aria-label="Plan your trip with Trail Explorers, our trip planner"
-          onMouseEnter={() => {
-            triggerTrick("is-hop", 850);
-          }}
-        >
-          <span className="banjara-float__window">
-            <span className="banjara-float__peek">
-              <span
-                className="banjara-float__sprite"
-                style={{
-                  backgroundPosition: `${(spriteFrame / (FRAMES - 1)) * 100}% 0`,
-                }}
-              />
+            {/* Animated 3 Dots for typing state */}
+            <span className="explorer-float__dots" aria-hidden="true">
+              <i />
+              <i />
+              <i />
             </span>
-          </span>
-        </Link>
-      </div>
+
+            {/* Question Text */}
+            <p className="explorer-float__text">
+              {currentLine.say}
+              {currentLine.sub && <small>{currentLine.sub}</small>}
+            </p>
+
+            {/* Quick Choice Chips */}
+            {currentLine.chips && currentLine.chips.length > 0 && (
+              <div className="explorer-float__chips">
+                {currentLine.chips.map((chip) => (
+                  <Link
+                    key={chip}
+                    href={`/plan-your-trip?ask=${encodeURIComponent(CHIP_ASK[chip] || chip)}`}
+                    className="explorer-float__chip"
+                  >
+                    {chip}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            {/* Close X Button */}
+            <button
+              type="button"
+              onClick={handleClose}
+              className="explorer-float__close"
+              aria-label="Hide questions"
+            >
+              &times;
+            </button>
+          </div>
+
+          {/* Mascot Avatar Launcher Tile */}
+          <Link
+            href="/plan-your-trip"
+            className={`explorer-float__avatar ${activeTrick || ""}`}
+            aria-label="Plan your trip with Trail Explorers, our trip planner"
+            onMouseEnter={() => {
+              triggerTrick("is-hop", 850);
+            }}
+          >
+            <span className="explorer-float__window">
+              <span className="explorer-float__peek">
+                <span
+                  className="explorer-float__sprite"
+                  style={{
+                    backgroundPosition: `${(spriteFrame / (FRAMES - 1)) * 100}% 0`,
+                  }}
+                />
+              </span>
+            </span>
+          </Link>
+        </div>
+      )}
 
       {/* Floating WhatsApp Button */}
       <a
@@ -274,7 +297,7 @@ export const FloatingWidgets: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"
-        className="floating-whatsapp"
+        className={`floating-whatsapp ${isTripPage ? "has-mobile-book-bar" : ""}`}
       >
         <svg
           className="w-[30px] h-[30px] fill-current text-white"

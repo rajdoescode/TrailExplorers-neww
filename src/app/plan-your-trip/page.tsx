@@ -18,9 +18,10 @@ import {
   X,
 } from "lucide-react";
 import {
-  BanjaraChatMascot,
-  BanjaraMascotHandle,
-} from "@/components/chat/BanjaraChatMascot";
+  ExplorerChatMascot,
+  ExplorerMascotHandle,
+} from "@/components/chat/ExplorerChatMascot";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 // ==========================================
 // CHAT MODE DATA TYPES & PRESETS
@@ -477,11 +478,14 @@ export default function PlanYourTripPage() {
 
   const stageRef = useRef(0);
   const regionRef = useRef("ladakh");
-  const mascotRef = useRef<BanjaraMascotHandle>(null);
-  const welcomeMascotRef = useRef<BanjaraMascotHandle>(null);
+  const mascotRef = useRef<ExplorerMascotHandle>(null);
+  const welcomeMascotRef = useRef<ExplorerMascotHandle>(null);
 
   const [modalOpen, setModalOpen] = useState(false);
   const [mobileTicketOpen, setMobileTicketOpen] = useState(false);
+
+  // Global reference-counted scroll lock for mobile ticket sheet & inquiry modal
+  useScrollLock(mobileTicketOpen || modalOpen);
   const [inquirySubmitted, setInquirySubmitted] = useState(false);
   const [ticketFlash, setTicketFlash] = useState(false);
   const [budgetVal, setBudgetVal] = useState(30000);
@@ -1968,14 +1972,14 @@ export default function PlanYourTripPage() {
       {/* Main App Frame */}
       <main className="max-w-[1180px] w-full mx-auto px-2 sm:px-4 pb-2 sm:pb-4 flex-1 flex flex-col justify-center">
         {/* App Container: Single Column on Mobile, Two Columns on Desktop */}
-        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_360px] h-[min(780px,calc(100vh-120px))] min-h-[560px] relative">
+        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_360px] h-[calc(100dvh-130px)] sm:h-[min(780px,calc(100vh-120px))] min-h-[460px] sm:min-h-[560px] relative">
           {/* Left Column: Chat App */}
           <div className="flex flex-col min-w-0 min-h-0 h-full bg-white">
             {/* Chat Header */}
             <div className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3 border-b border-[#e8e8e0] shrink-0 bg-white">
               <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
                 <Image
-                  src="/assets/images/mascot/banjara-face.webp"
+                  src="/assets/images/mascot/explorer-face.webp"
                   alt="Trip Planner Avatar"
                   fill
                   className="object-cover object-top scale-110"
@@ -1986,7 +1990,7 @@ export default function PlanYourTripPage() {
                   Trip Planner
                 </strong>
                 <small className="flex items-center gap-1.5 text-[11px] sm:text-[11.5px] text-gray-500 leading-tight">
-                  <span className="w-2 h-2 rounded-full bg-[#b8ff00] border border-[#14140f] animate-banjara-online" />
+                  <span className="w-2 h-2 rounded-full bg-[#b8ff00] border border-[#14140f] animate-explorer-online" />
                   Trip planner · usually replies in seconds
                 </small>
               </div>
@@ -2011,7 +2015,7 @@ export default function PlanYourTripPage() {
                 <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
                   {/* Standing Animated Character in Welcome State */}
                   <div className="mx-auto my-1 flex justify-center">
-                    <BanjaraChatMascot ref={welcomeMascotRef} variant="lg" />
+                    <ExplorerChatMascot ref={welcomeMascotRef} variant="lg" />
                   </div>
 
                   {/* Sender label */}
@@ -2089,7 +2093,7 @@ export default function PlanYourTripPage() {
                     {msg.sender === "bot" && !isInitialBotMsg && (
                       <div className="w-7 h-7 rounded-full bg-[#14140f] overflow-hidden shrink-0 mb-1 border border-[#14140f] shadow-xs relative">
                         <Image
-                          src="/assets/images/mascot/banjara-face.webp"
+                          src="/assets/images/mascot/explorer-face.webp"
                           alt="Trip Planner"
                           fill
                           className="object-cover object-top scale-110"
@@ -2233,17 +2237,17 @@ export default function PlanYourTripPage() {
               <div ref={threadEndRef} />
             </div>
 
-            {/* Soft floor fade and docked animated Banjara mascot (active chat mode) */}
+            {/* Soft floor fade and docked animated Explorer mascot (active chat mode) */}
             {conversationStage > 0 && (
               <>
                 <div className="absolute left-0 right-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent pointer-events-none z-[5]" />
-                <BanjaraChatMascot ref={mascotRef} variant="dock" />
+                <ExplorerChatMascot ref={mascotRef} variant="dock" />
               </>
             )}
           </div>
 
             {/* Composer */}
-            <div className="p-2.5 sm:p-4 bg-white border-t border-[#e8e8e0] shrink-0">
+            <div className="p-2.5 sm:p-4 pb-[calc(10px+env(safe-area-inset-bottom,0px))] sm:pb-4 bg-white border-t border-[#e8e8e0] shrink-0">
               {/* Mobile Drawer Pill: "Your trip so far ↑" pinned above input */}
               {activeTrip && (
                 <div className="lg:hidden flex items-center justify-start pb-2">
@@ -2353,7 +2357,10 @@ export default function PlanYourTripPage() {
 
       {/* Mobile Slide-Up Ticket Sheet */}
       <div
-        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
+        role="dialog"
+        aria-modal="true"
+        aria-label="Trip summary ticket"
+        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 touch-none overscroll-contain ${
           mobileTicketOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
@@ -2363,11 +2370,14 @@ export default function PlanYourTripPage() {
         />
 
         <aside
-          className={`absolute inset-x-0 bottom-0 max-h-[85vh] bg-[#14140f] text-white rounded-t-[26px] shadow-2xl flex flex-col transition-transform duration-300 ease-out z-10 ${
+          className={`absolute inset-x-0 bottom-0 max-h-[88dvh] bg-[#14140f] text-white rounded-t-[28px] shadow-2xl flex flex-col transition-transform duration-300 ease-out z-10 overscroll-contain touch-pan-y ${
             mobileTicketOpen ? "translate-y-0" : "translate-y-full"
           }`}
         >
-          <div className="relative p-5 border-b-2 border-dashed border-white/15 flex items-center justify-between">
+          {/* Mobile drag handle */}
+          <div className="w-10 h-1 bg-white/20 rounded-full mx-auto my-2.5 block" />
+
+          <div className="relative p-5 pt-2 border-b-2 border-dashed border-white/15 flex items-center justify-between">
             <div className="flex flex-col gap-0.5">
               <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#d6ff3f]">
                 Your trip ticket
@@ -2386,7 +2396,7 @@ export default function PlanYourTripPage() {
             <button
               type="button"
               onClick={() => setMobileTicketOpen(false)}
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-base transition-colors cursor-pointer"
+              className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 text-white flex items-center justify-center font-bold text-base transition-colors cursor-pointer shrink-0"
               aria-label="Close ticket sheet"
             >
               ✕
@@ -2397,7 +2407,7 @@ export default function PlanYourTripPage() {
             {renderTicketContent()}
           </div>
 
-          <div className="p-4 border-t border-white/10 flex flex-col gap-1.5 text-center bg-[#14140f]">
+          <div className="p-4 pb-[calc(18px+env(safe-area-inset-bottom,0px))] border-t border-white/10 flex flex-col gap-1.5 text-center bg-[#14140f]">
             <button
               type="button"
               disabled={activeTrip?.stage !== 6}
@@ -2405,9 +2415,9 @@ export default function PlanYourTripPage() {
                 setMobileTicketOpen(false);
                 setModalOpen(true);
               }}
-              className={`w-full py-3 px-4 rounded-full font-bold text-[14px] transition-all cursor-pointer ${
+              className={`w-full py-3.5 px-4 rounded-full font-bold text-[14px] min-h-[46px] transition-all cursor-pointer ${
                 activeTrip?.stage === 6
-                  ? "bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] shadow-[0_8px_20px_-6px_rgba(214,255,63,0.7)]"
+                  ? "bg-[#d6ff3f] hover:bg-[#ccff00] active:scale-[0.98] text-[#14140f] shadow-[0_8px_20px_-6px_rgba(214,255,63,0.7)]"
                   : "bg-white/10 text-white/40 cursor-not-allowed border-none"
               }`}
             >
@@ -2427,8 +2437,12 @@ export default function PlanYourTripPage() {
 
       {/* Inquiry Dialog Modal (Chat Mode) */}
       {modalOpen && (
-        <div className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-[#14140f] text-white w-full max-w-md rounded-[28px] border border-white/15 p-6 sm:p-8 relative shadow-2xl animate-pc-pop">
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain"
+        >
+          <div className="bg-[#14140f] text-white w-full max-w-md rounded-[28px] border border-white/15 p-6 sm:p-8 relative shadow-2xl animate-pc-pop max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y">
             <button
               onClick={() => {
                 setModalOpen(false);

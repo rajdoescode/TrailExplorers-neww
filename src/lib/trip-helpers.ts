@@ -308,21 +308,30 @@ export function getTripAttractions(trip: Trip): AttractionItem[] {
 export function getTripReviews(trip: Trip): Review[] {
   const text = `${trip.title} ${trip.category || ""}`.toLowerCase();
 
+  let list: Review[] = [];
+
   if (text.includes("spiti")) {
     const dhruv = REVIEWS_DATA.find((r) => r.customer_name.includes("Dhruv"));
     const devansh = REVIEWS_DATA.find((r) => r.customer_name.includes("Devansh"));
-    const list = [dhruv, devansh].filter(Boolean) as Review[];
-    if (list.length > 0) return list;
-  }
-
-  if (text.includes("naggar") || text.includes("manali") || text.includes("himachal")) {
+    list = [dhruv, devansh].filter(Boolean) as Review[];
+  } else if (text.includes("naggar") || text.includes("manali") || text.includes("himachal")) {
     const samarth = REVIEWS_DATA.find((r) => r.customer_name.includes("Samarth"));
     const divya = REVIEWS_DATA.find((r) => r.customer_name.includes("Divya"));
-    const list = [samarth, divya].filter(Boolean) as Review[];
-    if (list.length > 0) return list;
+    list = [samarth, divya].filter(Boolean) as Review[];
   }
 
-  return REVIEWS_DATA.slice(0, 2);
+  if (list.length === 0) {
+    list = REVIEWS_DATA.slice(0, 2);
+  }
+
+  return list.map((r) => {
+    let av = r.avatar_url || "/assets/images/reviews/dhruv_shergill_avatar.png";
+    if (av && !av.startsWith("/") && !av.startsWith("http")) av = "/" + av;
+    return {
+      ...r,
+      avatar_url: av,
+    };
+  });
 }
 
 /**

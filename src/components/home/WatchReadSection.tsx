@@ -7,9 +7,13 @@ import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import { POSTCARDS_DATA } from "@/data/postcards";
 import { Postcard } from "@/types";
 import { cn } from "@/lib/utils";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 export const WatchReadSection: React.FC = () => {
   const [selectedPostcard, setSelectedPostcard] = useState<Postcard | null>(null);
+
+  // Global reference-counted scroll lock when story reader modal is open
+  useScrollLock(Boolean(selectedPostcard));
 
   const postcards = POSTCARDS_DATA.slice(0, 6);
   const [activeIndex, setActiveIndex] = useState(2);
@@ -170,17 +174,41 @@ export const WatchReadSection: React.FC = () => {
             type="button"
             onClick={nextReel}
             aria-label="Next reel"
-            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
+            className="carousel-arrow z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#14140f] text-white hidden md:flex items-center justify-center shrink-0 shadow-[0_6px_16px_rgba(20,20,15,0.22)] hover:scale-110 active:scale-95 transition-all cursor-pointer"
           >
             <ChevronRight className="w-6 h-6 stroke-[2.5]" />
           </button>
+        </div>
+
+        {/* Mobile Swipe Indicators */}
+        <div className="flex md:hidden items-center justify-center gap-1.5 mt-2">
+          {postcards.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Go to reel ${i + 1}`}
+              className={cn(
+                "h-1.5 rounded-full transition-all duration-300 cursor-pointer p-0 border-0",
+                i === activeIndex ? "w-6 bg-[#14140f]" : "w-1.5 bg-[#d4d4cb]"
+              )}
+            />
+          ))}
         </div>
       </div>
 
       {/* Story Reader Modal */}
       {selectedPostcard && (
-        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[85vh] overflow-y-auto shadow-2xl">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedPostcard.title}
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedPostcard(null);
+          }}
+        >
+          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y shadow-2xl">
             <button
               onClick={() => setSelectedPostcard(null)}
               className="absolute top-4 right-4 p-2 bg-[#f6f6f1] hover:bg-[#d6ff3f] rounded-full transition-colors cursor-pointer"

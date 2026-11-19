@@ -37,17 +37,17 @@ export const PlanYourTripBanner: React.FC = () => {
                 Private trips
               </span>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-bold text-white tracking-tight leading-[1.12] mb-4">
+              <h2 className="text-2xl sm:text-4xl lg:text-[46px] font-bold text-white tracking-tight leading-[1.15] mb-4">
                 Plan your own Himalayan<br className="hidden sm:inline" /> trip.
               </h2>
 
-              <p className="text-white/80 text-[14.5px] sm:text-[15.5px] leading-relaxed max-w-[500px] mb-6 sm:mb-8 font-normal">
+              <p className="text-white/80 text-[14px] sm:text-[15.5px] leading-relaxed max-w-[500px] mb-6 sm:mb-8 font-normal">
                 Spiti, Ladakh, Zanskar, Himachal, Kashmir, Uttarakhand or the Northeast. Chat with our trip planner, shape it day by day, and we&apos;ll call you back with a price for your group.
               </p>
 
               <Link
                 href="/plan-your-trip"
-                className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-[15px] transition-all duration-200 hover:-translate-y-0.5 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] active:scale-95 text-[#14140f] font-bold text-[15px] transition-all duration-200 shadow-md min-h-[48px]"
               >
                 Chat with our planner
               </Link>
@@ -59,7 +59,7 @@ export const PlanYourTripBanner: React.FC = () => {
               <div className="flex items-center gap-3 pb-3 border-b border-white/10 font-bold">
                 <div className="relative w-9 h-9 rounded-full bg-[#d6ff3f] overflow-hidden shrink-0 border border-white/20">
                   <Image
-                    src="/assets/images/mascot/banjara-face.webp"
+                    src="/assets/images/mascot/explorer-face.webp"
                     alt="Trip Planner Avatar"
                     fill
                     className="object-cover object-top scale-110"

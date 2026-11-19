@@ -16,7 +16,7 @@ export default function FounderPage() {
               <Compass className="w-3.5 h-3.5" />
               <span>Founder&apos;s Journal</span>
             </span>
-            <Heading level={1} className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+            <Heading level={1} className="text-white text-2xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
               Beyond Maps &amp; Boundaries, in Search of Our Tribe
             </Heading>
             <Paragraph className="text-white/80 text-base sm:text-lg italic">

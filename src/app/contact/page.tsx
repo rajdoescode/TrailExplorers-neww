@@ -29,14 +29,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full bg-[#f6f6f1] min-h-screen py-16">
+    <div className="w-full bg-[#f6f6f1] min-h-screen py-10 sm:py-16">
       <Container>
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="inline-flex items-center gap-1.5 bg-[#d6ff3f] text-[#14140f] text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full mb-3 border border-[#14140f]">
             <Phone className="w-3.5 h-3.5" />
             <span>We Are Here For You</span>
           </span>
-          <Heading level={1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+          <Heading level={1} className="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-3 sm:mb-4">
             Contact Us
           </Heading>
           <Paragraph className="text-sm sm:text-base text-[#6b6b63] leading-relaxed">
@@ -44,9 +44,9 @@ export default function ContactPage() {
           </Paragraph>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-10 items-start">
           {/* Contact Details Card (2 Cols) */}
-          <div className="lg:col-span-2 bg-[#14140f] text-white rounded-3xl p-8 sm:p-10 border-2 border-[#14140f] shadow-2xl flex flex-col gap-8">
+          <div className="lg:col-span-2 bg-[#14140f] text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-[#14140f] shadow-2xl flex flex-col gap-6 sm:gap-8">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#d6ff3f] block mb-2">
                 Registered Office
@@ -112,7 +112,7 @@ export default function ContactPage() {
           </div>
 
           {/* Interactive Contact Form (3 Cols) */}
-          <div className="lg:col-span-3 bg-white rounded-3xl p-8 sm:p-10 border-2 border-[#14140f] shadow-card">
+          <div className="lg:col-span-3 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-[#14140f] shadow-card">
             {sent ? (
               <div className="text-center py-12 flex flex-col items-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-[#e8f7ed] text-[#2fa84f] flex items-center justify-center">

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface BentoGalleryProps {
   images: string[];
@@ -34,6 +35,9 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
     setActiveIdx((prev) => (prev - 1 + totalPhotos) % totalPhotos);
   }, [totalPhotos]);
 
+  // Global reference-counted scroll lock for fullscreen lightbox
+  useScrollLock(lightboxOpen);
+
   useEffect(() => {
     if (!lightboxOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -42,10 +46,8 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
       if (e.key === "ArrowLeft") prevPhoto();
     };
     window.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
     };
   }, [lightboxOpen, nextPhoto, prevPhoto]);
 
@@ -212,7 +214,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
         <div
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-black/95 flex flex-col justify-between p-4 sm:p-6 backdrop-blur-md"
+          className="fixed inset-0 z-50 bg-black/95 flex flex-col justify-between p-4 sm:p-6 backdrop-blur-md touch-none overscroll-contain"
         >
           {/* Top Bar */}
           <div className="flex items-center justify-between text-white z-10 pb-3 border-b border-white/10">
