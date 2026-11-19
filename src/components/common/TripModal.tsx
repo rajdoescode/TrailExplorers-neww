@@ -35,7 +35,7 @@ export const TripModal: React.FC = () => {
     setIsOpen(true);
     document.body.style.overflow = "hidden";
     try {
-      localStorage.setItem("awara_auto_book_shown", "1");
+      localStorage.setItem("trailexplorers_auto_book_shown", "1");
     } catch {
       // ignore
     }
@@ -123,9 +123,9 @@ export const TripModal: React.FC = () => {
     };
 
     try {
-      const existing = JSON.parse(localStorage.getItem("awara_inquiries") || "[]");
+      const existing = JSON.parse(localStorage.getItem("trailexplorers_inquiries") || "[]");
       existing.push(payload);
-      localStorage.setItem("awara_inquiries", JSON.stringify(existing));
+      localStorage.setItem("trailexplorers_inquiries", JSON.stringify(existing));
     } catch {
       // ignore
     }

@@ -58,9 +58,9 @@ export default function CancellationPolicyPage() {
           </div>
 
           <div className="border-t border-[#f0f0eb] pt-6">
-            <h3 className="text-lg font-bold mb-2">4. Cancellations by Awara Banjara</h3>
+            <h3 className="text-lg font-bold mb-2">4. Cancellations by Trail Explorers</h3>
             <p className="text-sm text-[#6b6b63] leading-relaxed">
-              If Awara Banjara must cancel a batch due to extreme alpine weather warnings, military restrictions, or failure to meet minimum safety thresholds, travellers receive a 100% full refund or credit voucher for any departure within 12 months.
+              If Trail Explorers must cancel a batch due to extreme alpine weather warnings, military restrictions, or failure to meet minimum safety thresholds, travellers receive a 100% full refund or credit voucher for any departure within 12 months.
             </p>
           </div>
         </div>

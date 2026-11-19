@@ -3,9 +3,9 @@ import Link from "next/link";
 import { EXPERIENCES_DATA } from "@/data/experiences";
 
 export const metadata: Metadata = {
-  title: "Travel Experiences: Festivals & Himalayan Expeditions | Awara Banjara",
+  title: "Travel Experiences: Festivals & Himalayan Expeditions | Trail Explorers",
   description:
-    "Awara Banjara Experiences: small-group trips built around a moment, not a map. Mountain festivals, winter carnivals and Himalayan expeditions with fixed dates.",
+    "Trail Explorers Experiences: small-group trips built around a moment, not a map. Mountain festivals, winter carnivals and Himalayan expeditions with fixed dates.",
   keywords: [
     "travel experiences India",
     "festival trips",
@@ -13,21 +13,21 @@ export const metadata: Metadata = {
     "Manali winter carnival",
     "Himalayan expeditions",
     "group trips",
-    "Awara Banjara",
+    "Trail Explorers",
   ],
   alternates: {
-    canonical: "https://awarabanjara.in/experiences",
+    canonical: "https://trailexplorers.in/experiences",
   },
   openGraph: {
     type: "website",
-    url: "https://awarabanjara.in/experiences",
-    title: "Travel Experiences: Festivals & Himalayan Expeditions | Awara Banjara",
+    url: "https://trailexplorers.in/experiences",
+    title: "Travel Experiences: Festivals & Himalayan Expeditions | Trail Explorers",
     description: "Trips built around a moment, not a map: festivals, carnivals and expeditions.",
     images: [{ url: "/assets/images/home/hero-poster.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Travel Experiences: Festivals & Himalayan Expeditions | Awara Banjara",
+    title: "Travel Experiences: Festivals & Himalayan Expeditions | Trail Explorers",
     description: "Trips built around a moment, not a map: festivals, carnivals and expeditions.",
     images: ["/assets/images/home/hero-poster.jpg"],
   },
@@ -37,13 +37,13 @@ export default function ExperiencesPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Awara Banjara Experiences",
+    "name": "Trail Explorers Experiences",
     "numberOfItems": EXPERIENCES_DATA.length,
     "itemListElement": EXPERIENCES_DATA.map((trip, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
       "name": trip.title,
-      "url": `https://awarabanjara.in${trip.detailUrl}`,
+      "url": `https://trailexplorers.in${trip.detailUrl}`,
     })),
   };
 

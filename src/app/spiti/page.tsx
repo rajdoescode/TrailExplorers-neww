@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { RegionPageTemplate } from "@/components/destinations/RegionPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Spiti Valley Tour Packages — The Middle Land | Awara Banjara",
+  title: "Spiti Valley Tour Packages — The Middle Land | Trail Explorers",
   description:
     "Curated Spiti Valley road trips, winter 4x4 expeditions, and community group tours from Delhi. Experience high-altitude monasteries, homestays, and Chandratal.",
 };

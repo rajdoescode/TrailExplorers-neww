@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { RegionPageTemplate } from "@/components/destinations/RegionPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Uttarakhand Tour Packages — Dev Bhoomi | Awara Banjara",
+  title: "Uttarakhand Tour Packages — Dev Bhoomi | Trail Explorers",
   description:
-    "Uttarakhand tours, Kedarkantha & Chopta Chandrashila treks, Rishikesh adventures, and valley retreats with Awara Banjara.",
+    "Uttarakhand tours, Kedarkantha & Chopta Chandrashila treks, Rishikesh adventures, and valley retreats with Trail Explorers.",
 };
 
 export default function UttarakhandPage() {

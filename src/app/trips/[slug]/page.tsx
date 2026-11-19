@@ -26,6 +26,7 @@ import { FaqsAccordion } from "@/components/trips/FaqsAccordion";
 import { TripReviewsSection } from "@/components/trips/TripReviewsSection";
 import { ShareModal } from "@/components/trips/ShareModal";
 import { PdfLeadModal } from "@/components/trips/PdfLeadModal";
+import { NotFoundView } from "@/components/common/NotFoundView";
 import {
   Clock,
   MapPin,
@@ -48,10 +49,12 @@ export default function TripDetailPage() {
   // Find trip by slug or ID
   const trip = useMemo(() => {
     if (!slug) return null;
-    return (
-      TRIPS_DATA.find((t) => t.slug === slug || String(t.id) === slug) ||
-      TRIPS_DATA.find((t) => t.slug?.includes(slug) || slug.includes(String(t.id)))
-    );
+    const exact = TRIPS_DATA.find((t) => t.slug === slug || String(t.id) === slug);
+    if (exact) return exact;
+    return TRIPS_DATA.find((t) => {
+      const idStr = String(t.id);
+      return slug === idStr || slug.endsWith(`-${idStr}`) || (t.slug && slug === t.slug);
+    });
   }, [slug]);
 
   // Derived datasets
@@ -102,22 +105,7 @@ export default function TripDetailPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!trip) {
-    return (
-      <div className="py-24 text-center">
-        <Container>
-          <h2 className="text-2xl font-bold text-[#14140f]">Trip Itinerary Not Found</h2>
-          <p className="mt-2 text-[#6b6b63]">The requested Himalayan departure could not be loaded.</p>
-          <div className="mt-6">
-            <Link
-              href="/community-trips"
-              className="inline-flex items-center px-6 py-3 rounded-xl bg-[#d6ff3f] text-[#14140f] font-bold border border-[#14140f] shadow-lime-btn"
-            >
-              Browse All Trips
-            </Link>
-          </div>
-        </Container>
-      </div>
-    );
+    return <NotFoundView customPath={`/trips/${slug}`} />;
   }
 
   // Handle package selection

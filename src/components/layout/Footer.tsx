@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
       <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 my-10 sm:my-14">
         <div className="whatsapp-bar w-full">
           <a
-            href="https://wa.me/919103910523"
+            href="https://wa.me/917016640870"
             target="_blank"
             rel="noopener noreferrer"
             className="wa-left"
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
             </span>
             <span>
               <small>Instant WhatsApp Booking:</small>
-              <strong>+91-91 03 910 523</strong>
+              <strong>+91 70166 40870</strong>
             </span>
           </a>
 
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
             <span className="label">FOLLOW TRAILS ON:</span>
             <div className="social-icons">
               <a
-                href="https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA=="
+                href="https://www.instagram.com/trail_explorers_"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
                 <Instagram className="w-4 h-4" />
               </a>
               <a
-                href="https://youtube.com/@awarabanjara.travel?si=pvucdi12kuNIf2Z8"
+                href="https://www.youtube.com/@Trail_Explorers"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
@@ -56,7 +56,7 @@ export const Footer: React.FC = () => {
                 <Youtube className="w-4 h-4" />
               </a>
               <a
-                href="https://share.google/UcwoxEcVj5gfu0Izq"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -75,8 +75,8 @@ export const Footer: React.FC = () => {
             <div className="footer-brand">
               <Link href="/" className="logo">
                 <Image
-                  src="/assets/images/logo/logo-black-full.png"
-                  alt="Awara Banjara"
+                  src="/assets/images/logo/logo.svg"
+                  alt="Trail Explorers"
                   width={230}
                   height={46}
                   className="h-11 w-auto object-contain"
@@ -173,7 +173,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="footer-bottom">
-            © 2026 Awara Banjara · Made in India ✦
+            © 2026 Trail Explorers · Made in India ✦
           </div>
         </div>
       </footer>

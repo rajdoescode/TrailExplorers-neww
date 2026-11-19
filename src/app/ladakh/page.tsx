@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { RegionPageTemplate } from "@/components/destinations/RegionPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Ladakh Tour Packages — Land of High Passes | Awara Banjara",
+  title: "Ladakh Tour Packages — Land of High Passes | Trail Explorers",
   description:
-    "Explore Leh Ladakh road trips, bike expeditions, Pangong Tso, Nubra Valley, and Zanskar with Awara Banjara's youth travel community.",
+    "Explore Leh Ladakh road trips, bike expeditions, Pangong Tso, Nubra Valley, and Zanskar with Trail Explorers' travel community.",
 };
 
 export default function LadakhPage() {

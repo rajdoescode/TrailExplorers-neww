@@ -42,7 +42,7 @@ export default function CareersPage() {
               <span>Join The Crew</span>
             </span>
             <Heading level={1} className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
-              Careers at Awara Banjara
+              Careers at Trail Explorers
             </Heading>
             <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">
               We are looking for passionate wanderers, storytellers, and mountain lovers who want to build the future of authentic experiential travel in India.
@@ -73,7 +73,7 @@ export default function CareersPage() {
 
               <div className="shrink-0">
                 <Button
-                  href={`mailto:careers@awarabanjara.in?subject=Application for ${encodeURIComponent(job.title)}`}
+                  href={`mailto:trailexplorers@gmail.com?subject=Application for ${encodeURIComponent(job.title)}`}
                   variant="primary"
                   size="sm"
                   rightIcon={<Send className="w-3.5 h-3.5" />}

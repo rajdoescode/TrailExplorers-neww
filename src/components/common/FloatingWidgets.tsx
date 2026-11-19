@@ -186,10 +186,10 @@ export const FloatingWidgets: React.FC = () => {
 
   return (
     <>
-      {/* Floating Banjara Mascot Widget */}
+      {/* Floating Mascot Widget */}
       <div
         className={`banjara-float is-loaded ${isVisible ? "is-visible" : ""}`}
-        aria-label="Ask Banjara"
+        aria-label="Ask Trail Explorers"
       >
         {/* Speech Bubble (pops up to the left of the avatar) */}
         <div
@@ -250,7 +250,7 @@ export const FloatingWidgets: React.FC = () => {
         <Link
           href="/plan-your-trip"
           className={`banjara-float__avatar ${activeTrick || ""}`}
-          aria-label="Plan your trip with Banjara, our trip planner"
+          aria-label="Plan your trip with Trail Explorers, our trip planner"
           onMouseEnter={() => {
             triggerTrick("is-hop", 850);
           }}
@@ -270,7 +270,7 @@ export const FloatingWidgets: React.FC = () => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/919103910523?text=Hi%20Awara%20Banjara!%20%F0%9F%91%8B%20I'm%20interested%20in%20planning%20a%20Himalayan%20trip%20with%20you.%20Could%20you%20share%20more%20details%3F"
+        href="https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B%20I'm%20interested%20in%20planning%20a%20Himalayan%20trip%20with%20you.%20Could%20you%20share%20more%20details%3F"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with us on WhatsApp"

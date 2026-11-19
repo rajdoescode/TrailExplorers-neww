@@ -53,7 +53,7 @@ const FEATURED_HOME_REVIEWS: FeaturedReview[] = [
     rating: 5,
     date_text: "1 month ago",
     review_text:
-      "I would like to express my sincere appreciation to the Awara Banjara team for their excellent support and guidance throughout the travel process. They were professional, responsive, supportive...",
+      "I would like to express my sincere appreciation to the Trail Explorers team for their excellent support and guidance throughout the travel process. They were professional, responsive, supportive...",
     avatar_url: "/assets/images/trips/img_1786712094274____3_.jpg",
   },
   {
@@ -65,7 +65,7 @@ const FEATURED_HOME_REVIEWS: FeaturedReview[] = [
     rating: 5,
     date_text: "1 month ago",
     review_text:
-      "The spiti valley road trip with Awara Banjara was very good. It was my first ever solo trip but it did not feel like one as everyone in the group was very welcoming and hospitable...",
+      "The spiti valley road trip with Trail Explorers was very good. It was my first ever solo trip but it did not feel like one as everyone in the group was very welcoming and hospitable...",
     avatar_url: "/assets/images/trips/img_1789394338505_download__1_.jpg",
   },
 ];
@@ -161,7 +161,7 @@ export const ReviewsSection: React.FC = () => {
               <p className="rev-quote-body">
                 &ldquo;
                 {rev.id === "rev_1786958542074" && expanded[rev.id]
-                  ? "Honestly, Zanskar felt like another world! Standing in front of Gombo Rangzan and doing the hike to Phuktal Monastery were absolute highlights. The roads are rugged, but our trip lead and drivers handled everything so smoothly. Warm homestays, great food, and amazing group vibes throughout. Truly grateful to the Awara Banjara team!"
+                  ? "Honestly, Zanskar felt like another world! Standing in front of Gombo Rangzan and doing the hike to Phuktal Monastery were absolute highlights. The roads are rugged, but our trip lead and drivers handled everything so smoothly. Warm homestays, great food, and amazing group vibes throughout. Truly grateful to the Trail Explorers team!"
                   : rev.review_text}
                 &rdquo;
                 {rev.has_read_more && (

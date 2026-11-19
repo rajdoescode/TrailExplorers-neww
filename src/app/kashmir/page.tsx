@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { RegionPageTemplate } from "@/components/destinations/RegionPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Kashmir Tour Packages — Paradise on Earth | Awara Banjara",
+  title: "Kashmir Tour Packages — Paradise on Earth | Trail Explorers",
   description:
     "Curated Kashmir group packages, Great Lakes trek, Dal Lake houseboat stays, and Gulmarg winter snow experiences.",
 };

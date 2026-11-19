@@ -57,7 +57,7 @@ export default function AboutPage() {
               </span>
               <h3 className="text-xl font-bold text-[#14140f]">Your Trip Stays Local</h3>
               <p className="text-sm text-[#6b6b63] leading-relaxed">
-                When you travel with Awara Banjara, your money directly funds indigenous homestay mothers, local mechanics, mountain youth guides, and village cooperative kitchens.
+                When you travel with Trail Explorers, your money directly funds indigenous homestay mothers, local mechanics, mountain youth guides, and village cooperative kitchens.
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-[20px] overflow-hidden shrink-0 border-2 border-[#14140f]">
                 <Image
                   src="/assets/images/about/founder-viru.jpg"
-                  alt="Viru Thakur - Founder of Awara Banjara"
+                  alt="Viru Thakur - Founder of Trail Explorers"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -89,10 +89,10 @@ export default function AboutPage() {
                   Founder&apos;s Note
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f] group-hover:text-black transition-colors m-0">
-                  Meet the Original Awara
+                  Meet the Lead Explorer
                 </h2>
                 <p className="text-sm sm:text-base text-[#6b6b63] leading-relaxed m-0">
-                  Viru Thakur grew up in Manali watching travellers rush past the mountains he called home. They left with full camera rolls and empty hearts, so he started a company to change that. Here&apos;s his story, and why he gave it such a cheeky name.
+                  Viru Thakur grew up in Manali watching travellers rush past the mountains he called home. They left with full camera rolls and empty hearts, so he started a company to change that. Here&apos;s his story, and the passion behind the journeys.
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#14140f] group-hover:translate-x-1 transition-transform mt-2">
                   <span>Meet Viru Thakur, our founder</span>
@@ -111,7 +111,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#14140f] shadow-card">
               <Image
                 src="/assets/images/about/community-group.jpg"
-                alt="Awara Banjara Campfire Community"
+                alt="Trail Explorers Campfire Community"
                 fill
                 className="object-cover"
               />

@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { RegionPageTemplate } from "@/components/destinations/RegionPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Himachal Tour Packages — Land of Gods | Awara Banjara",
+  title: "Himachal Tour Packages — Land of Gods | Trail Explorers",
   description:
-    "Himachal Pradesh trips with Awara Banjara: community departures, treks and road trips to Manali, Spiti, Kasol, Bir and beyond.",
+    "Himachal Pradesh trips with Trail Explorers: community departures, treks and road trips to Manali, Spiti, Kasol, Bir and beyond.",
 };
 
 export default function HimachalPage() {

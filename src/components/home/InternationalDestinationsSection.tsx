@@ -164,8 +164,8 @@ export const InternationalDestinationsSection: React.FC = () => {
                     {/* Watermark logo at bottom */}
                     <div className="dest-watermark">
                       <img
-                        src="/assets/images/logo/awara-banjara-white-logo.png"
-                        alt="Awara Banjara"
+                        src="/assets/images/logo/logo-white.svg"
+                        alt="Trail Explorers"
                         className="watermark-logo-img"
                       />
                     </div>

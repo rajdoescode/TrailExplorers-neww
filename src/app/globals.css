@@ -2181,3 +2181,356 @@ body.pc-mode-chat main {
   pointer-events: none;
   cursor: default;
 }
+
+/* =========================================================
+   404 / Page Not Found Styles (awarabanjara.in exact)
+   ========================================================= */
+
+.nf-hero {
+  position: relative;
+  overflow: hidden;
+  background: #f6f6f1;
+  border-bottom: 2px solid #14140f;
+}
+
+.nf-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  padding-top: clamp(48px, 8vw, 104px);
+  padding-bottom: clamp(140px, 16vw, 210px);
+}
+
+.nf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #14140f;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nf-eyebrow::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d6ff3f;
+}
+
+.nf-copy h1 {
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 20px 0 18px;
+  color: #14140f;
+}
+
+.nf-copy h1 mark {
+  background: linear-gradient(transparent 58%, #d6ff3f 58%, #d6ff3f 92%, transparent 92%);
+  color: inherit;
+  padding: 0 4px;
+}
+
+.nf-copy p {
+  font-size: clamp(16px, 1.6vw, 18px);
+  color: #6b6b63;
+  max-width: 30em;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.nf-path {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
+  color: #14140f;
+  background: #ffffff;
+  border: 1.5px dashed #14140f;
+  border-radius: 6px;
+  padding: 2px 8px;
+  word-break: break-all;
+}
+
+.nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.nf-actions .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #d6ff3f;
+  color: #14140f;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid #14140f;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 #14140f;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+}
+
+.nf-actions .btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #14140f;
+}
+
+.nf-actions .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #14140f;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 2px solid #14140f;
+  text-decoration: none;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+  cursor: pointer;
+}
+
+.nf-actions .btn-outline:hover {
+  transform: translateY(-2px);
+  background: #f8f8f5;
+}
+
+/* Himalayan roadside milestone: rounded cap, painted band, the distance */
+.nf-stone {
+  justify-self: center;
+  position: relative;
+  width: min(100%, 300px);
+  transform: rotate(4deg);
+  animation: nf-sway 6s ease-in-out infinite;
+  transform-origin: 50% 100%;
+}
+
+.nf-stone-body {
+  position: relative;
+  background: #ffffff;
+  border: 3px solid #14140f;
+  border-radius: 150px 150px 14px 14px;
+  box-shadow: 10px 10px 0 #14140f;
+  overflow: hidden;
+  text-align: center;
+}
+
+.nf-stone-cap {
+  background: #d6ff3f;
+  border-bottom: 3px solid #14140f;
+  padding: 54px 20px 18px;
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #14140f;
+}
+
+.nf-stone-num {
+  font-family: 'Baloo 2', var(--font-heading), sans-serif;
+  font-weight: 800;
+  font-size: clamp(88px, 11vw, 120px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  padding: 26px 12px 0;
+  color: #14140f;
+}
+
+.nf-stone-unit {
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  color: #6b6b63;
+  text-transform: uppercase;
+  padding: 0 12px 30px;
+}
+
+.nf-stone-foot {
+  height: 22px;
+  margin: 0 18px;
+  background: repeating-linear-gradient(-45deg, #14140f 0 10px, #ffffff 10px 20px);
+  border: 3px solid #14140f;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+@keyframes nf-sway {
+  0%, 100% { transform: rotate(4deg); }
+  50% { transform: rotate(1.5deg); }
+}
+
+.nf-ridge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  width: 100%;
+  height: clamp(120px, 16vw, 200px);
+  pointer-events: none;
+}
+
+.nf-roads {
+  padding-top: clamp(40px, 6vw, 64px);
+  padding-bottom: clamp(48px, 7vw, 80px);
+}
+
+.nf-roads-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 20px;
+}
+
+.nf-roads h2 {
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #14140f;
+}
+
+.nf-roads-head p {
+  margin: 0;
+  color: #6b6b63;
+  font-size: 15px;
+}
+
+.nf-road-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nf-road-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #14140f;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #14140f;
+  background: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+
+.nf-road-list a::after {
+  content: '→';
+  transition: transform 0.18s ease;
+}
+
+.nf-road-list a:hover {
+  background: #d6ff3f;
+  transform: translateY(-2px);
+}
+
+.nf-road-list a:hover::after {
+  transform: translateX(3px);
+}
+
+.nf-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.nf-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 2px solid #14140f;
+  border-radius: 18px;
+  padding: 20px 22px;
+  background: #ffffff;
+  color: #14140f;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.nf-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #14140f;
+}
+
+.nf-link strong {
+  font-family: var(--font-heading), 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: inherit;
+}
+
+.nf-link span {
+  color: #6b6b63;
+  font-size: 14px;
+}
+
+.nf-link-wa {
+  background: #14140f;
+  color: #ffffff;
+}
+
+.nf-link-wa strong {
+  color: #d6ff3f;
+}
+
+.nf-link-wa span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 860px) {
+  .nf-inner {
+    grid-template-columns: 1fr;
+    padding-top: 32px;
+  }
+  .nf-stone {
+    order: -1;
+    width: 168px;
+  }
+  .nf-stone-body {
+    box-shadow: 7px 7px 0 #14140f;
+  }
+  .nf-stone-cap {
+    padding: 30px 12px 12px;
+    font-size: 11px;
+  }
+  .nf-stone-num {
+    font-size: 60px;
+    padding-top: 12px;
+  }
+  .nf-stone-unit {
+    padding-bottom: 14px;
+    font-size: 11px;
+  }
+  .nf-stone-foot {
+    height: 16px;
+  }
+  .nf-links {
+    grid-template-columns: 1fr;
+  }
+}

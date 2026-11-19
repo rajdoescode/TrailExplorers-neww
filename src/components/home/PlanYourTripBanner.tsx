@@ -60,13 +60,13 @@ export const PlanYourTripBanner: React.FC = () => {
                 <div className="relative w-9 h-9 rounded-full bg-[#d6ff3f] overflow-hidden shrink-0 border border-white/20">
                   <Image
                     src="/assets/images/mascot/banjara-face.webp"
-                    alt="Banjara Avatar"
+                    alt="Trip Planner Avatar"
                     fill
                     className="object-cover object-top scale-110"
                   />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-white text-[14px] font-bold leading-tight">Banjara</span>
+                  <span className="text-white text-[14px] font-bold leading-tight">Trip Planner</span>
                   <span className="text-white/55 text-[12px] font-normal leading-tight">Trip planner</span>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export const PlanYourTripBanner: React.FC = () => {
                   Tell us your dream trip
                 </strong>
                 <small className="text-white/65 text-[12.5px] sm:text-[13px] font-normal mt-1 leading-snug">
-                  Chat with Banjara, our trip planner
+                  Chat with our trip planner
                 </small>
               </div>
             </li>

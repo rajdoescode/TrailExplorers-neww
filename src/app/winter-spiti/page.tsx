@@ -375,7 +375,7 @@ export default function WinterSpitiPage() {
               </button>
 
               <a
-                href="https://wa.me/919103910523?text=Hi%20Awara%20Banjara!%20%F0%9F%91%8B%20I'm%20interested%20in%20a%20winter%20Spiti%20trip.%20Could%20you%20share%20the%20details%3F"
+                href="https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B%20I'm%20interested%20in%20a%20winter%20Spiti%20trip.%20Could%20you%20share%20the%20details%3F"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/5 transition-all text-[14px] font-bold"
@@ -415,7 +415,7 @@ export default function WinterSpitiPage() {
       <div className="max-w-[1200px] mx-auto px-4 pb-12">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-[18px] bg-white border border-[#e2e2dc] shadow-sm">
           <a
-            href="https://wa.me/919103910523"
+            href="https://wa.me/917016640870"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 text-[#14140f] hover:opacity-80 transition-opacity"
@@ -425,7 +425,7 @@ export default function WinterSpitiPage() {
             </span>
             <span className="flex flex-col text-left">
               <small className="text-[11px] text-[#6b6b63] font-semibold">Instant WhatsApp Booking:</small>
-              <strong className="text-[15px] font-bold text-[#14140f]">+91-91 03 910 523</strong>
+              <strong className="text-[15px] font-bold text-[#14140f]">+91 70166 40870</strong>
             </span>
           </a>
 
@@ -435,7 +435,7 @@ export default function WinterSpitiPage() {
             </span>
             <div className="flex items-center gap-2">
               <a
-                href="https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA=="
+                href="https://www.instagram.com/trail_explorers_"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -444,7 +444,7 @@ export default function WinterSpitiPage() {
                 📸
               </a>
               <a
-                href="https://youtube.com/@awarabanjara.travel?si=pvucdi12kuNIf2Z8"
+                href="https://www.youtube.com/@Trail_Explorers"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"

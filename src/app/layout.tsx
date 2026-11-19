@@ -6,41 +6,42 @@ import { FloatingWidgets } from "@/components/common/FloatingWidgets";
 import { TripModal } from "@/components/common/TripModal";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://awarabanjara.in"),
-  title: "Awara Banjara — Himalayan Tourism & Youth Group Trips in India",
+  metadataBase: new URL("https://trailexplorers.in"),
+  title: "Trail Explorers — Curated Himalayan Escapes & Group Trips in India",
   description:
-    "Awara Banjara — India's premier youth travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and women-only travel. Curated group expeditions for adventurous souls.",
+    "Trail Explorers — India's premier travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and offbeat group departures. Curated expeditions for adventurous souls.",
   keywords: [
+    "Trail Explorers",
     "Himalayan group trips",
     "Spiti Valley tour package",
     "Leh Ladakh bike expedition",
-    "youth travel community India",
+    "travel community India",
     "Kasol Kheerganga trek",
-    "women travel groups India",
+    "group travel India",
     "Winter Spiti 4x4",
   ],
-  authors: [{ name: "Awara Banjara Adventure (OPC) Pvt. Ltd." }],
+  authors: [{ name: "Trail Explorers" }],
   openGraph: {
-    title: "Awara Banjara — Himalayan Tourism & Youth Group Trips in India",
+    title: "Trail Explorers — Curated Himalayan Escapes & Group Trips in India",
     description:
-      "Join India's vibrant youth travel community. Curated Himalayan bike expeditions, Spiti Valley road trips, treks, and women-only tours.",
-    url: "https://awarabanjara.in",
-    siteName: "Awara Banjara",
+      "Join Trail Explorers. Curated Himalayan bike expeditions, Spiti Valley road trips, treks, and offbeat group adventures.",
+    url: "https://trailexplorers.in",
+    siteName: "Trail Explorers",
     images: [
       {
         url: "/assets/images/home/hero-poster.jpg",
         width: 1200,
         height: 630,
-        alt: "Awara Banjara Himalayan Expeditions",
+        alt: "Trail Explorers Himalayan Expeditions",
       },
     ],
     locale: "en_IN",
     type: "website",
   },
   icons: {
-    icon: "/assets/images/logo/favicon.png",
-    shortcut: "/assets/images/logo/favicon.png",
-    apple: "/assets/images/logo/favicon.png",
+    icon: "/assets/images/logo/icon.svg",
+    shortcut: "/assets/images/logo/favicon.ico",
+    apple: "/assets/images/logo/apple-icon.png",
   },
 };
 

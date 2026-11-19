@@ -54,8 +54,8 @@ export const Header: React.FC<HeaderProps> = () => {
           {/* Logo */}
           <Link href="/" className="logo inline-flex items-center shrink-0 transition-opacity hover:opacity-75">
             <Image
-              src="/assets/images/logo/logo-black-full.png"
-              alt="Awara Banjara"
+              src="/assets/images/logo/logo.svg"
+              alt="Trail Explorers"
               width={200}
               height={40}
               priority
@@ -84,18 +84,18 @@ export const Header: React.FC<HeaderProps> = () => {
             })}
           </nav>
 
-          {/* Right Action Badges (Matches live awarabanjara.in) */}
+          {/* Right Action Badges */}
           <div className="hidden lg:flex items-center gap-[12px] shrink-0">
             <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
-              aria-label="Call Awara Banjara"
+              aria-label="Call Trail Explorers"
               className="inline-flex items-center gap-2.5 font-bold text-[14.5px] text-[#14140f] hover:opacity-85 transition-opacity"
             >
               <span className="w-[38px] h-[38px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(20,20,15,0.15)]">
                 <Phone className="w-4 h-4 text-white stroke-[2.2]" />
               </span>
               <span className="font-bold text-[14.5px] tracking-tight text-[#14140f] whitespace-nowrap">
-                +91- 9103910523
+                {SITE_CONFIG.site_phone}
               </span>
             </a>
           </div>
@@ -106,7 +106,7 @@ export const Header: React.FC<HeaderProps> = () => {
               <>
                 <a
                   href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
-                  aria-label="Call Awara Banjara"
+                  aria-label="Call Trail Explorers"
                   className="w-[36px] h-[36px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(20,20,15,0.15)]"
                 >
                   <Phone className="w-[16px] h-[16px] text-white stroke-[2.2]" />
@@ -140,8 +140,8 @@ export const Header: React.FC<HeaderProps> = () => {
           <div className="bg-white rounded-t-3xl p-6 shadow-2xl flex flex-col gap-6 animate-in slide-in-from-bottom duration-300 max-h-[85vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-gray-100 pb-4">
               <Image
-                src="/assets/images/logo/logo-black-full.png"
-                alt="Awara Banjara"
+                src="/assets/images/logo/logo.svg"
+                alt="Trail Explorers"
                 width={160}
                 height={32}
                 className="h-[32px] w-auto object-contain"

@@ -53,7 +53,7 @@ export default function PodcastPage() {
           <div className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 bg-[#d6ff3f] text-[#14140f] text-xs font-bold uppercase tracking-wider px-3.5 py-1 rounded-full mb-4">
               <Headphones className="w-3.5 h-3.5" />
-              <span>Awara Banjara Audio Dispatch</span>
+              <span>Trail Explorers Audio Dispatch</span>
             </span>
             <Heading level={1} className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
               The Himalayan Wanderer Podcast

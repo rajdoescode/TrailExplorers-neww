@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </Heading>
             <Paragraph className="text-white/80 text-base sm:text-lg leading-relaxed">
-              How Awara Banjara Adventure (OPC) Pvt. Ltd. collects, safeguards, and uses your personal details.
+              How Trail Explorers collects, safeguards, and uses your personal details.
             </Paragraph>
           </div>
         </Container>

@@ -33,7 +33,7 @@ export default function FounderPage() {
             <div className="relative w-full md:w-72 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-[#14140f] shadow-card shrink-0 mx-auto">
               <Image
                 src="/assets/images/about/founder-viru.jpg"
-                alt="Viru Thakur - Founder of Awara Banjara"
+                alt="Viru Thakur - Founder of Trail Explorers"
                 fill
                 className="object-cover"
               />
@@ -59,10 +59,10 @@ export default function FounderPage() {
           <div className="border-t border-[#f0f0eb] pt-10 flex flex-col gap-8">
             <div>
               <Heading level={3} className="text-2xl font-bold mb-3">
-                So… Why &ldquo;Awara Banjara&rdquo;?
+                So… Why &ldquo;Trail Explorers&rdquo;?
               </Heading>
               <p className="text-base text-[#6b6b63] leading-relaxed">
-                &ldquo;Awara&rdquo; means the one who wanders without a rigid itinerary; &ldquo;Banjara&rdquo; is the nomadic spirit who makes wherever they pitch their tent feel like home. We took two words often misunderstood in conventional society and turned them into our badge of honor. To be an Awara Banjara is to care more about the journey than the vanity of the destination.
+                To be a Trail Explorer is to wander beyond the well-trodden paths, embracing the nomadic spirit of the mountains where every trail feels like home. We turned this adventurous ethos into our badge of honor: caring more about genuine shared journeys and raw wilderness than the vanity of standard tourist itineraries.
               </p>
             </div>
 
@@ -72,7 +72,7 @@ export default function FounderPage() {
                 <span className="text-lg">Campfire Culture Over Corporate Tourism</span>
               </div>
               <p className="text-sm text-[#6b6b63] leading-relaxed">
-                Today, Awara Banjara has guided over 5,000 travellers and brought together an online tribe of 13,000+ souls. But our ethos has not shifted an inch: our groups remain small, our captains are certified mountain lovers, and when the campfire is lit at night in Spiti or Zanskar, every wanderer belongs.
+                Today, Trail Explorers has guided over 5,000 travellers and brought together an online tribe of 13,000+ souls. But our ethos has not shifted an inch: our groups remain small, our captains are certified mountain lovers, and when the campfire is lit at night in Spiti or Zanskar, every wanderer belongs.
               </p>
               <div className="pt-2">
                 <Button href="/community-trips" variant="primary">

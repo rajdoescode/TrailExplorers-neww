@@ -104,7 +104,7 @@ export default function PostcardsPage() {
 
             <div className="mt-4 text-sm text-[#14140f] leading-relaxed whitespace-pre-line border-t border-gray-100 pt-4">
               {activeStory.content ||
-                "A captivating field report documenting genuine high-altitude experiences across the Indian Himalayas. Awara Banjara champions conscious, slow-paced exploration and authentic human connection."}
+                "A captivating field report documenting genuine high-altitude experiences across the Indian Himalayas. Trail Explorers champions conscious, slow-paced exploration and authentic human connection."}
             </div>
 
             <div className="mt-6 flex justify-end">

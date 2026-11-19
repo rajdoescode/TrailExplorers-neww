@@ -40,7 +40,7 @@ export default function PaymentDetailsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm">
               <div className="bg-[#f6f6f1] p-4 rounded-xl border border-[#e2e2dc]">
                 <span className="text-xs font-bold text-[#6b6b63] uppercase tracking-wider block mb-1">Beneficiary Name</span>
-                <strong className="text-base font-extrabold text-[#14140f]">Awara Banjara Adventure (OPC) Pvt. Ltd.</strong>
+                <strong className="text-base font-extrabold text-[#14140f]">Trail Explorers</strong>
               </div>
 
               <div className="bg-[#f6f6f1] p-4 rounded-xl border border-[#e2e2dc]">
@@ -75,7 +75,7 @@ export default function PaymentDetailsPage() {
             <div className="bg-[#f6f6f1] p-6 rounded-2xl border border-[#e2e2dc] flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <span className="text-xs font-bold text-[#6b6b63] uppercase tracking-wider block mb-1">Verified UPI ID</span>
-                <strong className="text-lg sm:text-xl font-extrabold text-[#14140f] font-mono">awarabanjara@hdfcbank</strong>
+                <strong className="text-lg sm:text-xl font-extrabold text-[#14140f] font-mono">trailexplorers@hdfcbank</strong>
               </div>
               <div className="flex items-center gap-2 text-xs font-bold bg-[#14140f] text-[#d6ff3f] px-4 py-2 rounded-xl">
                 <ShieldCheck className="w-4 h-4 text-[#2fa84f]" />
@@ -88,7 +88,7 @@ export default function PaymentDetailsPage() {
           <div className="bg-[#fff9e6] rounded-2xl p-6 border border-[#ffe082] flex items-start gap-4">
             <AlertCircle className="w-5 h-5 text-[#f59e0b] shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-[#78350f] leading-relaxed">
-              <strong>Important Notice:</strong> After remitting your 10% token or balance transfer, kindly capture a screenshot of your payment receipt and share it via WhatsApp at <strong>+91 9103910523</strong> along with your Full Name and Booked Trip Title to receive your instant digital booking voucher.
+              <strong>Important Notice:</strong> After remitting your 10% token or balance transfer, kindly capture a screenshot of your payment receipt and share it via WhatsApp at <strong>+91 70166 40870</strong> along with your Full Name and Booked Trip Title to receive your instant digital booking voucher.
             </div>
           </div>
         </div>

@@ -52,10 +52,10 @@ export default function ContactPage() {
                 Registered Office
               </span>
               <h3 className="text-xl font-bold text-white mb-2">
-                Awara Banjara Adventure (OPC) Pvt. Ltd.
+                Trail Explorers
               </h3>
               <p className="text-xs text-white/70 leading-relaxed">
-                Government of India MSME Registered Tourism Enterprise &amp; Adventure Operator.
+                Registered Tourism Enterprise &amp; Adventure Expeditions Operator.
               </p>
             </div>
 
@@ -63,8 +63,8 @@ export default function ContactPage() {
               <div className="flex items-start gap-3.5">
                 <MapPin className="w-5 h-5 text-[#d6ff3f] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-white text-xs uppercase tracking-wider">Himalayan Base Office</strong>
-                  <span>Manali, Himachal Pradesh · Operations Desk: New Delhi, India</span>
+                  <strong className="block text-white text-xs uppercase tracking-wider">Office Address</strong>
+                  <span>01 Rachana Society, Opp. Residency Hotel, Deesa, Gujarat 385535, India</span>
                 </div>
               </div>
 
@@ -82,8 +82,8 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-[#d6ff3f] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-white text-xs uppercase tracking-wider">Official Email</strong>
-                  <a href="mailto:hello@awarabanjara.in" className="hover:text-[#d6ff3f] transition-colors block">
-                    hello@awarabanjara.in
+                  <a href="mailto:trailexplorers@gmail.com" className="hover:text-[#d6ff3f] transition-colors block">
+                    trailexplorers@gmail.com
                   </a>
                 </div>
               </div>

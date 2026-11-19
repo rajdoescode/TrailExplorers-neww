@@ -103,7 +103,7 @@ export const TrustBar: React.FC = () => {
         <div className="flex flex-nowrap sm:flex-wrap justify-center items-center gap-4 sm:gap-x-12 sm:gap-y-5 text-[14px] sm:text-[15px] font-semibold text-[#14140f] whitespace-nowrap mx-auto">
           {/* Stat 1: Instagram */}
           <a
-            href="https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA=="
+            href="https://www.instagram.com/trail_explorers_"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
