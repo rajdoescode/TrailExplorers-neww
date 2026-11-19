@@ -11,6 +11,9 @@ out/
 build/
 dist/
 
+# TypeScript build cache
+*.tsbuildinfo
+
 # Environment files
 .env*.local
 .env
@@ -33,3 +36,17 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
+
+# Raw scraped and audit reference files (not needed in production repo)
+/audit_html/
+/data_dump/
+/SAMPLE-SCREENSHOTS/
+/screenshots/
+/original_assets/
+/original_style.css
+/homepage.html
+/db-engine.js
+/audit_summary.json
+/*.mp4
+/*.webm
+/scratch/
