@@ -77,9 +77,9 @@ export const Footer: React.FC = () => {
                 <Image
                   src="/assets/images/logo/logo.svg"
                   alt="Trail Explorers"
-                  width={230}
-                  height={46}
-                  className="h-11 w-auto object-contain"
+                  width={180}
+                  height={44}
+                  className="h-[40px] sm:h-[44px] w-auto object-contain"
                 />
               </Link>
               <p>Curated journeys for curious minds. We handle the details; you make the memories.</p>

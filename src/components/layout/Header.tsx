@@ -34,6 +34,21 @@ export const Header: React.FC<HeaderProps> = () => {
     setSearchOpen(false);
   }, [pathname]);
 
+  // Lock body scroll and notify floating widgets to hide when menu/search is open
+  useEffect(() => {
+    if (mobileMenuOpen || searchOpen) {
+      document.body.classList.add("mobile-menu-open");
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.classList.remove("mobile-menu-open");
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen, searchOpen]);
+
   const navLinks = [
     { label: "Community Trips", href: "/community-trips" },
     { label: "Experiences", href: "/experiences" },
@@ -50,16 +65,16 @@ export const Header: React.FC<HeaderProps> = () => {
           isScrolled ? "shadow-[0_6px_20px_rgba(20,20,15,0.08)]" : "shadow-none"
         )}
       >
-        <div className="max-w-[1280px] mx-auto px-6 py-4 flex items-center justify-between gap-6">
+        <div className="max-w-[1280px] mx-auto px-6 py-3 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="logo inline-flex items-center shrink-0 transition-opacity hover:opacity-75">
             <Image
               src="/assets/images/logo/logo.svg"
               alt="Trail Explorers"
-              width={200}
-              height={40}
+              width={160}
+              height={38}
               priority
-              className="h-[40px] w-auto block object-contain"
+              className="h-[34px] sm:h-[38px] w-auto block object-contain"
             />
           </Link>
 
@@ -136,15 +151,15 @@ export const Header: React.FC<HeaderProps> = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden bg-black/60 backdrop-blur-xs flex flex-col justify-end">
+        <div className="fixed inset-0 z-[9999] lg:hidden bg-black/60 backdrop-blur-xs flex flex-col justify-end">
           <div className="bg-white rounded-t-3xl p-6 shadow-2xl flex flex-col gap-6 animate-in slide-in-from-bottom duration-300 max-h-[85vh] overflow-y-auto">
             <div className="flex items-center justify-between border-b border-gray-100 pb-4">
               <Image
                 src="/assets/images/logo/logo.svg"
                 alt="Trail Explorers"
-                width={160}
-                height={32}
-                className="h-[32px] w-auto object-contain"
+                width={120}
+                height={26}
+                className="h-[26px] w-auto object-contain"
               />
               <button
                 onClick={() => setMobileMenuOpen(false)}
@@ -187,7 +202,7 @@ export const Header: React.FC<HeaderProps> = () => {
 
       {/* Global Search Modal */}
       {searchOpen && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start justify-center pt-20 px-4">
+        <div className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-start justify-center pt-20 px-4">
           <div className="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             <div className="p-4 border-b border-gray-100 flex items-center gap-3">
               <Search className="w-5 h-5 text-gray-400 shrink-0 stroke-[2.2]" />
