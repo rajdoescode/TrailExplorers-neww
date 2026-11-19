@@ -1,23 +1,21 @@
 "use client";
 
 import React, { useState } from "react";
-import { formatPrice } from "@/lib/utils";
 
-interface BatchItem {
-  id?: string;
-  range?: string;
-  startDate?: string;
+export interface DepartureBatch {
+  id?: string | number;
+  range: string;
   status?: string;
   price?: string | number;
 }
 
-interface MonthDeparture {
+export interface DepartureMonth {
   month: string;
-  dates: BatchItem[];
+  dates: DepartureBatch[];
 }
 
 interface DepartureDatesSectionProps {
-  departureDates?: MonthDeparture[];
+  departureDates: DepartureMonth[];
   defaultPrice: string | number;
   onSelectBatchAndBook: (batchDate: string, price: string) => void;
 }
@@ -29,32 +27,35 @@ export function DepartureDatesSection({
 }: DepartureDatesSectionProps) {
   // Normalize batches
   const validMonths =
-    Array.isArray(departureDates) && departureDates.length > 0
+    departureDates && departureDates.length > 0
       ? departureDates
       : [
           {
-            month: "Upcoming Batches",
+            month: "Available Dates",
             dates: [
-              {
-                id: "b_req",
-                range: "On Request Departure Date",
-                status: "Available",
-                price: defaultPrice,
-              },
+              { id: "1", range: "On Request Departure Date", status: "Available", price: String(defaultPrice) },
             ],
           },
         ];
 
   const [activeMonthIdx, setActiveMonthIdx] = useState(0);
-  const activeMonth = validMonths[activeMonthIdx] || validMonths[0];
-
   const [selectedBatchIdx, setSelectedBatchIdx] = useState(0);
+
+  const activeMonth = validMonths[activeMonthIdx] || validMonths[0];
   const currentBatch = activeMonth?.dates?.[selectedBatchIdx] || activeMonth?.dates?.[0];
 
+  const formatPrice = (p: string | number) => {
+    if (!p) return "On Request";
+    const num = String(p).replace(/[^0-9]/g, "");
+    if (!num) return String(p);
+    return `₹${Number(num).toLocaleString("en-IN")}`;
+  };
+
   const handleBookBatch = () => {
-    const batchLabel = currentBatch?.range || "On Request Departure Date";
-    const batchPrice = currentBatch?.price ? String(currentBatch.price) : String(defaultPrice);
-    onSelectBatchAndBook(batchLabel, batchPrice);
+    if (currentBatch) {
+      const price = currentBatch.price ? String(currentBatch.price) : String(defaultPrice);
+      onSelectBatchAndBook(currentBatch.range, price);
+    }
   };
 
   return (
@@ -78,7 +79,7 @@ export function DepartureDatesSection({
                 }}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[#d6ff3f] text-[#14140f] border border-[#14140f] shadow-sm"
+                    ? "bg-[#d6ff3f] text-[#14140f] border-2 border-[#14140f] shadow-sm"
                     : "bg-[#f6f6f1] text-[#6b6b63] hover:text-[#14140f] hover:bg-[#e8e8e2] border border-[#e2e2dc]"
                 }`}
               >
@@ -90,39 +91,46 @@ export function DepartureDatesSection({
       )}
 
       {/* Date Batches List */}
-      <div className="flex flex-col gap-3 mb-6">
+      <div className="flex flex-col gap-2.5 mb-6">
         {activeMonth?.dates?.map((batch, idx) => {
           const isSelected = selectedBatchIdx === idx;
           const displayPrice = batch.price ? formatPrice(batch.price) : formatPrice(defaultPrice);
+          const isSoldOut = batch.status === "Sold Out";
+
+          const badgeBg =
+            batch.status === "Sold Out"
+              ? "bg-[#fee2e2] text-[#b91c1c]"
+              : batch.status === "Filling Fast"
+              ? "bg-[#fef3c7] text-[#d97706]"
+              : "bg-[#dcfce7] text-[#15803d]";
 
           return (
             <div
               key={batch.id || idx}
-              onClick={() => setSelectedBatchIdx(idx)}
-              className={`p-4 sm:p-5 rounded-xl border flex items-center justify-between gap-4 cursor-pointer transition-all ${
+              onClick={() => {
+                if (!isSoldOut) setSelectedBatchIdx(idx);
+              }}
+              className={`p-3.5 sm:p-4 rounded-xl flex items-center justify-between gap-4 transition-all ${
+                isSoldOut
+                  ? "opacity-60 cursor-not-allowed bg-white border border-[#e0e0d8]"
+                  : "cursor-pointer"
+              } ${
                 isSelected
-                  ? "border-[#14140f] bg-[#fafaf7] shadow-sm"
-                  : "border-[#e2e2dc] hover:border-[#14140f]/40 bg-white"
+                  ? "border-2 border-[#b8ff00] bg-[#fafef0] shadow-[0_0_12px_rgba(184,255,0,0.35)]"
+                  : "border border-[#e0e0d8] bg-white hover:border-[#14140f]/40"
               }`}
             >
               <div className="flex items-center gap-3">
-                <div
-                  className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    isSelected ? "border-[#14140f]" : "border-[#c4c4bc]"
-                  }`}
-                >
-                  {isSelected && <div className="w-2 h-2 rounded-full bg-[#14140f]" />}
-                </div>
-                <span className="font-extrabold text-sm sm:text-base text-[#14140f]">
+                <span className="font-bold text-sm sm:text-[15px] text-[#14140f]">
                   {batch.range}
                 </span>
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="px-2.5 py-1 rounded-full bg-[#e8f7ee] text-[#1b7e3f] text-xs font-bold">
+                <span className={`px-2.5 py-0.5 rounded-md text-[12px] font-bold ${badgeBg}`}>
                   {batch.status || "Available"}
                 </span>
-                <span className="font-extrabold text-sm sm:text-base text-[#14140f] font-heading">
+                <span className="font-extrabold text-sm sm:text-[15px] text-[#14140f] font-heading">
                   {displayPrice}
                 </span>
               </div>
@@ -135,7 +143,7 @@ export function DepartureDatesSection({
       <button
         type="button"
         onClick={handleBookBatch}
-        className="w-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-extrabold text-sm sm:text-base py-3.5 px-6 rounded-xl border border-[#14140f] shadow-lime-btn transition-all cursor-pointer font-heading text-center"
+        className="w-full bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] font-extrabold text-sm sm:text-base py-3.5 px-6 rounded-xl border-2 border-[#14140f] shadow-[0_6px_18px_rgba(214,255,63,0.45)] hover:-translate-y-0.5 transition-all cursor-pointer font-heading text-center"
       >
         BOOK NOW — {currentBatch?.range || "Select Date"}
       </button>

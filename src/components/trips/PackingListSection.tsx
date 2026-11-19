@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { PackingCategory } from "@/lib/trip-helpers";
-import { ChevronDown, ChevronUp, Check } from "lucide-react";
 
 interface PackingListSectionProps {
   categories: PackingCategory[];
@@ -11,17 +10,23 @@ interface PackingListSectionProps {
 
 export function PackingListSection({ categories, tripId }: PackingListSectionProps) {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-  const [expandedCategories, setExpandedCategories] = useState<Record<number, boolean>>({});
+  // Start with all categories collapsed by default, exactly like awarabanjara.in
+  const [collapsedCategories, setCollapsedCategories] = useState<Record<number, boolean>>({});
 
-  // Compute total items count
   const totalItemsCount = categories.reduce((sum, cat) => sum + cat.items.length, 0);
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount (using matching awara_packed_ prefix)
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(`packing_trip_${tripId}`);
+      const storageKey = `awara_packed_${tripId}`;
+      const stored = localStorage.getItem(storageKey);
       if (stored) {
-        setCheckedItems(JSON.parse(stored));
+        const keys: string[] = JSON.parse(stored);
+        const map: Record<string, boolean> = {};
+        keys.forEach((k) => {
+          map[k] = true;
+        });
+        setCheckedItems(map);
       }
     } catch (err) {
       console.error("Failed to load packing list state", err);
@@ -32,7 +37,9 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
     setCheckedItems((prev) => {
       const updated = { ...prev, [itemKey]: !prev[itemKey] };
       try {
-        localStorage.setItem(`packing_trip_${tripId}`, JSON.stringify(updated));
+        const storageKey = `awara_packed_${tripId}`;
+        const activeKeys = Object.keys(updated).filter((k) => updated[k]);
+        localStorage.setItem(storageKey, JSON.stringify(activeKeys));
       } catch (err) {
         console.error("Failed to save packing list state", err);
       }
@@ -41,151 +48,231 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
   };
 
   const toggleCategory = (idx: number) => {
-    setExpandedCategories((prev) => ({
+    setCollapsedCategories((prev) => ({
       ...prev,
       [idx]: !prev[idx],
     }));
   };
 
-  const areAllExpanded = categories.every((_, idx) => !!expandedCategories[idx]);
+  // Check if all are collapsed
+  const isAnyExpanded = categories.some((_, idx) => collapsedCategories[idx] === false);
 
   const toggleAll = () => {
-    if (areAllExpanded) {
-      setExpandedCategories({});
-    } else {
+    if (isAnyExpanded) {
+      // Collapse all
       const all: Record<number, boolean> = {};
       categories.forEach((_, idx) => {
-        all[idx] = true;
+        all[idx] = true; // true means collapsed
       });
-      setExpandedCategories(all);
+      setCollapsedCategories(all);
+    } else {
+      // Expand all
+      const all: Record<number, boolean> = {};
+      categories.forEach((_, idx) => {
+        all[idx] = false; // false means open
+      });
+      setCollapsedCategories(all);
     }
   };
 
-  // Count total checked items
+  const unpackAll = () => {
+    setCheckedItems({});
+    try {
+      localStorage.removeItem(`awara_packed_${tripId}`);
+    } catch {}
+  };
+
   const totalChecked = Object.values(checkedItems).filter(Boolean).length;
+  const progressRatio = totalItemsCount > 0 ? totalChecked / totalItemsCount : 0;
+  const isAllPacked = totalItemsCount > 0 && totalChecked === totalItemsCount;
 
   return (
-    <div id="what-to-pack" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+    <div
+      id="what-to-pack"
+      className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card packing-card"
+    >
       {/* Header Row */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#f0f0eb]">
+      <div className="flex items-start justify-between gap-4 mb-6">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-1">
             What to Pack
           </h2>
-          <p className="text-xs sm:text-sm text-[#6b6b63] mt-1">
+          <p className="text-xs sm:text-[13.5px] text-[#6b6b63] mb-3">
             Tick things off as they go in your bag. We&apos;ll remember your list on this device.
           </p>
           <button
             type="button"
             onClick={toggleAll}
-            className="mt-2.5 inline-flex items-center text-xs font-bold text-[#14140f] hover:text-black px-3 py-1.5 rounded-lg border border-[#e2e2dc] bg-[#fafaf7] hover:bg-[#f0f0ea] transition-all cursor-pointer"
+            className="inline-flex items-center text-xs font-bold text-[#14140f] px-3.5 py-1.5 rounded-lg border border-[#d4d4cb] bg-transparent hover:bg-[#f0f0eb] transition-all cursor-pointer"
           >
-            {areAllExpanded ? "Collapse All" : "Expand All"}
+            {isAnyExpanded ? "Collapse All" : "Expand All"}
           </button>
         </div>
 
-        {/* Packed Progress Badge */}
-        <div className="flex items-center gap-2 self-start sm:self-auto px-4 py-2 rounded-2xl border border-[#e2e2dc] bg-[#fafaf7] shadow-sm">
-          <span className="text-2xl" role="img" aria-label="Backpack">
+        {/* Circular Donut Progress Meter (Exact awarabanjara.in style) */}
+        <div
+          className={`shrink-0 w-[72px] h-[72px] sm:w-[76px] sm:h-[76px] rounded-full flex flex-col items-center justify-center transition-transform ${
+            isAllPacked ? "scale-105" : ""
+          }`}
+          style={{
+            background: `radial-gradient(closest-side, #ffffff 78%, transparent 80%), conic-gradient(#d6ff3f ${
+              progressRatio * 360
+            }deg, #ecece4 0)`,
+          }}
+          role="img"
+          aria-label={`${totalChecked} of ${totalItemsCount} items packed`}
+        >
+          <span className="text-[20px] sm:text-[22px] leading-none select-none" aria-hidden="true">
             🎒
           </span>
-          <div className="flex flex-col text-left">
-            <span className="text-xs text-[#6b6b63] font-semibold">Packed</span>
-            <span className="text-sm font-extrabold text-[#14140f]">
-              <strong className="text-[#2fa84f]">{totalChecked}</strong> / {totalItemsCount}
-            </span>
-          </div>
+          <span className="text-[11px] sm:text-[12px] text-[#6b6b63] font-semibold mt-0.5 leading-none">
+            <strong className="text-[#14140f] text-[13px] sm:text-[14px] font-extrabold">{totalChecked}</strong>
+            /{totalItemsCount}
+          </span>
         </div>
       </div>
 
-      {/* Categories Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+      {/* Categories Grid (Stitched Pouches) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-3">
         {categories.map((cat, catIdx) => {
-          const isExpanded = !!expandedCategories[catIdx];
-          const catCheckedCount = cat.items.filter((it) => !!checkedItems[`${catIdx}_${it.name}`]).length;
+          // If not in state, default to collapsed (true)
+          const isCollapsed = collapsedCategories[catIdx] !== false;
+          const groupCheckedCount = cat.items.filter((it) => !!checkedItems[`${cat.category}|${it.name}`.toLowerCase()]).length;
+          const isGroupComplete = cat.items.length > 0 && groupCheckedCount === cat.items.length;
 
           return (
             <div
               key={cat.category}
-              className="border border-[#e2e2dc] rounded-xl overflow-hidden transition-all bg-[#fafaf7]/50"
+              className={`relative bg-[#f6f6f1] rounded-[18px] p-4 pt-6 transition-all ${
+                isCollapsed ? "pb-4" : "pb-5"
+              }`}
             >
-              {/* Category Header Card */}
+              {/* Inner dashed stitching */}
+              <div
+                className="absolute inset-1.5 border-[1.5px] border-dashed border-[#d4d4cb] rounded-[13px] pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Floating Rotated Black Pill Tag */}
               <button
                 type="button"
                 onClick={() => toggleCategory(catIdx)}
-                className="w-full p-4 text-left flex items-center justify-between gap-3 hover:bg-[#f0f0ea] transition-colors cursor-pointer"
+                className="absolute -top-3 left-4 inline-flex items-center gap-1.5 bg-[#14140f] text-[#d6ff3f] text-[13px] font-bold px-3 py-1 rounded-full shadow-[0_4px_10px_rgba(20,20,15,0.15)] -rotate-2 hover:rotate-0 hover:-translate-y-0.5 transition-transform cursor-pointer select-none z-10"
+                aria-expanded={!isCollapsed}
               >
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg" aria-hidden="true">
-                      {cat.icon}
-                    </span>
-                    <span className="font-bold text-sm sm:text-base text-[#14140f]">
-                      {cat.category}
-                    </span>
-                    <span className="px-2 py-0.5 rounded-full bg-[#14140f] text-[#d6ff3f] text-[11px] font-extrabold">
-                      {cat.items.length}
-                    </span>
-                  </div>
-                  <span className="text-xs text-[#6b6b63] font-medium pl-7">
-                    {catCheckedCount} of {cat.items.length} packed
-                  </span>
-                </div>
-
-                <div className="shrink-0 text-[#6b6b63]">
-                  {isExpanded ? (
-                    <ChevronUp className="w-5 h-5 text-[#14140f]" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5" />
-                  )}
-                </div>
+                <span aria-hidden="true">{cat.icon}</span>
+                <span>{cat.category}</span>
+                <span className="bg-[#d6ff3f] text-[#14140f] rounded-full text-[11px] font-extrabold px-1.5 py-0 min-w-[18px] text-center">
+                  {cat.items.length}
+                </span>
+                {/* Chevron */}
+                <span
+                  className={`w-1.5 h-1.5 border-r-2 border-b-2 border-current transition-transform ml-0.5 ${
+                    isCollapsed ? "translate-y-[-1px] rotate-45" : "translate-y-[1px] -rotate-[135deg]"
+                  }`}
+                  aria-hidden="true"
+                />
               </button>
 
-              {/* Items List */}
-              {isExpanded && (
-                <div className="p-4 pt-2 bg-white border-t border-[#e2e2dc] flex flex-col gap-2.5">
+              {/* Summary shown when collapsed */}
+              {isCollapsed ? (
+                <div
+                  onClick={() => toggleCategory(catIdx)}
+                  className="mt-2 text-[13.5px] text-[#6b6b63] cursor-pointer hover:text-[#14140f] transition-colors select-none pl-1"
+                >
+                  {isGroupComplete ? (
+                    <span className="text-[#14140f] font-bold">
+                      <span className="text-[#a9cc2a]">✓ </span>
+                      {cat.items.length} of {cat.items.length} packed
+                    </span>
+                  ) : (
+                    <span>
+                      <strong className="text-[#14140f] font-semibold">{groupCheckedCount}</strong> of {cat.items.length} packed
+                    </span>
+                  )}
+                </div>
+              ) : (
+                /* Items List shown when expanded */
+                <ul className="mt-2 space-y-1 relative z-10">
                   {cat.items.map((it) => {
-                    const itemKey = `${catIdx}_${it.name}`;
-                    const isChecked = !!checkedItems[itemKey];
+                    const key = `${cat.category}|${it.name}`.toLowerCase();
+                    const isChecked = !!checkedItems[key];
 
                     return (
-                      <label
-                        key={it.name}
-                        onClick={() => toggleItem(itemKey)}
-                        className="flex items-start gap-3 p-2 rounded-lg hover:bg-[#fafaf7] transition-colors cursor-pointer group select-none"
-                      >
-                        <div
-                          className={`w-5 h-5 rounded-md border flex items-center justify-center shrink-0 mt-0.5 transition-all ${
-                            isChecked
-                              ? "bg-[#2fa84f] border-[#2fa84f] text-white"
-                              : "border-[#c4c4bc] bg-white group-hover:border-[#14140f]"
-                          }`}
+                      <li key={it.name}>
+                        <label
+                          onClick={() => toggleItem(key)}
+                          className="flex items-center gap-2.5 p-1.5 rounded-[10px] hover:bg-[rgba(214,255,63,0.22)] transition-colors cursor-pointer select-none group"
                         >
-                          {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                        </div>
-                        {it.icon && (
-                          <span className="text-sm shrink-0" aria-hidden="true">
-                            {it.icon}
+                          {/* Custom 20x20px Checkbox */}
+                          <div
+                            className={`w-5 h-5 rounded-[6px] border-2 border-[#14140f] flex items-center justify-center shrink-0 transition-colors ${
+                              isChecked ? "bg-[#d6ff3f]" : "bg-white"
+                            }`}
+                          >
+                            {isChecked && (
+                              <svg
+                                viewBox="0 0 24 24"
+                                className="w-3.5 h-3.5 stroke-[#14140f] fill-none stroke-[3] stroke-linecap-round stroke-linejoin-round"
+                              >
+                                <polyline points="20 6 9 17 4 12" />
+                              </svg>
+                            )}
+                          </div>
+
+                          {/* Item Icon */}
+                          <span
+                            className={`text-[17px] leading-none transition-all ${
+                              isChecked ? "scale-90 opacity-60 -rotate-6" : ""
+                            }`}
+                            aria-hidden="true"
+                          >
+                            {it.icon || "✨"}
                           </span>
-                        )}
-                        <span
-                          className={`text-xs sm:text-sm leading-relaxed transition-all ${
-                            isChecked
-                              ? "text-[#8e8e84] line-through"
-                              : "text-[#14140f] font-medium"
-                          }`}
-                        >
-                          {it.name}
-                        </span>
-                      </label>
+
+                          {/* Item Text */}
+                          <span
+                            className={`text-[14px] leading-tight transition-colors ${
+                              isChecked
+                                ? "text-[#9a9a90] line-through decoration-[#a9cc2a] decoration-2"
+                                : "text-[#33332c]"
+                            }`}
+                          >
+                            {it.name}
+                          </span>
+                        </label>
+                      </li>
                     );
                   })}
-                </div>
+                </ul>
               )}
             </div>
           );
         })}
       </div>
+
+      {/* Footer controls: All packed banner or Unpack all button */}
+      {(totalChecked > 0 || isAllPacked) && (
+        <div className="flex items-center justify-between gap-4 mt-6 pt-4 border-t border-[#f0f0eb]">
+          {isAllPacked ? (
+            <p className="text-[14px] font-bold text-[#14140f] bg-[#d6ff3f] px-3.5 py-1.5 rounded-full shadow-sm animate-pulse">
+              All packed. The mountains are waiting!
+            </p>
+          ) : (
+            <div />
+          )}
+
+          {totalChecked > 0 && (
+            <button
+              type="button"
+              onClick={unpackAll}
+              className="text-xs font-semibold text-[#6b6b63] hover:text-[#14140f] underline ml-auto cursor-pointer"
+            >
+              Unpack all
+            </button>
+          )}
+        </div>
+      )}
     </div>
   );
 }

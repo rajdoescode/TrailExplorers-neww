@@ -72,8 +72,7 @@ export default function TripDetailPage() {
   }, [trip]);
 
   // Interactive states
-  const [expandedDay, setExpandedDay] = useState<number | null>(1);
-  const [areAllDaysExpanded, setAreAllDaysExpanded] = useState(false);
+  const [openDays, setOpenDays] = useState<Record<number, boolean>>({ 1: true });
   const [isAboutExpanded, setIsAboutExpanded] = useState(false);
 
   // Selected package option
@@ -135,19 +134,26 @@ export default function TripDetailPage() {
     setIsBookModalOpen(true);
   };
 
-  // Toggle day accordion
+  // Toggle day accordion independently
   const toggleDay = (dayNum: number) => {
-    setExpandedDay(expandedDay === dayNum ? null : dayNum);
+    setOpenDays((prev) => ({
+      ...prev,
+      [dayNum]: !prev[dayNum],
+    }));
   };
+
+  const areAllDaysOpen = trip?.itinerary ? trip.itinerary.every((d) => !!openDays[d.day]) : false;
 
   // Toggle all days
   const toggleAllDays = () => {
-    if (areAllDaysExpanded) {
-      setExpandedDay(null);
-      setAreAllDaysExpanded(false);
+    if (areAllDaysOpen) {
+      setOpenDays({});
     } else {
-      setExpandedDay(-1); // -1 indicates all open
-      setAreAllDaysExpanded(true);
+      const all: Record<number, boolean> = {};
+      trip?.itinerary?.forEach((d) => {
+        all[d.day] = true;
+      });
+      setOpenDays(all);
     }
   };
 
@@ -306,49 +312,83 @@ export default function TripDetailPage() {
                   <button
                     type="button"
                     onClick={toggleAllDays}
-                    className="text-xs font-bold text-[#14140f] px-3 py-1.5 rounded-lg border border-[#e2e2dc] bg-[#fafaf7] hover:bg-[#f0f0ea] transition-all cursor-pointer"
+                    className="text-xs font-bold text-[#14140f] px-3.5 py-1.5 rounded-lg border border-[#d4d4cb] bg-transparent hover:bg-[#f0f0eb] transition-all cursor-pointer"
                   >
-                    {areAllDaysExpanded ? "Collapse All" : "Expand All"}
+                    {areAllDaysOpen ? "Collapse All" : "Expand All"}
                   </button>
                 </div>
 
                 <div className="flex flex-col gap-3">
                   {trip.itinerary.map((day) => {
-                    const isOpen = areAllDaysExpanded || expandedDay === day.day;
+                    const isOpen = !!openDays[day.day];
+                    const rawText = day.desc || day.description || "";
+                    const points =
+                      day.points && day.points.length > 0
+                        ? day.points
+                        : rawText
+                            .split(/\n+|\.\s+(?=[A-Z])/)
+                            .map((s: string) => s.trim().replace(/\.$/, ""))
+                            .filter((s: string) => s.length > 0);
+
                     return (
                       <div
                         key={day.day}
-                        className="border border-[#e2e2dc] rounded-xl overflow-hidden transition-all"
+                        className={`border-2 border-[#14140f] rounded-2xl overflow-hidden transition-all duration-200 ${
+                          isOpen
+                            ? "bg-[#f8ffe0] shadow-[0_6px_20px_rgba(214,255,63,0.35)]"
+                            : "bg-white hover:bg-[#fafaf7]"
+                        }`}
                       >
                         <button
                           type="button"
                           onClick={() => toggleDay(day.day)}
-                          className="w-full p-4 sm:p-5 text-left bg-[#fafaf7] hover:bg-[#f0f0ea] flex items-center justify-between gap-4 cursor-pointer transition-colors"
+                          className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-3.5 cursor-pointer"
                         >
-                          <div className="flex items-center gap-3">
-                            <span className="w-8 h-8 rounded-lg bg-[#14140f] text-[#d6ff3f] flex items-center justify-center font-extrabold text-xs shrink-0">
-                              D{day.day}
+                          <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
+                            <span className="shrink-0 px-3 py-1 border-2 border-[#14140f] rounded-lg bg-[#d6ff3f] text-[#14140f] text-xs sm:text-[13px] font-extrabold whitespace-nowrap shadow-xs">
+                              Day {day.day}
                             </span>
-                            <span className="font-bold text-xs sm:text-sm text-[#14140f]">
+                            <span className="font-bold text-sm sm:text-base text-[#14140f] truncate sm:whitespace-normal">
                               {day.title}
                             </span>
                           </div>
-                          {isOpen ? (
-                            <ChevronUp className="w-4 h-4 text-[#14140f] shrink-0" />
-                          ) : (
-                            <ChevronDown className="w-4 h-4 text-[#6b6b63] shrink-0" />
-                          )}
+
+                          {/* Square + / - toggle icon matching awarabanjara.in */}
+                          <div className="w-6 h-6 shrink-0 rounded-md border-2 border-[#14140f] flex items-center justify-center font-bold text-sm text-[#14140f] bg-transparent">
+                            {isOpen ? (
+                              <span className="w-2.5 h-0.5 bg-[#14140f]" />
+                            ) : (
+                              <span className="relative w-2.5 h-2.5 flex items-center justify-center">
+                                <span className="absolute w-2.5 h-0.5 bg-[#14140f]" />
+                                <span className="absolute h-2.5 w-0.5 bg-[#14140f]" />
+                              </span>
+                            )}
+                          </div>
                         </button>
 
                         {isOpen && (
-                          <div className="p-5 bg-white border-t border-[#e2e2dc] text-xs sm:text-sm text-[#3b3b33] leading-relaxed">
-                            <p className="mb-3">{day.desc || day.description}</p>
-                            <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#6b6b63] pt-3 border-t border-[#f0f0eb]">
-                              {day.distance && <span>🚗 Distance: {day.distance}</span>}
-                              {day.altitude && <span>⛰️ Altitude: {day.altitude}</span>}
-                              {day.stay && <span>🏡 Stay: {day.stay}</span>}
-                              {day.meals && <span>🍲 Meals: {day.meals}</span>}
-                            </div>
+                          <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[#33332c] leading-relaxed border-t border-[#14140f]/10">
+                            {points.length > 0 ? (
+                              <ul className="flex flex-col gap-2.5 pt-3">
+                                {points.map((pt: string, pIdx: number) => (
+                                  <li key={pIdx} className="flex items-start gap-3">
+                                    <span className="w-3.5 h-3.5 rounded-full border-[1.5px] border-[#14140f] bg-[radial-gradient(circle,#14140f_0_2.5px,#d6ff3f_3px)] shrink-0 mt-1" />
+                                    <span className="leading-relaxed">{pt}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="pt-2">{rawText}</p>
+                            )}
+
+                            {(day.distance || day.altitude || day.stay || day.meals) && (
+                              <div className="flex flex-wrap gap-4 text-xs font-semibold text-[#6b6b63] pt-4 mt-3 border-t border-[#14140f]/10">
+                                {day.distance && <span>🚗 Distance: {day.distance}</span>}
+                                {day.altitude && <span>⛰️ Altitude: {day.altitude}</span>}
+                                {day.stay && <span>🏡 Stay: {day.stay}</span>}
+                                {day.meals && <span>🍲 Meals: {day.meals}</span>}
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
@@ -423,12 +463,11 @@ export default function TripDetailPage() {
                 Package Options
               </h2>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="flex flex-wrap gap-3">
                 {(trip.package_options && trip.package_options.length > 0
                   ? trip.package_options
                   : [
-                      { title: "Quad Sharing", price: trip.price },
-                      { title: "Triple Sharing", price: trip.price },
+                      { title: "Triple/Quad Sharing", price: trip.price },
                     ]
                 ).map((pkg: any) => {
                   const isSelected = selectedPackage === pkg.title;
@@ -437,21 +476,14 @@ export default function TripDetailPage() {
                       key={pkg.title}
                       type="button"
                       onClick={() => handlePackageSelect(pkg.title, pkg.price)}
-                      className={`p-4 sm:p-5 rounded-xl border text-left transition-all cursor-pointer ${
+                      className={`px-6 py-3 rounded-2xl border-2 border-[#14140f] font-bold text-sm text-[#14140f] cursor-pointer transition-all leading-snug text-center ${
                         isSelected
-                          ? "bg-[#d6ff3f] border-[#14140f] shadow-lime-btn scale-[1.02]"
-                          : "bg-[#fafaf7] border-[#e2e2dc] hover:border-[#14140f]/40"
+                          ? "bg-[#d6ff3f] shadow-[0_4px_14px_rgba(214,255,63,0.4)] -translate-y-0.5"
+                          : "bg-white hover:bg-[#fafaf7] hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(0,0,0,0.1)]"
                       }`}
                     >
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs sm:text-sm font-bold text-[#14140f]">
-                          {pkg.title}
-                        </span>
-                        {isSelected && <CheckCircle2 className="w-4 h-4 text-[#14140f]" />}
-                      </div>
-                      <div className="text-lg sm:text-xl font-extrabold text-[#14140f] font-heading">
-                        {formatPrice(pkg.price)}
-                      </div>
+                      <div>{pkg.title}</div>
+                      <div className="text-base font-extrabold mt-0.5">{formatPrice(pkg.price)}</div>
                     </button>
                   );
                 })}
@@ -480,18 +512,18 @@ export default function TripDetailPage() {
 
           {/* Sticky Right Booking Sidebar (1 Column) */}
           <div className="sticky top-[135px] sm:top-[140px] flex flex-col gap-5 transition-all">
-            <aside className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-5">
-              <div>
-                <span className="text-xs text-[#6b6b63] font-medium block">
+            <aside className="bg-white rounded-3xl p-6 border-[1.5px] border-[#e8e8e2] shadow-[0_12px_32px_rgba(214,255,63,0.35)] flex flex-col gap-4">
+              <div className="text-left">
+                <span className="text-[13px] text-[#77776f] font-semibold block">
                   Starting From
                 </span>
                 <div className="flex items-baseline gap-2 mt-0.5">
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[#14140f] font-heading">
+                  <span className="text-3xl sm:text-[34px] font-extrabold text-[#14140f] font-heading leading-tight">
                     {formatPrice(selectedPrice)}
                   </span>
-                  <span className="text-xs text-[#6b6b63] font-medium">per person</span>
+                  <span className="text-[13px] text-[#77776f] font-medium">per person</span>
                 </div>
-                <span className="text-[11px] text-[#6b6b63] font-semibold block mt-0.5">
+                <span className="text-[13px] text-[#77776f] font-semibold block mt-0.5">
                   + 5% GST
                 </span>
               </div>
@@ -500,26 +532,25 @@ export default function TripDetailPage() {
               <button
                 type="button"
                 onClick={() => setIsBookModalOpen(true)}
-                className="w-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-extrabold text-base py-3.5 px-4 rounded-xl border border-[#14140f] shadow-lime-btn hover:shadow-lg transition-all cursor-pointer font-heading text-center"
+                className="w-full bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] font-extrabold text-base py-3.5 px-4 rounded-xl border-2 border-[#14140f] shadow-[0_6px_18px_rgba(214,255,63,0.45)] hover:-translate-y-0.5 transition-all cursor-pointer font-heading text-center"
               >
                 BOOK NOW
               </button>
 
               {/* Private Trip Option */}
-              <div className="pt-4 border-t border-[#f0f0eb] text-left">
-                <span className="text-xs font-bold text-[#14140f] block">
+              <div className="bg-[#f8f8f5] border-[1.5px] border-[#e8e8e2] rounded-2xl p-4 text-left">
+                <h4 className="text-sm font-bold text-[#14140f] mb-1">
                   Private Trip Available
-                </span>
-                <span className="text-[11px] text-[#6b6b63] block mt-0.5">
-                  Customised itinerary for groups of 4+ travelers.
-                </span>
-                <button
-                  type="button"
-                  onClick={() => setIsBookModalOpen(true)}
-                  className="mt-2.5 w-full py-2.5 px-3 rounded-xl border border-[#14140f] text-xs font-bold text-[#14140f] hover:bg-[#14140f] hover:text-[#d6ff3f] transition-all cursor-pointer text-center"
+                </h4>
+                <p className="text-[12.5px] text-[#66665c] leading-relaxed mb-3">
+                  Customized itinerary for groups of 4+ travelers.
+                </p>
+                <Link
+                  href="/plan-your-trip"
+                  className="inline-block bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] text-[13px] font-bold py-2 px-4 rounded-lg border-[1.5px] border-[#14140f] transition-all cursor-pointer text-center"
                 >
                   Chat with our Trip Planner
-                </button>
+                </Link>
               </div>
 
               {/* WhatsApp Us Button */}
@@ -527,27 +558,11 @@ export default function TripDetailPage() {
                 href={getWhatsAppBookingLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 px-3 rounded-xl border border-[#e2e2dc] text-xs font-bold text-[#14140f] flex items-center justify-center gap-2 hover:bg-[#fafaf7] transition-all"
+                className="w-full py-3 px-4 rounded-xl border-[1.5px] border-[#14140f] bg-white text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(214,255,63,0.3)] hover:-translate-y-0.5 transition-all"
               >
-                <MessageSquare className="w-4 h-4 text-[#25d366]" />
+                <MessageSquare className="w-5 h-5 text-[#25d366]" />
                 <span>WhatsApp Us</span>
               </a>
-
-              {/* Guarantee badges */}
-              <div className="flex flex-col gap-2.5 pt-4 border-t border-[#f0f0eb] text-xs text-[#6b6b63]">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
-                  <span>Lock seat with only 10% advance</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
-                  <span>Full refund up to 30 days before departure</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-[#2fa84f] shrink-0" />
-                  <span>Zero hidden costs or permit charges</span>
-                </div>
-              </div>
             </aside>
           </div>
         </div>

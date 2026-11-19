@@ -50,27 +50,28 @@ export function FaqsAccordion({ faqs }: FaqsAccordionProps) {
         <button
           type="button"
           onClick={toggleAll}
-          className="text-xs font-bold text-[#14140f] px-3 py-1.5 rounded-lg border border-[#e2e2dc] bg-[#fafaf7] hover:bg-[#f0f0ea] transition-all cursor-pointer"
+          className="text-xs font-bold text-[#14140f] px-3.5 py-1.5 rounded-lg border border-[#d4d4cb] bg-transparent hover:bg-[#f0f0eb] transition-all cursor-pointer"
         >
           {areAllExpanded ? "Collapse All" : "Expand All"}
         </button>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2.5">
         {displayedFaqs.map((faq, idx) => {
           const isOpen = !!openMap[idx];
           return (
             <div
               key={idx}
-              className="border border-[#e2e2dc] rounded-xl overflow-hidden transition-all"
+              className={`border-[1.5px] border-[#e8e8e2] rounded-xl overflow-hidden transition-all ${
+                isOpen ? "bg-[#f8f8f5]" : "bg-[#f8f8f5] hover:bg-[#f2f2ed]"
+              }`}
             >
               <button
                 type="button"
                 onClick={() => toggleFaq(idx)}
-                className="w-full p-4 sm:p-5 text-left bg-[#fafaf7] hover:bg-[#f0f0ea] flex items-center justify-between gap-4 cursor-pointer transition-colors"
+                className="w-full p-3.5 px-4 sm:px-5 text-left flex items-center justify-between gap-4 cursor-pointer transition-colors"
               >
-                <span className="font-extrabold text-xs sm:text-sm text-[#14140f] uppercase tracking-wide">
-                  {isOpen ? "- " : "+ "}
+                <span className="font-bold text-sm text-[#14140f] leading-snug">
                   {faq.question}
                 </span>
                 <span className="shrink-0 text-[#14140f]">
@@ -79,7 +80,7 @@ export function FaqsAccordion({ faqs }: FaqsAccordionProps) {
               </button>
 
               {isOpen && (
-                <div className="p-4 sm:p-5 bg-white border-t border-[#e2e2dc] text-xs sm:text-sm text-[#4a4a42] leading-relaxed">
+                <div className="px-4 pb-4 sm:px-5 sm:pb-5 text-[14px] text-[#55554d] leading-relaxed pt-1">
                   <p>{faq.answer}</p>
                 </div>
               )}
@@ -93,7 +94,7 @@ export function FaqsAccordion({ faqs }: FaqsAccordionProps) {
         <button
           type="button"
           onClick={() => setShowAll((prev) => !prev)}
-          className="mt-6 w-full py-3.5 px-4 text-center text-xs sm:text-sm font-bold text-[#14140f] rounded-xl border border-[#e2e2dc] bg-[#fafaf7] hover:bg-[#f0f0ea] transition-all cursor-pointer font-heading"
+          className="mt-4 w-full py-3 px-4 text-center text-sm font-bold text-[#14140f] rounded-xl border-[1.5px] border-dashed border-[#d4d4cb] bg-transparent hover:bg-[#f0f0eb] transition-all cursor-pointer"
         >
           {showAll ? "Show fewer questions" : `Show all ${faqs.length} questions`}
         </button>
