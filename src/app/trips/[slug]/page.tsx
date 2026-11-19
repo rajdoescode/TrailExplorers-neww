@@ -398,6 +398,25 @@ export default function TripDetailPage() {
               </div>
             )}
 
+            {/* Reserve Your Seat Banner (Matches live awarabanjara.in) */}
+            <div className="bg-[#d6ff3f] border-[2.5px] border-[#14140f] rounded-2xl sm:rounded-[20px] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_8px_24px_rgba(214,255,63,0.45)]">
+              <div>
+                <h3 className="text-xl sm:text-[22px] font-extrabold text-[#14140f] font-heading mb-1">
+                  Reserve your seat now!
+                </h3>
+                <p className="text-xs sm:text-sm text-[#22221b] font-medium">
+                  Limited seats per batch for an intimate group experience.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsBookModalOpen(true)}
+                className="shrink-0 bg-[#14140f] hover:bg-[#25251c] text-white font-bold text-sm sm:text-[15px] py-3 px-7 rounded-xl transition-all hover:-translate-y-0.5 cursor-pointer font-heading"
+              >
+                BOOK NOW
+              </button>
+            </div>
+
             {/* 7. Inclusions & Exclusions */}
             <div id="inclusions" className="scroll-mt-32 sm:scroll-mt-36 grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Inclusions */}
