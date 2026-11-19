@@ -65,7 +65,7 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
   const totalChecked = Object.values(checkedItems).filter(Boolean).length;
 
   return (
-    <div id="what-to-pack" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+    <div id="what-to-pack" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
       {/* Header Row */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#f0f0eb]">
         <div>

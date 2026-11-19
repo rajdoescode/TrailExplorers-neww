@@ -186,7 +186,7 @@ export default function TripDetailPage() {
           {/* Main Column (2 Columns) */}
           <div className="lg:col-span-2 flex flex-col gap-8">
             {/* 3. Title Card */}
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+            <div id="title-card" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card title-card">
               {/* Breadcrumb */}
               <nav className="flex items-center gap-1.5 text-xs text-[#6b6b63] font-medium mb-3">
                 <Link href="/" className="hover:text-[#14140f]">Home</Link>
@@ -256,7 +256,7 @@ export default function TripDetailPage() {
             {weather && <WeatherCard weather={weather} />}
 
             {/* 5. About This Trip */}
-            <div id="about" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+            <div id="about" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
               <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
                 About This Trip
               </h2>
@@ -293,7 +293,7 @@ export default function TripDetailPage() {
 
             {/* 6. Itinerary Accordion */}
             {trip.itinerary && trip.itinerary.length > 0 && (
-              <div id="itinerary" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+              <div id="itinerary" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading">
@@ -359,7 +359,7 @@ export default function TripDetailPage() {
             )}
 
             {/* 7. Inclusions & Exclusions */}
-            <div id="inclusions" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div id="inclusions" className="scroll-mt-32 sm:scroll-mt-36 grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Inclusions */}
               <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card">
                 <div className="flex items-center gap-2 mb-4 text-[#2fa84f] font-bold">
@@ -418,7 +418,7 @@ export default function TripDetailPage() {
             </div>
 
             {/* 8. Package Options */}
-            <div id="packages" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+            <div id="packages" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
               <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
                 Package Options
               </h2>
@@ -479,7 +479,7 @@ export default function TripDetailPage() {
           </div>
 
           {/* Sticky Right Booking Sidebar (1 Column) */}
-          <div className="sticky top-[90px] flex flex-col gap-5">
+          <div className="sticky top-[135px] sm:top-[140px] flex flex-col gap-5 transition-all">
             <aside className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card flex flex-col gap-5">
               <div>
                 <span className="text-xs text-[#6b6b63] font-medium block">

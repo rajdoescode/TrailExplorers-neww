@@ -58,7 +58,7 @@ export function DepartureDatesSection({
   };
 
   return (
-    <div id="departure-dates" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+    <div id="departure-dates" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
       <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
         Departure Dates
       </h2>

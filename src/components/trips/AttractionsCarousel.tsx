@@ -22,7 +22,7 @@ export function AttractionsCarousel({ attractions }: AttractionsCarouselProps) {
   };
 
   return (
-    <div id="attractions" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+    <div id="attractions" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
       {/* Header Row */}
       <div className="flex items-center justify-between gap-4 mb-6">
         <div>

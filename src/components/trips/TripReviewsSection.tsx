@@ -13,7 +13,7 @@ export function TripReviewsSection({ reviews, tripTitle }: TripReviewsSectionPro
   if (!reviews || reviews.length === 0) return null;
 
   return (
-    <div id="reviews" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+    <div id="reviews" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
       <div className="flex items-center justify-between gap-4 mb-6">
         <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading">
           Reviews
