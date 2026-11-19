@@ -106,6 +106,271 @@
   display: none !important;
 }
 
+/* =========================================================
+   AUTHENTIC 2-COLUMN BOOKING POPUP MODAL (awarabanjara.in)
+   ========================================================= */
+.share-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 18, 26, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.share-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-popup-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 840px;
+  width: 95%;
+  padding: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  transform: scale(0.92) translateY(15px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.share-modal-overlay.active .booking-popup-card {
+  transform: scale(1) translateY(0);
+}
+
+.booking-popup-hero {
+  position: relative;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+  overflow: hidden;
+}
+
+.booking-popup-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.75) 100%);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.booking-popup-hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.booking-popup-headline {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin: 0;
+}
+
+.booking-popup-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 16px;
+  border-radius: 14px;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+
+.booking-popup-form {
+  padding: 12px 12px 12px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.booking-popup-title {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.share-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #14140f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.share-modal-close:hover {
+  background: #f0f0eb;
+}
+
+.booking-field-group {
+  margin-bottom: 12px;
+}
+
+.booking-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-size: 14px;
+  color: #1e293b;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.booking-input:focus {
+  border-color: #d6ff3f;
+  box-shadow: 0 0 0 3px rgba(214, 255, 63, 0.35);
+}
+
+.phone-input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.phone-input-group:focus-within {
+  border-color: #d6ff3f;
+  box-shadow: 0 0 0 3px rgba(214, 255, 63, 0.35);
+}
+
+.country-code-tag {
+  padding: 14px 16px;
+  background: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  font-weight: 700;
+  font-size: 14px;
+  color: #475569;
+}
+
+.phone-input-group .booking-input {
+  border: none;
+  border-radius: 0;
+}
+
+.phone-input-group .booking-input:focus {
+  box-shadow: none;
+}
+
+.booking-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn-popup-submit {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: 2px solid #14140f;
+  background: #d6ff3f;
+  color: #14140f;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: var(--font-heading), sans-serif;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 20px rgba(214, 255, 63, 0.45);
+}
+
+.btn-popup-submit:hover {
+  background: #c7f22e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(214, 255, 63, 0.6);
+}
+
+.inquiry-success-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 28px;
+  max-width: 480px;
+  width: 92%;
+  padding: 36px 28px 28px 28px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transform: scale(0.92) translateY(15px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.share-modal-overlay.active .inquiry-success-card {
+  transform: scale(1) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .booking-popup-card {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    padding: 12px;
+    gap: 16px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .booking-popup-hero {
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .booking-popup-headline {
+    font-size: 24px;
+  }
+
+  .booking-popup-form {
+    padding: 0 8px 8px 8px;
+  }
+}
+
 /* Region Icons Section (Homepage) matching original site */
 .region-icons {
   padding-top: clamp(40px, 6vw, 72px);

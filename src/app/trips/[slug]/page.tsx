@@ -431,232 +431,211 @@ export default function TripDetailPage() {
         </button>
       </div>
 
-      {/* ============ PLAN YOUR NEXT TRIP MODAL (Matching awarabanjara.in) ============ */}
-      {isBookModalOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-5 bg-black/70 backdrop-blur-sm transition-all duration-300"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setIsBookModalOpen(false);
-          }}
-        >
-          <div className="relative bg-white rounded-[24px] sm:rounded-[28px] max-w-[800px] w-full shadow-[0_24px_60px_rgba(0,0,0,0.38)] overflow-hidden transition-all duration-300 animate-in fade-in zoom-in-95">
-            {/* Close Button Top Right */}
-            <button
-              type="button"
-              onClick={() => setIsBookModalOpen(false)}
-              className="absolute top-3.5 right-4 w-8 h-8 rounded-full flex items-center justify-center text-[#14140f] hover:bg-black/5 transition-all z-20 cursor-pointer"
-              aria-label="Close modal"
-            >
-              <X className="w-5 h-5 text-[#14140f]" />
-            </button>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 p-3 sm:p-4 gap-3 sm:gap-4 max-h-[90dvh] overflow-y-auto md:max-h-none md:overflow-visible">
-              {/* Left Column: Visual Trip Card */}
-              <div className="relative rounded-[18px] sm:rounded-[22px] overflow-hidden min-h-[260px] md:min-h-[440px] bg-[#14140f] flex flex-col justify-between p-5">
-                <Image
-                  src={trip.image_url || "/assets/images/home/hero-poster.jpg"}
-                  alt={trip.title}
-                  fill
-                  priority
-                  className="object-cover absolute inset-0"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/60 pointer-events-none" />
-
-                {/* Heading Top */}
-                <div className="relative z-10 text-left">
-                  <h2 className="text-white font-extrabold text-2xl sm:text-3xl leading-[1.15] font-heading drop-shadow-md">
-                    Escape the<br />ordinary.
-                  </h2>
-                </div>
-
-                {/* Bottom Selected Batch Box */}
-                <div className="relative z-10 bg-black/60 backdrop-blur-md rounded-2xl p-3.5 border border-white/15 text-white text-left shadow-lg">
-                  <span className="text-[10px] font-bold text-gray-300 uppercase tracking-wider block mb-1">
-                    SELECTED BATCH
-                  </span>
-                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-white">
-                    <span>🗓️</span>
-                    <span>{bookingForm.departureDate}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-gray-200 mt-1">
-                    <span>📦</span>
-                    <span>Triple/Quad Sharing</span>
-                  </div>
-                  <div className="text-[#d6ff3f] text-xl sm:text-2xl font-extrabold mt-1.5 font-heading">
-                    {formatPrice(trip.price)}
-                  </div>
-                </div>
+      {/* ============ PLAN YOUR NEXT TRIP MODAL (Exact awarabanjara.in Structure & Styling) ============ */}
+      <div
+        className={`share-modal-overlay ${isBookModalOpen ? "active" : ""}`}
+        id="bookingModal"
+        role="dialog"
+        aria-hidden={!isBookModalOpen}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setIsBookModalOpen(false);
+        }}
+      >
+        <div className="booking-popup-card">
+          {/* LEFT COLUMN: Dynamic Hero Card */}
+          <div
+            className="booking-popup-hero"
+            id="bookingPopupHero"
+            style={{
+              backgroundImage: `url(${trip.image_url || "/assets/images/home/hero-poster.jpg"})`,
+            }}
+          >
+            <h2 className="booking-popup-headline">
+              Escape the<br />ordinary.
+            </h2>
+            <div className="booking-popup-badge" id="bookingHeroBadge">
+              <div style={{ fontSize: "11px", opacity: 0.85, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.5px" }}>
+                Selected Batch
               </div>
-
-              {/* Right Column: Trip Planning Form */}
-              <div className="p-2 sm:p-3 md:py-2 md:pr-2 flex flex-col justify-center">
-                <div className="mb-3 text-left">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#14140f] font-heading">
-                    Plan Your Next Trip
-                  </h3>
-                </div>
-
-                <form
-                  onSubmit={async (e) => {
-                    e.preventDefault();
-                    setIsSubmitting(true);
-                    const inquiry = {
-                      id: "TRIP_INQ_" + Date.now(),
-                      trip_title: trip.title,
-                      trip_price: trip.price,
-                      customer_name: bookingForm.name,
-                      phone: bookingForm.phone,
-                      email: bookingForm.email,
-                      departure_date: bookingForm.departureDate,
-                      travelers: bookingForm.travelers,
-                      message: bookingForm.message,
-                      created_at: new Date().toISOString(),
-                    };
-                    try {
-                      const list = JSON.parse(localStorage.getItem("awara_inquiries") || "[]");
-                      list.push(inquiry);
-                      localStorage.setItem("awara_inquiries", JSON.stringify(list));
-                    } catch {}
-                    await new Promise((r) => setTimeout(r, 600));
-                    setIsSubmitting(false);
-                    setIsBookModalOpen(false);
-                    setIsSuccessOpen(true);
-                  }}
-                  className="flex flex-col gap-2.5 sm:gap-3 text-left"
-                >
-                  {/* Your Name */}
-                  <div>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Your Name"
-                      value={bookingForm.name}
-                      onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
-                      className="w-full border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-[#14140f] bg-white outline-none placeholder:text-gray-400 focus:border-[#14140f] transition-all"
-                    />
-                  </div>
-
-                  {/* Mobile No. */}
-                  <div className="flex items-center border border-[#e2e2dc] rounded-xl overflow-hidden focus-within:border-[#14140f] transition-all bg-white">
-                    <span className="px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-gray-700 bg-[#f8f8f5] border-r border-[#e2e2dc] shrink-0">
-                      +91
-                    </span>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="Mobile No."
-                      value={bookingForm.phone}
-                      onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-[#14140f] placeholder:text-gray-400 outline-none bg-transparent"
-                    />
-                  </div>
-
-                  {/* Email (optional) */}
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Email (optional)"
-                      value={bookingForm.email}
-                      onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
-                      className="w-full border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm text-[#14140f] bg-white outline-none placeholder:text-gray-400 focus:border-[#14140f] transition-all"
-                    />
-                  </div>
-
-                  {/* Date & Travelers Count */}
-                  <div className="grid grid-cols-[1fr_88px] gap-2">
-                    <input
-                      type="text"
-                      readOnly
-                      value={bookingForm.departureDate}
-                      className="w-full bg-[#f8f8f5] border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-[#14140f] outline-none"
-                    />
-                    <div className="flex items-center justify-between border border-[#e2e2dc] rounded-xl px-2.5 py-2 bg-white">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setBookingForm({
-                            ...bookingForm,
-                            travelers: Math.max(1, bookingForm.travelers - 1),
-                          })
-                        }
-                        className="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-black font-bold text-base cursor-pointer select-none"
-                      >
-                        -
-                      </button>
-                      <span className="font-bold text-xs sm:text-sm text-[#14140f]">
-                        {bookingForm.travelers}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setBookingForm({
-                            ...bookingForm,
-                            travelers: bookingForm.travelers + 1,
-                          })
-                        }
-                        className="w-6 h-6 flex items-center justify-center text-gray-500 hover:text-black font-bold text-base cursor-pointer select-none"
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Message (optional) */}
-                  <div>
-                    <textarea
-                      rows={2}
-                      placeholder="Message (optional)"
-                      value={bookingForm.message}
-                      onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
-                      className="w-full border border-[#e2e2dc] rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-[#14140f] bg-white outline-none placeholder:text-gray-400 focus:border-[#14140f] resize-none transition-all"
-                    />
-                  </div>
-
-                  {/* Connect with Expert Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-[#d6ff3f] text-[#14140f] font-extrabold text-sm sm:text-base py-3 sm:py-3.5 rounded-xl border border-[#14140f] shadow-lime-btn hover:bg-[#ccff00] hover:shadow-lg transition-all cursor-pointer flex items-center justify-center font-heading mt-1"
-                  >
-                    {isSubmitting ? "Connecting..." : "Connect with Expert"}
-                  </button>
-                </form>
+              <div id="bookingSelectedBatch" style={{ fontSize: "14px", fontWeight: 800, marginTop: "2px" }}>
+                🗓️ On Request Departure Date
+              </div>
+              <div id="bookingSelectedPackage" style={{ fontSize: "12px", fontWeight: 700, marginTop: "2px", opacity: 0.9 }}>
+                📦 Triple/Quad Sharing
+              </div>
+              <div id="bookingSelectedPrice" style={{ fontSize: "17px", fontWeight: 800, color: "#d6ff3f", marginTop: "3px" }}>
+                {formatPrice(trip.price)}
               </div>
             </div>
           </div>
-        </div>
-      )}
 
-      {/* ============ INQUIRY SUCCESS CONFIRMATION MODAL ============ */}
-      {isSuccessOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-[999999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-all duration-200"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setIsSuccessOpen(false);
-          }}
-        >
-          <div className="relative bg-white rounded-[28px] max-w-[460px] w-[92%] p-7 sm:p-9 text-center shadow-2xl overflow-hidden animate-in fade-in zoom-in-95">
-            <div className="text-[52px] mb-3 select-none">🎉</div>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-[#14140f] mb-2 font-heading">
-              Thank You for Contacting!
-            </h3>
-            <p className="text-xs sm:text-sm text-[#6b6b63] leading-relaxed mb-6 font-medium">
-              We have received your booking inquiry for <strong>{trip.title}</strong>. Our Himalayan expedition specialist will reach out to you shortly via WhatsApp / call.
-            </p>
-            <button
-              type="button"
-              onClick={() => setIsSuccessOpen(false)}
-              className="w-full sm:w-auto px-8 py-3 font-extrabold cursor-pointer rounded-xl bg-[#d6ff3f] text-[#14140f] border border-[#14140f] hover:bg-[#ccff00] transition-all font-heading"
+          {/* RIGHT COLUMN: Form Inputs */}
+          <div className="booking-popup-form">
+            <div className="booking-popup-header">
+              <h3 className="booking-popup-title">Plan Your Next Trip</h3>
+              <button
+                type="button"
+                className="share-modal-close"
+                id="closeBookingModal"
+                aria-label="Close modal"
+                onClick={() => setIsBookModalOpen(false)}
+              >
+                ✕
+              </button>
+            </div>
+
+            <form
+              id="bookingForm"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setIsSubmitting(true);
+                const inquiry = {
+                  id: "TRIP_INQ_" + Date.now(),
+                  trip_title: trip.title,
+                  trip_price: trip.price,
+                  customer_name: bookingForm.name,
+                  phone: bookingForm.phone,
+                  email: bookingForm.email,
+                  departure_date: bookingForm.departureDate,
+                  travelers: bookingForm.travelers,
+                  message: bookingForm.message,
+                  created_at: new Date().toISOString(),
+                };
+                try {
+                  const list = JSON.parse(localStorage.getItem("awara_inquiries") || "[]");
+                  list.push(inquiry);
+                  localStorage.setItem("awara_inquiries", JSON.stringify(list));
+                } catch {}
+                await new Promise((r) => setTimeout(r, 600));
+                setIsSubmitting(false);
+                setIsBookModalOpen(false);
+                setIsSuccessOpen(true);
+              }}
+              style={{ display: "flex", flexDirection: "column", gap: "12px" }}
             >
-              OK, GOT IT
-            </button>
+              <div className="booking-field-group">
+                <input
+                  type="text"
+                  id="custName"
+                  className="booking-input"
+                  required
+                  placeholder="Your Name"
+                  value={bookingForm.name}
+                  onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
+                />
+              </div>
+
+              <div className="booking-field-group">
+                <div className="phone-input-group">
+                  <span className="country-code-tag">+91</span>
+                  <input
+                    type="tel"
+                    id="custPhone"
+                    className="booking-input"
+                    required
+                    placeholder="Mobile No."
+                    value={bookingForm.phone}
+                    onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                  />
+                </div>
+              </div>
+
+              <div className="booking-field-group">
+                <input
+                  type="email"
+                  id="custEmail"
+                  className="booking-input"
+                  placeholder="Email (optional)"
+                  value={bookingForm.email}
+                  onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
+                />
+              </div>
+
+              <div className="booking-grid-2 booking-field-group">
+                <div>
+                  <input
+                    type="text"
+                    id="custDateDisplay"
+                    className="booking-input"
+                    readOnly
+                    value="On Request Departure Date"
+                    style={{ background: "#f8fafc", fontWeight: 700 }}
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    id="custTravelers"
+                    className="booking-input"
+                    min={1}
+                    max={20}
+                    value={bookingForm.travelers}
+                    onChange={(e) =>
+                      setBookingForm({
+                        ...bookingForm,
+                        travelers: parseInt(e.target.value) || 1,
+                      })
+                    }
+                    placeholder="No. of Travelers"
+                    title="Number of Travelers"
+                  />
+                </div>
+              </div>
+
+              <div className="booking-field-group">
+                <textarea
+                  id="custRequests"
+                  className="booking-input"
+                  rows={3}
+                  placeholder="Message (optional)"
+                  style={{ resize: "none" }}
+                  value={bookingForm.message}
+                  onChange={(e) => setBookingForm({ ...bookingForm, message: e.target.value })}
+                />
+              </div>
+
+              <button
+                type="submit"
+                id="submitBookingBtn"
+                className="btn-popup-submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Connecting..." : "Connect with Expert"}
+              </button>
+            </form>
           </div>
         </div>
-      )}
+      </div>
+
+      {/* ============ INQUIRY SUCCESS CONFIRMATION MODAL ============ */}
+      <div
+        className={`share-modal-overlay ${isSuccessOpen ? "active" : ""}`}
+        id="inquirySuccessModal"
+        role="dialog"
+        aria-hidden={!isSuccessOpen}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setIsSuccessOpen(false);
+        }}
+      >
+        <div className="inquiry-success-card">
+          <div style={{ fontSize: "54px", marginBottom: "12px" }}>🎉</div>
+          <h3 style={{ fontSize: "24px", fontWeight: 800, color: "#0f172a", marginBottom: "12px", letterSpacing: "-0.3px", fontFamily: "var(--font-heading)" }}>
+            Thank You for Contacting!
+          </h3>
+          <p style={{ fontSize: "15px", color: "#475569", lineHeight: 1.6, marginBottom: "24px", fontWeight: 500 }}>
+            Thank you for contacting, you will get a call back soon from our expert with your itinerary for <strong>{trip.title}</strong>.
+          </p>
+          <button
+            type="button"
+            id="closeSuccessModalBtn"
+            className="btn-popup-submit"
+            style={{ marginTop: 0 }}
+            onClick={() => setIsSuccessOpen(false)}
+          >
+            OK, GOT IT
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
