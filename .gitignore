@@ -37,16 +37,10 @@ Thumbs.db
 *.njsproj
 *.sln
 
-# Raw scraped and audit reference files (not needed in production repo)
-/audit_html/
-/data_dump/
-/SAMPLE-SCREENSHOTS/
-/screenshots/
-/original_assets/
-/original_style.css
-/homepage.html
-/db-engine.js
-/audit_summary.json
+# Dedicated local reference & audit backup archive (safe locally, not pushed to repo)
+/reference-archive/
+
+# Temporary video duplicates & scratch
 /*.mp4
 /*.webm
 /scratch/
