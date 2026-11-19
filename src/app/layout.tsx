@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="overflow-x-clip max-w-full">
+    <html lang="en" className="overflow-x-clip max-w-full" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -60,7 +60,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-clip max-w-full">
+      <body
+        className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-clip max-w-full"
+        suppressHydrationWarning
+      >
         <Header />
         <main className="flex-1 w-full">{children}</main>
         <Footer />

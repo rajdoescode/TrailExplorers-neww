@@ -146,7 +146,7 @@ export default function TripDetailPage() {
   };
 
   const getWhatsAppBookingLink = () => {
-    const text = `Hi Awara Banjara! I would like to inquire about booking: "${trip.title}" (${trip.duration}). Selected Package: ${selectedPackage} (${formatPrice(selectedPrice)}). Batch: ${selectedBatchDate}. Please share seat availability.`;
+    const text = `Hi Trail Explorers! I would like to inquire about booking: "${trip.title}" (${trip.duration}). Selected Package: ${selectedPackage} (${formatPrice(selectedPrice)}). Batch: ${selectedBatchDate}. Please share seat availability.`;
     return `https://wa.me/${SITE_CONFIG.whatsapp_number.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(text)}`;
   };
 
@@ -267,7 +267,7 @@ export default function TripDetailPage() {
                   />
                 ) : (
                   <p>
-                    An extraordinary Himalayan journey meticulously crafted by Awara Banjara, designed to take you far beyond the ordinary tourist trails. This exclusive expedition is a perfect blend of rich cultural heritage, adrenaline-pumping high-altitude drives, and soul-soothing mountain vistas. Travel with seasoned mountain drivers, certified expedition leaders, and a community of like-minded explorers.
+                    An extraordinary Himalayan journey meticulously crafted by Trail Explorers, designed to take you far beyond the ordinary tourist trails. This exclusive expedition is a perfect blend of rich cultural heritage, adrenaline-pumping high-altitude drives, and soul-soothing mountain vistas. Travel with seasoned mountain drivers, certified expedition leaders, and a community of like-minded explorers.
                   </p>
                 )}
 
@@ -341,7 +341,7 @@ export default function TripDetailPage() {
                             </span>
                           </div>
 
-                          {/* Square + / - toggle icon matching awarabanjara.in */}
+                          {/* Square + / - toggle icon matching trailexplorers.in */}
                           <div className="w-6 h-6 shrink-0 rounded-md border-2 border-[#14140f] flex items-center justify-center font-bold text-sm text-[#14140f] bg-transparent">
                             {isOpen ? (
                               <span className="w-2.5 h-0.5 bg-[#14140f]" />
@@ -386,7 +386,7 @@ export default function TripDetailPage() {
               </div>
             )}
 
-            {/* Reserve Your Seat Banner (Matches live awarabanjara.in) */}
+            {/* Reserve Your Seat Banner (Matches live trailexplorers.in) */}
             <div className="bg-[#d6ff3f] border-[2.5px] border-[#14140f] rounded-2xl sm:rounded-[20px] p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-[0_8px_24px_rgba(214,255,63,0.45)]">
               <div>
                 <h3 className="text-xl sm:text-[22px] font-extrabold text-[#14140f] font-heading mb-1">
@@ -631,7 +631,7 @@ export default function TripDetailPage() {
         </button>
       </div>
 
-      {/* 16. PLAN YOUR NEXT TRIP MODAL (Exact awarabanjara.in 2-Column Structure) */}
+      {/* 16. PLAN YOUR NEXT TRIP MODAL (Exact trailexplorers.in 2-Column Structure) */}
       <div
         className={`share-modal-overlay ${isBookModalOpen ? "active" : ""}`}
         id="bookingModal"

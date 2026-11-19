@@ -50,7 +50,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
             </h1>
             <p>
               This page doesn&apos;t exist. Maybe the link is old, or the road got washed out.
-              Even the best banjaras take a wrong turn.
+              Even the best explorers take a wrong turn.
             </p>
             {displayPath && (
               <p className="nf-missing mt-2">
@@ -130,7 +130,7 @@ export const NotFoundView: React.FC<NotFoundViewProps> = ({ customPath }) => {
             <span>Private, group and educational trips.</span>
           </Link>
           <a
-            href="https://wa.me/919103910523"
+            href="https://wa.me/917016640870"
             target="_blank"
             rel="noopener noreferrer"
             className="nf-link nf-link-wa"

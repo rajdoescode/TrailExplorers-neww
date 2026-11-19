@@ -1,6 +1,6 @@
-# AWWARA BANJARA – DESIGN SYSTEM SPECIFICATION
+# TRAIL EXPLORERS – DESIGN SYSTEM SPECIFICATION
 
-> **Source:** Extracted directly from `assets/css/style.css` and live production DOM inspection of `awarabanjara.in`.
+> **Source:** Extracted directly from `assets/css/style.css` and live production DOM inspection of `trailexplorers.in`.
 
 ---
 

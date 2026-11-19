@@ -1,7 +1,7 @@
-# AWWARA BANJARA – COMPLETE WEBSITE AUDIT
+# TRAIL EXPLORERS – COMPLETE WEBSITE AUDIT
 
 > **Audit Date:** November 2026  
-> **Reference Website:** [https://awarabanjara.in/](https://awarabanjara.in/)  
+> **Reference Website:** [https://trailexplorers.in/](https://trailexplorers.in/)  
 > **Auditor:** Antigravity AI Engineering Team  
 > **Target Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React  
 
@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary & Site Architecture
 
-Awara Banjara (`awarabanjara.in`) is an experiential youth travel community and adventure travel company specializing in Himalayan group expeditions, motorbike tours, festival journeys, and custom offbeat trips across Ladakh, Spiti Valley, Himachal Pradesh, Kashmir, Uttarakhand, and Northeast India.
+Trail Explorers (`trailexplorers.in`) is an experiential youth travel community and adventure travel company specializing in Himalayan group expeditions, motorbike tours, festival journeys, and custom offbeat trips across Ladakh, Spiti Valley, Himachal Pradesh, Kashmir, Uttarakhand, and Northeast India.
 
 The website is architected with a distinctive modern high-contrast aesthetic:
 - **Base Canvas:** Clean white (`#ffffff`) and soft off-white muted surfaces (`#f6f6f1`).
@@ -61,7 +61,7 @@ The website is architected with a distinctive modern high-contrast aesthetic:
   4. `About Us` (`/about`)
   5. `Postcards` (`/postcards`)
 - **Action Buttons in Header:**
-  - Phone Icon / Call Action: Pill button linking to `tel:+919103910523`
+  - Phone Icon / Call Action: Pill button linking to `tel:+917016640870`
   - Search trigger: Opens full-text search drawer for trips and destinations
 - **Mobile Navigation:**
   - Hamburger toggle icon (24×24px).
@@ -71,16 +71,16 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 - **Background:** Dark charcoal black (`#14140f`) with white text (`#ffffff`) and muted gray secondary links (`#a0a09a`).
 - **Layout:** 4-Column responsive grid:
-  - **Column 1 (Brand):** Awara Banjara full logo, tagline "Made by wanderers, for wanderers", Registered Entity: *Awara Banjara Adventure (OPC) Pvt. Ltd.*, Government Registered MSME & Tourism Recognized.
+  - **Column 1 (Brand):** Trail Explorers full logo, tagline "Made by wanderers, for wanderers", Registered Entity: *Trail Explorers Adventure (OPC) Pvt. Ltd.*, Government Registered MSME & Tourism Recognized.
   - **Column 2 (Quick Links):** Community Trips, Experiences, Group Trips, Educational Trips, Winter Spiti.
   - **Column 3 (Destinations):** Ladakh, Spiti, Himachal, Kashmir, Uttarakhand.
   - **Column 4 (Company & Legal):** About Us, Founder's Story, Postcards, Reviews, Careers, Contact Us, Booking T&C, Cancellation Policy, Privacy Policy, Payment Details.
 - **Footer Bottom Bar:**
-  - Direct Phone: `+91 9103910523`
-  - WhatsApp: `+91 9103910523`
-  - Email: `hello@awarabanjara.in`
-  - Social Links: Instagram (`@awarabanjaracommunity`), YouTube, Facebook, Google Business
-  - Copyright line: `© 2026 Awara Banjara Adventure (OPC) Pvt. Ltd. All rights reserved.`
+  - Direct Phone: `+91 7016640870`
+  - WhatsApp: `+91 7016640870`
+  - Email: `hello@trailexplorers.in`
+  - Social Links: Instagram (`@trailexplorerscommunity`), YouTube, Facebook, Google Business
+  - Copyright line: `© 2026 Trail Explorers Adventure (OPC) Pvt. Ltd. All rights reserved.`
 
 ---
 
@@ -88,9 +88,9 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 1: Home (`/`)
 
-- **URL:** `https://awarabanjara.in/`
-- **Page Title:** `Awara Banjara — Himalayan Tourism & Youth Group Trips in India`
-- **Meta Description:** `Awara Banjara — India's premier youth travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and women-only travel. Curated group expeditions for adventurous souls.`
+- **URL:** `https://trailexplorers.in/`
+- **Page Title:** `Trail Explorers — Himalayan Tourism & Youth Group Trips in India`
+- **Meta Description:** `Trail Explorers — India's premier youth travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and women-only travel. Curated group expeditions for adventurous souls.`
 - **Hero Section:**
   - **Height:** Minimum 560px (responsive up to 85vh on desktop).
   - **Background Media:** Autoplaying muted looping video (`assets/videos/hero-loop.mp4` / `hero-loop.webm`) with high-res poster fallback (`assets/images/home/hero-poster.jpg`).
@@ -166,8 +166,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 2: Community Trips (`/community-trips`)
 
-- **URL:** `https://awarabanjara.in/community-trips`
-- **Page Title:** `Community Trips — Small-Group Himalayan Journeys | Awara Banjara`
+- **URL:** `https://trailexplorers.in/community-trips`
+- **Page Title:** `Community Trips — Small-Group Himalayan Journeys | Trail Explorers`
 - **Hero:**
   - Title: `Community Trips`
   - Subtitle: `Travel with a curated circle of wanderers. Handpicked small groups, certified mountain captains, authentic homestays.`
@@ -186,8 +186,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 3: Experiences (`/experiences`)
 
-- **URL:** `https://awarabanjara.in/experiences`
-- **Page Title:** `Travel Experiences: Festivals & Himalayan Moments | Awara Banjara`
+- **URL:** `https://trailexplorers.in/experiences`
+- **Page Title:** `Travel Experiences: Festivals & Himalayan Moments | Trail Explorers`
 - **Hero:**
   - Title: `Experiences`
   - Subtitle: `Beyond sightseeing. Immerse yourself in Himalayan snow trails, tribal music festivals, ancient monasteries, and high-altitude starlit skies.`
@@ -198,8 +198,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 4: Tour Packages (`/tour-packages`)
 
-- **URL:** `https://awarabanjara.in/tour-packages`
-- **Page Title:** `Himalayan Tour Packages & Youth Group Trips — Awara Banjara`
+- **URL:** `https://trailexplorers.in/tour-packages`
+- **Page Title:** `Himalayan Tour Packages & Youth Group Trips — Trail Explorers`
 - **Structure:**
   - Comprehensive catalog organized by category:
     - Regional Group Tours (Spiti, Ladakh, Kashmir, Himachal)
@@ -211,8 +211,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 5: Winter Spiti (`/winter-spiti`)
 
-- **URL:** `https://awarabanjara.in/winter-spiti`
-- **Page Title:** `Winter Spiti Trip 2026–27: Group Tours from Delhi | Awara Banjara`
+- **URL:** `https://trailexplorers.in/winter-spiti`
+- **Page Title:** `Winter Spiti Trip 2026–27: Group Tours from Delhi | Trail Explorers`
 - **Key Sections:**
   - High-impact snowy hero banner with live status badge ("WINTER SEASON OPEN").
   - Month-by-month breakdown (December: First Snow, January: Frozen Pin River & Snow Leopards, February: Deep Winter & Frozen Waterfalls, March: Golden Sunlight on Glaciers).
@@ -224,8 +224,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 6: Plan Your Trip (`/plan-your-trip`)
 
-- **URL:** `https://awarabanjara.in/plan-your-trip`
-- **Page Title:** `Plan Your Himalayan Trip — Build a Private Itinerary | Awara Banjara`
+- **URL:** `https://trailexplorers.in/plan-your-trip`
+- **Page Title:** `Plan Your Himalayan Trip — Build a Private Itinerary | Trail Explorers`
 - **Interactive Multi-Step Form:**
   - **Step 1:** Choose Destination (Spiti, Ladakh, Himachal, Kashmir, Uttarakhand, Northeast, Custom).
   - **Step 2:** Trip Type (Solo, Couple / Honeymoon, Friends Group, Family, Corporate).
@@ -238,8 +238,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 7: About Us (`/about`)
 
-- **URL:** `https://awarabanjara.in/about`
-- **Page Title:** `About Awara Banjara — A Himalayan Travel Community`
+- **URL:** `https://trailexplorers.in/about`
+- **Page Title:** `About Trail Explorers — A Himalayan Travel Community`
 - **Sections:**
   - **Hero:** "Locals, Not Outsiders"
   - **Story:** Raised in the Himachal valleys, building sustainable mountain tourism that empowers native village communities.
@@ -250,24 +250,24 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 8: Founder's Story (`/founder`)
 
-- **URL:** `https://awarabanjara.in/founder`
-- **Page Title:** `Founder's Story — Viru Thakur | Awara Banjara`
+- **URL:** `https://trailexplorers.in/founder`
+- **Page Title:** `Founder's Story — Viru Thakur | Trail Explorers`
 - **Content:**
   - H1: `Beyond Maps & Boundaries, in Search of Our Tribe`
-  - Narrative by Viru Thakur detailing the inception of Awara Banjara from solo Himalayan backpacking to building a 13,000+ member adventure tribe.
+  - Narrative by Viru Thakur detailing the inception of Trail Explorers from solo Himalayan backpacking to building a 13,000+ member adventure tribe.
   - Philosophy of campfire brotherhood, raw roads, and genuine human connection.
 
 ---
 
 ### Page 9: Contact Us (`/contact`)
 
-- **URL:** `https://awarabanjara.in/contact`
-- **Page Title:** `Contact Awara Banjara — Plan Your Himalayan Trip`
+- **URL:** `https://trailexplorers.in/contact`
+- **Page Title:** `Contact Trail Explorers — Plan Your Himalayan Trip`
 - **Registered Office Details:**
-  - Company: *Awara Banjara Adventure (OPC) Pvt. Ltd.*
-  - Phone: `+91 9103910523`
-  - WhatsApp: `+91 9103910523`
-  - Email: `hello@awarabanjara.in` / `support@awarabanjara.in`
+  - Company: *Trail Explorers Adventure (OPC) Pvt. Ltd.*
+  - Phone: `+91 7016640870`
+  - WhatsApp: `+91 7016640870`
+  - Email: `hello@trailexplorers.in` / `support@trailexplorers.in`
   - Operating Hours: Monday – Saturday, 9:00 AM – 8:00 PM IST
 - **Interactive Contact Form:** Name, Email, Phone, Destination, Message with instant submission feedback.
 
@@ -275,8 +275,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 10: Reviews (`/reviews`)
 
-- **URL:** `https://awarabanjara.in/reviews`
-- **Page Title:** `Customer Stories & Reviews — Awara Banjara`
+- **URL:** `https://trailexplorers.in/reviews`
+- **Page Title:** `Customer Stories & Reviews — Trail Explorers`
 - **Features:**
   - Overall Google rating: 4.9★ from 500+ travellers.
   - Real customer testimonials with traveler name, trip taken, verified date, and high-resolution photos from the trip.
@@ -285,8 +285,8 @@ The website is architected with a distinctive modern high-contrast aesthetic:
 
 ### Page 11: Postcards & Podcast (`/postcards` & `/podcast`)
 
-- **URL:** `https://awarabanjara.in/postcards` & `/podcast`
-- **Page Title:** `Travel Postcards & Himalayan Field Guides — Awara Banjara`
+- **URL:** `https://trailexplorers.in/postcards` & `/podcast`
+- **Page Title:** `Travel Postcards & Himalayan Field Guides — Trail Explorers`
 - **Features:**
   - Reel & Video documentary drawer (Zanskar circuit, Jibhi valley, Spiti winter trails).
   - Field guide articles on high-altitude sickness (AMS), bike packing, and hidden valleys.
@@ -313,7 +313,7 @@ Each regional page features:
 ### Page 17: Individual Trip Details (`/trips/[slug]`)
 
 - **Representative Trip:** `/trips/spiti-tours-spiti-valley-group-trip-from-delhi-winter-expedition-9-days-1790411548930`
-- **Page Title:** `Spiti Group Trip from Delhi | 9D/8N Winter Spiti Expedition — Awara Banjara`
+- **Page Title:** `Spiti Group Trip from Delhi | 9D/8N Winter Spiti Expedition — Trail Explorers`
 - **Key Components:**
   1. **Breadcrumb:** Home > Spiti Tours > Spiti Valley Group Trip 9 Days.
   2. **Hero Header:** Badges (Fixed Departure, Bestseller), Trip Title, Location, Duration (9D/8N), Rating (4.9★).

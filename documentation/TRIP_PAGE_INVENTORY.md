@@ -1,4 +1,4 @@
-# AAWARA BANJARA – COMPLETE TRIP PAGE INVENTORY
+# TRAIL EXPLORERS – COMPLETE TRIP PAGE INVENTORY
 
 This inventory documents all 32 discovered trips across Himachal Pradesh, Spiti Valley, Kashmir, Zanskar, Ladakh, Meghalaya, and Uttarakhand recreated with 1-to-1 high fidelity locally.
 

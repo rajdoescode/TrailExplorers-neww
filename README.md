@@ -1,16 +1,16 @@
-# Awara Banjara – Himalayan Travel Community Website
+# Trail Explorers – Himalayan Travel Community Website
 
-> **Live Reference:** [https://awarabanjara.in/](https://awarabanjara.in/)  
-> **Vercel Deployment:** [https://latest.trailexplorers.co/](https://latest.trailexplorers.co/)  
-> **Recreation Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React Icons  
+> **Website:** [https://trailexplorers.in/](https://trailexplorers.in/)  
+> **Deployment:** [https://latest.trailexplorers.co/](https://latest.trailexplorers.co/)  
+> **Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS, Lucide React Icons  
 
-A pixel-accurate, high-performance web platform recreating the complete user experience, visual design system, navigation, animations, and booking flow of **Awara Banjara** — India's premier youth travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and women-only departures.
+A pixel-accurate, high-performance web platform for **Trail Explorers** — India's premier youth travel community for Himalayan bike tours, Spiti Valley road trips, treks, festival trips, and group departures.
 
 ---
 
 ## 1. Key Highlights & Features
 
-- **High-Fidelity Aesthetics:** Strict adherence to Awara Banjara's signature design system — pitch-black (`#14140f`) high contrast typography, crisp white canvas, organic pill geometry, and vibrant electric lime (`#d6ff3f`) conversion accents.
+- **High-Fidelity Aesthetics:** Strict adherence to Trail Explorers' signature design system — pitch-black (`#14140f`) high contrast typography, crisp white canvas, organic pill geometry, and vibrant electric lime (`#d6ff3f`) conversion accents.
 - **Hero Video & Fallback:** Autoplaying muted video hero loop (`assets/videos/hero-loop.mp4`) with high-resolution poster image fallback (`hero-poster.jpg`).
 - **Complete Route Coverage:** 22+ fully developed routes including Homepage (all 14 sections in authentic order), Community Trips, Experiences, Tour Packages, Winter Spiti Campaign, Plan Your Trip interactive planner, Founder's Story, About Us, Contact Directory, Customer Reviews, Postcards / Reels, Podcast Hub, 5 Regional Hubs, Dynamic Trip Details (`/trips/[slug]`), and all statutory policy pages.
 - **Interactive Multi-Step Planner:** Custom itinerary builder with instant budget estimation, validation, and direct WhatsApp concierge integration.

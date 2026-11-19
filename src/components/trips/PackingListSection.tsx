@@ -10,15 +10,15 @@ interface PackingListSectionProps {
 
 export function PackingListSection({ categories, tripId }: PackingListSectionProps) {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-  // Start with all categories collapsed by default, exactly like awarabanjara.in
+  // Start with all categories collapsed by default
   const [collapsedCategories, setCollapsedCategories] = useState<Record<number, boolean>>({});
 
   const totalItemsCount = categories.reduce((sum, cat) => sum + cat.items.length, 0);
 
-  // Load from localStorage on mount (using matching awara_packed_ prefix)
+  // Load from localStorage on mount (using trailexplorers_packed_ prefix)
   useEffect(() => {
     try {
-      const storageKey = `awara_packed_${tripId}`;
+      const storageKey = `trailexplorers_packed_${tripId}`;
       const stored = localStorage.getItem(storageKey);
       if (stored) {
         const keys: string[] = JSON.parse(stored);
@@ -37,7 +37,7 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
     setCheckedItems((prev) => {
       const updated = { ...prev, [itemKey]: !prev[itemKey] };
       try {
-        const storageKey = `awara_packed_${tripId}`;
+        const storageKey = `trailexplorers_packed_${tripId}`;
         const activeKeys = Object.keys(updated).filter((k) => updated[k]);
         localStorage.setItem(storageKey, JSON.stringify(activeKeys));
       } catch (err) {
@@ -78,7 +78,7 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
   const unpackAll = () => {
     setCheckedItems({});
     try {
-      localStorage.removeItem(`awara_packed_${tripId}`);
+      localStorage.removeItem(`trailexplorers_packed_${tripId}`);
     } catch {}
   };
 
@@ -109,7 +109,7 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
           </button>
         </div>
 
-        {/* Circular Donut Progress Meter (Exact awarabanjara.in style) */}
+        {/* Circular Donut Progress Meter (Exact trailexplorers.in style) */}
         <div
           className={`shrink-0 w-[72px] h-[72px] sm:w-[76px] sm:h-[76px] rounded-full flex flex-col items-center justify-center transition-transform ${
             isAllPacked ? "scale-105" : ""

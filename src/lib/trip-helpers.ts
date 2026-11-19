@@ -114,7 +114,7 @@ export const DEFAULT_HIMALAYAN_PACKING_LIST: PackingCategory[] = [
 ];
 
 /**
- * Get static captured weather fixture for a trip matching awarabanjara.in
+ * Get static captured weather fixture for a trip matching trailexplorers.in
  */
 export function getTripWeather(trip: Trip): WeatherInfo {
   const text = `${trip.title} ${trip.route || ""} ${trip.category || ""}`.toLowerCase();

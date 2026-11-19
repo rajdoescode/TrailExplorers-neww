@@ -24,7 +24,7 @@ export function ShareModal({ isOpen, onClose, title }: ShareModalProps) {
 
   const shareWhatsApp = () => {
     if (typeof window !== "undefined") {
-      const text = `Check out this Himalayan trip with Awara Banjara: ${title}\n${window.location.href}`;
+      const text = `Check out this Himalayan trip with Trail Explorers: ${title}\n${window.location.href}`;
       window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
     }
   };

@@ -465,7 +465,7 @@ export default function PlanYourTripPage() {
   // ------------------------------------------
   const [welcomeKey, setWelcomeKey] = useState(0);
   const [messages, setMessages] = useState<Message[]>([
-    { id: "msg-1", sender: "bot", text: "Hey! I'm Banjara, Awara Banjara's trip planner 👋" },
+    { id: "msg-1", sender: "bot", text: "Hey! I'm your Trail Explorers trip planner 👋" },
     { id: "msg-2", sender: "bot", text: "Where are the mountains calling you?" },
     { id: "msg-3", sender: "bot", text: "Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price." },
   ]);
@@ -929,7 +929,7 @@ export default function PlanYourTripPage() {
   const handleRestart = () => {
     setWelcomeKey((prev) => prev + 1);
     setMessages([
-      { id: "msg-1", sender: "bot", text: "Hey! I'm Banjara, Awara Banjara's trip planner 👋" },
+      { id: "msg-1", sender: "bot", text: "Hey! I'm your Trail Explorers trip planner 👋" },
       { id: "msg-2", sender: "bot", text: "Where are the mountains calling you?" },
       { id: "msg-3", sender: "bot", text: "Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price." },
     ]);
@@ -958,7 +958,7 @@ export default function PlanYourTripPage() {
             </svg>
           </div>
           <p className="text-[13.5px] text-white/65 max-w-[240px] leading-relaxed mx-auto">
-            Tell Banjara where and when you want to go.
+            Tell our trip planner where and when you want to go.
             <br />
             Your route, dates and day-by-day plan appear here as you chat.
           </p>
@@ -1889,8 +1889,8 @@ export default function PlanYourTripPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-[#e6e6df]">
             <div className="flex flex-col gap-2.5">
               <Image
-                src="/assets/images/logo/logo-black-full.png"
-                alt="Awara Banjara"
+                src="/assets/images/logo/logo.svg"
+                alt="Trail Explorers"
                 width={150}
                 height={30}
                 className="h-7 w-auto object-contain"
@@ -1929,7 +1929,7 @@ export default function PlanYourTripPage() {
             </div>
           </div>
           <p className="text-center text-xs text-gray-400 pt-6">
-            © 2026 Awara Banjara · Made in India ✦
+            © 2026 Trail Explorers · Made in India ✦
           </p>
         </footer>
       </div>
@@ -1961,7 +1961,7 @@ export default function PlanYourTripPage() {
           Plan your Himalayan trip<span className="text-[#d6ff3f]">.</span>
         </h1>
         <p className="hidden sm:block mt-2 text-sm sm:text-base text-white/85 max-w-xl mx-auto font-normal">
-          Chat with Banjara, shape it day by day, and our trip expert calls you with the price.
+          Chat with our trip planner, shape it day by day, and our trip expert calls you with the price.
         </p>
       </section>
 
@@ -1976,14 +1976,14 @@ export default function PlanYourTripPage() {
               <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
                 <Image
                   src="/assets/images/mascot/banjara-face.webp"
-                  alt="Banjara Avatar"
+                  alt="Trip Planner Avatar"
                   fill
                   className="object-cover object-top scale-110"
                 />
               </div>
               <div className="flex flex-col flex-1 min-w-0">
                 <strong className="text-[#14140f] text-[15px] sm:text-[15.5px] font-bold leading-tight">
-                  Banjara
+                  Trip Planner
                 </strong>
                 <small className="flex items-center gap-1.5 text-[11px] sm:text-[11.5px] text-gray-500 leading-tight">
                   <span className="w-2 h-2 rounded-full bg-[#b8ff00] border border-[#14140f] animate-banjara-online" />
@@ -2016,13 +2016,13 @@ export default function PlanYourTripPage() {
 
                   {/* Sender label */}
                   <span className="text-[11px] sm:text-[11.5px] text-gray-400 font-bold ml-1 sm:ml-2 mb-[-4px]">
-                    Banjara
+                    Trip Planner
                   </span>
 
                   {/* Bubble 1: 0s delay */}
                   <div className="pc-pop-1 max-w-[88%] sm:max-w-[80%] self-start">
                     <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
-                      Hey! I'm Banjara, Awara Banjara's trip planner 👋
+                      Hey! I'm your Trail Explorers trip planner 👋
                     </div>
                   </div>
 
@@ -2072,7 +2072,7 @@ export default function PlanYourTripPage() {
                 <>
                   {/* Sender label */}
                   <span className="text-[11px] sm:text-[11.5px] text-gray-400 font-bold ml-1 sm:ml-2 mb-[-4px]">
-                    Banjara
+                    Trip Planner
                   </span>
 
               {/* Message Bubbles in Active Chat */}
@@ -2090,7 +2090,7 @@ export default function PlanYourTripPage() {
                       <div className="w-7 h-7 rounded-full bg-[#14140f] overflow-hidden shrink-0 mb-1 border border-[#14140f] shadow-xs relative">
                         <Image
                           src="/assets/images/mascot/banjara-face.webp"
-                          alt="Banjara"
+                          alt="Trip Planner"
                           fill
                           className="object-cover object-top scale-110"
                         />
@@ -2270,7 +2270,7 @@ export default function PlanYourTripPage() {
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
-                  placeholder="Tell Banjara about your trip…"
+                  placeholder="Tell us about your trip…"
                   className="flex-1 bg-transparent border-none outline-hidden text-[#14140f] text-[14.5px] sm:text-[16px] placeholder-gray-400 py-1.5 sm:py-2"
                 />
                 <button
@@ -2422,7 +2422,7 @@ export default function PlanYourTripPage() {
 
       {/* Minimal Footer on Mountain Backdrop - Seamless Without Any White Space */}
       <footer className="w-full py-3 sm:py-4 text-center text-[11px] sm:text-xs text-white/60 tracking-wider select-none shrink-0">
-        © 2026 Awara Banjara · Made in India ✦
+        © 2026 Trail Explorers · Made in India ✦
       </footer>
 
       {/* Inquiry Dialog Modal (Chat Mode) */}

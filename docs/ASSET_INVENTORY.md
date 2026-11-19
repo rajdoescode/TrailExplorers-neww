@@ -1,4 +1,4 @@
-# AWWARA BANJARA – ASSET INVENTORY & REPOSITORY
+# TRAIL EXPLORERS – ASSET INVENTORY & REPOSITORY
 
 > **Verification Rule:** Every file listed below is verified to exist on local disk under `public/assets/` without mock or broken paths.
 
@@ -8,9 +8,9 @@
 
 | File Name | Local Path | Original URL | Format | Size | Dimensions / Usage |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Full Dark Logo** | `public/assets/images/logo/logo-black-full.png` | `https://awarabanjara.in/assets/images/logo/logo-black-full.png` | PNG | 23.7 KB | `~240×46px` (Desktop & Mobile Header) |
-| **Full Light Logo** | `public/assets/images/logo/logo-white-full.png` | `https://awarabanjara.in/assets/images/logo/logo-white-full.png` | PNG | 21.9 KB | `~240×46px` (Footer & Dark Hero Variant) |
-| **Brand Favicon** | `public/assets/images/logo/favicon.png` | `https://awarabanjara.in/assets/images/logo/favicon.png` | PNG | 52.1 KB | `64×64px` (Browser tab & PWA icon) |
+| **Full Dark Logo** | `public/assets/images/logo/logo-black-full.png` | `https://trailexplorers.in/assets/images/logo/logo-black-full.png` | PNG | 23.7 KB | `~240×46px` (Desktop & Mobile Header) |
+| **Full Light Logo** | `public/assets/images/logo/logo-white-full.png` | `https://trailexplorers.in/assets/images/logo/logo-white-full.png` | PNG | 21.9 KB | `~240×46px` (Footer & Dark Hero Variant) |
+| **Brand Favicon** | `public/assets/images/logo/favicon.png` | `https://trailexplorers.in/assets/images/logo/favicon.png` | PNG | 52.1 KB | `64×64px` (Browser tab & PWA icon) |
 
 ---
 
@@ -18,8 +18,8 @@
 
 | File Name | Local Path | Original URL | Format | Size | Aspect Ratio | Usage & Behavior |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Hero Loop Video** | `public/assets/videos/hero-loop.mp4` | `https://awarabanjara.in/assets/videos/hero-loop.mp4` | MP4 | 4.8 MB | 16:9 | Autoplay, Muted, Loop, Playsinline, Hero Background |
-| **Hero Poster Image** | `public/assets/images/home/hero-poster.jpg` | `https://awarabanjara.in/assets/images/home/hero-poster.jpg` | JPEG | 88.8 KB | 16:9 | High-res video placeholder & OpenGraph fallback |
+| **Hero Loop Video** | `public/assets/videos/hero-loop.mp4` | `https://trailexplorers.in/assets/videos/hero-loop.mp4` | MP4 | 4.8 MB | 16:9 | Autoplay, Muted, Loop, Playsinline, Hero Background |
+| **Hero Poster Image** | `public/assets/images/home/hero-poster.jpg` | `https://trailexplorers.in/assets/images/home/hero-poster.jpg` | JPEG | 88.8 KB | 16:9 | High-res video placeholder & OpenGraph fallback |
 
 ---
 
@@ -93,7 +93,7 @@ The repository contains all **250+** local photographic assets for all 20+ trips
 - `img_1793340766352_...jpg` – Naggar, Baralacha La & Bijli Mahadev
 - `img_1793355456704_...jpg` – Rani Sui Lake Himalayan Trek
 - `img_1793950812320_...jpg` – Romantic Himachal Honeymoon Package
-- Plus **170+** authentic destination, trek pass, lake, monastery, and campsite photos downloaded directly from `awarabanjara.in`.
+- Plus **170+** authentic destination, trek pass, lake, monastery, and campsite photos downloaded directly from `trailexplorers.in`.
 
 ---
 

@@ -242,7 +242,7 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
         </div>
       </section>
 
-      {/* ============ BANJARA AI PLANNER BANNER ============ */}
+      {/* ============ TRAIL EXPLORERS PLANNER BANNER ============ */}
       <section className="max-w-[1200px] mx-auto px-4 pb-12 sm:pb-16">
         <div className="relative bg-[#14140f] text-white rounded-[24px] p-6 sm:p-8 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 border border-black/10">
           <div className="relative z-10 max-w-xl">
@@ -253,13 +253,13 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
               Need a custom {regionName} itinerary?
             </h3>
             <p className="text-white/75 text-[14px] sm:text-[15px] mt-2 mb-5 leading-relaxed">
-              Tell Banjara where and when you want to travel, and our AI trip planner shapes a customized day-by-day plan with immediate pricing.
+              Tell us where and when you want to travel, and our trip planner shapes a customized day-by-day plan with immediate pricing.
             </p>
             <Link
               href="/plan-your-trip"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#d6ff3f] text-[#14140f] font-bold text-[14px] hover:bg-[#ccff00] hover:scale-105 active:scale-95 transition-all"
             >
-              <span>Talk to Banjara</span>
+              <span>Plan Your Trip</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -267,12 +267,12 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
           <div className="relative shrink-0 flex items-center justify-center">
             <div className="relative w-36 h-36 sm:w-44 sm:h-44">
               <Image
-                src="/assets/images/characters/banjara-avatar.png"
-                alt="Banjara AI Planner"
+                src="/assets/images/mascot/banjara-standing.webp"
+                alt="Trail Explorers Trip Planner"
                 fill
                 className="object-contain"
                 onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src = "/assets/images/characters/banjara-sprite.webp";
+                  (e.currentTarget as HTMLImageElement).src = "/assets/images/mascot/banjara-face.webp";
                 }}
               />
             </div>

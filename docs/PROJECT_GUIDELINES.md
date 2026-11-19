@@ -1,4 +1,4 @@
-# AWWARA BANJARA – PROJECT GUIDELINES & ARCHITECTURE MANUAL
+# TRAIL EXPLORERS – PROJECT GUIDELINES & ARCHITECTURE MANUAL
 
 > **Mandatory Reference:** All engineers, AI coding agents, and contributors must strictly adhere to the standards, naming conventions, design tokens, and component architecture detailed in this document.
 
@@ -6,7 +6,7 @@
 
 ## 1. Project Overview
 
-Awara Banjara (`awarabanjara.in`) is an experiential youth travel brand offering curated small-group Himalayan expeditions, motorbike road trips, festival tours, and customized private journeys across Ladakh, Spiti Valley, Himachal Pradesh, Kashmir, and Uttarakhand.
+Trail Explorers (`trailexplorers.in`) is an experiential youth travel brand offering curated small-group Himalayan expeditions, motorbike road trips, festival tours, and customized private journeys across Ladakh, Spiti Valley, Himachal Pradesh, Kashmir, and Uttarakhand.
 
 This project delivers a complete, high-fidelity recreation with modern web performance, high visual fidelity, seamless responsive layouts, dynamic filtering, interactive modals, and accessible UI interactions.
 
@@ -26,7 +26,7 @@ This project delivers a complete, high-fidelity recreation with modern web perfo
 
 ## 3. Design System Foundation
 
-The Awara Banjara aesthetic is characterized by:
+The Trail Explorers aesthetic is characterized by:
 - **High-contrast minimal canvas:** Soft off-white backgrounds (`#ffffff`, `#f6f6f1`) with deep pitch-black text and borders (`#14140f`).
 - **Signature neon lime accent:** Vibrant electric lime (`#d6ff3f`) used strategically for high-priority conversion points, badges, active tabs, and hover elevations.
 - **Organic pill geometry:** Full border-radius pills (`rounded-full`) for buttons, search bars, and tags, contrasted with smooth `18px` rounded cards.
