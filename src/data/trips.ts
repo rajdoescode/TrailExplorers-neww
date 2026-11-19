@@ -4,7 +4,7 @@ export const TRIPS_DATA: Trip[] = [
   {
     "title": "Romantic Himachal Honeymoon Package",
     "duration": "7 Days / 6 Nights",
-    "price": "Price Per Couple: \u20b958,599",
+    "price": "\u20b958,599",
     "category": "himachal_tours",
     "route": "Delhi \u2014 Shimla \u2014 Kullu \u2014 Manali \u2014 Dharamshala \u2014 Dalhousie \u2014 Delhi",
     "weather_spot": "",

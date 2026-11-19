@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -147,12 +147,13 @@ export const DomesticDestinationsSection: React.FC = () => {
                   data-offset={offset}
                 >
                   <div className="thumb w-full h-full relative overflow-hidden rounded-[28px]">
-                    <Image
+                    <SkeletonImage
                       src={dest.image}
                       alt={dest.name}
                       fill
                       sizes="(max-width: 768px) 58vw, 256px"
                       className="object-cover rounded-[28px] transition-transform duration-500 hover:scale-105"
+                      skeletonClassName="rounded-[28px]"
                     />
 
                     {/* Top gradient for title readability */}

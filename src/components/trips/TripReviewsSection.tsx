@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { Star, ArrowUpRight } from "lucide-react";
 import { Review } from "@/types";
@@ -58,12 +58,13 @@ export function TripReviewsSection({ reviews, tripTitle }: TripReviewsSectionPro
                 {/* Header: Avatar, Name + Tag, Booked Title + Arrow */}
                 <div className="flex items-start gap-3.5 mb-3.5">
                   <div className="relative w-12 h-12 rounded-full overflow-hidden bg-[#e2e2dc] shrink-0 border border-[#ecece5]">
-                    <Image
+                    <SkeletonImage
                       src={normalizeAvatarUrl(rev.avatar_url)}
                       alt={rev.customer_name}
                       fill
                       sizes="48px"
                       className="object-cover"
+                      skeletonClassName="rounded-full"
                     />
                   </div>
 

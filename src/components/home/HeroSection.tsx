@@ -1,11 +1,12 @@
 import React from "react";
 import Link from "next/link";
+import { SkeletonVideo } from "@/components/ui/SkeletonVideo";
 
 export const HeroSection: React.FC = () => {
   return (
     <section className="relative w-full min-h-[480px] sm:min-h-[560px] flex items-center justify-center overflow-hidden bg-[#14140f] text-white text-center">
-      {/* Background Video */}
-      <video
+      {/* Background Video with Skeleton Placeholder */}
+      <SkeletonVideo
         autoPlay
         muted
         loop
@@ -14,9 +15,10 @@ export const HeroSection: React.FC = () => {
         poster="/assets/images/home/hero-poster.jpg"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover z-0"
+        skeletonClassName="bg-[#14140f]"
       >
         <source src="/assets/videos/hero-loop.mp4" type="video/mp4" />
-      </video>
+      </SkeletonVideo>
 
       {/* Dark overlay: rgba(20, 20, 15, 0.42) */}
       <div className="absolute inset-0 bg-[#14140f]/[0.42] z-1" />

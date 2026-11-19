@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
 import { TRIPS_DATA } from "@/data/trips";
 import { formatPrice } from "@/lib/utils";
@@ -218,12 +218,13 @@ export const CommunityTripsSection: React.FC = () => {
                 >
                   {/* Card Thumbnail */}
                   <div className="thumb aspect-[4/3] relative overflow-hidden shrink-0 bg-gray-100 rounded-t-[20px]">
-                    <Image
+                    <SkeletonImage
                       src={trip.image_url}
                       alt={trip.title}
-                      width={400}
-                      height={300}
+                      fill
+                      sizes="300px"
                       className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-105"
+                      skeletonClassName="rounded-t-[20px]"
                     />
 
                     {/* Coming Soon Pill */}

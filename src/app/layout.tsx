@@ -74,7 +74,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Header />
-        <main className="flex-1 w-full pb-16 md:pb-0">{children}</main>
+        <main className="flex-1 w-full">{children}</main>
         <Footer />
         <MobileBottomNav />
         <FloatingWidgets />

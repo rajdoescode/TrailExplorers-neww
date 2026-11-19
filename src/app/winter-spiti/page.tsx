@@ -413,52 +413,6 @@ export default function WinterSpitiPage() {
           </div>
         </div>
       </section>
-
-      {/* ============ WHATSAPP / SOCIAL BAR ============ */}
-      <div className="max-w-[1200px] mx-auto px-4 pb-12">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-[18px] bg-white border border-[#e2e2dc] shadow-sm">
-          <a
-            href="https://wa.me/917016640870"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-[#14140f] hover:opacity-80 transition-opacity"
-          >
-            <span className="w-10 h-10 rounded-full bg-[#25d366] flex items-center justify-center text-white shrink-0 shadow-sm">
-              <MessageCircle className="w-5 h-5 fill-white" />
-            </span>
-            <span className="flex flex-col text-left">
-              <small className="text-[11px] text-[#6b6b63] font-semibold">Instant WhatsApp Booking:</small>
-              <strong className="text-[15px] font-bold text-[#14140f]">+91 70166 40870</strong>
-            </span>
-          </a>
-
-          <div className="flex items-center gap-3">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#6b6b63]">
-              FOLLOW TRAILS ON:
-            </span>
-            <div className="flex items-center gap-2">
-              <a
-                href="https://www.instagram.com/trail_explorers_"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-[#f4f4ee] flex items-center justify-center text-[#14140f] hover:bg-[#d6ff3f] active:scale-95 transition-all"
-              >
-                📸
-              </a>
-              <a
-                href="https://www.youtube.com/@Trail_Explorers"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="w-10 h-10 min-w-[40px] min-h-[40px] rounded-full bg-[#f4f4ee] flex items-center justify-center text-[#14140f] hover:bg-[#d6ff3f] active:scale-95 transition-all"
-              >
-                ▶️
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

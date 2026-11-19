@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
 import { POSTCARDS_DATA } from "@/data/postcards";
@@ -140,12 +140,13 @@ export const WatchReadSection: React.FC = () => {
                   data-offset={offset}
                 >
                   <div className="thumb w-full h-full relative overflow-hidden rounded-[28px]">
-                    <Image
+                    <SkeletonImage
                       src={card.image_url}
                       alt={card.title}
                       fill
                       sizes="(max-width: 768px) 58vw, 256px"
                       className="object-cover rounded-[28px] transition-transform duration-500 group-hover:scale-105"
+                      skeletonClassName="rounded-[28px]"
                     />
 
                     {/* Gradient */}
@@ -226,12 +227,13 @@ export const WatchReadSection: React.FC = () => {
             </h3>
 
             <div className="relative h-64 sm:h-80 w-full rounded-xl overflow-hidden mb-6">
-              <Image
+              <SkeletonImage
                 src={selectedPostcard.image_url}
                 alt={selectedPostcard.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 672px"
                 className="object-cover"
+                skeletonClassName="rounded-xl"
               />
             </div>
 

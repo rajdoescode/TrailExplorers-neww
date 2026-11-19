@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AttractionItem } from "@/lib/trip-helpers";
 
@@ -64,17 +64,19 @@ export function AttractionsCarousel({ attractions }: AttractionsCarouselProps) {
         {attractions.map((attr) => (
           <div
             key={attr.id}
-            className="relative w-[76vw] max-w-[280px] min-w-[240px] sm:w-[300px] sm:max-w-none h-[360px] sm:h-[390px] rounded-2xl overflow-hidden shrink-0 snap-start border-2 border-white group bg-[#22221e] shadow-card transition-transform duration-300 hover:-translate-y-1"
+            className="relative w-[76vw] max-w-[280px] min-w-[240px] sm:w-[300px] sm:max-w-none h-[355px] sm:h-[390px] rounded-[22px] overflow-hidden shrink-0 snap-start border-2 border-white group bg-[#22221e] shadow-[0_0_20px_rgba(255,255,255,0.75)] transition-transform duration-300 hover:-translate-y-1 [isolation:isolate] [transform:translateZ(0)]"
+            style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
           >
-            <Image
+            <SkeletonImage
               src={attr.image_url}
               alt={attr.title}
               fill
               sizes="(max-width: 640px) 76vw, 300px"
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+              className="object-cover rounded-[22px] group-hover:scale-105 transition-transform duration-700"
+              skeletonClassName="rounded-[22px]"
             />
-            {/* Subtle natural dark gradient overlay (not harsh black) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent flex flex-col justify-end p-5 text-white">
+            {/* Subtle natural dark gradient overlay */}
+            <div className="absolute inset-0 rounded-[22px] bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5 text-white pointer-events-none">
               <h3 className="font-extrabold text-base sm:text-lg text-white font-heading leading-tight mb-1.5 drop-shadow-xs">
                 {attr.title}
               </h3>

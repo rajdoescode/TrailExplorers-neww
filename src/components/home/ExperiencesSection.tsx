@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { cn } from "@/lib/utils";
 
 export const ExperiencesSection: React.FC = () => {
@@ -106,12 +106,13 @@ export const ExperiencesSection: React.FC = () => {
                   style={{ transform, zIndex, opacity }}
                   data-pos={pos}
                 >
-                  <Image
+                  <SkeletonImage
                     src={exp.image_url}
                     alt={exp.title}
-                    width={800}
-                    height={520}
+                    fill
+                    sizes="(max-width: 768px) 88vw, 680px"
                     className="w-full h-full object-cover rounded-[20px] sm:rounded-[24px]"
+                    skeletonClassName="rounded-[20px] sm:rounded-[24px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -25,6 +25,7 @@ import { DepartureDatesSection } from "@/components/trips/DepartureDatesSection"
 import { AttractionsCarousel } from "@/components/trips/AttractionsCarousel";
 import { FaqsAccordion } from "@/components/trips/FaqsAccordion";
 import { TripReviewsSection } from "@/components/trips/TripReviewsSection";
+import { WhatsAppSocialBar } from "@/components/common/WhatsAppSocialBar";
 import { ShareModal } from "@/components/trips/ShareModal";
 import { PdfLeadModal } from "@/components/trips/PdfLeadModal";
 import { NotFoundView } from "@/components/common/NotFoundView";
@@ -98,6 +99,33 @@ export default function TripDetailPage() {
     document.body.classList.add("has-mobile-book-bar");
     return () => {
       document.body.classList.remove("has-mobile-book-bar");
+    };
+  }, []);
+
+  // Hide mobile sticky price bar when WhatsApp & Social card comes into view
+  const whatsAppBarRef = useRef<HTMLDivElement>(null);
+  const [hideMobilePriceBar, setHideMobilePriceBar] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!whatsAppBarRef.current) return;
+      const rect = whatsAppBarRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      // Hide sticky bar as soon as the WhatsApp card enters near the viewport bottom
+      if (rect.top <= windowHeight - 20) {
+        setHideMobilePriceBar(true);
+      } else {
+        setHideMobilePriceBar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
@@ -178,7 +206,7 @@ export default function TripDetailPage() {
     : "Himachal";
 
   return (
-    <div className="w-full bg-white min-h-screen pb-24">
+    <div className="w-full bg-white min-h-screen">
       {/* 1. Bento Image Gallery with Lightbox */}
       <BentoGallery images={galleryImages} title={trip.title} />
 
@@ -186,7 +214,7 @@ export default function TripDetailPage() {
       <StickySecondaryNav />
 
       {/* Main Content & Sticky Sidebar Layout */}
-      <Container className="py-8 pb-32 lg:pb-8">
+      <Container className="pt-6 sm:pt-8 lg:pt-8 pb-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Main Column (2 Columns) */}
           <div className="lg:col-span-2 flex flex-col gap-8">
@@ -598,7 +626,7 @@ export default function TripDetailPage() {
 
         {/* 14. More Trips in Destination */}
         {relatedTrips.length > 0 && (
-          <section id="more-trips" className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-[#e2e2dc]">
+          <section id="more-trips" className="mt-10 sm:mt-14">
             <div className="flex items-center justify-between mb-5 sm:mb-6">
               <h2 className="text-xl sm:text-2xl font-extrabold text-[#14140f] font-heading tracking-tight">
                 More trips in {destinationLabel}
@@ -623,10 +651,21 @@ export default function TripDetailPage() {
             </div>
           </section>
         )}
+
+        {/* 14b. Instant WhatsApp Booking & Social Bar */}
+        <div ref={whatsAppBarRef} className="mt-8 sm:mt-12 mb-2 sm:mb-4">
+          <WhatsAppSocialBar />
+        </div>
       </Container>
 
       {/* 15. Mobile Sticky Bottom Action Bar (Floating Pill/Card matching original design) */}
-      <div className="mobile-book-bar lg:hidden fixed left-2.5 right-2.5 sm:left-4 sm:right-4 bottom-[calc(10px+env(safe-area-inset-bottom,0px))] z-40 bg-white/95 backdrop-blur-md border border-[#14140f]/10 rounded-[20px] p-3 pl-4 sm:p-4 sm:pl-6 flex items-center justify-between gap-2.5 sm:gap-3 shadow-[0_12px_32px_rgba(20,20,15,0.18)] transition-all">
+      <div
+        className={`mobile-book-bar lg:hidden fixed left-2.5 right-2.5 sm:left-4 sm:right-4 bottom-[calc(10px+env(safe-area-inset-bottom,0px))] z-40 bg-white/95 backdrop-blur-md border border-[#14140f]/10 rounded-[20px] p-3 pl-4 sm:p-4 sm:pl-6 flex items-center justify-between gap-2.5 sm:gap-3 shadow-[0_12px_32px_rgba(20,20,15,0.18)] transition-all duration-300 ease-in-out ${
+          hideMobilePriceBar
+            ? "opacity-0 translate-y-12 pointer-events-none"
+            : "opacity-100 translate-y-0 pointer-events-auto"
+        }`}
+      >
         <div className="flex flex-col min-w-0">
           <span className="text-[11px] sm:text-[12px] font-semibold text-[#66665c] leading-tight block">
             Starting From

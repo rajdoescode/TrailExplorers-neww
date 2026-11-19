@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { Clock } from "lucide-react";
 import { Trip } from "@/types";
 import { formatPrice } from "@/lib/utils";
@@ -29,8 +29,8 @@ export const TripCard: React.FC<TripCardProps> = ({ trip, priority = false, clas
     >
       {/* Thumbnail Container */}
       <div className="aspect-[4/3] relative w-full overflow-hidden bg-[#f4f4ee]">
-        <Link href={`/trips/${tripSlug}`} className="block w-full h-full">
-          <Image
+        <Link href={`/trips/${tripSlug}`} className="relative block w-full h-full">
+          <SkeletonImage
             src={displayImage}
             alt={trip.title}
             fill

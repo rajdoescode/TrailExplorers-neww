@@ -3,6 +3,7 @@
 import React from "react";
 import { CommunityTrip } from "@/data/communityTrips";
 import { Button } from "@/components/ui/Button";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 
 interface ComingSoonCardProps {
   trip: CommunityTrip;
@@ -11,16 +12,13 @@ interface ComingSoonCardProps {
 export const ComingSoonCard: React.FC<ComingSoonCardProps> = ({ trip }) => {
   return (
     <article className="community-card is-coming-soon">
-      <div className="thumb">
-        <img
+      <div className="thumb relative overflow-hidden">
+        <SkeletonImage
           src={trip.image}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src =
-              "/assets/images/home/hero-poster.jpg";
-          }}
+          alt={trip.title || "Coming Soon"}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover w-full h-full"
         />
         <span className="coming-soon-pill">
           <svg

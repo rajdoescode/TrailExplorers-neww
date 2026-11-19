@@ -1,14 +1,24 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Phone, Search, Menu, X, ArrowUpRight, MapPin, Sparkles } from "lucide-react";
+import { Phone, Search, Menu, X, ArrowUpRight, MapPin, Sparkles, ChevronRight } from "lucide-react";
 import { Container } from "@/components/layout/Container";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import { SITE_CONFIG } from "@/data/site-config";
+import { TRIPS_DATA } from "@/data/trips";
 import { useScrollLock } from "@/hooks/useScrollLock";
+
+const POPULAR_DESTINATIONS = [
+  { name: "Winter Spiti 4 x 4", href: "/winter-spiti" },
+  { name: "Spiti Valley", href: "/spiti" },
+  { name: "Leh Ladakh", href: "/ladakh" },
+  { name: "Kashmir Valleys", href: "/kashmir" },
+  { name: "Himachal Escapes", href: "/himachal" },
+  { name: "Alpine Treks", href: "/tour-packages" },
+];
 
 interface HeaderProps {
   transparentAtTop?: boolean;
@@ -34,6 +44,37 @@ export const Header: React.FC<HeaderProps> = () => {
     setMobileMenuOpen(false);
     setSearchOpen(false);
   }, [pathname]);
+
+  // ESC key to close search modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setSearchOpen(false);
+      }
+    };
+    if (searchOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }
+  }, [searchOpen]);
+
+  // Filter trips and destinations in real time
+  const filteredTrips = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [];
+    return TRIPS_DATA.filter((t) => {
+      const title = (t.title || "").toLowerCase();
+      const cat = (t.category || "").toLowerCase();
+      const loc = (t.pickup_location || "").toLowerCase();
+      return title.includes(q) || cat.includes(q) || loc.includes(q);
+    }).slice(0, 8);
+  }, [searchQuery]);
+
+  const filteredDestinations = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [];
+    return POPULAR_DESTINATIONS.filter((d) => d.name.toLowerCase().includes(q));
+  }, [searchQuery]);
 
   // Lock body scroll when mobile menu or search is open (iOS/Android touch & desktop wheel safe)
   useScrollLock(mobileMenuOpen || searchOpen);
@@ -287,103 +328,177 @@ export const Header: React.FC<HeaderProps> = () => {
           role="dialog"
           aria-modal="true"
           aria-label="Search destinations and itineraries"
-          className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-start justify-center pt-16 sm:pt-20 px-3 sm:px-4 touch-none overscroll-contain"
+          className="fixed inset-0 z-[9999] bg-black/65 backdrop-blur-sm flex items-start justify-center pt-14 sm:pt-20 px-3.5 sm:px-4 touch-none overscroll-contain"
           onClick={(e) => {
             if (e.target === e.currentTarget) setSearchOpen(false);
           }}
         >
-          <div className="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 overscroll-contain">
-            <div className="p-3.5 sm:p-4 border-b border-gray-100 flex items-center gap-3">
-              <Search className="w-5 h-5 text-gray-400 shrink-0 stroke-[2.2]" />
-              <input
-                type="text"
-                placeholder="Search Spiti, Ladakh, Kashmir, Treks..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                autoFocus
-                className="w-full text-base font-semibold outline-hidden text-[#14140f] placeholder:text-gray-400 min-h-[44px]"
-              />
-              {searchQuery && (
-                <button
-                  type="button"
-                  onClick={() => setSearchQuery("")}
-                  className="p-1 text-gray-400 hover:text-black rounded-full"
-                  aria-label="Clear search"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
+          <div className="bg-white rounded-[32px] sm:rounded-[36px] w-full max-w-[520px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)] p-5 sm:p-6 overflow-hidden animate-in fade-in zoom-in-95 duration-200 overscroll-contain flex flex-col">
+            {/* Top Row: Capsule Search Bar + Standalone X Close Button */}
+            <div className="flex items-center gap-3.5 mb-5 sm:mb-6">
+              {/* Search Pill */}
+              <div className="flex-1 flex items-center bg-[#f0f3f6] rounded-full px-4 sm:px-5 py-3 sm:py-3.5 gap-2.5 transition-colors">
+                <Search className="w-5 h-5 text-[#0f172a] shrink-0 stroke-[2.2]" />
+                <input
+                  type="text"
+                  placeholder="Search Spiti, Ladakh, Kashmir, Treks..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoFocus
+                  className="w-full bg-transparent border-0 outline-none p-0 text-[13.5px] sm:text-[14.5px] font-medium text-[#0f172a] placeholder:text-[#64748b]"
+                  style={{
+                    outline: "none",
+                    border: "none",
+                    boxShadow: "none",
+                  }}
+                />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="w-5 h-5 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-700 flex items-center justify-center shrink-0 ml-1 transition-colors cursor-pointer"
+                    aria-label="Clear search"
+                  >
+                    <X className="w-3 h-3 stroke-[2.5]" />
+                  </button>
+                )}
+              </div>
+
+              {/* Standalone Close X Button */}
               <button
                 type="button"
                 onClick={() => setSearchOpen(false)}
-                className="p-2 text-gray-500 hover:text-black rounded-lg hover:bg-gray-100 min-w-[44px] min-h-[44px] flex items-center justify-center"
+                className="w-9 h-9 flex items-center justify-center text-[#0f172a] hover:opacity-70 transition-opacity shrink-0 cursor-pointer p-0"
                 aria-label="Close search"
               >
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6 stroke-[2]" />
               </button>
             </div>
 
-            <div className="p-4 max-h-[calc(100dvh-140px)] sm:max-h-[65vh] overflow-y-auto overscroll-contain touch-pan-y">
-              {searchQuery.trim() === "" ? (
-                <div className="py-6">
-                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 mb-3">
-                    Popular Destinations
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {[
-                      { name: "Winter Spiti 4x4", href: "/winter-spiti" },
-                      { name: "Spiti Valley", href: "/spiti" },
-                      { name: "Leh Ladakh", href: "/ladakh" },
-                      { name: "Kashmir Valleys", href: "/kashmir" },
-                      { name: "Himachal Escapes", href: "/himachal" },
-                      { name: "Alpine Treks", href: "/tour-packages" },
-                    ].map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setSearchOpen(false)}
-                        className="flex items-center gap-2 p-3 rounded-xl bg-[#f8f8f5] hover:bg-[#d6ff3f] text-[#14140f] font-bold text-xs transition-colors min-h-[44px]"
-                      >
-                        <MapPin className="w-3.5 h-3.5 shrink-0" />
-                        <span className="truncate">{item.name}</span>
-                      </Link>
-                    ))}
-                  </div>
+            {/* Results or Default Popular Destinations */}
+            {searchQuery.trim() === "" ? (
+              <div>
+                {/* Popular Destinations Header with Lime Pin and Trailing Line */}
+                <div className="flex items-center gap-2 mb-3 sm:mb-3.5">
+                  <svg className="w-4 h-4 text-[#a3e635] shrink-0" viewBox="0 0 24 24" fill="#a3e635">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" fill="#a3e635" />
+                    <circle cx="12" cy="9" r="2.5" fill="#ffffff" />
+                  </svg>
+                  <h3 className="text-[12px] sm:text-[12.5px] font-extrabold uppercase tracking-wide text-[#0f172a] m-0">
+                    POPULAR DESTINATIONS
+                  </h3>
+                  <div className="flex-1 h-[1px] bg-[#eef0f4] ml-2" />
                 </div>
-              ) : (
-                <div className="flex flex-col gap-1.5">
-                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400 px-2 py-1">
-                    Matching Expeditions
-                  </div>
-                  {[
-                    { name: "Winter Spiti 4x4 Expedition", href: "/winter-spiti" },
-                    { name: "Spiti Valley Community Trips", href: "/spiti" },
-                    { name: "Leh Ladakh Bike Tours", href: "/ladakh" },
-                    { name: "Kashmir Great Lakes & Valleys", href: "/kashmir" },
-                    { name: "Himachal Offbeat Escapes", href: "/himachal" },
-                    { name: "Uttarakhand Spiritual Treks", href: "/uttarakhand" },
-                    { name: "Manali to Leh Highway Expedition", href: "/tour-packages" },
-                    { name: "Naggar, Baralacha La & Bijli Mahadev", href: "/community-trips" },
-                  ]
-                    .filter((item) =>
-                      item.name.toLowerCase().includes(searchQuery.toLowerCase())
-                    )
-                    .map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        onClick={() => setSearchOpen(false)}
-                        className="flex items-center justify-between p-3 rounded-xl hover:bg-[#f6f6f1] active:bg-[#ecece5] transition-colors group min-h-[44px]"
-                      >
-                        <span className="font-semibold text-sm text-[#14140f]">
+
+                {/* 2-Column Pill Grid */}
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                  {POPULAR_DESTINATIONS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setSearchOpen(false)}
+                      className="flex items-center justify-between px-3.5 py-2.5 sm:py-3 rounded-full bg-[#f4f6f9] hover:bg-[#ebf0f5] active:scale-98 text-[#0f172a] transition-all group"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-7 h-7 sm:w-7.5 sm:h-7.5 rounded-full bg-[#e8ecf2] flex items-center justify-center shrink-0">
+                          <MapPin className="w-3.5 h-3.5 text-[#0f172a] stroke-[2.2]" />
+                        </div>
+                        <span className="font-bold text-[12px] sm:text-[13px] text-[#0f172a] truncate">
                           {item.name}
                         </span>
-                        <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-black transition-colors" />
-                      </Link>
-                    ))}
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-[#8e9ba9] group-hover:text-[#0f172a] transition-colors shrink-0 ml-1 stroke-[2]" />
+                    </Link>
+                  ))}
                 </div>
-              )}
-            </div>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-3.5 max-h-[calc(100dvh-200px)] sm:max-h-[55vh] overflow-y-auto overscroll-contain touch-pan-y pr-1">
+                {/* Matching Destinations */}
+                {filteredDestinations.length > 0 && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <h4 className="text-[11.5px] font-extrabold uppercase tracking-wide text-[#64748b] m-0">
+                        DESTINATIONS
+                      </h4>
+                      <div className="flex-1 h-[1px] bg-[#eef0f4] ml-2" />
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      {filteredDestinations.map((d) => (
+                        <Link
+                          key={d.href}
+                          href={d.href}
+                          onClick={() => setSearchOpen(false)}
+                          className="flex items-center justify-between px-3.5 py-2.5 rounded-full bg-[#f4f6f9] hover:bg-[#ebf0f5] text-[#0f172a] font-bold text-xs transition-colors group"
+                        >
+                          <span className="truncate">{d.name}</span>
+                          <ChevronRight className="w-4 h-4 text-[#8e9ba9] group-hover:text-[#0f172a] shrink-0" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Matching Expeditions */}
+                {filteredTrips.length > 0 ? (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2.5">
+                      <h4 className="text-[11.5px] font-extrabold uppercase tracking-wide text-[#64748b] m-0">
+                        MATCHING EXPEDITIONS ({filteredTrips.length})
+                      </h4>
+                      <div className="flex-1 h-[1px] bg-[#eef0f4] ml-2" />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      {filteredTrips.map((trip) => (
+                        <Link
+                          key={trip.id}
+                          href={`/trips/${trip.slug || trip.id}`}
+                          onClick={() => setSearchOpen(false)}
+                          className="flex items-center justify-between p-2.5 sm:p-3 rounded-2xl bg-[#f4f6f9] hover:bg-[#ebf0f5] active:scale-[0.99] transition-all group"
+                        >
+                          <div className="flex items-center gap-3 min-w-0">
+                            <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-[#e2e6ec] shrink-0">
+                              <img
+                                src={trip.image_url || "/assets/images/home/hero-poster.jpg"}
+                                alt={trip.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).src =
+                                    "/assets/images/home/hero-poster.jpg";
+                                }}
+                              />
+                            </div>
+                            <div className="flex flex-col min-w-0">
+                              <span className="font-bold text-xs sm:text-[13.5px] text-[#0f172a] truncate group-hover:text-black">
+                                {trip.title}
+                              </span>
+                              <div className="flex items-center gap-2 mt-0.5 text-[11px] text-[#64748b] font-medium">
+                                {trip.duration && <span>{trip.duration}</span>}
+                                {trip.duration && <span>•</span>}
+                                <span className="text-[#0f172a] font-bold">
+                                  {formatPrice(trip.price)}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <ChevronRight className="w-4 h-4 text-[#8e9ba9] group-hover:text-[#0f172a] transition-colors shrink-0 ml-2" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : filteredDestinations.length === 0 ? (
+                  <div className="py-8 text-center flex flex-col items-center justify-center">
+                    <div className="w-11 h-11 rounded-full bg-[#f0f3f6] flex items-center justify-center mb-2.5 text-[#64748b]">
+                      <Search className="w-5 h-5 stroke-[2]" />
+                    </div>
+                    <h4 className="text-sm font-bold text-[#0f172a] m-0">No matching expeditions</h4>
+                    <p className="text-xs text-[#64748b] mt-1 max-w-xs m-0">
+                      We couldn&apos;t find any trips matching &ldquo;{searchQuery}&rdquo;. Try searching for Spiti, Ladakh, Manali, or Kashmir.
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            )}
           </div>
         </div>
       )}

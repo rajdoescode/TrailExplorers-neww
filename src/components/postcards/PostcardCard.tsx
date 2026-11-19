@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { Play, BookOpen, ArrowUpRight } from "lucide-react";
 import { Postcard } from "@/types";
 
@@ -17,7 +17,7 @@ export const PostcardCard: React.FC<PostcardCardProps> = ({ postcard, onClick })
       className="group bg-white rounded-[18px] border border-[#e2e2dc] shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col cursor-pointer"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#f6f6f1]">
-        <Image
+        <SkeletonImage
           src={postcard.image_url || "/assets/images/home/hero-poster.jpg"}
           alt={postcard.title}
           fill

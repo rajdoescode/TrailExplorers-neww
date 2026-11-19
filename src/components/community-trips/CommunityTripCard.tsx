@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CommunityTrip } from "@/data/communityTrips";
 import { Button } from "@/components/ui/Button";
 import { ComingSoonCard } from "./ComingSoonCard";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 
 interface CommunityTripCardProps {
   trip: CommunityTrip;
@@ -17,17 +18,14 @@ export const CommunityTripCard: React.FC<CommunityTripCardProps> = ({ trip }) =>
 
   return (
     <article className="community-card">
-      <div className="thumb">
-        <Link href={trip.detailUrl}>
-          <img
+      <div className="thumb relative overflow-hidden">
+        <Link href={trip.detailUrl} className="relative block w-full h-full">
+          <SkeletonImage
             src={trip.image}
             alt={trip.title}
-            loading="lazy"
-            decoding="async"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src =
-                "/assets/images/home/hero-poster.jpg";
-            }}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover w-full h-full"
           />
         </Link>
       </div>

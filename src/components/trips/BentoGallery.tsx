@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollLock } from "@/hooks/useScrollLock";
 
@@ -155,13 +156,14 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                 }}
                 data-pos={pos}
               >
-                <Image
+                <SkeletonImage
                   src={img}
                   alt={`${title} - Photo ${idx + 1}`}
                   fill
                   priority={pos === 0}
                   sizes="(max-width: 640px) 280px, 320px"
                   className="object-cover rounded-[24px] pointer-events-none select-none"
+                  skeletonClassName="rounded-[24px]"
                 />
               </div>
             );
@@ -186,15 +188,16 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                 onClick={() => openLightbox(0)}
                 className="relative h-full rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
               >
-                <Image
+                <SkeletonImage
                   src={images[0]}
                   alt={`${title} - Photo 1`}
                   fill
                   priority
                   sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  skeletonClassName="rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none" />
               </div>
 
               {/* Column 2 (Stacked 2 Tiles) */}
@@ -203,27 +206,29 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                   onClick={() => openLightbox(1)}
                   className="relative flex-1 rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
                 >
-                  <Image
+                  <SkeletonImage
                     src={images[1]}
                     alt={`${title} - Photo 2`}
                     fill
                     sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    skeletonClassName="rounded-2xl"
                   />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none" />
                 </div>
                 <div
                   onClick={() => openLightbox(2)}
                   className="relative flex-1 rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
                 >
-                  <Image
+                  <SkeletonImage
                     src={images[2]}
                     alt={`${title} - Photo 3`}
                     fill
                     sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    skeletonClassName="rounded-2xl"
                   />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none" />
                 </div>
               </div>
 
@@ -232,14 +237,15 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                 onClick={() => openLightbox(3)}
                 className="relative h-full rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
               >
-                <Image
+                <SkeletonImage
                   src={images[3]}
                   alt={`${title} - Photo 4`}
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  skeletonClassName="rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none" />
               </div>
 
               {/* Column 4 (Right Tall Tile) */}
@@ -247,14 +253,15 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                 onClick={() => openLightbox(4)}
                 className="relative h-full rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
               >
-                <Image
+                <SkeletonImage
                   src={images[4]}
                   alt={`${title} - Photo 5`}
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  skeletonClassName="rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none" />
               </div>
             </div>
 
@@ -294,15 +301,16 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                   onClick={() => openLightbox(idx)}
                   className="relative h-[200px] sm:h-[260px] rounded-2xl overflow-hidden cursor-pointer group bg-[#e8e8e2] border border-[#e2e2dc]"
                 >
-                  <Image
+                  <SkeletonImage
                     src={img}
                     alt={`${title} - Photo ${idx + 1}`}
                     fill
                     sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
-                    loading={idx < 4 ? "eager" : "lazy"}
+                    priority={idx < 4}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    skeletonClassName="rounded-2xl"
                   />
-                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors pointer-events-none" />
                 </div>
               ))}
             </div>
@@ -362,10 +370,11 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
           {/* Central Image View */}
           <div className="relative flex-1 flex items-center justify-center my-4 overflow-hidden">
             <div className="relative w-full h-full max-w-5xl max-h-[75vh]">
-              <Image
+              <SkeletonImage
                 src={images[activeIdx]}
                 alt={`${title} - photo ${activeIdx + 1}`}
                 fill
+                priority
                 className="object-contain"
                 sizes="(max-width: 1280px) 100vw, 1280px"
               />
@@ -413,7 +422,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                     : "border-transparent opacity-50 hover:opacity-100"
                 }`}
               >
-                <Image src={img} alt={`Thumbnail ${idx + 1}`} fill sizes="64px" className="object-cover" />
+                <SkeletonImage src={img} alt={`Thumbnail ${idx + 1}`} fill sizes="64px" className="object-cover" skeletonClassName="rounded-lg" />
               </button>
             ))}
           </div>

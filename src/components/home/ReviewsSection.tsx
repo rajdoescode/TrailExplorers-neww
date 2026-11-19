@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { Star, Check } from "lucide-react";
 
 interface FeaturedReview {
@@ -118,12 +118,13 @@ export const ReviewsSection: React.FC = () => {
             <article key={rev.id} className="review-card-modern">
               <div className="rev-card-header">
                 <div className="rev-avatar-img w-12 h-12 rounded-full overflow-hidden relative shrink-0">
-                  <Image
+                  <SkeletonImage
                     src={rev.avatar_url}
                     alt={rev.customer_name}
                     fill
                     sizes="48px"
                     className="object-cover"
+                    skeletonClassName="rounded-full"
                   />
                 </div>
                 <div className="rev-header-info">

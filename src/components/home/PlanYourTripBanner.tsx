@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 
 export const PlanYourTripBanner: React.FC = () => {
   // Animation state to simulate real-time typing / message sequence
@@ -58,12 +58,13 @@ export const PlanYourTripBanner: React.FC = () => {
               {/* Chat Header */}
               <div className="flex items-center gap-3 pb-3 border-b border-white/10 font-bold">
                 <div className="relative w-9 h-9 rounded-full bg-[#d6ff3f] overflow-hidden shrink-0 border border-white/20">
-                  <Image
+                  <SkeletonImage
                     src="/assets/images/mascot/explorer-face.webp"
                     alt="Trip Planner Avatar"
                     fill
                     sizes="36px"
                     className="object-cover object-top scale-110"
+                    skeletonClassName="rounded-full"
                   />
                 </div>
                 <div className="flex flex-col">

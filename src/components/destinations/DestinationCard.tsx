@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { ArrowUpRight } from "lucide-react";
 import { Destination } from "@/types";
 
@@ -26,12 +26,13 @@ export const DestinationCard: React.FC<DestinationCardProps> = ({ destination })
       href={targetHref}
       className="group relative block aspect-[4/3] rounded-[18px] overflow-hidden border border-[#e2e2dc] shadow-card hover:shadow-card-hover transition-all duration-300"
     >
-      <Image
+      <SkeletonImage
         src={destination.image_url}
         alt={destination.title}
         fill
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
         className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out"
+        skeletonClassName="rounded-[18px]"
       />
 
       {/* Gradient Overlay for Text Legibility */}
