@@ -151,6 +151,7 @@ export const InternationalDestinationsSection: React.FC = () => {
                       src={dest.image}
                       alt={dest.name}
                       fill
+                      sizes="(max-width: 768px) 58vw, 256px"
                       className="object-cover rounded-[28px] transition-transform duration-500 hover:scale-105"
                     />
 

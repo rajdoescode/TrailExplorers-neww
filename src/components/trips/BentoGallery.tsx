@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollLock } from "@/hooks/useScrollLock";
@@ -15,8 +15,57 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
 
+  // Mobile Interactive Flip Stack State
+  const [activeStackIdx, setActiveStackIdx] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const touchStartXRef = useRef<number | null>(null);
+
   const totalPhotos = images.length;
   const isFiveTileBento = totalPhotos === 5;
+
+  // Auto-play timer for mobile flip card stack
+  const nextStackCard = useCallback(() => {
+    if (totalPhotos <= 1) return;
+    setActiveStackIdx((prev) => (prev + 1) % totalPhotos);
+  }, [totalPhotos]);
+
+  const resetStackTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (totalPhotos <= 1) return;
+    timerRef.current = setInterval(() => {
+      setActiveStackIdx((prev) => (prev + 1) % totalPhotos);
+    }, 3500);
+  }, [totalPhotos]);
+
+  useEffect(() => {
+    resetStackTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [resetStackTimer]);
+
+  const handleStackClick = () => {
+    nextStackCard();
+    resetStackTimer();
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartXRef.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartXRef.current === null) return;
+    const diff = touchStartXRef.current - e.changedTouches[0].clientX;
+    touchStartXRef.current = null;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        handleStackClick();
+      } else {
+        setActiveStackIdx((prev) => (prev - 1 + totalPhotos) % totalPhotos);
+        resetStackTimer();
+      }
+    }
+  };
 
   const openLightbox = (idx: number) => {
     setActiveIdx(idx);
@@ -52,8 +101,76 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
   }, [lightboxOpen, nextPhoto, prevPhoto]);
 
   return (
-    <section className="relative w-full py-4 sm:py-6 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full py-2 sm:py-6 bg-white overflow-hidden">
+      {/* MOBILE INTERACTIVE FLIP-CARD STACK (Matching Authentic Awara Banjara Design) */}
+      <div className="block md:hidden px-4 pt-2 pb-6 text-center overflow-visible">
+        <div
+          onClick={handleStackClick}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          role="button"
+          tabIndex={0}
+          aria-label="Trip photo gallery stack. Tap to flip to next photo"
+          className="relative w-[min(280px,74vw)] aspect-[3/4] mx-auto cursor-pointer select-none touch-pan-y active:scale-[0.98] transition-transform duration-200"
+        >
+          {images.map((img, idx) => {
+            const pos = (idx - activeStackIdx + totalPhotos) % totalPhotos;
+
+            let transform = "translateY(12px) translateX(8px) rotate(11deg) scale(0.85)";
+            let zIndex = 0;
+            let opacity = 0;
+            let boxShadow = "none";
+
+            if (pos === 0) {
+              transform = "translateY(0) scale(1) rotate(0deg)";
+              zIndex = 10;
+              opacity = 1;
+              boxShadow = "0 24px 50px rgba(20, 20, 15, 0.26)";
+            } else if (pos === 1) {
+              transform = "translateY(-14px) translateX(28px) rotate(6deg) scale(0.96)";
+              zIndex = 8;
+              opacity = 0.96;
+              boxShadow = "0 16px 36px rgba(20, 20, 15, 0.18)";
+            } else if (pos === 2) {
+              transform = "translateY(-10px) translateX(-32px) rotate(-7deg) scale(0.92)";
+              zIndex = 6;
+              opacity = 0.9;
+              boxShadow = "0 14px 32px rgba(20, 20, 15, 0.15)";
+            } else if (pos === 3 || pos === 4) {
+              transform = "translateY(12px) translateX(8px) rotate(11deg) scale(0.85)";
+              zIndex = 2;
+              opacity = 0.6;
+              boxShadow = "0 10px 24px rgba(20, 20, 15, 0.12)";
+            }
+
+            return (
+              <div
+                key={`${img}-${idx}`}
+                className="absolute inset-0 rounded-[24px] overflow-hidden bg-[#f6f6f1] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform"
+                style={{
+                  transform,
+                  zIndex,
+                  opacity,
+                  boxShadow,
+                }}
+                data-pos={pos}
+              >
+                <Image
+                  src={img}
+                  alt={`${title} - Photo ${idx + 1}`}
+                  fill
+                  priority={pos === 0}
+                  sizes="(max-width: 640px) 280px, 320px"
+                  className="object-cover rounded-[24px] pointer-events-none select-none"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* DESKTOP BENTO GALLERY */}
+      <div className="hidden md:block max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* CASE A: EXACT 5-PHOTO BENTO (Spiti Valley - Screenshots 1 & 2) */}
         {isFiveTileBento ? (
           <div className="relative">
@@ -74,6 +191,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                   alt={`${title} - Photo 1`}
                   fill
                   priority
+                  sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -89,6 +207,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                     src={images[1]}
                     alt={`${title} - Photo 2`}
                     fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -101,6 +220,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                     src={images[2]}
                     alt={`${title} - Photo 3`}
                     fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -116,6 +236,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                   src={images[3]}
                   alt={`${title} - Photo 4`}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -130,6 +251,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                   src={images[4]}
                   alt={`${title} - Photo 5`}
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
@@ -176,6 +298,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                     src={img}
                     alt={`${title} - Photo ${idx + 1}`}
                     fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1280px) 25vw, 320px"
                     loading={idx < 4 ? "eager" : "lazy"}
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -290,7 +413,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                     : "border-transparent opacity-50 hover:opacity-100"
                 }`}
               >
-                <Image src={img} alt={`Thumbnail ${idx + 1}`} fill className="object-cover" />
+                <Image src={img} alt={`Thumbnail ${idx + 1}`} fill sizes="64px" className="object-cover" />
               </button>
             ))}
           </div>

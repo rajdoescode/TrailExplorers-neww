@@ -35,6 +35,7 @@ export default function FounderPage() {
                 src="/assets/images/about/founder-viru.jpg"
                 alt="Viru Thakur - Founder of Trail Explorers"
                 fill
+                sizes="(max-width: 768px) 100vw, 288px"
                 className="object-cover"
               />
             </div>

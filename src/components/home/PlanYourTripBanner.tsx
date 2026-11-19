@@ -62,6 +62,7 @@ export const PlanYourTripBanner: React.FC = () => {
                     src="/assets/images/mascot/explorer-face.webp"
                     alt="Trip Planner Avatar"
                     fill
+                    sizes="36px"
                     className="object-cover object-top scale-110"
                   />
                 </div>

@@ -122,13 +122,13 @@ export function getTripWeather(trip: Trip): WeatherInfo {
   if (text.includes("spiti")) {
     return {
       location: "KAZA, SPITI VALLEY",
-      temp: "-3°C",
-      description: "Clear sky • feels like -7° • today 6° / -9°",
+      temp: "-5°C",
+      description: "Clear sky · feels like –9° · today 9° / –6°",
       forecast: [
-        { day: "Fri", icon: "☁️", temp: "9° / -6°" },
-        { day: "Sat", icon: "☁️", temp: "9° / -5°" },
-        { day: "Sun", icon: "❄️", temp: "6° / -7°" },
-        { day: "Mon", icon: "☁️", temp: "4° / -9°" },
+        { day: "Sat", icon: "cloud", temp: "9°/–4°" },
+        { day: "Sun", icon: "snow", temp: "6°/–7°" },
+        { day: "Mon", icon: "cloud", temp: "4°/–10°" },
+        { day: "Tue", icon: "sun", temp: "6°/–8°" },
       ],
     };
   }
@@ -137,12 +137,12 @@ export function getTripWeather(trip: Trip): WeatherInfo {
     return {
       location: "MANALI, HIMACHAL PRADESH",
       temp: "6°C",
-      description: "Clear sky • feels like 2° • today 23° / 2°",
+      description: "Clear sky · feels like 2° · today 23° / 2°",
       forecast: [
-        { day: "Fri", icon: "☁️", temp: "21° / 5°" },
-        { day: "Sat", icon: "🌧️", temp: "19° / 7°" },
-        { day: "Sun", icon: "🌧️", temp: "17° / 4°" },
-        { day: "Mon", icon: "☀️", temp: "18° / 3°" },
+        { day: "Fri", icon: "cloud", temp: "21° / 5°" },
+        { day: "Sat", icon: "rain", temp: "19° / 7°" },
+        { day: "Sun", icon: "rain", temp: "17° / 4°" },
+        { day: "Mon", icon: "sun", temp: "18° / 3°" },
       ],
     };
   }
@@ -151,12 +151,12 @@ export function getTripWeather(trip: Trip): WeatherInfo {
     return {
       location: "SRINAGAR, KASHMIR",
       temp: "4°C",
-      description: "Overcast • feels like 1° • today 12° / 0°",
+      description: "Overcast · feels like 1° · today 12° / 0°",
       forecast: [
-        { day: "Fri", icon: "🌧️", temp: "10° / 1°" },
-        { day: "Sat", icon: "❄️", temp: "8° / -2°" },
-        { day: "Sun", icon: "❄️", temp: "7° / -1°" },
-        { day: "Mon", icon: "⛅", temp: "11° / 2°" },
+        { day: "Fri", icon: "rain", temp: "10° / 1°" },
+        { day: "Sat", icon: "snow", temp: "8° / -2°" },
+        { day: "Sun", icon: "snow", temp: "7° / -1°" },
+        { day: "Mon", icon: "cloud", temp: "11° / 2°" },
       ],
     };
   }
@@ -165,12 +165,12 @@ export function getTripWeather(trip: Trip): WeatherInfo {
     return {
       location: "LEH, LADAKH",
       temp: "-1°C",
-      description: "Partly cloudy • feels like -5° • today 5° / -8°",
+      description: "Partly cloudy · feels like –5° · today 5° / –8°",
       forecast: [
-        { day: "Fri", icon: "⛅", temp: "4° / -7°" },
-        { day: "Sat", icon: "❄️", temp: "3° / -9°" },
-        { day: "Sun", icon: "☀️", temp: "5° / -6°" },
-        { day: "Mon", icon: "⛅", temp: "6° / -5°" },
+        { day: "Fri", icon: "cloud", temp: "4° / -7°" },
+        { day: "Sat", icon: "snow", temp: "3° / -9°" },
+        { day: "Sun", icon: "sun", temp: "5° / -6°" },
+        { day: "Mon", icon: "cloud", temp: "6° / -5°" },
       ],
     };
   }
@@ -179,12 +179,12 @@ export function getTripWeather(trip: Trip): WeatherInfo {
     return {
       location: "SHILLONG, MEGHALAYA",
       temp: "16°C",
-      description: "Gentle breeze • feels like 16° • today 22° / 12°",
+      description: "Gentle breeze · feels like 16° · today 22° / 12°",
       forecast: [
-        { day: "Fri", icon: "☀️", temp: "21° / 13°" },
-        { day: "Sat", icon: "⛅", temp: "20° / 12°" },
-        { day: "Sun", icon: "☀️", temp: "22° / 11°" },
-        { day: "Mon", icon: "☀️", temp: "23° / 12°" },
+        { day: "Fri", icon: "sun", temp: "21° / 13°" },
+        { day: "Sat", icon: "cloud", temp: "20° / 12°" },
+        { day: "Sun", icon: "sun", temp: "22° / 11°" },
+        { day: "Mon", icon: "sun", temp: "23° / 12°" },
       ],
     };
   }
@@ -192,12 +192,12 @@ export function getTripWeather(trip: Trip): WeatherInfo {
   return {
     location: "MANALI, HIMACHAL PRADESH",
     temp: "6°C",
-    description: "Clear sky • feels like 2° • today 23° / 2°",
+    description: "Clear sky · feels like 2° · today 23° / 2°",
     forecast: [
-      { day: "Fri", icon: "☁️", temp: "21° / 5°" },
-      { day: "Sat", icon: "🌧️", temp: "19° / 7°" },
-      { day: "Sun", icon: "🌧️", temp: "17° / 4°" },
-      { day: "Mon", icon: "☀️", temp: "18° / 3°" },
+      { day: "Fri", icon: "cloud", temp: "21° / 5°" },
+      { day: "Sat", icon: "rain", temp: "19° / 7°" },
+      { day: "Sun", icon: "rain", temp: "17° / 4°" },
+      { day: "Mon", icon: "sun", temp: "18° / 3°" },
     ],
   };
 }

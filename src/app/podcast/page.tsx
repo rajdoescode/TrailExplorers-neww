@@ -75,7 +75,13 @@ export default function PodcastPage() {
             >
               <div>
                 <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden mb-4 border border-[#e2e2dc]">
-                  <Image src={ep.image} alt={ep.title} fill className="object-cover" />
+                  <Image
+                    src={ep.image}
+                    alt={ep.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    className="object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                     <div className="w-12 h-12 rounded-full bg-[#d6ff3f] text-[#14140f] flex items-center justify-center shadow-lg active:scale-95 transition-transform">
                       <Play className="w-5 h-5 fill-current ml-0.5" />

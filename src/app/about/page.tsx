@@ -77,6 +77,7 @@ export default function AboutPage() {
                   src="/assets/images/about/founder-viru.jpg"
                   alt="Viru Thakur - Founder of Trail Explorers"
                   fill
+                  sizes="(max-width: 640px) 144px, 176px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute bottom-2 left-2 bg-[#14140f]/80 backdrop-blur-xs text-white text-[11px] font-bold px-2 py-0.5 rounded-full">
@@ -113,6 +114,7 @@ export default function AboutPage() {
                 src="/assets/images/about/community-group.jpg"
                 alt="Trail Explorers Campfire Community"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>

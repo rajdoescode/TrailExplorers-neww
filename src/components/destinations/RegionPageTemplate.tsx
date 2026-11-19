@@ -88,8 +88,9 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
               src={iconSrc}
               alt={title}
               fill
-              className="object-contain"
               priority
+              sizes="(max-width: 768px) 80px, 120px"
+              className="object-contain"
             />
           </div>
 
@@ -296,6 +297,7 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
                 src="/assets/images/mascot/explorer-standing.webp"
                 alt="Trail Explorers Trip Planner"
                 fill
+                sizes="(max-width: 640px) 144px, 176px"
                 className="object-contain"
                 onError={(e) => {
                   (e.currentTarget as HTMLImageElement).src = "/assets/images/mascot/explorer-face.webp";
@@ -370,6 +372,7 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
                 src={iconSrc}
                 alt={regionName}
                 fill
+                sizes="(max-width: 640px) 110px, 240px"
                 className="object-contain"
               />
             </div>

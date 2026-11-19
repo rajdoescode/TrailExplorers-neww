@@ -122,6 +122,7 @@ export const ReviewsSection: React.FC = () => {
                     src={rev.avatar_url}
                     alt={rev.customer_name}
                     fill
+                    sizes="48px"
                     className="object-cover"
                   />
                 </div>

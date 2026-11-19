@@ -1170,7 +1170,13 @@ export default function PlanYourTripPage() {
                             : "border-transparent hover:border-gray-300"
                         }`}
                       >
-                        <Image src={reg.image} alt={reg.name} fill className="object-cover" />
+                        <Image
+                          src={reg.image}
+                          alt={reg.name}
+                          fill
+                          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 250px"
+                          className="object-cover"
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
 
                         {/* Top-right Selection Tick Circle */}
@@ -1982,6 +1988,7 @@ export default function PlanYourTripPage() {
                   src="/assets/images/mascot/explorer-face.webp"
                   alt="Trip Planner Avatar"
                   fill
+                  sizes="(max-width: 640px) 36px, 44px"
                   className="object-cover object-top scale-110"
                 />
               </div>
@@ -2057,6 +2064,7 @@ export default function PlanYourTripPage() {
                           src={start.image}
                           alt={start.title}
                           fill
+                          sizes="(max-width: 640px) 124px, 200px"
                           className="object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
@@ -2096,6 +2104,7 @@ export default function PlanYourTripPage() {
                           src="/assets/images/mascot/explorer-face.webp"
                           alt="Trip Planner"
                           fill
+                          sizes="28px"
                           className="object-cover object-top scale-110"
                         />
                       </div>

@@ -79,8 +79,9 @@ export default function WinterSpitiPage() {
               src="/assets/images/destinations/icons/spiti.png"
               alt="Winter Spiti"
               fill
-              className="object-contain"
               priority
+              sizes="(max-width: 768px) 80px, 120px"
+              className="object-contain"
             />
           </div>
 
@@ -142,6 +143,7 @@ export default function WinterSpitiPage() {
                 src={gatewayTrip.image_url || "/assets/images/trips/trip_103_image_url.jpg"}
                 alt={gatewayTrip.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 600px"
                 className="object-cover"
               />
             </Link>
@@ -404,6 +406,7 @@ export default function WinterSpitiPage() {
                 src="/assets/images/destinations/icons/spiti.png"
                 alt="Winter Spiti"
                 fill
+                sizes="(max-width: 640px) 110px, 240px"
                 className="object-contain"
               />
             </div>

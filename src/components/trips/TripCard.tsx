@@ -1,101 +1,86 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, MapPin, ArrowRight } from "lucide-react";
+import { Clock } from "lucide-react";
 import { Trip } from "@/types";
 import { formatPrice } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
 
 export interface TripCardProps {
   trip: Trip;
   priority?: boolean;
+  className?: string;
 }
 
-export const TripCard: React.FC<TripCardProps> = ({ trip, priority = false }) => {
-  const tripSlug = trip.slug || `${trip.id}`;
-  const displayImage = trip.image_url || "/assets/images/home/hero-poster.jpg";
+const normalizeImageUrl = (url?: string | null): string => {
+  if (!url) return "/assets/images/home/hero-poster.jpg";
+  if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("/")) {
+    return url;
+  }
+  return `/${url}`;
+};
 
-  // Category display tag
-  const categoryTag = trip.tags
-    ? Array.isArray(trip.tags)
-      ? trip.tags[0]
-      : trip.tags.split(",")[0].trim()
-    : trip.category
-    ? trip.category.replace(/_/g, " ").replace(/tours/g, "").trim()
-    : "Himalayan Expedition";
+export const TripCard: React.FC<TripCardProps> = ({ trip, priority = false, className = "" }) => {
+  const tripSlug = trip.slug || `${trip.id}`;
+  const displayImage = normalizeImageUrl(trip.image_url);
 
   return (
-    <article className="group bg-white rounded-[18px] border border-[#e2e2dc] shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col h-full">
+    <article
+      className={`group bg-white rounded-[18px] border border-[#ecece5] shadow-[0_10px_24px_rgba(20,20,15,0.06)] hover:shadow-[0_18px_34px_rgba(20,20,15,0.14)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col h-full ${className}`}
+    >
       {/* Thumbnail Container */}
-      <Link
-        href={`/trips/${tripSlug}`}
-        className="relative block aspect-[4/3] w-full overflow-hidden bg-[#f6f6f1]"
-      >
-        <Image
-          src={displayImage}
-          alt={trip.title}
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          priority={priority}
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500 ease-out"
-        />
-
-        {/* Floating Category Badge */}
-        <div className="absolute top-3 left-3 z-10">
-          <span className="inline-block bg-[#d6ff3f] text-[#14140f] text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full border border-[#14140f] shadow-xs">
-            {categoryTag}
-          </span>
-        </div>
-
-        {/* Gradient Scrim at bottom of image for contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60 pointer-events-none" />
-
-        {/* Duration Chip on Image */}
-        <div className="absolute bottom-3 left-3 z-10 flex items-center gap-1.5 bg-black/75 backdrop-blur-xs text-white text-xs font-semibold px-2.5 py-1 rounded-md">
-          <Clock className="w-3.5 h-3.5 text-[#d6ff3f]" />
-          <span>{trip.duration || "Multi-Day Tour"}</span>
-        </div>
-      </Link>
+      <div className="aspect-[4/3] relative w-full overflow-hidden bg-[#f4f4ee]">
+        <Link href={`/trips/${tripSlug}`} className="block w-full h-full">
+          <Image
+            src={displayImage}
+            alt={trip.title}
+            fill
+            sizes="(max-width: 640px) 75vw, (max-width: 1024px) 50vw, 25vw"
+            priority={priority}
+            className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-400 ease-out"
+          />
+        </Link>
+      </div>
 
       {/* Content Body */}
-      <div className="p-5 flex flex-col flex-1 justify-between gap-4">
-        <div className="flex flex-col gap-2">
-          {/* Route or Pickup */}
-          {trip.route && (
-            <div className="flex items-center gap-1.5 text-xs text-[#6b6b63] font-semibold">
-              <MapPin className="w-3.5 h-3.5 text-[#14140f] shrink-0" />
-              <span className="truncate">{trip.route}</span>
-            </div>
-          )}
-
+      <div className="p-4 sm:p-[18px] flex flex-col flex-1 gap-2.5 justify-between min-h-0">
+        <div>
           {/* Trip Title */}
-          <Link href={`/trips/${tripSlug}`}>
-            <h3 className="text-[17px] font-bold text-[#14140f] line-clamp-2 leading-snug group-hover:text-[#14140f] group-hover:underline underline-offset-2 transition-colors">
+          <h3 className="text-[17px] font-bold text-[#14140f] line-clamp-2 leading-[1.3] min-h-[44px]">
+            <Link
+              href={`/trips/${tripSlug}`}
+              className="text-inherit hover:underline decoration-1 underline-offset-2"
+            >
               {trip.title}
-            </h3>
-          </Link>
+            </Link>
+          </h3>
+
+          {/* Duration */}
+          <div className="flex items-center gap-1.5 text-[#66665c] text-[13px] font-medium mt-1.5">
+            <Clock className="w-3.5 h-3.5 text-[#66665c] shrink-0" strokeWidth={1.8} />
+            <span>{trip.duration || "Multi-Day Tour"}</span>
+          </div>
         </div>
 
-        {/* Price & Action Row */}
-        <div className="pt-3 border-t border-[#f0f0eb] flex items-center justify-between gap-2 mt-auto">
+        {/* Divider */}
+        <hr className="border-0 border-t border-[#ecece5] my-0.5" />
+
+        {/* Price & Book Now Row */}
+        <div className="flex items-center justify-between gap-2 mt-auto pt-1">
           <div className="flex flex-col">
-            <span className="text-[11px] uppercase font-bold text-[#6b6b63] tracking-wider">
-              Starting From
+            <span className="text-[11px] font-bold uppercase tracking-[0.04em] text-[#66665c] leading-tight">
+              STARTS FROM
             </span>
-            <span className="text-lg font-extrabold text-[#14140f]">
+            <span className="text-[18px] font-bold text-[#14140f] leading-tight mt-0.5 font-heading">
               {formatPrice(trip.price)}
             </span>
           </div>
 
-          <Button
+          <Link
             href={`/trips/${tripSlug}`}
-            variant="primary"
-            size="sm"
-            rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
-            className="text-xs font-bold px-4 py-2"
+            className="inline-flex items-center justify-center bg-[#14140f] hover:bg-black text-white text-[13px] font-bold px-[18px] py-2 rounded-full transition-all duration-200 active:scale-95 shadow-xs hover:-translate-y-0.5 hover:shadow-md cursor-pointer"
           >
-            View Details
-          </Button>
+            Book Now
+          </Link>
         </div>
       </div>
     </article>

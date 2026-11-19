@@ -144,6 +144,7 @@ export const WatchReadSection: React.FC = () => {
                       src={card.image_url}
                       alt={card.title}
                       fill
+                      sizes="(max-width: 768px) 58vw, 256px"
                       className="object-cover rounded-[28px] transition-transform duration-500 group-hover:scale-105"
                     />
 
@@ -229,6 +230,7 @@ export const WatchReadSection: React.FC = () => {
                 src={selectedPostcard.image_url}
                 alt={selectedPostcard.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 672px"
                 className="object-cover"
               />
             </div>
