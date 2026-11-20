@@ -4,6 +4,8 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
+import { CustomCalendarPicker } from "@/components/ui/CustomCalendarPicker";
 
 interface TripModalDetail {
   title?: string;
@@ -27,12 +29,21 @@ export const TripModal: React.FC = () => {
     name: "",
     city: "",
     destination: "",
+    date: "",
     phone: "",
     email: "",
   });
 
   // Global reference-counted scroll lock for booking modal & success modal
   useScrollLock(isOpen || isSuccessOpen);
+
+  const closeModal = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const closeSuccessModal = useCallback(() => {
+    setIsSuccessOpen(false);
+  }, []);
 
   const openModal = useCallback((newTitle?: string, newImgSrc?: string) => {
     setTitle(newTitle || "Let's Plan Your Next Journey.");
@@ -45,13 +56,20 @@ export const TripModal: React.FC = () => {
     }
   }, []);
 
-  const closeModal = useCallback(() => {
-    setIsOpen(false);
-  }, []);
+  // Swipe-down-to-close hooks for mobile bottom sheets (Android/iOS native feel)
+  const tripModalOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: tripModalSheetRef, dragHandleRef: tripModalHandleRef } = useSwipeDownToClose({
+    isOpen,
+    onClose: closeModal,
+    overlayRef: tripModalOverlayRef,
+  });
 
-  const closeSuccessModal = useCallback(() => {
-    setIsSuccessOpen(false);
-  }, []);
+  const successOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: successSheetRef, dragHandleRef: successHandleRef } = useSwipeDownToClose({
+    isOpen: isSuccessOpen,
+    onClose: closeSuccessModal,
+    overlayRef: successOverlayRef,
+  });
 
   // Expose openTripModal globally and listen for custom events
   useEffect(() => {
@@ -141,6 +159,7 @@ export const TripModal: React.FC = () => {
       name: "",
       city: "",
       destination: "",
+      date: "",
       phone: "",
       email: "",
     });
@@ -152,6 +171,7 @@ export const TripModal: React.FC = () => {
       {/* ============ TRIP PLANNING MODAL POPUP ============ */}
       <div
         id="tripModal"
+        ref={tripModalOverlayRef}
         className={`fixed inset-0 z-[99999] flex items-end sm:items-center justify-center p-0 sm:p-5 bg-[#0f121a]/[0.72] backdrop-blur-[8px] transition-all duration-300 touch-none overscroll-contain ${
           isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
@@ -161,6 +181,7 @@ export const TripModal: React.FC = () => {
         }}
       >
         <div
+          ref={tripModalSheetRef}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modalDestTitle"
@@ -168,8 +189,13 @@ export const TripModal: React.FC = () => {
             isOpen ? "scale-100 translate-y-0" : "scale-[0.95] translate-y-8 sm:translate-y-5"
           }`}
         >
-          {/* Mobile drag handle */}
-          <div className="w-10 h-1 bg-[#d5d5cd] rounded-full mx-auto my-2.5 block sm:hidden" />
+          {/* Mobile drag handle with native pull-to-close */}
+          <div
+            ref={tripModalHandleRef}
+            className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto my-2.5 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+            title="Drag down to close"
+            aria-label="Drag down to close"
+          />
 
           {/* Close button */}
           <button
@@ -271,6 +297,16 @@ export const TripModal: React.FC = () => {
                   </select>
                 </div>
 
+                <div className="relative w-full">
+                  <CustomCalendarPicker
+                    value={formData.date}
+                    onChange={(newDate) => setFormData({ ...formData, date: newDate })}
+                    placeholder="Expected Travel Date (optional)"
+                    format="ordinal"
+                    inputClassName="border-[1.5px] border-[#e2e2dc] rounded-[10px] px-3.5 py-3 text-[14px] min-h-[44px]"
+                  />
+                </div>
+
                 <label className="block text-[12px] sm:text-[13px] font-semibold text-[#14140f] m-0">
                   Allow us to call you back!
                 </label>
@@ -318,9 +354,10 @@ export const TripModal: React.FC = () => {
       {/* ============ INQUIRY SUCCESS CONFIRMATION MODAL ============ */}
       <div
         id="inquirySuccessModal"
+        ref={successOverlayRef}
         role="dialog"
         aria-hidden={!isSuccessOpen}
-        className={`fixed inset-0 z-[999999] flex items-center justify-center p-4 bg-[#0f121a]/[0.68] backdrop-blur-[6px] transition-all duration-250 touch-none overscroll-contain ${
+        className={`fixed inset-0 z-[999999] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-[#0f121a]/[0.68] backdrop-blur-[6px] transition-all duration-250 touch-none overscroll-contain ${
           isSuccessOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
         onClick={(e) => {
@@ -328,10 +365,18 @@ export const TripModal: React.FC = () => {
         }}
       >
         <div
-          className={`relative bg-white rounded-[28px] max-w-[480px] w-[92%] p-6 sm:p-9 text-center shadow-[0_25px_60px_rgba(0,0,0,0.35)] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
+          ref={successSheetRef}
+          className={`relative bg-white rounded-t-[28px] sm:rounded-[28px] max-w-[480px] w-full sm:w-[92%] p-6 sm:p-9 text-center shadow-[0_25px_60px_rgba(0,0,0,0.35)] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pb-[calc(24px+env(safe-area-inset-bottom,0px))] sm:pb-9 ${
             isSuccessOpen ? "scale-100 translate-y-0" : "scale-[0.92] translate-y-4"
           }`}
         >
+          {/* Mobile drag handle */}
+          <div
+            ref={successHandleRef}
+            className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto mb-4 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+            title="Drag down to close"
+            aria-label="Drag down to close"
+          />
           <div className="text-[48px] sm:text-[54px] mb-3 select-none">🎉</div>
           <h3 className="text-[20px] sm:text-[24px] font-extrabold text-[#0f172a] mb-2 sm:mb-3 tracking-[-0.3px]">
             Thank You for Contacting!

@@ -147,14 +147,16 @@ export const SkeletonImage: React.FC<SkeletonImageProps> = ({
   return (
     <div
       className={cn(
-        "relative overflow-hidden inline-block",
+        "relative overflow-hidden inline-block max-w-full",
         roundedClass,
         containerClassName
       )}
       style={{
         width: width ? (typeof width === "number" ? `${width}px` : width) : "auto",
+        maxWidth: "100%",
         height: height ? (typeof height === "number" ? `${height}px` : height) : "auto",
         aspectRatio: width && height ? `${width}/${height}` : undefined,
+        ...style,
       }}
     >
       {/* Shimmer Skeleton Placeholder */}

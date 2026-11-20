@@ -98,17 +98,14 @@ export const TrustBar: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#f6f6f1] border-b border-[#e6e6df] overflow-x-auto no-scrollbar"
+      className="w-full bg-[#f6f6f1] border-b border-[#e6e6df]"
     >
-      <div className="max-w-[1280px] mx-auto px-5 sm:px-6 py-3.5 sm:py-5">
-        <div className="flex flex-nowrap justify-between sm:justify-center items-center gap-2 sm:gap-x-12 sm:gap-y-5 text-[12px] sm:text-[15px] font-semibold text-[#14140f] mx-auto">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-2.5 sm:py-5">
+        <div className="flex flex-row justify-around sm:justify-center items-center gap-3 sm:gap-12 text-[13px] sm:text-[15px] font-semibold text-[#14140f] mx-auto">
           {/* Stat 1: Instagram */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2.5 text-inherit select-none">
             <svg
-              width="28"
-              height="28"
-              style={{ width: "28px", height: "28px" }}
-              className="w-4 h-4 sm:w-7 sm:h-7 shrink-0"
+              className="w-[18px] h-[18px] sm:w-7 sm:h-7 shrink-0"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
@@ -125,13 +122,12 @@ export const TrustBar: React.FC = () => {
               <circle cx="12" cy="12" r="5" fill="none" stroke="#fff" strokeWidth="2" />
               <circle cx="17.5" cy="6.5" r="1.3" fill="#fff" />
             </svg>
-            <span className="flex flex-col sm:inline leading-tight sm:leading-normal">
-              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums whitespace-nowrap">
+            <span className="inline-flex items-baseline gap-1 leading-normal">
+              <strong className="font-extrabold text-[13px] sm:text-[15px] tabular-nums whitespace-nowrap text-[#14140f]">
                 {igCount.toLocaleString("en-IN")}+
-              </strong>{" "}
-              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px] whitespace-nowrap">
-                <span className="sm:hidden">IG Tribe</span>
-                <span className="hidden sm:inline">Instagram Community</span>
+              </strong>
+              <span className="hidden sm:inline font-medium text-[#14140f] text-[15px] whitespace-nowrap">
+                Instagram Community
               </span>
             </span>
           </div>
@@ -142,10 +138,7 @@ export const TrustBar: React.FC = () => {
             className="inline-flex items-center gap-1.5 sm:gap-2.5 text-inherit no-underline hover:opacity-85 transition-opacity"
           >
             <svg
-              width="28"
-              height="28"
-              style={{ width: "28px", height: "28px" }}
-              className="w-4 h-4 sm:w-7 sm:h-7 shrink-0"
+              className="w-[18px] h-[18px] sm:w-7 sm:h-7 shrink-0"
               viewBox="0 0 24 24"
               aria-hidden="true"
             >
@@ -166,13 +159,12 @@ export const TrustBar: React.FC = () => {
                 d="M12 4.75c1.76 0 3.34.61 4.58 1.8l3.44-3.44C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.27 6.62l4 3.09C6.22 6.86 8.87 4.75 12 4.75z"
               />
             </svg>
-            <span className="flex flex-col sm:inline leading-tight sm:leading-normal">
-              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums whitespace-nowrap">
+            <span className="inline-flex items-baseline gap-1 leading-normal">
+              <strong className="font-extrabold text-[13px] sm:text-[15px] tabular-nums whitespace-nowrap text-[#14140f]">
                 {ratingCount.toFixed(1)}★
-              </strong>{" "}
-              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px] whitespace-nowrap">
-                <span className="sm:hidden">Google</span>
-                <span className="hidden sm:inline">Google Reviews</span>
+              </strong>
+              <span className="hidden sm:inline font-medium text-[#14140f] text-[15px] whitespace-nowrap">
+                Google Reviews
               </span>
             </span>
           </Link>
@@ -180,10 +172,7 @@ export const TrustBar: React.FC = () => {
           {/* Stat 3: Travellers */}
           <div className="inline-flex items-center gap-1.5 sm:gap-2.5">
             <svg
-              width="28"
-              height="28"
-              style={{ width: "28px", height: "28px" }}
-              className="w-4 h-4 sm:w-7 sm:h-7 shrink-0 text-[#14140f]"
+              className="w-[18px] h-[18px] sm:w-7 sm:h-7 shrink-0 text-[#14140f]"
               viewBox="0 0 24 24"
               aria-hidden="true"
               fill="none"
@@ -197,13 +186,12 @@ export const TrustBar: React.FC = () => {
               <circle cx="17" cy="8.5" r="2.5" />
               <path d="M15.5 12a4.5 4.5 0 0 1 4.5 4.5V19" />
             </svg>
-            <span className="flex flex-col sm:inline leading-tight sm:leading-normal">
-              <strong className="font-extrabold text-[12px] sm:text-[15px] tabular-nums whitespace-nowrap">
+            <span className="inline-flex items-baseline gap-1 leading-normal">
+              <strong className="font-extrabold text-[13px] sm:text-[15px] tabular-nums whitespace-nowrap text-[#14140f]">
                 {travellersCount.toLocaleString("en-IN")}+
-              </strong>{" "}
-              <span className="font-medium text-[#14140f] text-[11px] sm:text-[15px] whitespace-nowrap">
-                <span className="sm:hidden">Travellers</span>
-                <span className="hidden sm:inline">Travellers</span>
+              </strong>
+              <span className="hidden sm:inline font-medium text-[#14140f] text-[15px] whitespace-nowrap">
+                Travellers
               </span>
             </span>
           </div>

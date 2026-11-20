@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 import { X, Download, Check } from "lucide-react";
 import { useScrollLock } from "@/hooks/useScrollLock";
 
@@ -13,6 +14,13 @@ interface PdfLeadModalProps {
 export function PdfLeadModal({ isOpen, onClose, title }: PdfLeadModalProps) {
   useScrollLock(isOpen);
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
+
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef, dragHandleRef } = useSwipeDownToClose({
+    isOpen,
+    onClose,
+    overlayRef,
+  });
   const [downloaded, setDownloaded] = useState(false);
 
   if (!isOpen) return null;
@@ -29,6 +37,7 @@ export function PdfLeadModal({ isOpen, onClose, title }: PdfLeadModalProps) {
 
   return (
     <div
+      ref={overlayRef}
       role="dialog"
       aria-modal="true"
       className="fixed inset-0 z-50 bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-sm transition-opacity touch-none overscroll-contain"
@@ -36,9 +45,17 @@ export function PdfLeadModal({ isOpen, onClose, title }: PdfLeadModalProps) {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-t-[28px] sm:rounded-2xl p-5 sm:p-7 max-w-md w-full shadow-2xl border border-[#e2e2dc] relative pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-7 animate-in fade-in slide-in-from-bottom-6 sm:zoom-in-95 duration-200 max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y">
+      <div
+        ref={sheetRef}
+        className="bg-white rounded-t-[28px] sm:rounded-2xl p-5 sm:p-7 max-w-md w-full shadow-2xl border border-[#e2e2dc] relative pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-7 animate-in fade-in slide-in-from-bottom-6 sm:zoom-in-95 duration-200 max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y"
+      >
         {/* Mobile drag handle */}
-        <div className="w-10 h-1 bg-[#d5d5cd] rounded-full mx-auto mb-3 block sm:hidden" />
+        <div
+          ref={dragHandleRef}
+          className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto mb-3 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+          title="Drag down to close"
+          aria-label="Drag down to close"
+        />
 
         <div className="flex items-center justify-between pb-3 sm:pb-4 border-b border-[#f0f0eb] mb-4 sm:mb-5">
           <div className="min-w-0 pr-3">

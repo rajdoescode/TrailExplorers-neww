@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
@@ -14,6 +15,13 @@ export const WatchReadSection: React.FC = () => {
 
   // Global reference-counted scroll lock when story reader modal is open
   useScrollLock(Boolean(selectedPostcard));
+
+  const modalOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: modalSheetRef, dragHandleRef: modalHandleRef } = useSwipeDownToClose({
+    isOpen: Boolean(selectedPostcard),
+    onClose: () => setSelectedPostcard(null),
+    overlayRef: modalOverlayRef,
+  });
 
   const postcards = POSTCARDS_DATA.slice(0, 6);
   const [activeIndex, setActiveIndex] = useState(2);
@@ -202,15 +210,26 @@ export const WatchReadSection: React.FC = () => {
       {/* Story Reader Modal */}
       {selectedPostcard && (
         <div
+          ref={modalOverlayRef}
           role="dialog"
           aria-modal="true"
           aria-label={selectedPostcard.title}
-          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain"
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 touch-none overscroll-contain"
           onClick={(e) => {
             if (e.target === e.currentTarget) setSelectedPostcard(null);
           }}
         >
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y shadow-2xl">
+          <div
+            ref={modalSheetRef}
+            className="bg-white rounded-t-[28px] sm:rounded-2xl max-w-2xl w-full p-5 sm:p-8 relative max-h-[90dvh] sm:max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y shadow-2xl pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-8"
+          >
+            {/* Mobile drag handle */}
+            <div
+              ref={modalHandleRef}
+              className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto mb-3 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+              title="Drag down to close"
+              aria-label="Drag down to close"
+            />
             <button
               onClick={() => setSelectedPostcard(null)}
               className="absolute top-4 right-4 p-2 bg-[#f6f6f1] hover:bg-[#d6ff3f] rounded-full transition-colors cursor-pointer"

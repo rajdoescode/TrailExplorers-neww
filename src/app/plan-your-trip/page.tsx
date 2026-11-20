@@ -23,6 +23,8 @@ import {
   ExplorerMascotHandle,
 } from "@/components/chat/ExplorerChatMascot";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
+import { CustomCalendarPicker } from "@/components/ui/CustomCalendarPicker";
 
 // ==========================================
 // CHAT MODE DATA TYPES & PRESETS
@@ -487,6 +489,23 @@ export default function PlanYourTripPage() {
 
   // Global reference-counted scroll lock for mobile ticket sheet & inquiry modal
   useScrollLock(mobileTicketOpen || modalOpen);
+
+  const ticketOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: ticketSheetRef, dragHandleRef: ticketHandleRef } = useSwipeDownToClose({
+    isOpen: mobileTicketOpen,
+    onClose: () => setMobileTicketOpen(false),
+    overlayRef: ticketOverlayRef,
+  });
+
+  const dialogOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: dialogSheetRef, dragHandleRef: dialogHandleRef } = useSwipeDownToClose({
+    isOpen: modalOpen,
+    onClose: () => {
+      setModalOpen(false);
+      setInquirySubmitted(false);
+    },
+    overlayRef: dialogOverlayRef,
+  });
   const [inquirySubmitted, setInquirySubmitted] = useState(false);
   const [ticketFlash, setTicketFlash] = useState(false);
   const [budgetVal, setBudgetVal] = useState(30000);
@@ -1232,11 +1251,12 @@ export default function PlanYourTripPage() {
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-bold text-gray-700">Start date</label>
                     <div className="relative">
-                      <input
-                        type="date"
+                      <CustomCalendarPicker
                         value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                        className="w-full bg-white border-[1.5px] border-[#d9d9d0] rounded-xl px-3.5 py-2.5 text-sm font-medium outline-hidden focus:border-black"
+                        onChange={(newDate) => setStartDate(newDate)}
+                        placeholder="Select start date"
+                        format="iso"
+                        inputClassName="bg-white border-[1.5px] border-[#d9d9d0] rounded-xl px-3.5 py-2.5 text-sm font-medium focus:border-black min-h-[44px]"
                       />
                     </div>
                     <label className="flex items-center gap-2 text-xs text-gray-600 font-medium cursor-pointer mt-1">
@@ -2367,6 +2387,7 @@ export default function PlanYourTripPage() {
 
       {/* Mobile Slide-Up Ticket Sheet */}
       <div
+        ref={ticketOverlayRef}
         role="dialog"
         aria-modal="true"
         aria-label="Trip summary ticket"
@@ -2380,12 +2401,18 @@ export default function PlanYourTripPage() {
         />
 
         <aside
+          ref={ticketSheetRef}
           className={`absolute inset-x-0 bottom-0 max-h-[88dvh] bg-[#14140f] text-white rounded-t-[28px] shadow-2xl flex flex-col transition-transform duration-300 ease-out z-10 overscroll-contain touch-pan-y ${
             mobileTicketOpen ? "translate-y-0" : "translate-y-full"
           }`}
         >
           {/* Mobile drag handle */}
-          <div className="w-10 h-1 bg-white/20 rounded-full mx-auto my-2.5 block" />
+          <div
+            ref={ticketHandleRef}
+            className="w-12 h-1.5 bg-white/30 hover:bg-white/50 rounded-full mx-auto my-2.5 block cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+            title="Drag down to close"
+            aria-label="Drag down to close"
+          />
 
           <div className="relative p-5 pt-2 border-b-2 border-dashed border-white/15 flex items-center justify-between">
             <div className="flex flex-col gap-0.5">
@@ -2448,11 +2475,28 @@ export default function PlanYourTripPage() {
       {/* Inquiry Dialog Modal (Chat Mode) */}
       {modalOpen && (
         <div
+          ref={dialogOverlayRef}
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-xs flex items-center justify-center p-4 touch-none overscroll-contain"
+          className="fixed inset-0 z-[9999] bg-black/75 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 touch-none overscroll-contain"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setModalOpen(false);
+              setInquirySubmitted(false);
+            }
+          }}
         >
-          <div className="bg-[#14140f] text-white w-full max-w-md rounded-[28px] border border-white/15 p-6 sm:p-8 relative shadow-2xl animate-pc-pop max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y">
+          <div
+            ref={dialogSheetRef}
+            className="bg-[#14140f] text-white w-full max-w-md rounded-t-[28px] sm:rounded-[28px] border border-white/15 p-5 sm:p-8 relative shadow-2xl animate-pc-pop max-h-[90dvh] sm:max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-8"
+          >
+            {/* Mobile drag handle */}
+            <div
+              ref={dialogHandleRef}
+              className="w-12 h-1.5 bg-white/30 hover:bg-white/50 rounded-full mx-auto mb-3 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+              title="Drag down to close"
+              aria-label="Drag down to close"
+            />
             <button
               onClick={() => {
                 setModalOpen(false);

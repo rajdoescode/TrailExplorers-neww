@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 
 interface BentoGalleryProps {
   images: string[];
@@ -15,6 +16,13 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeIdx, setActiveIdx] = useState(0);
+
+  const lightboxOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: lightboxSheetRef } = useSwipeDownToClose({
+    isOpen: lightboxOpen,
+    onClose: () => setLightboxOpen(false),
+    overlayRef: lightboxOverlayRef,
+  });
 
   // Mobile Interactive Flip Stack State
   const [activeStackIdx, setActiveStackIdx] = useState(0);
@@ -343,10 +351,15 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
       {/* FULLSCREEN LIGHTBOX MODAL (When any photo tile is clicked) */}
       {lightboxOpen && (
         <div
+          ref={lightboxOverlayRef}
           role="dialog"
           aria-modal="true"
           className="fixed inset-0 z-50 bg-black/95 flex flex-col justify-between p-4 sm:p-6 backdrop-blur-md touch-none overscroll-contain"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) closeLightbox();
+          }}
         >
+          <div ref={lightboxSheetRef} className="w-full h-full flex flex-col justify-between">
           {/* Top Bar */}
           <div className="flex items-center justify-between text-white z-10 pb-3 border-b border-white/10">
             <div>
@@ -425,6 +438,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
                 <SkeletonImage src={img} alt={`Thumbnail ${idx + 1}`} fill sizes="64px" className="object-cover" skeletonClassName="rounded-lg" />
               </button>
             ))}
+          </div>
           </div>
         </div>
       )}

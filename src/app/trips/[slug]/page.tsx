@@ -20,6 +20,8 @@ import {
 import { BentoGallery } from "@/components/trips/BentoGallery";
 import { WeatherCard } from "@/components/trips/WeatherCard";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
+import { CustomCalendarPicker } from "@/components/ui/CustomCalendarPicker";
 import { StickySecondaryNav } from "@/components/trips/StickySecondaryNav";
 import { PackingListSection } from "@/components/trips/PackingListSection";
 import { DepartureDatesSection } from "@/components/trips/DepartureDatesSection";
@@ -90,6 +92,17 @@ export default function TripDetailPage() {
   const initialBatch = trip?.departure_dates?.[0]?.dates?.[0]?.range || "On Request Departure Date";
   const [selectedBatchDate, setSelectedBatchDate] = useState<string>(initialBatch);
 
+  const availableBatchStrings = useMemo(() => {
+    if (!trip?.departure_dates) return [];
+    const list: string[] = [];
+    (trip.departure_dates as any[]).forEach((m) => {
+      m.dates?.forEach((d: any) => {
+        if (d.range && !list.includes(d.range)) list.push(d.range);
+      });
+    });
+    return list;
+  }, [trip?.departure_dates]);
+
   // Modals state
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
@@ -133,6 +146,21 @@ export default function TripDetailPage() {
 
   // Global reference-counted scroll lock for booking & success modals (handles iOS Safari & touch gestures)
   useScrollLock(isBookModalOpen || isSuccessOpen);
+
+  // Swipe-down-to-close hooks for mobile bottom sheets (Android/iOS native feel)
+  const bookingOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: bookingSheetRef, dragHandleRef: bookingHandleRef } = useSwipeDownToClose({
+    isOpen: isBookModalOpen,
+    onClose: () => setIsBookModalOpen(false),
+    overlayRef: bookingOverlayRef,
+  });
+
+  const successOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: successSheetRef, dragHandleRef: successHandleRef } = useSwipeDownToClose({
+    isOpen: isSuccessOpen,
+    onClose: () => setIsSuccessOpen(false),
+    overlayRef: successOverlayRef,
+  });
 
   // Booking Form State
   const [bookingForm, setBookingForm] = useState({
@@ -701,6 +729,7 @@ export default function TripDetailPage() {
 
       {/* 16. PLAN YOUR NEXT TRIP MODAL (Exact trailexplorers.in 2-Column Structure) */}
       <div
+        ref={bookingOverlayRef}
         className={`share-modal-overlay touch-none overscroll-contain ${isBookModalOpen ? "active" : ""}`}
         id="bookingModal"
         role="dialog"
@@ -710,9 +739,14 @@ export default function TripDetailPage() {
           if (e.target === e.currentTarget) setIsBookModalOpen(false);
         }}
       >
-        <div className="booking-popup-card relative">
-          {/* Mobile drag handle */}
-          <div className="w-12 h-1 bg-[#d5d5cd] rounded-full mx-auto mb-2 block md:hidden" />
+        <div ref={bookingSheetRef} className="booking-popup-card relative">
+          {/* Mobile drag handle with native pull-to-close */}
+          <div
+            ref={bookingHandleRef}
+            className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto mb-2.5 block md:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+            title="Drag down to close"
+            aria-label="Drag down to close"
+          />
 
           {/* Close button */}
           <button
@@ -845,12 +879,16 @@ export default function TripDetailPage() {
 
               <div className="booking-grid-2 booking-field-group">
                 <div>
-                  <input
-                    type="text"
-                    readOnly
+                  <CustomCalendarPicker
                     value={selectedBatchDate}
-                    title="Selected Batch Departure Date"
-                    className="booking-input bg-[#f8fafc] text-[#475569] font-bold cursor-not-allowed"
+                    onChange={(newDate) => {
+                      setSelectedBatchDate(newDate);
+                      setBookingForm((prev) => ({ ...prev, departureDate: newDate }));
+                    }}
+                    availableBatches={availableBatchStrings}
+                    placeholder="Departure Date"
+                    format="ordinal"
+                    inputClassName="booking-input cursor-pointer font-bold"
                   />
                 </div>
                 <div>
@@ -895,12 +933,25 @@ export default function TripDetailPage() {
       {/* SUCCESS CONFIRMATION MODAL */}
       {isSuccessOpen && (
         <div
+          ref={successOverlayRef}
           role="dialog"
           aria-modal="true"
-          className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4 backdrop-blur-sm touch-none overscroll-contain"
-          onClick={() => setIsSuccessOpen(false)}
+          className="fixed inset-0 z-50 bg-black/60 flex items-end sm:items-center justify-center p-0 sm:p-4 backdrop-blur-sm touch-none overscroll-contain"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setIsSuccessOpen(false);
+          }}
         >
-          <div className="bg-white rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl border border-[#e2e2dc]">
+          <div
+            ref={successSheetRef}
+            className="bg-white rounded-t-[28px] sm:rounded-2xl p-6 sm:p-8 max-w-sm w-full text-center shadow-2xl border border-[#e2e2dc] relative pb-[calc(24px+env(safe-area-inset-bottom,0px))] sm:pb-8"
+          >
+            {/* Mobile drag handle */}
+            <div
+              ref={successHandleRef}
+              className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto mb-4 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+              title="Drag down to close"
+              aria-label="Drag down to close"
+            />
             <div className="w-14 h-14 rounded-full bg-[#d6ff3f] text-[#14140f] flex items-center justify-center mx-auto mb-4 border border-[#14140f] shadow-lime-btn">
               <Check className="w-7 h-7 stroke-[3]" />
             </div>

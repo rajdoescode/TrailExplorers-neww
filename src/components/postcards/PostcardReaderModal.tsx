@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { X, ArrowRight } from "lucide-react";
 import { Postcard } from "@/types";
@@ -16,6 +17,13 @@ export const PostcardReaderModal: React.FC<PostcardReaderModalProps> = ({
   postcard,
   onClose,
 }) => {
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef, dragHandleRef } = useSwipeDownToClose({
+    isOpen: true,
+    onClose,
+    overlayRef,
+  });
+
   // ESC key listener
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -101,6 +109,7 @@ export const PostcardReaderModal: React.FC<PostcardReaderModalProps> = ({
 
   return (
     <div
+      ref={overlayRef}
       role="dialog"
       aria-modal="true"
       aria-label={postcard.title}
@@ -109,9 +118,17 @@ export const PostcardReaderModal: React.FC<PostcardReaderModalProps> = ({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="bg-white rounded-t-[28px] sm:rounded-2xl max-w-2xl sm:max-w-3xl w-full p-5 sm:p-8 relative border-t-2 sm:border-2 border-[#14140f] max-h-[90dvh] sm:max-h-[calc(100dvh-40px)] overflow-y-auto overscroll-contain touch-pan-y shadow-2xl pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-8">
+      <div
+        ref={sheetRef}
+        className="bg-white rounded-t-[28px] sm:rounded-2xl max-w-2xl sm:max-w-3xl w-full p-5 sm:p-8 relative border-t-2 sm:border-2 border-[#14140f] max-h-[90dvh] sm:max-h-[calc(100dvh-40px)] overflow-y-auto overscroll-contain touch-pan-y shadow-2xl pb-[calc(20px+env(safe-area-inset-bottom,0px))] sm:pb-8"
+      >
         {/* Mobile drag handle */}
-        <div className="w-10 h-1 bg-[#d5d5cd] rounded-full mx-auto mb-3 block sm:hidden" />
+        <div
+          ref={dragHandleRef}
+          className="w-12 h-1.5 bg-[#d5d5cd] hover:bg-[#b0b0a8] rounded-full mx-auto mb-3 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+          title="Drag down to close"
+          aria-label="Drag down to close"
+        />
 
         {/* Close Button */}
         <button

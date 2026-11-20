@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
@@ -11,6 +11,7 @@ import { cn, formatPrice } from "@/lib/utils";
 import { SITE_CONFIG } from "@/data/site-config";
 import { TRIPS_DATA } from "@/data/trips";
 import { useScrollLock } from "@/hooks/useScrollLock";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 
 const POPULAR_DESTINATIONS = [
   { name: "Winter Spiti 4 x 4", href: "/winter-spiti" },
@@ -79,6 +80,13 @@ export const Header: React.FC<HeaderProps> = () => {
 
   // Lock body scroll when mobile menu or search is open (iOS/Android touch & desktop wheel safe)
   useScrollLock(mobileMenuOpen || searchOpen);
+
+  const mobileDrawerOverlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef: mobileDrawerSheetRef, dragHandleRef: mobileDrawerHandleRef } = useSwipeDownToClose({
+    isOpen: mobileMenuOpen,
+    onClose: () => setMobileMenuOpen(false),
+    overlayRef: mobileDrawerOverlayRef,
+  });
 
   // Listen for custom open-mobile-menu event from bottom nav
   useEffect(() => {
@@ -203,6 +211,7 @@ export const Header: React.FC<HeaderProps> = () => {
       {/* Mobile Drawer (Native App Bottom Sheet Layout) */}
       {mobileMenuOpen && (
         <div
+          ref={mobileDrawerOverlayRef}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation drawer"
@@ -212,13 +221,19 @@ export const Header: React.FC<HeaderProps> = () => {
           }}
         >
           <div
+            ref={mobileDrawerSheetRef}
             className="bg-white rounded-t-[28px] p-5 sm:p-6 shadow-2xl flex flex-col gap-5 animate-in slide-in-from-bottom duration-300 max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y"
             style={{
               paddingBottom: "max(24px, env(safe-area-inset-bottom, 24px))",
             }}
           >
-            {/* Sheet Handle */}
-            <div className="w-12 h-1.5 rounded-full bg-[#e2e2dc] mx-auto -mt-1 shrink-0" />
+            {/* Sheet Handle with native pull-to-close */}
+            <div
+              ref={mobileDrawerHandleRef}
+              className="w-12 h-1.5 rounded-full bg-[#e2e2dc] hover:bg-[#b0b0a8] mx-auto -mt-1 shrink-0 cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+              title="Drag down to close"
+              aria-label="Drag down to close"
+            />
 
             {/* Header */}
             <div className="flex items-center justify-between border-b border-gray-100 pb-3.5">

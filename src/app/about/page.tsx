@@ -22,9 +22,9 @@ export default function AboutPage() {
   const founder = TEAM_MEMBERS[0];
 
   return (
-    <div className="w-full bg-[#ffffff] min-h-screen text-[#14140f]">
+    <div className="w-full bg-[#ffffff] min-h-screen text-[#14140f] overflow-x-clip">
       {/* ============ ABOUT US HERO SECTION ============ */}
-      <section className="max-w-[1200px] mx-auto px-4 pt-10 pb-12 text-center">
+      <section className="max-w-[1200px] mx-auto px-5 sm:px-6 pt-10 pb-12 text-center">
         <h1 className="font-heading font-extrabold text-[clamp(38px,5.5vw,64px)] text-[#14140f] mb-8 sm:mb-10 tracking-tight">
           About Us
         </h1>
@@ -72,14 +72,14 @@ export default function AboutPage() {
 
         {/* Neon Lime Backdrop Frame with Pagoda Hero */}
         <div className="neon-backdrop-frame">
-          <SkeletonImage
+          <Image
             src="/assets/images/about/pagoda-hero.jpg"
             alt="Himalayan Pagoda Temple Architecture"
-            width={760}
-            height={520}
+            width={736}
+            height={682}
             priority
             sizes="(max-width: 768px) 100vw, 760px"
-            className="w-full h-auto object-contain block mx-auto rounded-sm"
+            className="w-full h-auto object-contain block mx-auto relative z-10"
           />
         </div>
       </section>
@@ -197,29 +197,29 @@ export default function AboutPage() {
           </div>
 
           <div className="lime-card-frame">
-            <SkeletonImage
+            <Image
               src="/assets/images/about/community-group.jpg"
               alt="Cheering group of travelers on mountain peak"
               width={520}
               height={310}
-              sizes="(max-width: 768px) 100vw, 500px"
-              className="w-full h-[310px] object-cover"
+              sizes="(max-width: 768px) 100vw, 520px"
+              className="w-full h-[250px] sm:h-[310px] object-cover relative z-10 block rounded-[4px]"
             />
           </div>
         </div>
       </section>
 
       {/* 2. Authentic Exploration vs. Commercial Tourism */}
-      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+      <section className="max-w-[1020px] mx-auto px-5 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
           <div className="lime-card-frame left-accent order-last md:order-first">
-            <SkeletonImage
+            <Image
               src="/assets/images/about/cultural-dancers.jpg"
               alt="Authentic exploration and traditional cultural rituals"
               width={520}
               height={310}
-              sizes="(max-width: 768px) 100vw, 500px"
-              className="w-full h-[310px] object-cover"
+              sizes="(max-width: 768px) 100vw, 520px"
+              className="w-full h-[250px] sm:h-[310px] object-cover relative z-10 block rounded-[4px]"
             />
           </div>
 
@@ -241,7 +241,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Responsible & Impact-Driven Travel */}
-      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+      <section className="max-w-[1020px] mx-auto px-5 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-[#14140f] bg-[#d6ff3f] px-3 py-1 rounded-full inline-block mb-3">
@@ -259,29 +259,29 @@ export default function AboutPage() {
           </div>
 
           <div className="lime-card-frame">
-            <SkeletonImage
+            <Image
               src="/assets/images/about/responsible-puppet.jpg"
               alt="Responsible and community-based sustainable travel"
               width={520}
               height={310}
-              sizes="(max-width: 768px) 100vw, 500px"
-              className="w-full h-[310px] object-cover"
+              sizes="(max-width: 768px) 100vw, 520px"
+              className="w-full h-[250px] sm:h-[310px] object-cover relative z-10 block rounded-[4px]"
             />
           </div>
         </div>
       </section>
 
       {/* 4. Raw Adventure, Premium Execution */}
-      <section className="max-w-[1020px] mx-auto px-4 py-12 sm:py-16">
+      <section className="max-w-[1020px] mx-auto px-5 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-14 items-center">
           <div className="lime-card-frame left-accent order-last md:order-first">
-            <SkeletonImage
+            <Image
               src="/assets/images/about/raw-adventure-trekkers.jpg"
               alt="Raw adventure expeditions with premium ground execution"
               width={520}
               height={310}
-              sizes="(max-width: 768px) 100vw, 500px"
-              className="w-full h-[310px] object-cover"
+              sizes="(max-width: 768px) 100vw, 520px"
+              className="w-full h-[250px] sm:h-[310px] object-cover relative z-10 block rounded-[4px]"
             />
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { X, ExternalLink, Play } from "lucide-react";
 import { Postcard } from "@/types";
@@ -23,20 +24,38 @@ export const PostcardVideoModal: React.FC<PostcardVideoModalProps> = ({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const { sheetRef, dragHandleRef } = useSwipeDownToClose({
+    isOpen: true,
+    onClose,
+    overlayRef,
+  });
+
   const targetUrl = postcard.video_url || postcard.embed_url || "https://instagram.com";
   const imgSrc = normalizePostcardImg(postcard.image_url);
 
   return (
     <div
+      ref={overlayRef}
       role="dialog"
       aria-modal="true"
       aria-label={postcard.title}
-      className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 touch-none overscroll-contain transition-opacity"
+      className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-end sm:items-center justify-center p-0 sm:p-4 touch-none overscroll-contain transition-opacity"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="relative max-w-sm sm:max-w-md w-full bg-[#14140f] border border-white/10 rounded-[28px] overflow-hidden shadow-2xl flex flex-col max-h-[90dvh]">
+      <div
+        ref={sheetRef}
+        className="relative max-w-sm sm:max-w-md w-full bg-[#14140f] border border-white/10 rounded-t-[28px] sm:rounded-[28px] overflow-hidden shadow-2xl flex flex-col max-h-[90dvh] pb-[calc(16px+env(safe-area-inset-bottom,0px))] sm:pb-0"
+      >
+        {/* Mobile drag handle */}
+        <div
+          ref={dragHandleRef}
+          className="w-12 h-1.5 bg-white/30 hover:bg-white/50 rounded-full mx-auto my-2.5 block sm:hidden cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+          title="Drag down to close"
+          aria-label="Drag down to close"
+        />
         {/* Top Header */}
         <div className="flex items-center justify-between p-4 border-b border-white/10">
           <div className="flex items-center gap-2">
