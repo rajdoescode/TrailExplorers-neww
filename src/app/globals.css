@@ -241,7 +241,7 @@ video::-webkit-media-controls-enclosure {
   gap: 24px;
   transform: scale(0.92) translateY(15px);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .share-modal-overlay.active .booking-popup-card {
