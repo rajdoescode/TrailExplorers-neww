@@ -59,7 +59,7 @@ export function DepartureDatesSection({
   };
 
   return (
-    <div id="departure-dates" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+    <div id="departure-dates" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 pb-5 sm:pb-6 border border-[#e2e2dc] shadow-card">
       <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
         Departure Dates
       </h2>
@@ -116,8 +116,8 @@ export function DepartureDatesSection({
                   : "cursor-pointer"
               } ${
                 isSelected
-                  ? "border-2 border-[#b8ff00] bg-[#fafef0] shadow-[0_0_12px_rgba(184,255,0,0.35)]"
-                  : "border border-[#e0e0d8] bg-white hover:border-[#14140f]/40"
+                  ? "border-2 border-[#14140f] bg-[#fafef0] shadow-sm"
+                  : "border border-[#e0e0d8] bg-white hover:border-[#14140f]"
               }`}
             >
               <div className="flex items-center gap-2.5 min-w-0">
@@ -143,7 +143,7 @@ export function DepartureDatesSection({
       <button
         type="button"
         onClick={handleBookBatch}
-        className="w-full bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] font-extrabold text-sm sm:text-base py-3.5 px-6 rounded-xl border-2 border-[#14140f] shadow-[0_6px_18px_rgba(214,255,63,0.45)] hover:-translate-y-0.5 active:scale-[0.99] transition-all cursor-pointer font-heading text-center min-h-[48px]"
+        className="w-full bg-[#d6ff3f] hover:bg-[#c7f22e] text-[#14140f] font-extrabold text-sm sm:text-base py-3.5 px-6 rounded-xl border-none shadow-[0_4px_14px_rgba(214,255,63,0.45)] hover:-translate-y-0.5 active:scale-[0.99] transition-all cursor-pointer font-heading text-center min-h-[48px]"
       >
         BOOK NOW — {currentBatch?.range || "Select Date"}
       </button>

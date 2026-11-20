@@ -7,9 +7,9 @@ import {
   ChevronLeft,
   ChevronRight,
   X,
-  Check,
   Sparkles,
   ChevronDown,
+  ArrowLeft,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -135,7 +135,19 @@ export function CustomCalendarPicker({
 }: CustomCalendarPickerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [isMonthYearPickerOpen, setIsMonthYearPickerOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<"calendar" | "months" | "years">("calendar");
+
+  const selectedDate = useMemo(() => parseDateString(value), [value]);
+
+  // Calendar view month & year state
+  const [viewDate, setViewDate] = useState<Date>(() => {
+    if (selectedDate) return new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
+    const now = new Date();
+    return new Date(now.getFullYear(), now.getMonth(), 1);
+  });
+
+  const [yearSelectorBase, setYearSelectorBase] = useState<number>(() => viewDate.getFullYear());
+  const [yearRangeStart, setYearRangeStart] = useState<number>(() => Math.floor(viewDate.getFullYear() / 12) * 12);
 
   // Viewport-based Portal Coordinates
   const [coords, setCoords] = useState<{
@@ -153,21 +165,11 @@ export function CustomCalendarPicker({
     setMounted(true);
   }, []);
 
-  const selectedDate = useMemo(() => parseDateString(value), [value]);
-
-  // Calendar view month & year state
-  const [viewDate, setViewDate] = useState<Date>(() => {
-    if (selectedDate) return new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
-    const now = new Date();
-    return new Date(now.getFullYear(), now.getMonth(), 1);
-  });
-
-  const [yearSelectorBase, setYearSelectorBase] = useState<number>(viewDate.getFullYear());
-
   useEffect(() => {
     if (selectedDate) {
       setViewDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1));
       setYearSelectorBase(selectedDate.getFullYear());
+      setYearRangeStart(Math.floor(selectedDate.getFullYear() / 12) * 12);
     }
   }, [selectedDate]);
 
@@ -180,12 +182,17 @@ export function CustomCalendarPicker({
     const vw = window.innerWidth || document.documentElement.clientWidth;
 
     const isMobile = vw < 640;
-    const popoverWidth = Math.min(340, vw - 24);
-    const popoverHeight = isMonthYearPickerOpen
-      ? 330
-      : availableBatches.length > 0
-      ? 430
-      : 380;
+    if (isMobile) {
+      setCoords({ top: 0, left: 0, placement: "bottom", isMobile: true });
+      return;
+    }
+
+    const popoverWidth = Math.min(335, vw - 24);
+    const renderedHeight = popoverRef.current?.offsetHeight;
+    const estimatedHeight = viewMode === "calendar"
+      ? (availableBatches.length > 0 ? 410 : 360)
+      : 290;
+    const popoverHeight = renderedHeight && renderedHeight > 100 ? renderedHeight : estimatedHeight;
 
     const spaceBelow = vh - rect.bottom;
     const spaceAbove = rect.top;
@@ -193,8 +200,8 @@ export function CustomCalendarPicker({
     let placement: "top" | "bottom" = "bottom";
     let top = rect.bottom + 8;
 
-    // Check if bottom has insufficient space
-    if (spaceBelow < popoverHeight && spaceAbove > spaceBelow) {
+    // Check if bottom has insufficient space and top has more room
+    if (spaceBelow < popoverHeight + 16 && spaceAbove > spaceBelow) {
       placement = "top";
       top = Math.max(12, rect.top - popoverHeight - 8);
     } else {
@@ -217,17 +224,20 @@ export function CustomCalendarPicker({
       left = 12;
     }
 
-    setCoords({ top, left, placement, isMobile });
-  }, [align, availableBatches.length, isMonthYearPickerOpen]);
+    setCoords({ top, left, placement, isMobile: false });
+  }, [align, availableBatches.length, viewMode]);
 
-  // Update coords on open, resize, or scroll
+  // Update coords on open, resize, scroll, or viewMode change
   useEffect(() => {
     if (!isOpen) {
-      setIsMonthYearPickerOpen(false);
+      setViewMode("calendar");
       return;
     }
 
     updatePosition();
+    const frameId = requestAnimationFrame(() => {
+      updatePosition();
+    });
 
     const handleScrollOrResize = () => {
       updatePosition();
@@ -237,12 +247,13 @@ export function CustomCalendarPicker({
     window.addEventListener("scroll", handleScrollOrResize, { passive: true, capture: true });
 
     return () => {
+      cancelAnimationFrame(frameId);
       window.removeEventListener("resize", handleScrollOrResize);
       window.removeEventListener("scroll", handleScrollOrResize, { capture: true });
     };
-  }, [isOpen, updatePosition]);
+  }, [isOpen, viewMode, updatePosition]);
 
-  // Click outside listener (handles clicks outside both trigger and portal)
+  // Click outside listener
   useEffect(() => {
     if (!isOpen) return;
 
@@ -300,16 +311,24 @@ export function CustomCalendarPicker({
 
     onChange(formatted, newDate);
     setIsOpen(false);
+    setViewMode("calendar");
   };
 
   const handleBatchClick = (batch: string) => {
     onChange(batch, parseDateString(batch) || undefined);
     setIsOpen(false);
+    setViewMode("calendar");
   };
 
-  const handleSelectMonthYear = (mIdx: number, y: number) => {
-    setViewDate(new Date(y, mIdx, 1));
-    setIsMonthYearPickerOpen(false);
+  const handleSelectMonth = (mIdx: number) => {
+    setViewDate(new Date(yearSelectorBase, mIdx, 1));
+    setViewMode("calendar");
+  };
+
+  const handleSelectYear = (y: number) => {
+    setYearSelectorBase(y);
+    setViewDate(new Date(y, viewMonth, 1));
+    setViewMode("months");
   };
 
   const hasBatchOnDay = (day: number): boolean => {
@@ -335,7 +354,20 @@ export function CustomCalendarPicker({
     today.setHours(0, 0, 0, 0);
     const cellDate = new Date(viewYear, viewMonth, day);
     cellDate.setHours(0, 0, 0, 0);
+    if (minDate) {
+      const minD = new Date(minDate);
+      minD.setHours(0, 0, 0, 0);
+      if (cellDate < minD) return true;
+    }
     return cellDate < today;
+  };
+
+  const isFutureRestricted = (day: number): boolean => {
+    if (!maxDate) return false;
+    const maxD = new Date(maxDate);
+    maxD.setHours(23, 59, 59, 999);
+    const cellDate = new Date(viewYear, viewMonth, day);
+    return cellDate > maxD;
   };
 
   const isTodayDay = (day: number): boolean => {
@@ -388,160 +420,103 @@ export function CustomCalendarPicker({
       ref={popoverRef}
       role="dialog"
       aria-label="Advanced Date Picker"
-      className="bg-white border border-[#e2e2dc] rounded-[24px] p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.18)] w-[310px] sm:w-[335px] max-w-[calc(100vw-24px)] text-[#14140f] overscroll-contain touch-pan-y animate-in fade-in zoom-in-95 duration-150 relative select-none"
+      className="bg-white border border-[#e2e2dc] rounded-[24px] p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.22)] w-[315px] sm:w-[335px] max-w-[calc(100vw-24px)] max-h-[calc(100vh-24px)] overflow-y-auto no-scrollbar text-[#14140f] overscroll-contain touch-pan-y animate-in fade-in zoom-in-95 duration-150 relative select-none"
     >
-      {/* TOP PREVIEW BAR */}
-      <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#ecece6]">
-        <div className="flex items-center gap-1.5 min-w-0 pr-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#d6ff3f] border border-[#14140f]/20 shrink-0" />
-          <span className="text-[12.5px] font-extrabold text-[#14140f] truncate font-heading">
-            {selectedDate
-              ? `${getOrdinalSuffix(selectedDate.getDate())} ${MONTH_NAMES[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`
-              : "Pick Departure Date"}
-          </span>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setIsOpen(false)}
-          className="w-7 h-7 rounded-full flex items-center justify-center hover:bg-[#f2f2eb] active:scale-90 text-[#707068] hover:text-[#14140f] transition-all cursor-pointer"
-          aria-label="Close calendar"
-        >
-          <X className="w-4 h-4" />
-        </button>
-      </div>
-
-      {/* AVAILABLE TRIP BATCHES SHORTCUTS */}
-      {availableBatches.length > 0 && (
-        <div className="mb-3 pb-3 border-b border-[#ecece6]">
-          <div className="flex items-center justify-between text-[11px] font-extrabold text-[#707068] uppercase tracking-wider mb-2">
-            <span className="flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-[#2fa84f]" />
-              Available Trip Batches
-            </span>
-            <span className="text-[10px] text-[#2fa84f] font-bold bg-[#e8f7ee] px-2 py-0.5 rounded-full">
-              Confirmed
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-1.5 max-h-[85px] overflow-y-auto no-scrollbar">
-            {availableBatches.map((batch, bIdx) => {
-              const isCur = value === batch;
-              return (
-                <button
-                  key={bIdx}
-                  type="button"
-                  onClick={() => handleBatchClick(batch)}
-                  className={cn(
-                    "text-[11.5px] font-extrabold px-3 py-1.5 rounded-[10px] border transition-all cursor-pointer whitespace-nowrap",
-                    isCur
-                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/20 shadow-[0_2px_8px_rgba(214,255,63,0.45)] scale-105"
-                      : "bg-[#f8f8f5] text-[#14140f] border-[#e2e2dc] hover:bg-[#d6ff3f]/25 hover:border-[#14140f]/30"
-                  )}
-                >
-                  {batch}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* MONTH & YEAR HEADER WITH QUICK-SELECTOR TOGGLE */}
-      <div className="flex items-center justify-between mb-3 px-0.5">
-        <button
-          type="button"
-          onClick={prevMonth}
-          disabled={isMonthYearPickerOpen}
-          className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#f4f4ee] active:scale-90 transition-all text-[#14140f] cursor-pointer disabled:opacity-30"
-          aria-label="Previous month"
-        >
-          <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
-        </button>
-
-        <button
-          type="button"
-          onClick={() => setIsMonthYearPickerOpen((prev) => !prev)}
-          className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#f8f8f5] hover:bg-[#ecece6] text-[#14140f] font-heading font-extrabold text-[14.5px] tracking-tight transition-all cursor-pointer border border-[#ecece6] hover:border-[#14140f]/30"
-          title="Click to jump to another month or year"
-        >
-          <span>
-            {MONTH_NAMES[viewMonth]} {viewYear}
-          </span>
-          <ChevronDown
-            className={cn(
-              "w-3.5 h-3.5 transition-transform duration-200",
-              isMonthYearPickerOpen && "rotate-180"
-            )}
-          />
-        </button>
-
-        <button
-          type="button"
-          onClick={nextMonth}
-          disabled={isMonthYearPickerOpen}
-          className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#f4f4ee] active:scale-90 transition-all text-[#14140f] cursor-pointer disabled:opacity-30"
-          aria-label="Next month"
-        >
-          <ChevronRight className="w-4 h-4 stroke-[2.5]" />
-        </button>
-      </div>
-
-      {/* FAST MONTH & YEAR GRID SELECTOR */}
-      {isMonthYearPickerOpen ? (
-        <div className="py-2 animate-in fade-in zoom-in-95 duration-150">
-          <div className="flex items-center justify-between mb-3 px-2 py-1.5 bg-[#f8f8f5] rounded-xl border border-[#ecece6]">
-            <button
-              type="button"
-              onClick={() => setYearSelectorBase((prev) => prev - 1)}
-              className="p-1 hover:bg-white rounded-lg text-xs font-bold cursor-pointer"
-            >
-              <ChevronLeft className="w-3.5 h-3.5" />
-            </button>
-            <span className="font-extrabold text-[13.5px] text-[#14140f]">
-              Year {yearSelectorBase}
-            </span>
-            <button
-              type="button"
-              onClick={() => setYearSelectorBase((prev) => prev + 1)}
-              className="p-1 hover:bg-white rounded-lg text-xs font-bold cursor-pointer"
-            >
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-3 gap-2">
-            {MONTH_SHORT.map((mShort, mIdx) => {
-              const isCurrent = viewMonth === mIdx && viewYear === yearSelectorBase;
-              return (
-                <button
-                  key={mShort}
-                  type="button"
-                  onClick={() => handleSelectMonthYear(mIdx, yearSelectorBase)}
-                  className={cn(
-                    "py-2.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer border",
-                    isCurrent
-                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/20 shadow-xs"
-                      : "bg-white text-[#14140f] border-[#e2e2dc] hover:bg-[#f4f4ee] hover:border-[#14140f]/30"
-                  )}
-                >
-                  {mShort}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mt-3 text-center">
-            <button
-              type="button"
-              onClick={() => setIsMonthYearPickerOpen(false)}
-              className="text-xs font-bold text-[#707068] hover:text-black underline cursor-pointer"
-            >
-              Back to Day Calendar
-            </button>
-          </div>
-        </div>
-      ) : (
+      {/* VIEW MODE 1: DAY CALENDAR */}
+      {viewMode === "calendar" && (
         <>
+          {/* TOP PREVIEW BAR */}
+          <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#ecece6]">
+            <div className="flex items-center gap-1.5 min-w-0 pr-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#d6ff3f] border border-[#14140f]/20 shrink-0" />
+              <span className="text-[12.5px] font-extrabold text-[#14140f] truncate font-heading">
+                {selectedDate
+                  ? `${getOrdinalSuffix(selectedDate.getDate())} ${MONTH_NAMES[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`
+                  : "Pick Departure Date"}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="w-7 h-7 rounded-full flex items-center justify-center hover:bg-[#f2f2eb] active:scale-90 text-[#707068] hover:text-[#14140f] transition-all cursor-pointer"
+              aria-label="Close calendar"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* AVAILABLE TRIP BATCHES SHORTCUTS */}
+          {availableBatches.length > 0 && (
+            <div className="mb-3 pb-3 border-b border-[#ecece6]">
+              <div className="flex items-center justify-between text-[11px] font-extrabold text-[#707068] uppercase tracking-wider mb-2">
+                <span className="flex items-center gap-1">
+                  <Sparkles className="w-3.5 h-3.5 text-[#2fa84f]" />
+                  Available Trip Batches
+                </span>
+                <span className="text-[10px] text-[#2fa84f] font-bold bg-[#e8f7ee] px-2 py-0.5 rounded-full">
+                  Confirmed
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-1.5 max-h-[85px] overflow-y-auto no-scrollbar">
+                {availableBatches.map((batch, bIdx) => {
+                  const isCur = value === batch;
+                  return (
+                    <button
+                      key={bIdx}
+                      type="button"
+                      onClick={() => handleBatchClick(batch)}
+                      className={cn(
+                        "text-[11.5px] font-extrabold px-3 py-1.5 rounded-[10px] border transition-all cursor-pointer whitespace-nowrap",
+                        isCur
+                          ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/20 shadow-[0_2px_8px_rgba(214,255,63,0.45)] scale-105"
+                          : "bg-[#f8f8f5] text-[#14140f] border-[#e2e2dc] hover:bg-[#d6ff3f]/25 hover:border-[#14140f]/30"
+                      )}
+                    >
+                      {batch}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* MONTH & YEAR HEADER WITH QUICK-SELECTOR TOGGLE */}
+          <div className="flex items-center justify-between mb-3 px-0.5">
+            <button
+              type="button"
+              onClick={prevMonth}
+              className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#f4f4ee] active:scale-90 transition-all text-[#14140f] cursor-pointer"
+              aria-label="Previous month"
+            >
+              <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setYearSelectorBase(viewYear);
+                setViewMode("months");
+              }}
+              className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#f8f8f5] hover:bg-[#ecece6] text-[#14140f] font-heading font-extrabold text-[14.5px] tracking-tight transition-all cursor-pointer border border-[#ecece6] hover:border-[#14140f]/30 group"
+              title="Click to jump to another month or year"
+            >
+              <span>
+                {MONTH_NAMES[viewMonth]} {viewYear}
+              </span>
+              <ChevronDown className="w-3.5 h-3.5 text-[#707068] group-hover:text-[#14140f] transition-transform duration-200" />
+            </button>
+
+            <button
+              type="button"
+              onClick={nextMonth}
+              className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-[#f4f4ee] active:scale-90 transition-all text-[#14140f] cursor-pointer"
+              aria-label="Next month"
+            >
+              <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+            </button>
+          </div>
+
           {/* DAYS OF WEEK HEADER */}
           <div className="grid grid-cols-7 gap-1 text-center mb-1.5">
             {SHORT_DAYS.map((d, dIdx) => (
@@ -563,6 +538,8 @@ export function CustomCalendarPicker({
             {Array.from({ length: daysInMonth }).map((_, i) => {
               const day = i + 1;
               const isPast = isPastDay(day);
+              const isFuture = isFutureRestricted(day);
+              const isDisabled = isPast || isFuture;
               const isSelected = isSelectedDay(day);
               const isToday = isTodayDay(day);
               const hasBatch = hasBatchOnDay(day);
@@ -571,12 +548,12 @@ export function CustomCalendarPicker({
                 <button
                   key={day}
                   type="button"
-                  disabled={isPast}
+                  disabled={isDisabled}
                   onClick={() => handleSelectDay(day)}
                   className={cn(
                     "relative w-8 h-8 sm:w-9 sm:h-9 mx-auto rounded-[11px] text-[13px] font-bold flex flex-col items-center justify-center transition-all cursor-pointer select-none",
-                    isPast && "text-[#c2c2b8] cursor-not-allowed pointer-events-none opacity-40",
-                    !isPast && !isSelected && "hover:bg-[#d6ff3f]/35 hover:text-[#14140f]",
+                    isDisabled && "text-[#c2c2b8] cursor-not-allowed pointer-events-none opacity-40",
+                    !isDisabled && !isSelected && "hover:bg-[#d6ff3f]/35 hover:text-[#14140f]",
                     isToday && !isSelected && "border border-[#14140f]/40 font-black",
                     isSelected &&
                       "bg-[#d6ff3f] text-[#14140f] font-black border border-[#14140f]/25 shadow-[0_2px_10px_rgba(214,255,63,0.55)] scale-105 z-10"
@@ -626,6 +603,192 @@ export function CustomCalendarPicker({
             </button>
           </div>
         </>
+      )}
+
+      {/* VIEW MODE 2: MONTH SELECTION GRID */}
+      {viewMode === "months" && (
+        <div className="animate-in fade-in zoom-in-95 duration-150">
+          {/* TOP BAR */}
+          <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#ecece6]">
+            <button
+              type="button"
+              onClick={() => setViewMode("calendar")}
+              className="flex items-center gap-1.5 text-[12px] font-extrabold text-[#14140f] hover:text-[#707068] transition-colors cursor-pointer group"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
+              <span>Back to Calendar</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="w-7 h-7 rounded-full flex items-center justify-center hover:bg-[#f2f2eb] active:scale-90 text-[#707068] hover:text-[#14140f] transition-all cursor-pointer"
+              aria-label="Close calendar"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* YEAR NAVIGATION BAR */}
+          <div className="flex items-center justify-between mb-3.5 px-1 py-1.5 bg-[#f8f8f5] rounded-xl border border-[#ecece6]">
+            <button
+              type="button"
+              onClick={() => setYearSelectorBase((prev) => prev - 1)}
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white active:scale-90 transition-all text-[#14140f] cursor-pointer"
+              aria-label="Previous year"
+            >
+              <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                setYearRangeStart(Math.floor(yearSelectorBase / 12) * 12);
+                setViewMode("years");
+              }}
+              className="px-3 py-1 rounded-lg hover:bg-white text-[14px] font-black font-heading text-[#14140f] transition-all cursor-pointer flex items-center gap-1.5 group"
+              title="Click to browse years"
+            >
+              <span>Year {yearSelectorBase}</span>
+              <ChevronDown className="w-3.5 h-3.5 text-[#707068] group-hover:text-[#14140f] transition-transform" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setYearSelectorBase((prev) => prev + 1)}
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white active:scale-90 transition-all text-[#14140f] cursor-pointer"
+              aria-label="Next year"
+            >
+              <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+            </button>
+          </div>
+
+          {/* 12 MONTH GRID */}
+          <div className="grid grid-cols-3 gap-2 py-1">
+            {MONTH_SHORT.map((mShort, mIdx) => {
+              const isCurrent = viewMonth === mIdx && viewYear === yearSelectorBase;
+              const isSelected =
+                selectedDate &&
+                selectedDate.getMonth() === mIdx &&
+                selectedDate.getFullYear() === yearSelectorBase;
+
+              return (
+                <button
+                  key={mShort}
+                  type="button"
+                  onClick={() => handleSelectMonth(mIdx)}
+                  className={cn(
+                    "py-2.5 px-2 rounded-[12px] text-[13px] font-extrabold transition-all cursor-pointer border text-center flex flex-col items-center justify-center gap-0.5",
+                    isCurrent || isSelected
+                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/25 shadow-[0_2px_8px_rgba(214,255,63,0.4)] font-black scale-102"
+                      : "bg-white text-[#14140f] border-[#e2e2dc] hover:bg-[#f4f4ee] hover:border-[#14140f]/30"
+                  )}
+                >
+                  <span className="font-heading font-black">{mShort}</span>
+                  <span className="text-[10px] font-semibold opacity-60">
+                    {MONTH_NAMES[mIdx]}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* BOTTOM QUICK BUTTON */}
+          <div className="mt-3.5 pt-2.5 border-t border-[#ecece6] text-center">
+            <button
+              type="button"
+              onClick={() => setViewMode("calendar")}
+              className="text-[12px] font-bold text-[#707068] hover:text-[#14140f] transition-colors cursor-pointer"
+            >
+              Cancel and Return to Calendar
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* VIEW MODE 3: YEAR SELECTION GRID */}
+      {viewMode === "years" && (
+        <div className="animate-in fade-in zoom-in-95 duration-150">
+          {/* TOP BAR */}
+          <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#ecece6]">
+            <button
+              type="button"
+              onClick={() => setViewMode("months")}
+              className="flex items-center gap-1.5 text-[12px] font-extrabold text-[#14140f] hover:text-[#707068] transition-colors cursor-pointer group"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
+              <span>Back to Months</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="w-7 h-7 rounded-full flex items-center justify-center hover:bg-[#f2f2eb] active:scale-90 text-[#707068] hover:text-[#14140f] transition-all cursor-pointer"
+              aria-label="Close calendar"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+
+          {/* YEAR RANGE HEADER */}
+          <div className="flex items-center justify-between mb-3.5 px-1 py-1.5 bg-[#f8f8f5] rounded-xl border border-[#ecece6]">
+            <button
+              type="button"
+              onClick={() => setYearRangeStart((prev) => prev - 12)}
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white active:scale-90 transition-all text-[#14140f] cursor-pointer"
+              aria-label="Previous 12 years"
+            >
+              <ChevronLeft className="w-4 h-4 stroke-[2.5]" />
+            </button>
+
+            <span className="text-[14px] font-black font-heading text-[#14140f]">
+              {yearRangeStart} – {yearRangeStart + 11}
+            </span>
+
+            <button
+              type="button"
+              onClick={() => setYearRangeStart((prev) => prev + 12)}
+              className="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-white active:scale-90 transition-all text-[#14140f] cursor-pointer"
+              aria-label="Next 12 years"
+            >
+              <ChevronRight className="w-4 h-4 stroke-[2.5]" />
+            </button>
+          </div>
+
+          {/* 12 YEAR GRID */}
+          <div className="grid grid-cols-3 gap-2 py-1">
+            {Array.from({ length: 12 }).map((_, i) => {
+              const y = yearRangeStart + i;
+              const isCurrent = y === yearSelectorBase;
+              return (
+                <button
+                  key={y}
+                  type="button"
+                  onClick={() => handleSelectYear(y)}
+                  className={cn(
+                    "py-2.5 rounded-[12px] text-[13px] font-heading font-black transition-all cursor-pointer border text-center",
+                    isCurrent
+                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/25 shadow-[0_2px_8px_rgba(214,255,63,0.4)] scale-102"
+                      : "bg-white text-[#14140f] border-[#e2e2dc] hover:bg-[#f4f4ee] hover:border-[#14140f]/30"
+                  )}
+                >
+                  {y}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* BOTTOM QUICK BUTTON */}
+          <div className="mt-3.5 pt-2.5 border-t border-[#ecece6] text-center">
+            <button
+              type="button"
+              onClick={() => setViewMode("calendar")}
+              className="text-[12px] font-bold text-[#707068] hover:text-[#14140f] transition-colors cursor-pointer"
+            >
+              Cancel and Return to Calendar
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

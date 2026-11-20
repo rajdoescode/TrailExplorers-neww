@@ -22,7 +22,7 @@ export function AttractionsCarousel({ attractions }: AttractionsCarouselProps) {
   };
 
   return (
-    <section id="attractions" className="scroll-mt-32 sm:scroll-mt-36 w-full">
+    <section id="attractions" className="scroll-mt-32 sm:scroll-mt-36 w-full -mt-2 sm:-mt-3">
       {/* Header Row (Direct on page, not inside a boxed card) */}
       <div className="flex items-end justify-between gap-4 mb-3 sm:mb-4 px-1 sm:px-0">
         <div>
@@ -58,26 +58,25 @@ export function AttractionsCarousel({ attractions }: AttractionsCarouselProps) {
       {/* Horizontal Scroll Track (Full-width edge-to-edge on mobile with left space and peeking cards) */}
       <div
         ref={scrollRef}
-        className="flex gap-3.5 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2 -mx-4 px-5 sm:mx-0 sm:px-0 scroll-pl-5 sm:scroll-pl-0"
+        className="flex gap-3.5 sm:gap-4 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-1.5 -mx-4 px-5 sm:mx-0 sm:px-0 scroll-pl-5 sm:scroll-pl-0"
         style={{ WebkitOverflowScrolling: "touch" }}
       >
         {attractions.map((attr) => (
           <div
             key={attr.id}
-            className="relative w-[76vw] max-w-[280px] min-w-[240px] sm:w-[300px] sm:max-w-none h-[355px] sm:h-[390px] rounded-[22px] overflow-hidden shrink-0 snap-start border-2 border-white group bg-[#22221e] shadow-[0_0_20px_rgba(255,255,255,0.75)] transition-transform duration-300 hover:-translate-y-1 [isolation:isolate] [transform:translateZ(0)]"
-            style={{ WebkitMaskImage: "-webkit-radial-gradient(white, black)" }}
+            className="group relative w-[76vw] max-w-[280px] min-w-[240px] sm:w-[300px] sm:max-w-none h-[355px] sm:h-[390px] rounded-[22px] overflow-hidden shrink-0 snap-start bg-[#14140f] shadow-[0_8px_24px_rgba(20,20,15,0.12)] hover:shadow-[0_16px_36px_rgba(20,20,15,0.22)] hover:-translate-y-1.5 transition-all duration-300 select-none cursor-pointer"
           >
             <SkeletonImage
               src={attr.image_url}
               alt={attr.title}
               fill
               sizes="(max-width: 640px) 76vw, 300px"
-              className="object-cover rounded-[22px] group-hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               skeletonClassName="rounded-[22px]"
             />
             {/* Subtle natural dark gradient overlay */}
-            <div className="absolute inset-0 rounded-[22px] bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-5 text-white pointer-events-none">
-              <h3 className="font-extrabold text-base sm:text-lg text-white font-heading leading-tight mb-1.5 drop-shadow-xs">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent flex flex-col justify-end p-5 text-white pointer-events-none">
+              <h3 className="font-extrabold text-base sm:text-lg text-white font-heading leading-tight mb-1.5 drop-shadow-xs group-hover:underline">
                 {attr.title}
               </h3>
               {attr.subtitle && (

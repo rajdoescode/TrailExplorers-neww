@@ -775,6 +775,30 @@ export default function PlanYourTripPage() {
   const threadEndRef = useRef<HTMLDivElement>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
 
+  // Reset builder state back to defaults
+  const handleResetBuilder = () => {
+    setSelectedRegions(["himachal"]);
+    setSelectedCuratedTrip(null);
+    setStartDate("2026-11-20");
+    setFlexibleDates(true);
+    setNumDays(8);
+    setAdults(2);
+    setChildren(0);
+    setGroupType("Friends");
+    setStartCity("Chandigarh");
+    setStayStyle("comfort");
+    setTransportStyle("suggest");
+    setPaceStyle("balanced");
+    setSelectedActivities([]);
+    setBuilderDays(buildDefaultItinerary(["himachal"], 8, "2026-11-20"));
+    setCustName("");
+    setCustPhone("");
+    setCustEmail("");
+    setCustNotes("");
+    setBuilderSubmitted(false);
+    setWizardStep(0);
+  };
+
   // Sync body class: .pc-mode-chat in Chat mode, standard clean background in Step mode
   useEffect(() => {
     if (!stepMode) {
@@ -1494,23 +1518,35 @@ export default function PlanYourTripPage() {
             then call you with an exact customized price for your group.
           </p>
 
-          {/* Mode Switcher Tabs */}
-          <div className="mt-5 inline-flex items-center p-1 rounded-full bg-[#f0f0eb] border border-[#e2e2dc] shadow-xs">
+          {/* Mode Switcher Tabs & Reset Action */}
+          <div className="mt-5 inline-flex items-center gap-2 flex-wrap justify-center">
+            <div className="inline-flex items-center p-1 rounded-full bg-[#f0f0eb] border border-[#e2e2dc] shadow-xs">
+              <button
+                type="button"
+                onClick={() => setStepMode(false)}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all text-[#6b6b63] hover:text-[#14140f] cursor-pointer"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Chat Planner</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setStepMode(true)}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-[#14140f] shadow-sm cursor-default"
+              >
+                <ListOrdered className="w-3.5 h-3.5" />
+                <span>Step-by-Step Form</span>
+              </button>
+            </div>
+
             <button
               type="button"
-              onClick={() => setStepMode(false)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all text-[#6b6b63] hover:text-[#14140f] cursor-pointer"
+              onClick={handleResetBuilder}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold text-[#6b6b63] hover:text-[#14140f] hover:bg-[#f0f0eb] border border-transparent hover:border-[#e2e2dc] transition-all cursor-pointer"
+              title="Reset all selections and start fresh"
             >
-              <MessageSquare className="w-3.5 h-3.5" />
-              <span>Chat Planner</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setStepMode(true)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-[#14140f] shadow-sm cursor-default"
-            >
-              <ListOrdered className="w-3.5 h-3.5" />
-              <span>Step-by-Step Form</span>
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Reset plan</span>
             </button>
           </div>
         </section>
