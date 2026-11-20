@@ -420,7 +420,7 @@ video::-webkit-media-controls-enclosure {
   width: 100%;
   padding: 14px;
   border-radius: 14px;
-  border: 2px solid #14140f;
+  border: none;
   background: #d6ff3f;
   color: #14140f;
   font-size: 15.5px;
@@ -429,7 +429,7 @@ video::-webkit-media-controls-enclosure {
   cursor: pointer;
   margin-top: 4px;
   transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(214, 255, 63, 0.4);
+  box-shadow: 0 4px 14px rgba(214, 255, 63, 0.45);
 }
 
 .btn-popup-submit:hover {

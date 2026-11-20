@@ -608,7 +608,7 @@ export default function TripDetailPage() {
               <button
                 type="button"
                 onClick={() => setIsBookModalOpen(true)}
-                className="w-full bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] font-black text-[15px] sm:text-[16px] py-3.5 px-4 rounded-[14px] border-[1.5px] border-[#14140f] shadow-[0_6px_20px_rgba(214,255,63,0.5)] hover:shadow-[0_8px_24px_rgba(214,255,63,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer font-heading text-center uppercase tracking-wide"
+                className="w-full bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] font-black text-[15px] sm:text-[16px] py-3.5 px-4 rounded-[14px] border-none shadow-[0_6px_20px_rgba(214,255,63,0.5)] hover:shadow-[0_8px_24px_rgba(214,255,63,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer font-heading text-center uppercase tracking-wide"
               >
                 BOOK NOW
               </button>
@@ -623,7 +623,7 @@ export default function TripDetailPage() {
                 </p>
                 <Link
                   href="/plan-your-trip"
-                  className="inline-flex items-center justify-center bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] text-[13px] font-bold py-2.5 px-4 rounded-[12px] border-[1.5px] border-[#14140f] shadow-[0_2px_8px_rgba(214,255,63,0.35)] hover:-translate-y-0.5 transition-all cursor-pointer text-center"
+                  className="inline-flex items-center justify-center bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] text-[13px] font-bold py-2.5 px-4 rounded-[12px] border-none shadow-[0_2px_8px_rgba(214,255,63,0.35)] hover:-translate-y-0.5 transition-all cursor-pointer text-center"
                 >
                   Chat with our Trip Planner
                 </Link>
@@ -720,7 +720,7 @@ export default function TripDetailPage() {
           <button
             type="button"
             onClick={() => setIsBookModalOpen(true)}
-            className="bg-[#d6ff3f] hover:bg-[#cbf52a] active:scale-95 text-[#14140f] font-extrabold text-[14px] sm:text-[16px] px-4 sm:px-6 h-[44px] sm:h-[48px] rounded-[14px] border-[1.5px] border-[#14140f] shadow-[0_4px_14px_rgba(214,255,63,0.45)] cursor-pointer font-heading transition-all whitespace-nowrap flex items-center justify-center"
+            className="bg-[#d6ff3f] hover:bg-[#cbf52a] active:scale-95 text-[#14140f] font-extrabold text-[14px] sm:text-[16px] px-4 sm:px-6 h-[44px] sm:h-[48px] rounded-[14px] border-none shadow-[0_4px_14px_rgba(214,255,63,0.45)] cursor-pointer font-heading transition-all whitespace-nowrap flex items-center justify-center"
           >
             Book Now
           </button>
@@ -734,7 +734,7 @@ export default function TripDetailPage() {
         id="bookingModal"
         role="dialog"
         aria-modal="true"
-        aria-hidden={!isBookModalOpen}
+        aria-hidden={!isBookModalOpen ? true : undefined}
         onClick={(e) => {
           if (e.target === e.currentTarget) setIsBookModalOpen(false);
         }}

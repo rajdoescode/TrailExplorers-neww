@@ -1,30 +1,65 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Image from "next/image";
-import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import {
   ArrowUp,
   RotateCcw,
   Check,
   ChevronRight,
+  ChevronLeft,
   ArrowUpRight,
   Phone,
-  Calendar,
+  Calendar as CalendarIcon,
   Plus,
   Minus,
-  ArrowUp as ArrowUpIcon,
   ArrowDown,
   X,
+  Compass,
+  MapPin,
+  Users,
+  Sparkles,
+  Ticket,
+  SlidersHorizontal,
+  Clock,
+  Car,
+  Bed,
+  Layers,
+  CheckCircle2,
+  Share2,
+  Trash2,
+  MessageSquare,
+  ListOrdered,
 } from "lucide-react";
+
+import {
+  Button,
+  Input,
+  Select,
+  Textarea,
+  Checkbox,
+  TravellerCounter,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+  SelectionCard,
+  Modal,
+  CustomCalendarPicker,
+  Badge,
+  Heading,
+  SkeletonImage,
+} from "@/components/ui";
+
 import {
   ExplorerChatMascot,
   ExplorerMascotHandle,
 } from "@/components/chat/ExplorerChatMascot";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
-import { CustomCalendarPicker } from "@/components/ui/CustomCalendarPicker";
 
 // ==========================================
 // CHAT MODE DATA TYPES & PRESETS
@@ -70,18 +105,21 @@ interface ItineraryData {
   itinerary?: ItineraryDay[];
 }
 
-const PRESETS: Record<string, {
-  title: string;
-  region: string;
-  days: number;
-  when: string;
-  route: string[];
-  facts: {
-    transport: string;
-    stays: string;
-  };
-  itinerary: ItineraryDay[];
-}> = {
+const PRESETS: Record<
+  string,
+  {
+    title: string;
+    region: string;
+    days: number;
+    when: string;
+    route: string[];
+    facts: {
+      transport: string;
+      stays: string;
+    };
+    itinerary: ItineraryDay[];
+  }
+> = {
   ladakh: {
     title: "Ladakh Summer Expedition",
     region: "Ladakh",
@@ -384,7 +422,7 @@ const BUILDER_REGIONS = [
   {
     id: "spiti",
     name: "Spiti Valley",
-    tagline: "Cold desert, ancient monasteries, the highest villages",
+    tagline: "Cold desert, ancient monasteries, highest villages",
     image: "/assets/images/destinations/domestic/spiti.jpg",
   },
   {
@@ -396,7 +434,7 @@ const BUILDER_REGIONS = [
   {
     id: "zanskar",
     name: "Zanskar",
-    tagline: "Remotest valleys, glaciers & cliffside monasteries",
+    tagline: "Remotest valleys, glaciers & cliff monasteries",
     image: "/assets/images/trips/img_1786811162446_Drang_Drung_Glacier_.jpg",
   },
   {
@@ -408,14 +446,83 @@ const BUILDER_REGIONS = [
   {
     id: "uttarakhand",
     name: "Uttarakhand",
-    tagline: "Temples, treks & the Ganga",
+    tagline: "Temples, alpine treks & the Ganga",
     image: "/assets/images/trips/trip_119_image_url.jpg",
   },
   {
     id: "northeast",
     name: "Northeast",
-    tagline: "Living root bridges, monasteries & festivals",
+    tagline: "Living root bridges, monasteries & waterfalls",
     image: "/assets/images/trips/trip_114_image_url.jpg",
+  },
+];
+
+const CURATED_TRIP_STARTERS = [
+  {
+    id: "spiti-circuit",
+    title: "Spiti Valley Full Circuit",
+    regionId: "spiti",
+    days: 8,
+    badge: "Most Popular",
+    tagline: "Kunzum Pass, Chandratal Lake & High Monasteries",
+    image: "/assets/images/destinations/domestic/spiti.jpg",
+    stays: "comfort",
+    vehicle: "4x4",
+  },
+  {
+    id: "ladakh-expedition",
+    title: "Ladakh High Passes & Lakes",
+    regionId: "ladakh",
+    days: 8,
+    badge: "Summer Classic",
+    tagline: "Khardung La, Nubra Dunes & Pangong Tso",
+    image: "/assets/images/trips/trip_117_image_url.jpg",
+    stays: "comfort",
+    vehicle: "suv",
+  },
+  {
+    id: "kashmir-paradise",
+    title: "Kashmir Family & Houseboat",
+    regionId: "kashmir",
+    days: 7,
+    badge: "Scenic & Relaxed",
+    tagline: "Dal Lake, Gulmarg Gondola & Pahalgam Valleys",
+    image: "/assets/images/trips/trip_115_image_url.jpg",
+    stays: "premium",
+    vehicle: "suv",
+  },
+  {
+    id: "himachal-offbeat",
+    title: "Offbeat Himachal & Parvati",
+    regionId: "himachal",
+    days: 6,
+    badge: "Youth & Couples",
+    tagline: "Old Manali, Kasol, Jibhi Treehouses & Tirthan",
+    image: "/assets/images/destinations/domestic/himachal.jpg",
+    stays: "comfort",
+    vehicle: "suv",
+  },
+  {
+    id: "zanskar-remote",
+    title: "Wild Zanskar & Suru Valley",
+    regionId: "zanskar",
+    days: 8,
+    badge: "Off-Road",
+    tagline: "Drang Drung Glacier, Cliff Monasteries & Padum",
+    image: "/assets/images/trips/img_1786811162446_Drang_Drung_Glacier_.jpg",
+    stays: "camps",
+    vehicle: "4x4",
+  },
+  {
+    id: "uttarakhand-treks",
+    title: "Uttarakhand Peaks & Ganga",
+    regionId: "uttarakhand",
+    days: 7,
+    badge: "Culture & Treks",
+    tagline: "Rishikesh, Chopta Tungnath & Auli Meadows",
+    image: "/assets/images/trips/trip_119_image_url.jpg",
+    stays: "comfort",
+    vehicle: "suv",
   },
 ];
 
@@ -441,13 +548,41 @@ const BUILDER_PACES = [
 ];
 
 const BUILDER_ACTIVITIES = [
-  "Paragliding", "River rafting", "Camping", "Snow activities", "Day hikes", "Multi-day trek",
-  "Monasteries & culture", "Stargazing", "Photography help", "Local food trail", "Village homestay",
-  "Festival visit", "Jeep safari", "Hot springs"
+  "Paragliding",
+  "River rafting",
+  "Camping",
+  "Snow activities",
+  "Day hikes",
+  "Multi-day trek",
+  "Monasteries & culture",
+  "Stargazing",
+  "Photography help",
+  "Local food trail",
+  "Village homestay",
+  "Festival visit",
+  "Jeep safari",
+  "Hot springs",
 ];
 
 const BUILDER_START_CITIES = [
-  "Delhi", "Chandigarh", "Manali", "Leh", "Srinagar", "Dehradun", "Guwahati", "Bagdogra", "Other"
+  "Delhi",
+  "Chandigarh",
+  "Manali",
+  "Leh",
+  "Srinagar",
+  "Dehradun",
+  "Guwahati",
+  "Bagdogra",
+  "Other",
+];
+
+const GROUP_TYPES = [
+  { id: "Friends", label: "Friends", desc: "Adventure & group fun" },
+  { id: "Family", label: "Family", desc: "Kids & comfortable pace" },
+  { id: "Couple", label: "Couple", desc: "Romance & private stays" },
+  { id: "Solo", label: "Solo", desc: "Freedom & community vibes" },
+  { id: "Office / Corporate", label: "Corporate", desc: "Team offsite & bonding" },
+  { id: "School / College", label: "College Group", desc: "Budget & exploration" },
 ];
 
 interface BuilderDayItem {
@@ -460,8 +595,91 @@ interface BuilderDayItem {
   notes: string;
 }
 
+// Helper to generate realistic itineraries based on chosen region and days
+function buildDefaultItinerary(regions: string[], daysCount: number, startDateStr: string): BuilderDayItem[] {
+  const primary = regions[0] || "himachal";
+
+  const getDayDateStr = (dayIdx: number) => {
+    try {
+      const base = new Date(startDateStr);
+      if (!isNaN(base.getTime())) {
+        const current = new Date(base.getTime() + dayIdx * 24 * 60 * 60 * 1000);
+        return current.toLocaleDateString("en-US", {
+          weekday: "short",
+          day: "numeric",
+          month: "short",
+        });
+      }
+    } catch {
+      // ignore
+    }
+    return `Day ${dayIdx + 1}`;
+  };
+
+  const templates: Record<string, { title: string; night: string }[]> = {
+    spiti: [
+      { title: "Delhi / Chandigarh → Narkanda Apple Country", night: "Narkanda" },
+      { title: "Narkanda → Sangla & Chitkul Village (Last Indian Village)", night: "Chitkul Homestay" },
+      { title: "Chitkul → Nako Lake & 1000-Year Tabo Monastery", night: "Tabo Homestay" },
+      { title: "Tabo → Dhankar Fort & Pin Valley (Mudh)", night: "Kaza Hotel" },
+      { title: "High Spiti: Key Monastery, Hikkim & Chicham Bridge", night: "Kaza Hotel" },
+      { title: "Kaza → Kunzum Pass (14,931 ft) & Chandratal Lake", night: "Chandratal Swiss Camp" },
+      { title: "Chandratal → Atal Tunnel → Old Manali", night: "Old Manali Cottage" },
+      { title: "Manali → Delhi Return Journey", night: "Departure" },
+    ],
+    ladakh: [
+      { title: "Fly Delhi to Leh · Complete Acclimatization Rest", night: "Leh Hotel" },
+      { title: "Leh Culture: Magnetic Hill, Sangam & Pathar Sahib", night: "Leh Hotel" },
+      { title: "Leh → Nubra Valley via Khardung La (17,982 ft)", night: "Hunder Luxury Camp" },
+      { title: "Hunder Sand Dunes Safari → Pangong Tso via Shyok", night: "Pangong Lake Camp" },
+      { title: "Pangong Sunrise → Chang La Pass → Thiksey Monastery", night: "Leh Hotel" },
+      { title: "Sham Valley Heritage: Alchi & Apricot Orchards", night: "Leh Hotel" },
+      { title: "Leh Main Bazaar Leisure & Souvenir Shopping", night: "Leh Hotel" },
+      { title: "Leh Airport Departure with Himalayan Memories", night: "Departure" },
+    ],
+    kashmir: [
+      { title: "Srinagar Arrival & Heritage Dal Lake Houseboat", night: "Srinagar Houseboat" },
+      { title: "Srinagar to Gulmarg Meadow of Flowers & Gondola", night: "Gulmarg Mountain Resort" },
+      { title: "Gulmarg to Pahalgam via Saffron Fields", night: "Pahalgam Riverside Resort" },
+      { title: "Pahalgam Valleys: Betaab, Aru & Baisaran", night: "Pahalgam Riverside Resort" },
+      { title: "Pahalgam to Sonamarg Meadow of Gold & Glacier", night: "Srinagar Hotel" },
+      { title: "Old Srinagar Heritage Walk & Mughal Gardens", night: "Srinagar Hotel" },
+      { title: "Srinagar Airport Departure", night: "Departure" },
+    ],
+    himachal: [
+      { title: "Chandigarh / Delhi → Old Manali Scenic Drive", night: "Old Manali Cottage" },
+      { title: "Explore Old Manali, Hadimba Temple & Jogini Falls", night: "Old Manali Cottage" },
+      { title: "Manali → Solang Valley & Atal Tunnel to Sissu", night: "Sissu / Manali" },
+      { title: "Manali → Kasol & Chalal Riverside Village", night: "Kasol Riverside Camp" },
+      { title: "Kasol → Manikaran Hot Springs & Jibhi Valley", night: "Jibhi Treehouse" },
+      { title: "Jibhi → Jalori Pass & Serolsar Lake Hike", night: "Tirthan Valley Home" },
+      { title: "Tirthan Valley → Bir Billing Paragliding Takeoff", night: "Bir Billing" },
+      { title: "Bir Billing → Dharamshala & Return Drive", night: "Departure" },
+    ],
+  };
+
+  const chosenTemplate = templates[primary] || templates.himachal;
+  const days: BuilderDayItem[] = [];
+
+  for (let i = 0; i < daysCount; i++) {
+    const templateItem = chosenTemplate[i % chosenTemplate.length];
+    const isLast = i === daysCount - 1;
+    days.push({
+      id: `d-${i + 1}-${Date.now()}`,
+      dayNum: i + 1,
+      dateStr: getDayDateStr(i),
+      title: isLast && daysCount > 1 ? `Return journey with mountain memories` : templateItem.title,
+      night: isLast && daysCount > 1 ? "Departure" : templateItem.night,
+      stops: [],
+      notes: "",
+    });
+  }
+
+  return days;
+}
+
 export default function PlanYourTripPage() {
-  // Mode toggle: false = Chat mode (dark mountain backdrop), true = 5-step Builder form (light background)
+  // Mode toggle: false = Chat mode, true = 5-step Builder form
   const [stepMode, setStepMode] = useState(false);
 
   // ------------------------------------------
@@ -471,7 +689,11 @@ export default function PlanYourTripPage() {
   const [messages, setMessages] = useState<Message[]>([
     { id: "msg-1", sender: "bot", text: "Hey! I'm your Trail Explorers trip planner 👋" },
     { id: "msg-2", sender: "bot", text: "Where are the mountains calling you?" },
-    { id: "msg-3", sender: "bot", text: "Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price." },
+    {
+      id: "msg-3",
+      sender: "bot",
+      text: "Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price.",
+    },
   ]);
 
   const [inputText, setInputText] = useState("");
@@ -515,6 +737,8 @@ export default function PlanYourTripPage() {
   // ------------------------------------------
   const [wizardStep, setWizardStep] = useState<number>(0); // 0 = Where, 1 = When & who, 2 = Style, 3 = Day by day, 4 = Send
   const [selectedRegions, setSelectedRegions] = useState<string[]>(["himachal"]);
+  const [selectedCuratedTrip, setSelectedCuratedTrip] = useState<string | null>(null);
+  const [step1ViewMode, setStep1ViewMode] = useState<"trips" | "regions">("trips");
 
   // Step 2 state
   const [startDate, setStartDate] = useState("2026-11-20");
@@ -532,16 +756,9 @@ export default function PlanYourTripPage() {
   const [selectedActivities, setSelectedActivities] = useState<string[]>([]);
 
   // Step 4 state
-  const [builderDays, setBuilderDays] = useState<BuilderDayItem[]>([
-    { id: "d-1", dayNum: 1, dateStr: "Fri, 20 Nov", title: "Chandigarh → Manali", night: "Manali", stops: [], notes: "" },
-    { id: "d-2", dayNum: 2, dateStr: "Sat, 21 Nov", title: "Explore Manali", night: "Manali", stops: [], notes: "" },
-    { id: "d-3", dayNum: 3, dateStr: "Sun, 22 Nov", title: "Explore Manali", night: "Manali", stops: [], notes: "" },
-    { id: "d-4", dayNum: 4, dateStr: "Mon, 23 Nov", title: "Manali → Atal Tunnel & Sissu", night: "Atal Tunnel & Sissu", stops: [], notes: "" },
-    { id: "d-5", dayNum: 5, dateStr: "Tue, 24 Nov", title: "Atal Tunnel & Sissu → Kasol", night: "Kasol", stops: [], notes: "" },
-    { id: "d-6", dayNum: 6, dateStr: "Wed, 25 Nov", title: "Kasol → Jibhi & Tirthan Valley", night: "Jibhi & Tirthan Valley", stops: [], notes: "" },
-    { id: "d-7", dayNum: 7, dateStr: "Thu, 26 Nov", title: "Jibhi & Tirthan Valley → Bir Billing", night: "Bir Billing", stops: [], notes: "" },
-    { id: "d-8", dayNum: 8, dateStr: "Fri, 27 Nov", title: "Bir Billing → Dharamshala & McLeodganj", night: "Dharamshala & McLeodganj", stops: [], notes: "" },
-  ]);
+  const [builderDays, setBuilderDays] = useState<BuilderDayItem[]>(() =>
+    buildDefaultItinerary(["himachal"], 8, "2026-11-20")
+  );
 
   // Step 5 state (Contact Form)
   const [custName, setCustName] = useState("");
@@ -552,10 +769,13 @@ export default function PlanYourTripPage() {
   const [builderSubmitted, setBuilderSubmitted] = useState(false);
   const [builderRef, setBuilderRef] = useState("AB-9182");
 
+  // Mobile Bottom Sheet for live ticket in Builder Mode
+  const [builderTicketDrawerOpen, setBuilderTicketDrawerOpen] = useState(false);
+
   const threadEndRef = useRef<HTMLDivElement>(null);
   const chatScrollRef = useRef<HTMLDivElement>(null);
 
-  // Sync body class: .pc-mode-chat in Chat mode, standard white background in Step mode
+  // Sync body class: .pc-mode-chat in Chat mode, standard clean background in Step mode
   useEffect(() => {
     if (!stepMode) {
       document.body.classList.add("pc-mode-chat");
@@ -583,12 +803,28 @@ export default function PlanYourTripPage() {
   // Toggle region selection in step 1
   const toggleRegion = (id: string) => {
     setSelectedRegions((prev) => {
+      let updated: string[];
       if (prev.includes(id)) {
         if (prev.length === 1) return prev; // keep at least one
-        return prev.filter((r) => r !== id);
+        updated = prev.filter((r) => r !== id);
+      } else {
+        updated = [...prev, id];
       }
-      return [...prev, id];
+      setSelectedCuratedTrip(null);
+      // auto refresh itinerary template
+      setBuilderDays(buildDefaultItinerary(updated, numDays, startDate));
+      return updated;
     });
+  };
+
+  // Select curated trip in step 1
+  const selectCuratedTrip = (trip: (typeof CURATED_TRIP_STARTERS)[0]) => {
+    setSelectedCuratedTrip(trip.id);
+    setSelectedRegions([trip.regionId]);
+    setNumDays(trip.days);
+    if (trip.stays) setStayStyle(trip.stays);
+    if (trip.vehicle) setTransportStyle(trip.vehicle);
+    setBuilderDays(buildDefaultItinerary([trip.regionId], trip.days, startDate));
   };
 
   // Toggle activity chip in step 3
@@ -598,31 +834,13 @@ export default function PlanYourTripPage() {
     );
   };
 
-  // Re-generate days when entering step 4 based on picked regions and numDays
+  // Re-sync days count
   const syncDaysCount = (newCount: number) => {
     setNumDays(newCount);
-    setBuilderDays((prev) => {
-      if (newCount > prev.length) {
-        const added: BuilderDayItem[] = [];
-        for (let i = prev.length + 1; i <= newCount; i++) {
-          added.push({
-            id: `d-${i}`,
-            dayNum: i,
-            dateStr: `Day ${i}`,
-            title: `Explore ${selectedRegions[0] || "Mountains"}`,
-            night: "Local Stay",
-            stops: [],
-            notes: "",
-          });
-        }
-        return [...prev, ...added];
-      } else {
-        return prev.slice(0, newCount);
-      }
-    });
+    setBuilderDays(buildDefaultItinerary(selectedRegions, newCount, startDate));
   };
 
-  // Move day up/down
+  // Move day up/down in step 4
   const moveDay = (index: number, direction: "up" | "down") => {
     setBuilderDays((prev) => {
       const copy = [...prev];
@@ -631,12 +849,11 @@ export default function PlanYourTripPage() {
       const temp = copy[index];
       copy[index] = copy[target];
       copy[target] = temp;
-      // Re-index dayNums
       return copy.map((item, idx) => ({ ...item, dayNum: idx + 1 }));
     });
   };
 
-  // Delete day
+  // Delete day in step 4
   const deleteDay = (index: number) => {
     setBuilderDays((prev) => {
       if (prev.length <= 1) return prev;
@@ -646,7 +863,7 @@ export default function PlanYourTripPage() {
     setNumDays((prev) => Math.max(1, prev - 1));
   };
 
-  // Add a day
+  // Add a day in step 4
   const addDay = () => {
     setBuilderDays((prev) => {
       const nextNum = prev.length + 1;
@@ -656,7 +873,7 @@ export default function PlanYourTripPage() {
           id: `d-${Date.now()}`,
           dayNum: nextNum,
           dateStr: `Day ${nextNum}`,
-          title: `Explore ${selectedRegions[0] || "Mountains"}`,
+          title: `Explore ${selectedRegions[0] || "Himalayas"}`,
           night: "Local Stay",
           stops: [],
           notes: "",
@@ -670,7 +887,7 @@ export default function PlanYourTripPage() {
   const handleBuilderSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!custName || !custPhone) return;
-    const refCode = "AB-" + Math.floor(1000 + Math.random() * 9000);
+    const refCode = "TE-" + Math.floor(1000 + Math.random() * 9000);
     setBuilderRef(refCode);
     setBuilderSubmitted(true);
   };
@@ -696,7 +913,14 @@ export default function PlanYourTripPage() {
       days: preset.days,
       stage: 1,
       facts: {
-        when: key === "spiti" ? "June – October" : key === "ladakh" ? "Summer" : key === "kashmir" ? "Year-Round" : "Spring & Summer",
+        when:
+          key === "spiti"
+            ? "June – October"
+            : key === "ladakh"
+            ? "Summer"
+            : key === "kashmir"
+            ? "Year-Round"
+            : "Spring & Summer",
       },
     });
 
@@ -709,17 +933,26 @@ export default function PlanYourTripPage() {
       let chips: string[] = [];
 
       if (key === "ladakh") {
-        replyText = "Ladakh in summer is incredible—blue skies, high passes like Khardung La, and stunning lakes like Pangong Tso! Which month are you planning to travel, and how many days do you have in mind?";
+        replyText =
+          "Ladakh in summer is incredible—blue skies, high passes like Khardung La, and stunning lakes like Pangong Tso! Which month are you planning to travel, and how many days do you have in mind?";
         chips = ["June", "July", "August", "September"];
       } else if (key === "spiti") {
-        replyText = "Spiti Valley is breathtaking! The full circuit via Kunzum Pass is open June to October. Which month are you planning to head out?";
+        replyText =
+          "Spiti Valley is breathtaking! The full circuit via Kunzum Pass is open June to October. Which month are you planning to head out?";
         chips = ["June", "July", "August", "September", "Winter 4x4"];
       } else if (key === "kashmir") {
-        replyText = "Magical choice! Kashmir with family offers peaceful houseboats on Dal Lake and snow meadows in Gulmarg. Which season suits your family best?";
+        replyText =
+          "Magical choice! Kashmir with family offers peaceful houseboats on Dal Lake and snow meadows in Gulmarg. Which season suits your family best?";
         chips = ["Spring / Tulips", "Summer", "Autumn", "Winter Snow"];
       } else {
-        replyText = "Awesome! We have offbeat valley escapes across Himachal, Parvati, and Jibhi. What vibe are you looking for?";
-        chips = ["Peaceful pine forests & cafés", "High adventure & roads", "Snow & glaciers", "Offbeat culture"];
+        replyText =
+          "Awesome! We have offbeat valley escapes across Himachal, Parvati, and Jibhi. What vibe are you looking for?";
+        chips = [
+          "Peaceful pine forests & cafés",
+          "High adventure & roads",
+          "Snow & glaciers",
+          "Offbeat culture",
+        ];
       }
 
       setMessages((prev) => [...prev, { id: "bot-" + Date.now(), sender: "bot", text: replyText, chips }]);
@@ -812,13 +1045,24 @@ export default function PlanYourTripPage() {
             id: "bot-" + Date.now(),
             sender: "bot",
             text: `Awesome, a ${chip.toLowerCase()} to ${preset.region} will be unforgettable! Which city will you be starting from?`,
-            chips: ["Starting from Delhi", "Starting from Chandigarh", "Fly direct into Leh / Srinagar", "Starting from Mumbai"],
+            chips: [
+              "Starting from Delhi",
+              "Starting from Chandigarh",
+              "Fly direct into Leh / Srinagar",
+              "Starting from Mumbai",
+            ],
           },
         ]);
       } else if (curStage === 4) {
         stageRef.current = 5;
         setConversationStage(5);
-        const fromCity = chip.includes("Delhi") ? "Delhi" : chip.includes("Chandigarh") ? "Chandigarh" : chip.includes("Mumbai") ? "Mumbai" : "Leh / Srinagar";
+        const fromCity = chip.includes("Delhi")
+          ? "Delhi"
+          : chip.includes("Chandigarh")
+          ? "Chandigarh"
+          : chip.includes("Mumbai")
+          ? "Mumbai"
+          : "Leh / Srinagar";
 
         setActiveTrip((prev) => ({
           title: prev?.title || preset.title,
@@ -836,7 +1080,12 @@ export default function PlanYourTripPage() {
             id: "bot-" + Date.now(),
             sender: "bot",
             text: `Starting from ${fromCity} works great! Would you prefer comfortable hotels, traditional homestays, or a mix of both?`,
-            chips: ["Traditional homestays", "Comfortable hotels", "Mix of homestays & hotels", "Camping along the way"],
+            chips: [
+              "Traditional homestays",
+              "Comfortable hotels",
+              "Mix of homestays & hotels",
+              "Camping along the way",
+            ],
           },
         ]);
       } else if (curStage === 5) {
@@ -863,7 +1112,9 @@ export default function PlanYourTripPage() {
           {
             id: "bot-" + Date.now(),
             sender: "bot",
-            text: `${chip} give you the best local experience in ${preset.region}! Since you're traveling for ${activeTrip?.days || preset.days} days, would you prefer an SUV like a Scorpio / Xylo or a Tempo Traveller for your group?`,
+            text: `${chip} give you the best local experience in ${preset.region}! Since you're traveling for ${
+              activeTrip?.days || preset.days
+            } days, would you prefer an SUV like a Scorpio / Xylo or a Tempo Traveller for your group?`,
             chips: ["SUV (Scorpio / Xylo)", "Tempo Traveller", "Private 4x4 Fortuner"],
           },
         ]);
@@ -899,7 +1150,9 @@ export default function PlanYourTripPage() {
           {
             id: "bot-" + Date.now(),
             sender: "bot",
-            text: `Here is an ${daysCount}-day itinerary for your group, covering ${preset.region}'s highest passes, scenic valleys and blue lakes with ${activeTrip?.facts.stays || preset.facts.stays} and a ${transportVal}.\n\nYour day-by-day plan is now updated on your trip ticket! What do you think of this route?`,
+            text: `Here is an ${daysCount}-day itinerary for your group, covering ${preset.region}'s highest passes, scenic valleys and blue lakes with ${
+              activeTrip?.facts.stays || preset.facts.stays
+            } and a ${transportVal}.\n\nYour day-by-day plan is now updated on your trip ticket! What do you think of this route?`,
             planUpdate: {
               days: daysCount,
               title: preset.title,
@@ -927,8 +1180,19 @@ export default function PlanYourTripPage() {
 
     setMessages((prev) => [
       ...prev,
-      { id: "user-" + Date.now(), sender: "user", text: `Budget: ₹${budgetVal.toLocaleString("en-IN")} per person` },
-      { id: "bot-" + Date.now(), sender: "bot", text: `Got it! I've set your budget to ₹${budgetVal.toLocaleString("en-IN")} per person. Tap "Send to our team →" whenever you're ready and our trip expert will call you with the exact customized group quote!`, chips: ["Send to our team →", "Ask a question", "Change stops"] },
+      {
+        id: "user-" + Date.now(),
+        sender: "user",
+        text: `Budget: ₹${budgetVal.toLocaleString("en-IN")} per person`,
+      },
+      {
+        id: "bot-" + Date.now(),
+        sender: "bot",
+        text: `Got it! I've set your budget to ₹${budgetVal.toLocaleString(
+          "en-IN"
+        )} per person. Tap "Send to our team →" whenever you're ready and our trip expert will call you with the exact customized group quote!`,
+        chips: ["Send to our team →", "Ask a question", "Change stops"],
+      },
     ]);
   };
 
@@ -955,7 +1219,11 @@ export default function PlanYourTripPage() {
     setMessages([
       { id: "msg-1", sender: "bot", text: "Hey! I'm your Trail Explorers trip planner 👋" },
       { id: "msg-2", sender: "bot", text: "Where are the mountains calling you?" },
-      { id: "msg-3", sender: "bot", text: "Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price." },
+      {
+        id: "msg-3",
+        sender: "bot",
+        text: "Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price.",
+      },
     ]);
     setActiveTrip(null);
     setConversationStage(0);
@@ -1093,538 +1361,772 @@ export default function PlanYourTripPage() {
     </>
   );
 
+  // Computed names for wizard mode
+  const activeRegionNames = useMemo(
+    () => selectedRegions.map((id) => BUILDER_REGIONS.find((r) => r.id === id)?.name || id).join(" + "),
+    [selectedRegions]
+  );
+  const stayLabel = BUILDER_STAYS.find((s) => s.id === stayStyle)?.label || "Comfort";
+  const transportLabel = BUILDER_VEHICLES.find((t) => t.id === transportStyle)?.label || "Suggest for me";
+  const paceLabel = BUILDER_PACES.find((p) => p.id === paceStyle)?.label || "Balanced";
+
+  // Reusable Builder Live Ticket Card Body (for desktop right column & mobile sheet)
+  const renderBuilderLiveTicket = () => (
+    <div className="flex flex-col gap-4 text-white">
+      {/* Route & Regions pill badge */}
+      <div className="flex items-center gap-2">
+        <Badge variant="lime" size="sm" className="font-extrabold">
+          {numDays} Days
+        </Badge>
+        <span className="text-xs font-bold text-white/90 truncate">{activeRegionNames}</span>
+      </div>
+
+      {/* Facts grid */}
+      <div className="grid grid-cols-2 gap-2 text-xs">
+        <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block">Start Date</span>
+          <strong className="text-white text-xs mt-0.5 block truncate">
+            {startDate} {flexibleDates && <span className="text-[#d6ff3f] font-normal">(Flexible)</span>}
+          </strong>
+        </div>
+
+        <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block">Travellers</span>
+          <strong className="text-white text-xs mt-0.5 block truncate">
+            {adults} Adults{children > 0 ? `, ${children} Ch.` : ""}
+          </strong>
+        </div>
+
+        <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block">Group Type</span>
+          <strong className="text-white text-xs mt-0.5 block truncate">{groupType}</strong>
+        </div>
+
+        <div className="bg-white/5 border border-white/10 rounded-xl p-2.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block">From</span>
+          <strong className="text-white text-xs mt-0.5 block truncate">{startCity}</strong>
+        </div>
+
+        <div className="col-span-2 bg-white/5 border border-white/10 rounded-xl p-2.5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block">Style & Transport</span>
+          <strong className="text-white text-xs mt-0.5 block truncate">
+            {stayLabel} Stays · {transportLabel} · {paceLabel}
+          </strong>
+        </div>
+
+        {selectedActivities.length > 0 && (
+          <div className="col-span-2 bg-white/5 border border-white/10 rounded-xl p-2.5">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-white/50 block mb-1">
+              Activities ({selectedActivities.length})
+            </span>
+            <div className="flex flex-wrap gap-1">
+              {selectedActivities.slice(0, 4).map((act) => (
+                <span key={act} className="text-[10.5px] px-2 py-0.5 rounded-full bg-white/10 text-white/90">
+                  {act}
+                </span>
+              ))}
+              {selectedActivities.length > 4 && (
+                <span className="text-[10.5px] px-2 py-0.5 rounded-full bg-white/10 text-[#d6ff3f]">
+                  +{selectedActivities.length - 4} more
+                </span>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Days Outline */}
+      <div className="pt-2 border-t border-white/10">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-white/50 block">
+            Day-by-Day Outline ({builderDays.length} days)
+          </span>
+          <button
+            type="button"
+            onClick={() => {
+              setWizardStep(3);
+              setBuilderTicketDrawerOpen(false);
+            }}
+            className="text-[11px] font-bold text-[#d6ff3f] hover:underline cursor-pointer"
+          >
+            Edit days →
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-1.5 max-h-[220px] overflow-y-auto ticket-scroll pr-1">
+          {builderDays.map((d) => (
+            <div
+              key={d.id}
+              className="flex items-center gap-2 text-xs py-1.5 px-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
+            >
+              <span className="w-5 h-5 rounded-full bg-[#d6ff3f] text-[#14140f] font-extrabold text-[10px] flex items-center justify-center shrink-0">
+                {d.dayNum}
+              </span>
+              <span className="text-white/90 font-medium truncate flex-1">{d.title}</span>
+              {d.night && <span className="text-[10.5px] text-[#d6ff3f] shrink-0">{d.night}</span>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
   // ==========================================
   // RENDER: STEP-BY-STEP BUILDER WIZARD MODE
   // ==========================================
   if (stepMode) {
-    const activeRegionNames = selectedRegions.map((id) => BUILDER_REGIONS.find((r) => r.id === id)?.name || id).join(" + ");
-    const stayLabel = BUILDER_STAYS.find((s) => s.id === stayStyle)?.label || "Comfort";
-    const transportLabel = BUILDER_VEHICLES.find((t) => t.id === transportStyle)?.label || "Suggest for me";
-    const paceLabel = BUILDER_PACES.find((p) => p.id === paceStyle)?.label || "Balanced";
-
     return (
-      <div className="min-h-screen bg-[#fafaf8] text-[#14140f] font-sans pb-16 selection:bg-[#d6ff3f] selection:text-[#14140f]">
-        {/* Intro Header */}
-        <section className="pt-10 sm:pt-16 pb-6 px-4 text-center max-w-[820px] mx-auto select-none">
-          <span className="inline-block bg-[#14140f] text-[#d6ff3f] text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-3 shadow-xs">
-            Private trip planner
-          </span>
-          <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-[#14140f]">
-            Plan your Himalayan trip<span className="text-[#b8ff00]">.</span>
+      <div className="min-h-screen bg-[#fafaf8] text-[#14140f] font-sans pb-24 sm:pb-16 selection:bg-[#d6ff3f] selection:text-[#14140f]">
+        {/* Intro Header & Planner Mode Switcher */}
+        <section className="pt-8 sm:pt-14 pb-6 px-4 text-center max-w-[860px] mx-auto select-none">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="inline-block bg-[#14140f] text-[#d6ff3f] text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-xs">
+              Private trip planner
+            </span>
+          </div>
+
+          <h1 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#14140f] font-heading leading-tight">
+            Plan your Himalayan trip<span className="text-[#a9cc2a]">.</span>
           </h1>
-          <p className="mt-3 text-sm sm:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
-            Chat with our trip planner about where, when and how you like to travel. Together you&apos;ll shape a day-by-day plan, and a trip expert will call you back with a price for your group, no matter its size.
+
+          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-[#6b6b63] max-w-xl mx-auto leading-relaxed">
+            Shape your custom itinerary step by step. Our trip expert will review your route, timings, and preferences,
+            then call you with an exact customized price for your group.
           </p>
-          <div className="mt-4">
+
+          {/* Mode Switcher Tabs */}
+          <div className="mt-5 inline-flex items-center p-1 rounded-full bg-[#f0f0eb] border border-[#e2e2dc] shadow-xs">
             <button
               type="button"
               onClick={() => setStepMode(false)}
-              className="text-xs font-bold text-[#14140f] hover:underline underline-offset-4 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all text-[#6b6b63] hover:text-[#14140f] cursor-pointer"
             >
-              ← Back to the chat planner
+              <MessageSquare className="w-3.5 h-3.5" />
+              <span>Chat Planner</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setStepMode(true)}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-[#14140f] shadow-sm cursor-default"
+            >
+              <ListOrdered className="w-3.5 h-3.5" />
+              <span>Step-by-Step Form</span>
             </button>
           </div>
         </section>
 
-        {/* Wizard Shell */}
-        <div className="max-w-[920px] mx-auto px-4">
-          <div className="bg-white border border-[#e6e6df] rounded-[24px] shadow-[0_12px_40px_-15px_rgba(20,20,15,0.08)] p-5 sm:p-10">
-            {/* 5-Step Progress Bar */}
-            <ol className="grid grid-cols-5 gap-2 sm:gap-3 mb-8 sm:mb-10 list-none p-0">
-              {[
-                { num: 1, label: "Where" },
-                { num: 2, label: "When & who" },
-                { num: 3, label: "Style" },
-                { num: 4, label: "Day by day" },
-                { num: 5, label: "Send" },
-              ].map((step, idx) => {
-                const isActive = wizardStep === idx;
-                const isDone = wizardStep > idx;
-                return (
-                  <li
-                    key={step.num}
-                    onClick={() => {
-                      if (isDone) setWizardStep(idx);
-                    }}
-                    className={`pt-2 sm:pt-3 border-t-4 transition-all ${
-                      isActive
-                        ? "border-[#14140f] text-[#14140f]"
-                        : isDone
-                        ? "border-[#b8ff00] text-gray-800 cursor-pointer"
-                        : "border-[#e6e6df] text-gray-400"
-                    }`}
-                  >
-                    <span className="text-[12px] sm:text-[13px] font-bold block truncate">
-                      <span className="hidden sm:inline">{step.num}. </span>
-                      {step.label}
+        {/* Wizard Main Shell */}
+        <div className="max-w-[1240px] mx-auto px-3 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-8 items-start">
+            {/* Left Column: Form & Stepper */}
+            <div className="bg-white border-2 border-[#e6e6df] rounded-[24px] sm:rounded-[28px] shadow-[0_12px_40px_-15px_rgba(20,20,15,0.06)] p-4 sm:p-8 md:p-10 min-w-0">
+              {/* Responsive Progress Stepper */}
+              <div className="mb-6 sm:mb-8">
+                {/* Mobile View: Step Count Pill & Continuous Line (<640px) */}
+                <div className="sm:hidden flex flex-col gap-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-extrabold uppercase tracking-wider text-[#6b6b63]">
+                      Step {wizardStep + 1} of 5
                     </span>
-                  </li>
-                );
-              })}
-            </ol>
+                    <strong className="text-xs font-bold text-[#14140f]">
+                      {[
+                        "Where to go",
+                        "When & who's coming",
+                        "Travel style & pace",
+                        "Day by day itinerary",
+                        "Review & quote",
+                      ][wizardStep]}
+                    </strong>
+                  </div>
 
-            {/* STEP 1: WHERE */}
-            {wizardStep === 0 && (
-              <div className="flex flex-col gap-6 animate-pc-pop">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f]">
-                    Where in the Himalayas?
-                  </h2>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Pick one or more. Combining neighbours (like Spiti + Himachal, or Ladakh + Zanskar) works best.
-                  </p>
-                </div>
+                  <div className="w-full bg-[#f0f0eb] h-2 rounded-full overflow-hidden">
+                    <div
+                      className="bg-[#14140f] h-full transition-all duration-300 rounded-full"
+                      style={{ width: `${((wizardStep + 1) / 5) * 100}%` }}
+                    />
+                  </div>
 
-                {/* Region Cards Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-3.5">
-                  {BUILDER_REGIONS.map((reg) => {
-                    const isSelected = selectedRegions.includes(reg.id);
-                    return (
-                      <button
-                        key={reg.id}
-                        type="button"
-                        onClick={() => toggleRegion(reg.id)}
-                        className={`relative aspect-[4/3] rounded-[18px] overflow-hidden text-left p-0 border-[3px] transition-all cursor-pointer group ${
-                          isSelected
-                            ? "border-[#d6ff3f] shadow-md scale-[1.01]"
-                            : "border-transparent hover:border-gray-300"
-                        }`}
-                      >
-                        <SkeletonImage
-                          src={reg.image}
-                          alt={reg.name}
-                          fill
-                          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 250px"
-                          className="object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-
-                        {/* Top-right Selection Tick Circle */}
-                        <div
-                          className={`absolute top-2.5 right-2.5 z-10 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${
-                            isSelected
-                              ? "bg-[#d6ff3f] border-[#d6ff3f] text-[#14140f]"
-                              : "bg-white/20 border-white text-transparent"
+                  {/* Horizontal Touch Pills */}
+                  <div className="flex items-center gap-1 overflow-x-auto no-scrollbar pt-1">
+                    {[
+                      { num: 1, label: "Where" },
+                      { num: 2, label: "When & Who" },
+                      { num: 3, label: "Style" },
+                      { num: 4, label: "Days" },
+                      { num: 5, label: "Send" },
+                    ].map((st, idx) => {
+                      const isActive = wizardStep === idx;
+                      const isDone = wizardStep > idx;
+                      return (
+                        <button
+                          key={st.num}
+                          type="button"
+                          onClick={() => isDone && setWizardStep(idx)}
+                          disabled={!isDone && !isActive}
+                          className={`text-[11px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap transition-colors cursor-pointer ${
+                            isActive
+                              ? "bg-[#14140f] text-white"
+                              : isDone
+                              ? "bg-[#f0f0eb] text-[#14140f] hover:bg-[#e4e4dd]"
+                              : "text-[#a0a095] cursor-not-allowed opacity-50"
                           }`}
                         >
-                          <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        </div>
+                          {isDone ? `✓ ${st.label}` : `${st.num}. ${st.label}`}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
 
-                        {/* Text */}
-                        <div className="absolute inset-x-3 bottom-2.5 z-10">
-                          <strong className="block text-white text-[15px] sm:text-base font-bold leading-tight">
-                            {reg.name}
-                          </strong>
-                          <small className="hidden sm:block text-white/80 text-[11px] leading-snug mt-0.5 line-clamp-2">
-                            {reg.tagline}
-                          </small>
-                        </div>
-                      </button>
+                {/* Tablet / Desktop Stepper (>=640px) */}
+                <ol className="hidden sm:grid grid-cols-5 gap-2 md:gap-3 list-none p-0">
+                  {[
+                    { num: 1, label: "Where" },
+                    { num: 2, label: "When & who" },
+                    { num: 3, label: "Style" },
+                    { num: 4, label: "Day by day" },
+                    { num: 5, label: "Send & Quote" },
+                  ].map((step, idx) => {
+                    const isActive = wizardStep === idx;
+                    const isDone = wizardStep > idx;
+                    return (
+                      <li
+                        key={step.num}
+                        onClick={() => {
+                          if (isDone) setWizardStep(idx);
+                        }}
+                        className={`pt-2.5 border-t-[3.5px] transition-all ${
+                          isActive
+                            ? "border-[#14140f] text-[#14140f]"
+                            : isDone
+                            ? "border-[#d6ff3f] text-[#14140f] cursor-pointer"
+                            : "border-[#e6e6df] text-[#a0a095]"
+                        }`}
+                      >
+                        <span className="text-xs md:text-[13px] font-bold block truncate">
+                          {isDone ? "✓ " : `${step.num}. `}
+                          {step.label}
+                        </span>
+                      </li>
                     );
                   })}
-                </div>
-
-                {/* Action Bar */}
-                <div className="flex justify-end pt-6 border-t border-gray-100 mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(1)}
-                    className="px-7 py-3 rounded-full bg-[#14140f] hover:bg-black text-[#d6ff3f] font-bold text-sm transition-all active:scale-95 cursor-pointer"
-                  >
-                    Next
-                  </button>
-                </div>
+                </ol>
               </div>
-            )}
 
-            {/* STEP 2: WHEN & WHO */}
-            {wizardStep === 1 && (
-              <div className="flex flex-col gap-6 animate-pc-pop">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f]">
-                    When, how long & who&apos;s coming?
-                  </h2>
-                </div>
-
-                {/* Row 1: Start date & Number of days */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-bold text-gray-700">Start date</label>
-                    <div className="relative">
-                      <CustomCalendarPicker
-                        value={startDate}
-                        onChange={(newDate) => setStartDate(newDate)}
-                        placeholder="Select start date"
-                        format="iso"
-                        inputClassName="bg-white border-[1.5px] border-[#d9d9d0] rounded-xl px-3.5 py-2.5 text-sm font-medium focus:border-black min-h-[44px]"
-                      />
-                    </div>
-                    <label className="flex items-center gap-2 text-xs text-gray-600 font-medium cursor-pointer mt-1">
-                      <input
-                        type="checkbox"
-                        checked={flexibleDates}
-                        onChange={(e) => setFlexibleDates(e.target.checked)}
-                        className="w-4 h-4 rounded-sm accent-[#14140f]"
-                      />
-                      <span>My dates are flexible</span>
-                    </label>
+              {/* STEP 1: WHERE / EXPERIENCES & DESTINATIONS */}
+              {wizardStep === 0 && (
+                <div className="flex flex-col gap-6 animate-pc-pop">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14140f] font-heading">
+                      Where in the Himalayas?
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#6b6b63] mt-1">
+                      Choose from our curated trip routes, or handpick one or more destinations to create your own
+                      circuit.
+                    </p>
                   </div>
 
-                  <div className="flex flex-col gap-2">
-                    <div className="flex justify-between items-center text-xs font-bold text-gray-700">
-                      <span>Number of days: {numDays}</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={2}
-                      max={21}
-                      value={numDays}
-                      onChange={(e) => syncDaysCount(Number(e.target.value))}
-                      className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-[#14140f] mt-3"
-                    />
-                    <div className="flex justify-between text-[11px] text-gray-400 font-bold px-0.5">
-                      <span>2</span>
-                      <span>21</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Row 2: Adults & Children Steppers */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-bold text-gray-700">Adults</label>
-                    <div className="inline-flex items-center border-[1.5px] border-[#d9d9d0] rounded-full w-fit overflow-hidden bg-white">
-                      <button
-                        type="button"
-                        onClick={() => setAdults((prev) => Math.max(1, prev - 1))}
-                        className="w-11 h-10 flex items-center justify-center hover:bg-gray-100 text-lg font-bold cursor-pointer"
-                      >
-                        <Minus className="w-4 h-4" />
-                      </button>
-                      <span className="w-10 text-center font-bold text-base">{adults}</span>
-                      <button
-                        type="button"
-                        onClick={() => setAdults((prev) => prev + 1)}
-                        className="w-11 h-10 flex items-center justify-center hover:bg-gray-100 text-lg font-bold cursor-pointer"
-                      >
-                        <Plus className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-bold text-gray-700">Children (under 12)</label>
-                    <div className="inline-flex items-center border-[1.5px] border-[#d9d9d0] rounded-full w-fit overflow-hidden bg-white">
-                      <button
-                        type="button"
-                        onClick={() => setChildren((prev) => Math.max(0, prev - 1))}
-                        className="w-11 h-10 flex items-center justify-center hover:bg-gray-100 text-lg font-bold cursor-pointer"
-                      >
-                        <Minus className="w-4 h-4" />
-                      </button>
-                      <span className="w-10 text-center font-bold text-base">{children}</span>
-                      <button
-                        type="button"
-                        onClick={() => setChildren((prev) => prev + 1)}
-                        className="w-11 h-10 flex items-center justify-center hover:bg-gray-100 text-lg font-bold cursor-pointer"
-                      >
-                        <Plus className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Row 3: Who's travelling chips */}
-                <div className="flex flex-col gap-2 pt-2">
-                  <label className="text-xs font-bold text-gray-700">Who&apos;s travelling?</label>
-                  <div className="flex flex-wrap gap-2">
-                    {["Friends", "Family", "Couple", "Solo", "Office / Corporate", "School / College"].map((type) => (
-                      <button
-                        key={type}
-                        type="button"
-                        onClick={() => setGroupType(type)}
-                        className={`px-4 py-2 rounded-full text-xs font-bold border transition-colors cursor-pointer ${
-                          groupType === type
-                            ? "bg-[#14140f] text-white border-[#14140f]"
-                            : "bg-white text-gray-700 border-[#d9d9d0] hover:border-black"
-                        }`}
-                      >
-                        {type}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Row 4: Start city dropdown */}
-                <div className="flex flex-col gap-2 pt-2">
-                  <label className="text-xs font-bold text-gray-700">Where will you start from?</label>
-                  <select
-                    value={startCity}
-                    onChange={(e) => setStartCity(e.target.value)}
-                    className="w-full max-w-sm bg-white border-[1.5px] border-[#d9d9d0] rounded-xl px-3.5 py-2.5 text-sm font-medium outline-hidden focus:border-black cursor-pointer"
-                  >
-                    {BUILDER_START_CITIES.map((c) => (
-                      <option key={c} value={c}>{c}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Action Bar */}
-                <div className="flex justify-between items-center pt-6 border-t border-gray-100 mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(0)}
-                    className="px-6 py-2.5 rounded-full border border-[#d9d9d0] hover:border-black text-xs font-bold text-gray-700 transition-colors cursor-pointer"
-                  >
-                    Back
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(2)}
-                    className="px-7 py-3 rounded-full bg-[#14140f] hover:bg-black text-[#d6ff3f] font-bold text-sm transition-all active:scale-95 cursor-pointer"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* STEP 3: STYLE */}
-            {wizardStep === 2 && (
-              <div className="flex flex-col gap-6 animate-pc-pop">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f]">
-                    How do you like to travel?
-                  </h2>
-                </div>
-
-                {/* Section 1: Stays */}
-                <div className="flex flex-col gap-2.5">
-                  <span className="text-xs font-bold text-gray-700 uppercase tracking-wider">Stays</span>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                    {BUILDER_STAYS.map((s) => {
-                      const isSel = stayStyle === s.id;
-                      return (
-                        <button
-                          key={s.id}
-                          type="button"
-                          onClick={() => setStayStyle(s.id)}
-                          className={`flex flex-col text-left p-3.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                            isSel
-                              ? "bg-[#d6ff3f] border-[#14140f] shadow-xs"
-                              : "bg-white border-[#d9d9d0] hover:border-black"
-                          }`}
-                        >
-                          <strong className="text-sm font-bold text-[#14140f]">{s.label}</strong>
-                          <small className="text-[11px] text-gray-600 mt-1 leading-snug">{s.desc}</small>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Section 2: Getting around */}
-                <div className="flex flex-col gap-2.5 pt-2">
-                  <span className="text-xs font-bold text-gray-700 uppercase tracking-wider">Getting around</span>
-                  <div className="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
-                    {BUILDER_VEHICLES.map((v) => {
-                      const isSel = transportStyle === v.id;
-                      return (
-                        <button
-                          key={v.id}
-                          type="button"
-                          onClick={() => setTransportStyle(v.id)}
-                          className={`flex flex-col text-left p-3.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                            isSel
-                              ? "bg-[#d6ff3f] border-[#14140f] shadow-xs"
-                              : "bg-white border-[#d9d9d0] hover:border-black"
-                          }`}
-                        >
-                          <strong className="text-sm font-bold text-[#14140f] leading-tight">{v.label}</strong>
-                          <small className="text-[11px] text-gray-600 mt-1 leading-snug">{v.desc}</small>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Section 3: Pace */}
-                <div className="flex flex-col gap-2.5 pt-2">
-                  <span className="text-xs font-bold text-gray-700 uppercase tracking-wider">Pace</span>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    {BUILDER_PACES.map((p) => {
-                      const isSel = paceStyle === p.id;
-                      return (
-                        <button
-                          key={p.id}
-                          type="button"
-                          onClick={() => setPaceStyle(p.id)}
-                          className={`flex flex-col text-left p-3.5 rounded-xl border-[1.5px] transition-all cursor-pointer ${
-                            isSel
-                              ? "bg-[#d6ff3f] border-[#14140f] shadow-xs"
-                              : "bg-white border-[#d9d9d0] hover:border-black"
-                          }`}
-                        >
-                          <strong className="text-sm font-bold text-[#14140f]">{p.label}</strong>
-                          <small className="text-[11px] text-gray-600 mt-0.5 leading-snug">{p.desc}</small>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Section 4: Activities */}
-                <div className="flex flex-col gap-2.5 pt-2">
-                  <span className="text-xs font-bold text-gray-700 uppercase tracking-wider">
-                    Things you&apos;d love to do (optional)
-                  </span>
-                  <div className="flex flex-wrap gap-2">
-                    {BUILDER_ACTIVITIES.map((act) => {
-                      const isSel = selectedActivities.includes(act);
-                      return (
-                        <button
-                          key={act}
-                          type="button"
-                          onClick={() => toggleActivity(act)}
-                          className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-colors cursor-pointer ${
-                            isSel
-                              ? "bg-[#14140f] text-white border-[#14140f]"
-                              : "bg-white text-gray-700 border-[#d9d9d0] hover:border-black"
-                          }`}
-                        >
-                          {act}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Action Bar */}
-                <div className="flex justify-between items-center pt-6 border-t border-gray-100 mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(1)}
-                    className="px-6 py-2.5 rounded-full border border-[#d9d9d0] hover:border-black text-xs font-bold text-gray-700 transition-colors cursor-pointer"
-                  >
-                    Back
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(3)}
-                    className="px-7 py-3 rounded-full bg-[#14140f] hover:bg-black text-[#d6ff3f] font-bold text-sm transition-all active:scale-95 cursor-pointer"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* STEP 4: DAY BY DAY */}
-            {wizardStep === 3 && (
-              <div className="flex flex-col gap-6 animate-pc-pop">
-                <div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f]">
-                    Shape it day by day
-                  </h2>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Start from a suggestion and make it yours. Don&apos;t worry about getting it perfect — our expert will fine-tune routes and timings with you on the call.
-                  </p>
-                </div>
-
-                {/* Starters Row */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                  <button
-                    type="button"
-                    onClick={() => syncDaysCount(numDays)}
-                    className="p-3.5 rounded-xl border-[1.5px] border-dashed border-[#c9c9bf] hover:border-black text-left flex flex-col gap-1 bg-[#fafaf8] cursor-pointer"
-                  >
-                    <strong className="text-sm font-bold text-[#14140f]">Suggest a route</strong>
-                    <span className="text-[11px] text-gray-500">Our classic route for the places you picked</span>
-                  </button>
-                  <div className="p-3.5 rounded-xl border-[1.5px] border-dashed border-[#c9c9bf] flex flex-col gap-1 bg-[#fafaf8]">
-                    <strong className="text-sm font-bold text-[#14140f]">Start from one of our trips</strong>
-                    <select className="w-full mt-1 bg-white border border-[#d9d9d0] rounded-lg p-1.5 text-xs font-medium outline-hidden">
-                      <option>Choose a trip...</option>
-                      <option>Himachal 8-Day Classic</option>
-                      <option>Spiti 4x4 Circuit</option>
-                      <option>Ladakh Highlights</option>
-                    </select>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setBuilderDays((prev) =>
-                        prev.map((d) => ({ ...d, title: "Custom Day", night: "", notes: "" }))
-                      );
-                    }}
-                    className="p-3.5 rounded-xl border-[1.5px] border-dashed border-[#c9c9bf] hover:border-black text-left flex flex-col gap-1 bg-[#fafaf8] cursor-pointer"
-                  >
-                    <strong className="text-sm font-bold text-[#14140f]">Start blank</strong>
-                    <span className="text-[11px] text-gray-500">I know exactly what I want</span>
-                  </button>
-                </div>
-
-                {/* Days List */}
-                <div className="flex flex-col gap-3">
-                  {builderDays.map((dayItem, idx) => (
-                    <div
-                      key={dayItem.id}
-                      className="border-[1.5px] border-[#e2e2d9] rounded-2xl bg-white overflow-hidden"
+                  {/* Sub-Tabs: Curated Trips vs Browse by Region */}
+                  <div className="flex items-center gap-2 p-1 bg-[#f6f6f1] rounded-xl w-fit border border-[#e2e2dc]">
+                    <button
+                      type="button"
+                      onClick={() => setStep1ViewMode("trips")}
+                      className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        step1ViewMode === "trips"
+                          ? "bg-white text-[#14140f] shadow-xs"
+                          : "text-[#6b6b63] hover:text-[#14140f]"
+                      }`}
                     >
-                      {/* Day Header */}
-                      <div className="flex items-center justify-between gap-3 px-4 py-2.5 bg-[#fafaf8] border-b border-[#e9e9e1]">
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-xs font-extrabold text-[#14140f]">
-                            Day {dayItem.dayNum}
-                          </span>
-                          <span className="text-[11px] text-gray-400 font-medium">
-                            {dayItem.dateStr}
-                          </span>
-                        </div>
-                        <input
-                          type="text"
-                          value={dayItem.title}
-                          onChange={(e) => {
-                            const val = e.target.value;
-                            setBuilderDays((prev) =>
-                              prev.map((d, i) => (i === idx ? { ...d, title: val } : d))
-                            );
-                          }}
-                          className="flex-1 font-bold text-sm text-[#14140f] bg-transparent border-b border-transparent hover:border-black focus:border-black outline-hidden px-1 py-0.5"
-                        />
-                        <div className="flex items-center gap-1">
-                          <button
-                            type="button"
-                            disabled={idx === 0}
-                            onClick={() => moveDay(idx, "up")}
-                            className="w-7 h-7 rounded-lg border border-[#d9d9d0] flex items-center justify-center text-xs hover:border-black disabled:opacity-30 cursor-pointer"
-                          >
-                            <ArrowUpIcon className="w-3.5 h-3.5" />
-                          </button>
-                          <button
-                            type="button"
-                            disabled={idx === builderDays.length - 1}
-                            onClick={() => moveDay(idx, "down")}
-                            className="w-7 h-7 rounded-lg border border-[#d9d9d0] flex items-center justify-center text-xs hover:border-black disabled:opacity-30 cursor-pointer"
-                          >
-                            <ArrowDown className="w-3.5 h-3.5" />
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => deleteDay(idx)}
-                            className="w-7 h-7 rounded-lg border border-[#d9d9d0] flex items-center justify-center text-xs hover:border-black text-red-500 cursor-pointer"
-                          >
-                            <X className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
+                      Popular Trip Starters
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setStep1ViewMode("regions")}
+                      className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                        step1ViewMode === "regions"
+                          ? "bg-white text-[#14140f] shadow-xs"
+                          : "text-[#6b6b63] hover:text-[#14140f]"
+                      }`}
+                    >
+                      Browse by Destination ({selectedRegions.length} picked)
+                    </button>
+                  </div>
+
+                  {/* View 1: Curated Trip Cards */}
+                  {step1ViewMode === "trips" && (
+                    <div className="flex flex-col gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                        {CURATED_TRIP_STARTERS.map((trip) => {
+                          const isSelected = selectedCuratedTrip === trip.id;
+                          return (
+                            <SelectionCard
+                              key={trip.id}
+                              selected={isSelected}
+                              onClick={() => selectCuratedTrip(trip)}
+                              title={trip.title}
+                              description={trip.tagline}
+                              badge={trip.badge}
+                              image={trip.image}
+                              aspectRatio="auto"
+                            />
+                          );
+                        })}
                       </div>
 
-                      {/* Day Body */}
-                      <div className="p-3.5 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                        <div className="flex flex-col gap-1">
-                          <label className="font-bold text-gray-500">Night stay</label>
-                          <input
-                            type="text"
+                      <div className="p-3.5 rounded-xl bg-[#f6f6f1] border border-[#e2e2dc] flex items-center justify-between text-xs">
+                        <span className="text-[#6b6b63]">Want to select specific destinations instead?</span>
+                        <button
+                          type="button"
+                          onClick={() => setStep1ViewMode("regions")}
+                          className="font-bold text-[#14140f] hover:underline cursor-pointer"
+                        >
+                          View all destinations →
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* View 2: Destination Cards */}
+                  {step1ViewMode === "regions" && (
+                    <div className="flex flex-col gap-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-3.5">
+                        {BUILDER_REGIONS.map((reg) => {
+                          const isSelected = selectedRegions.includes(reg.id);
+                          return (
+                            <SelectionCard
+                              key={reg.id}
+                              selected={isSelected}
+                              onClick={() => toggleRegion(reg.id)}
+                              title={reg.name}
+                              description={reg.tagline}
+                              image={reg.image}
+                              aspectRatio="auto"
+                            />
+                          );
+                        })}
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-[#f6f6f1] border border-[#e2e2dc] flex items-center justify-between text-xs">
+                        <span className="font-bold text-[#14140f]">
+                          Selected: {activeRegionNames} ({selectedRegions.length} destination
+                          {selectedRegions.length > 1 ? "s" : ""})
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setStep1ViewMode("trips")}
+                          className="font-bold text-[#6b6b63] hover:text-black cursor-pointer"
+                        >
+                          Back to trips
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Step Action Bar */}
+                  <div className="flex justify-end pt-6 border-t border-[#f0f0eb] mt-2">
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={() => setWizardStep(1)}
+                      rightIcon={<ChevronRight className="w-4 h-4" />}
+                    >
+                      Next: Dates & Travellers
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 2: WHEN & WHO */}
+              {wizardStep === 1 && (
+                <div className="flex flex-col gap-6 animate-pc-pop">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14140f] font-heading">
+                      When, how long & who&apos;s coming?
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#6b6b63] mt-1">
+                      Choose your preferred dates, total duration, and traveller count.
+                    </p>
+                  </div>
+
+                  {/* Row 1: Start date & Flexible Checkbox */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="flex flex-col gap-2">
+                      <CustomCalendarPicker
+                        label="When do you want to start?"
+                        value={startDate}
+                        onChange={(newDate) => {
+                          setStartDate(newDate);
+                          setBuilderDays(buildDefaultItinerary(selectedRegions, numDays, newDate));
+                        }}
+                        placeholder="Select start date"
+                        format="iso"
+                      />
+
+                      <Checkbox
+                        checked={flexibleDates}
+                        onCheckedChange={setFlexibleDates}
+                        label="My travel dates are flexible (±3 days)"
+                        description="Helps us find the best weather windows & group rates"
+                        className="mt-1"
+                      />
+                    </div>
+
+                    {/* Trip Duration Slider & Presets */}
+                    <div className="flex flex-col justify-between gap-3 p-4 rounded-2xl bg-[#f6f6f1] border-2 border-[#e2e2dc]">
+                      <div className="flex justify-between items-center">
+                        <span className="text-xs font-bold text-[#14140f] uppercase tracking-wider">Trip Duration</span>
+                        <Badge variant="lime" size="md">
+                          {numDays} Days
+                        </Badge>
+                      </div>
+
+                      <input
+                        type="range"
+                        min={2}
+                        max={21}
+                        value={numDays}
+                        onChange={(e) => syncDaysCount(Number(e.target.value))}
+                        className="w-full h-2.5 bg-[#e2e2dc] rounded-lg appearance-none cursor-pointer accent-[#14140f]"
+                      />
+
+                      {/* Quick Presets */}
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {[5, 7, 8, 10, 12, 14].map((d) => (
+                          <button
+                            key={d}
+                            type="button"
+                            onClick={() => syncDaysCount(d)}
+                            className={`px-2.5 py-1 rounded-md text-xs font-bold border transition-colors cursor-pointer ${
+                              numDays === d
+                                ? "bg-[#14140f] text-white border-[#14140f]"
+                                : "bg-white text-[#14140f] border-[#e2e2dc] hover:border-black"
+                            }`}
+                          >
+                            {d}D
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 2: Standard Traveller Counters */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                    <TravellerCounter
+                      label="Adults"
+                      description="Age 12+"
+                      value={adults}
+                      onChange={setAdults}
+                      min={1}
+                      max={30}
+                    />
+
+                    <TravellerCounter
+                      label="Children"
+                      description="Under 12 years"
+                      value={children}
+                      onChange={setChildren}
+                      min={0}
+                      max={20}
+                    />
+                  </div>
+
+                  {/* Row 3: Who's travelling Selection */}
+                  <div className="flex flex-col gap-2.5 pt-1">
+                    <label className="text-xs sm:text-sm font-bold text-[#14140f]">Who&apos;s travelling?</label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+                      {GROUP_TYPES.map((type) => {
+                        const isSel = groupType === type.id;
+                        return (
+                          <button
+                            key={type.id}
+                            type="button"
+                            onClick={() => setGroupType(type.id)}
+                            className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 text-center transition-all cursor-pointer ${
+                              isSel
+                                ? "bg-[#14140f] text-white border-[#14140f] shadow-xs"
+                                : "bg-white text-[#14140f] border-[#e2e2dc] hover:border-black"
+                            }`}
+                          >
+                            <span className="text-xs font-bold">{type.label}</span>
+                            <span className={`text-[10px] mt-0.5 ${isSel ? "text-white/70" : "text-[#6b6b63]"}`}>
+                              {type.desc}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Row 4: Standard Select for Starting City */}
+                  <div className="pt-1 max-w-md">
+                    <Select
+                      label="Where will you start from?"
+                      value={startCity}
+                      onChange={(e) => setStartCity(e.target.value)}
+                      options={BUILDER_START_CITIES.map((c) => ({ label: c, value: c }))}
+                    />
+                  </div>
+
+                  {/* Step Action Bar */}
+                  <div className="flex justify-between items-center pt-6 border-t border-[#f0f0eb] mt-2">
+                    <Button
+                      variant="outline"
+                      size="md"
+                      onClick={() => setWizardStep(0)}
+                      leftIcon={<ChevronLeft className="w-4 h-4" />}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={() => setWizardStep(2)}
+                      rightIcon={<ChevronRight className="w-4 h-4" />}
+                    >
+                      Next: Travel Style
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 3: STYLE */}
+              {wizardStep === 2 && (
+                <div className="flex flex-col gap-6 animate-pc-pop">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14140f] font-heading">
+                      How do you like to travel?
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#6b6b63] mt-1">
+                      Customize your accommodation tier, vehicle preference, pace, and wishlist activities.
+                    </p>
+                  </div>
+
+                  {/* Section 1: Stays using Standard SelectionCard */}
+                  <div className="flex flex-col gap-2.5">
+                    <span className="text-xs font-bold text-[#14140f] uppercase tracking-wider flex items-center gap-1.5">
+                      <Bed className="w-4 h-4" />
+                      <span>Stay Style</span>
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+                      {BUILDER_STAYS.map((s) => (
+                        <SelectionCard
+                          key={s.id}
+                          selected={stayStyle === s.id}
+                          onClick={() => setStayStyle(s.id)}
+                          title={s.label}
+                          description={s.desc}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Section 2: Getting around using Standard SelectionCard */}
+                  <div className="flex flex-col gap-2.5 pt-2">
+                    <span className="text-xs font-bold text-[#14140f] uppercase tracking-wider flex items-center gap-1.5">
+                      <Car className="w-4 h-4" />
+                      <span>Getting Around (Vehicle)</span>
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5">
+                      {BUILDER_VEHICLES.map((v) => (
+                        <SelectionCard
+                          key={v.id}
+                          selected={transportStyle === v.id}
+                          onClick={() => setTransportStyle(v.id)}
+                          title={v.label}
+                          description={v.desc}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Section 3: Pace using Standard SelectionCard */}
+                  <div className="flex flex-col gap-2.5 pt-2">
+                    <span className="text-xs font-bold text-[#14140f] uppercase tracking-wider flex items-center gap-1.5">
+                      <Clock className="w-4 h-4" />
+                      <span>Travel Pace</span>
+                    </span>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                      {BUILDER_PACES.map((p) => (
+                        <SelectionCard
+                          key={p.id}
+                          selected={paceStyle === p.id}
+                          onClick={() => setPaceStyle(p.id)}
+                          title={p.label}
+                          description={p.desc}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Section 4: Activities Chips */}
+                  <div className="flex flex-col gap-2.5 pt-2">
+                    <span className="text-xs font-bold text-[#14140f] uppercase tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-4 h-4 text-[#2fa84f]" />
+                      <span>Things you&apos;d love to do (optional)</span>
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {BUILDER_ACTIVITIES.map((act) => {
+                        const isSel = selectedActivities.includes(act);
+                        return (
+                          <button
+                            key={act}
+                            type="button"
+                            onClick={() => toggleActivity(act)}
+                            className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold border-2 transition-all cursor-pointer ${
+                              isSel
+                                ? "bg-[#14140f] text-[#d6ff3f] border-[#14140f] shadow-xs"
+                                : "bg-white text-[#14140f] border-[#e2e2dc] hover:border-black"
+                            }`}
+                          >
+                            {isSel && <Check className="w-3.5 h-3.5 stroke-[3]" />}
+                            <span>{act}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Step Action Bar */}
+                  <div className="flex justify-between items-center pt-6 border-t border-[#f0f0eb] mt-2">
+                    <Button
+                      variant="outline"
+                      size="md"
+                      onClick={() => setWizardStep(1)}
+                      leftIcon={<ChevronLeft className="w-4 h-4" />}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={() => setWizardStep(3)}
+                      rightIcon={<ChevronRight className="w-4 h-4" />}
+                    >
+                      Next: Day by Day Plan
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 4: DAY BY DAY ITINERARY BUILDER */}
+              {wizardStep === 3 && (
+                <div className="flex flex-col gap-6 animate-pc-pop">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14140f] font-heading">
+                      Shape it day by day
+                    </h2>
+                    <p className="text-xs sm:text-sm text-[#6b6b63] mt-1">
+                      Start from our suggested route and tweak nights, activities or notes. Our expert will fine-tune
+                      timings with you on the call.
+                    </p>
+                  </div>
+
+                  {/* Quick Starter Cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                    <button
+                      type="button"
+                      onClick={() => setBuilderDays(buildDefaultItinerary(selectedRegions, numDays, startDate))}
+                      className="p-3.5 rounded-xl border-2 border-dashed border-[#c9c9bf] hover:border-black text-left flex flex-col gap-1 bg-[#fcfcf9] transition-colors cursor-pointer"
+                    >
+                      <strong className="text-xs sm:text-sm font-bold text-[#14140f]">Reset to classic route</strong>
+                      <span className="text-[11px] text-[#6b6b63]">Auto-fills based on places you picked</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const ladakhPlan = buildDefaultItinerary(["ladakh"], numDays, startDate);
+                        setBuilderDays(ladakhPlan);
+                      }}
+                      className="p-3.5 rounded-xl border-2 border-dashed border-[#c9c9bf] hover:border-black text-left flex flex-col gap-1 bg-[#fcfcf9] transition-colors cursor-pointer"
+                    >
+                      <strong className="text-xs sm:text-sm font-bold text-[#14140f]">Load Ladakh circuit</strong>
+                      <span className="text-[11px] text-[#6b6b63]">Leh, Nubra Dunes & Pangong Tso</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setBuilderDays((prev) =>
+                          prev.map((d) => ({
+                            ...d,
+                            title: `Custom Day ${d.dayNum}`,
+                            night: "",
+                            notes: "",
+                          }))
+                        );
+                      }}
+                      className="p-3.5 rounded-xl border-2 border-dashed border-[#c9c9bf] hover:border-black text-left flex flex-col gap-1 bg-[#fcfcf9] transition-colors cursor-pointer"
+                    >
+                      <strong className="text-xs sm:text-sm font-bold text-[#14140f]">Start clean</strong>
+                      <span className="text-[11px] text-[#6b6b63]">Write your own daily stops</span>
+                    </button>
+                  </div>
+
+                  {/* Day Cards List */}
+                  <div className="flex flex-col gap-3.5">
+                    {builderDays.map((dayItem, idx) => (
+                      <Card key={dayItem.id} className="overflow-hidden border-2 border-[#e2e2dc] bg-white">
+                        {/* Day Header */}
+                        <div className="flex items-center justify-between gap-3 px-3.5 sm:px-4 py-2.5 bg-[#f6f6f1] border-b border-[#e2e2dc]">
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-0.5 rounded-md bg-[#14140f] text-[#d6ff3f] text-xs font-extrabold">
+                              Day {dayItem.dayNum}
+                            </span>
+                            <span className="text-[11px] sm:text-xs text-[#6b6b63] font-semibold">
+                              {dayItem.dateStr}
+                            </span>
+                          </div>
+
+                          <div className="flex-1 min-w-0 mx-2">
+                            <input
+                              type="text"
+                              value={dayItem.title}
+                              onChange={(e) => {
+                                const val = e.target.value;
+                                setBuilderDays((prev) =>
+                                  prev.map((d, i) => (i === idx ? { ...d, title: val } : d))
+                                );
+                              }}
+                              placeholder="Title of this day"
+                              className="w-full font-bold text-xs sm:text-sm text-[#14140f] bg-transparent border-b border-transparent hover:border-[#14140f] focus:border-[#14140f] outline-none px-1 py-0.5 truncate"
+                            />
+                          </div>
+
+                          <div className="flex items-center gap-1 shrink-0">
+                            <button
+                              type="button"
+                              disabled={idx === 0}
+                              onClick={() => moveDay(idx, "up")}
+                              title="Move day up"
+                              className="w-8 h-8 rounded-lg border border-[#e2e2dc] flex items-center justify-center text-xs hover:border-black hover:bg-white disabled:opacity-30 cursor-pointer"
+                            >
+                              <ArrowUp className="w-3.5 h-3.5 stroke-[2.5]" />
+                            </button>
+                            <button
+                              type="button"
+                              disabled={idx === builderDays.length - 1}
+                              onClick={() => moveDay(idx, "down")}
+                              title="Move day down"
+                              className="w-8 h-8 rounded-lg border border-[#e2e2dc] flex items-center justify-center text-xs hover:border-black hover:bg-white disabled:opacity-30 cursor-pointer"
+                            >
+                              <ArrowDown className="w-3.5 h-3.5 stroke-[2.5]" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => deleteDay(idx)}
+                              title="Delete day"
+                              className="w-8 h-8 rounded-lg border border-[#e2e2dc] flex items-center justify-center text-xs hover:border-red-500 hover:bg-red-50 text-red-500 cursor-pointer"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Day Content Body */}
+                        <div className="p-3.5 sm:p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                          <Input
+                            label="Night stay"
                             value={dayItem.night}
                             onChange={(e) => {
                               const val = e.target.value;
@@ -1633,290 +2135,443 @@ export default function PlanYourTripPage() {
                               );
                             }}
                             placeholder="Town or hotel location"
-                            className="bg-white border border-[#d9d9d0] rounded-lg p-2 text-xs outline-hidden focus:border-black"
                           />
-                        </div>
 
-                        <div className="flex flex-col gap-1">
-                          <label className="font-bold text-gray-500">Places & things to do</label>
-                          <input
-                            type="text"
-                            placeholder="Add a place or activity, then Enter"
-                            className="bg-white border border-[#d9d9d0] rounded-lg p-2 text-xs outline-hidden focus:border-black"
-                          />
-                        </div>
-
-                        <div className="sm:col-span-2 flex flex-col gap-1">
-                          <label className="font-bold text-gray-500">Notes</label>
-                          <textarea
-                            rows={1}
-                            value={dayItem.notes}
+                          <Input
+                            label="Places & things to do"
+                            placeholder="Add places or activities"
+                            defaultValue={dayItem.stops.join(", ")}
                             onChange={(e) => {
                               const val = e.target.value;
                               setBuilderDays((prev) =>
-                                prev.map((d, i) => (i === idx ? { ...d, notes: val } : d))
+                                prev.map((d, i) =>
+                                  i === idx
+                                    ? {
+                                        ...d,
+                                        stops: val
+                                          .split(",")
+                                          .map((s) => s.trim())
+                                          .filter(Boolean),
+                                      }
+                                    : d
+                                )
                               );
                             }}
-                            placeholder="Anything special for this day"
-                            className="bg-white border border-[#d9d9d0] rounded-lg p-2 text-xs outline-hidden focus:border-black"
                           />
+
+                          <div className="sm:col-span-2">
+                            <Textarea
+                              label="Notes"
+                              rows={2}
+                              value={dayItem.notes}
+                              onChange={(e) => {
+                                const val = e.target.value;
+                                setBuilderDays((prev) =>
+                                  prev.map((d, i) => (i === idx ? { ...d, notes: val } : d))
+                                );
+                              }}
+                              placeholder="Anything special for this day (altitude acclimatization, birthday surprise, special stops)..."
+                            />
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  ))}
+                      </Card>
+                    ))}
+                  </div>
+
+                  <div>
+                    <Button
+                      variant="secondary"
+                      size="md"
+                      onClick={addDay}
+                      leftIcon={<Plus className="w-4 h-4 stroke-[3]" />}
+                    >
+                      Add a Day
+                    </Button>
+                  </div>
+
+                  {/* Step Action Bar */}
+                  <div className="flex justify-between items-center pt-6 border-t border-[#f0f0eb] mt-2">
+                    <Button
+                      variant="outline"
+                      size="md"
+                      onClick={() => setWizardStep(2)}
+                      leftIcon={<ChevronLeft className="w-4 h-4" />}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      onClick={() => setWizardStep(4)}
+                      rightIcon={<ChevronRight className="w-4 h-4" />}
+                    >
+                      Next: Review & Quote
+                    </Button>
+                  </div>
                 </div>
+              )}
 
-                <div>
-                  <button
-                    type="button"
-                    onClick={addDay}
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-black text-xs font-bold text-[#14140f] hover:bg-black hover:text-white transition-colors cursor-pointer"
-                  >
-                    + Add a day
-                  </button>
-                </div>
-
-                {/* Action Bar */}
-                <div className="flex justify-between items-center pt-6 border-t border-gray-100 mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(2)}
-                    className="px-6 py-2.5 rounded-full border border-[#d9d9d0] hover:border-black text-xs font-bold text-gray-700 transition-colors cursor-pointer"
-                  >
-                    Back
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setWizardStep(4)}
-                    className="px-7 py-3 rounded-full bg-[#14140f] hover:bg-black text-[#d6ff3f] font-bold text-sm transition-all active:scale-95 cursor-pointer"
-                  >
-                    Next
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* STEP 5: SEND & SUMMARY */}
-            {wizardStep === 4 && (
-              <div className="flex flex-col gap-6 animate-pc-pop">
-                {!builderSubmitted ? (
-                  <form onSubmit={handleBuilderSubmit} className="flex flex-col gap-6">
-                    <div>
-                      <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f]">
-                        Your trip, ready to send
-                      </h2>
-                    </div>
-
-                    {/* Summary Review Table */}
-                    <div className="border-[1.5px] border-[#e2e2d9] rounded-2xl overflow-hidden bg-white text-xs">
-                      <div className="flex items-center justify-between p-3.5 border-b border-[#eeeee7]">
-                        <span className="font-bold text-gray-400 w-20">Where</span>
-                        <strong className="flex-1 text-[#14140f] font-bold text-sm">{activeRegionNames}</strong>
-                        <button
-                          type="button"
-                          onClick={() => setWizardStep(0)}
-                          className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer"
-                        >
-                          Edit
-                        </button>
+              {/* STEP 5: REVIEW & SEND */}
+              {wizardStep === 4 && (
+                <div className="flex flex-col gap-6 animate-pc-pop">
+                  {!builderSubmitted ? (
+                    <form onSubmit={handleBuilderSubmit} className="flex flex-col gap-6">
+                      <div>
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#14140f] font-heading">
+                          Your trip, ready to send
+                        </h2>
+                        <p className="text-xs sm:text-sm text-[#6b6b63] mt-1">
+                          Review your customized itinerary summary, tell us how to reach you, and our expert will call
+                          with the group price.
+                        </p>
                       </div>
 
-                      <div className="flex items-center justify-between p-3.5 border-b border-[#eeeee7]">
-                        <span className="font-bold text-gray-400 w-20">When</span>
-                        <span className="flex-1 text-[#14140f] font-medium text-xs">
-                          {startDate} · {numDays} days {flexibleDates ? "(Dates flexible)" : ""}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setWizardStep(1)}
-                          className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer"
-                        >
-                          Edit
-                        </button>
-                      </div>
-
-                      <div className="flex items-center justify-between p-3.5 border-b border-[#eeeee7]">
-                        <span className="font-bold text-gray-400 w-20">Who</span>
-                        <span className="flex-1 text-[#14140f] font-medium text-xs">
-                          {adults} adults{children > 0 ? `, ${children} child` : ""} · {groupType} · starting from {startCity}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setWizardStep(1)}
-                          className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer"
-                        >
-                          Edit
-                        </button>
-                      </div>
-
-                      <div className="flex items-center justify-between p-3.5">
-                        <span className="font-bold text-gray-400 w-20">Style</span>
-                        <span className="flex-1 text-[#14140f] font-medium text-xs">
-                          {stayLabel} stays · transport: {transportLabel} · {paceLabel} pace
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setWizardStep(2)}
-                          className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer"
-                        >
-                          Edit
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Day by Day Vertical Timeline Preview */}
-                    <div className="flex flex-col gap-2 pt-2">
-                      <div className="flex items-center justify-between">
-                        <h3 className="font-bold text-base text-[#14140f]">Day by day</h3>
-                        <button
-                          type="button"
-                          onClick={() => setWizardStep(3)}
-                          className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer"
-                        >
-                          Edit days
-                        </button>
-                      </div>
-
-                      <ol className="relative border-l-2 border-[#14140f] ml-3 pl-5 space-y-4 my-2 text-xs">
-                        {builderDays.map((d) => (
-                          <li key={d.id} className="relative">
-                            <span className="absolute -left-[27px] top-0.5 w-3.5 h-3.5 rounded-full bg-[#d6ff3f] border-2 border-[#14140f]" />
-                            <span className="text-[10.5px] font-bold text-gray-400 uppercase tracking-wider block">
-                              DAY {d.dayNum}
+                      {/* Summary Review Boarding Pass */}
+                      <Card className="border-2 border-[#14140f] overflow-hidden bg-white text-xs shadow-card">
+                        <div className="p-3.5 sm:p-4 bg-[#14140f] text-white flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <Ticket className="w-4 h-4 text-[#d6ff3f]" />
+                            <span className="font-extrabold uppercase tracking-wider text-[11px] text-[#d6ff3f]">
+                              Trip Summary Review
                             </span>
-                            <strong className="block text-sm font-bold text-[#14140f] leading-tight mt-0.5">
-                              {d.title}
+                          </div>
+                          <span className="text-xs text-white/70 font-semibold">{numDays} Days Itinerary</span>
+                        </div>
+
+                        <div className="divide-y divide-[#eeeee7]">
+                          <div className="flex items-center justify-between p-3.5 sm:p-4">
+                            <span className="font-bold text-[#6b6b63] w-24">Destination</span>
+                            <strong className="flex-1 text-[#14140f] font-bold text-xs sm:text-sm">
+                              {activeRegionNames}
                             </strong>
-                            {d.night && (
-                              <span className="text-gray-500 text-[11px] block mt-0.5">
-                                Night: {d.night}
+                            <button
+                              type="button"
+                              onClick={() => setWizardStep(0)}
+                              className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer text-[#14140f]"
+                            >
+                              Edit
+                            </button>
+                          </div>
+
+                          <div className="flex items-center justify-between p-3.5 sm:p-4">
+                            <span className="font-bold text-[#6b6b63] w-24">When</span>
+                            <span className="flex-1 text-[#14140f] font-medium text-xs">
+                              {startDate} · {numDays} days {flexibleDates ? "(Dates flexible)" : ""}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setWizardStep(1)}
+                              className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer text-[#14140f]"
+                            >
+                              Edit
+                            </button>
+                          </div>
+
+                          <div className="flex items-center justify-between p-3.5 sm:p-4">
+                            <span className="font-bold text-[#6b6b63] w-24">Who</span>
+                            <span className="flex-1 text-[#14140f] font-medium text-xs">
+                              {adults} adults{children > 0 ? `, ${children} child` : ""} · {groupType} · starting from{" "}
+                              {startCity}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setWizardStep(1)}
+                              className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer text-[#14140f]"
+                            >
+                              Edit
+                            </button>
+                          </div>
+
+                          <div className="flex items-center justify-between p-3.5 sm:p-4">
+                            <span className="font-bold text-[#6b6b63] w-24">Style</span>
+                            <span className="flex-1 text-[#14140f] font-medium text-xs truncate">
+                              {stayLabel} stays · {transportLabel} · {paceLabel} pace
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => setWizardStep(2)}
+                              className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer text-[#14140f]"
+                            >
+                              Edit
+                            </button>
+                          </div>
+                        </div>
+                      </Card>
+
+                      {/* Day by Day Vertical Timeline Preview */}
+                      <div className="flex flex-col gap-2 pt-1">
+                        <div className="flex items-center justify-between">
+                          <h3 className="font-bold text-sm sm:text-base text-[#14140f]">Day by day breakdown</h3>
+                          <button
+                            type="button"
+                            onClick={() => setWizardStep(3)}
+                            className="font-bold text-xs underline underline-offset-2 hover:text-black cursor-pointer"
+                          >
+                            Edit days
+                          </button>
+                        </div>
+
+                        <ol className="relative border-l-2 border-[#14140f] ml-3 pl-4 space-y-3.5 my-2 text-xs">
+                          {builderDays.map((d) => (
+                            <li key={d.id} className="relative">
+                              <span className="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full bg-[#d6ff3f] border-2 border-[#14140f]" />
+                              <span className="text-[10px] font-bold text-[#6b6b63] uppercase tracking-wider block">
+                                DAY {d.dayNum} · {d.dateStr}
                               </span>
-                            )}
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
+                              <strong className="block text-xs sm:text-sm font-bold text-[#14140f] leading-tight mt-0.5">
+                                {d.title}
+                              </strong>
+                              {d.night && (
+                                <span className="text-[#6b6b63] text-[11px] block mt-0.5">
+                                  Night: <strong>{d.night}</strong>
+                                </span>
+                              )}
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
 
-                    {/* Contact Form Fields */}
-                    <div className="border-t border-[#e6e6df] pt-6 flex flex-col gap-4 text-xs">
-                      <h3 className="text-lg font-bold text-[#14140f]">Where should our trip expert call you?</h3>
+                      {/* Contact Form with Standard Form Controls */}
+                      <div className="border-t border-[#e6e6df] pt-6 flex flex-col gap-4 text-xs">
+                        <h3 className="text-base sm:text-lg font-bold text-[#14140f]">
+                          Where should our trip expert call you?
+                        </h3>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="flex flex-col gap-1">
-                          <label className="font-bold text-gray-600">Your name *</label>
-                          <input
-                            type="text"
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <Input
+                            label="Your Name"
                             required
                             value={custName}
                             onChange={(e) => setCustName(e.target.value)}
                             placeholder="e.g. Rahul Sharma"
-                            className="bg-white border border-[#d9d9d0] rounded-xl p-2.5 text-xs outline-hidden focus:border-black"
                           />
-                        </div>
 
-                        <div className="flex flex-col gap-1">
-                          <label className="font-bold text-gray-600">Mobile (WhatsApp) *</label>
-                          <input
-                            type="tel"
+                          <Input
+                            label="WhatsApp / Phone"
                             required
+                            type="tel"
                             value={custPhone}
                             onChange={(e) => setCustPhone(e.target.value)}
-                            placeholder="98765 43210"
-                            className="bg-white border border-[#d9d9d0] rounded-xl p-2.5 text-xs outline-hidden focus:border-black"
+                            placeholder="+91 98765 43210"
                           />
-                        </div>
 
-                        <div className="flex flex-col gap-1">
-                          <label className="font-bold text-gray-600">Email (optional)</label>
-                          <input
+                          <Input
+                            label="Email (optional)"
                             type="email"
                             value={custEmail}
                             onChange={(e) => setCustEmail(e.target.value)}
                             placeholder="rahul@example.com"
-                            className="bg-white border border-[#d9d9d0] rounded-xl p-2.5 text-xs outline-hidden focus:border-black"
                           />
-                        </div>
 
-                        <div className="flex flex-col gap-1">
-                          <label className="font-bold text-gray-600">Best time to call</label>
-                          <select
+                          <Select
+                            label="Best time to call"
                             value={custCallTime}
                             onChange={(e) => setCustCallTime(e.target.value)}
-                            className="bg-white border border-[#d9d9d0] rounded-xl p-2.5 text-xs outline-hidden focus:border-black cursor-pointer"
-                          >
-                            <option value="As soon as possible">As soon as possible</option>
-                            <option value="Morning (10 AM – 1 PM)">Morning (10 AM – 1 PM)</option>
-                            <option value="Afternoon (1 – 4 PM)">Afternoon (1 – 4 PM)</option>
-                            <option value="Evening (4 – 7 PM)">Evening (4 – 7 PM)</option>
-                          </select>
-                        </div>
-
-                        <div className="sm:col-span-2 flex flex-col gap-1">
-                          <label className="font-bold text-gray-600">Anything else we should know? (optional)</label>
-                          <textarea
-                            rows={3}
-                            value={custNotes}
-                            onChange={(e) => setCustNotes(e.target.value)}
-                            placeholder="Budget in mind, a birthday on the trip, elderly parents, dietary needs..."
-                            className="bg-white border border-[#d9d9d0] rounded-xl p-2.5 text-xs outline-hidden focus:border-black"
+                            options={[
+                              { label: "As soon as possible", value: "As soon as possible" },
+                              { label: "Morning (10 AM – 1 PM)", value: "Morning (10 AM – 1 PM)" },
+                              { label: "Afternoon (1 – 4 PM)", value: "Afternoon (1 – 4 PM)" },
+                              { label: "Evening (4 – 7 PM)", value: "Evening (4 – 7 PM)" },
+                            ]}
                           />
+
+                          <div className="sm:col-span-2">
+                            <Textarea
+                              label="Anything else we should know? (optional)"
+                              rows={3}
+                              value={custNotes}
+                              onChange={(e) => setCustNotes(e.target.value)}
+                              placeholder="Budget in mind, a birthday on the trip, elderly parents, dietary needs, special photography requests..."
+                            />
+                          </div>
+                        </div>
+
+                        {/* Callback promise banner */}
+                        <div className="bg-[#14140f] text-white p-3.5 sm:p-4 rounded-2xl flex items-center gap-3 text-xs font-semibold shadow-xs">
+                          <Phone className="w-5 h-5 text-[#d6ff3f] shrink-0" />
+                          <span>
+                            Our Himalayan trip expert will call you within 24 hours with a customized price and day-by-day
+                            route for your group.
+                          </span>
                         </div>
                       </div>
 
-                      {/* Callback promise banner */}
-                      <div className="bg-[#14140f] text-white p-3.5 rounded-2xl flex items-center gap-2.5 text-xs font-semibold">
-                        <Phone className="w-4 h-4 text-[#d6ff3f]" />
-                        <span>Our trip expert will call you within 24 hours with a price for your trip.</span>
+                      {/* Action Bar */}
+                      <div className="flex justify-between items-center pt-6 border-t border-[#f0f0eb] mt-2">
+                        <Button
+                          type="button"
+                          variant="outline"
+                          size="md"
+                          onClick={() => setWizardStep(3)}
+                          leftIcon={<ChevronLeft className="w-4 h-4" />}
+                        >
+                          Back
+                        </Button>
+                        <Button
+                          type="submit"
+                          variant="primary"
+                          size="lg"
+                          rightIcon={<ArrowUpRight className="w-4 h-4 stroke-[2.5]" />}
+                        >
+                          Send My Itinerary
+                        </Button>
+                      </div>
+                    </form>
+                  ) : (
+                    /* Done Confirmation Screen */
+                    <div className="text-center py-10 flex flex-col items-center gap-4">
+                      <div className="w-16 h-16 rounded-full bg-[#d6ff3f] border-2 border-[#14140f] text-[#14140f] flex items-center justify-center font-bold text-3xl shadow-lg">
+                        ✓
+                      </div>
+                      <h2 className="text-2xl sm:text-3xl font-extrabold text-[#14140f] font-heading">
+                        Plan sent to our team!
+                      </h2>
+                      <p className="text-sm sm:text-base text-[#14140f] max-w-md font-medium leading-relaxed">
+                        Our Himalayan trip expert will call you at <strong>{custPhone}</strong>{" "}
+                        {custCallTime.toLowerCase()} with a customized price for your {numDays}-day {activeRegionNames}{" "}
+                        trip.
+                      </p>
+                      <span className="text-xs font-bold text-[#6b6b63] bg-[#f0f0eb] px-3 py-1 rounded-full">
+                        Reference Code: {builderRef}
+                      </span>
+
+                      <div className="flex flex-wrap gap-3 mt-4">
+                        <Button
+                          variant="dark"
+                          size="md"
+                          onClick={() => {
+                            setBuilderSubmitted(false);
+                            setStepMode(false);
+                          }}
+                        >
+                          Back to Trip Planner
+                        </Button>
+                        <Button
+                          variant="whatsapp"
+                          size="md"
+                          href={`https://wa.me/919876543210?text=Hi%20Trail%20Explorers%2C%20I%20just%20submitted%20trip%20inquiry%20${builderRef}%20for%20${numDays}%20days%20in%20${encodeURIComponent(
+                            activeRegionNames
+                          )}.`}
+                          external
+                        >
+                          Chat on WhatsApp
+                        </Button>
                       </div>
                     </div>
+                  )}
+                </div>
+              )}
+            </div>
 
-                    {/* Action Bar */}
-                    <div className="flex justify-between items-center pt-6 border-t border-gray-100 mt-2">
-                      <button
-                        type="button"
-                        onClick={() => setWizardStep(3)}
-                        className="px-6 py-2.5 rounded-full border border-[#d9d9d0] hover:border-black text-xs font-bold text-gray-700 transition-colors cursor-pointer"
-                      >
-                        Back
-                      </button>
-                      <button
-                        type="submit"
-                        className="px-8 py-3 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-sm shadow-[0_8px_20px_-6px_rgba(214,255,63,0.7)] transition-all active:scale-95 cursor-pointer"
-                      >
-                        Send my itinerary
-                      </button>
-                    </div>
-                  </form>
-                ) : (
-                  /* Done Confirmation Screen */
-                  <div className="text-center py-10 flex flex-col items-center gap-4">
-                    <div className="w-16 h-16 rounded-full bg-[#d6ff3f] border-2 border-[#14140f] text-[#14140f] flex items-center justify-center font-bold text-3xl shadow-lg">
-                      ✓
-                    </div>
-                    <h2 className="text-3xl font-extrabold text-[#14140f]">Plan sent to our team!</h2>
-                    <p className="text-base text-gray-700 max-w-md font-medium">
-                      Our Himalayan trip expert will call you at <strong>{custPhone}</strong> {custCallTime.toLowerCase()} with a customized price for your {numDays}-day {activeRegionNames} trip.
-                    </p>
-                    <span className="text-xs text-gray-400">Reference: {builderRef}</span>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setBuilderSubmitted(false);
-                        setStepMode(false);
-                      }}
-                      className="mt-4 px-7 py-3 rounded-full bg-[#14140f] text-[#d6ff3f] font-bold text-xs transition-transform active:scale-95 cursor-pointer"
-                    >
-                      Back to trip planner
-                    </button>
+            {/* Right Column: Live Sticky Trip Ticket (Desktop view) */}
+            <aside className="hidden lg:block sticky top-24 select-none">
+              <div className="bg-[#14140f] text-white rounded-[24px] border-2 border-[#14140f] shadow-2xl overflow-hidden">
+                {/* Ticket Head with Cutout Notches */}
+                <div className="relative p-5 border-b-2 border-dashed border-white/20">
+                  <span className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-[#fafaf8] block z-10" />
+                  <span className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-[#fafaf8] block z-10" />
+
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-[#d6ff3f]">
+                      Your Live Trip Ticket
+                    </span>
+                    <strong className="text-lg font-bold text-white leading-tight">
+                      {activeRegionNames} Custom Trip
+                    </strong>
+                    <small className="text-xs text-white/60">
+                      {numDays} days · {adults} adults · {stayLabel}
+                    </small>
                   </div>
-                )}
+                </div>
+
+                <div className="p-5">{renderBuilderLiveTicket()}</div>
+
+                <div className="p-4 border-t border-white/10 bg-black/30 text-center">
+                  <button
+                    type="button"
+                    onClick={() => setWizardStep(4)}
+                    className="w-full py-3 px-4 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-xs shadow-md transition-all cursor-pointer"
+                  >
+                    Proceed to Review & Quote →
+                  </button>
+                  <span className="text-[10.5px] text-white/50 block mt-2">
+                    No payment required now · expert quote in 24h
+                  </span>
+                </div>
               </div>
-            )}
+            </aside>
           </div>
         </div>
 
-        {/* Step Mode Full Standard Footer matching reference */}
-        <footer className="max-w-[920px] mx-auto px-4 mt-16 pt-10 border-t border-[#e6e6df] text-[#14140f]">
+        {/* Mobile Sticky Bottom Floating Action Bar (<1024px) */}
+        <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t-2 border-[#14140f]/10 p-3 pb-[calc(12px+env(safe-area-inset-bottom,0px))] z-40 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] flex flex-col gap-2">
+          <div className="flex items-center justify-between gap-2">
+            <button
+              type="button"
+              onClick={() => setBuilderTicketDrawerOpen(true)}
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-[#14140f] text-white font-bold text-xs shadow-sm cursor-pointer"
+            >
+              <Ticket className="w-3.5 h-3.5 text-[#d6ff3f]" />
+              <span>
+                Ticket: {numDays}D · {selectedRegions.length} dest.
+              </span>
+            </button>
+
+            <div className="flex items-center gap-2">
+              {wizardStep > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setWizardStep((prev) => prev - 1)}
+                  className="px-4 py-2 rounded-full border-2 border-[#14140f] text-xs font-bold text-[#14140f] bg-white cursor-pointer"
+                >
+                  Back
+                </button>
+              )}
+              {wizardStep < 4 ? (
+                <button
+                  type="button"
+                  onClick={() => setWizardStep((prev) => prev + 1)}
+                  className="px-5 py-2 rounded-full bg-[#d6ff3f] border-2 border-[#14140f] text-xs font-bold text-[#14140f] shadow-xs cursor-pointer"
+                >
+                  Next →
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleBuilderSubmit}
+                  className="px-5 py-2 rounded-full bg-[#d6ff3f] border-2 border-[#14140f] text-xs font-bold text-[#14140f] shadow-xs cursor-pointer"
+                >
+                  Submit
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Bottom Sheet Modal for Live Ticket */}
+        <Modal
+          isOpen={builderTicketDrawerOpen}
+          onClose={() => setBuilderTicketDrawerOpen(false)}
+          title="Your Trip Ticket"
+          description="Live summary of your choices so far"
+          footer={
+            <Button
+              variant="primary"
+              fullWidth
+              onClick={() => {
+                setBuilderTicketDrawerOpen(false);
+                setWizardStep(4);
+              }}
+            >
+              Go to Final Review & Quote →
+            </Button>
+          }
+        >
+          <div className="bg-[#14140f] p-4 rounded-2xl border border-white/10">{renderBuilderLiveTicket()}</div>
+        </Modal>
+
+        {/* Step Mode Full Standard Footer */}
+        <footer className="max-w-[1240px] mx-auto px-4 mt-16 pt-10 border-t border-[#e6e6df] text-[#14140f]">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-[#e6e6df]">
             <div className="flex flex-col gap-2.5">
               <Image
@@ -1926,42 +2581,77 @@ export default function PlanYourTripPage() {
                 height={30}
                 className="h-7 w-auto object-contain"
               />
-              <p className="text-[11.5px] text-gray-500 leading-relaxed">
+              <p className="text-[11.5px] text-[#6b6b63] leading-relaxed">
                 Curated journeys for curious minds. We handle the details so you can focus on the memory.
               </p>
             </div>
             <div>
-              <h4 className="font-bold text-[11px] uppercase tracking-wider text-gray-400 mb-2.5">Explore</h4>
-              <ul className="space-y-1.5 text-xs text-gray-600 font-medium">
-                <li><Link href="/community-trips" className="hover:text-black">Community Trips</Link></li>
-                <li><Link href="/experiences" className="hover:text-black">Experiences</Link></li>
-                <li><Link href="/plan-your-trip" className="hover:text-black">Plan Your Trip</Link></li>
+              <h4 className="font-bold text-[11px] uppercase tracking-wider text-[#6b6b63] mb-2.5">Explore</h4>
+              <ul className="space-y-1.5 text-xs text-[#6b6b63] font-medium">
+                <li>
+                  <Link href="/community-trips" className="hover:text-black">
+                    Community Trips
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/experiences" className="hover:text-black">
+                    Experiences
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/plan-your-trip" className="hover:text-black">
+                    Plan Your Trip
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-[11px] uppercase tracking-wider text-gray-400 mb-2.5">Company</h4>
-              <ul className="space-y-1.5 text-xs text-gray-600 font-medium">
-                <li><Link href="/" className="hover:text-black">Home</Link></li>
-                <li><Link href="/about" className="hover:text-black">About Us</Link></li>
-                {/* <li><Link href="/founder" className="hover:text-black">Founder&apos;s Story</Link></li>
-                <li><Link href="/postcards" className="hover:text-black">Postcards</Link></li>
-                <li><Link href="/careers" className="hover:text-black">Careers</Link></li> */}
+              <h4 className="font-bold text-[11px] uppercase tracking-wider text-[#6b6b63] mb-2.5">Company</h4>
+              <ul className="space-y-1.5 text-xs text-[#6b6b63] font-medium">
+                <li>
+                  <Link href="/" className="hover:text-black">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="hover:text-black">
+                    About Us
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold text-[11px] uppercase tracking-wider text-gray-400 mb-2.5">Help</h4>
-              <ul className="space-y-1.5 text-xs text-gray-600 font-medium">
-                <li><Link href="/booking-terms" className="hover:text-black">Booking T&amp;C</Link></li>
-                <li><Link href="/cancellation-policy" className="hover:text-black">Cancellation Policy</Link></li>
-                <li><Link href="/privacy-policy" className="hover:text-black">Privacy Policy</Link></li>
-                <li><Link href="/contact" className="hover:text-black">Contact</Link></li>
-                <li><Link href="/payment-details" className="hover:text-black">Payment Details</Link></li>
+              <h4 className="font-bold text-[11px] uppercase tracking-wider text-[#6b6b63] mb-2.5">Help</h4>
+              <ul className="space-y-1.5 text-xs text-[#6b6b63] font-medium">
+                <li>
+                  <Link href="/booking-terms" className="hover:text-black">
+                    Booking T&amp;C
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/cancellation-policy" className="hover:text-black">
+                    Cancellation Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy-policy" className="hover:text-black">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="hover:text-black">
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/payment-details" className="hover:text-black">
+                    Payment Details
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
-          <p className="text-center text-xs text-gray-400 pt-6">
-            © 2026 Trail Explorers · Made in India ✦
-          </p>
+          <p className="text-center text-xs text-[#6b6b63] pt-6">© 2026 Trail Explorers · Made in India ✦</p>
         </footer>
       </div>
     );
@@ -2022,6 +2712,17 @@ export default function PlanYourTripPage() {
                   Trip planner · usually replies in seconds
                 </small>
               </div>
+
+              {/* Step mode toggle shortcut in chat header */}
+              <button
+                type="button"
+                onClick={() => setStepMode(true)}
+                className="hidden sm:inline-flex items-center gap-1.5 border border-[#e8e8e0] bg-[#f6f6f1] hover:bg-white text-[#14140f] rounded-full px-3 py-1.5 text-[11.5px] font-bold transition-colors cursor-pointer mr-1"
+              >
+                <ListOrdered className="w-3.5 h-3.5" />
+                <span>Step Form</span>
+              </button>
+
               <button
                 type="button"
                 onClick={handleRestart}
@@ -2039,242 +2740,240 @@ export default function PlanYourTripPage() {
                 ref={chatScrollRef}
                 className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white"
               >
-              {conversationStage === 0 ? (
-                <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
-                  {/* Standing Animated Character in Welcome State */}
-                  <div className="mx-auto my-1 flex justify-center">
-                    <ExplorerChatMascot ref={welcomeMascotRef} variant="lg" />
-                  </div>
-
-                  {/* Sender label */}
-                  <span className="text-[11px] sm:text-[11.5px] text-gray-400 font-bold ml-1 sm:ml-2 mb-[-4px]">
-                    Trip Planner
-                  </span>
-
-                  {/* Bubble 1: 0s delay */}
-                  <div className="pc-pop-1 max-w-[88%] sm:max-w-[80%] self-start">
-                    <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
-                      Hey! I'm your Trail Explorers trip planner 👋
+                {conversationStage === 0 ? (
+                  <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
+                    {/* Standing Animated Character in Welcome State */}
+                    <div className="mx-auto my-1 flex justify-center">
+                      <ExplorerChatMascot ref={welcomeMascotRef} variant="lg" />
                     </div>
-                  </div>
 
-                  {/* Bubble 2: 0.45s delay, bold text */}
-                  <div className="pc-pop-2 max-w-[88%] sm:max-w-[80%] self-start">
-                    <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] font-bold leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
-                      Where are the mountains calling you?
-                    </div>
-                  </div>
+                    {/* Sender label */}
+                    <span className="text-[11px] sm:text-[11.5px] text-gray-400 font-bold ml-1 sm:ml-2 mb-[-4px]">
+                      Trip Planner
+                    </span>
 
-                  {/* Bubble 3: 0.9s delay */}
-                  <div className="pc-pop-3 max-w-[88%] sm:max-w-[80%] self-start">
-                    <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
-                      Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert then calls you with the price.
-                    </div>
-                  </div>
-
-                  {/* Initial 4 Suggestion Cards: 1.3s delay */}
-                  <div className="pc-pop-starts flex flex-row overflow-x-auto gap-2.5 py-1 -mx-3.5 px-3.5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-4 sm:overflow-visible no-scrollbar mt-1">
-                    {STARTS.map((start) => (
-                      <button
-                        key={start.id}
-                        type="button"
-                        onClick={() => handleSelectTrip(start)}
-                        className="relative shrink-0 min-w-[124px] w-[124px] h-[124px] sm:min-w-0 sm:w-auto sm:aspect-[4/5] sm:min-h-[190px] rounded-[16px] sm:rounded-[18px] overflow-hidden p-0 text-left bg-[#14140f] text-white shadow-[0_10px_24px_-14px_rgba(20,20,15,0.6)] hover:-translate-y-1 transition-all duration-200 group cursor-pointer border-none"
-                      >
-                        <SkeletonImage
-                          src={start.image}
-                          alt={start.title}
-                          fill
-                          sizes="(max-width: 640px) 124px, 200px"
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                        <div className="absolute inset-x-2.5 bottom-2 sm:inset-x-3 sm:bottom-3 z-10">
-                          <span className="font-bold text-[12px] sm:text-[13.5px] leading-tight block text-white">
-                            {start.title}
-                          </span>
-                          <small className="block font-medium text-[10px] sm:text-[11px] text-white/80 mt-0.5 sm:mt-1 line-clamp-1">
-                            {start.sub}
-                          </small>
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <>
-                  {/* Sender label */}
-                  <span className="text-[11px] sm:text-[11.5px] text-gray-400 font-bold ml-1 sm:ml-2 mb-[-4px]">
-                    Trip Planner
-                  </span>
-
-              {/* Message Bubbles in Active Chat */}
-              {messages.map((msg) => {
-                const isInitialBotMsg = ["msg-1", "msg-2", "msg-3"].includes(msg.id);
-                return (
-                  <div
-                    key={msg.id}
-                    className={`flex gap-2 max-w-[88%] sm:max-w-[80%] animate-pc-pop ${
-                      msg.sender === "user" ? "self-end flex-row-reverse" : "self-start items-end"
-                    }`}
-                  >
-                    {/* Bot Avatar Icon: only shown for active conversation bot replies */}
-                    {msg.sender === "bot" && !isInitialBotMsg && (
-                      <div className="w-7 h-7 rounded-full bg-[#14140f] overflow-hidden shrink-0 mb-1 border border-[#14140f] shadow-xs relative">
-                        <SkeletonImage
-                          src="/assets/images/mascot/explorer-face.webp"
-                          alt="Trip Planner"
-                          fill
-                          sizes="28px"
-                          className="object-cover object-top scale-110"
-                        />
+                    {/* Bubble 1 */}
+                    <div className="pc-pop-1 max-w-[88%] sm:max-w-[80%] self-start">
+                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
+                        Hey! I'm your Trail Explorers trip planner 👋
                       </div>
-                    )}
+                    </div>
 
-                    <div className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}>
-                      <div
-                        className={`px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed whitespace-pre-line ${
-                          msg.sender === "user"
-                            ? "bg-[#d6ff3f] text-[#14140f] font-semibold rounded-[18px] rounded-br-[4px] shadow-xs"
-                            : msg.id === "msg-2"
-                            ? "bg-[#e9e9eb] text-[#14140f] font-bold rounded-[18px] rounded-bl-[4px]"
-                            : "bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]"
-                        }`}
-                      >
-                        {msg.text}
+                    {/* Bubble 2 */}
+                    <div className="pc-pop-2 max-w-[88%] sm:max-w-[80%] self-start">
+                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] font-bold leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
+                        Where are the mountains calling you?
                       </div>
+                    </div>
 
-                    {/* Plan Update Toast Badge */}
-                    {msg.planUpdate && (
-                      <div className="w-full my-2">
+                    {/* Bubble 3 */}
+                    <div className="pc-pop-3 max-w-[88%] sm:max-w-[80%] self-start">
+                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
+                        Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert
+                        then calls you with the price.
+                      </div>
+                    </div>
+
+                    {/* Initial 4 Suggestion Cards */}
+                    <div className="pc-pop-starts flex flex-row overflow-x-auto gap-2.5 py-1 -mx-3.5 px-3.5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-4 sm:overflow-visible no-scrollbar mt-1">
+                      {STARTS.map((start) => (
                         <button
+                          key={start.id}
                           type="button"
-                          onClick={() => setMobileTicketOpen(true)}
-                          className="w-full flex items-center justify-between p-3 rounded-2xl bg-[#14140f] text-white hover:bg-black transition-all shadow-md group cursor-pointer"
+                          onClick={() => handleSelectTrip(start)}
+                          className="relative shrink-0 min-w-[124px] w-[124px] h-[124px] sm:min-w-0 sm:w-auto sm:aspect-[4/5] sm:min-h-[190px] rounded-[16px] sm:rounded-[18px] overflow-hidden p-0 text-left bg-[#14140f] text-white shadow-[0_10px_24px_-14px_rgba(20,20,15,0.6)] hover:-translate-y-1 transition-all duration-200 group cursor-pointer border-none"
                         >
-                          <div className="flex items-center gap-2.5">
-                            <span className="text-lg">🗺</span>
-                            <div className="text-left">
-                              <strong className="block text-[13px] font-bold text-white leading-tight">
-                                Plan updated · {msg.planUpdate.days} days
-                              </strong>
-                              <small className="text-[11px] text-white/70">
-                                {msg.planUpdate.route}
-                              </small>
-                            </div>
-                          </div>
-                          <span className="text-[12px] font-bold text-[#d6ff3f] group-hover:translate-x-1 transition-transform">
-                            View →
-                          </span>
-                        </button>
-                      </div>
-                    )}
-
-                    {/* In-Chat Budget Slider Card */}
-                    {msg.showBudgetCard && (
-                      <div className="w-full my-2.5 p-3.5 sm:p-4 rounded-2xl bg-[#14140f] text-white flex flex-col gap-3 shadow-lg">
-                        <div>
-                          <strong className="block text-[13.5px] sm:text-[14px] font-bold text-[#d6ff3f]">
-                            Your budget per person
-                          </strong>
-                          <p className="text-[11px] sm:text-[11.5px] text-white/70 mt-0.5">
-                            Slide to roughly what each person would like to spend, excluding travel to the starting city.
-                          </p>
-                        </div>
-
-                        {/* Value Output */}
-                        <div className="text-center font-bold text-sm sm:text-base text-[#d6ff3f] py-1 bg-white/5 rounded-lg border border-white/10">
-                          ₹{budgetVal.toLocaleString("en-IN")}{budgetVal >= 200000 ? "+" : ""} per person
-                        </div>
-
-                        {/* Range Slider */}
-                        <div className="flex flex-col gap-1">
-                          <input
-                            type="range"
-                            min={5000}
-                            max={200000}
-                            step={1000}
-                            value={budgetVal}
-                            onChange={(e) => setBudgetVal(Number(e.target.value))}
-                            className="w-full pc-budget-range h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#d6ff3f]"
+                          <SkeletonImage
+                            src={start.image}
+                            alt={start.title}
+                            fill
+                            sizes="(max-width: 640px) 124px, 200px"
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
                           />
-                          <div className="flex justify-between text-[10.5px] text-white/50 font-bold px-0.5">
-                            <span>₹5,000</span>
-                            <span>₹2,00,000+</span>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+                          <div className="absolute inset-x-2.5 bottom-2 sm:inset-x-3 sm:bottom-3 z-10">
+                            <span className="font-bold text-[12px] sm:text-[13.5px] leading-tight block text-white">
+                              {start.title}
+                            </span>
+                            <small className="block font-medium text-[10px] sm:text-[11px] text-white/80 mt-0.5 sm:mt-1 line-clamp-1">
+                              {start.sub}
+                            </small>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    {/* Sender label */}
+                    <span className="text-[11px] sm:text-[11.5px] text-gray-400 font-bold ml-1 sm:ml-2 mb-[-4px]">
+                      Trip Planner
+                    </span>
+
+                    {/* Message Bubbles in Active Chat */}
+                    {messages.map((msg) => {
+                      const isInitialBotMsg = ["msg-1", "msg-2", "msg-3"].includes(msg.id);
+                      return (
+                        <div
+                          key={msg.id}
+                          className={`flex gap-2 max-w-[88%] sm:max-w-[80%] animate-pc-pop ${
+                            msg.sender === "user" ? "self-end flex-row-reverse" : "self-start items-end"
+                          }`}
+                        >
+                          {/* Bot Avatar Icon */}
+                          {msg.sender === "bot" && !isInitialBotMsg && (
+                            <div className="w-7 h-7 rounded-full bg-[#14140f] overflow-hidden shrink-0 mb-1 border border-[#14140f] shadow-xs relative">
+                              <SkeletonImage
+                                src="/assets/images/mascot/explorer-face.webp"
+                                alt="Trip Planner"
+                                fill
+                                sizes="28px"
+                                className="object-cover object-top scale-110"
+                              />
+                            </div>
+                          )}
+
+                          <div className={`flex flex-col ${msg.sender === "user" ? "items-end" : "items-start"}`}>
+                            <div
+                              className={`px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed whitespace-pre-line ${
+                                msg.sender === "user"
+                                  ? "bg-[#d6ff3f] text-[#14140f] font-semibold rounded-[18px] rounded-br-[4px] shadow-xs"
+                                  : msg.id === "msg-2"
+                                  ? "bg-[#e9e9eb] text-[#14140f] font-bold rounded-[18px] rounded-bl-[4px]"
+                                  : "bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]"
+                              }`}
+                            >
+                              {msg.text}
+                            </div>
+
+                            {/* Plan Update Toast Badge */}
+                            {msg.planUpdate && (
+                              <div className="w-full my-2">
+                                <button
+                                  type="button"
+                                  onClick={() => setMobileTicketOpen(true)}
+                                  className="w-full flex items-center justify-between p-3 rounded-2xl bg-[#14140f] text-white hover:bg-black transition-all shadow-md group cursor-pointer"
+                                >
+                                  <div className="flex items-center gap-2.5">
+                                    <span className="text-lg">🗺</span>
+                                    <div className="text-left">
+                                      <strong className="block text-[13px] font-bold text-white leading-tight">
+                                        Plan updated · {msg.planUpdate.days} days
+                                      </strong>
+                                      <small className="text-[11px] text-white/70">{msg.planUpdate.route}</small>
+                                    </div>
+                                  </div>
+                                  <span className="text-[12px] font-bold text-[#d6ff3f] group-hover:translate-x-1 transition-transform">
+                                    View →
+                                  </span>
+                                </button>
+                              </div>
+                            )}
+
+                            {/* In-Chat Budget Slider Card */}
+                            {msg.showBudgetCard && (
+                              <div className="w-full my-2.5 p-3.5 sm:p-4 rounded-2xl bg-[#14140f] text-white flex flex-col gap-3 shadow-lg">
+                                <div>
+                                  <strong className="block text-[13.5px] sm:text-[14px] font-bold text-[#d6ff3f]">
+                                    Your budget per person
+                                  </strong>
+                                  <p className="text-[11px] sm:text-[11.5px] text-white/70 mt-0.5">
+                                    Slide to roughly what each person would like to spend, excluding travel to the
+                                    starting city.
+                                  </p>
+                                </div>
+
+                                {/* Value Output */}
+                                <div className="text-center font-bold text-sm sm:text-base text-[#d6ff3f] py-1 bg-white/5 rounded-lg border border-white/10">
+                                  ₹{budgetVal.toLocaleString("en-IN")}
+                                  {budgetVal >= 200000 ? "+" : ""} per person
+                                </div>
+
+                                {/* Range Slider */}
+                                <div className="flex flex-col gap-1">
+                                  <input
+                                    type="range"
+                                    min={5000}
+                                    max={200000}
+                                    step={1000}
+                                    value={budgetVal}
+                                    onChange={(e) => setBudgetVal(Number(e.target.value))}
+                                    className="w-full pc-budget-range h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-[#d6ff3f]"
+                                  />
+                                  <div className="flex justify-between text-[10.5px] text-white/50 font-bold px-0.5">
+                                    <span>₹5,000</span>
+                                    <span>₹2,00,000+</span>
+                                  </div>
+                                </div>
+
+                                {/* Actions */}
+                                <div className="flex gap-2 pt-1">
+                                  <button
+                                    type="button"
+                                    onClick={handleSetBudget}
+                                    className="flex-1 py-2 px-3 bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-[12px] sm:text-[12.5px] rounded-full transition-transform active:scale-95 cursor-pointer"
+                                  >
+                                    Set my budget
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={() => handleChipClick("Not sure about the budget yet")}
+                                    className="py-2 px-3 bg-white/10 hover:bg-white/15 text-white/80 font-bold text-[11.5px] sm:text-[12px] rounded-full transition-colors cursor-pointer"
+                                  >
+                                    Not sure yet
+                                  </button>
+                                </div>
+                              </div>
+                            )}
+
+                            {/* Quick Reply Chips */}
+                            {msg.chips && msg.chips.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5 mt-2 no-scrollbar">
+                                {msg.chips.map((chip, chipIdx) => (
+                                  <button
+                                    key={chipIdx}
+                                    type="button"
+                                    onClick={() => handleChipClick(chip)}
+                                    className="px-3 py-1.5 rounded-full bg-white hover:bg-[#d6ff3f] text-[#14140f] text-[11.5px] sm:text-[12px] font-bold border border-[#14140f] shadow-xs hover:-translate-y-0.5 transition-all cursor-pointer"
+                                  >
+                                    {chip}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
                           </div>
                         </div>
+                      );
+                    })}
+                  </>
+                )}
 
-                        {/* Actions */}
-                        <div className="flex gap-2 pt-1">
-                          <button
-                            type="button"
-                            onClick={handleSetBudget}
-                            className="flex-1 py-2 px-3 bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-[12px] sm:text-[12.5px] rounded-full transition-transform active:scale-95 cursor-pointer"
-                          >
-                            Set my budget
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => handleChipClick("Not sure about the budget yet")}
-                            className="py-2 px-3 bg-white/10 hover:bg-white/15 text-white/80 font-bold text-[11.5px] sm:text-[12px] rounded-full transition-colors cursor-pointer"
-                          >
-                            Not sure yet
-                          </button>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Quick Reply Chips */}
-                    {msg.chips && msg.chips.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 mt-2 no-scrollbar">
-                        {msg.chips.map((chip, chipIdx) => (
-                          <button
-                            key={chipIdx}
-                            type="button"
-                            onClick={() => handleChipClick(chip)}
-                            className="px-3 py-1.5 rounded-full bg-white hover:bg-[#d6ff3f] text-[#14140f] text-[11.5px] sm:text-[12px] font-bold border border-[#14140f] shadow-xs hover:-translate-y-0.5 transition-all cursor-pointer"
-                          >
-                            {chip}
-                          </button>
-                        ))}
-                      </div>
-                    )}
+                {/* Animated Typing Bubble */}
+                {isTyping && (
+                  <div className="self-start flex items-center gap-1.5 px-3.5 py-2 bg-[#e9e9eb] rounded-[18px] w-fit animate-pc-pop">
+                    <span className="text-[11.5px] font-semibold text-gray-500 mr-1.5">Mapping your route…</span>
+                    <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-1 block" />
+                    <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-2 block" />
+                    <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-3 block" />
                   </div>
-                </div>
-              );
-            })}
+                )}
+
+                {/* Bottom Spacer so chat messages and chips sit comfortably above the docked mascot */}
+                {conversationStage > 0 && (
+                  <div className="h-[135px] sm:h-[145px] w-full shrink-0 pointer-events-none" aria-hidden="true" />
+                )}
+
+                <div ref={threadEndRef} />
+              </div>
+
+              {/* Soft floor fade and docked animated Explorer mascot (active chat mode) */}
+              {conversationStage > 0 && (
+                <>
+                  <div className="absolute left-0 right-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent pointer-events-none z-[5]" />
+                  <ExplorerChatMascot ref={mascotRef} variant="dock" />
                 </>
               )}
-
-              {/* Animated Typing Bubble */}
-              {isTyping && (
-                <div className="self-start flex items-center gap-1.5 px-3.5 py-2 bg-[#e9e9eb] rounded-[18px] w-fit animate-pc-pop">
-                  <span className="text-[11.5px] font-semibold text-gray-500 mr-1.5">Mapping your route…</span>
-                  <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-1 block" />
-                  <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-2 block" />
-                  <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-3 block" />
-                </div>
-              )}
-
-              {/* Bottom Spacer so chat messages and chips sit comfortably above the docked mascot */}
-              {conversationStage > 0 && (
-                <div
-                  className="h-[135px] sm:h-[145px] w-full shrink-0 pointer-events-none"
-                  aria-hidden="true"
-                />
-              )}
-
-              <div ref={threadEndRef} />
             </div>
-
-            {/* Soft floor fade and docked animated Explorer mascot (active chat mode) */}
-            {conversationStage > 0 && (
-              <>
-                <div className="absolute left-0 right-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent pointer-events-none z-[5]" />
-                <ExplorerChatMascot ref={mascotRef} variant="dock" />
-              </>
-            )}
-          </div>
 
             {/* Composer */}
             <div className="p-2.5 sm:p-4 pb-[calc(10px+env(safe-area-inset-bottom,0px))] sm:pb-4 bg-white border-t border-[#e8e8e0] shrink-0">
@@ -2358,26 +3057,26 @@ export default function PlanYourTripPage() {
               </div>
             </div>
 
-            {/* Ticket Body with Ultra-thin Custom Scrollbar */}
-            <div className="ticket-scroll flex-1 min-h-0 overflow-y-auto p-5 sm:p-6 flex flex-col gap-5">
+            {/* Ticket Scroll Body */}
+            <div className="ticket-scroll flex-1 min-h-0 overflow-y-auto p-5 sm:p-6 flex flex-col gap-4">
               {renderTicketContent()}
             </div>
 
-            {/* Ticket Footer */}
-            <div className="p-5 sm:p-6 border-t border-white/10 flex flex-col gap-2 text-center bg-[#14140f] shrink-0">
+            {/* Ticket Footer Action */}
+            <div className="p-4 sm:p-5 border-t border-white/10 shrink-0 flex flex-col gap-2 text-center bg-[#14140f]">
               <button
                 type="button"
                 disabled={activeTrip?.stage !== 6}
                 onClick={() => setModalOpen(true)}
-                className={`w-full py-3.5 px-4 rounded-full font-bold text-[14.5px] transition-all duration-200 cursor-pointer ${
+                className={`w-full py-3 sm:py-3.5 px-4 rounded-full font-bold text-xs sm:text-sm transition-all cursor-pointer ${
                   activeTrip?.stage === 6
-                    ? "bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] shadow-[0_8px_24px_-6px_rgba(214,255,63,0.7)] hover:-translate-y-0.5"
+                    ? "bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] shadow-[0_8px_20px_-6px_rgba(214,255,63,0.7)]"
                     : "bg-white/10 text-white/40 cursor-not-allowed border-none"
                 }`}
               >
                 {activeTrip?.stage === 6 ? "Send to our team →" : "Plan a few days first"}
               </button>
-              <small className="text-[11.5px] text-white/55">
+              <small className="text-[11px] text-white/50">
                 No payment now · our expert calls you with the exact price
               </small>
             </div>
@@ -2385,21 +3084,16 @@ export default function PlanYourTripPage() {
         </div>
       </main>
 
-      {/* Mobile Slide-Up Ticket Sheet */}
+      {/* Mobile Slide-up Ticket Sheet */}
       <div
         ref={ticketOverlayRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Trip summary ticket"
-        className={`lg:hidden fixed inset-0 z-50 transition-opacity duration-300 touch-none overscroll-contain ${
+        className={`fixed inset-0 z-50 bg-black/60 backdrop-blur-xs transition-opacity duration-300 lg:hidden ${
           mobileTicketOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) setMobileTicketOpen(false);
+        }}
       >
-        <div
-          onClick={() => setMobileTicketOpen(false)}
-          className="absolute inset-0 bg-black/60 backdrop-blur-xs"
-        />
-
         <aside
           ref={ticketSheetRef}
           className={`absolute inset-x-0 bottom-0 max-h-[88dvh] bg-[#14140f] text-white rounded-t-[28px] shadow-2xl flex flex-col transition-transform duration-300 ease-out z-10 overscroll-contain touch-pan-y ${
@@ -2467,7 +3161,7 @@ export default function PlanYourTripPage() {
         </aside>
       </div>
 
-      {/* Minimal Footer on Mountain Backdrop - Seamless Without Any White Space */}
+      {/* Minimal Footer on Mountain Backdrop */}
       <footer className="w-full py-3 sm:py-4 text-center text-[11px] sm:text-xs text-white/60 tracking-wider select-none shrink-0">
         © 2026 Trail Explorers · Made in India ✦
       </footer>
@@ -2520,70 +3214,50 @@ export default function PlanYourTripPage() {
                 </div>
 
                 <div className="flex flex-col gap-3 mt-2 text-left">
-                  <div>
-                    <label className="text-[11px] font-bold text-white/60 uppercase tracking-wider block mb-1">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={custName}
-                      onChange={(e) => setCustName(e.target.value)}
-                      placeholder="e.g. Rahul Sharma"
-                      className="w-full bg-white/5 border border-white/15 rounded-xl px-3.5 py-2.5 text-white text-sm outline-hidden focus:border-[#d6ff3f]"
-                    />
-                  </div>
+                  <Input
+                    label="Your Name"
+                    required
+                    value={custName}
+                    onChange={(e) => setCustName(e.target.value)}
+                    placeholder="e.g. Rahul Sharma"
+                    className="bg-white/5 text-white border-white/20 focus:border-[#d6ff3f] placeholder:text-white/40"
+                  />
 
-                  <div>
-                    <label className="text-[11px] font-bold text-white/60 uppercase tracking-wider block mb-1">
-                      WhatsApp / Phone *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      value={custPhone}
-                      onChange={(e) => setCustPhone(e.target.value)}
-                      placeholder="+91 98765 43210"
-                      className="w-full bg-white/5 border border-white/15 rounded-xl px-3.5 py-2.5 text-white text-sm outline-hidden focus:border-[#d6ff3f]"
-                    />
-                  </div>
+                  <Input
+                    label="WhatsApp / Phone"
+                    required
+                    type="tel"
+                    value={custPhone}
+                    onChange={(e) => setCustPhone(e.target.value)}
+                    placeholder="+91 98765 43210"
+                    className="bg-white/5 text-white border-white/20 focus:border-[#d6ff3f] placeholder:text-white/40"
+                  />
 
-                  <div>
-                    <label className="text-[11px] font-bold text-white/60 uppercase tracking-wider block mb-1">
-                      Email (Optional)
-                    </label>
-                    <input
-                      type="email"
-                      value={custEmail}
-                      onChange={(e) => setCustEmail(e.target.value)}
-                      placeholder="rahul@example.com"
-                      className="w-full bg-white/5 border border-white/15 rounded-xl px-3.5 py-2.5 text-white text-sm outline-hidden focus:border-[#d6ff3f]"
-                    />
-                  </div>
+                  <Input
+                    label="Email (Optional)"
+                    type="email"
+                    value={custEmail}
+                    onChange={(e) => setCustEmail(e.target.value)}
+                    placeholder="rahul@example.com"
+                    className="bg-white/5 text-white border-white/20 focus:border-[#d6ff3f] placeholder:text-white/40"
+                  />
 
-                  <div>
-                    <label className="text-[11px] font-bold text-white/60 uppercase tracking-wider block mb-1">
-                      When should we call?
-                    </label>
-                    <select
-                      value={custCallTime}
-                      onChange={(e) => setCustCallTime(e.target.value)}
-                      className="w-full bg-[#20201a] border border-white/15 rounded-xl px-3.5 py-2.5 text-white text-sm outline-hidden focus:border-[#d6ff3f]"
-                    >
-                      <option value="As soon as possible">As soon as possible</option>
-                      <option value="Morning (10 AM – 1 PM)">Morning (10 AM – 1 PM)</option>
-                      <option value="Afternoon (1 – 4 PM)">Afternoon (1 – 4 PM)</option>
-                      <option value="Evening (4 – 7 PM)">Evening (4 – 7 PM)</option>
-                    </select>
-                  </div>
+                  <Select
+                    label="When should we call?"
+                    value={custCallTime}
+                    onChange={(e) => setCustCallTime(e.target.value)}
+                    options={[
+                      { label: "As soon as possible", value: "As soon as possible" },
+                      { label: "Morning (10 AM – 1 PM)", value: "Morning (10 AM – 1 PM)" },
+                      { label: "Afternoon (1 – 4 PM)", value: "Afternoon (1 – 4 PM)" },
+                      { label: "Evening (4 – 7 PM)", value: "Evening (4 – 7 PM)" },
+                    ]}
+                  />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full mt-3 py-3 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-sm shadow-[0_8px_20px_-4px_rgba(214,255,63,0.6)] cursor-pointer"
-                >
+                <Button type="submit" variant="primary" size="lg" fullWidth className="mt-3">
                   Confirm & Request Call →
-                </button>
+                </Button>
               </form>
             ) : (
               <div className="text-center py-6 flex flex-col items-center gap-3">
@@ -2592,19 +3266,20 @@ export default function PlanYourTripPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-white">Plan sent successfully!</h3>
                 <p className="text-sm text-white/75 max-w-xs">
-                  Your reference ID is <strong className="text-[#d6ff3f]">{builderRef}</strong>. Our trip expert will call you at{" "}
-                  <strong>{custPhone}</strong> {custCallTime.toLowerCase()}.
+                  Your reference ID is <strong className="text-[#d6ff3f]">{builderRef}</strong>. Our trip expert will
+                  call you at <strong>{custPhone}</strong> {custCallTime.toLowerCase()}.
                 </p>
-                <button
-                  type="button"
+                <Button
+                  variant="outline"
+                  size="md"
+                  className="text-white border-white hover:bg-white hover:text-black mt-4"
                   onClick={() => {
                     setModalOpen(false);
                     setInquirySubmitted(false);
                   }}
-                  className="mt-4 px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors cursor-pointer"
                 >
                   Back to trip planner
-                </button>
+                </Button>
               </div>
             )}
           </div>

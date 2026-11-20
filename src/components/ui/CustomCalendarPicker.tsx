@@ -388,12 +388,12 @@ export function CustomCalendarPicker({
       ref={popoverRef}
       role="dialog"
       aria-label="Advanced Date Picker"
-      className="bg-white border-[2px] border-[#14140f] rounded-[24px] p-4 sm:p-5 shadow-[0_25px_65px_-10px_rgba(20,20,15,0.4)] w-[310px] sm:w-[335px] max-w-[calc(100vw-24px)] text-[#14140f] overscroll-contain touch-pan-y animate-in fade-in zoom-in-95 duration-150 relative select-none"
+      className="bg-white border border-[#e2e2dc] rounded-[24px] p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.18)] w-[310px] sm:w-[335px] max-w-[calc(100vw-24px)] text-[#14140f] overscroll-contain touch-pan-y animate-in fade-in zoom-in-95 duration-150 relative select-none"
     >
       {/* TOP PREVIEW BAR */}
       <div className="flex items-center justify-between pb-2.5 mb-3 border-b border-[#ecece6]">
         <div className="flex items-center gap-1.5 min-w-0 pr-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#d6ff3f] border border-[#14140f] shrink-0" />
+          <span className="w-2.5 h-2.5 rounded-full bg-[#d6ff3f] border border-[#14140f]/20 shrink-0" />
           <span className="text-[12.5px] font-extrabold text-[#14140f] truncate font-heading">
             {selectedDate
               ? `${getOrdinalSuffix(selectedDate.getDate())} ${MONTH_NAMES[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`
@@ -434,8 +434,8 @@ export function CustomCalendarPicker({
                   className={cn(
                     "text-[11.5px] font-extrabold px-3 py-1.5 rounded-[10px] border transition-all cursor-pointer whitespace-nowrap",
                     isCur
-                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f] shadow-[0_2px_8px_rgba(214,255,63,0.5)] scale-105"
-                      : "bg-[#f8f8f5] text-[#14140f] border-[#e2e2dc] hover:bg-[#d6ff3f]/25 hover:border-[#14140f]"
+                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/20 shadow-[0_2px_8px_rgba(214,255,63,0.45)] scale-105"
+                      : "bg-[#f8f8f5] text-[#14140f] border-[#e2e2dc] hover:bg-[#d6ff3f]/25 hover:border-[#14140f]/30"
                   )}
                 >
                   {batch}
@@ -461,7 +461,7 @@ export function CustomCalendarPicker({
         <button
           type="button"
           onClick={() => setIsMonthYearPickerOpen((prev) => !prev)}
-          className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#f8f8f5] hover:bg-[#ecece6] text-[#14140f] font-heading font-extrabold text-[14.5px] tracking-tight transition-all cursor-pointer border border-[#ecece6] hover:border-[#14140f]"
+          className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#f8f8f5] hover:bg-[#ecece6] text-[#14140f] font-heading font-extrabold text-[14.5px] tracking-tight transition-all cursor-pointer border border-[#ecece6] hover:border-[#14140f]/30"
           title="Click to jump to another month or year"
         >
           <span>
@@ -520,8 +520,8 @@ export function CustomCalendarPicker({
                   className={cn(
                     "py-2.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer border",
                     isCurrent
-                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f] shadow-xs"
-                      : "bg-white text-[#14140f] border-[#e2e2dc] hover:bg-[#f4f4ee] hover:border-[#14140f]"
+                      ? "bg-[#d6ff3f] text-[#14140f] border-[#14140f]/20 shadow-xs"
+                      : "bg-white text-[#14140f] border-[#e2e2dc] hover:bg-[#f4f4ee] hover:border-[#14140f]/30"
                   )}
                 >
                   {mShort}
@@ -577,9 +577,9 @@ export function CustomCalendarPicker({
                     "relative w-8 h-8 sm:w-9 sm:h-9 mx-auto rounded-[11px] text-[13px] font-bold flex flex-col items-center justify-center transition-all cursor-pointer select-none",
                     isPast && "text-[#c2c2b8] cursor-not-allowed pointer-events-none opacity-40",
                     !isPast && !isSelected && "hover:bg-[#d6ff3f]/35 hover:text-[#14140f]",
-                    isToday && !isSelected && "border-[1.5px] border-[#14140f] font-black",
+                    isToday && !isSelected && "border border-[#14140f]/40 font-black",
                     isSelected &&
-                      "bg-[#d6ff3f] text-[#14140f] font-black border-2 border-[#14140f] shadow-[0_2px_8px_rgba(214,255,63,0.6)] scale-105 z-10"
+                      "bg-[#d6ff3f] text-[#14140f] font-black border border-[#14140f]/25 shadow-[0_2px_10px_rgba(214,255,63,0.55)] scale-105 z-10"
                   )}
                 >
                   <span>{day}</span>
@@ -620,7 +620,7 @@ export function CustomCalendarPicker({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="px-4 py-1.5 rounded-[10px] bg-[#d6ff3f] text-[#14140f] border-[1.5px] border-[#14140f] font-heading font-black text-[12px] hover:bg-[#cbf033] shadow-[0_2px_8px_rgba(214,255,63,0.4)] active:scale-95 transition-all cursor-pointer"
+              className="px-4 py-1.5 rounded-[10px] bg-[#d6ff3f] text-[#14140f] border-none font-heading font-black text-[12px] hover:bg-[#cbf033] shadow-[0_2px_8px_rgba(214,255,63,0.4)] active:scale-95 transition-all cursor-pointer"
             >
               Done
             </button>
@@ -654,7 +654,7 @@ export function CustomCalendarPicker({
           }
         }}
         className={cn(
-          "w-full flex items-center justify-between gap-2 text-left bg-white border-[1.5px] border-[#e2e2dc] rounded-[12px] px-3.5 py-3 text-[14px] font-medium text-[#14140f] outline-none transition-all cursor-pointer hover:border-[#14140f] focus:border-[#14140f] focus:ring-2 focus:ring-[#d6ff3f]/40 min-h-[46px]",
+          "w-full flex items-center justify-between gap-2 text-left bg-white border-[1.5px] border-[#e2e8f0] rounded-[12px] px-3.5 py-3 text-[14px] font-medium text-[#14140f] outline-none transition-all cursor-pointer hover:border-[#cbd5e1] focus:border-[#14140f] focus:ring-2 focus:ring-[#d6ff3f]/40 min-h-[46px]",
           isOpen && "border-[#14140f] ring-2 ring-[#d6ff3f]/40",
           !value && "text-[#707068]",
           disabled && "opacity-60 cursor-not-allowed bg-[#f8fafc]",
