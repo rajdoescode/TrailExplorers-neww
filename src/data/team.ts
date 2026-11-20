@@ -42,10 +42,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Team Leadership",
     ],
     socialLinks: {
-      instagram: "",
+      instagram: "https://www.instagram.com/trail_explorers_",
       linkedin: "",
-      facebook: "",
-      x: "",
+      facebook: "https://facebook.com",
+      x: "https://x.com",
     },
     image: "/assets/images/about/harsh-thakkar.avif",
     status: "active",

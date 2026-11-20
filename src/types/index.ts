@@ -127,6 +127,12 @@ export interface SiteConfig {
   hero_headline: string;
   hero_subtitle: string;
   announcement_bar: string;
+  social?: {
+    instagram: string;
+    youtube: string;
+    facebook: string;
+    twitter: string;
+  };
   home_destinations?: string;
   carousel_order?: {
     reels?: { order: (number | string)[]; centre?: number | string };

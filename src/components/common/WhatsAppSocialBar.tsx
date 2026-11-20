@@ -14,9 +14,9 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
   className = "",
   phone = "+91-70166 40870",
   whatsappLink = "https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B%20I'm%20interested%20in%20planning%20a%20Himalayan%20trip%20with%20you.",
-  instagramLink = "https://www.instagram.com/awarabanjaracommunity?igsh=MXhpZG11ZnV4MmdhcA==",
-  youtubeLink = "https://youtube.com/@awarabanjara.travel?si=pvucdi12kuNIf2Z8",
-  facebookLink = "https://share.google/UcwoxEcVj5gfu0Izq",
+  instagramLink = SITE_CONFIG.social?.instagram || "https://www.instagram.com/trail_explorers_",
+  youtubeLink = SITE_CONFIG.social?.youtube || "https://www.youtube.com/@Trail_Explorers",
+  facebookLink = SITE_CONFIG.social?.facebook || "https://facebook.com",
 }) => {
   return (
     <div

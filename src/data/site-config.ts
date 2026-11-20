@@ -3,6 +3,12 @@ import { SiteConfig } from "@/types";
 export const SITE_CONFIG: SiteConfig = {
   "site_phone": "+91 70166 40870",
   "whatsapp_number": "+917016640870",
+  "social": {
+    "instagram": "https://www.instagram.com/trail_explorers_",
+    "youtube": "https://www.youtube.com/@Trail_Explorers",
+    "facebook": "https://facebook.com",
+    "twitter": "https://x.com"
+  },
   "hero_headline": "Trail Explorers",
   "hero_subtitle": "Curated Himalayan Escapes, Motorbike Expeditions & Offbeat Group Trips",
   "announcement_bar": "\u2728 Escape the ordinary \u2014 Explore handpicked Himalayan group trips!",

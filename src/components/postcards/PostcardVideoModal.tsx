@@ -31,7 +31,7 @@ export const PostcardVideoModal: React.FC<PostcardVideoModalProps> = ({
     overlayRef,
   });
 
-  const targetUrl = postcard.video_url || postcard.embed_url || "https://instagram.com";
+  const targetUrl = postcard.video_url || postcard.embed_url || "https://www.instagram.com/trail_explorers_";
   const imgSrc = normalizePostcardImg(postcard.image_url);
 
   return (
