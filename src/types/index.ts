@@ -140,3 +140,6 @@ export interface SiteConfig {
     lemonade?: { order: (number | string)[]; centre?: number | string };
   };
 }
+
+export type LeadStatus = "new" | "contacted" | "quoted" | "confirmed" | "cancelled" | "archived";
+

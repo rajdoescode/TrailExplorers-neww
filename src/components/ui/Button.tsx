@@ -8,6 +8,7 @@ export type ButtonVariant =
   | "secondary"
   | "outline"
   | "ghost"
+  | "danger"
   | "text"
   | "icon"
   | "white"
@@ -37,6 +38,8 @@ const variantStyles: Record<ButtonVariant, string> = {
     "bg-transparent text-[#14140f] border-2 border-[#14140f] hover:bg-[#14140f] hover:text-white hover:translate-y-[-2px] active:translate-y-0 font-bold",
   ghost:
     "bg-transparent text-[#14140f] border-2 border-transparent hover:bg-[#f6f6f1] active:bg-[#e8e8e2] font-semibold",
+  danger:
+    "bg-[#e0455a] text-white border-2 border-[#e0455a] hover:bg-red-700 hover:border-red-700 hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(224,69,90,0.4)] active:translate-y-0 font-bold",
   text:
     "bg-transparent text-[#14140f] border-0 hover:underline underline-offset-4 p-0 h-auto font-bold",
   icon:

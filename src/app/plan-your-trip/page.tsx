@@ -1754,7 +1754,7 @@ export default function PlanYourTripPage() {
                       <CustomCalendarPicker
                         label="When do you want to start?"
                         value={startDate}
-                        onChange={(newDate) => {
+                        onChange={(newDate: string) => {
                           setStartDate(newDate);
                           setBuilderDays(buildDefaultItinerary(selectedRegions, numDays, newDate));
                         }}
