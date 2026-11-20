@@ -143,3 +143,24 @@ export interface SiteConfig {
 
 export type LeadStatus = "new" | "contacted" | "quoted" | "confirmed" | "cancelled" | "archived";
 
+export interface Inquiry {
+  id: string;
+  customer_name: string;
+  phone: string;
+  email?: string;
+  trip_id?: string | number;
+  trip_title: string;
+  destination?: string;
+  travel_date?: string;
+  num_travelers: number;
+  preferred_room_type?: string;
+  status: LeadStatus;
+  source: "website_modal" | "plan_your_trip" | "contact_page" | "whatsapp" | "direct" | "manual" | "sheet_import" | "instagram" | "meta_ads" | "referral" | string;
+  assigned_to?: string;
+  notes?: string;
+  custom_budget?: string;
+  pickup_city?: string;
+  created_at: string;
+  updated_at?: string;
+}
+
