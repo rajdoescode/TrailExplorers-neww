@@ -1225,10 +1225,10 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "author": "Trail Explorers Community",
-    "video_url": "", // Commented out awarabanjara reel redirect
-    "embed_url": "", // Commented out awarabanjara reel embed
+    "video_url": "/assets/videos/hero-loop.mp4",
+    "embed_url": "/assets/videos/hero-loop.mp4",
     "image_url": "/assets/images/trips/img_1786622470768_IMG_0175.jpg",
-    "read_time": "1 min watch",
+    "read_time": "0:45",
     "featured_in_watch_read": true,
     "updated_at": "2026-08-13T12:01:15.995Z",
     "created_at": "2026-08-11T06:28:02.544Z"
@@ -1256,10 +1256,10 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "author": "Trail Explorers Community",
-    "video_url": "", // Commented out awarabanjara reel redirect
-    "embed_url": "", // Commented out awarabanjara reel embed
+    "video_url": "/assets/videos/hero-loop.mp4",
+    "embed_url": "/assets/videos/hero-loop.mp4",
     "image_url": "/assets/images/trips/img_1786784948655_IMG_0176.jpg",
-    "read_time": "1 min watch",
+    "read_time": "0:30",
     "featured_in_watch_read": true,
     "updated_at": "2026-08-15T09:09:10.820Z",
     "created_at": "2026-08-10T13:03:30.705Z"
@@ -1271,9 +1271,9 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "image_url": "/assets/images/trips/img_1786784967421_IMG_0178.jpg",
-    "video_url": "", // Commented out awarabanjara reel redirect
-    "embed_url": "", // Commented out awarabanjara reel embed
-    "read_time": "1 min watch",
+    "video_url": "/assets/videos/hero-loop.mp4",
+    "embed_url": "/assets/videos/hero-loop.mp4",
+    "read_time": "0:45",
     "author": "Trail Explorers Community",
     "author_avatar": "/assets/images/reviews/pfp-karan.jpg",
     "content": "Crossing Asia's highest suspension bridge on two wheels.",
@@ -1288,9 +1288,9 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "image_url": "/assets/images/trips/img_1789401380012_Zanskar___.jpg",
-    "video_url": "", // Commented out awarabanjara reel redirect
-    "embed_url": "", // Commented out awarabanjara reel embed
-    "read_time": "1 min watch",
+    "video_url": "/assets/videos/hero-loop.mp4",
+    "embed_url": "/assets/videos/hero-loop.mp4",
+    "read_time": "0:52",
     "author": "Trail Explorers Community",
     "author_avatar": "/assets/images/reviews/pfp-rohit.jpg",
     "content": "Golden hour glow at the sacred God's Mountain in Zanskar Valley.",
@@ -1305,9 +1305,9 @@ export const POSTCARDS_DATA: Postcard[] = [
     "subtitle": "Watch on Instagram",
     "category": "Instagram Reel",
     "image_url": "/assets/images/trips/img_1786614302886_IMG_0177.jpg",
-    "video_url": "", // Commented out awarabanjara reel redirect
-    "embed_url": "", // Commented out awarabanjara reel embed
-    "read_time": "1 min watch",
+    "video_url": "/assets/videos/hero-loop.mp4",
+    "embed_url": "/assets/videos/hero-loop.mp4",
+    "read_time": "0:40",
     "author": "Trail Explorers Community",
     "author_avatar": "/assets/images/reviews/pfp-priya.jpg",
     "content": "Trekking through the 7 pristine alpine lakes of Kashmir.",

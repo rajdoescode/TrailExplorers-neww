@@ -245,19 +245,31 @@ export const WatchReadSection: React.FC = () => {
               {selectedPostcard.title}
             </h3>
 
-            <div className="relative h-64 sm:h-80 w-full rounded-xl overflow-hidden mb-6">
-              <SkeletonImage
-                src={selectedPostcard.image_url}
-                alt={selectedPostcard.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 672px"
-                className="object-cover"
-                skeletonClassName="rounded-xl"
-              />
+            <div className="relative h-64 sm:h-80 w-full rounded-xl overflow-hidden mb-6 bg-black">
+              {selectedPostcard.video_url ? (
+                <video
+                  src={selectedPostcard.video_url}
+                  poster={selectedPostcard.image_url}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <SkeletonImage
+                  src={selectedPostcard.image_url}
+                  alt={selectedPostcard.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 672px"
+                  className="object-cover"
+                  skeletonClassName="rounded-xl"
+                />
+              )}
             </div>
 
             <p className="text-[#3d3d36] text-base leading-relaxed whitespace-pre-line font-medium">
-              {selectedPostcard.content}
+              {selectedPostcard.content || selectedPostcard.subtitle}
             </p>
           </div>
         </div>

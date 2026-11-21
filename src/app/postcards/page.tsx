@@ -8,9 +8,9 @@ import { useScrollLock } from "@/hooks/useScrollLock";
 import { PostcardRow } from "@/components/postcards/PostcardRow";
 import { AttractionCard } from "@/components/postcards/AttractionCard";
 import { GuideCard } from "@/components/postcards/GuideCard";
-// import { ReelCard } from "@/components/postcards/ReelCard";
+import { ReelCard } from "@/components/postcards/ReelCard";
 import { PostcardReaderModal } from "@/components/postcards/PostcardReaderModal";
-// import { PostcardVideoModal } from "@/components/postcards/PostcardVideoModal";
+import { PostcardVideoModal } from "@/components/postcards/PostcardVideoModal";
 import { ArrowLeft } from "lucide-react";
 
 type CategoryFilter = "all" | "attraction" | "travel_guide" | "field_guide" | "video";
@@ -18,10 +18,10 @@ type CategoryFilter = "all" | "attraction" | "travel_guide" | "field_guide" | "v
 export default function PostcardsPage() {
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>("all");
   const [activeStory, setActiveStory] = useState<Postcard | null>(null);
-  // const [activeVideo, setActiveVideo] = useState<Postcard | null>(null);
+  const [activeVideo, setActiveVideo] = useState<Postcard | null>(null);
 
   // Global reference-counted scroll lock for modals
-  useScrollLock(Boolean(activeStory));
+  useScrollLock(Boolean(activeStory || activeVideo));
 
   // Partition postcards according to their category / type
   const attractions = useMemo(
@@ -42,48 +42,45 @@ export default function PostcardsPage() {
     []
   );
 
-  // Videos commented out for now as requested
-  /*
   const videos = useMemo(
     () =>
       POSTCARDS_DATA.filter(
-        (p) => p.type === "reel" || p.type === "video" || p.category === "Instagram Reel"
+        (p) => p.type === "reel" || p.type === "video" || p.category === "Instagram Reel" || Boolean(p.video_url)
       ),
     []
   );
-  */
 
   const filterChips: { id: CategoryFilter; label: string; count: number }[] = [
-    { id: "all", label: "All", count: attractions.length + travelGuides.length + fieldGuides.length },
+    { id: "all", label: "All", count: attractions.length + travelGuides.length + fieldGuides.length + videos.length },
+    { id: "video", label: "Video Reels", count: videos.length },
     { id: "attraction", label: "Attractions", count: attractions.length },
     { id: "travel_guide", label: "Travel Guide", count: travelGuides.length },
     { id: "field_guide", label: "Field Guide", count: fieldGuides.length },
-    // Videos section & chip commented out for now as requested:
-    // { id: "video", label: "Videos", count: videos.length },
   ];
 
   const handleCardClick = (postcard: Postcard) => {
-    // If reel/video, can open video modal if enabled; otherwise open story reader
-    setActiveStory(postcard);
+    if (postcard.type === "reel" || postcard.video_url || postcard.category === "Instagram Reel") {
+      setActiveVideo(postcard);
+    } else {
+      setActiveStory(postcard);
+    }
   };
 
   // Get current filtered list when a specific category is active
   const activeList = useMemo(() => {
     switch (selectedCategory) {
+      case "video":
+        return videos;
       case "attraction":
         return attractions;
       case "travel_guide":
         return travelGuides;
       case "field_guide":
         return fieldGuides;
-      /*
-      case "video":
-        return videos;
-      */
       default:
-        return [...attractions, ...travelGuides, ...fieldGuides];
+        return [...videos, ...attractions, ...travelGuides, ...fieldGuides];
     }
-  }, [selectedCategory, attractions, travelGuides, fieldGuides]);
+  }, [selectedCategory, videos, attractions, travelGuides, fieldGuides]);
 
   const currentCategoryInfo = filterChips.find((c) => c.id === selectedCategory);
 
@@ -96,7 +93,7 @@ export default function PostcardsPage() {
             Postcards
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-[#6b6b63] max-w-xl mx-auto font-medium">
-            Perspectives, guides, and untold stories from the frontier.
+            Perspectives, guides, video reels, and untold stories from the frontier.
           </p>
 
           {/* Category Chips Bar */}
@@ -144,7 +141,19 @@ export default function PostcardsPage() {
         {selectedCategory === "all" ? (
           /* Multi-Row Browse View */
           <div>
-            {/* Section 1: Attractions (68) */}
+            {/* Section 1: Travel Video Reels */}
+            {videos.length > 0 && (
+              <PostcardRow
+                title="Travel Video Reels"
+                count={videos.length}
+                items={videos}
+                categoryKey="video"
+                onViewAll={() => setSelectedCategory("video")}
+                onCardClick={handleCardClick}
+              />
+            )}
+
+            {/* Section 2: Attractions */}
             <PostcardRow
               title="Attractions"
               count={attractions.length}
@@ -154,7 +163,7 @@ export default function PostcardsPage() {
               onCardClick={handleCardClick}
             />
 
-            {/* Section 2: Travel Guide (6) */}
+            {/* Section 3: Travel Guide */}
             <PostcardRow
               title="Travel Guide"
               count={travelGuides.length}
@@ -164,7 +173,7 @@ export default function PostcardsPage() {
               onCardClick={handleCardClick}
             />
 
-            {/* Section 3: Field Guide (1) */}
+            {/* Section 4: Field Guide */}
             <PostcardRow
               title="Field Guide"
               count={fieldGuides.length}
@@ -173,18 +182,6 @@ export default function PostcardsPage() {
               onViewAll={() => setSelectedCategory("field_guide")}
               onCardClick={handleCardClick}
             />
-
-            {/* Section 4: Videos (5) - Commented out for now as requested */}
-            {/*
-            <PostcardRow
-              title="Videos"
-              count={videos.length}
-              items={videos}
-              categoryKey="video"
-              onViewAll={() => setSelectedCategory("video")}
-              onCardClick={handleCardClick}
-            />
-            */}
           </div>
         ) : (
           /* Filtered Category Grid View */
@@ -212,6 +209,15 @@ export default function PostcardsPage() {
             {/* Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
               {activeList.map((postcard) => {
+                if (postcard.type === "reel" || postcard.video_url || postcard.category === "Instagram Reel") {
+                  return (
+                    <ReelCard
+                      key={postcard.id}
+                      postcard={postcard}
+                      onClick={handleCardClick}
+                    />
+                  );
+                }
                 if (selectedCategory === "attraction") {
                   return (
                     <AttractionCard
@@ -221,17 +227,6 @@ export default function PostcardsPage() {
                     />
                   );
                 }
-                /*
-                if (selectedCategory === "video") {
-                  return (
-                    <ReelCard
-                      key={postcard.id}
-                      postcard={postcard}
-                      onClick={handleCardClick}
-                    />
-                  );
-                }
-                */
                 return (
                   <GuideCard
                     key={postcard.id}
@@ -245,7 +240,7 @@ export default function PostcardsPage() {
         )}
       </Container>
 
-      {/* Reader Modal */}
+      {/* Story Reader Modal */}
       {activeStory && (
         <PostcardReaderModal
           postcard={activeStory}
@@ -253,15 +248,13 @@ export default function PostcardsPage() {
         />
       )}
 
-      {/* Video Reel Modal - Commented out for now as requested */}
-      {/*
+      {/* Video Reel Modal */}
       {activeVideo && (
         <PostcardVideoModal
           postcard={activeVideo}
           onClose={() => setActiveVideo(null)}
         />
       )}
-      */}
     </div>
   );
 }

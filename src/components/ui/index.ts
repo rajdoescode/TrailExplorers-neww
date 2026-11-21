@@ -17,6 +17,7 @@ export * from "./DataTable";
 export * from "./Drawer";
 export * from "./FileUpload";
 export * from "./ImageUpload";
+export * from "./VideoUpload";
 export * from "./Tooltip";
 export * from "./Breadcrumb";
 export * from "./Accordion";
