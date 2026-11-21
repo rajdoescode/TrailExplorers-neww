@@ -16,6 +16,7 @@ export * from "./ConfirmModal";
 export * from "./DataTable";
 export * from "./Drawer";
 export * from "./FileUpload";
+export * from "./ImageUpload";
 export * from "./Tooltip";
 export * from "./Breadcrumb";
 export * from "./Accordion";
