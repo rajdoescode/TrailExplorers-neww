@@ -17,6 +17,10 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./Button";
+import { IconButton } from "./IconButton";
+import { Input } from "./Input";
+import { Checkbox } from "./Checkbox";
+import { Select } from "./Select";
 import { Badge } from "./Badge";
 
 export interface ColumnDef<T> {
@@ -277,27 +281,22 @@ export function DataTable<T extends Record<string, any>>({
       {/* 1. Toolbar */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 rounded-[20px] border-2 border-[#e2e2dc] shadow-card">
         {/* Left: Search input */}
-        <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 text-[#6b6b63] absolute left-3.5 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
+        <div className="flex-1 max-w-md">
+          <Input
+            variant="pill"
+            leftIcon={<Search className="w-4 h-4 text-[#6b6b63]" />}
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
               setCurrentPage(1);
             }}
             placeholder={searchPlaceholder}
-            className="w-full bg-[#f6f6f1] border-2 border-[#e2e2dc] rounded-full pl-10 pr-9 py-2 text-xs sm:text-sm text-[#14140f] placeholder:text-[#6b6b63] focus:border-[#14140f] focus:bg-white outline-none transition-all"
+            clearable
+            onClear={() => {
+              setSearchQuery("");
+              setCurrentPage(1);
+            }}
           />
-          {searchQuery && (
-            <button
-              type="button"
-              onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6b6b63] hover:text-[#14140f]"
-            >
-              <X className="w-3.5 h-3.5" />
-            </button>
-          )}
         </div>
 
         {/* Right: Controls & Actions */}
@@ -352,23 +351,21 @@ export function DataTable<T extends Record<string, any>>({
                       typeof col.header === "string" ? col.header : colId;
 
                     return (
-                      <label
+                      <div
                         key={colId}
-                        className="flex items-center gap-2 px-2 py-1.5 text-xs font-semibold hover:bg-[#f6f6f1] rounded-lg cursor-pointer text-[#14140f]"
+                        className="px-2 py-1 hover:bg-[#f6f6f1] rounded-lg"
                       >
-                        <input
-                          type="checkbox"
+                        <Checkbox
+                          label={label}
                           checked={isVisible}
-                          onChange={(e) =>
+                          onCheckedChange={(checked) =>
                             setColumnVisibility({
                               ...columnVisibility,
-                              [colId]: e.target.checked,
+                              [colId]: checked,
                             })
                           }
-                          className="rounded w-3.5 h-3.5 accent-[#14140f]"
                         />
-                        <span className="truncate">{label}</span>
-                      </label>
+                      </div>
                     );
                   })}
                 </div>
@@ -412,13 +409,12 @@ export function DataTable<T extends Record<string, any>>({
               <tr className="bg-[#f6f6f1] border-b-2 border-[#e2e2dc] text-[11px] font-extrabold text-[#6b6b63] uppercase tracking-wider select-none">
                 {enableSelection && (
                   <th className="py-4 px-4 w-10 text-center">
-                    <input
-                      type="checkbox"
-                      checked={isAllPageSelected}
-                      onChange={handleSelectAllPage}
-                      className="rounded w-4 h-4 accent-[#14140f] cursor-pointer"
-                      title="Select all on this page"
-                    />
+                    <div className="flex justify-center">
+                      <Checkbox
+                        checked={isAllPageSelected}
+                        onChange={handleSelectAllPage}
+                      />
+                    </div>
                   </th>
                 )}
 
@@ -534,12 +530,12 @@ export function DataTable<T extends Record<string, any>>({
                           className="py-4 px-4 text-center"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => handleSelectRow(key, row)}
-                            className="rounded w-4 h-4 accent-[#14140f] cursor-pointer"
-                          />
+                          <div className="flex justify-center">
+                            <Checkbox
+                              checked={isSelected}
+                              onChange={() => handleSelectRow(key, row)}
+                            />
+                          </div>
                         </td>
                       )}
 
@@ -600,35 +596,33 @@ export function DataTable<T extends Record<string, any>>({
 
             <div className="flex items-center gap-1.5 pl-2 border-l border-[#e2e2dc]">
               <span className="text-[#6b6b63] hidden sm:inline">Per page:</span>
-              <select
-                value={pageSize}
+              <Select
+                size="sm"
+                variant="outline"
+                value={String(pageSize)}
                 onChange={(e) => {
                   setPageSize(Number(e.target.value));
                   setCurrentPage(1);
                 }}
-                className="bg-[#f6f6f1] border border-[#e2e2dc] rounded-lg px-2 py-1 text-xs font-bold text-[#14140f] outline-none focus:border-[#14140f]"
-              >
-                {pageSizeOptions.map((opt) => (
-                  <option key={opt} value={opt}>
-                    {opt}
-                  </option>
-                ))}
-              </select>
+                options={pageSizeOptions.map((opt) => ({
+                  value: String(opt),
+                  label: String(opt),
+                }))}
+              />
             </div>
           </div>
 
           {/* Page Navigation Controls */}
           {totalPages > 1 && (
             <div className="flex items-center gap-1 self-end sm:self-auto">
-              <button
-                type="button"
+              <IconButton
+                size="xs"
+                variant="outline"
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={safeCurrentPage === 1}
-                className="p-1.5 rounded-lg border border-[#e2e2dc] hover:bg-[#f6f6f1] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 title="Previous page"
-              >
-                <ChevronLeft className="w-4 h-4 text-[#14140f]" />
-              </button>
+                icon={<ChevronLeft className="w-4 h-4 text-[#14140f]" />}
+              />
 
               <div className="flex items-center gap-1">
                 {Array.from({ length: totalPages }).map((_, idx) => {
@@ -670,15 +664,14 @@ export function DataTable<T extends Record<string, any>>({
                 })}
               </div>
 
-              <button
-                type="button"
+              <IconButton
+                size="xs"
+                variant="outline"
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={safeCurrentPage === totalPages}
-                className="p-1.5 rounded-lg border border-[#e2e2dc] hover:bg-[#f6f6f1] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
                 title="Next page"
-              >
-                <ChevronRight className="w-4 h-4 text-[#14140f]" />
-              </button>
+                icon={<ChevronRight className="w-4 h-4 text-[#14140f]" />}
+              />
             </div>
           )}
         </div>

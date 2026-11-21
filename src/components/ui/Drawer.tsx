@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +15,8 @@ export interface DrawerProps {
   side?: "right" | "left" | "bottom";
   className?: string;
   size?: "sm" | "md" | "lg" | "xl";
+  closeOnBackdropClick?: boolean;
+  closeOnEsc?: boolean;
 }
 
 export const Drawer: React.FC<DrawerProps> = ({
@@ -26,23 +29,46 @@ export const Drawer: React.FC<DrawerProps> = ({
   side = "right",
   className,
   size = "md",
+  closeOnBackdropClick = true,
+  closeOnEsc = true,
 }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (!isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleKeyDown);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen || !mounted) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const previousPaddingRight = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
     document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && closeOnEsc) {
+        e.stopPropagation();
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = previousOverflow;
+      document.body.style.paddingRight = previousPaddingRight;
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, mounted, onClose, closeOnEsc]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const sizeStyles = {
     sm: "max-w-md",
@@ -57,24 +83,40 @@ export const Drawer: React.FC<DrawerProps> = ({
     bottom: "inset-x-0 bottom-0 max-h-[85vh] animate-slide-up rounded-t-[26px]",
   };
 
-  return (
+  const drawerContent = (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex justify-end"
+      role="dialog"
+      aria-modal="true"
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        width: "100vw",
+        height: "100vh",
+        minHeight: "100dvh",
+        zIndex: 9990,
+      }}
+      className="fixed inset-0 w-screen h-screen min-h-[100dvh] bg-black/60 backdrop-blur-sm flex justify-end animate-fade-in"
       onClick={(e) => {
-        if (e.target === overlayRef.current) onClose();
+        if (closeOnBackdropClick && e.target === overlayRef.current) onClose();
       }}
     >
       <div
+        ref={drawerRef}
+        tabIndex={-1}
         className={cn(
-          "w-full bg-white flex flex-col shadow-2xl border-l-2 border-[#14140f] z-50",
+          "w-full bg-white flex flex-col shadow-2xl border-l-2 border-[#14140f] z-50 outline-none",
           sideAnimation[side],
           side !== "bottom" && sizeStyles[size],
           className
         )}
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-start justify-between px-6 py-5 border-b border-[#e2e2dc] bg-[#fdfdfc]">
+        <div className="flex items-start justify-between px-6 py-5 border-b border-[#e2e2dc] bg-[#fdfdfc] shrink-0">
           <div className="space-y-1 pr-4">
             {title && (
               <h3 className="text-lg sm:text-xl font-extrabold text-[#14140f] font-heading tracking-tight">
@@ -88,7 +130,7 @@ export const Drawer: React.FC<DrawerProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-full hover:bg-[#f6f6f1] text-[#6b6b63] hover:text-[#14140f] transition-colors"
+            className="p-1.5 rounded-full hover:bg-[#f6f6f1] text-[#6b6b63] hover:text-[#14140f] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d6ff3f]"
             aria-label="Close drawer"
           >
             <X className="w-5 h-5" />
@@ -96,15 +138,17 @@ export const Drawer: React.FC<DrawerProps> = ({
         </div>
 
         {/* Body */}
-        <div className="flex-1 overflow-y-auto px-6 py-5">{children}</div>
+        <div className="flex-1 overflow-y-auto px-6 py-5 overscroll-contain">{children}</div>
 
         {/* Footer */}
         {footer && (
-          <div className="px-6 py-4 border-t border-[#e2e2dc] bg-[#f6f6f1]/60 flex items-center justify-end gap-3">
+          <div className="px-6 py-4 border-t border-[#e2e2dc] bg-[#f6f6f1]/60 flex items-center justify-end gap-3 shrink-0">
             {footer}
           </div>
         )}
       </div>
     </div>
   );
+
+  return createPortal(drawerContent, document.body);
 };
