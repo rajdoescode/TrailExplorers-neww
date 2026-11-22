@@ -519,8 +519,7 @@ video::-webkit-media-controls-enclosure {
 
 /* Region Icons Section (Homepage) matching original site */
 .region-icons {
-  padding-top: clamp(40px, 6vw, 72px);
-  padding-bottom: 24px;
+  padding-block: 12px;
   background-color: transparent;
 }
 .region-icons-list {
@@ -530,27 +529,57 @@ video::-webkit-media-controls-enclosure {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(16px, 4vw, 56px);
+  align-items: stretch;
+  gap: clamp(12px, 2vw, 24px);
 }
 .region-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  width: clamp(96px, 14vw, 170px);
+  flex: 1 1 0px;
+  max-width: 210px;
+  min-width: 130px;
 }
 .region-icon a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 12px;
   width: 100%;
-  color: inherit;
+  height: 100%;
+  padding: 22px 14px 18px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(20, 20, 15, 0.07), inset 0 1px 1px #ffffff;
+  color: #14140f;
   text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.region-icon a:hover {
+  background: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(20, 20, 15, 0.12), inset 0 1px 1px #ffffff;
+  border-color: #14140f;
+}
+.region-icon a.is-picked {
+  background: #14140f;
+  border-color: #14140f;
+  box-shadow: 0 12px 28px rgba(20, 20, 15, 0.22);
+}
+.region-icon a.is-picked .region-icon-art {
+  background-color: #d6ff3f;
+}
+.region-icon a.is-picked .region-icon-name {
+  color: #d6ff3f;
 }
 .region-icon-art {
   display: block;
-  width: 100%;
+  width: clamp(56px, 5.5vw, 78px);
+  height: clamp(56px, 5.5vw, 78px);
   aspect-ratio: 1;
   background-color: #14140f;
   -webkit-mask: center / contain no-repeat;
@@ -558,11 +587,7 @@ video::-webkit-media-controls-enclosure {
   transition: background-color 0.2s ease, transform 0.25s ease;
 }
 .region-icon a:hover .region-icon-art {
-  transform: translateY(-4px);
-}
-.region-icon a.is-picked .region-icon-art {
-  background-color: #ccff00;
-  animation: region-icon-pick 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(1.08);
 }
 @keyframes region-icon-pick {
   0% { transform: scale(1); }
@@ -570,36 +595,50 @@ video::-webkit-media-controls-enclosure {
   100% { transform: scale(1); }
 }
 .region-icon-name {
-  font-size: clamp(12px, 1.4vw, 16px);
-  font-weight: 700;
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #14140f;
   text-align: center;
+  line-height: 1.2;
 }
 @media (max-width: 768px) {
   .region-icons {
-    padding-top: 32px;
-    padding-bottom: 16px;
+    padding-block: 8px;
   }
   .region-icons-list {
     flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 16px;
-    margin: 0 -16px;
-    padding: 4px 16px 8px;
+    gap: 12px;
+    margin: 0;
+    padding: 4px 4px 8px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 16px;
+    scroll-padding: 0 8px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .region-icons-list::-webkit-scrollbar { display: none; }
   .region-icon {
     flex: 0 0 auto;
-    width: clamp(88px, 28vw, 120px);
+    width: 108px;
+    min-width: 0;
     scroll-snap-align: start;
+    gap: 6px;
+  }
+  .region-icon a {
+    padding: 14px 10px 12px;
+    border-radius: 18px;
     gap: 8px;
+  }
+  .region-icon-art {
+    width: 48px;
+    height: 48px;
+  }
+  .region-icon-name {
+    font-size: 11px;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -1469,16 +1508,18 @@ body.pc-mode-chat main {
   right: calc(100% + 12px);
   bottom: 6px;
   width: max-content;
-  max-width: 250px;
-  padding: 11px 30px 11px 14px;
-  border-radius: 16px 16px 4px 16px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  max-width: 260px;
+  padding: 12px 32px 12px 15px;
+  border-radius: 20px 20px 6px 20px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   color: #14140f;
   box-shadow:
-    0 10px 28px rgba(20, 20, 15, 0.18),
-    0 0 0 1.5px #14140f;
+    0 14px 38px rgba(20, 20, 15, 0.12),
+    0 2px 8px rgba(20, 20, 15, 0.04),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.95);
   pointer-events: none;
   opacity: 0;
   transform: translateY(8px) scale(0.85);
@@ -1518,21 +1559,25 @@ body.pc-mode-chat main {
 .explorer-float__chips:not(:empty) { margin-top: 9px; }
 
 .explorer-float__chip {
-  padding: 4px 10px;
+  padding: 4px 11px;
   border-radius: 999px;
-  background: #d6ff3f;
+  background: rgba(214, 255, 63, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #14140f;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: inset 0 0 0 1.5px #14140f;
-  transition: transform 0.15s ease, background 0.15s ease;
+  box-shadow: 0 2px 8px rgba(214, 255, 63, 0.35), inset 0 0 0 1.2px #14140f;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
   display: inline-block;
 }
 
 .explorer-float__chip:hover,
 .explorer-float__chip:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-1.5px);
+  background: #d6ff3f;
+  box-shadow: 0 4px 14px rgba(214, 255, 63, 0.55), inset 0 0 0 1.2px #14140f;
 }
 
 .explorer-float__close {
@@ -1622,18 +1667,25 @@ body.pc-mode-chat main {
     height: 110px;
   }
   .explorer-float__bubble {
-    max-width: min(210px, calc(100vw - 92px));
+    max-width: min(220px, calc(100vw - 92px));
     right: calc(100% + 10px);
-    padding: 8px 24px 8px 11px;
-    border-radius: 14px 14px 4px 14px;
+    padding: 9px 26px 9px 12px;
+    border-radius: 16px 16px 4px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    box-shadow:
+      0 12px 30px rgba(20, 20, 15, 0.12),
+      inset 0 1px 1.5px rgba(255, 255, 255, 0.95);
   }
   .explorer-float__text { font-size: 12px; }
   .explorer-float__chips { gap: 5px; }
   .explorer-float__chips:not(:empty) { margin-top: 7px; }
   .explorer-float__chip {
-    padding: 3px 9px;
+    padding: 3.5px 10px;
     font-size: 11px;
-    box-shadow: inset 0 0 0 1.2px #14140f;
+    box-shadow: 0 2px 6px rgba(214, 255, 63, 0.35), inset 0 0 0 1.2px #14140f;
   }
   .explorer-float__close {
     top: 3px;
