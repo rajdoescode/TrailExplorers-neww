@@ -280,7 +280,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="text-xs sm:text-sm font-bold text-[#14140f] select-none flex items-center justify-between"
+            className="text-xs sm:text-sm font-bold text-[#14140f] select-none flex items-center justify-between h-[22px] tracking-wide"
           >
             <span>
               {label}

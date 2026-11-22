@@ -103,7 +103,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
         {/* Search Row */}
         <div className="flex items-end gap-2 flex-1 min-w-0">
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1.5">
+            <div className="flex items-center gap-2 mb-1.5 h-[22px]">
               <label
                 htmlFor="filterSearch"
                 className="text-xs sm:text-sm font-bold text-[#14140f] tracking-wide"
@@ -160,7 +160,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
         {/* Dropdowns Row on Mobile (Grid of 2 or 3) / Inline on Desktop */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:flex lg:items-end gap-2.5 sm:gap-3 w-full lg:w-auto">
           {/* Category Select (hidden on small mobile since quick pills are visible above) */}
-          <div className="hidden sm:block lg:block w-full sm:w-auto lg:w-[180px] shrink-0">
+          <div className="hidden sm:block lg:block w-full sm:w-auto lg:w-[190px] shrink-0">
             <Select
               id="filterCategory"
               label="CATEGORY"
@@ -170,12 +170,13 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                 label: c.label,
                 value: c.id,
               }))}
-              className="bg-[#fcfcf9] border-2 border-[#e0e0d8] rounded-xl h-[44px] text-sm font-bold text-[#14140f] cursor-pointer focus:border-[#14140f] focus:bg-white"
+              className="w-full"
+              triggerClassName="bg-[#fcfcf9] border-2 border-[#e0e0d8] rounded-xl h-[44px] min-h-[44px] text-sm font-bold text-[#14140f] cursor-pointer hover:border-[#14140f] focus:border-[#14140f] focus:bg-white shadow-xs"
             />
           </div>
 
           {/* Price Range Select */}
-          <div className="w-full sm:w-auto lg:w-[170px] shrink-0">
+          <div className="w-full sm:w-auto lg:w-[180px] shrink-0">
             <Select
               id="filterPrice"
               label="PRICE RANGE"
@@ -185,12 +186,13 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                 label: p.label,
                 value: p.id,
               }))}
-              className="bg-[#fcfcf9] border-2 border-[#e0e0d8] rounded-xl h-[44px] text-sm font-bold text-[#14140f] cursor-pointer focus:border-[#14140f] focus:bg-white"
+              className="w-full"
+              triggerClassName="bg-[#fcfcf9] border-2 border-[#e0e0d8] rounded-xl h-[44px] min-h-[44px] text-sm font-bold text-[#14140f] cursor-pointer hover:border-[#14140f] focus:border-[#14140f] focus:bg-white shadow-xs"
             />
           </div>
 
           {/* Sort By Select */}
-          <div className="w-full sm:w-auto lg:w-[165px] shrink-0">
+          <div className="w-full sm:w-auto lg:w-[200px] shrink-0">
             <Select
               id="filterSort"
               label="SORT BY"
@@ -200,7 +202,8 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                 label: s.label,
                 value: s.id,
               }))}
-              className="bg-[#fcfcf9] border-2 border-[#e0e0d8] rounded-xl h-[44px] text-sm font-bold text-[#14140f] cursor-pointer focus:border-[#14140f] focus:bg-white"
+              className="w-full"
+              triggerClassName="bg-[#fcfcf9] border-2 border-[#e0e0d8] rounded-xl h-[44px] min-h-[44px] text-sm font-bold text-[#14140f] cursor-pointer hover:border-[#14140f] focus:border-[#14140f] focus:bg-white shadow-xs"
             />
           </div>
         </div>
