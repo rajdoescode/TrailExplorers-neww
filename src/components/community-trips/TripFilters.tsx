@@ -131,7 +131,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
   return (
     <div
       className={cn(
-        "w-full bg-white/45 backdrop-blur-xl sm:backdrop-blur-2xl p-3.5 sm:p-5 rounded-[22px] sm:rounded-[26px] border border-white/70 shadow-[0_20px_50px_rgba(0,0,0,0.1),0_1px_1px_rgba(255,255,255,0.85)_inset,0_0_0_1px_rgba(255,255,255,0.35)] relative z-20 transition-all",
+        "w-full bg-white/45 backdrop-blur-xl sm:backdrop-blur-2xl p-3.5 sm:p-5 rounded-[22px] sm:rounded-[26px] border border-white/70 shadow-[0_20px_50px_rgba(0,0,0,0.1),0_1px_1px_rgba(255,255,255,0.85)_inset,0_0_0_1px_rgba(255,255,255,0.35)] relative z-30 transition-all",
         className
       )}
     >
@@ -201,7 +201,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder={animatedPlaceholder}
-              leftIcon={<Search className="w-4 h-4 text-[#888880]" />}
+              leftIcon={<Search className="w-4 h-4 text-[#14140f] stroke-[2.5]" />}
               rightIcon={
                 searchTerm.length > 0 ? (
                   <button
@@ -294,6 +294,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
               <Select
                 id="filterSortDesktop"
                 label="SORT BY"
+                align="right"
                 value={selectedSort}
                 onChange={(e) => onSortChange(e.target.value)}
                 options={sortOptions.map((s) => ({
@@ -330,7 +331,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                 value={searchTerm}
                 onChange={(e) => onSearchChange(e.target.value)}
                 placeholder={animatedPlaceholder}
-                leftIcon={<Search className="w-4 h-4 text-[#888880]" />}
+                leftIcon={<Search className="w-4 h-4 text-[#14140f] stroke-[2.5]" />}
                 rightIcon={
                   searchTerm.length > 0 ? (
                     <button
@@ -376,7 +377,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                     value: p.id,
                   }))}
                   className="w-full"
-                  triggerClassName="bg-white/60 backdrop-blur-md border border-white/80 rounded-xl h-[44px] min-h-[44px] text-xs sm:text-sm font-bold text-[#14140f] cursor-pointer hover:bg-white/75 hover:border-[#14140f] focus:border-[#14140f] focus:bg-white/95 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] transition-all"
+                  triggerClassName="bg-white/60 backdrop-blur-md border border-white/80 rounded-xl h-[44px] min-h-[44px] text-[11.5px] sm:text-sm px-2.5 sm:px-3 font-bold text-[#14140f] cursor-pointer hover:bg-white/75 hover:border-[#14140f] focus:border-[#14140f] focus:bg-white/95 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] transition-all"
                 />
               </div>
             )}
@@ -387,6 +388,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                 <Select
                   id="filterSortMobile"
                   label="SORT BY"
+                  align="right"
                   value={selectedSort}
                   onChange={(e) => onSortChange(e.target.value)}
                   options={sortOptions.map((s) => ({
@@ -394,7 +396,7 @@ export const TripFilters: React.FC<TripFiltersProps> = ({
                     value: s.id,
                   }))}
                   className="w-full"
-                  triggerClassName="bg-white/60 backdrop-blur-md border border-white/80 rounded-xl h-[44px] min-h-[44px] text-xs sm:text-sm font-bold text-[#14140f] cursor-pointer hover:bg-white/75 hover:border-[#14140f] focus:border-[#14140f] focus:bg-white/95 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] transition-all"
+                  triggerClassName="bg-white/60 backdrop-blur-md border border-white/80 rounded-xl h-[44px] min-h-[44px] text-[11.5px] sm:text-sm px-2.5 sm:px-3 font-bold text-[#14140f] cursor-pointer hover:bg-white/75 hover:border-[#14140f] focus:border-[#14140f] focus:bg-white/95 shadow-[inset_0_1px_2px_rgba(0,0,0,0.03)] transition-all"
                 />
               </div>
             )}

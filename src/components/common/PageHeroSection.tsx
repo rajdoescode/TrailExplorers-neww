@@ -29,12 +29,12 @@ export const PageHeroSection: React.FC<PageHeroSectionProps> = ({
   return (
     <section
       className={cn(
-        "relative w-full bg-transparent z-10 flex flex-col justify-start pt-4 sm:pt-5 md:pt-6 pb-2 sm:pb-3",
+        "relative w-full bg-transparent z-30 flex flex-col justify-start pt-4 sm:pt-5 md:pt-6 pb-2 sm:pb-3",
         className
       )}
     >
       {/* Hero Content (Positioned over page-level fixed background) */}
-      <Container className="relative z-10 w-full">
+      <Container className="relative z-30 w-full">
         <div className="w-full">
           {/* Main Heading */}
           <div className="max-w-2xl lg:max-w-4xl">
@@ -45,7 +45,7 @@ export const PageHeroSection: React.FC<PageHeroSectionProps> = ({
 
           {/* Search & Filter Bar on the Hero */}
           {children && (
-            <div className="mt-3.5 sm:mt-5 md:mt-6 w-full">
+            <div className="mt-3.5 sm:mt-5 md:mt-6 w-full relative z-30">
               {children}
             </div>
           )}

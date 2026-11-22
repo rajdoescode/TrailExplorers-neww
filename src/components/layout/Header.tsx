@@ -206,21 +206,21 @@ export const Header: React.FC<HeaderProps> = () => {
         </div>
       </header>
 
-      {/* Mobile Drawer (Native App Bottom Sheet Layout) */}
+      {/* Mobile Drawer (Native App Bottom Sheet Layout with Frosted Glassmorphism) */}
       {mobileMenuOpen && (
         <div
           ref={mobileDrawerOverlayRef}
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation drawer"
-          className="fixed inset-0 z-[9999] lg:hidden bg-black/60 backdrop-blur-xs flex flex-col justify-end transition-opacity touch-none overscroll-contain"
+          className="fixed inset-0 z-[9999] lg:hidden bg-black/45 backdrop-blur-md flex flex-col justify-end transition-opacity touch-none overscroll-contain"
           onClick={(e) => {
             if (e.target === e.currentTarget) setMobileMenuOpen(false);
           }}
         >
           <div
             ref={mobileDrawerSheetRef}
-            className="bg-white rounded-t-[28px] p-5 sm:p-6 shadow-2xl flex flex-col gap-5 animate-in slide-in-from-bottom duration-300 max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y"
+            className="bg-white/80 backdrop-blur-2xl rounded-t-[32px] p-5 sm:p-6 border-t border-x border-white/80 shadow-[0_-16px_50px_rgba(0,0,0,0.18),0_1px_1px_rgba(255,255,255,0.95)_inset] flex flex-col gap-5 animate-in slide-in-from-bottom duration-300 max-h-[calc(100dvh-32px)] overflow-y-auto overscroll-contain touch-pan-y"
             style={{
               paddingBottom: "max(24px, env(safe-area-inset-bottom, 24px))",
             }}
@@ -228,13 +228,13 @@ export const Header: React.FC<HeaderProps> = () => {
             {/* Sheet Handle with native pull-to-close */}
             <div
               ref={mobileDrawerHandleRef}
-              className="w-12 h-1.5 rounded-full bg-[#e2e2dc] hover:bg-[#b0b0a8] mx-auto -mt-1 shrink-0 cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
+              className="w-12 h-1.5 rounded-full bg-black/15 hover:bg-black/25 mx-auto -mt-1 shrink-0 cursor-grab active:cursor-grabbing touch-none select-none transition-colors"
               title="Drag down to close"
               aria-label="Drag down to close"
             />
 
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-gray-100 pb-3.5">
+            <div className="flex items-center justify-between border-b border-black/10 pb-3.5">
               <Link href="/" onClick={() => setMobileMenuOpen(false)} className="overflow-visible">
                 <Image
                   src="/assets/images/logo/logo.svg"
@@ -247,7 +247,7 @@ export const Header: React.FC<HeaderProps> = () => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-10 h-10 flex items-center justify-center text-gray-500 hover:text-black rounded-full hover:bg-gray-100 active:scale-90 transition-transform cursor-pointer"
+                className="w-10 h-10 flex items-center justify-center text-[#14140f]/70 hover:text-[#14140f] rounded-full bg-black/5 hover:bg-black/10 active:scale-90 transition-all cursor-pointer"
                 aria-label="Close menu"
               >
                 <X className="w-6 h-6 stroke-[2.2]" />
@@ -269,8 +269,8 @@ export const Header: React.FC<HeaderProps> = () => {
                     className={cn(
                       "text-[16px] font-bold py-2.5 px-3.5 rounded-xl transition-all flex items-center justify-between min-h-[44px]",
                       isActive
-                        ? "bg-[#d6ff3f] text-[#14140f]"
-                        : "text-[#14140f] hover:bg-[#f6f6f1] active:bg-[#eeeeea]"
+                        ? "bg-[#d6ff3f] text-[#14140f] shadow-[0_4px_16px_rgba(214,255,63,0.35)]"
+                        : "text-[#14140f] hover:bg-white/60 active:bg-white/80"
                     )}
                   >
                     <span>{link.label}</span>
@@ -281,7 +281,7 @@ export const Header: React.FC<HeaderProps> = () => {
             </nav>
 
             {/* Quick Regional Destinations */}
-            <div className="flex flex-col gap-2 pt-2 border-t border-gray-100">
+            <div className="flex flex-col gap-2 pt-2 border-t border-black/10">
               <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#6b6b63] px-3">
                 Destinations
               </span>
@@ -291,7 +291,7 @@ export const Header: React.FC<HeaderProps> = () => {
                     key={dest.href}
                     href={dest.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 p-2.5 rounded-xl bg-[#f8f8f5] hover:bg-[#d6ff3f] text-[#14140f] text-xs font-bold transition-colors min-h-[44px]"
+                    className="flex items-center gap-2 p-2.5 rounded-xl bg-white/60 hover:bg-[#d6ff3f] border border-white/70 hover:border-[#d6ff3f] backdrop-blur-md text-[#14140f] text-xs font-bold transition-all shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_14px_rgba(214,255,63,0.35)] min-h-[44px]"
                   >
                     <MapPin className="w-3.5 h-3.5 text-[#14140f] shrink-0" />
                     <span>{dest.label}</span>
@@ -301,7 +301,7 @@ export const Header: React.FC<HeaderProps> = () => {
             </div>
 
             {/* Secondary Links & Actions */}
-            <div className="border-t border-gray-100 pt-3 flex flex-col gap-2.5">
+            <div className="border-t border-black/10 pt-3 flex flex-col gap-2.5">
               <div className="flex items-center justify-between px-2 text-xs font-semibold text-[#6b6b63]">
                 <Link href="/reviews" onClick={() => setMobileMenuOpen(false)} className="hover:text-black py-1">
                   Reviews (4.9★)
@@ -317,7 +317,7 @@ export const Header: React.FC<HeaderProps> = () => {
               <div className="grid grid-cols-2 gap-2 mt-1">
                 <a
                   href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
-                  className="flex items-center justify-center gap-2 w-full py-3 px-3 rounded-full bg-[#14140f] text-white font-bold text-xs min-h-[44px] active:scale-95 transition-transform"
+                  className="flex items-center justify-center gap-2 w-full py-3 px-3 rounded-full bg-[#14140f] text-white font-bold text-xs min-h-[44px] shadow-[0_4px_14px_rgba(20,20,15,0.2)] active:scale-95 transition-transform"
                 >
                   <Phone className="w-3.5 h-3.5 stroke-[2.2]" />
                   Call Support
@@ -325,7 +325,7 @@ export const Header: React.FC<HeaderProps> = () => {
                 <Link
                   href="/plan-your-trip"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-1.5 w-full py-3 px-3 rounded-full bg-[#d6ff3f] text-[#14140f] font-bold text-xs min-h-[44px] active:scale-95 transition-transform shadow-sm"
+                  className="flex items-center justify-center gap-1.5 w-full py-3 px-3 rounded-full bg-[#d6ff3f] text-[#14140f] font-bold text-xs min-h-[44px] shadow-[0_4px_16px_rgba(214,255,63,0.4)] hover:brightness-105 active:scale-95 transition-all"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   Plan Your Trip
@@ -336,18 +336,18 @@ export const Header: React.FC<HeaderProps> = () => {
         </div>
       )}
 
-      {/* Global Search Modal */}
+      {/* Global Search Modal with Frosted Glassmorphism */}
       {searchOpen && (
         <div
           role="dialog"
           aria-modal="true"
           aria-label="Search destinations and itineraries"
-          className="fixed inset-0 z-[9999] bg-black/65 backdrop-blur-sm flex items-start justify-center pt-14 sm:pt-20 px-3.5 sm:px-4 touch-none overscroll-contain"
+          className="fixed inset-0 z-[9999] bg-black/45 backdrop-blur-md flex items-start justify-center pt-14 sm:pt-20 px-3.5 sm:px-4 touch-none overscroll-contain"
           onClick={(e) => {
             if (e.target === e.currentTarget) setSearchOpen(false);
           }}
         >
-          <div className="bg-white rounded-[32px] sm:rounded-[36px] w-full max-w-[520px] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.3)] p-5 sm:p-6 overflow-hidden animate-in fade-in zoom-in-95 duration-200 overscroll-contain flex flex-col">
+          <div className="bg-white/80 backdrop-blur-2xl rounded-[32px] sm:rounded-[36px] w-full max-w-[520px] border border-white/80 shadow-[0_24px_70px_rgba(0,0,0,0.22),0_1px_1px_rgba(255,255,255,0.95)_inset] p-5 sm:p-6 overflow-hidden animate-in fade-in zoom-in-95 duration-200 overscroll-contain flex flex-col">
             {/* Top Row: Capsule Search Bar + Standalone X Close Button */}
             <div className="flex items-center gap-3.5 mb-5 sm:mb-6">
               {/* Search Pill */}

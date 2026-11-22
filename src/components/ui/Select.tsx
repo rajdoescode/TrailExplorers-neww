@@ -274,6 +274,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
         className={cn(
           "relative",
           variant === "pill" || variant === "badge" ? "inline-block" : "w-full flex flex-col gap-1.5",
+          isOpen ? "z-50" : "z-auto",
           className
         )}
       >
@@ -289,7 +290,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
           </label>
         )}
 
-        <div className="relative">
+        <div className={cn("relative", isOpen ? "z-50" : "z-auto")}>
           {/* Custom Select Button Trigger */}
           <button
             id={selectId}
@@ -339,8 +340,9 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
             <div
               role="listbox"
               aria-label={label || "Options"}
+              style={{ backgroundColor: "#ffffff" }}
               className={cn(
-                "absolute top-[calc(100%+6px)] min-w-full w-full max-h-[300px] flex flex-col bg-white/95 backdrop-blur-xl border border-black/15 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.14),0_2px_6px_rgba(0,0,0,0.04)] p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150",
+                "absolute top-[calc(100%+6px)] min-w-[190px] w-max max-w-[calc(100vw-36px)] max-h-[300px] flex flex-col bg-white border border-[#14140f]/15 rounded-2xl shadow-[0_20px_50px_rgba(20,20,15,0.22),0_4px_12px_rgba(20,20,15,0.08)] p-1.5 z-[100] animate-in fade-in zoom-in-95 duration-150",
                 align === "right" ? "right-0" : "left-0"
               )}
             >
@@ -403,7 +405,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
                           opt.disabled && "opacity-40 cursor-not-allowed pointer-events-none"
                         )}
                       >
-                        <div className="flex items-center gap-2 truncate">
+                        <div className="flex items-center gap-2">
                           {dotColor && (
                             <span
                               className={cn(
@@ -413,7 +415,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
                             />
                           )}
                           {opt.icon && <span className="w-4 h-4 shrink-0">{opt.icon}</span>}
-                          <span className="truncate">{opt.label}</span>
+                          <span className="whitespace-nowrap">{opt.label}</span>
                         </div>
                         {isSelected && (
                           <Check className="w-4 h-4 text-[#d6ff3f] shrink-0 ml-2" />

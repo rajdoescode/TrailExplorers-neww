@@ -640,7 +640,7 @@ export default function TripDetailPage() {
               <button
                 type="button"
                 onClick={() => setIsBookModalOpen(true)}
-                className="w-full bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] font-black text-[15px] sm:text-[16px] py-3.5 px-4 rounded-[14px] border-none shadow-[0_6px_20px_rgba(214,255,63,0.5)] hover:shadow-[0_8px_24px_rgba(214,255,63,0.65)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer font-heading text-center uppercase tracking-wide"
+                className="w-full bg-[#d6ff3f]/85 backdrop-blur-xl border border-[#d6ff3f]/90 hover:bg-[#d6ff3f] text-[#14140f] font-black text-[15px] sm:text-[16px] py-3.5 px-4 rounded-[14px] shadow-[0_8px_24px_rgba(214,255,63,0.45),0_1px_1px_rgba(255,255,255,0.85)_inset] hover:shadow-[0_12px_32px_rgba(214,255,63,0.6),0_1px_1px_rgba(255,255,255,1)_inset] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer font-heading text-center uppercase tracking-wide flex items-center justify-center"
               >
                 BOOK NOW
               </button>
@@ -655,7 +655,7 @@ export default function TripDetailPage() {
                 </p>
                 <Link
                   href="/plan-your-trip"
-                  className="inline-flex items-center justify-center bg-[#d6ff3f] hover:bg-[#cbf52a] text-[#14140f] text-[13px] font-bold py-2.5 px-4 rounded-[12px] border-none shadow-[0_2px_8px_rgba(214,255,63,0.35)] hover:-translate-y-0.5 transition-all cursor-pointer text-center"
+                  className="inline-flex items-center justify-center bg-[#d6ff3f]/85 backdrop-blur-xl border border-[#d6ff3f]/90 hover:bg-[#d6ff3f] text-[#14140f] text-[13px] font-bold py-2.5 px-4 rounded-[12px] shadow-[0_4px_12px_rgba(214,255,63,0.35),0_1px_1px_rgba(255,255,255,0.7)_inset] hover:-translate-y-0.5 transition-all cursor-pointer text-center"
                 >
                   Chat with our Trip Planner
                 </Link>
@@ -666,7 +666,7 @@ export default function TripDetailPage() {
                 href={getWhatsAppBookingLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 rounded-[14px] border border-[#14140f] bg-white/85 backdrop-blur-md text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-white hover:-translate-y-0.5 transition-all"
+                className="w-full py-3.5 px-4 rounded-[14px] border border-white/80 bg-white/75 backdrop-blur-xl text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2.5 shadow-[0_4px_16px_rgba(0,0,0,0.04),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:bg-white hover:-translate-y-0.5 transition-all"
               >
                 <WhatsAppIcon className="w-5 h-5 text-[#25D366] shrink-0" />
                 <span>WhatsApp Us</span>
@@ -709,9 +709,9 @@ export default function TripDetailPage() {
         </div>
       </Container>
 
-      {/* 15. Mobile Sticky Bottom Action Bar (Floating Pill/Card matching original design) */}
+      {/* 15. Mobile Sticky Bottom Action Bar (Floating Pill/Card matching original design with Glassmorphism) */}
       <div
-        className={`mobile-book-bar lg:hidden fixed left-2.5 right-2.5 sm:left-4 sm:right-4 bottom-[calc(10px+env(safe-area-inset-bottom,0px))] z-40 bg-white/95 backdrop-blur-md border border-[#14140f]/10 rounded-[20px] p-3 pl-4 sm:p-4 sm:pl-6 flex items-center justify-between gap-2.5 sm:gap-3 shadow-[0_12px_32px_rgba(20,20,15,0.18)] transition-all duration-300 ease-in-out ${
+        className={`mobile-book-bar lg:hidden fixed left-2.5 right-2.5 sm:left-4 sm:right-4 bottom-[calc(10px+env(safe-area-inset-bottom,0px))] z-40 bg-white/75 backdrop-blur-2xl border border-white/80 rounded-[22px] p-3 pl-4 sm:p-4 sm:pl-6 flex items-center justify-between gap-2.5 sm:gap-3 shadow-[0_16px_40px_rgba(20,20,15,0.14),0_1px_1px_rgba(255,255,255,0.9)_inset] transition-all duration-300 ease-in-out ${
           hideMobilePriceBar
             ? "opacity-0 translate-y-12 pointer-events-none"
             : "opacity-100 translate-y-0 pointer-events-auto"
@@ -739,7 +739,7 @@ export default function TripDetailPage() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp Inquiry"
-            className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-[14px] bg-[#25D366] text-white flex items-center justify-center shadow-md hover:brightness-105 active:scale-95 transition-all shrink-0"
+            className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-[14px] bg-[#25d366]/85 backdrop-blur-xl border border-[#25d366]/90 text-white flex items-center justify-center shadow-[0_6px_18px_rgba(37,211,102,0.35),0_1px_1px_rgba(255,255,255,0.7)_inset] hover:bg-[#25d366] hover:shadow-[0_10px_24px_rgba(37,211,102,0.5),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:-translate-y-0.5 active:scale-95 transition-all shrink-0"
           >
             <svg
               className="w-6 h-6 fill-current text-white"
@@ -752,7 +752,7 @@ export default function TripDetailPage() {
           <button
             type="button"
             onClick={() => setIsBookModalOpen(true)}
-            className="bg-[#d6ff3f] hover:bg-[#cbf52a] active:scale-95 text-[#14140f] font-extrabold text-[14px] sm:text-[16px] px-4 sm:px-6 h-[44px] sm:h-[48px] rounded-[14px] border-none shadow-[0_4px_14px_rgba(214,255,63,0.45)] cursor-pointer font-heading transition-all whitespace-nowrap flex items-center justify-center"
+            className="bg-[#d6ff3f]/85 backdrop-blur-xl border border-[#d6ff3f]/90 hover:bg-[#d6ff3f] active:scale-95 text-[#14140f] font-black text-[14px] sm:text-[16px] px-5 sm:px-6 h-[44px] sm:h-[48px] rounded-[14px] shadow-[0_6px_20px_rgba(214,255,63,0.45),0_1px_1px_rgba(255,255,255,0.85)_inset] hover:shadow-[0_10px_26px_rgba(214,255,63,0.6),0_1px_1px_rgba(255,255,255,1)_inset] hover:-translate-y-0.5 cursor-pointer font-heading transition-all whitespace-nowrap flex items-center justify-center"
           >
             Book Now
           </button>

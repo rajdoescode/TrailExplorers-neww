@@ -35,7 +35,7 @@ export const TripSearch: React.FC<TripSearchProps> = ({
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search by trip name or destination (e.g. Spiti, Ladakh, Zanskar)..."
-          leftIcon={<Search className="w-4 h-4 text-[#6b6b63]" />}
+          leftIcon={<Search className="w-4 h-4 text-[#14140f] stroke-[2.4]" />}
           className="bg-white border-2 border-[#e0e0d8] rounded-xl h-[44px] text-sm font-semibold text-[#14140f] placeholder:text-[#888880] focus:border-[#14140f]"
         />
       </div>

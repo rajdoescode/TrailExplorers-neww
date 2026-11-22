@@ -85,7 +85,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
           {/* Left Icon */}
           {leftIcon && !prefixText && (
-            <div className="absolute left-3.5 text-[#6b6b63] pointer-events-none flex items-center">
+            <div className="absolute left-3.5 text-[#14140f] pointer-events-none flex items-center z-10">
               {leftIcon}
             </div>
           )}
