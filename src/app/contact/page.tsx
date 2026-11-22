@@ -113,7 +113,7 @@ export default function ContactPage() {
           </div>
 
           {/* Interactive Contact Form (3 Cols) */}
-          <div className="lg:col-span-3 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-[#14140f] shadow-card">
+          <div className="lg:col-span-3 bg-white/85 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-10 border-2 border-[#14140f] shadow-[0_12px_40px_rgba(20,20,15,0.08),0_1px_1px_rgba(255,255,255,0.9)_inset]">
             {sent ? (
               <div className="text-center py-12 flex flex-col items-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-[#e8f7ed] text-[#2fa84f] flex items-center justify-center">

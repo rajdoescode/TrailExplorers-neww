@@ -56,7 +56,7 @@ export const WatchReadSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" id="watch-read-section">
+    <section className="w-full py-10 sm:py-14 bg-transparent overflow-hidden" id="watch-read-section">
       <div className="max-w-[1280px] mx-auto px-0 sm:px-6">
         {/* Section Head */}
         <div className="flex justify-between items-end flex-wrap gap-4 mb-7 px-4 sm:px-0">

@@ -78,7 +78,7 @@ export const ReviewsSection: React.FC = () => {
   };
 
   return (
-    <section className="section w-full bg-white py-12 sm:py-16" id="reviews">
+    <section className="section w-full bg-transparent py-12 sm:py-16" id="reviews">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Section Head matching live site */}
         <div className="flex justify-between items-end flex-wrap gap-4 mb-8">

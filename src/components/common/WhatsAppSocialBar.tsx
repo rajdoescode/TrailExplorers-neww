@@ -20,7 +20,7 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
 }) => {
   return (
     <div
-      className={`whatsapp-bar w-full max-w-[1240px] mx-auto bg-white border-2 border-[#14140f] rounded-full px-6 py-3.5 sm:px-8 sm:py-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 transition-all duration-200 ${className}`}
+      className={`whatsapp-bar w-full bg-white/85 backdrop-blur-xl border-2 border-[#14140f] rounded-full px-6 py-3.5 sm:px-8 sm:py-4 shadow-[0_12px_40px_rgba(0,0,0,0.08),0_1px_1px_rgba(255,255,255,0.9)_inset] flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 transition-all duration-200 relative z-20 ${className}`}
     >
       {/* WhatsApp Left Side */}
       <a
@@ -40,10 +40,10 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
           </svg>
         </span>
         <span className="flex flex-col text-left">
-          <small className="text-[11px] font-bold uppercase tracking-[0.05em] text-[#55554d] leading-tight block mb-0.5">
+          <small className="text-[11.5px] font-extrabold uppercase tracking-[0.06em] text-[#14140f] leading-tight block mb-0.5">
             INSTANT WHATSAPP BOOKING:
           </small>
-          <strong className="text-[17px] sm:text-[18px] font-extrabold text-[#14140f] tracking-tight group-hover:text-[#16a34a] transition-colors leading-tight">
+          <strong className="text-[17px] sm:text-[18px] font-black text-[#14140f] tracking-tight group-hover:text-[#16a34a] transition-colors leading-tight">
             {phone}
           </strong>
         </span>
@@ -51,7 +51,7 @@ export const WhatsAppSocialBar: React.FC<WhatsAppSocialBarProps> = ({
 
       {/* Social Right Side */}
       <div className="wa-right flex flex-col md:flex-row items-center gap-3 sm:gap-4 w-full md:w-auto pt-3 md:pt-0 border-t md:border-t-0 border-[#f0f0e8]">
-        <span className="label text-[11px] font-extrabold uppercase tracking-[0.06em] text-[#55554d] whitespace-nowrap leading-none">
+        <span className="label text-[11.5px] font-extrabold uppercase tracking-[0.07em] text-[#14140f] whitespace-nowrap leading-none">
           FOLLOW TRAILS ON:
         </span>
         <div className="social-icons flex items-center gap-2 sm:gap-2.5">

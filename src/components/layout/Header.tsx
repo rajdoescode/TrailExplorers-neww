@@ -116,11 +116,11 @@ export const Header: React.FC<HeaderProps> = () => {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-200 w-full bg-white border-b border-[#e6e6df]",
+          "sticky top-0 z-50 transition-all duration-200 w-full bg-white/80 backdrop-blur-xl border-b border-white/60",
           isScrolled ? "shadow-[0_4px_20px_rgba(20,20,15,0.06)]" : "shadow-none"
         )}
       >
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-4">
           {/* Logo */}
           <Link
             href="/"
@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-[28px]">
+          <nav className="hidden lg:flex items-center gap-[14px]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -145,10 +145,10 @@ export const Header: React.FC<HeaderProps> = () => {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "font-medium text-[15px] pb-1 border-b-2 transition-all duration-180",
+                    "transition-all duration-200 whitespace-nowrap",
                     isActive
-                      ? "text-[#14140f] border-[#d6ff3f]"
-                      : "text-[#14140f] border-transparent hover:border-[#d6ff3f]"
+                      ? "font-bold text-[14px] px-4 py-1.5 rounded-full bg-[#d6ff3f] text-[#14140f] shadow-xs"
+                      : "font-semibold text-[14px] px-3 py-1.5 rounded-full text-[#14140f] hover:text-black hover:bg-[#f6f6f1]"
                   )}
                 >
                   {link.label}
@@ -162,12 +162,10 @@ export const Header: React.FC<HeaderProps> = () => {
             <a
               href={`tel:${SITE_CONFIG.site_phone.replace(/[^0-9+]/g, "")}`}
               aria-label="Call Trail Explorers"
-              className="inline-flex items-center gap-2.5 font-bold text-[14.5px] text-[#14140f] hover:opacity-85 transition-opacity"
+              className="inline-flex items-center gap-2 font-bold text-[13.5px] text-[#14140f] border border-[#14140f] px-4 py-1.5 rounded-full hover:bg-[#14140f] hover:text-[#d6ff3f] transition-all shadow-xs cursor-pointer"
             >
-              <span className="w-[38px] h-[38px] rounded-full bg-[#14140f] text-white inline-flex items-center justify-center shrink-0 shadow-[0_4px_10px_rgba(20,20,15,0.15)]">
-                <Phone className="w-4 h-4 text-white stroke-[2.2]" />
-              </span>
-              <span className="font-bold text-[14.5px] tracking-tight text-[#14140f] whitespace-nowrap">
+              <Phone className="w-3.5 h-3.5 stroke-[2.2]" />
+              <span className="font-bold text-[13.5px] tracking-tight whitespace-nowrap">
                 {SITE_CONFIG.site_phone}
               </span>
             </a>

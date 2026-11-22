@@ -31,7 +31,7 @@ export const StatCard: React.FC<StatCardProps> = ({
         "rounded-[20px] p-5 sm:p-6 border-2 transition-all relative overflow-hidden group",
         accent
           ? "bg-[#14140f] text-white border-[#14140f] shadow-card hover:shadow-[0_14px_28px_rgba(20,20,15,0.2)]"
-          : "bg-white text-[#14140f] border-[#e2e2dc] shadow-card hover:border-[#14140f] hover:shadow-[0_12px_24px_rgba(20,20,15,0.08)]",
+          : "bg-white/75 backdrop-blur-md text-[#14140f] border border-white/80 shadow-[0_8px_30px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:bg-white/90 hover:border-white hover:shadow-[0_14px_28px_rgba(20,20,15,0.12)]",
         className
       )}
     >

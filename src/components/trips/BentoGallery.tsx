@@ -110,7 +110,7 @@ export function BentoGallery({ images, title }: BentoGalleryProps) {
   }, [lightboxOpen, nextPhoto, prevPhoto]);
 
   return (
-    <section className="relative w-full py-2 sm:py-6 bg-white overflow-hidden">
+    <section className="relative w-full py-2 sm:py-6 bg-transparent overflow-hidden">
       {/* MOBILE INTERACTIVE FLIP-CARD STACK (Matching Authentic Awara Banjara Design) */}
       <div className="block md:hidden px-4 pt-2 pb-6 text-center overflow-visible">
         <div

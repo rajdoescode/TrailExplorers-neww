@@ -46,7 +46,7 @@ export const ExperiencesSection: React.FC = () => {
   const activeExp = experiences[activeIndex];
 
   return (
-    <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" id="experiences-section">
+    <section className="w-full py-10 sm:py-14 bg-transparent overflow-hidden" id="experiences-section">
       <div className="max-w-[1280px] mx-auto px-6">
         {/* Head */}
         <div className="text-center mb-8">
@@ -137,7 +137,7 @@ export const ExperiencesSection: React.FC = () => {
           </div>
 
           {/* Caption Below Stack */}
-          <div className="mt-8 max-w-xl mx-auto px-4">
+          <div className="mt-8 max-w-xl mx-auto px-6 py-5 bg-white/80 backdrop-blur-md rounded-2xl border border-white/80 shadow-[0_8px_30px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
             <h3 className="text-xl sm:text-2xl font-bold text-[#14140f] leading-tight">
               {activeExp.title}
             </h3>

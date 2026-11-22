@@ -53,7 +53,7 @@ export const InternationalDestinationsSection: React.FC = () => {
   }, [nextDest]);
 
   return (
-    <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" id="intl-dest-section">
+    <section className="w-full py-10 sm:py-14 bg-transparent overflow-hidden" id="intl-dest-section">
       <div className="max-w-[1280px] mx-auto px-0 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold text-[#14140f] tracking-tight m-0">

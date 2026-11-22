@@ -20,7 +20,7 @@ export const PlanYourTripBanner: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full py-10 sm:py-16 bg-white" id="plan-your-trip-banner">
+    <section className="w-full py-10 sm:py-16 bg-transparent" id="plan-your-trip-banner">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className="rounded-[28px] sm:rounded-[32px] p-6 sm:p-10 lg:p-14 text-white overflow-hidden shadow-2xl relative"

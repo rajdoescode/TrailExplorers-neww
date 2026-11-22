@@ -235,21 +235,53 @@ export default function TripDetailPage() {
     ? "Ladakh"
     : "Himachal";
 
+  const bgDesktop = destinationLabel === "Spiti"
+    ? "/assets/images/hero_pack/Community_Trips/01_DESKTOP_1920x900_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_desktop.webp"
+    : destinationLabel === "Kashmir"
+    ? "/assets/images/hero_pack/Experiences/01_DESKTOP_1920x900_WHITE_FADE_WEBP/01_Kullu_Festival_Grand_Procession_desktop.webp"
+    : "/assets/images/hero_pack/Tour_Packages/01_DESKTOP_1920x900_WHITE_FADE_WEBP/01_Offroad_Himalayan_Road_Trip_desktop.webp";
+
+  const bgMobile = destinationLabel === "Spiti"
+    ? "/assets/images/hero_pack/Community_Trips/03_MOBILE_900x1350_TOP_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_mobile_fade.webp"
+    : destinationLabel === "Kashmir"
+    ? "/assets/images/hero_pack/Experiences/03_MOBILE_900x1350_TOP_WHITE_FADE_WEBP/01_Kullu_Festival_Grand_Procession_mobile_fade.webp"
+    : "/assets/images/hero_pack/Tour_Packages/03_MOBILE_900x1350_TOP_WHITE_FADE_WEBP/01_Offroad_Himalayan_Road_Trip_mobile_fade.webp";
+
   return (
-    <div className="w-full bg-white min-h-screen">
-      {/* 1. Bento Image Gallery with Lightbox */}
-      <BentoGallery images={galleryImages} title={trip.title} />
+    <div className="w-full bg-[#fbfbf8] text-[#14140f] min-h-screen relative">
+      {/* Single Full-Page Fixed Background - Soft and luminous */}
+      <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0">
+        <picture className="w-full h-full block">
+          <source
+            media="(max-width: 767px)"
+            srcSet={bgMobile}
+            type="image/webp"
+          />
+          <img
+            src={bgDesktop}
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-[right_top] opacity-75 brightness-[1.06] contrast-[0.95]"
+          />
+        </picture>
+        {/* Soft light overlay so background is subtle, bright and light */}
+        <div className="absolute inset-0 bg-white/25 pointer-events-none" />
+      </div>
 
-      {/* 2. Secondary Sticky Navigation */}
-      <StickySecondaryNav />
+      <div className="relative z-10">
+        {/* 1. Bento Image Gallery with Lightbox */}
+        <BentoGallery images={galleryImages} title={trip.title} />
 
-      {/* Main Content & Sticky Sidebar Layout */}
-      <Container className="pt-6 sm:pt-8 lg:pt-8 pb-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          {/* Main Column (2 Columns) */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
-            {/* 3. Title Card */}
-            <div id="title-card" className="bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card title-card">
+        {/* 2. Secondary Sticky Navigation */}
+        <StickySecondaryNav />
+
+        {/* Main Content & Sticky Sidebar Layout */}
+        <Container className="pt-6 sm:pt-8 lg:pt-8 pb-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            {/* Main Column (2 Columns) */}
+            <div className="lg:col-span-2 flex flex-col gap-8">
+              {/* 3. Title Card */}
+              <div id="title-card" className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] title-card">
               {/* Breadcrumb */}
               <nav className="flex items-center gap-1.5 text-xs text-[#6b6b63] font-medium mb-3">
                 <Link href="/" className="hover:text-[#14140f]">Home</Link>
@@ -319,7 +351,7 @@ export default function TripDetailPage() {
             {weather && <WeatherCard weather={weather} />}
 
             {/* 5. About This Trip */}
-            <div id="about" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+            <div id="about" className="scroll-mt-32 sm:scroll-mt-36 bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
               <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
                 About This Trip
               </h2>
@@ -341,7 +373,7 @@ export default function TripDetailPage() {
                 )}
 
                 {!isAboutExpanded && (
-                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/90 to-transparent pointer-events-none" />
                 )}
               </div>
 
@@ -356,7 +388,7 @@ export default function TripDetailPage() {
 
             {/* 6. Itinerary Accordion */}
             {trip.itinerary && trip.itinerary.length > 0 && (
-              <div id="itinerary" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+              <div id="itinerary" className="scroll-mt-32 sm:scroll-mt-36 bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
                 <div className="flex items-center justify-between mb-6">
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading">
@@ -393,7 +425,7 @@ export default function TripDetailPage() {
                         className={`border-2 border-[#14140f] rounded-2xl overflow-hidden transition-all duration-200 ${
                           isOpen
                             ? "bg-[#f8ffe0] shadow-[0_6px_20px_rgba(214,255,63,0.35)]"
-                            : "bg-white hover:bg-[#fafaf7]"
+                            : "bg-white/90 backdrop-blur-sm hover:bg-white"
                         }`}
                       >
                         <button
@@ -477,7 +509,7 @@ export default function TripDetailPage() {
             {/* 7. Inclusions & Exclusions */}
             <div id="inclusions" className="scroll-mt-32 sm:scroll-mt-36 grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Inclusions */}
-              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card">
+              <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
                 <div className="flex items-center gap-2 mb-4 text-[#2fa84f] font-bold">
                   <Check className="w-5 h-5 stroke-[2.5]" />
                   <h3 className="text-base sm:text-lg text-[#14140f] font-extrabold font-heading">
@@ -505,7 +537,7 @@ export default function TripDetailPage() {
               </div>
 
               {/* Exclusions */}
-              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#e2e2dc] shadow-card">
+              <div className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-7 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
                 <div className="flex items-center gap-2 mb-4 text-[#e0455a] font-bold">
                   <X className="w-5 h-5 stroke-[2.5]" />
                   <h3 className="text-base sm:text-lg text-[#14140f] font-extrabold font-heading">
@@ -534,7 +566,7 @@ export default function TripDetailPage() {
             </div>
 
             {/* 8. Package Options */}
-            <div id="packages" className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card">
+            <div id="packages" className="scroll-mt-32 sm:scroll-mt-36 bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
               <h2 className="text-xl sm:text-2xl font-bold text-[#14140f] font-heading mb-4">
                 Package Options
               </h2>
@@ -555,7 +587,7 @@ export default function TripDetailPage() {
                       className={`px-6 py-3 rounded-2xl border-2 border-[#14140f] font-bold text-sm text-[#14140f] cursor-pointer transition-all leading-snug text-center ${
                         isSelected
                           ? "bg-[#d6ff3f] shadow-[0_4px_14px_rgba(214,255,63,0.4)] -translate-y-0.5"
-                          : "bg-white hover:bg-[#fafaf7] hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(0,0,0,0.1)]"
+                          : "bg-white/85 backdrop-blur-sm hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(0,0,0,0.1)]"
                       }`}
                     >
                       <div>{pkg.title}</div>
@@ -588,7 +620,7 @@ export default function TripDetailPage() {
 
           {/* Sticky Right Booking Sidebar (1 Column) */}
           <div className="sticky top-[135px] sm:top-[140px] flex flex-col gap-5 transition-all">
-            <aside className="bg-white rounded-[28px] p-7 border-[1.5px] border-[#ecece6] shadow-[0_16px_40px_rgba(214,255,63,0.38)] flex flex-col gap-5">
+            <aside className="bg-white/85 backdrop-blur-2xl rounded-[28px] p-7 border border-white/90 shadow-[0_16px_45px_rgba(0,0,0,0.08),0_1px_1px_rgba(255,255,255,1)_inset] flex flex-col gap-5">
               <div className="text-left">
                 <span className="text-[13px] text-[#707068] font-semibold block mb-1">
                   Starting From
@@ -614,7 +646,7 @@ export default function TripDetailPage() {
               </button>
 
               {/* Private Trip Option */}
-              <div className="bg-[#f8f8f5] border-[1.5px] border-[#ecece6] rounded-[20px] p-5 text-left">
+              <div className="bg-[#f8f8f5]/85 backdrop-blur-md border border-[#ecece6]/80 rounded-[20px] p-5 text-left">
                 <h4 className="text-[14.5px] font-extrabold text-[#14140f] mb-1.5 leading-snug">
                   Private Trip Available
                 </h4>
@@ -634,7 +666,7 @@ export default function TripDetailPage() {
                 href={getWhatsAppBookingLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-4 rounded-[14px] border-[1.5px] border-[#14140f] bg-white text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-[#f8f8f5] hover:-translate-y-0.5 transition-all"
+                className="w-full py-3.5 px-4 rounded-[14px] border border-[#14140f] bg-white/85 backdrop-blur-md text-[15px] font-bold text-[#14140f] flex items-center justify-center gap-2.5 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:bg-white hover:-translate-y-0.5 transition-all"
               >
                 <WhatsAppIcon className="w-5 h-5 text-[#25D366] shrink-0" />
                 <span>WhatsApp Us</span>
@@ -985,6 +1017,7 @@ export default function TripDetailPage() {
         onClose={() => setIsPdfModalOpen(false)}
         title={trip.title}
       />
+      </div>
     </div>
   );
 }

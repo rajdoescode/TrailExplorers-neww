@@ -4,13 +4,17 @@ import React, { useState, useMemo } from "react";
 import {
   COMMUNITY_TRIPS,
   COMMUNITY_SECTIONS,
+  COMMUNITY_CATEGORIES,
   COMMUNITY_PRICE_RANGES,
+  COMMUNITY_SORT_OPTIONS,
   CommunityTrip,
 } from "@/data/communityTrips";
-import { CommunityTripsHero } from "@/components/community-trips/CommunityTripsHero";
+import { PageHeroSection } from "@/components/common/PageHeroSection";
+import { NeonHighlight } from "@/components/common/NeonHighlight";
 import { TripFilters } from "@/components/community-trips/TripFilters";
 import { TripCategorySection } from "@/components/community-trips/TripCategorySection";
 import { TripEmptyState } from "@/components/community-trips/TripEmptyState";
+import { Container } from "@/components/layout/Container";
 
 export default function CommunityTripsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -134,45 +138,76 @@ export default function CommunityTripsPage() {
   }, [visibleSections]);
 
   return (
-    <div className="w-full bg-white text-[#14140f] min-h-screen">
-      {/* Page Hero Title */}
-      <div className="max-w-[1280px] mx-auto px-6">
-        <CommunityTripsHero />
+    <div className="w-full bg-[#fbfbf8] text-[#14140f] min-h-screen relative">
+      {/* Single Full-Page Fixed Background - Soft and luminous */}
+      <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0">
+        <picture className="w-full h-full block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/images/hero_pack/Community_Trips/03_MOBILE_900x1350_TOP_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_mobile_fade.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/images/hero_pack/Community_Trips/01_DESKTOP_1920x900_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_desktop.webp"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-[right_top] opacity-75 brightness-[1.06] contrast-[0.95]"
+          />
+        </picture>
+        {/* Soft light overlay so background is subtle, bright and light */}
+        <div className="absolute inset-0 bg-white/25 pointer-events-none" />
       </div>
 
-      {/* Filter & Search Controls Section (Unified Single-Line Bar) */}
-      <div className="max-w-[1280px] mx-auto px-6 mb-8">
+      {/* Himalayan Hero Header with Responsive WebP */}
+      <PageHeroSection
+        title={
+          <span className="inline-flex items-center flex-wrap gap-x-2.5 sm:gap-x-3.5">
+            <span>Community</span>
+            <NeonHighlight>Trips</NeonHighlight>
+          </span>
+        }
+      >
+        {/* Floating Search & Filter Bar on the Hero Image */}
         <TripFilters
           searchTerm={searchTerm}
           onSearchChange={setSearchTerm}
           onSearchSubmit={() => {}}
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
+          categoryOptions={COMMUNITY_CATEGORIES}
           selectedPrice={selectedPrice}
           onPriceChange={setSelectedPrice}
+          priceOptions={COMMUNITY_PRICE_RANGES}
           selectedSort={selectedSort}
           onSortChange={setSelectedSort}
+          sortOptions={COMMUNITY_SORT_OPTIONS}
           totalTripsCount={totalTripsCount}
           isFiltered={isFiltered}
           onResetFilters={handleResetFilters}
+          searchLabel="SEARCH"
+          searchButtonText="Search"
+          placeholder="Search Spiti, Ladakh, Zanskar..."
+          itemNoun="Trips"
         />
-      </div>
+      </PageHeroSection>
 
-      {/* Trips Container */}
-      <div className="max-w-[1280px] mx-auto px-6 pb-12" id="communityTripsContainer">
-        {visibleSections.length > 0 ? (
-          visibleSections.map((sec) => (
-            <TripCategorySection
-              key={sec.id}
-              id={sec.id}
-              title={sec.title}
-              trips={sec.trips}
-            />
-          ))
-        ) : (
-          <TripEmptyState onReset={handleResetFilters} />
-        )}
-      </div>
+      <Container className="relative z-10 pt-2 sm:pt-4">
+        {/* Trips Sections */}
+        <div id="communityTripsContainer" className="pb-4 sm:pb-6">
+          {visibleSections.length > 0 ? (
+            visibleSections.map((sec) => (
+              <TripCategorySection
+                key={sec.id}
+                id={sec.id}
+                title={sec.title}
+                trips={sec.trips}
+              />
+            ))
+          ) : (
+            <TripEmptyState onReset={handleResetFilters} />
+          )}
+        </div>
+      </Container>
     </div>
   );
 }

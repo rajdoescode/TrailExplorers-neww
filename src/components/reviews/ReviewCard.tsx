@@ -19,7 +19,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
     : "AB";
 
   return (
-    <div className="bg-white rounded-[18px] p-6 border border-[#e2e2dc] shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between h-full">
+    <div className="bg-white/75 backdrop-blur-md rounded-[18px] p-6 border border-white/80 hover:border-white shadow-[0_8px_30px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_18px_40px_rgba(20,20,15,0.12),0_1px_1px_rgba(255,255,255,1)_inset] hover:bg-white/90 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full">
       <div className="flex flex-col gap-4">
         {/* Header: Avatar, Name, Rating */}
         <div className="flex items-center justify-between gap-3">

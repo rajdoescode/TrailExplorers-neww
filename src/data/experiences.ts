@@ -1,17 +1,7 @@
-export interface ExperienceTrip {
-  id: string;
-  title: string;
-  slug: string;
-  detailUrl: string;
-  duration: string;
-  price: number | null;
-  priceDisplay: string;
-  priceLabel: string;
-  image: string;
-  isComingSoon: boolean;
-  category: string;
-  route?: string;
-  tags?: string;
+import { CommunityTrip } from "./communityTrips";
+
+export interface ExperienceTrip extends CommunityTrip {
+  category?: string;
 }
 
 export const EXPERIENCES_DATA: ExperienceTrip[] = [
@@ -26,9 +16,11 @@ export const EXPERIENCES_DATA: ExperienceTrip[] = [
     priceLabel: "Starts from",
     image: "/assets/images/trips/img_1791097768369_Kullu-Dussehra-2025__1_.webp",
     isComingSoon: false,
+    categories: ["himachal_tours", "festival_tours"],
+    destinations: ["Kullu", "Manali", "Himachal", "Naggar", "Delhi"],
     category: "himachal_tours, festival_tours",
     route: "Delhi — Manali -Naggar— Kullu — Bijli Mahadev — Delhi",
-    tags: "HIMACHAL_TOURS, FESTIVAL_TOURS, TREKS",
+    tags: "HIMACHAL_TOURS, FESTIVAL_TOURS, TREKS, Cultural Expedition",
   },
   {
     id: "1786216631459",
@@ -41,8 +33,10 @@ export const EXPERIENCES_DATA: ExperienceTrip[] = [
     priceLabel: "Price",
     image: "/assets/images/trips/img_1786216504243_img_1786216398063_Gulmarg__A_delight_for_travelers_on_a_wanderlust_.jpg",
     isComingSoon: false,
+    categories: ["kashmir_tours"],
+    destinations: ["Kashmir", "Srinagar", "Gulmarg", "Pahalgam", "Drung", "Aru Valley"],
     category: "kashmir_tours",
     route: "Srinagar — Gulmarg — Drung — Pahalgam — Aru Valley — Betaab Valley — Chandanwari — Yusmarg / Doodhpathri — Srinagar",
-    tags: "Winter Expedition, Snow Experience, Houseboat Stay, Valley Exploration",
+    tags: "Winter Expedition, Snow Experience, Houseboat Stay, Valley Exploration, Kashmir",
   },
 ];

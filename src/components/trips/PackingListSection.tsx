@@ -89,7 +89,7 @@ export function PackingListSection({ categories, tripId }: PackingListSectionPro
   return (
     <div
       id="what-to-pack"
-      className="scroll-mt-32 sm:scroll-mt-36 bg-white rounded-2xl p-6 sm:p-8 border border-[#e2e2dc] shadow-card packing-card"
+      className="scroll-mt-32 sm:scroll-mt-36 bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 border border-white/80 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] packing-card"
     >
       {/* Header Row */}
       <div className="flex items-start justify-between gap-4 mb-6">

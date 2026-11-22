@@ -19,7 +19,7 @@ export const GuideCard: React.FC<GuideCardProps> = ({ postcard, onClick }) => {
   return (
     <article
       onClick={() => onClick && onClick(postcard)}
-      className="group bg-white rounded-[22px] border border-[#e8e8e2] shadow-[0_4px_16px_rgba(20,20,15,0.05)] hover:shadow-[0_18px_34px_rgba(20,20,15,0.12)] hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col cursor-pointer select-none h-full"
+      className="group bg-white/75 backdrop-blur-md rounded-[22px] border border-white/80 hover:border-white shadow-[0_8px_30px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_18px_40px_rgba(20,20,15,0.12),0_1px_1px_rgba(255,255,255,1)_inset] hover:bg-white/90 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col cursor-pointer select-none h-full"
     >
       {/* Top 4:3 Image */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#f6f6f1]">

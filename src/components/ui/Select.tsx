@@ -340,9 +340,8 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(
               role="listbox"
               aria-label={label || "Options"}
               className={cn(
-                "absolute top-[calc(100%+6px)] min-w-[190px] max-h-[300px] flex flex-col bg-white border-2 border-[#14140f] rounded-2xl shadow-[0_12px_36px_rgba(20,20,15,0.18)] p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150",
-                align === "right" ? "right-0" : "left-0",
-                variant !== "pill" && variant !== "badge" && "w-full"
+                "absolute top-[calc(100%+6px)] min-w-full w-full max-h-[300px] flex flex-col bg-white/95 backdrop-blur-xl border border-black/15 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.14),0_2px_6px_rgba(0,0,0,0.04)] p-1.5 z-50 animate-in fade-in zoom-in-95 duration-150",
+                align === "right" ? "right-0" : "left-0"
               )}
             >
               {/* Optional Search Input */}

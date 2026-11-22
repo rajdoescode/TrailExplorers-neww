@@ -126,7 +126,7 @@ export const CommunityTripsSection: React.FC = () => {
   }, [prevTrip, nextTrip]);
 
   return (
-    <section className="w-full py-10 sm:py-14 bg-white overflow-hidden" aria-label="Community Trips">
+    <section className="w-full py-10 sm:py-14 bg-transparent overflow-hidden" aria-label="Community Trips">
       <div className="max-w-[1280px] mx-auto px-0 sm:px-6">
         {/* Section Head (Exact typography) */}
         <div className="text-center mb-8 sm:mb-12 px-4 sm:px-0">
@@ -204,7 +204,7 @@ export const CommunityTripsSection: React.FC = () => {
                   key={trip.id}
                   onClick={() => !isCenter && setActiveIndex(idx)}
                   className={cn(
-                    "trip-card absolute left-1/2 top-1/2 w-[clamp(215px,20vw,248px)] h-[376px] bg-white rounded-[18px] border border-[#ecece5] overflow-hidden flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] group",
+                    "trip-card absolute left-1/2 top-1/2 w-[clamp(215px,20vw,248px)] h-[376px] bg-white/80 backdrop-blur-md rounded-[18px] border border-white/80 shadow-[0_8px_30px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:bg-white/95 overflow-hidden flex flex-col transition-all duration-500 ease-[cubic-bezier(0.22,0.85,0.32,1)] group",
                     !isCenter && "cursor-pointer"
                   )}
                   style={{

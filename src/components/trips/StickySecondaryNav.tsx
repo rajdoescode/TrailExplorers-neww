@@ -132,7 +132,7 @@ export function StickySecondaryNav() {
     <nav
       aria-label="Trip sections"
       style={{ top: `${headerHeight}px` }}
-      className={`fixed left-0 right-0 z-40 bg-white border-b border-[#e6e6df] shadow-[0_6px_20px_rgba(20,20,15,0.08)] transition-all duration-250 ease-out ${
+      className={`fixed left-0 right-0 z-40 bg-white/85 backdrop-blur-xl border-b border-white/80 shadow-[0_6px_20px_rgba(20,20,15,0.06)] transition-all duration-250 ease-out ${
         isVisible
           ? "opacity-100 translate-y-0 visible pointer-events-auto"
           : "opacity-0 -translate-y-3 invisible pointer-events-none"

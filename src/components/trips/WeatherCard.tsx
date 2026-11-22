@@ -30,7 +30,7 @@ export function WeatherCard({ weather }: WeatherCardProps) {
   };
 
   return (
-    <div className="trip-weather-card bg-white rounded-[26px] border-[1.5px] border-[#e8e8e2] p-6 sm:p-7 shadow-[0_8px_24px_rgba(214,255,63,0.08),0_4px_14px_rgba(20,20,15,0.04)] flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
+    <div className="trip-weather-card bg-white/80 backdrop-blur-md rounded-[26px] border border-white/80 p-6 sm:p-7 shadow-[0_12px_36px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
       {/* Left Info Column */}
       <div className="flex-1">
         {/* Top Header Row: LIVE Badge + Location */}

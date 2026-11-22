@@ -27,7 +27,7 @@ export const MobileBottomNav: React.FC = () => {
       }}
     >
       {/* Pill Container */}
-      <div className="relative bg-white rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.06)] h-[64px] px-2 flex items-center justify-around border border-black/[0.04]">
+      <div className="relative bg-white/85 backdrop-blur-xl rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.12),0_2px_8px_rgba(0,0,0,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] h-[64px] px-2 flex items-center justify-around border border-white/80">
         {/* 1. Home */}
         <Link
           href="/"

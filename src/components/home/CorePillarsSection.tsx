@@ -97,7 +97,7 @@ export const CorePillarsSection: React.FC = () => {
   ];
 
   return (
-    <section className="section w-full py-12 sm:py-16 bg-white text-center" id="core-pillars">
+    <section className="section w-full py-12 sm:py-16 bg-transparent text-center" id="core-pillars">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
         {/* Head */}
         <div className="section-head center mb-10 sm:mb-12">

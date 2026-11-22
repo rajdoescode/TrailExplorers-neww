@@ -48,7 +48,7 @@ export function TripReviewsSection({ reviews, tripTitle }: TripReviewsSectionPro
           return (
             <article
               key={rev.id}
-              className={`flex-[0_0_86%] sm:flex-[0_0_80%] md:flex-auto min-w-[280px] bg-white rounded-[22px] border-[1.5px] border-[#e8e8e2] p-5 sm:p-6 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_28px_rgba(0,0,0,0.07)] hover:border-[#dcdcd0] transition-all flex flex-col justify-between snap-start ${
+              className={`flex-[0_0_86%] sm:flex-[0_0_80%] md:flex-auto min-w-[280px] bg-white/85 backdrop-blur-md rounded-[22px] border border-white/80 p-5 sm:p-6 shadow-[0_8px_30px_rgba(20,20,15,0.05),0_1px_1px_rgba(255,255,255,0.9)_inset] hover:shadow-[0_16px_36px_rgba(20,20,15,0.1)] hover:bg-white/95 transition-all flex flex-col justify-between snap-start ${
                 idx === 0 ? "ml-4 sm:ml-0 first:ml-4 sm:first:ml-0" : ""
               } ${
                 idx === reviews.length - 1 ? "mr-4 sm:mr-0 last:mr-4 sm:last:mr-0" : ""

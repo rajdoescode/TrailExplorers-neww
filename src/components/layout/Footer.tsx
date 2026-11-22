@@ -20,14 +20,14 @@ export const Footer: React.FC = () => {
     <>
       {/* ============ WHATSAPP / SOCIAL BAR ============ */}
       {!isTripDetailPage && (
-        <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 my-10 sm:my-14">
+        <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mt-5 sm:mt-7 mb-5 sm:mb-7 relative z-20">
           <WhatsAppSocialBar />
         </div>
       )}
 
       {/* ============ FOOTER ============ */}
-      <footer className="site-footer">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6">
+      <footer className="site-footer relative z-20">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="footer-top">
             <div className="footer-brand">
               <Link href="/" className="logo">
