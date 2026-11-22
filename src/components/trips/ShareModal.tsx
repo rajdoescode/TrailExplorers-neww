@@ -2,7 +2,8 @@
 
 import React, { useState, useRef } from "react";
 import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
-import { X, Copy, Check, MessageSquare } from "lucide-react";
+import { X, Copy, Check } from "lucide-react";
+import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 import { useScrollLock } from "@/hooks/useScrollLock";
 
 interface ShareModalProps {
@@ -103,7 +104,7 @@ export function ShareModal({ isOpen, onClose, title }: ShareModalProps) {
             onClick={shareWhatsApp}
             className="w-full min-h-[48px] py-3 px-4 rounded-xl border border-[#25d366] bg-[#25d366]/10 text-[#128c7e] hover:bg-[#25d366]/20 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-[0.98]"
           >
-            <MessageSquare className="w-4 h-4 text-[#25d366]" />
+            <WhatsAppIcon className="w-4 h-4 text-[#25d366]" />
             <span>Share on WhatsApp</span>
           </button>
         </div>

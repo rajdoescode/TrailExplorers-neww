@@ -29,7 +29,7 @@ import {
   CheckCircle2,
   Share2,
   Trash2,
-  MessageSquare,
+  MessageCircleMore,
   ListOrdered,
 } from "lucide-react";
 
@@ -1500,62 +1500,80 @@ export default function PlanYourTripPage() {
   // ==========================================
   if (stepMode) {
     return (
-      <div className="min-h-screen bg-[#fafaf8] text-[#14140f] font-sans pb-24 sm:pb-16 selection:bg-[#d6ff3f] selection:text-[#14140f]">
-        {/* Intro Header & Planner Mode Switcher */}
-        <section className="pt-8 sm:pt-14 pb-6 px-4 text-center max-w-[860px] mx-auto select-none">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span className="inline-block bg-[#14140f] text-[#d6ff3f] text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-xs">
-              Private trip planner
-            </span>
-          </div>
+      <div className="min-h-screen bg-[#fbfbf8] text-[#14140f] font-sans pb-24 sm:pb-16 selection:bg-[#d6ff3f] selection:text-[#14140f] relative">
+        {/* Single Full-Page Fixed Background */}
+        <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0">
+          <picture className="w-full h-full block">
+            <source
+              media="(max-width: 767px)"
+              srcSet="/assets/images/hero_pack/Community_Trips/03_MOBILE_900x1350_TOP_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_mobile_fade.webp"
+              type="image/webp"
+            />
+            <img
+              src="/assets/images/hero_pack/Community_Trips/01_DESKTOP_1920x900_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_desktop.webp"
+              alt=""
+              aria-hidden="true"
+              className="w-full h-full object-cover object-[right_top]"
+            />
+          </picture>
+        </div>
 
-          <h1 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#14140f] font-heading leading-tight">
-            Plan your Himalayan trip<span className="text-[#a9cc2a]">.</span>
-          </h1>
-
-          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-[#6b6b63] max-w-xl mx-auto leading-relaxed">
-            Shape your custom itinerary step by step. Our trip expert will review your route, timings, and preferences,
-            then call you with an exact customized price for your group.
-          </p>
-
-          {/* Mode Switcher Tabs & Reset Action */}
-          <div className="mt-5 inline-flex items-center gap-2 flex-wrap justify-center">
-            <div className="inline-flex items-center p-1 rounded-full bg-[#f0f0eb] border border-[#e2e2dc] shadow-xs">
-              <button
-                type="button"
-                onClick={() => setStepMode(false)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all text-[#6b6b63] hover:text-[#14140f] cursor-pointer"
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                <span>Chat Planner</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => setStepMode(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-[#14140f] shadow-sm cursor-default"
-              >
-                <ListOrdered className="w-3.5 h-3.5" />
-                <span>Step-by-Step Form</span>
-              </button>
+        <div className="relative z-10">
+          {/* Intro Header & Planner Mode Switcher */}
+          <section className="pt-8 sm:pt-14 pb-6 px-4 text-center max-w-[860px] mx-auto select-none">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <span className="inline-block bg-[#14140f] text-[#d6ff3f] text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-xs">
+                Private trip planner
+              </span>
             </div>
 
-            <button
-              type="button"
-              onClick={handleResetBuilder}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold text-[#6b6b63] hover:text-[#14140f] hover:bg-[#f0f0eb] border border-transparent hover:border-[#e2e2dc] transition-all cursor-pointer"
-              title="Reset all selections and start fresh"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>Reset plan</span>
-            </button>
-          </div>
-        </section>
+            <h1 className="text-2xl sm:text-4xl lg:text-[48px] font-extrabold tracking-tight text-[#14140f] font-heading leading-tight">
+              Plan your Himalayan trip<span className="text-[#a9cc2a]">.</span>
+            </h1>
+
+            <p className="mt-2.5 text-xs sm:text-sm md:text-base text-[#6b6b63] max-w-xl mx-auto leading-relaxed">
+              Shape your custom itinerary step by step. Our trip expert will review your route, timings, and preferences,
+              then call you with an exact customized price for your group.
+            </p>
+
+            {/* Mode Switcher Tabs & Reset Action */}
+            <div className="mt-5 inline-flex items-center gap-2 flex-wrap justify-center">
+              <div className="inline-flex items-center p-1 rounded-full bg-white/70 backdrop-blur-xl border border-white/80 shadow-[0_4px_16px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset]">
+                <button
+                  type="button"
+                  onClick={() => setStepMode(false)}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all text-[#6b6b63] hover:text-[#14140f] cursor-pointer"
+                >
+                  <MessageCircleMore className="w-4 h-4" />
+                  <span>Chat Planner</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setStepMode(true)}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold transition-all bg-[#14140f] text-[#d6ff3f] shadow-sm cursor-default"
+                >
+                  <ListOrdered className="w-3.5 h-3.5" />
+                  <span>Step-by-Step Form</span>
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleResetBuilder}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold text-[#14140f] hover:bg-white/80 border border-white/80 bg-white/60 backdrop-blur-md transition-all cursor-pointer shadow-xs"
+                title="Reset all selections and start fresh"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Reset plan</span>
+              </button>
+            </div>
+          </section>
 
         {/* Wizard Main Shell */}
         <div className="max-w-[1240px] mx-auto px-3 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-6 lg:gap-8 items-start">
             {/* Left Column: Form & Stepper */}
-            <div className="bg-white border-2 border-[#e6e6df] rounded-[24px] sm:rounded-[28px] shadow-[0_12px_40px_-15px_rgba(20,20,15,0.06)] p-4 sm:p-8 md:p-10 min-w-0">
+            <div className="bg-white/80 backdrop-blur-xl border border-white/80 rounded-[24px] sm:rounded-[28px] shadow-[0_16px_45px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] p-4 sm:p-8 md:p-10 min-w-0">
               {/* Responsive Progress Stepper */}
               <div className="mb-6 sm:mb-8">
                 {/* Mobile View: Step Count Pill & Continuous Line (<640px) */}
@@ -2540,7 +2558,7 @@ export default function PlanYourTripPage() {
         </div>
 
         {/* Mobile Sticky Bottom Floating Action Bar (<1024px) */}
-        <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md border-t-2 border-[#14140f]/10 p-3 pb-[calc(12px+env(safe-area-inset-bottom,0px))] z-40 shadow-[0_-8px_24px_rgba(0,0,0,0.08)] flex flex-col gap-2">
+        <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white/80 backdrop-blur-2xl border-t border-white/80 p-3 pb-[calc(12px+env(safe-area-inset-bottom,0px))] z-40 shadow-[0_-8px_24px_rgba(20,20,15,0.08),0_1px_1px_rgba(255,255,255,0.9)_inset] flex flex-col gap-2">
           <div className="flex items-center justify-between gap-2">
             <button
               type="button"
@@ -2689,6 +2707,7 @@ export default function PlanYourTripPage() {
           </div>
           <p className="text-center text-xs text-[#6b6b63] pt-6">© 2026 Trail Explorers · Made in India ✦</p>
         </footer>
+        </div>
       </div>
     );
   }
@@ -2697,85 +2716,92 @@ export default function PlanYourTripPage() {
   // RENDER: CHAT PLANNER MODE (DEFAULT)
   // ==========================================
   return (
-    <div
-      className="min-h-screen w-full flex flex-col justify-between font-sans selection:bg-[#d6ff3f] selection:text-[#14140f]"
-      style={{
-        backgroundColor: "#14140f",
-        backgroundImage:
-          "linear-gradient(180deg, rgba(14, 16, 12, 0.72) 0%, rgba(14, 16, 12, 0.6) 50%, rgba(14, 16, 12, 0.85) 100%), url('/assets/images/home/hero-poster.jpg')",
-        backgroundPosition: "center 35%",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* Stage Head - Clean and Responsive matching Mobile & Desktop */}
-      <section className="text-center text-white pt-3 sm:pt-8 pb-2 sm:pb-3 px-4 select-none shrink-0">
-        <span className="hidden sm:inline-block bg-[#d6ff3f] text-[#14140f] text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-3 shadow-sm">
-          Private trip planner
-        </span>
-        <h1 className="text-[22px] sm:text-4xl lg:text-[46px] font-extrabold text-white tracking-tight drop-shadow-md">
-          Plan your Himalayan trip<span className="text-[#d6ff3f]">.</span>
-        </h1>
-        <p className="hidden sm:block mt-2 text-sm sm:text-base text-white/85 max-w-xl mx-auto font-normal">
-          Chat with our trip planner, shape it day by day, and our trip expert calls you with the price.
-        </p>
-      </section>
+    <div className="min-h-screen w-full flex flex-col justify-between font-sans selection:bg-[#d6ff3f] selection:text-[#14140f] relative bg-[#fbfbf8] text-[#14140f]">
+      {/* Single Full-Page Fixed Background */}
+      <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0">
+        <picture className="w-full h-full block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/images/hero_pack/Community_Trips/03_MOBILE_900x1350_TOP_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_mobile_fade.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/images/hero_pack/Community_Trips/01_DESKTOP_1920x900_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_desktop.webp"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-[right_top]"
+          />
+        </picture>
+      </div>
 
-      {/* Main App Frame */}
-      <main className="max-w-[1180px] w-full mx-auto px-2 sm:px-4 pb-2 sm:pb-4 flex-1 flex flex-col justify-center">
-        {/* App Container: Single Column on Mobile, Two Columns on Desktop */}
-        <div className="bg-white rounded-[22px] sm:rounded-[28px] overflow-hidden shadow-[0_40px_90px_-30px_rgba(10,12,8,0.55),0_0_0_1px_rgba(255,255,255,0.08)] grid grid-cols-1 lg:grid-cols-[1fr_360px] h-[calc(100dvh-130px)] sm:h-[min(780px,calc(100vh-120px))] min-h-[460px] sm:min-h-[560px] relative">
-          {/* Left Column: Chat App */}
-          <div className="flex flex-col min-w-0 min-h-0 h-full bg-white">
-            {/* Chat Header */}
-            <div className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3 border-b border-[#e8e8e0] shrink-0 bg-white">
-              <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
-                <SkeletonImage
-                  src="/assets/images/mascot/explorer-face.webp"
-                  alt="Trip Planner Avatar"
-                  fill
-                  sizes="(max-width: 640px) 36px, 44px"
-                  className="object-cover object-top scale-110"
-                />
+      <div className="relative z-10 flex flex-col justify-between min-h-screen w-full">
+        {/* Stage Head - Clean and Responsive matching Mobile & Desktop */}
+        <section className="text-center text-[#14140f] pt-3 sm:pt-8 pb-2 sm:pb-3 px-4 select-none shrink-0">
+          <span className="hidden sm:inline-block bg-[#14140f] text-[#d6ff3f] text-[11px] font-extrabold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-3 shadow-xs">
+            Private trip planner
+          </span>
+          <h1 className="text-[22px] sm:text-4xl lg:text-[46px] font-extrabold text-[#14140f] font-heading tracking-tight leading-tight">
+            Plan your Himalayan trip<span className="text-[#a9cc2a]">.</span>
+          </h1>
+          <p className="hidden sm:block mt-2 text-sm sm:text-base text-[#6b6b63] max-w-xl mx-auto font-normal">
+            Chat with our trip planner, shape it day by day, and our trip expert calls you with the price.
+          </p>
+        </section>
+
+        {/* Main App Frame */}
+        <main className="max-w-[1180px] w-full mx-auto px-2 sm:px-4 pb-2 sm:pb-4 flex-1 flex flex-col justify-center">
+          {/* App Container: Single Column on Mobile, Two Columns on Desktop */}
+          <div className="bg-white/80 backdrop-blur-2xl rounded-[22px] sm:rounded-[28px] overflow-hidden border border-white/80 shadow-[0_24px_60px_rgba(20,20,15,0.08),0_1px_1px_rgba(255,255,255,0.95)_inset] grid grid-cols-1 lg:grid-cols-[1fr_360px] h-[calc(100dvh-130px)] sm:h-[min(780px,calc(100vh-120px))] min-h-[460px] sm:min-h-[560px] relative">
+            {/* Left Column: Chat App */}
+            <div className="flex flex-col min-w-0 min-h-0 h-full bg-white/70 backdrop-blur-xl">
+              {/* Chat Header */}
+              <div className="flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-5 py-2.5 sm:py-3 border-b border-white/80 shrink-0 bg-white/75 backdrop-blur-xl">
+                <div className="relative w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] rounded-full bg-[#14140f] overflow-hidden shrink-0 border-[1.5px] border-[#14140f] shadow-xs">
+                  <SkeletonImage
+                    src="/assets/images/mascot/explorer-face.webp"
+                    alt="Trip Planner Avatar"
+                    fill
+                    sizes="(max-width: 640px) 36px, 44px"
+                    className="object-cover object-top scale-110"
+                  />
+                </div>
+                <div className="flex flex-col flex-1 min-w-0">
+                  <strong className="text-[#14140f] text-[15px] sm:text-[15.5px] font-bold leading-tight">
+                    Trip Planner
+                  </strong>
+                  <small className="flex items-center gap-1.5 text-[11px] sm:text-[11.5px] text-gray-500 leading-tight">
+                    <span className="w-2 h-2 rounded-full bg-[#b8ff00] border border-[#14140f] animate-explorer-online" />
+                    Trip planner · usually replies in seconds
+                  </small>
+                </div>
+
+                {/* Step mode toggle shortcut in chat header */}
+                <button
+                  type="button"
+                  onClick={() => setStepMode(true)}
+                  className="hidden sm:inline-flex items-center gap-1.5 border border-white/80 bg-white/80 hover:bg-white text-[#14140f] rounded-full px-3 py-1.5 text-[11.5px] font-bold transition-all cursor-pointer mr-1 shadow-xs"
+                >
+                  <ListOrdered className="w-3.5 h-3.5" />
+                  <span>Step Form</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleRestart}
+                  title="Start a new trip"
+                  className="inline-flex items-center justify-center gap-1.5 border border-white/80 bg-white/80 hover:bg-white text-[#14140f] rounded-full p-2 sm:px-3 sm:py-1.5 text-[12px] font-bold transition-all cursor-pointer shadow-xs"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">New trip</span>
+                </button>
               </div>
-              <div className="flex flex-col flex-1 min-w-0">
-                <strong className="text-[#14140f] text-[15px] sm:text-[15.5px] font-bold leading-tight">
-                  Trip Planner
-                </strong>
-                <small className="flex items-center gap-1.5 text-[11px] sm:text-[11.5px] text-gray-500 leading-tight">
-                  <span className="w-2 h-2 rounded-full bg-[#b8ff00] border border-[#14140f] animate-explorer-online" />
-                  Trip planner · usually replies in seconds
-                </small>
-              </div>
 
-              {/* Step mode toggle shortcut in chat header */}
-              <button
-                type="button"
-                onClick={() => setStepMode(true)}
-                className="hidden sm:inline-flex items-center gap-1.5 border border-[#e8e8e0] bg-[#f6f6f1] hover:bg-white text-[#14140f] rounded-full px-3 py-1.5 text-[11.5px] font-bold transition-colors cursor-pointer mr-1"
-              >
-                <ListOrdered className="w-3.5 h-3.5" />
-                <span>Step Form</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleRestart}
-                title="Start a new trip"
-                className="inline-flex items-center justify-center gap-1.5 border border-[#e8e8e0] bg-white hover:border-[#14140f] text-[#14140f] rounded-full p-2 sm:px-3 sm:py-1.5 text-[12px] font-bold transition-colors cursor-pointer"
-              >
-                <RotateCcw className="w-3.5 h-3.5" />
-                <span className="hidden sm:inline">New trip</span>
-              </button>
-            </div>
-
-            {/* Chat Messages Thread */}
-            <div className="relative flex-1 min-h-0 flex flex-col bg-white">
-              <div
-                ref={chatScrollRef}
-                className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-white"
-              >
+              {/* Chat Messages Thread */}
+              <div className="relative flex-1 min-h-0 flex flex-col bg-transparent">
+                <div
+                  ref={chatScrollRef}
+                  className="chat-scroll flex-1 min-h-0 overflow-y-auto px-3.5 sm:px-6 py-3 sm:py-4 flex flex-col gap-2.5 sm:gap-3 bg-transparent"
+                >
                 {conversationStage === 0 ? (
                   <div key={welcomeKey} className="flex flex-col gap-2.5 sm:gap-3">
                     {/* Standing Animated Character in Welcome State */}
@@ -2790,21 +2816,21 @@ export default function PlanYourTripPage() {
 
                     {/* Bubble 1 */}
                     <div className="pc-pop-1 max-w-[88%] sm:max-w-[80%] self-start">
-                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
+                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-white/85 backdrop-blur-md text-[#14140f] rounded-[18px] rounded-bl-[4px] border border-white/80 shadow-xs">
                         Hey! I'm your Trail Explorers trip planner 👋
                       </div>
                     </div>
 
                     {/* Bubble 2 */}
                     <div className="pc-pop-2 max-w-[88%] sm:max-w-[80%] self-start">
-                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] font-bold leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
+                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] font-bold leading-relaxed bg-white/85 backdrop-blur-md text-[#14140f] rounded-[18px] rounded-bl-[4px] border border-white/80 shadow-xs">
                         Where are the mountains calling you?
                       </div>
                     </div>
 
                     {/* Bubble 3 */}
                     <div className="pc-pop-3 max-w-[88%] sm:max-w-[80%] self-start">
-                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]">
+                      <div className="px-3.5 sm:px-4 py-2 sm:py-2.5 text-[13.5px] sm:text-[14.5px] leading-relaxed bg-white/85 backdrop-blur-md text-[#14140f] rounded-[18px] rounded-bl-[4px] border border-white/80 shadow-xs">
                         Tell me where, when and who's coming, and we'll shape a day-by-day plan together. Our trip expert
                         then calls you with the price.
                       </div>
@@ -2875,8 +2901,8 @@ export default function PlanYourTripPage() {
                                 msg.sender === "user"
                                   ? "bg-[#d6ff3f] text-[#14140f] font-semibold rounded-[18px] rounded-br-[4px] shadow-xs"
                                   : msg.id === "msg-2"
-                                  ? "bg-[#e9e9eb] text-[#14140f] font-bold rounded-[18px] rounded-bl-[4px]"
-                                  : "bg-[#e9e9eb] text-[#14140f] rounded-[18px] rounded-bl-[4px]"
+                                  ? "bg-white/85 backdrop-blur-md text-[#14140f] font-bold rounded-[18px] rounded-bl-[4px] border border-white/80 shadow-xs"
+                                  : "bg-white/85 backdrop-blur-md text-[#14140f] rounded-[18px] rounded-bl-[4px] border border-white/80 shadow-xs"
                               }`}
                             >
                               {msg.text}
@@ -2986,7 +3012,7 @@ export default function PlanYourTripPage() {
 
                 {/* Animated Typing Bubble */}
                 {isTyping && (
-                  <div className="self-start flex items-center gap-1.5 px-3.5 py-2 bg-[#e9e9eb] rounded-[18px] w-fit animate-pc-pop">
+                  <div className="self-start flex items-center gap-1.5 px-3.5 py-2 bg-white/85 backdrop-blur-md border border-white/80 shadow-xs rounded-[18px] w-fit animate-pc-pop">
                     <span className="text-[11.5px] font-semibold text-gray-500 mr-1.5">Mapping your route…</span>
                     <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-1 block" />
                     <i className="w-1.5 h-1.5 rounded-full bg-black/60 pc-bounce-2 block" />
@@ -3005,14 +3031,14 @@ export default function PlanYourTripPage() {
               {/* Soft floor fade and docked animated Explorer mascot (active chat mode) */}
               {conversationStage > 0 && (
                 <>
-                  <div className="absolute left-0 right-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent pointer-events-none z-[5]" />
+                  <div className="absolute left-0 right-0 bottom-0 h-10 bg-gradient-to-t from-white/90 via-white/40 to-transparent pointer-events-none z-[5]" />
                   <ExplorerChatMascot ref={mascotRef} variant="dock" />
                 </>
               )}
             </div>
 
             {/* Composer */}
-            <div className="p-2.5 sm:p-4 pb-[calc(10px+env(safe-area-inset-bottom,0px))] sm:pb-4 bg-white border-t border-[#e8e8e0] shrink-0">
+            <div className="p-2.5 sm:p-4 pb-[calc(10px+env(safe-area-inset-bottom,0px))] sm:pb-4 bg-white/75 backdrop-blur-xl border-t border-white/80 shrink-0">
               {/* Mobile Drawer Pill: "Your trip so far ↑" pinned above input */}
               {activeTrip && (
                 <div className="lg:hidden flex items-center justify-start pb-2">
@@ -3033,7 +3059,7 @@ export default function PlanYourTripPage() {
 
               <form
                 onSubmit={handleSendMessage}
-                className="flex items-center gap-2 bg-white rounded-full p-1 pl-4 sm:pl-5 shadow-[0_0_0_1.5px_#e8e8e0,0_8px_24px_-14px_rgba(20,20,15,0.35)] focus-within:shadow-[0_0_0_2px_#14140f,0_8px_24px_-14px_rgba(20,20,15,0.35)] transition-shadow"
+                className="flex items-center gap-2 bg-white/90 backdrop-blur-md rounded-full p-1 pl-4 sm:pl-5 border border-white/80 shadow-[0_4px_16px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] focus-within:border-[#14140f] focus-within:bg-white transition-all"
               >
                 <input
                   type="text"
@@ -3198,9 +3224,10 @@ export default function PlanYourTripPage() {
       </div>
 
       {/* Minimal Footer on Mountain Backdrop */}
-      <footer className="w-full py-3 sm:py-4 text-center text-[11px] sm:text-xs text-white/60 tracking-wider select-none shrink-0">
+      <footer className="w-full py-3 sm:py-4 text-center text-[11px] sm:text-xs text-[#6b6b63] tracking-wider select-none shrink-0">
         © 2026 Trail Explorers · Made in India ✦
       </footer>
+      </div>
 
       {/* Inquiry Dialog Modal (Chat Mode) */}
       {modalOpen && (

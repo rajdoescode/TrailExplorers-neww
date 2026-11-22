@@ -116,8 +116,8 @@ export const Header: React.FC<HeaderProps> = () => {
     <>
       <header
         className={cn(
-          "sticky top-0 z-50 transition-all duration-200 w-full bg-white/80 backdrop-blur-xl border-b border-white/60",
-          isScrolled ? "shadow-[0_4px_20px_rgba(20,20,15,0.06)]" : "shadow-none"
+          "sticky top-0 z-50 transition-all duration-200 w-full bg-white/75 backdrop-blur-2xl border-b border-white/80 shadow-[0_4px_24px_rgba(20,20,15,0.05),0_1px_1px_rgba(255,255,255,0.9)_inset]",
+          isScrolled && "bg-white/85 shadow-[0_8px_30px_rgba(20,20,15,0.08)]"
         )}
       >
         <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-4">
@@ -187,7 +187,7 @@ export const Header: React.FC<HeaderProps> = () => {
                   type="button"
                   onClick={() => setSearchOpen(true)}
                   aria-label="Search itineraries"
-                  className="w-[44px] h-[44px] rounded-full bg-[#f6f6f1] text-[#14140f] hover:bg-[#ecece5] border border-[#e2e2dc] inline-flex items-center justify-center shrink-0 active:scale-90 transition-transform cursor-pointer"
+                  className="w-[44px] h-[44px] rounded-full bg-white/75 backdrop-blur-md text-[#14140f] hover:bg-white border border-white/80 shadow-xs inline-flex items-center justify-center shrink-0 active:scale-90 transition-transform cursor-pointer"
                 >
                   <Search className="w-[17px] h-[17px] text-[#14140f] stroke-[2.2]" />
                 </button>
@@ -197,7 +197,7 @@ export const Header: React.FC<HeaderProps> = () => {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-[44px] h-[44px] border border-[#e2e2dc] rounded-full flex items-center justify-center text-[#14140f] hover:bg-[#f6f6f1] active:scale-90 transition-transform cursor-pointer"
+              className="w-[44px] h-[44px] border border-white/80 bg-white/75 backdrop-blur-md shadow-xs rounded-full flex items-center justify-center text-[#14140f] hover:bg-white active:scale-90 transition-transform cursor-pointer"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-5 h-5 stroke-[2.4]" /> : <Menu className="w-5 h-5 stroke-[2.2]" />}
