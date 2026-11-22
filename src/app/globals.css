@@ -2022,7 +2022,7 @@ body.modal-open .mobile-book-bar {
    Coverflow Carousels (Exact Mobile & Tablet Match)
    ========================================================= */
 
-@media (max-width: 1280px) {
+@media (max-width: 1100px) {
   .carousel-stage .trip-card[data-offset="2"],
   .carousel-stage .trip-card[data-offset="-2"],
   .trip-card[data-offset="2"],
@@ -2050,9 +2050,9 @@ body.modal-open .mobile-book-bar {
   /* Responsive card sizing on mobile */
   .carousel-stage .trip-card:not(.dest-card-simple) {
     width: clamp(215px, 62vw, 252px) !important;
-    height: 384px !important;
-    border-radius: 20px !important;
-    border: none !important;
+    height: 376px !important;
+    border-radius: 18px !important;
+    border: 1px solid #ecece5 !important;
   }
 
   .carousel-stage .trip-card.dest-card-simple {
@@ -2096,11 +2096,11 @@ body.modal-open .mobile-book-bar {
 }
 
 .carousel-stage .trip-card:not(.dest-card-simple) {
-  width: clamp(215px, 58vw, 252px);
-  height: 384px;
+  width: clamp(215px, 20vw, 248px);
+  height: 376px;
   background: #ffffff;
-  border-radius: 20px;
-  border: none;
+  border-radius: 18px;
+  border: 1px solid #ecece5;
 }
 
 .carousel-stage .trip-card:not(.dest-card-simple) .body {
@@ -2137,7 +2137,7 @@ body.modal-open .mobile-book-bar {
 .carousel-stage .trip-card:not(.dest-card-simple) hr {
   border: none;
   border-top: 1px solid #ecece5;
-  margin: 10px 0;
+  margin: 8px 0;
 }
 
 .carousel-stage .trip-card:not(.dest-card-simple) .price-row {
