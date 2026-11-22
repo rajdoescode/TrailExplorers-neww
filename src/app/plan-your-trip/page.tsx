@@ -1477,7 +1477,7 @@ export default function PlanYourTripPage() {
           </button>
         </div>
 
-        <div className="flex flex-col gap-1.5 max-h-[220px] overflow-y-auto ticket-scroll pr-1">
+        <div className="flex flex-col gap-1.5 pr-0.5">
           {builderDays.map((d) => (
             <div
               key={d.id}
@@ -1826,7 +1826,7 @@ export default function PlanYourTripPage() {
                     </div>
 
                     {/* Trip Duration Slider & Presets */}
-                    <div className="flex flex-col justify-between gap-3 p-4 rounded-2xl bg-[#f6f6f1] border-2 border-[#e2e2dc]">
+                    <div className="flex flex-col justify-between gap-3 p-4 rounded-2xl bg-white/60 backdrop-blur-md border border-[#e2e2dc]/80 shadow-xs">
                       <div className="flex justify-between items-center">
                         <span className="text-xs font-bold text-[#14140f] uppercase tracking-wider">Trip Duration</span>
                         <Badge variant="lime" size="md">
@@ -1895,10 +1895,10 @@ export default function PlanYourTripPage() {
                             key={type.id}
                             type="button"
                             onClick={() => setGroupType(type.id)}
-                            className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 text-center transition-all cursor-pointer ${
+                            className={`flex flex-col items-center justify-center p-3 rounded-xl border text-center transition-all cursor-pointer ${
                               isSel
                                 ? "bg-[#14140f] text-white border-[#14140f] shadow-xs"
-                                : "bg-white text-[#14140f] border-[#e2e2dc] hover:border-black"
+                                : "bg-white/70 backdrop-blur-sm text-[#14140f] border-[#e2e2dc] hover:border-black shadow-xs"
                             }`}
                           >
                             <span className="text-xs font-bold">{type.label}</span>
@@ -2518,18 +2518,18 @@ export default function PlanYourTripPage() {
             </div>
 
             {/* Right Column: Live Sticky Trip Ticket (Desktop view) */}
-            <aside className="hidden lg:block sticky top-24 select-none">
-              <div className="bg-[#14140f] text-white rounded-[24px] border-2 border-[#14140f] shadow-2xl overflow-hidden">
+            <aside className="hidden lg:block sticky top-[80px] z-20 select-none">
+              <div className="bg-[#14140f]/90 backdrop-blur-2xl text-white rounded-[24px] border border-white/20 shadow-[0_24px_60px_rgba(20,20,15,0.25),0_1px_1px_rgba(255,255,255,0.15)_inset] overflow-hidden flex flex-col max-h-[calc(100vh-100px)]">
                 {/* Ticket Head with Cutout Notches */}
-                <div className="relative p-5 border-b-2 border-dashed border-white/20">
-                  <span className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-[#fafaf8] block z-10" />
-                  <span className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-[#fafaf8] block z-10" />
+                <div className="relative p-4 sm:p-5 border-b-2 border-dashed border-white/15 shrink-0 bg-white/5">
+                  <span className="absolute -bottom-2.5 -left-3 w-6 h-6 rounded-full bg-white/80 backdrop-blur-xl border border-white/80 block z-10 shadow-xs" />
+                  <span className="absolute -bottom-2.5 -right-3 w-6 h-6 rounded-full bg-white/80 backdrop-blur-xl border border-white/80 block z-10 shadow-xs" />
 
                   <div className="flex flex-col gap-1">
                     <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-[#d6ff3f]">
                       Your Live Trip Ticket
                     </span>
-                    <strong className="text-lg font-bold text-white leading-tight">
+                    <strong className="text-base sm:text-lg font-bold text-white leading-tight">
                       {activeRegionNames} Custom Trip
                     </strong>
                     <small className="text-xs text-white/60">
@@ -2538,17 +2538,21 @@ export default function PlanYourTripPage() {
                   </div>
                 </div>
 
-                <div className="p-5">{renderBuilderLiveTicket()}</div>
+                {/* Ticket Scroll Body */}
+                <div className="p-4 sm:p-5 flex-1 min-h-0 overflow-y-auto ticket-scroll">
+                  {renderBuilderLiveTicket()}
+                </div>
 
-                <div className="p-4 border-t border-white/10 bg-black/30 text-center">
+                {/* Ticket Fixed Bottom CTA */}
+                <div className="p-3.5 sm:p-4 border-t border-white/10 bg-[#14140f]/95 shrink-0 text-center">
                   <button
                     type="button"
                     onClick={() => setWizardStep(4)}
-                    className="w-full py-3 px-4 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-xs shadow-md transition-all cursor-pointer"
+                    className="w-full py-3 px-4 rounded-full bg-[#d6ff3f] hover:bg-[#ccff00] text-[#14140f] font-bold text-xs shadow-md transition-all cursor-pointer active:scale-95"
                   >
                     Proceed to Review & Quote →
                   </button>
-                  <span className="text-[10.5px] text-white/50 block mt-2">
+                  <span className="text-[10px] text-white/50 block mt-1.5">
                     No payment required now · expert quote in 24h
                   </span>
                 </div>
@@ -3059,26 +3063,27 @@ export default function PlanYourTripPage() {
 
               <form
                 onSubmit={handleSendMessage}
-                className="flex items-center gap-2 bg-white/90 backdrop-blur-md rounded-full p-1 pl-4 sm:pl-5 border border-white/80 shadow-[0_4px_16px_rgba(20,20,15,0.06),0_1px_1px_rgba(255,255,255,0.9)_inset] focus-within:border-[#14140f] focus-within:bg-white transition-all"
+                className="flex items-center gap-2 bg-white rounded-full p-1.5 pl-4 sm:pl-5 border-2 border-[#14140f] shadow-sm focus-within:shadow-[0_0_0_3px_rgba(214,255,63,0.45)] transition-all"
               >
                 <input
                   type="text"
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   placeholder="Tell us about your trip…"
-                  className="flex-1 bg-transparent border-none outline-hidden text-[#14140f] text-[14.5px] sm:text-[16px] placeholder-gray-400 py-1.5 sm:py-2"
+                  className="flex-1 bg-transparent border-0 border-none outline-none focus:outline-none focus:ring-0 ring-0 focus-visible:outline-none focus-visible:ring-0 shadow-none text-[#14140f] text-[14.5px] sm:text-[16px] placeholder:text-[#94a3b8] py-1.5 sm:py-2"
+                  style={{ outline: "none", border: "none", boxShadow: "none" }}
                 />
                 <button
                   type="submit"
                   aria-label="Send message"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#14140f] hover:bg-black text-[#d6ff3f] flex items-center justify-center shrink-0 transition-transform active:scale-95 cursor-pointer border-none"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#14140f] hover:bg-black text-[#d6ff3f] flex items-center justify-center shrink-0 transition-transform hover:scale-105 active:scale-95 cursor-pointer border-none shadow-xs"
                 >
                   <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 stroke-[2.4]" />
                 </button>
               </form>
 
               <p className="text-center text-[11.5px] sm:text-[12px] text-gray-500 mt-2">
-                <span className="hidden sm:inline">Enter to send · Shift + Enter for a new line · </span>
+                <span className="hidden sm:inline">Press Enter to send · </span>
                 Prefer clicking?{" "}
                 <button
                   type="button"
