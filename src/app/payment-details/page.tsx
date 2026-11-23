@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Copy, Check, MapPin, Mail, Phone, Sparkles } from "lucide-react";
-import { WhatsAppSocialBar } from "@/components/common/WhatsAppSocialBar";
 
 export default function PaymentDetailsPage() {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
@@ -338,17 +337,6 @@ export default function PaymentDetailsPage() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* WhatsApp & Social Support Bar */}
-        <div className="mt-4 sm:mt-6">
-          <WhatsAppSocialBar
-            phone="+91 70166 40870"
-            whatsappLink="https://wa.me/917016640870?text=Hi%20Trail%20Explorers!%20%F0%9F%91%8B%20I'm%20sharing%20my%20payment%20confirmation."
-            instagramLink="https://www.instagram.com/trail_explorers_"
-            youtubeLink="https://www.youtube.com/@Trail_Explorers"
-            facebookLink="https://facebook.com"
-          />
         </div>
 
       </div>
