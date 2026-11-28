@@ -18,7 +18,24 @@ export default function PaymentDetailsPage() {
   };
 
   return (
-    <div className="w-full bg-[#fbfbf9] min-h-screen py-10 sm:py-16 px-4 sm:px-6 md:px-8 relative overflow-hidden">
+    <div className="w-full bg-[#fbfbf8] text-[#14140f] min-h-screen py-10 sm:py-16 px-4 sm:px-6 md:px-8 relative overflow-hidden">
+      {/* Single Full-Page Fixed Background - Soft and luminous */}
+      <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0">
+        <picture className="w-full h-full block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/images/backgrounds/payment-details-mobile.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/images/backgrounds/payment-details-desktop.webp"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-[right_top] opacity-90 contrast-[1.02]"
+          />
+        </picture>
+      </div>
+
       {/* Ambient Glassmorphic Glow Orbs */}
       <div
         className="absolute top-12 left-1/4 w-[420px] h-[420px] bg-[#d6ff3f]/20 rounded-full blur-[110px] pointer-events-none -z-0"

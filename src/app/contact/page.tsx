@@ -39,7 +39,24 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="w-full bg-[#fafaf7] min-h-screen py-10 sm:py-16 relative overflow-hidden">
+    <div className="w-full bg-[#fbfbf8] text-[#14140f] min-h-screen py-10 sm:py-16 relative overflow-hidden">
+      {/* Single Full-Page Fixed Background - Soft and luminous */}
+      <div className="fixed inset-0 pointer-events-none select-none overflow-hidden z-0">
+        <picture className="w-full h-full block">
+          <source
+            media="(max-width: 767px)"
+            srcSet="/assets/images/backgrounds/contact-mobile.webp"
+            type="image/webp"
+          />
+          <img
+            src="/assets/images/backgrounds/contact-desktop.webp"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-[right_top] opacity-90 contrast-[1.02]"
+          />
+        </picture>
+      </div>
+
       {/* Ambient Glassmorphism Glow Spheres */}
       <div
         className="absolute top-10 left-10 w-[420px] h-[420px] bg-[#d6ff3f]/25 rounded-full blur-[120px] pointer-events-none -z-0"
