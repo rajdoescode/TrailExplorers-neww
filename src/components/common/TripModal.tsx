@@ -6,6 +6,7 @@ import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 import { CustomCalendarPicker } from "@/components/ui/CustomCalendarPicker";
+import { TrailApi } from "@/lib/api-client";
 
 interface TripModalDetail {
   title?: string;
@@ -146,6 +147,16 @@ export const TripModal: React.FC = () => {
       const existing = JSON.parse(localStorage.getItem("trailexplorers_inquiries") || "[]");
       existing.push(payload);
       localStorage.setItem("trailexplorers_inquiries", JSON.stringify(existing));
+      // Submit directly to MongoDB Backend API
+      TrailApi.submitInquiry({
+        customer_name: payload.customer_name,
+        phone: payload.phone,
+        email: payload.email === "N/A" ? "" : payload.email,
+        destination: payload.destination,
+        trip_title: payload.trip_title,
+        pickup_city: payload.customer_city,
+        source: "website_modal",
+      }).catch(() => {});
     } catch {
       // ignore
     }

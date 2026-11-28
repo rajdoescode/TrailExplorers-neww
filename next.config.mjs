@@ -12,6 +12,15 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    const backendUrl = process.env.BACKEND_API_URL || 'http://127.0.0.1:5002';
+    return [
+      {
+        source: '/api/:path*',
+        destination: `${backendUrl}/api/:path*`,
+      },
+    ];
+  },
   webpack: (config) => {
     config.watchOptions = {
       poll: 1000,

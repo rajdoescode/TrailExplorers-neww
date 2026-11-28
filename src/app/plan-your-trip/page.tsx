@@ -58,6 +58,7 @@ import {
   ExplorerChatMascot,
   ExplorerMascotHandle,
 } from "@/components/chat/ExplorerChatMascot";
+import { TrailApi } from "@/lib/api-client";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 
@@ -914,6 +915,25 @@ export default function PlanYourTripPage() {
     const refCode = "TE-" + Math.floor(1000 + Math.random() * 9000);
     setBuilderRef(refCode);
     setBuilderSubmitted(true);
+
+    // Submit to MongoDB Backend
+    TrailApi.submitCustomPlan({
+      referenceNumber: refCode,
+      name: custName,
+      phone: custPhone,
+      email: custEmail,
+      destinations: selectedRegions.length > 0 ? selectedRegions : [activeRegionNames],
+      startDate,
+      flexibleDates,
+      days: numDays,
+      adults,
+      children,
+      startCity,
+      stay: stayStyle,
+      transport: transportStyle,
+      notes: custNotes,
+      plannerSource: "builder_form",
+    }).catch(() => {});
   };
 
   // ------------------------------------------
