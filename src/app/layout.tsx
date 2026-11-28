@@ -1,10 +1,38 @@
 import type { Metadata, Viewport } from "next";
+import dynamic from "next/dynamic";
+import { Plus_Jakarta_Sans, Poppins, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
-import { FloatingWidgets } from "@/components/common/FloatingWidgets";
-import { TripModal } from "@/components/common/TripModal";
+
+const FloatingWidgets = dynamic(() =>
+  import("@/components/common/FloatingWidgets").then((m) => m.FloatingWidgets)
+);
+const TripModal = dynamic(() =>
+  import("@/components/common/TripModal").then((m) => m.TripModal)
+);
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const baloo2 = Baloo_2({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-baloo",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -62,18 +90,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="overflow-x-clip max-w-full"
+      className={`overflow-x-clip max-w-full ${plusJakartaSans.variable} ${poppins.variable} ${baloo2.variable}`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         className="min-h-screen flex flex-col bg-white text-[#14140f] antialiased overflow-x-clip max-w-full relative"
         suppressHydrationWarning

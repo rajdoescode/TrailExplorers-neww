@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
-import { TRIPS_DATA } from "@/data/trips";
+import { TRIPS_SUMMARY } from "@/data/trips-summary";
 import { TripCard } from "@/components/trips/TripCard";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
@@ -12,15 +12,15 @@ import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
 export default function WinterSpitiPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const winterTrips = TRIPS_DATA.filter((t) =>
+  const winterTrips = TRIPS_SUMMARY.filter((t) =>
     t.title.toLowerCase().includes("winter") ||
     t.category.toLowerCase().includes("winter") ||
     (t.category.toLowerCase().includes("spiti") && t.title.toLowerCase().includes("expedition"))
   );
 
-  const gatewayTrip = TRIPS_DATA.find((t) =>
+  const gatewayTrip = TRIPS_SUMMARY.find((t) =>
     t.title.toLowerCase().includes("spiti valley group trip from delhi: winter expedition")
-  ) || winterTrips[0] || TRIPS_DATA[0];
+  ) || winterTrips[0] || TRIPS_SUMMARY[0];
 
   const handleOpenBookModal = () => {
     if (typeof window !== "undefined" && window.openTripModal) {

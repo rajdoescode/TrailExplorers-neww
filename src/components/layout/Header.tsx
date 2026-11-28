@@ -9,7 +9,7 @@ import { Phone, Search, Menu, X, ArrowUpRight, MapPin, Sparkles, ChevronRight } 
 import { Container } from "@/components/layout/Container";
 import { cn, formatPrice } from "@/lib/utils";
 import { SITE_CONFIG } from "@/data/site-config";
-import { TRIPS_DATA } from "@/data/trips";
+import { TRIPS_SUMMARY } from "@/data/trips-summary";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 
@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = () => {
   const filteredTrips = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     if (!q) return [];
-    return TRIPS_DATA.filter((t) => {
+    return TRIPS_SUMMARY.filter((t) => {
       const title = (t.title || "").toLowerCase();
       const cat = (t.category || "").toLowerCase();
       const loc = (t.pickup_location || "").toLowerCase();

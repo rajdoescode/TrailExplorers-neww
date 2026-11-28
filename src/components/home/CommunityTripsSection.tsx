@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import { ChevronLeft, ChevronRight, Clock } from "lucide-react";
-import { TRIPS_DATA } from "@/data/trips";
 import { formatPrice } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 

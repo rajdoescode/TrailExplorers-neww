@@ -5,7 +5,7 @@ import { useSwipeDownToClose } from "@/hooks/useSwipeDownToClose";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
-import { POSTCARDS_DATA } from "@/data/postcards";
+import { POSTCARDS_HOME_PREVIEW } from "@/data/postcards-preview";
 import { Postcard } from "@/types";
 import { cn } from "@/lib/utils";
 import { useScrollLock } from "@/hooks/useScrollLock";
@@ -23,7 +23,7 @@ export const WatchReadSection: React.FC = () => {
     overlayRef: modalOverlayRef,
   });
 
-  const postcards = POSTCARDS_DATA.slice(0, 6);
+  const postcards = POSTCARDS_HOME_PREVIEW;
   const [activeIndex, setActiveIndex] = useState(2);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);

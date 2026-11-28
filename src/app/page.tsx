@@ -1,17 +1,35 @@
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/home/HeroSection";
 import { TrustBar } from "@/components/home/TrustBar";
 import { RegionIcons } from "@/components/home/RegionIcons";
 import { WinterStripHome } from "@/components/home/WinterStripHome";
 import { CommunityTripsSection } from "@/components/home/CommunityTripsSection";
 import { PlanYourTripBanner } from "@/components/home/PlanYourTripBanner";
-import { HighEndWanderingSection } from "@/components/home/HighEndWanderingSection";
-import { ExperiencesSection } from "@/components/home/ExperiencesSection";
-import { EscapeOrdinaryBanner } from "@/components/home/EscapeOrdinaryBanner";
-import { CorePillarsSection } from "@/components/home/CorePillarsSection";
-import { DomesticDestinationsSection } from "@/components/home/DomesticDestinationsSection";
-import { InternationalDestinationsSection } from "@/components/home/InternationalDestinationsSection";
-import { WatchReadSection } from "@/components/home/WatchReadSection";
-import { ReviewsSection } from "@/components/home/ReviewsSection";
+
+const HighEndWanderingSection = dynamic(() =>
+  import("@/components/home/HighEndWanderingSection").then((m) => m.HighEndWanderingSection)
+);
+const ExperiencesSection = dynamic(() =>
+  import("@/components/home/ExperiencesSection").then((m) => m.ExperiencesSection)
+);
+const EscapeOrdinaryBanner = dynamic(() =>
+  import("@/components/home/EscapeOrdinaryBanner").then((m) => m.EscapeOrdinaryBanner)
+);
+const CorePillarsSection = dynamic(() =>
+  import("@/components/home/CorePillarsSection").then((m) => m.CorePillarsSection)
+);
+const DomesticDestinationsSection = dynamic(() =>
+  import("@/components/home/DomesticDestinationsSection").then((m) => m.DomesticDestinationsSection)
+);
+const InternationalDestinationsSection = dynamic(() =>
+  import("@/components/home/InternationalDestinationsSection").then((m) => m.InternationalDestinationsSection)
+);
+const WatchReadSection = dynamic(() =>
+  import("@/components/home/WatchReadSection").then((m) => m.WatchReadSection)
+);
+const ReviewsSection = dynamic(() =>
+  import("@/components/home/ReviewsSection").then((m) => m.ReviewsSection)
+);
 
 export default function HomePage() {
   return (
@@ -28,6 +46,8 @@ export default function HomePage() {
             src="/assets/images/hero_pack/Community_Trips/01_DESKTOP_1920x900_WHITE_FADE_WEBP/06_Suspension_Bridge_Hike_desktop.webp"
             alt=""
             aria-hidden="true"
+            decoding="async"
+            fetchPriority="low"
             className="w-full h-full object-cover object-[right_top] opacity-75 brightness-[1.06] contrast-[0.95]"
           />
         </picture>
@@ -55,28 +75,44 @@ export default function HomePage() {
         <PlanYourTripBanner />
 
         {/* 7. High-End Wandering on a Lemonade Budget */}
-        <HighEndWanderingSection />
+        <div className="below-fold-section">
+          <HighEndWanderingSection />
+        </div>
 
         {/* 8. Immersive Experiences */}
-        <ExperiencesSection />
+        <div className="below-fold-section">
+          <ExperiencesSection />
+        </div>
 
         {/* 9. Escape the Ordinary Banner */}
-        <EscapeOrdinaryBanner />
+        <div className="below-fold-section">
+          <EscapeOrdinaryBanner />
+        </div>
 
         {/* 10. Core Pillars (Safety, Local Support, Eco, Transparency, 24x7) */}
-        <CorePillarsSection />
+        <div className="below-fold-section">
+          <CorePillarsSection />
+        </div>
 
         {/* 11. Domestic Destinations Grid */}
-        <DomesticDestinationsSection />
+        <div className="below-fold-section">
+          <DomesticDestinationsSection />
+        </div>
 
         {/* 12. International Destinations Grid */}
-        <InternationalDestinationsSection />
+        <div className="below-fold-section">
+          <InternationalDestinationsSection />
+        </div>
 
         {/* 13. Watch & Read / Postcards & Video Reels */}
-        <WatchReadSection />
+        <div className="below-fold-section">
+          <WatchReadSection />
+        </div>
 
         {/* 14. Customer Testimonials & Reviews */}
-        <ReviewsSection />
+        <div className="below-fold-section">
+          <ReviewsSection />
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export const HeroSection: React.FC = () => {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/assets/images/home/hero-poster.jpg"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -26,10 +26,7 @@ export const HeroSection: React.FC = () => {
       {/* Hero Content Box */}
       <div className="relative z-2 max-w-[1100px] w-full mx-auto px-4 sm:px-6 py-8 sm:py-6 flex flex-col items-center text-center gap-4 sm:gap-[22px]">
         {/* Hero Title */}
-        <h1
-          className="font-heading font-bold text-white text-[clamp(28px,6.5vw,72px)] leading-[1.1] tracking-[-0.025em] m-0"
-          style={{ fontFamily: "'Plus Jakarta Sans', 'Poppins', -apple-system, sans-serif" }}
-        >
+        <h1 className="font-heading font-bold text-white text-[clamp(28px,6.5vw,72px)] leading-[1.1] tracking-[-0.025em] m-0">
           <span className="inline-block">Made by wanderers,</span>
           <br />
           <span className="inline-block">

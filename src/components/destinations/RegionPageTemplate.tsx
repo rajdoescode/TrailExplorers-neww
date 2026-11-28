@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { SkeletonImage } from "@/components/ui/SkeletonImage";
 import Link from "next/link";
-import { TRIPS_DATA } from "@/data/trips";
+import { TRIPS_SUMMARY } from "@/data/trips-summary";
 import { TripCard } from "@/components/trips/TripCard";
 import { ChevronDown, ArrowRight } from "lucide-react";
 import { WhatsAppIcon } from "@/components/common/WhatsAppIcon";
@@ -45,7 +45,7 @@ export const RegionPageTemplate: React.FC<RegionPageProps> = ({
   const [isAboutExpanded, setIsAboutExpanded] = useState(false);
 
   // Filter trips for this region
-  const regionTrips = TRIPS_DATA.filter((trip) => {
+  const regionTrips = TRIPS_SUMMARY.filter((trip) => {
     const tripCat = (trip.category || "").toLowerCase();
     const tripTitle = (trip.title || "").toLowerCase();
     const tripRoute = (trip.route || "").toLowerCase();
