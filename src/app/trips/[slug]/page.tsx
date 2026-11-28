@@ -229,11 +229,21 @@ export default function TripDetailPage() {
     ? "Spiti"
     : trip.category?.includes("kashmir")
     ? "Kashmir"
-    : trip.category?.includes("zanskar")
-    ? "Zanskar"
     : trip.category?.includes("ladakh")
     ? "Ladakh"
-    : "Himachal";
+    : trip.category?.includes("uttarakhand")
+    ? "Uttarakhand"
+    : trip.category?.includes("himachal")
+    ? "Himachal"
+    : trip.category?.includes("rajasthan")
+    ? "Rajasthan"
+    : trip.category?.includes("gujarat")
+    ? "Gujarat"
+    : "Tour Packages";
+
+  const destinationHref = ["Spiti", "Kashmir", "Ladakh", "Uttarakhand", "Himachal"].includes(destinationLabel)
+    ? `/${destinationLabel.toLowerCase()}`
+    : "/tour-packages";
 
   const bgDesktop = destinationLabel === "Spiti"
     ? "/assets/images/hero_pack/Community_Trips/01_DESKTOP_1920x900_WHITE_FADE_WEBP/05_Group_Resting_Viewpoint_desktop.webp"
@@ -286,7 +296,7 @@ export default function TripDetailPage() {
               <nav className="flex items-center gap-1.5 text-xs text-[#6b6b63] font-medium mb-3">
                 <Link href="/" className="hover:text-[#14140f]">Home</Link>
                 <span>›</span>
-                <Link href={`/${destinationLabel.toLowerCase()}`} className="hover:text-[#14140f]">
+                <Link href={destinationHref} className="hover:text-[#14140f]">
                   {destinationLabel}
                 </Link>
                 <span>›</span>
@@ -683,7 +693,7 @@ export default function TripDetailPage() {
                 More trips in {destinationLabel}
               </h2>
               <Link
-                href={`/${destinationLabel.toLowerCase()}`}
+                href={destinationHref}
                 className="text-xs sm:text-sm font-semibold text-[#14140f] hover:underline flex items-center gap-1 shrink-0"
               >
                 See all {destinationLabel} trips <span aria-hidden="true">&rarr;</span>

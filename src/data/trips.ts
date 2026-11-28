@@ -4,9 +4,9 @@ export const TRIPS_DATA: Trip[] = [
   {
     "title": "Romantic Himachal Honeymoon Package",
     "duration": "7 Days / 6 Nights",
-    "price": "\u20b958,599",
+    "price": "₹58,599",
     "category": "himachal_tours",
-    "route": "Delhi \u2014 Shimla \u2014 Kullu \u2014 Manali \u2014 Dharamshala \u2014 Dalhousie \u2014 Delhi",
+    "route": "Delhi — Shimla — Kullu — Manali — Dharamshala — Dalhousie — Delhi",
     "weather_spot": "",
     "tags": "",
     "image_url": "/assets/images/trips/img_1793950812320_download__6_.jpg",
@@ -16,7 +16,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_4": "/assets/images/trips/img_1793950831567_Enjoying_Shimla_Misty_Monsoons_with_my_favourite_cup_of_coffee_and_human_by_my_s.jpg",
     "bento_img_5": "/assets/images/trips/img_1793950879073_Snow_Couple_Photo_Ideas___Manali_Himachal_Travel.jpg",
     "gallery_images": [],
-    "about_text": "<p><strong>Discover the Ultimate Romantic Himachal Honeymoon Package with Trail Explorers</strong></p><p>Welcome to the beginning of your forever. There is no better place to celebrate your love than amidst the towering peaks, whispering pine forests, and misty valleys of the majestic Himalayas. Curated exclusively by Trail Explorers, this 7-Day and 6-Night Romantic Himachal Honeymoon Package is carefully designed to offer couples the perfect blend of intimacy, breathtaking scenery, and thrilling mountain adventures.</p><p>Starting and ending in Delhi, this seamless journey takes you through the most iconic hill stations of North India: the colonial elegance of Shimla, the adrenaline and alpine beauty of Manali, the spiritual serenity of Dharamshala, and the untouched meadows of Dalhousie and Khajjiar.   </p><p>At Trail Explorers, we believe that a honeymoon is not just a trip; it is a once-in-a-lifetime experience where every moment should feel magical. That is why we have ditched the exhausting, rushed tourist itineraries. Instead, we offer a slow-paced, deeply immersive travel experience. From the moment you sit in your private, comfortable sedan in Delhi, your only job is to hold hands, enjoy your favorite romantic playlists, and watch the landscape transform from bustling cityscapes to winding mountain roads.   </p><p><strong>THE JOURNEY BEGINS: THE COLONIAL CHARM OF SHIMLA AND KUFRI</strong>   </p><p>Your romantic escapade begins as we drive up to Shimla, the erstwhile summer capital of British India. Shimla exudes an old-world charm that is incredibly romantic. Picture yourselves walking down the historic Mall Road in the evening, the crisp mountain air brushing against your face, as you stop by cozy heritage cafes for a hot cup of locally brewed coffee. We take you to the Jakhoo Temple for a spiritual start to your marital journey, offering panoramic views of the entire Shimla valley.   </p><p>The next day brings you to Kufri and the dense Green Valley. Here, the thick cedar forests create a natural canopy, offering the perfect backdrop for your first honeymoon photos. Whether you choose to enjoy a fun horseback ride through the misty trails or simply sit together in the quiet woods, Shimla sets the perfect relaxed tone for the days to come.   </p><p><strong>INTO THE HEART OF THE HIMALAYAS: THE MAGIC OF KULLU AND MANALI</strong>   </p><p>Leaving Shimla behind, your private sedan follows the mesmerizing curves of the Beas River towards the adventure capital of India\u2014Manali. The drive itself is a romantic road trip, with the roaring river on one side and towering green mountains on the other. En route, we stop in the Kullu valley. For couples who love a dash of adrenaline, this is the time to experience thrilling river rafting or tandem paragliding, creating memories of shared laughter and excitement.   </p><p>Manali is where your honeymoon truly meets the high-altitude Himalayan aesthetic. You will visit the ancient wooden Hadimba Temple, peacefully nestled amongst gigantic Deodar trees\u2014a place that feels both sacred and incredibly private. But the real magic happens when we drive you up to the Solang Valley and through the engineering marvel of the Atal Tunnel. Depending on the season, you will be greeted by an ocean of pure white snow or lush green alpine meadows. In the evenings, the vibrant cafes of Old Manali offer the perfect setting for a romantic dinner with live acoustic music and a warm, inviting ambiance.   </p><p><strong>A SPIRITUAL RETREAT: THE PEACE OF DHARAMSHALA AND MCLEOD GANJ</strong>   </p><p>After the high-energy vibe of Manali, your journey shifts to the tranquil and spiritual town of Dharamshala, set against the dramatic backdrop of the mighty Dhauladhar mountain range. Home to the Tibetan community and the Dalai Lama, McLeod Ganj offers a completely different flavor of the Himalayas.   </p><p>Here, romance is found in the quiet moments. Spin the colorful prayer wheels together at peaceful monasteries, listen to the calming chants of monks, and wander through the vibrant local markets filled with Tibetan handicrafts. Dharamshala is famous for its scenic hill cafes, where you can sit on an open terrace, share a slice of freshly baked cake, and watch the sun dip behind the mountains, painting the sky in shades of pink and gold. It is a place that naturally encourages deep conversations and a profound connection.   </p><p><strong>THE GRAND FINALE: THE PINE MEADOWS OF DALHOUSIE AND KHAJJIAR</strong>   </p><p>The final leg of your Trail Explorers honeymoon takes you to the quiet, unspoiled beauty of Dalhousie. Famous for its Scottish and Victorian architecture, Dalhousie is away from the heavy tourist crowds, offering you the absolute privacy you desire.   </p><p>The crown jewel of this leg is a day excursion to Khajjiar, globally renowned as the \"Mini Switzerland of India.\" Imagine walking hand-in-hand onto a vast, saucer-shaped green meadow, surrounded by dense pine forests, with a pristine lake in the center and snow-capped peaks in the distance. It is a landscape straight out of a romantic movie. Lay a blanket on the soft grass, enjoy the gentle mountain breeze, and take those perfect, Instagram-worthy couple portraits that you will cherish for decades.   </p><p><strong>WHY CHOOSE TRAIL EXPLORERS FOR YOUR HIMACHAL HONEYMOON?</strong>   </p><p>When you search for the best Himachal honeymoon package, you will find hundreds of options, but Trail Explorers stands apart. We are locals of these mountains; we know the hidden spots, the safest routes, and the best-kept secrets of the Himalayas.   </p><p>Complete Privacy &amp; Comfort: Your entire trip from Delhi to Delhi is conducted in a comfortable, private sedan with a professional, polite driver who respects your space and privacy.   </p><p>Handpicked Romantic Stays: We carefully select premium hotels and boutique properties that offer stunning views, excellent hospitality, and a quiet atmosphere away from chaotic city centers.   </p><p>Zero Hidden Costs: Transparency is our core value. What you see in our inclusions is exactly what you get.   </p><p>Tailored for Couples: No waking up at 6 AM for a rushed sightseeing tour. Our itineraries are relaxed, giving you the luxury of time to sleep in, enjoy long breakfasts, and explore at your own pace.   </p><p>As you drive back to Delhi on the seventh day, you won\u2019t just be carrying souvenirs; you will be taking home a heart full of beautiful, unforgettable memories. Book your romantic escape today and let the mountains witness your love story.&nbsp; &nbsp;</p>",
+    "about_text": "<p><strong>Discover the Ultimate Romantic Himachal Honeymoon Package with Trail Explorers</strong></p><p>Welcome to the beginning of your forever. There is no better place to celebrate your love than amidst the towering peaks, whispering pine forests, and misty valleys of the majestic Himalayas. Curated exclusively by Trail Explorers, this 7-Day and 6-Night Romantic Himachal Honeymoon Package is carefully designed to offer couples the perfect blend of intimacy, breathtaking scenery, and thrilling mountain adventures.</p><p>Starting and ending in Delhi, this seamless journey takes you through the most iconic hill stations of North India: the colonial elegance of Shimla, the adrenaline and alpine beauty of Manali, the spiritual serenity of Dharamshala, and the untouched meadows of Dalhousie and Khajjiar.   </p><p>At Trail Explorers, we believe that a honeymoon is not just a trip; it is a once-in-a-lifetime experience where every moment should feel magical. That is why we have ditched the exhausting, rushed tourist itineraries. Instead, we offer a slow-paced, deeply immersive travel experience. From the moment you sit in your private, comfortable sedan in Delhi, your only job is to hold hands, enjoy your favorite romantic playlists, and watch the landscape transform from bustling cityscapes to winding mountain roads.   </p><p><strong>THE JOURNEY BEGINS: THE COLONIAL CHARM OF SHIMLA AND KUFRI</strong>   </p><p>Your romantic escapade begins as we drive up to Shimla, the erstwhile summer capital of British India. Shimla exudes an old-world charm that is incredibly romantic. Picture yourselves walking down the historic Mall Road in the evening, the crisp mountain air brushing against your face, as you stop by cozy heritage cafes for a hot cup of locally brewed coffee. We take you to the Jakhoo Temple for a spiritual start to your marital journey, offering panoramic views of the entire Shimla valley.   </p><p>The next day brings you to Kufri and the dense Green Valley. Here, the thick cedar forests create a natural canopy, offering the perfect backdrop for your first honeymoon photos. Whether you choose to enjoy a fun horseback ride through the misty trails or simply sit together in the quiet woods, Shimla sets the perfect relaxed tone for the days to come.   </p><p><strong>INTO THE HEART OF THE HIMALAYAS: THE MAGIC OF KULLU AND MANALI</strong>   </p><p>Leaving Shimla behind, your private sedan follows the mesmerizing curves of the Beas River towards the adventure capital of India—Manali. The drive itself is a romantic road trip, with the roaring river on one side and towering green mountains on the other. En route, we stop in the Kullu valley. For couples who love a dash of adrenaline, this is the time to experience thrilling river rafting or tandem paragliding, creating memories of shared laughter and excitement.   </p><p>Manali is where your honeymoon truly meets the high-altitude Himalayan aesthetic. You will visit the ancient wooden Hadimba Temple, peacefully nestled amongst gigantic Deodar trees—a place that feels both sacred and incredibly private. But the real magic happens when we drive you up to the Solang Valley and through the engineering marvel of the Atal Tunnel. Depending on the season, you will be greeted by an ocean of pure white snow or lush green alpine meadows. In the evenings, the vibrant cafes of Old Manali offer the perfect setting for a romantic dinner with live acoustic music and a warm, inviting ambiance.   </p><p><strong>A SPIRITUAL RETREAT: THE PEACE OF DHARAMSHALA AND MCLEOD GANJ</strong>   </p><p>After the high-energy vibe of Manali, your journey shifts to the tranquil and spiritual town of Dharamshala, set against the dramatic backdrop of the mighty Dhauladhar mountain range. Home to the Tibetan community and the Dalai Lama, McLeod Ganj offers a completely different flavor of the Himalayas.   </p><p>Here, romance is found in the quiet moments. Spin the colorful prayer wheels together at peaceful monasteries, listen to the calming chants of monks, and wander through the vibrant local markets filled with Tibetan handicrafts. Dharamshala is famous for its scenic hill cafes, where you can sit on an open terrace, share a slice of freshly baked cake, and watch the sun dip behind the mountains, painting the sky in shades of pink and gold. It is a place that naturally encourages deep conversations and a profound connection.   </p><p><strong>THE GRAND FINALE: THE PINE MEADOWS OF DALHOUSIE AND KHAJJIAR</strong>   </p><p>The final leg of your Trail Explorers honeymoon takes you to the quiet, unspoiled beauty of Dalhousie. Famous for its Scottish and Victorian architecture, Dalhousie is away from the heavy tourist crowds, offering you the absolute privacy you desire.   </p><p>The crown jewel of this leg is a day excursion to Khajjiar, globally renowned as the \"Mini Switzerland of India.\" Imagine walking hand-in-hand onto a vast, saucer-shaped green meadow, surrounded by dense pine forests, with a pristine lake in the center and snow-capped peaks in the distance. It is a landscape straight out of a romantic movie. Lay a blanket on the soft grass, enjoy the gentle mountain breeze, and take those perfect, Instagram-worthy couple portraits that you will cherish for decades.   </p><p><strong>WHY CHOOSE TRAIL EXPLORERS FOR YOUR HIMACHAL HONEYMOON?</strong>   </p><p>When you search for the best Himachal honeymoon package, you will find hundreds of options, but Trail Explorers stands apart. We are locals of these mountains; we know the hidden spots, the safest routes, and the best-kept secrets of the Himalayas.   </p><p>Complete Privacy &amp; Comfort: Your entire trip from Delhi to Delhi is conducted in a comfortable, private sedan with a professional, polite driver who respects your space and privacy.   </p><p>Handpicked Romantic Stays: We carefully select premium hotels and boutique properties that offer stunning views, excellent hospitality, and a quiet atmosphere away from chaotic city centers.   </p><p>Zero Hidden Costs: Transparency is our core value. What you see in our inclusions is exactly what you get.   </p><p>Tailored for Couples: No waking up at 6 AM for a rushed sightseeing tour. Our itineraries are relaxed, giving you the luxury of time to sleep in, enjoy long breakfasts, and explore at your own pace.   </p><p>As you drive back to Delhi on the seventh day, you won’t just be carrying souvenirs; you will be taking home a heart full of beautiful, unforgettable memories. Book your romantic escape today and let the mountains witness your love story.&nbsp; &nbsp;</p>",
     "itinerary": [
       {
         "day": 1,
@@ -120,7 +120,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Heavy warm jacket or windcheater (for Solang Valley snow)",
           "Thermal innerwear for cold mountain nights",
@@ -131,7 +131,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Comfortable walking shoes or sneakers (for Mall Road and McLeod Ganj)",
           "Sturdy boots with good grip (for snow in Manali and Khajjiar)",
@@ -139,7 +139,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "UV protection sunglasses (crucial to avoid snow glare)",
           "Small comfortable daypack for sightseeing",
@@ -148,7 +148,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "Deep moisturizer and body lotion (mountain air can be very dry)",
           "Hydrating lip balm with SPF",
@@ -158,7 +158,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Motion sickness pills (essential for winding mountain roads)",
           "Basic first-aid kit (Band-aids, pain relief, acidity medicine)",
@@ -167,7 +167,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "High-capacity power bank",
           "Phone and camera chargers/adapters",
@@ -176,7 +176,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original valid ID Proofs (Aadhar Card, Voter ID, or Passport)",
           "Downloaded or printed hotel booking vouchers",
@@ -188,7 +188,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Price Per Couple",
-        "price": "\u20b958,599"
+        "price": "₹58,599"
       }
     ],
     "sub_package_options": "",
@@ -208,7 +208,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "ARE THE HOTELS INCLUDED IN CROWDED MARKETS OR PEACEFUL AREAS?",
-        "answer": "For our honeymoon packages, we specifically handpick romantic hotels that offer a perfect balance\u2014away from the chaotic city noise for your privacy, yet accessible enough to explore local cafes."
+        "answer": "For our honeymoon packages, we specifically handpick romantic hotels that offer a perfect balance—away from the chaotic city noise for your privacy, yet accessible enough to explore local cafes."
       },
       {
         "question": "CAN WE CUSTOMIZE OR ADD A PRIVATE CANDLELIGHT DINNER?",
@@ -236,7 +236,7 @@ export const TRIPS_DATA: Trip[] = [
     "duration": "5 Days / 4 Nights",
     "price": "",
     "category": "himachal_tours, treks",
-    "route": "Delhi \u2014 Manali \u2014 Patlikuhal \u2014 Mahili \u2014 Rani Sui Lake \u2014 Shangchar \u2014 Manali \u2014 Delhi",
+    "route": "Delhi — Manali — Patlikuhal — Mahili — Rani Sui Lake — Shangchar — Manali — Delhi",
     "tags": "Group Tour, High Altitude Trek, Manali Valley, Weekend Trek",
     "image_url": "/assets/images/trips/img_1793355456704_images__14_.jpg",
     "bento_img_1": "/assets/images/trips/img_1793355461655_images__15_.jpg",
@@ -245,7 +245,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_4": "/assets/images/trips/img_1793355555574_images__18_.jpg",
     "bento_img_5": "/assets/images/trips/img_1793355559904_images__19_.jpg",
     "gallery_images": [],
-    "about_text": "<h3>The Enchanting Rani Sui Lake Trek: A Journey to the Heavens</h3><p>Welcome to the heart of the Himalayas! Curated specially for mountain lovers and adventure seekers, the Rani Sui Lake Trek (also known locally as Saurkudi) is an extraordinary high-altitude expedition tucked away at a breathtaking elevation of 12,430 feet above the Manali Valley. If you are looking for a trek that combines the raw beauty of deep alpine forests, sweeping high-altitude meadows, and deeply rooted spiritual heritage, this Trail Explorers expedition is your perfect calling.   </p><p>Far away from the crowded tourist trails, this 5-day journey takes you deep into the pristine wilderness of Himachal Pradesh. Starting from the quaint settlement of Patlikuhal, the trail gradually ascends, revealing the untouched magic of the Pir Panjal range. Whether you are an avid photographer, a nature enthusiast, or a solo traveler looking for a soul-searching adventure, Rani Sui Lake offers an immersive Himalayan experience like no other.</p><h3>\ud83c\udf32 The Trail: From Dense Forests to Alpine Meadows</h3><p>Your adventure kicks off with a steady ascent towards our first basecamp at Mahili, situated at a scenic 9,800 feet. As you leave the bustling world behind, the trail welcomes you with an unending, vibrant carpet of fertile alpine meadows. You will hike under the cooling canopy of fragrant pine forests and towering green cedar Deodar trees, which have stood as silent guardians of these mountains for centuries.   </p><p>During the spring and summer months, these forest clearings burst into full bloom, creating a rich habitat for local flora and fauna. Trekking through this photographer\u2019s paradise, you will feel the air getting crisper and the landscapes turning more dramatic with every passing hour. Spending the night in Trail Explorers' premium alpine tents under a starlit Himalayan sky at Mahili basecamp is an experience that will stay with you forever.   </p><h3>\ud83c\udfd4\ufe0f The 360-Degree Himalayan Amphitheatre</h3><p>The ultimate reward of this trek lies on the summit day. As you push past the tree line and cross the final high ridge situated just below the magnificent Khan-Pari Tibba Peak, the landscape dramatically transforms into rugged mountain terrain.   </p><p>Upon reaching the Rani Sui Lake, you are instantly greeted by a jaw-dropping, 360-degree panoramic amphitheatre of snow-capped giants.   </p><ul><li><strong>The Eastern Giants:</strong> To your East, witness the awe-inspiring direct views of Mt. Deo Tibba standing tall at 6,001 meters (19,680 ft) and the formidable Mt. Indrasan at 6,221 meters (20,400 ft).   </li><li><strong>The Western Horizon:</strong> Look toward the West to admire the rugged expanses of the Kalihani Pass at 4,800 meters (15,750 ft).   </li><li><strong>The Valley Below:</strong> As you navigate the Khan-Pari Tibba ridge, you are treated to sweeping, bird\u2019s-eye views of the sprawling Kullu and Manali valleys, with the Beas River glistening like a silver ribbon far below.   </li></ul><h3>\ud83d\udd49\ufe0f The Sacred Lore of Maharishi Shandiliya</h3><p>Rani Sui is not just a high-altitude alpine tarn; it is a site of deep spiritual reverence. The lake is dedicated to the revered sage, Maharishi Shandiliya. For generations, the villagers of the Kullu Valley have considered the waters of Saurkudi (Rani Sui) to be profoundly sacred. There is a unique, blissful positivity that surrounds the lake's perimeter. Taking a moment of silence here, surrounded by towering peaks and absolute serenity, is a deeply grounding experience. We maintain strict trail etiquette to preserve the purity and sanctity of this beautiful natural shrine.   </p><h3>\u26fa Why Trek With Trail Explorers?</h3><p>At Trail Explorers, we don\u2019t just organize treks; we craft lifelong memories. When you embark on the Rani Sui Lake trek with us, you are guaranteed:</p><ul><li><strong>Safety First:</strong> Our experienced local trek leaders, guides, and support staff carry fully equipped First-Aid medical kits and emergency oxygen cylinders.   </li><li><strong>Premium Gear:</strong> We provide high-altitude sleeping bags (rated for -5\u00b0C to -10\u00b0C), comfortable camp mattresses, and top-quality alpine tents.   </li><li><strong>Nutritious Mountain Meals:</strong> Enjoy freshly cooked, hot, and highly nutritious vegetarian meals, prepared by our specialized mountain cooks right at the campsite.   </li><li><strong>Seamless Logistics:</strong> From your trailhead drop at Patlikuhal to your final vehicle pickup at Shangchar village, we handle all local transfers, forest permits, and camping fees so you can focus entirely on the mountains.   </li></ul><p>Pack your rucksacks, lace up your trekking boots, and get ready to escape into the wild with Trail Explorers. Let the mountains call you!</p>",
+    "about_text": "<h3>The Enchanting Rani Sui Lake Trek: A Journey to the Heavens</h3><p>Welcome to the heart of the Himalayas! Curated specially for mountain lovers and adventure seekers, the Rani Sui Lake Trek (also known locally as Saurkudi) is an extraordinary high-altitude expedition tucked away at a breathtaking elevation of 12,430 feet above the Manali Valley. If you are looking for a trek that combines the raw beauty of deep alpine forests, sweeping high-altitude meadows, and deeply rooted spiritual heritage, this Trail Explorers expedition is your perfect calling.   </p><p>Far away from the crowded tourist trails, this 5-day journey takes you deep into the pristine wilderness of Himachal Pradesh. Starting from the quaint settlement of Patlikuhal, the trail gradually ascends, revealing the untouched magic of the Pir Panjal range. Whether you are an avid photographer, a nature enthusiast, or a solo traveler looking for a soul-searching adventure, Rani Sui Lake offers an immersive Himalayan experience like no other.</p><h3>🌲 The Trail: From Dense Forests to Alpine Meadows</h3><p>Your adventure kicks off with a steady ascent towards our first basecamp at Mahili, situated at a scenic 9,800 feet. As you leave the bustling world behind, the trail welcomes you with an unending, vibrant carpet of fertile alpine meadows. You will hike under the cooling canopy of fragrant pine forests and towering green cedar Deodar trees, which have stood as silent guardians of these mountains for centuries.   </p><p>During the spring and summer months, these forest clearings burst into full bloom, creating a rich habitat for local flora and fauna. Trekking through this photographer’s paradise, you will feel the air getting crisper and the landscapes turning more dramatic with every passing hour. Spending the night in Trail Explorers' premium alpine tents under a starlit Himalayan sky at Mahili basecamp is an experience that will stay with you forever.   </p><h3>🏔️ The 360-Degree Himalayan Amphitheatre</h3><p>The ultimate reward of this trek lies on the summit day. As you push past the tree line and cross the final high ridge situated just below the magnificent Khan-Pari Tibba Peak, the landscape dramatically transforms into rugged mountain terrain.   </p><p>Upon reaching the Rani Sui Lake, you are instantly greeted by a jaw-dropping, 360-degree panoramic amphitheatre of snow-capped giants.   </p><ul><li><strong>The Eastern Giants:</strong> To your East, witness the awe-inspiring direct views of Mt. Deo Tibba standing tall at 6,001 meters (19,680 ft) and the formidable Mt. Indrasan at 6,221 meters (20,400 ft).   </li><li><strong>The Western Horizon:</strong> Look toward the West to admire the rugged expanses of the Kalihani Pass at 4,800 meters (15,750 ft).   </li><li><strong>The Valley Below:</strong> As you navigate the Khan-Pari Tibba ridge, you are treated to sweeping, bird’s-eye views of the sprawling Kullu and Manali valleys, with the Beas River glistening like a silver ribbon far below.   </li></ul><h3>🕉️ The Sacred Lore of Maharishi Shandiliya</h3><p>Rani Sui is not just a high-altitude alpine tarn; it is a site of deep spiritual reverence. The lake is dedicated to the revered sage, Maharishi Shandiliya. For generations, the villagers of the Kullu Valley have considered the waters of Saurkudi (Rani Sui) to be profoundly sacred. There is a unique, blissful positivity that surrounds the lake's perimeter. Taking a moment of silence here, surrounded by towering peaks and absolute serenity, is a deeply grounding experience. We maintain strict trail etiquette to preserve the purity and sanctity of this beautiful natural shrine.   </p><h3>⛺ Why Trek With Trail Explorers?</h3><p>At Trail Explorers, we don’t just organize treks; we craft lifelong memories. When you embark on the Rani Sui Lake trek with us, you are guaranteed:</p><ul><li><strong>Safety First:</strong> Our experienced local trek leaders, guides, and support staff carry fully equipped First-Aid medical kits and emergency oxygen cylinders.   </li><li><strong>Premium Gear:</strong> We provide high-altitude sleeping bags (rated for -5°C to -10°C), comfortable camp mattresses, and top-quality alpine tents.   </li><li><strong>Nutritious Mountain Meals:</strong> Enjoy freshly cooked, hot, and highly nutritious vegetarian meals, prepared by our specialized mountain cooks right at the campsite.   </li><li><strong>Seamless Logistics:</strong> From your trailhead drop at Patlikuhal to your final vehicle pickup at Shangchar village, we handle all local transfers, forest permits, and camping fees so you can focus entirely on the mountains.   </li></ul><p>Pack your rucksacks, lace up your trekking boots, and get ready to escape into the wild with Trail Explorers. Let the mountains call you!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -283,11 +283,11 @@ export const TRIPS_DATA: Trip[] = [
         "title": "Mahili to Manali (Via Shangchar) & Overnight to Delhi",
         "points": [
           "Wake up to a peaceful mountain morning, enjoy the golden sunrise, and post breakfast begin descending through the steep ridge below Khan-Pari Tibba.",
-          "Admire the sweeping bird\u2019s-eye view of Kullu and Manali valleys situated beside the glistening Beas River as you trek down towards Shangchar village.",
+          "Admire the sweeping bird’s-eye view of Kullu and Manali valleys situated beside the glistening Beas River as you trek down towards Shangchar village.",
           "Our vehicle will pick you up from Shangchar village and drop you at Manali.",
           "Spend some free time exploring Manali in the evening before boarding your overnight AC Volvo bus back to Delhi."
         ],
-        "details": "Wake up to a peaceful mountain morning, enjoy the golden sunrise, and post breakfast begin descending through the steep ridge below Khan-Pari Tibba. Admire the sweeping bird\u2019s-eye view of Kullu and Manali valleys situated beside the glistening Beas River as you trek down towards Shangchar village. Our vehicle will pick you up from Shangchar village and drop you at Manali. Spend some free time exploring Manali in the evening before boarding your overnight AC Volvo bus back to Delhi."
+        "details": "Wake up to a peaceful mountain morning, enjoy the golden sunrise, and post breakfast begin descending through the steep ridge below Khan-Pari Tibba. Admire the sweeping bird’s-eye view of Kullu and Manali valleys situated beside the glistening Beas River as you trek down towards Shangchar village. Our vehicle will pick you up from Shangchar village and drop you at Manali. Spend some free time exploring Manali in the evening before boarding your overnight AC Volvo bus back to Delhi."
       },
       {
         "day": 5,
@@ -320,7 +320,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Quick-dry T-shirts (2-3)",
           "Trekking pants (2 pairs, comfortable aur stretchable)",
@@ -333,14 +333,14 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Trekking shoes (Good grip aur solid ankle support ke sath)",
           "Camp slippers / lightweight sandals (Campsite par aaram ke liye)"
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "Rucksack (50-60 Liters) with rain cover",
           "Daypack (20-30 Liters) (Agar aap apna rucksack offload kar rahe hain)",
@@ -351,14 +351,14 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Personal First-Aid kit (Band-aids, Paracetamol, ORS, aur basic meds)",
           "Personal prescription medicines (Agar koi regular chal rahi ho)"
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "Sunscreen (SPF 50+) aur Lip balm",
           "Wet wipes aur Hand sanitizer",
@@ -368,14 +368,14 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "High-capacity Power Bank (Pahadon ki thand mein battery jaldi drain hoti hai)",
           "Camera / Smartphone with extra storage"
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original valid ID Proof (Aadhar Card/Passport) aur 2 photocopies",
           "Sufficient Cash (Patlikuhal ke baad koi ATM nahi hoga aur UPI ki guarantee nahi hai)"
@@ -423,9 +423,9 @@ export const TRIPS_DATA: Trip[] = [
   {
     "title": "Naggar, Baralacha La & Bijli Mahadev  Community Trip - Ex Delhi",
     "duration": "5 Days / 4 Nights",
-    "price": "\u20b98,499",
+    "price": "₹8,499",
     "category": "himachal_tours, women_only_tours, treks, corporate_tours, educational_trips",
-    "route": "Delhi \u2014 Manali \u2014 Naggar \u2014 Baralacha La \u2014 Kullu \u2014Bijli Mahadev - Delhi",
+    "route": "Delhi — Manali — Naggar — Baralacha La — Kullu —Bijli Mahadev - Delhi",
     "tags": "Group Tour, High Altitude, Weekend Escape, Trekking",
     "image_url": "/assets/images/trips/img_1793340766352____17_.jpg",
     "bento_img_1": "",
@@ -449,7 +449,7 @@ export const TRIPS_DATA: Trip[] = [
       "/assets/images/trips/img_1793340197432_Naggar_castle__.jpg",
       "/assets/images/trips/img_1793340206140_snow__ramen___and_the_bonfire.jpg"
     ],
-    "about_text": "<p><strong>The Ultimate Himalayan Odyssey: Manali, Baralacha La &amp; Bijli Mahadev Expedition</strong></p><p>Welcome to an extraordinary journey meticulously crafted by Trail Explorers, designed to take you far beyond the ordinary tourist trails of Himachal Pradesh. This exclusive 5-day expedition is a perfect blend of rich cultural heritage, adrenaline-pumping high-altitude drives, and soul-soothing spiritual treks. Whether you are a seasoned adventurer, a passionate photographer, or a weekend warrior looking for the ultimate mountain escape, this itinerary promises to deliver a kaleidoscope of unforgettable Himalayan experiences. From the lush, pine-scented forests of the Kullu Valley to the rugged, wind-swept high passes of Lahaul, every single day of this trip is a new chapter in your travel diary.</p><p><strong>Step Back in Time: The Heritage of Naggar and Jana\u2019s Hidden Cascades</strong>\nOur adventure officially begins as you wake up to the fresh mountain breeze of Manali. But rather than sticking to the crowded mall road, we take you off the beaten path to the historic town of Naggar, the erstwhile capital of the Kullu kingdom. Here, you will explore the magnificent Naggar Castle, a stunning 15th-century stone and wood mansion built in the traditional Kath Kuni architectural style. Walking through its ancient corridors, you will feel the whispers of history while enjoying sweeping views of the Beas River valley. A short distance away lies the ancient Krishna Temple, offering a peaceful spiritual retreat surrounded by dense cedar trees.</p><p>The cultural immersion deepens as we drive further into the woods to discover the hidden gem of Jana Waterfall. Nestled deep within an alpine forest, surrounded by apple orchards and towering deodar trees, this cascading beauty offers the perfect backdrop for relaxation. Here, you will sit at a rustic local dhaba beside the freezing mountain water and indulge in an authentic Himachali Dham\u2014savoring local delicacies like Siddu, red rice, and traditional curries that will leave your taste buds craving more.</p><p><strong>Into the Wild: Atal Tunnel and the Breathtaking Lahaul Valley</strong>\nThe next phase of our expedition dials up the thrill factor as we embark on a spectacular drive on the legendary Manali-Leh Highway. Our gateway to the high Himalayas is the engineering marvel, the Atal Tunnel. Spanning over 9 kilometers, this tunnel transports you from the lush green landscapes of Kullu straight into the raw, barren, and striking beauty of the Lahaul Valley in a matter of minutes. As we emerge on the other side, the scenery transforms into towering, snow-capped peaks, dramatic gorges, and the glacial waters of the Chandra River.</p><p>We will cruise past the majestic Sissu waterfall and the picturesque town of Keylong, ascending higher into the thin mountain air. Along the route, we will make essential pit stops at Deepak Taal and Suraj Taal\u2014two pristine, emerald-green high-altitude alpine lakes that perfectly reflect the surrounding snowy summits and the deep blue sky.</p><p><strong>Conquering the Heights: The Mighty Baralacha La Pass</strong>\nThe absolute climax of our road journey is reaching the formidable Baralacha La Pass, perched at a dizzying altitude of 16,040 feet above sea level. This high mountain pass acts as a natural divide between the Lahaul and Ladakh regions. Standing at this elevation, surrounded by glaciers, frozen winds, and the majestic peaks of the Pir Panjal and Great Himalayan ranges, is a truly humbling experience. You will have plenty of time to play in the snow, capture breathtaking photographs, and soak in the sheer magnitude of the Himalayas before we descend back to the warmth of Manali for the night.</p><p><strong>A Divine Ascent: The Mystical Trek to Bijli Mahadev</strong>\nWe save the most spiritual and panoramic experience for the final day. After a hearty breakfast, we travel towards Kullu to embark on a short but highly rewarding trek to the mystical Bijli Mahadev Temple. The trail is beautifully laid with steps and winds its way up a steep ridge through a dense, enchanting pine forest. The 3-kilometer trek is moderately easy and suitable for beginners, taking about 1.5 to 2 hours to conquer.</p><p>Upon reaching the summit, the forest suddenly clears, revealing a massive meadow at the edge of a cliff. Here stands the ancient Bijli Mahadev temple, famous for its 60-foot-tall staff that is said to attract divine lightning strikes, occasionally shattering the Shiva Linga inside, which is then restored by the local priests using butter. Beyond the fascinating mythology, the hilltop offers what is arguably the best vantage point in the entire region\u2014a glorious, uninterrupted 360-degree panoramic view of the sprawling Kullu Valley on one side and the dramatic Parvati Valley on the other.</p><p><strong>Why Choose This Trail Explorers Expedition?</strong></p><ul><li><strong>Carefully Balanced Itinerary:</strong> Perfect mix of sightseeing, high-altitude driving, and soft trekking.</li><li><strong>Cultural Immersion:</strong> Experience real Himachali food, ancient architecture, and local traditions.</li><li><strong>High-Altitude Thrills:</strong> Cross the Atal Tunnel and stand at 16,040 ft without needing a week-long Leh trip.</li><li><strong>Hassle-Free Logistics:</strong> From comfortable AC Volvo buses to experienced drivers for the tricky Baralacha La terrain, we handle everything.</li></ul><p>Join us on this unforgettable Trail Explorers expedition, where every turn in the road brings a new adventure, and every mountain peak tells a story!</p>",
+    "about_text": "<p><strong>The Ultimate Himalayan Odyssey: Manali, Baralacha La &amp; Bijli Mahadev Expedition</strong></p><p>Welcome to an extraordinary journey meticulously crafted by Trail Explorers, designed to take you far beyond the ordinary tourist trails of Himachal Pradesh. This exclusive 5-day expedition is a perfect blend of rich cultural heritage, adrenaline-pumping high-altitude drives, and soul-soothing spiritual treks. Whether you are a seasoned adventurer, a passionate photographer, or a weekend warrior looking for the ultimate mountain escape, this itinerary promises to deliver a kaleidoscope of unforgettable Himalayan experiences. From the lush, pine-scented forests of the Kullu Valley to the rugged, wind-swept high passes of Lahaul, every single day of this trip is a new chapter in your travel diary.</p><p><strong>Step Back in Time: The Heritage of Naggar and Jana’s Hidden Cascades</strong>\nOur adventure officially begins as you wake up to the fresh mountain breeze of Manali. But rather than sticking to the crowded mall road, we take you off the beaten path to the historic town of Naggar, the erstwhile capital of the Kullu kingdom. Here, you will explore the magnificent Naggar Castle, a stunning 15th-century stone and wood mansion built in the traditional Kath Kuni architectural style. Walking through its ancient corridors, you will feel the whispers of history while enjoying sweeping views of the Beas River valley. A short distance away lies the ancient Krishna Temple, offering a peaceful spiritual retreat surrounded by dense cedar trees.</p><p>The cultural immersion deepens as we drive further into the woods to discover the hidden gem of Jana Waterfall. Nestled deep within an alpine forest, surrounded by apple orchards and towering deodar trees, this cascading beauty offers the perfect backdrop for relaxation. Here, you will sit at a rustic local dhaba beside the freezing mountain water and indulge in an authentic Himachali Dham—savoring local delicacies like Siddu, red rice, and traditional curries that will leave your taste buds craving more.</p><p><strong>Into the Wild: Atal Tunnel and the Breathtaking Lahaul Valley</strong>\nThe next phase of our expedition dials up the thrill factor as we embark on a spectacular drive on the legendary Manali-Leh Highway. Our gateway to the high Himalayas is the engineering marvel, the Atal Tunnel. Spanning over 9 kilometers, this tunnel transports you from the lush green landscapes of Kullu straight into the raw, barren, and striking beauty of the Lahaul Valley in a matter of minutes. As we emerge on the other side, the scenery transforms into towering, snow-capped peaks, dramatic gorges, and the glacial waters of the Chandra River.</p><p>We will cruise past the majestic Sissu waterfall and the picturesque town of Keylong, ascending higher into the thin mountain air. Along the route, we will make essential pit stops at Deepak Taal and Suraj Taal—two pristine, emerald-green high-altitude alpine lakes that perfectly reflect the surrounding snowy summits and the deep blue sky.</p><p><strong>Conquering the Heights: The Mighty Baralacha La Pass</strong>\nThe absolute climax of our road journey is reaching the formidable Baralacha La Pass, perched at a dizzying altitude of 16,040 feet above sea level. This high mountain pass acts as a natural divide between the Lahaul and Ladakh regions. Standing at this elevation, surrounded by glaciers, frozen winds, and the majestic peaks of the Pir Panjal and Great Himalayan ranges, is a truly humbling experience. You will have plenty of time to play in the snow, capture breathtaking photographs, and soak in the sheer magnitude of the Himalayas before we descend back to the warmth of Manali for the night.</p><p><strong>A Divine Ascent: The Mystical Trek to Bijli Mahadev</strong>\nWe save the most spiritual and panoramic experience for the final day. After a hearty breakfast, we travel towards Kullu to embark on a short but highly rewarding trek to the mystical Bijli Mahadev Temple. The trail is beautifully laid with steps and winds its way up a steep ridge through a dense, enchanting pine forest. The 3-kilometer trek is moderately easy and suitable for beginners, taking about 1.5 to 2 hours to conquer.</p><p>Upon reaching the summit, the forest suddenly clears, revealing a massive meadow at the edge of a cliff. Here stands the ancient Bijli Mahadev temple, famous for its 60-foot-tall staff that is said to attract divine lightning strikes, occasionally shattering the Shiva Linga inside, which is then restored by the local priests using butter. Beyond the fascinating mythology, the hilltop offers what is arguably the best vantage point in the entire region—a glorious, uninterrupted 360-degree panoramic view of the sprawling Kullu Valley on one side and the dramatic Parvati Valley on the other.</p><p><strong>Why Choose This Trail Explorers Expedition?</strong></p><ul><li><strong>Carefully Balanced Itinerary:</strong> Perfect mix of sightseeing, high-altitude driving, and soft trekking.</li><li><strong>Cultural Immersion:</strong> Experience real Himachali food, ancient architecture, and local traditions.</li><li><strong>High-Altitude Thrills:</strong> Cross the Atal Tunnel and stand at 16,040 ft without needing a week-long Leh trip.</li><li><strong>Hassle-Free Logistics:</strong> From comfortable AC Volvo buses to experienced drivers for the tricky Baralacha La terrain, we handle everything.</li></ul><p>Join us on this unforgettable Trail Explorers expedition, where every turn in the road brings a new adventure, and every mountain peak tells a story!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -533,7 +533,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Heavy windproof and waterproof winter jacket (for Baralacha La)",
           "Thermal innerwear (top and bottom)",
@@ -545,7 +545,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Sturdy trekking or hiking shoes with good grip",
           "Comfortable floaters or sandals (essential for River Rafting)",
@@ -553,7 +553,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "UV protection sunglasses (crucial to prevent snow blindness at Baralacha La)",
           "Small daypack (10-20L) to carry water and essentials during the trek",
@@ -562,7 +562,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Personal basic first-aid kit with band-aids",
           "Motion sickness pills for the winding mountain roads",
@@ -571,7 +571,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "High SPF Sunscreen (SPF 50+) to prevent mountain sunburn",
           "Good quality lip balm and cold cream/moisturizer",
@@ -580,7 +580,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "High-capacity Power Bank (battery drains faster in the cold)",
           "Charging cables and adapter",
@@ -588,7 +588,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original Govt ID Card (Aadhaar/Voter ID/Passport) and photocopies",
           "Sufficient cash in small denominations (network is poor for UPI at dhabas in Lahaul, Jana, and Bijli Mahadev)"
@@ -657,9 +657,9 @@ export const TRIPS_DATA: Trip[] = [
   {
     "title": "Offbeat Himachal Group Tour: Manali, Kasol,Shanghar & Jibhi (7 Days)",
     "duration": "7 Days / 6 Nights",
-    "price": "\u20b918,500",
+    "price": "₹18,500",
     "category": "himachal_tours",
-    "route": "Delhi \u2014 Manali \u2014 Sissu \u2014 Kasol \u2014 Shanghar \u2014 Jibhi \u2014 Aut \u2014 Delhi",
+    "route": "Delhi — Manali — Sissu — Kasol — Shanghar — Jibhi — Aut — Delhi",
     "tags": "Group Tour, Mountains, Offbeat, Scenic Drive",
     "image_url": "/assets/images/trips/img_1793032123059_Shangarh.jpg",
     "bento_img_1": "/assets/images/trips/img_1793032234927_Calm_Mountain_Vibes_at_Atal_Tunnel___Travel_Aesthetic.jpg",
@@ -668,7 +668,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_4": "/assets/images/trips/img_1793032466764_Naggar_Castle___Kullu.jpg",
     "bento_img_5": "/assets/images/trips/img_1793032676662_b5737e1f35c186098957b9918639f241.jpg",
     "gallery_images": [],
-    "about_text": "<p><strong>The Ultimate Himalayan Wanderlust Expedition: A Journey of Self-Discovery</strong></p><p>Welcome to Trail Explorers' exclusive 8-day expedition! If you are tired of the city's hustle, traffic, and daily grind, and your heart yearns for the cool mountain breeze, dense cedar forests, and the soothing sound of flowing rivers\u2014then 'The Ultimate Himalayan Wanderlust Expedition' is exactly what you need. This journey is designed specifically for wanderers (explorers) looking to connect with nature, build lifelong friendships, and experience the absolute best of the mountains.</p><p>Starting from Delhi, this carefully curated journey will take you through the most beautiful and unexplored valleys of Himachal Pradesh. Throughout this expedition, we will explore the vibrant vibes of Manali, the rich heritage of Naggar, the dramatic landscapes of Lahaul, the bohemian charm of Parvati Valley, and the hidden rustic secrets of the Sainj and Tirthan valleys.</p><p><strong>Why is this Expedition Special?</strong></p><p><strong>1. Heritage &amp; Culture in Manali &amp; Naggar</strong>\nOur journey begins in the mountains of Manali, but we won't just stick to the typical tourist spots. We will take you through the ancient, narrow lanes of Naggar village, where the 1,000-year-old Murlidhar Krishna Temple and the beautiful wooden Tripura Sundari Temple will transport you back in time. After exploring the Gauri Shankar and Vishnu temples, we will wrap up the day under an open sky, watching a stunning sunset followed by a crackling bonfire and a musical evening with new friends.</p><p><strong>2. The Thrill of Lahaul &amp; Atal Tunnel</strong>\nHave you ever imagined how an entire world can change just by crossing a tunnel? As we drive through the engineering marvel, the Atal Tunnel, you will enter the majestic cold desert and snow-capped peaks of Lahaul Valley. Spending time by the Chandra River in front of the magnificent Sissu Waterfall will bring you closer to nature, followed by the breathtaking panoramas of Solang Valley on our way back.</p><p><strong>3. The Bohemian Magic of Parvati Valley</strong>\nA mountain trip is incomplete without the mystical Parvati Valley. Driving past the lush green Kullu Valley alongside the Beas River, we will arrive at Kasol\u2014world-famous for its hippie culture, vibrant cafes, and laid-back vibes. Spending the night at a riverside campsite under a starlit sky, singing your favorite tracks around a bonfire with your fellow travelers, is the true Trail Explorers signature experience. The next day, taking a dip in the natural hot sulfur springs at Manikaran Gurudwara and enjoying the community langar will bring you profound peace.</p><p><strong>4. Hidden Treasures of Shanghar &amp; Jibhi</strong>\nThe biggest highlight of this trip is the untouched beauty of the Sainj and Tirthan Valleys. We will head to Shanghar, famous for the vast, emerald-green Shangchul Mahadev meadow enclosed by towering deodar trees\u2014a place straight out of a fairytale. Staying in a cozy homestay here will give you a taste of authentic mountain hospitality. Finally, we will explore Jibhi, where rustic wooden cafes, the calming sound of streams, and a short walk to the hidden Jibhi Waterfall will leave you mesmerized.</p><p><strong>Who is this Trip For?</strong>\nThis expedition is for anyone who wants to embrace the 'Trail Explorer' way of life. Whether you are a solo traveler on a journey of self-discovery, a group of friends looking to make new memories, or someone who simply loves photography, music, and nature. The core mission of Trail Explorers community trips is to ensure that when you return, you carry not just photos, but lifelong friendships and memories that will always bring a smile to your face.</p><p><strong>Package Highlights at a Glance:</strong></p><ul><li><strong>Duration:</strong> 8 Days / 7 Nights (Including overnight Volvo travel).</li><li><strong>Stays:</strong> 5 Nights of premium accommodation (Hotels, Riverside Campsite, and Authentic Mountain Homestays).</li><li><strong>Meals:</strong> 5 Delicious Breakfasts and 5 Dinners featuring local flavors.</li><li><strong>Transport:</strong> Comfortable overnight Volvo from Delhi to Manali/Aut, and an exclusive Tempo Traveller for the entire mountain route.</li><li><strong>The Vibe:</strong> Bonfires, music sessions, stargazing, and passionate Trail Explorers tour captains dedicated to making this your best trip ever.</li></ul><p>Pack your backpacks\u2014the mountains are calling! Let's wander, let's explore, and let's make memories together with Trail Explorers.</p>",
+    "about_text": "<p><strong>The Ultimate Himalayan Wanderlust Expedition: A Journey of Self-Discovery</strong></p><p>Welcome to Trail Explorers' exclusive 8-day expedition! If you are tired of the city's hustle, traffic, and daily grind, and your heart yearns for the cool mountain breeze, dense cedar forests, and the soothing sound of flowing rivers—then 'The Ultimate Himalayan Wanderlust Expedition' is exactly what you need. This journey is designed specifically for wanderers (explorers) looking to connect with nature, build lifelong friendships, and experience the absolute best of the mountains.</p><p>Starting from Delhi, this carefully curated journey will take you through the most beautiful and unexplored valleys of Himachal Pradesh. Throughout this expedition, we will explore the vibrant vibes of Manali, the rich heritage of Naggar, the dramatic landscapes of Lahaul, the bohemian charm of Parvati Valley, and the hidden rustic secrets of the Sainj and Tirthan valleys.</p><p><strong>Why is this Expedition Special?</strong></p><p><strong>1. Heritage &amp; Culture in Manali &amp; Naggar</strong>\nOur journey begins in the mountains of Manali, but we won't just stick to the typical tourist spots. We will take you through the ancient, narrow lanes of Naggar village, where the 1,000-year-old Murlidhar Krishna Temple and the beautiful wooden Tripura Sundari Temple will transport you back in time. After exploring the Gauri Shankar and Vishnu temples, we will wrap up the day under an open sky, watching a stunning sunset followed by a crackling bonfire and a musical evening with new friends.</p><p><strong>2. The Thrill of Lahaul &amp; Atal Tunnel</strong>\nHave you ever imagined how an entire world can change just by crossing a tunnel? As we drive through the engineering marvel, the Atal Tunnel, you will enter the majestic cold desert and snow-capped peaks of Lahaul Valley. Spending time by the Chandra River in front of the magnificent Sissu Waterfall will bring you closer to nature, followed by the breathtaking panoramas of Solang Valley on our way back.</p><p><strong>3. The Bohemian Magic of Parvati Valley</strong>\nA mountain trip is incomplete without the mystical Parvati Valley. Driving past the lush green Kullu Valley alongside the Beas River, we will arrive at Kasol—world-famous for its hippie culture, vibrant cafes, and laid-back vibes. Spending the night at a riverside campsite under a starlit sky, singing your favorite tracks around a bonfire with your fellow travelers, is the true Trail Explorers signature experience. The next day, taking a dip in the natural hot sulfur springs at Manikaran Gurudwara and enjoying the community langar will bring you profound peace.</p><p><strong>4. Hidden Treasures of Shanghar &amp; Jibhi</strong>\nThe biggest highlight of this trip is the untouched beauty of the Sainj and Tirthan Valleys. We will head to Shanghar, famous for the vast, emerald-green Shangchul Mahadev meadow enclosed by towering deodar trees—a place straight out of a fairytale. Staying in a cozy homestay here will give you a taste of authentic mountain hospitality. Finally, we will explore Jibhi, where rustic wooden cafes, the calming sound of streams, and a short walk to the hidden Jibhi Waterfall will leave you mesmerized.</p><p><strong>Who is this Trip For?</strong>\nThis expedition is for anyone who wants to embrace the 'Trail Explorer' way of life. Whether you are a solo traveler on a journey of self-discovery, a group of friends looking to make new memories, or someone who simply loves photography, music, and nature. The core mission of Trail Explorers community trips is to ensure that when you return, you carry not just photos, but lifelong friendships and memories that will always bring a smile to your face.</p><p><strong>Package Highlights at a Glance:</strong></p><ul><li><strong>Duration:</strong> 8 Days / 7 Nights (Including overnight Volvo travel).</li><li><strong>Stays:</strong> 5 Nights of premium accommodation (Hotels, Riverside Campsite, and Authentic Mountain Homestays).</li><li><strong>Meals:</strong> 5 Delicious Breakfasts and 5 Dinners featuring local flavors.</li><li><strong>Transport:</strong> Comfortable overnight Volvo from Delhi to Manali/Aut, and an exclusive Tempo Traveller for the entire mountain route.</li><li><strong>The Vibe:</strong> Bonfires, music sessions, stargazing, and passionate Trail Explorers tour captains dedicated to making this your best trip ever.</li></ul><p>Pack your backpacks—the mountains are calling! Let's wander, let's explore, and let's make memories together with Trail Explorers.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -714,9 +714,9 @@ export const TRIPS_DATA: Trip[] = [
         "day": 6,
         "title": "Tirthan Valley Vibe - Shanghar Exploration & Transfer to Jibhi",
         "points": [
-          "The Fairytale Meadow: Wake up to the sounds of nature and take a morning walk across the legendary Shangchul Mahadev meadow. Surrounded by dense deodar forests and majestic peaks, this vast green expanse looks straight out of a postcard.Tirthan Valley: Later in the day, we drive towards the enchanting Tirthan Valley to reach our next destination\u2014Jibhi.Cafe Hopping & Relaxation: Spend your evening exploring rustic wooden cafes, walking along the gentle Jibhi stream, and enjoying the peaceful village aesthetics.Stay: Premium Jibhi Accommodation | Meals: Breakfast & Dinner"
+          "The Fairytale Meadow: Wake up to the sounds of nature and take a morning walk across the legendary Shangchul Mahadev meadow. Surrounded by dense deodar forests and majestic peaks, this vast green expanse looks straight out of a postcard.Tirthan Valley: Later in the day, we drive towards the enchanting Tirthan Valley to reach our next destination—Jibhi.Cafe Hopping & Relaxation: Spend your evening exploring rustic wooden cafes, walking along the gentle Jibhi stream, and enjoying the peaceful village aesthetics.Stay: Premium Jibhi Accommodation | Meals: Breakfast & Dinner"
         ],
-        "details": "The Fairytale Meadow: Wake up to the sounds of nature and take a morning walk across the legendary Shangchul Mahadev meadow. Surrounded by dense deodar forests and majestic peaks, this vast green expanse looks straight out of a postcard.Tirthan Valley: Later in the day, we drive towards the enchanting Tirthan Valley to reach our next destination\u2014Jibhi.Cafe Hopping & Relaxation: Spend your evening exploring rustic wooden cafes, walking along the gentle Jibhi stream, and enjoying the peaceful village aesthetics.Stay: Premium Jibhi Accommodation | Meals: Breakfast & Dinner"
+        "details": "The Fairytale Meadow: Wake up to the sounds of nature and take a morning walk across the legendary Shangchul Mahadev meadow. Surrounded by dense deodar forests and majestic peaks, this vast green expanse looks straight out of a postcard.Tirthan Valley: Later in the day, we drive towards the enchanting Tirthan Valley to reach our next destination—Jibhi.Cafe Hopping & Relaxation: Spend your evening exploring rustic wooden cafes, walking along the gentle Jibhi stream, and enjoying the peaceful village aesthetics.Stay: Premium Jibhi Accommodation | Meals: Breakfast & Dinner"
       },
       {
         "day": 7,
@@ -754,7 +754,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Heavy woollen jackets or windcheaters",
           "Thermal inners (Top and Bottom)",
@@ -764,7 +764,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Sturdy and waterproof trekking or hiking shoes",
           "Comfortable slippers or sandals for the campsite and homestay",
@@ -772,7 +772,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "UV protection sunglasses",
           "Reusable insulated water bottle",
@@ -781,7 +781,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Basic first-aid kit and band-aids",
           "Motion sickness pills for the mountain roads",
@@ -789,7 +789,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "Sunscreen (SPF 50+) and lip balm",
           "Cold cream and heavy moisturizer",
@@ -798,7 +798,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "High-capacity power bank",
           "Camera and extra batteries",
@@ -806,7 +806,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original Govt. ID proof (Aadhar Card, Voter ID, or Driving License)",
           "Sufficient cash (ATMs can be hard to find in offbeat places like Shanghar and Jibhi)",
@@ -817,7 +817,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "6pax",
-        "price": "Triple sharing \u20b913,999/- per person"
+        "price": "Triple sharing ₹13,999/- per person"
       }
     ],
     "sub_package_options": "",
@@ -871,9 +871,9 @@ export const TRIPS_DATA: Trip[] = [
   {
     "title": "Zanskar From Delhi: Shinku La & Gonbo Rangjon Expedition",
     "duration": "5 Days / 4 Nights",
-    "price": "\u20b98,999",
+    "price": "₹8,999",
     "category": "ladakh_tours",
-    "route": "Delhi \u2014 Manali \u2014 Atal Tunnel \u2014 Sissu \u2014 Keylong \u2014 Jispa \u2014 Shinku La Pass \u2014 Gonbo Rangjon \u2014 Manali \u2014 Delhi",
+    "route": "Delhi — Manali — Atal Tunnel — Sissu — Keylong — Jispa — Shinku La Pass — Gonbo Rangjon — Manali — Delhi",
     "tags": "Group Tour, High Altitude, Himalayan Expedition",
     "image_url": "/assets/images/trips/img_1791366815939_images.jpg",
     "bento_img_1": "/assets/images/trips/img_1791366950358_images.jpg",
@@ -881,7 +881,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "/assets/images/trips/img_1791270171624_jispa.jpg",
     "bento_img_4": "/assets/images/trips/img_1791542771330_Road_in_Lahaul_Valley__India.jpg",
     "bento_img_5": "/assets/images/trips/img_1791270189633____10_.jpg",
-    "about_text": "<p>Leave behind the polished city skylines, the crowded tourist trails, and the repetitive daily grind. The mountains are calling for those who carry an untamed wanderer\u2019s heart, and this expedition into the raw borderlands of Zanskar is curated for pure adventure.</p><p>This isn't just a standard mountain getaway\u2014it is an authentic Trail Explorers pilgrimage into rugged high-altitude terrain, where roaring glacial rivers cut through steep canyons and the horizon opens up to reveal giants of rock and ice. Designed for real explorers, spirited solo travelers, and community road-trippers, this 5-day journey strikes the perfect balance between high-adrenaline transit and peaceful Himalayan moments.</p><h3>The Gateway to High Altitude</h3><p>Your journey begins with an overnight ride from the bustling plains of Delhi, cutting straight toward the mist-wrapped Pir Panjal range. As the morning light touches Manali, our mountain caravan takes over. You leave conventional tourist routes behind and plunge through the monumental engineering feat of the Atal Tunnel. Emerging onto the other side feels like crossing into an entirely different planet: the lush green slopes of Kullu drop away, replaced by the wind-swept, stark grandeur of the Lahaul Valley.</p><p>You will watch the cascading glacial fall at Sissu tumble down jagged cliffs, trace the contours of the Bhaga River through Keylong, and settle into the quiet, starlit valley of Jispa. Evening in Jispa is spent the classic Trail Explorer way\u2014huddled around a crackling bonfire beneath an unpolluted Milky Way, sharing stories with fellow travelers as the river roars softly in the dark.</p><h3>Conquering Shinku La &amp; The Sacred Monolith</h3><p>The true climax of this expedition lies beyond the border check-posts of Darcha. Ascending deep into the remote wilderness, we scale the mighty Shinku La Pass (16,500+ ft)\u2014a formidable mountain frontier permanently crowned with snow and raw Himalayan wind. Standing at the crest of Shinku La, where prayer flags flutter fiercely against the thin mountain air, you experience the absolute stillness and power of the high Himalayas.</p><p>Descending into the secluded frontier of Zanskar, the scenery shifts into dramatic moonscapes until you stand face-to-face with <strong>Gonbo Rangjon</strong>. Rising thousands of feet from the barren valley floor, this sacred, freestanding dark rock tower stands as a solitary sentinel over the wilderness. It is an awe-inspiring, spiritual sight that very few travelers ever witness in their lifetime\u2014a timeless geological wonder that commands silent respect.</p><h3>Culture, Cedar Forests &amp; Clear Horizons</h3><p>After absorbing the raw energy of Zanskar, the route traces its way back across Lahaul to Manali. But the expedition isn't complete without soaking in the deep roots of Himachal culture. Walk under towering centuries-old deodars to pay homage at the ancient Hidimba Devi Temple, hike the fresh pine trails toward the hidden sprays of Jogini Waterfall, and spend a relaxed evening soaking in the vibrant bohemian hum of Old Manali\u2019s cafes and handicraft alleys.</p><h3>The Trail Explorers Promise</h3><p>We build our expeditions on complete operational clarity, rock-solid mountain logistics, experienced route captains, and zero hidden terms. Whether you arrive solo or with friends, you journey as a tight-knit community of like-minded wanderers bound by the spirit of the open road. Pack light, leave your routine behind, and get ready to experience the frontier like never before!</p>",
+    "about_text": "<p>Leave behind the polished city skylines, the crowded tourist trails, and the repetitive daily grind. The mountains are calling for those who carry an untamed wanderer’s heart, and this expedition into the raw borderlands of Zanskar is curated for pure adventure.</p><p>This isn't just a standard mountain getaway—it is an authentic Trail Explorers pilgrimage into rugged high-altitude terrain, where roaring glacial rivers cut through steep canyons and the horizon opens up to reveal giants of rock and ice. Designed for real explorers, spirited solo travelers, and community road-trippers, this 5-day journey strikes the perfect balance between high-adrenaline transit and peaceful Himalayan moments.</p><h3>The Gateway to High Altitude</h3><p>Your journey begins with an overnight ride from the bustling plains of Delhi, cutting straight toward the mist-wrapped Pir Panjal range. As the morning light touches Manali, our mountain caravan takes over. You leave conventional tourist routes behind and plunge through the monumental engineering feat of the Atal Tunnel. Emerging onto the other side feels like crossing into an entirely different planet: the lush green slopes of Kullu drop away, replaced by the wind-swept, stark grandeur of the Lahaul Valley.</p><p>You will watch the cascading glacial fall at Sissu tumble down jagged cliffs, trace the contours of the Bhaga River through Keylong, and settle into the quiet, starlit valley of Jispa. Evening in Jispa is spent the classic Trail Explorer way—huddled around a crackling bonfire beneath an unpolluted Milky Way, sharing stories with fellow travelers as the river roars softly in the dark.</p><h3>Conquering Shinku La &amp; The Sacred Monolith</h3><p>The true climax of this expedition lies beyond the border check-posts of Darcha. Ascending deep into the remote wilderness, we scale the mighty Shinku La Pass (16,500+ ft)—a formidable mountain frontier permanently crowned with snow and raw Himalayan wind. Standing at the crest of Shinku La, where prayer flags flutter fiercely against the thin mountain air, you experience the absolute stillness and power of the high Himalayas.</p><p>Descending into the secluded frontier of Zanskar, the scenery shifts into dramatic moonscapes until you stand face-to-face with <strong>Gonbo Rangjon</strong>. Rising thousands of feet from the barren valley floor, this sacred, freestanding dark rock tower stands as a solitary sentinel over the wilderness. It is an awe-inspiring, spiritual sight that very few travelers ever witness in their lifetime—a timeless geological wonder that commands silent respect.</p><h3>Culture, Cedar Forests &amp; Clear Horizons</h3><p>After absorbing the raw energy of Zanskar, the route traces its way back across Lahaul to Manali. But the expedition isn't complete without soaking in the deep roots of Himachal culture. Walk under towering centuries-old deodars to pay homage at the ancient Hidimba Devi Temple, hike the fresh pine trails toward the hidden sprays of Jogini Waterfall, and spend a relaxed evening soaking in the vibrant bohemian hum of Old Manali’s cafes and handicraft alleys.</p><h3>The Trail Explorers Promise</h3><p>We build our expeditions on complete operational clarity, rock-solid mountain logistics, experienced route captains, and zero hidden terms. Whether you arrive solo or with friends, you journey as a tight-knit community of like-minded wanderers bound by the spirit of the open road. Pack light, leave your routine behind, and get ready to experience the frontier like never before!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -935,7 +935,7 @@ export const TRIPS_DATA: Trip[] = [
       }
     ],
     "inclusions": [
-      "Round-trip Volvo / AC Semi-Sleeper bus transfers (Delhi \u2013 Manali \u2013 Delhi)",
+      "Round-trip Volvo / AC Semi-Sleeper bus transfers (Delhi – Manali – Delhi)",
       "Dedicated expedition vehicle for high-altitude & local transit (Tempo Traveller / 4x4 SUV)",
       "2 Nights mountain accommodation (1 Night Riverside Stay in Jispa + 1 Night in Manali)",
       "4 Nutritious meals included (2 Warm Breakfasts & 2 Delicious Dinners)",
@@ -952,7 +952,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Heavy windproof & waterproof down jacket",
           "Thermal innerwear (top & bottom - 2 pairs)",
@@ -964,7 +964,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Sturdy trekking shoes or high-ankle hiking boots with good grip",
           "Warm woolen socks (2-3 pairs) + regular cotton socks (3 pairs)",
@@ -972,7 +972,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "UV-protection polarized sunglasses (mandatory for snow glare)",
           "Sunscreen lotion (SPF 50+) & nourishing lip balm",
@@ -982,7 +982,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Personal prescription medicines",
           "High-altitude sickness tablets (Diamox - consult doctor)",
@@ -992,7 +992,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "Hand sanitizer & paper soap strips",
           "Cold cream & heavy moisturizer for dry winds",
@@ -1000,7 +1000,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "High-capacity power bank (20,000 mAh recommended - batteries drain fast in cold)",
           "Camera with extra charged batteries & memory cards",
@@ -1008,7 +1008,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original Government Photo ID Proof (Aadhaar / Voter ID / Passport)",
           "Multiple photocopies of Photo ID for high-altitude checkposts",
@@ -1019,15 +1019,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b98,999"
+        "price": "₹8,999"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b99,999"
+        "price": "₹9,999"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b910,999"
+        "price": "₹10,999"
       }
     ],
     "sub_package_options": "",
@@ -1040,7 +1040,7 @@ export const TRIPS_DATA: Trip[] = [
             "range": "16th October",
             "startDate": "2026-10-16",
             "status": "Filling Fast",
-            "price": "\u20b98,999/-"
+            "price": "₹8,999/-"
           }
         ]
       }
@@ -1106,7 +1106,7 @@ export const TRIPS_DATA: Trip[] = [
     "duration": "9 Days / 8 Nights",
     "price": "17499",
     "category": "spiti_tours, himachal_tours",
-    "route": "Delhi \u2014 Shimla \u2014 Sangla \u2014 Chitkul \u2014 Tabo \u2014 Kaza \u2014 Langza \u2014 Komic \u2014 Hikkim \u2014 Key \u2014 Chicham \u2014 Kalpa \u2014 Shimla \u2014 Delhi",
+    "route": "Delhi — Shimla — Sangla — Chitkul — Tabo — Kaza — Langza — Komic — Hikkim — Key — Chicham — Kalpa — Shimla — Delhi",
     "tags": "Group Tour, Winter Expedition, High Altitude, Snow Drive",
     "image_url": "/assets/images/trips/img_1793091363548____2_.jpg",
     "bento_img_1": "/assets/images/trips/img_1790605609888_Spiti_Trip_Packages.jpg",
@@ -1114,11 +1114,11 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "/assets/images/trips/img_1793038194385_d23995b1aa8465fee724d0ee72561f46.jpg",
     "bento_img_4": "/assets/images/trips/img_1790605796524_Ice_Cafe_Spiti.jpg",
     "bento_img_5": "/assets/images/trips/img_1790605674798_img_1790605666744_Comfortable_Chandigarh_to_Manali_Taxi_at_Best_Price.webp",
-    "about_text": "<h3><strong>Spiti Group Trip from Delhi: 9 Days in Winter Spiti Valley</strong></h3>\n<p>Our <strong>Spiti group trip</strong> is a 9-day, 8-night road journey from Delhi into Spiti Valley by the Shimla\u2013Kinnaur route, the road into Spiti that stays open through winter. You travel with a group of fellow explorers and a dedicated Trail Explorers trip captain: an overnight Volvo from Delhi to Shimla, then a dedicated Tempo Traveller through Sangla, Chitkul, Nako, Tabo, Kaza and Kalpa, and back to Delhi.</p>\n<p>Spiti Valley, the \"Middle Land\" between Tibet and India, turns into a frozen cold desert in winter. Snow-covered mountains, thousand-year-old monasteries, frozen waterfalls and star-filled night skies replace the summer crowds. Winter is when the valley is at its quietest and most dramatic.</p>\n<h3><strong>Highlights of this Spiti Valley trip</strong></h3>\n<ul>\n<li><strong>Chitkul</strong>: the last inhabited village near the Indo-Tibet border, in Kinnaur's Sangla Valley.</li>\n<li><strong>Nako Lake and the Gue mummy</strong>: a 500-year-old naturally preserved monk.</li>\n<li><strong>Tabo Monastery</strong>: over a thousand years old, known as the \"Ajanta of the Himalayas\".</li>\n<li><strong>Dhankar Monastery</strong> on its cliff, and the ice cafe on the way to Kaza.</li>\n<li><strong>Hikkim, Komic and Langza</strong>: post a card from the world's highest post office, visit one of the highest motorable villages, and see the Buddha statue of the Fossil Village.</li>\n<li><strong>Key Monastery, Chicham Bridge and Kibber</strong>: Spiti's most famous monastery and one of Asia's highest suspension bridges.</li>\n<li><strong>Kalpa</strong>: sunrise and sunset over the Kinner Kailash range.</li>\n</ul>\n<h3><strong>Why join a Spiti group trip in winter?</strong></h3>\n<ul>\n<li><strong>Travel as a group:</strong> ride alongside fellow explorers, creators and nature lovers, led by seasoned Trail Explorers trip captains.</li>\n<li><strong>Everything sorted from Delhi:</strong> transport, 6 nights' stay, breakfasts and dinners, permits, an experienced winter mountain driver and backup oxygen are included.</li>\n<li><strong>Culture without the crowds:</strong> Tibetan Buddhist monasteries and villages, undisturbed by heavy tourism.</li>\n<li><strong>Photography and stargazing:</strong> snow-draped mud houses, frozen rivers and clear Milky Way skies.</li>\n</ul>\n<h3><strong>Who this trip is for</strong></h3>\n<p>First-time Spiti travellers in good health, solo travellers who want a group, friends and couples, and photographers. No trekking experience is needed; the key is to follow the winter layering guidelines and acclimatise well.</p>\n<h3><strong>Pack for the cold</strong></h3>\n<p>Nights in winter Spiti drop well below -15\u00b0C to -20\u00b0C. Carry heavy thermal layers, waterproof snow boots, a windproof down jacket, a woollen beanie, gloves, polarized sunglasses and high-SPF sunscreen. The full list is under What to Pack below.</p>\n<p>Want deeper snow and a 4x4? Our <a href=\"/trips/spiti-tours-spiti-winter-4x4-expedition-103\">Spiti Winter 4x4 Expedition</a> follows the same Kinnaur route in January.</p><p>New to Spiti in winter? Our <a href=\"/winter-spiti\">winter Spiti guide</a> covers the route, the weather month by month and what to pack.</p><p>Ready for winter in the Himalayas? Pick a departure date below and reserve your seat on the Trail Explorers Spiti group trip.</p>",
+    "about_text": "<h3><strong>Spiti Group Trip from Delhi: 9 Days in Winter Spiti Valley</strong></h3>\n<p>Our <strong>Spiti group trip</strong> is a 9-day, 8-night road journey from Delhi into Spiti Valley by the Shimla–Kinnaur route, the road into Spiti that stays open through winter. You travel with a group of fellow explorers and a dedicated Trail Explorers trip captain: an overnight Volvo from Delhi to Shimla, then a dedicated Tempo Traveller through Sangla, Chitkul, Nako, Tabo, Kaza and Kalpa, and back to Delhi.</p>\n<p>Spiti Valley, the \"Middle Land\" between Tibet and India, turns into a frozen cold desert in winter. Snow-covered mountains, thousand-year-old monasteries, frozen waterfalls and star-filled night skies replace the summer crowds. Winter is when the valley is at its quietest and most dramatic.</p>\n<h3><strong>Highlights of this Spiti Valley trip</strong></h3>\n<ul>\n<li><strong>Chitkul</strong>: the last inhabited village near the Indo-Tibet border, in Kinnaur's Sangla Valley.</li>\n<li><strong>Nako Lake and the Gue mummy</strong>: a 500-year-old naturally preserved monk.</li>\n<li><strong>Tabo Monastery</strong>: over a thousand years old, known as the \"Ajanta of the Himalayas\".</li>\n<li><strong>Dhankar Monastery</strong> on its cliff, and the ice cafe on the way to Kaza.</li>\n<li><strong>Hikkim, Komic and Langza</strong>: post a card from the world's highest post office, visit one of the highest motorable villages, and see the Buddha statue of the Fossil Village.</li>\n<li><strong>Key Monastery, Chicham Bridge and Kibber</strong>: Spiti's most famous monastery and one of Asia's highest suspension bridges.</li>\n<li><strong>Kalpa</strong>: sunrise and sunset over the Kinner Kailash range.</li>\n</ul>\n<h3><strong>Why join a Spiti group trip in winter?</strong></h3>\n<ul>\n<li><strong>Travel as a group:</strong> ride alongside fellow explorers, creators and nature lovers, led by seasoned Trail Explorers trip captains.</li>\n<li><strong>Everything sorted from Delhi:</strong> transport, 6 nights' stay, breakfasts and dinners, permits, an experienced winter mountain driver and backup oxygen are included.</li>\n<li><strong>Culture without the crowds:</strong> Tibetan Buddhist monasteries and villages, undisturbed by heavy tourism.</li>\n<li><strong>Photography and stargazing:</strong> snow-draped mud houses, frozen rivers and clear Milky Way skies.</li>\n</ul>\n<h3><strong>Who this trip is for</strong></h3>\n<p>First-time Spiti travellers in good health, solo travellers who want a group, friends and couples, and photographers. No trekking experience is needed; the key is to follow the winter layering guidelines and acclimatise well.</p>\n<h3><strong>Pack for the cold</strong></h3>\n<p>Nights in winter Spiti drop well below -15°C to -20°C. Carry heavy thermal layers, waterproof snow boots, a windproof down jacket, a woollen beanie, gloves, polarized sunglasses and high-SPF sunscreen. The full list is under What to Pack below.</p>\n<p>Want deeper snow and a 4x4? Our <a href=\"/trips/spiti-tours-spiti-winter-4x4-expedition-103\">Spiti Winter 4x4 Expedition</a> follows the same Kinnaur route in January.</p><p>New to Spiti in winter? Our <a href=\"/winter-spiti\">winter Spiti guide</a> covers the route, the weather month by month and what to pack.</p><p>Ready for winter in the Himalayas? Pick a departure date below and reserve your seat on the Trail Explorers Spiti group trip.</p>",
     "itinerary": [
       {
         "day": 1,
-        "title": "Delhi to Shimla \u2014 Overnight Journey",
+        "title": "Delhi to Shimla — Overnight Journey",
         "points": [
           "Assemble at the designated pickup point in Delhi by evening and board your vehicle.",
           "Enjoy a scenic overnight journey through the plains and into the foothills of the Himalayas.",
@@ -1128,17 +1128,17 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 2,
-        "title": "Shimla to Sangla / Chitkul \u2014 Journey into Kinnaur Valley",
+        "title": "Shimla to Sangla / Chitkul — Journey into Kinnaur Valley",
         "points": [
           "Arrive in Shimla and drive further into the breathtaking Kinnaur Valley alongside the rushing Sutlej River.",
           "Pass through dramatic cliff-side roads, striking rock tunnels, and cascading waterfalls.",
-          "Reach Sangla or Chitkul\u2014the last inhabited village near the Indo-Tibet border\u2014and check into your accommodation for an overnight stay."
+          "Reach Sangla or Chitkul—the last inhabited village near the Indo-Tibet border—and check into your accommodation for an overnight stay."
         ],
-        "details": "Arrive in Shimla and drive further into the breathtaking Kinnaur Valley alongside the rushing Sutlej River. Pass through dramatic cliff-side roads, striking rock tunnels, and cascading waterfalls. Reach Sangla or Chitkul\u2014the last inhabited village near the Indo-Tibet border\u2014and check into your accommodation for an overnight stay."
+        "details": "Arrive in Shimla and drive further into the breathtaking Kinnaur Valley alongside the rushing Sutlej River. Pass through dramatic cliff-side roads, striking rock tunnels, and cascading waterfalls. Reach Sangla or Chitkul—the last inhabited village near the Indo-Tibet border—and check into your accommodation for an overnight stay."
       },
       {
         "day": 3,
-        "title": "Sangla to Tabo \u2014 Exploring Nako & Gue Mummy Village",
+        "title": "Sangla to Tabo — Exploring Nako & Gue Mummy Village",
         "points": [
           "After an early breakfast, drive towards the cold desert expanse of Spiti Valley via Pooh.",
           "Stop at Nako village to visit the serene Nako Lake and explore its ancient settlement.",
@@ -1148,7 +1148,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 4,
-        "title": "Tabo to Kaza \u2014 Cliffside Wonders & Ancient Heritage",
+        "title": "Tabo to Kaza — Cliffside Wonders & Ancient Heritage",
         "points": [
           "Explore the historic Tabo Monastery, famously known as the \"Ajanta of the Himalayas,\" which dates back over a thousand years.",
           "Continue the journey towards Kaza, stopping along the way to explore the dramatic cliffside Dhankar Monastery and ice cafe.",
@@ -1158,7 +1158,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 5,
-        "title": "Kaza Highest Villages Expedition \u2014 Langza, Komic & Hikkim",
+        "title": "Kaza Highest Villages Expedition — Langza, Komic & Hikkim",
         "points": [
           "Embark on a high-altitude expedition to some of the highest inhabited settlements in the world.",
           "Visit Hikkim to mail a postcard from the highest post office in the world.",
@@ -1178,7 +1178,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 7,
-        "title": "Kaza to Kalpa \u2014 Descending into Kinnaur",
+        "title": "Kaza to Kalpa — Descending into Kinnaur",
         "points": [
           "Bid farewell to the stark landscapes of Spiti Valley and retrace your route down towards Kinnaur.",
           "Arrive in Kalpa, a picturesque village nestled amidst apple orchards and towering pine forests.",
@@ -1188,7 +1188,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 8,
-        "title": "Kalpa to Shimla \u2014 Evening Departure to Delhi",
+        "title": "Kalpa to Shimla — Evening Departure to Delhi",
         "points": [
           "After breakfast, check out from Kalpa and drive back down towards Shimla.",
           "Take in the final sweeping views of the mountain valleys along the way.",
@@ -1198,7 +1198,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 9,
-        "title": "Morning Delhi Arrival \u2014 Trip Ends",
+        "title": "Morning Delhi Arrival — Trip Ends",
         "points": [
           "Arrive in Delhi in the early morning hours.",
           "Conclude your memorable Himalayan winter expedition with wonderful memories and stories to share."
@@ -1233,11 +1233,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b917,499"
+        "price": "₹17,499"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b918,499"
+        "price": "₹18,499"
       }
     ],
     "sub_package_options": "",
@@ -1270,7 +1270,7 @@ export const TRIPS_DATA: Trip[] = [
     "faqs": [
       {
         "question": "What is the best time to do the Spiti group trip?",
-        "answer": "We run this trip from November through winter on the Shimla\u2013Kinnaur route. November brings clear skies and the first snow, and from mid-December to mid-March the valley is fully snow-covered with frozen waterfalls."
+        "answer": "We run this trip from November through winter on the Shimla–Kinnaur route. November brings clear skies and the first snow, and from mid-December to mid-March the valley is fully snow-covered with frozen waterfalls."
       },
       {
         "question": "Where does the Spiti group trip start and end?",
@@ -1278,11 +1278,11 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "How much does the Spiti group trip from Delhi cost?",
-        "answer": "\u20b917,499 per person on quad sharing and \u20b918,499 on triple sharing, plus 5% GST. This covers Delhi\u2013Shimla\u2013Delhi transit, a dedicated Tempo Traveller, 6 nights' stay, 12 meals, permits and a trip captain."
+        "answer": "₹17,499 per person on quad sharing and ₹18,499 on triple sharing, plus 5% GST. This covers Delhi–Shimla–Delhi transit, a dedicated Tempo Traveller, 6 nights' stay, 12 meals, permits and a trip captain."
       },
       {
         "question": "Is Spiti Valley open in winter?",
-        "answer": "Yes. The Shimla\u2013Kinnaur route that this trip follows stays open through winter. The Manali side over Kunzum Pass closes for the season, which is why winter Spiti trips go via Kinnaur."
+        "answer": "Yes. The Shimla–Kinnaur route that this trip follows stays open through winter. The Manali side over Kunzum Pass closes for the season, which is why winter Spiti trips go via Kinnaur."
       },
       {
         "question": "Can I join the Spiti group trip solo?",
@@ -1290,7 +1290,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "How cold does it get in Spiti during winter?",
-        "answer": "Daytime temperatures range between -5\u00b0C and 5\u00b0C, while nighttime temperatures drop significantly between -15\u00b0C and -25\u00b0C."
+        "answer": "Daytime temperatures range between -5°C and 5°C, while nighttime temperatures drop significantly between -15°C and -25°C."
       },
       {
         "question": "Is this trip suitable for beginners or first-time travelers?",
@@ -1306,7 +1306,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "What kind of clothing and gear should I pack?",
-        "answer": "Pack 3-4 warm thermal base layers, fleece jackets, a windproof and waterproof down feather jacket (-20\u00b0C rated), waterproof snow shoes with good grip, woolen socks, gloves, a balaclava, UV-protection sunglasses, and high-SPF sunscreen."
+        "answer": "Pack 3-4 warm thermal base layers, fleece jackets, a windproof and waterproof down feather jacket (-20°C rated), waterproof snow shoes with good grip, woolen socks, gloves, a balaclava, UV-protection sunglasses, and high-SPF sunscreen."
       },
       {
         "question": "Are room heaters included in the package?",
@@ -1343,7 +1343,7 @@ export const TRIPS_DATA: Trip[] = [
         "items": [
           "Thermal base layers (3-4 sets, merino wool or synthetic)",
           "Fleece sweaters or pullover layers",
-          "Windproof and waterproof heavy down jacket (-20\u00b0C rated)",
+          "Windproof and waterproof heavy down jacket (-20°C rated)",
           "Fleece-lined trekking or snow pants",
           "Waterproof outer pants",
           "Woolen beanie / monkey cap",
@@ -1412,14 +1412,14 @@ export const TRIPS_DATA: Trip[] = [
       }
     ],
     "seo_title": "Spiti Group Trip from Delhi | 9D/8N Winter Spiti | Trail Explorers",
-    "meta_description": "Spiti group trip from Delhi, 9D/8N from \u20b917,499: Chitkul, Nako, Tabo, Kaza, Key Monastery, Hikkim & Kalpa with stays, meals, transport & a trip captain.",
+    "meta_description": "Spiti group trip from Delhi, 9D/8N from ₹17,499: Chitkul, Nako, Tabo, Kaza, Key Monastery, Hikkim & Kalpa with stays, meals, transport & a trip captain.",
     "gallery_images": [],
     "slug": "spiti-valley-group-trip-from-delhi-winter-expedition-9-days-1790411548930"
   },
   {
     "title": "Carnival Collective : Manali Winter Carnival Special",
     "duration": "5 Days / 4 Nights",
-    "price": "\u20b9XX,XXX",
+    "price": "₹XX,XXX",
     "category": "spiti_tours",
     "route": "",
     "tags": "",
@@ -1454,9 +1454,9 @@ export const TRIPS_DATA: Trip[] = [
   {
     "title": "Kullu Dussehra Special: Cultural Expedition & Manali Escape",
     "duration": "5 Days / 4 Nights",
-    "price": "\u20b910,500",
+    "price": "₹10,500",
     "category": "himachal_tours, festival_tours",
-    "route": "Delhi \u2014 Manali -Naggar\u2014 Kullu \u2014 Bijli Mahadev \u2014 Delhi",
+    "route": "Delhi — Manali -Naggar— Kullu — Bijli Mahadev — Delhi",
     "tags": "HIMACHAL_TOURS, FESTIVAL_TOURS, TREKS",
     "image_url": "/assets/images/trips/img_1791097768369_Kullu-Dussehra-2025__1_.webp",
     "bento_img_1": "/assets/images/trips/img_1791097793452_Kullu-Dussehra-2025__1_.webp",
@@ -1464,7 +1464,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "/assets/images/trips/img_1790363800922___.jpg",
     "bento_img_4": "/assets/images/trips/img_1791463893351_images__1_.jpg",
     "bento_img_5": "/assets/images/trips/img_1791364575652_12908430Manali_Krishna_Temple_Thawa_Main.jpg",
-    "about_text": "<p>Welcome to the ultimate Himalayan cultural celebration with Trail Explorers! If you have ever wanted to witness the raw, unfiltered spiritual energy and ancient traditions of the mountains, our Kullu Dussehra Special: Cultural Expedition &amp; Manali Escape is crafted just for you. Far beyond standard tourist sightseeing, this 5-day immersive journey takes you right into the heart of the Himalayas during their most vibrant, magical season\u2014the world-renowned Kullu Dussehra festival.   </p><h3>The Trail Explorers Vibe: Offbeat, Soulful &amp; Tribal   </h3><p>At Trail Explorers, we don\u2019t just organize trips; we curate soul-stirring Himalayan stories. Based right here in the heart of Manali, our expeditions are designed for free-spirited travelers, culture seekers, and mountain lovers who want to escape the mundane and live authentically. Picture crisp alpine air, the rustic strumming of guitars around a crackling bonfire, roadside chai stops wrapped in mist, and a tribe of like-minded wanderers sharing laughter under a blanket of stars. This expedition captures that exact bohemian magic\u2014blending adrenaline-pumping adventures with deep cultural roots.   </p><h3>What Makes This Expedition Legendary?   </h3><ul><li><strong>The Grand Kullu Dussehra Experience</strong>: Step into Dhalpur Maidan in Kullu to witness history and divinity unfold. Unlike anywhere else in India, Kullu Dussehra does not end with the burning of effigies; instead, it marks the grand divine assembly of hundreds of local village deities arriving in magnificent, colorful palanquins. Accompanied by traditional Kullvi brass instruments, hauntingly beautiful folk tunes, and thousands of locals dressed in vibrant traditional attire, the festive energy here is nothing short of electric.   </li><li><strong>Sacred Heritage at Naggar\u2019s 1,000-Year-Old Krishna Temple</strong>: Wander through the timeless stone-and-wood alleys of Naggar to seek blessings at the ancient Murlidhar Krishna Temple. Perched gracefully with commanding valley views, this millennium-old sanctum radiates serene spiritual energy and showcases classical Pagoda-cum-Pahari temple architecture.</li><li><strong>Authentic Himachali Dham Feast</strong>: Elevate your palate with a traditional, royal Kullvi Dham served amidst panoramic mountain vistas. Slow-cooked for hours by hereditary chefs (Botis) in traditional brass cauldrons over wood fire, this pure satvik festive feast features iconic delicacies like Madra, Mah ki Dal, and aromatic sweet rice (Meethe Chawal)\u2014offering an unforgettable taste of authentic mountain hospitality.</li><li><strong>Adrenaline &amp; Alpine Trails</strong>: Balance deep cultural immersion with high-octane thrills! Feel the icy splash of the Beas River as you conquer thrilling white-water rapids, and embark on a rewarding hike up to Bijli Mahadev, taking in breathtaking 360-degree panoramic views across both the Kullu and Parvati valleys.</li></ul><h3>Seamless Travel &amp; Comfort</h3><p>We\u2019ve got all the logistics sorted so you can focus entirely on soaking in the magic. Starting with a comfortable overnight Volvo journey from Delhi to Manali, your trip includes cozy stays, expert local trip captains, guided excursions, entry permits, and a memorable bonfire night under the Himalayan sky.</p><p>Whether you are traveling solo to make lifelong friends, a photography enthusiast chasing vibrant cultural portraits, or a group seeking an authentic festive getaway, this expedition promises memories that will linger forever. Pack your bags, lace up your hiking boots, and answer the call of the mountains. Let\u2019s wander wild with Trail Explorers!</p>",
+    "about_text": "<p>Welcome to the ultimate Himalayan cultural celebration with Trail Explorers! If you have ever wanted to witness the raw, unfiltered spiritual energy and ancient traditions of the mountains, our Kullu Dussehra Special: Cultural Expedition &amp; Manali Escape is crafted just for you. Far beyond standard tourist sightseeing, this 5-day immersive journey takes you right into the heart of the Himalayas during their most vibrant, magical season—the world-renowned Kullu Dussehra festival.   </p><h3>The Trail Explorers Vibe: Offbeat, Soulful &amp; Tribal   </h3><p>At Trail Explorers, we don’t just organize trips; we curate soul-stirring Himalayan stories. Based right here in the heart of Manali, our expeditions are designed for free-spirited travelers, culture seekers, and mountain lovers who want to escape the mundane and live authentically. Picture crisp alpine air, the rustic strumming of guitars around a crackling bonfire, roadside chai stops wrapped in mist, and a tribe of like-minded wanderers sharing laughter under a blanket of stars. This expedition captures that exact bohemian magic—blending adrenaline-pumping adventures with deep cultural roots.   </p><h3>What Makes This Expedition Legendary?   </h3><ul><li><strong>The Grand Kullu Dussehra Experience</strong>: Step into Dhalpur Maidan in Kullu to witness history and divinity unfold. Unlike anywhere else in India, Kullu Dussehra does not end with the burning of effigies; instead, it marks the grand divine assembly of hundreds of local village deities arriving in magnificent, colorful palanquins. Accompanied by traditional Kullvi brass instruments, hauntingly beautiful folk tunes, and thousands of locals dressed in vibrant traditional attire, the festive energy here is nothing short of electric.   </li><li><strong>Sacred Heritage at Naggar’s 1,000-Year-Old Krishna Temple</strong>: Wander through the timeless stone-and-wood alleys of Naggar to seek blessings at the ancient Murlidhar Krishna Temple. Perched gracefully with commanding valley views, this millennium-old sanctum radiates serene spiritual energy and showcases classical Pagoda-cum-Pahari temple architecture.</li><li><strong>Authentic Himachali Dham Feast</strong>: Elevate your palate with a traditional, royal Kullvi Dham served amidst panoramic mountain vistas. Slow-cooked for hours by hereditary chefs (Botis) in traditional brass cauldrons over wood fire, this pure satvik festive feast features iconic delicacies like Madra, Mah ki Dal, and aromatic sweet rice (Meethe Chawal)—offering an unforgettable taste of authentic mountain hospitality.</li><li><strong>Adrenaline &amp; Alpine Trails</strong>: Balance deep cultural immersion with high-octane thrills! Feel the icy splash of the Beas River as you conquer thrilling white-water rapids, and embark on a rewarding hike up to Bijli Mahadev, taking in breathtaking 360-degree panoramic views across both the Kullu and Parvati valleys.</li></ul><h3>Seamless Travel &amp; Comfort</h3><p>We’ve got all the logistics sorted so you can focus entirely on soaking in the magic. Starting with a comfortable overnight Volvo journey from Delhi to Manali, your trip includes cozy stays, expert local trip captains, guided excursions, entry permits, and a memorable bonfire night under the Himalayan sky.</p><p>Whether you are traveling solo to make lifelong friends, a photography enthusiast chasing vibrant cultural portraits, or a group seeking an authentic festive getaway, this expedition promises memories that will linger forever. Pack your bags, lace up your hiking boots, and answer the call of the mountains. Let’s wander wild with Trail Explorers!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -1488,7 +1488,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 3,
-        "title": "Kullu Dussehra Celebration \u2014 Immersive Cultural Experience",
+        "title": "Kullu Dussehra Celebration — Immersive Cultural Experience",
         "points": [
           "Head to Kullu to witness the world-famous Kullu Dussehra Festival at Dhalpur Maidan.",
           "Experience the divine grand procession featuring hundreds of local village deities in colorful palanquins, traditional Kullvi brass instruments, vibrant folk dances, and authentic regional festivities.",
@@ -1541,14 +1541,14 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Triple Sharing",
-        "price": "\u20b910,500"
+        "price": "₹10,500"
       }
     ],
     "sub_package_options": "",
     "departure_dates": [],
     "faqs": [
       {
-        "question": "1. What makes Trail Explorers\u2019s Kullu Dussehra expedition unique?",
+        "question": "1. What makes Trail Explorers’s Kullu Dussehra expedition unique?",
         "answer": "Unlike generic tourist sightseeing tours, our expedition takes you right into the heart of Dhalpur Maidan to experience the divine assembly of hundreds of mountain village deities, authentic Kullvi music, and folk rituals, blended with curated offbeat explorations and vibrant community vibes."
       },
       {
@@ -1660,7 +1660,7 @@ export const TRIPS_DATA: Trip[] = [
       {
         "category": "Gadgets",
         "items": [
-          "10,000\u201320,000 mAh power bank",
+          "10,000–20,000 mAh power bank",
           "Charging cables & phone wall adapter",
           "Camera or action camera with spare batteries",
           "Flashlight / headlamp with extra batteries"
@@ -1676,16 +1676,16 @@ export const TRIPS_DATA: Trip[] = [
       }
     ],
     "seo_title": "Kullu Dussehra Trip 2026 from Delhi | 5D/4N | Trail Explorers",
-    "meta_description": "Kullu Dussehra 2026 tour from Delhi: 5 days at Dhalpur Maidan for the deity procession, plus Naggar, Bijli Mahadev and Beas rafting. From \u20b910,500.",
+    "meta_description": "Kullu Dussehra 2026 tour from Delhi: 5 days at Dhalpur Maidan for the deity procession, plus Naggar, Bijli Mahadev and Beas rafting. From ₹10,500.",
     "gallery_images": [],
     "slug": "kullu-dussehra-special-cultural-expedition-manali-escape-1790364151734"
   },
   {
     "title": "Delhi to Delhi: Manali Weekend Escape",
     "duration": "3 Days / 2 Nights",
-    "price": "\u20b94,999",
+    "price": "₹4,999",
     "category": "himachal_tours, women_only_tours, corporate_tours",
-    "route": "Delhi \u2014 Manali \u2014 Solang Valley \u2014 Old Manali \u2014 Delhi",
+    "route": "Delhi — Manali — Solang Valley — Old Manali — Delhi",
     "tags": "Weekend Getaway, Cafe Hopping, Snow Adventure, Group Trip",
     "image_url": "/assets/images/trips/img_1789393701594_Manali_weather___.jpg",
     "bento_img_1": "/assets/images/trips/img_1789221185417_Manali_weather___.jpg",
@@ -1693,7 +1693,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "/assets/images/trips/img_1789221175080_img_1789221147056_img_1789221130444_mall_road__manali.webp",
     "bento_img_4": "/assets/images/trips/img_1789221117106_img_1789221107098_manali-solan_valley__india.webp",
     "bento_img_5": "/assets/images/trips/img_1789399621665___Bijli_Mahadev_Temple.jpg",
-    "about_text": "<h3>Where The Highway Meets The Soul: The Trail Explorers Calling</h3><p>There comes a point in the relentless churn of the city\u2014amid blaring horns, fluorescent office cubicles, spreadsheet deadlines, and artificial calendar pings\u2014where something deep inside starts begging for room to breathe. You catch yourself staring out of taxi windows, craving pine-scented air instead of exhaust fumes, and wondering when you last looked at an unfiltered night sky full of stars. That restless pull is not just fatigue; it is your wandering instinct asking you to unplug.</p><p>The <strong>Manali Weekend Escape (5D/4N)</strong> by <strong>Trail Explorers</strong> is our answer to that call. This is not a rushed sightseeing package designed to herd tourists from one crowded ticket line to another. It is an unvarnished community road expedition crafted for the free-spirited, the solo travelers, the seekers, and the midnight dreamers. Built strictly on the nomadic ethos of the open road, we believe travel should shake you awake, strip away the noise of routine, and bring you face-to-face with raw nature and genuine souls.</p><h3>Leaving Behind the Concrete Maze (Delhi to the Foothills)</h3><p>Every true expedition begins long before you set foot on the mountain trails. It starts at the boarding point in Delhi as the evening twilight turns into dusk. When you strap on your rucksack and meet your <strong>Trail Explorers Team Captain</strong> alongside your fellow tribe members, the city already starts fading into the rearview mirror.</p><p>Boarding our semi-sleeper AC Volvo, strangers sit shoulder-to-shoulder, connected by a shared restlessness. As the bus slips onto the national highway, the sterile city glow dissolves into long open stretches of tarmac. The bus hums with shared playlists, quiet conversations, and late-night highway dhaba stops where steam rises from clay cups of ginger tea. As the bus winds upward into the lower Shivalik hills past midnight, the ambient temperature drops, windows fog with mist, and you fall asleep to the rhythmic sway of the mountain road.</p><h3>Valley Awakening, Ancient Roots &amp; Bohemian Evenings</h3><p>You wake up to the sudden roar of the Beas River rushing alongside the road. The air biting your face is crisp, sharp, and laden with the intoxicating resin of deodars. Roll into Manali as the morning sun casts golden crowns onto snow-dusted ridges. Check in to your handpicked stay, wash the road dust off, and fuel up on a hot mountain breakfast.</p><p>Your mountain immersion begins where Manali's ancient folklore lives:</p><ul><li><strong>The Sacred Cedar Sanctum of Hadimba Devi:</strong> Step away from the town center into the towering, sun-dappled deodar grove of Dhungri. Standing before the 16th-century, multi-tiered pagoda temple carved out of timber and weathered river stones, the sheer spiritual stillness is palpable. It is a quiet reminder of how deep Himachal\u2019s roots run into myth and earth.</li><li><strong>Old Manali &amp; Bohemian Alleys:</strong> Cross the bridge into the soul of old traveler culture. Winding cobblestone trails, cedar-wood homes with slate roofs, rustic balconies, and hand-painted wall art set the stage. Here, time loses its urgency. Sit inside cozy, dim-lit cafes, bite into wood-fired pizzas, sip steaming cups of spiced apple cider, and listen to the soft strumming of acoustic guitars drifting through open wooden windows.</li><li><strong>Evening Walk Through Tibetan Lanes:</strong> As evening settles, walk through the Tibetan market and the bustling street bazaar of the Mall Road. Pick up handwoven woolens, local prayer flags, and mountain souvenirs, soaking in the mountain town glow as shop lanterns light up against the twilight.</li></ul><p>Return to base for a hearty dinner, breathing in the mountain chill before resting for the big day ahead.</p><h3>High Passes, Engineering Marvels &amp; The Stark Vistas of Lahaul</h3><p>Morning arrives with cold mountain sunlight streaming across wooden rafters. Lace up your trekking boots and board our Tempo Travellers\u2014today, the journey heads into high-altitude terrain.</p><ul><li><strong>Solang Valley's Alpine Slopes:</strong> Ascend along the valley floor to Solang, an immense natural amphitheater surrounded by snow-capped peaks and pine ridges. Feel the bite of high-altitude winds as you watch the sky fill with paragliding sails.</li><li><strong>Piercing the Pir Panjal via Atal Tunnel:</strong> Leave behind the green, lush landscape of Kullu Valley as we drive directly into the engineering triumph of the 9.02-kilometer Atal Tunnel beneath the Rohtang Pass. Crossing this underground passage is a sensory shift unlike anything else: enter through forested green slopes and emerge onto the other side into the raw, barren, and jaw-dropping lunar landscapes of Lahaul Valley.</li><li><strong>The Roar of Sissu Waterfall:</strong> In Lahaul, the world turns to dramatic stone, glacial rivers, and wide open horizons. Arrive at Sissu village, where the roaring Sissu Waterfall tumbles down vertical rock cliffs into the Chandra River basin. Stand along the rocky glacial flats, look up at mountains that scrape the sky, and absorb the vast scale of the Himalayas.</li></ul><h3>The Explorers Circle Under a Million Stars</h3><p>The true magic of an Trail Explorers trip is never found solely in the scenery; it happens when the sun dips behind the ridge and the temperature drops below zero.</p><p>Back at the stay, the real tribe spirit comes alive. A wood bonfire crackles to life, throwing dancing sparks into the crisp night air. We sit in a circle\u2014no titles, no work deadlines, no social media filters. An acoustic guitar is pulled out, classic old tracks and folk rhythms echo into the darkness, hot mugs of tea warm cold hands, and laughter flows freely. Strangers who boarded the bus in Delhi as individuals now sit as a bonded community, trading life stories, vulnerabilities, and road memories beneath an unfiltered canopy of Himalayan stars.</p><h3>The Sacred Ridge of Bijli Mahadev &amp; High-Adrenaline Rapids</h3><p>Your final day begins with morning tea overlooking mist-covered apple orchards. Pack your rucksacks and check out from Manali, descending towards the Kullu Valley for a double dose of spirituality and raw adrenaline.</p><ul><li><strong>River Rafting on the Beas:</strong> Gear up with life jackets, helmets, and oars at the Babeli riverbank. Hit the glacial rapids of the Beas River, feeling icy spray hit your face as your raft cuts through churning white water.</li><li><strong>Ascent to Bijli Mahadev Ridge:</strong> Journey upwards through twisting pine roads toward Chansari to begin the trail to the legendary Bijli Mahadev Temple on the high Mathan plateau. Dedicated to Lord Shiva, this sacred sanctuary features a towering sixty-foot deodar staff that attracts cosmic lightning during monsoon storms. Standing on this windswept ridge, you are rewarded with a breathtaking 360-degree panoramic vantage point, with the Beas River winding through Kullu on one side and the Parvati Valley opening up on the other.</li></ul><h3>The Homeward Highway with a Transformed Heart</h3><p>By late afternoon, descend back to the valley floor and gather at the Kullu/Bhuntar Volvo pickup station. Board the overnight bus back to Delhi, your legs pleasantly tired, your jackets smelling faintly of pine smoke, and your phone gallery packed with genuine smiles.</p><p>As the Volvo rolls into Delhi early the next morning (Day 5), stepping back out onto the platform feels different. You return to the daily grind with lighter shoulders, a cleared head, and lifelong friendships forged around alpine campfires. You return as an <strong>Trail Explorers</strong>\u2014someone who knows that whenever the modern world becomes too loud, the mountains are always waiting to take you back.</p>",
+    "about_text": "<h3>Where The Highway Meets The Soul: The Trail Explorers Calling</h3><p>There comes a point in the relentless churn of the city—amid blaring horns, fluorescent office cubicles, spreadsheet deadlines, and artificial calendar pings—where something deep inside starts begging for room to breathe. You catch yourself staring out of taxi windows, craving pine-scented air instead of exhaust fumes, and wondering when you last looked at an unfiltered night sky full of stars. That restless pull is not just fatigue; it is your wandering instinct asking you to unplug.</p><p>The <strong>Manali Weekend Escape (5D/4N)</strong> by <strong>Trail Explorers</strong> is our answer to that call. This is not a rushed sightseeing package designed to herd tourists from one crowded ticket line to another. It is an unvarnished community road expedition crafted for the free-spirited, the solo travelers, the seekers, and the midnight dreamers. Built strictly on the nomadic ethos of the open road, we believe travel should shake you awake, strip away the noise of routine, and bring you face-to-face with raw nature and genuine souls.</p><h3>Leaving Behind the Concrete Maze (Delhi to the Foothills)</h3><p>Every true expedition begins long before you set foot on the mountain trails. It starts at the boarding point in Delhi as the evening twilight turns into dusk. When you strap on your rucksack and meet your <strong>Trail Explorers Team Captain</strong> alongside your fellow tribe members, the city already starts fading into the rearview mirror.</p><p>Boarding our semi-sleeper AC Volvo, strangers sit shoulder-to-shoulder, connected by a shared restlessness. As the bus slips onto the national highway, the sterile city glow dissolves into long open stretches of tarmac. The bus hums with shared playlists, quiet conversations, and late-night highway dhaba stops where steam rises from clay cups of ginger tea. As the bus winds upward into the lower Shivalik hills past midnight, the ambient temperature drops, windows fog with mist, and you fall asleep to the rhythmic sway of the mountain road.</p><h3>Valley Awakening, Ancient Roots &amp; Bohemian Evenings</h3><p>You wake up to the sudden roar of the Beas River rushing alongside the road. The air biting your face is crisp, sharp, and laden with the intoxicating resin of deodars. Roll into Manali as the morning sun casts golden crowns onto snow-dusted ridges. Check in to your handpicked stay, wash the road dust off, and fuel up on a hot mountain breakfast.</p><p>Your mountain immersion begins where Manali's ancient folklore lives:</p><ul><li><strong>The Sacred Cedar Sanctum of Hadimba Devi:</strong> Step away from the town center into the towering, sun-dappled deodar grove of Dhungri. Standing before the 16th-century, multi-tiered pagoda temple carved out of timber and weathered river stones, the sheer spiritual stillness is palpable. It is a quiet reminder of how deep Himachal’s roots run into myth and earth.</li><li><strong>Old Manali &amp; Bohemian Alleys:</strong> Cross the bridge into the soul of old traveler culture. Winding cobblestone trails, cedar-wood homes with slate roofs, rustic balconies, and hand-painted wall art set the stage. Here, time loses its urgency. Sit inside cozy, dim-lit cafes, bite into wood-fired pizzas, sip steaming cups of spiced apple cider, and listen to the soft strumming of acoustic guitars drifting through open wooden windows.</li><li><strong>Evening Walk Through Tibetan Lanes:</strong> As evening settles, walk through the Tibetan market and the bustling street bazaar of the Mall Road. Pick up handwoven woolens, local prayer flags, and mountain souvenirs, soaking in the mountain town glow as shop lanterns light up against the twilight.</li></ul><p>Return to base for a hearty dinner, breathing in the mountain chill before resting for the big day ahead.</p><h3>High Passes, Engineering Marvels &amp; The Stark Vistas of Lahaul</h3><p>Morning arrives with cold mountain sunlight streaming across wooden rafters. Lace up your trekking boots and board our Tempo Travellers—today, the journey heads into high-altitude terrain.</p><ul><li><strong>Solang Valley's Alpine Slopes:</strong> Ascend along the valley floor to Solang, an immense natural amphitheater surrounded by snow-capped peaks and pine ridges. Feel the bite of high-altitude winds as you watch the sky fill with paragliding sails.</li><li><strong>Piercing the Pir Panjal via Atal Tunnel:</strong> Leave behind the green, lush landscape of Kullu Valley as we drive directly into the engineering triumph of the 9.02-kilometer Atal Tunnel beneath the Rohtang Pass. Crossing this underground passage is a sensory shift unlike anything else: enter through forested green slopes and emerge onto the other side into the raw, barren, and jaw-dropping lunar landscapes of Lahaul Valley.</li><li><strong>The Roar of Sissu Waterfall:</strong> In Lahaul, the world turns to dramatic stone, glacial rivers, and wide open horizons. Arrive at Sissu village, where the roaring Sissu Waterfall tumbles down vertical rock cliffs into the Chandra River basin. Stand along the rocky glacial flats, look up at mountains that scrape the sky, and absorb the vast scale of the Himalayas.</li></ul><h3>The Explorers Circle Under a Million Stars</h3><p>The true magic of an Trail Explorers trip is never found solely in the scenery; it happens when the sun dips behind the ridge and the temperature drops below zero.</p><p>Back at the stay, the real tribe spirit comes alive. A wood bonfire crackles to life, throwing dancing sparks into the crisp night air. We sit in a circle—no titles, no work deadlines, no social media filters. An acoustic guitar is pulled out, classic old tracks and folk rhythms echo into the darkness, hot mugs of tea warm cold hands, and laughter flows freely. Strangers who boarded the bus in Delhi as individuals now sit as a bonded community, trading life stories, vulnerabilities, and road memories beneath an unfiltered canopy of Himalayan stars.</p><h3>The Sacred Ridge of Bijli Mahadev &amp; High-Adrenaline Rapids</h3><p>Your final day begins with morning tea overlooking mist-covered apple orchards. Pack your rucksacks and check out from Manali, descending towards the Kullu Valley for a double dose of spirituality and raw adrenaline.</p><ul><li><strong>River Rafting on the Beas:</strong> Gear up with life jackets, helmets, and oars at the Babeli riverbank. Hit the glacial rapids of the Beas River, feeling icy spray hit your face as your raft cuts through churning white water.</li><li><strong>Ascent to Bijli Mahadev Ridge:</strong> Journey upwards through twisting pine roads toward Chansari to begin the trail to the legendary Bijli Mahadev Temple on the high Mathan plateau. Dedicated to Lord Shiva, this sacred sanctuary features a towering sixty-foot deodar staff that attracts cosmic lightning during monsoon storms. Standing on this windswept ridge, you are rewarded with a breathtaking 360-degree panoramic vantage point, with the Beas River winding through Kullu on one side and the Parvati Valley opening up on the other.</li></ul><h3>The Homeward Highway with a Transformed Heart</h3><p>By late afternoon, descend back to the valley floor and gather at the Kullu/Bhuntar Volvo pickup station. Board the overnight bus back to Delhi, your legs pleasantly tired, your jackets smelling faintly of pine smoke, and your phone gallery packed with genuine smiles.</p><p>As the Volvo rolls into Delhi early the next morning (Day 5), stepping back out onto the platform feels different. You return to the daily grind with lighter shoulders, a cleared head, and lifelong friendships forged around alpine campfires. You return as an <strong>Trail Explorers</strong>—someone who knows that whenever the modern world becomes too loud, the mountains are always waiting to take you back.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -1735,9 +1735,9 @@ export const TRIPS_DATA: Trip[] = [
           "Enjoy your morning breakfast and complete check-out formalities at the hotel. Head down along the Beas River towards Kullu for a thrilling final day.",
           "River Rafting & Paragliding: Stop at the Kullu/Babeli adventure points for white-water river rafting on the Beas and high-glide paragliding over the valley (activities on direct payment basis).",
           "Bijli Mahadev Ridge Trek/Visit: Drive up towards Chansari and take the scenic pine trail up to the revered Bijli Mahadev Temple atop Mathan plateau, offering an unmatched 360-degree panoramic view of both Kullu and Parvati valleys.",
-          "Evening Departure: Reach the Kullu/Bhuntar Volvo boarding counter by 06:00 PM \u2013 07:00 PM. Board your overnight AC Volvo bus bound for Delhi with unforgettable mountain memories."
+          "Evening Departure: Reach the Kullu/Bhuntar Volvo boarding counter by 06:00 PM – 07:00 PM. Board your overnight AC Volvo bus bound for Delhi with unforgettable mountain memories."
         ],
-        "details": "Enjoy your morning breakfast and complete check-out formalities at the hotel. Head down along the Beas River towards Kullu for a thrilling final day. River Rafting & Paragliding: Stop at the Kullu/Babeli adventure points for white-water river rafting on the Beas and high-glide paragliding over the valley (activities on direct payment basis). Bijli Mahadev Ridge Trek/Visit: Drive up towards Chansari and take the scenic pine trail up to the revered Bijli Mahadev Temple atop Mathan plateau, offering an unmatched 360-degree panoramic view of both Kullu and Parvati valleys. Evening Departure: Reach the Kullu/Bhuntar Volvo boarding counter by 06:00 PM \u2013 07:00 PM. Board your overnight AC Volvo bus bound for Delhi with unforgettable mountain memories."
+        "details": "Enjoy your morning breakfast and complete check-out formalities at the hotel. Head down along the Beas River towards Kullu for a thrilling final day. River Rafting & Paragliding: Stop at the Kullu/Babeli adventure points for white-water river rafting on the Beas and high-glide paragliding over the valley (activities on direct payment basis). Bijli Mahadev Ridge Trek/Visit: Drive up towards Chansari and take the scenic pine trail up to the revered Bijli Mahadev Temple atop Mathan plateau, offering an unmatched 360-degree panoramic view of both Kullu and Parvati valleys. Evening Departure: Reach the Kullu/Bhuntar Volvo boarding counter by 06:00 PM – 07:00 PM. Board your overnight AC Volvo bus bound for Delhi with unforgettable mountain memories."
       },
       {
         "day": 5,
@@ -1769,15 +1769,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b94,999"
+        "price": "₹4,999"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b95,999"
+        "price": "₹5,999"
       },
       {
         "title": "Twin Sharing",
-        "price": "\u20b96,999"
+        "price": "₹6,999"
       }
     ],
     "sub_package_options": "",
@@ -1790,7 +1790,7 @@ export const TRIPS_DATA: Trip[] = [
             "range": "30th October",
             "startDate": "2026-10-30",
             "status": "Available",
-            "price": "\u20b94,999/-"
+            "price": "₹4,999/-"
           }
         ]
       }
@@ -1802,7 +1802,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "WHAT KIND OF ACCOMMODATION IS PROVIDED?",
-        "answer": "You\u2019ll stay in cozy, handpicked hotels or mountain camps on a twin, triple, or quad-sharing basis, carefully curated to keep that authentic Trail Explorers community warmth alive."
+        "answer": "You’ll stay in cozy, handpicked hotels or mountain camps on a twin, triple, or quad-sharing basis, carefully curated to keep that authentic Trail Explorers community warmth alive."
       },
       {
         "question": "IS TRANSPORTATION INCLUDED FROM DELHI?",
@@ -1849,10 +1849,10 @@ export const TRIPS_DATA: Trip[] = [
     "created_at": "2026-09-13T05:34:31.726Z",
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Warm Fleece Jacket / Puffer Jacket (shaam aur subah ki thand ke liye)",
-          "Thermal Inners (1 pair \u2013 night travel aur Sissu/snow points ke liye)",
+          "Thermal Inners (1 pair – night travel aur Sissu/snow points ke liye)",
           "Quick-dry Full Sleeve T-shirts (3-4)",
           "Comfortable Trek Pants / Cargo Pants (2-3)",
           "Woolen Cap / Beanie (kaan cover karne ke liye)",
@@ -1862,24 +1862,24 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Sturdy Trekking Shoes / Sports Shoes (achhi grip ke saath Jogini waterfall trek ke liye)",
           "Flip-flops / Slippers (hotel room aur bus me relax hone ke liye)"
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
-          "30\u201340L Rucksack / Backpack (heavy trolley avoid karein)",
-          "Small Daypack (10\u201315L \u2013 sightseeing, trek aur water bottle carry karne ke liye)",
+          "30–40L Rucksack / Backpack (heavy trolley avoid karein)",
+          "Small Daypack (10–15L – sightseeing, trek aur water bottle carry karne ke liye)",
           "UV Protection Sunglasses (snow glare aur dhoop se bachav ke liye)",
           "Reusable Water Bottle / Thermos Flask",
           "Umbrella ya Lightweight Poncho (himalayan mausam ka koi bharosa nahi)"
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care & Toiletries",
+        "category": "🧼 Personal Care & Toiletries",
         "items": [
           "Sunscreen (SPF 50+) & Lip Balm (cold dry winds se lips phatne se bachane ke liye)",
           "Cold Cream / Moisturizer",
@@ -1888,7 +1888,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical Kit",
+        "category": "💊 Medical Kit",
         "items": [
           "Motion Sickness / Vomiting Tablets (ghumaavdar pahadi raaston ke liye)",
           "Paracetamol, Painkiller & Band-Aids (blisters ke liye)",
@@ -1897,7 +1897,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "Fast Charging Power Bank (thand me battery jaldi drain hoti hai)",
           "Extra Charging Cables & Adapter",
@@ -1905,7 +1905,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original Govt ID Proof (Aadhaar / Driving License / Voter ID)",
           "Cash (pahadon me remote snow points ya local cafes me network issue rehta hai)"
@@ -1924,7 +1924,7 @@ export const TRIPS_DATA: Trip[] = [
     "duration": "7 Days / 6 Nights",
     "price": "",
     "category": "himachal_tours, women_only_tours, corporate_tours",
-    "route": "Delhi \u2014 Manali \u2014 Solang \u2014 Atal Tunnel \u2014 Sissu \u2014 Kullu \u2014 Shimla \u2014 Kufri \u2014 Delhi",
+    "route": "Delhi — Manali — Solang — Atal Tunnel — Sissu — Kullu — Shimla — Kufri — Delhi",
     "tags": "Himalayan Backpacking, Group Tour, Scenic Escapes, Manali Shimla Circuit, Mountain Vibe",
     "image_url": "/assets/images/trips/img_1787074295765_Shimla__1_.jpg",
     "bento_img_1": "/assets/images/trips/img_1787073752176_Shimla__1_.jpg",
@@ -1932,7 +1932,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "/assets/images/trips/img_1787073771871_Photo_by_Vishal_Bhutani_on_Unsplash.jpg",
     "bento_img_4": "/assets/images/trips/img_1787073780825_Hanuman_temple_jakhu___shimla.jpg",
     "bento_img_5": "/assets/images/trips/img_1787073789470_Solang_Valley_Manali.jpg",
-    "about_text": "<p>Leave behind the chaotic rhythm of the plains and surrender to the timeless call of the Western Himalayas with Trail Explorers\u2019s Himachal Odyssey. Crafted specifically for slow travelers, families, and couples seeking seamless comfort paired with untamed mountain charm, this 7-Day / 6-Night customized circuit seamlessly connects two of Himachal Pradesh's most iconic alpine realms\u2014the bohemian deodar valleys of Manali and the colonial ridge heritage of Shimla.</p><p>Your expedition begins with a smooth overnight AC Volvo ride from Delhi, winding past foothills into the pine-scented embrace of the upper Beas Valley. Waking up in Manali, you are welcomed by crisp Himalayan breezes and towering peaks. Over the next two days, immerse yourself in the soul of the valley: walk beneath the ancient, moss-laden deodar canopy surrounding the historic Hadimba Devi Temple, find quiet mindfulness at serene Tibetan monasteries, and stroll through the lively, vibrant lanes of the Mall Road.</p><p>The journey ascends into raw alpine drama as you drive past Solang Valley and cross the engineering marvel of the Atal Tunnel. Emerging onto the other side reveals the stark, windswept wonderland of Lahaul Valley and the glacial cascades of Sissu village by the Chandra River\u2014a surreal contrast of trans-Himalayan landscapes and rushing mountain streams.</p><p>Transitioning from the raw valleys to colonial nostalgia, your private dedicated cab charts a scenic overland drive through the apple orchards and river gorges of Kullu Valley. Stop along the Beas River to capture the rush of white-water rapids before ascending toward Shimla, the historic 'Queen of Hills.'</p><p>In Shimla, experience the elegance of a bygone era. Wander across the open expanse of the heritage Ridge, admire the neo-Gothic silhouette of Christ Church, and take in panoramic mountain vistas from the sacred heights of Jakhoo Temple. A dedicated day excursion takes you higher into Kufri\u2019s alpine ridges, nestled amidst dense cedar forests and panoramic Himalayan viewpoints.</p><p>Designed with complete flexibility and unhurried pacing, this private Himachal tour package includes 2 nights in Manali and 2 nights in Shimla at handpicked mountain retreats, wholesome MAP meals (4 breakfasts and 4 dinners), overnight Volvo connectivity from Delhi, and a private cab for all intercity and local sightseeing. Experience Himachal Pradesh not just as a tourist checking off spots, but as a wanderer embracing the genuine warmth, high-altitude air, and nomadic freedom of the mountains.</p>",
+    "about_text": "<p>Leave behind the chaotic rhythm of the plains and surrender to the timeless call of the Western Himalayas with Trail Explorers’s Himachal Odyssey. Crafted specifically for slow travelers, families, and couples seeking seamless comfort paired with untamed mountain charm, this 7-Day / 6-Night customized circuit seamlessly connects two of Himachal Pradesh's most iconic alpine realms—the bohemian deodar valleys of Manali and the colonial ridge heritage of Shimla.</p><p>Your expedition begins with a smooth overnight AC Volvo ride from Delhi, winding past foothills into the pine-scented embrace of the upper Beas Valley. Waking up in Manali, you are welcomed by crisp Himalayan breezes and towering peaks. Over the next two days, immerse yourself in the soul of the valley: walk beneath the ancient, moss-laden deodar canopy surrounding the historic Hadimba Devi Temple, find quiet mindfulness at serene Tibetan monasteries, and stroll through the lively, vibrant lanes of the Mall Road.</p><p>The journey ascends into raw alpine drama as you drive past Solang Valley and cross the engineering marvel of the Atal Tunnel. Emerging onto the other side reveals the stark, windswept wonderland of Lahaul Valley and the glacial cascades of Sissu village by the Chandra River—a surreal contrast of trans-Himalayan landscapes and rushing mountain streams.</p><p>Transitioning from the raw valleys to colonial nostalgia, your private dedicated cab charts a scenic overland drive through the apple orchards and river gorges of Kullu Valley. Stop along the Beas River to capture the rush of white-water rapids before ascending toward Shimla, the historic 'Queen of Hills.'</p><p>In Shimla, experience the elegance of a bygone era. Wander across the open expanse of the heritage Ridge, admire the neo-Gothic silhouette of Christ Church, and take in panoramic mountain vistas from the sacred heights of Jakhoo Temple. A dedicated day excursion takes you higher into Kufri’s alpine ridges, nestled amidst dense cedar forests and panoramic Himalayan viewpoints.</p><p>Designed with complete flexibility and unhurried pacing, this private Himachal tour package includes 2 nights in Manali and 2 nights in Shimla at handpicked mountain retreats, wholesome MAP meals (4 breakfasts and 4 dinners), overnight Volvo connectivity from Delhi, and a private cab for all intercity and local sightseeing. Experience Himachal Pradesh not just as a tourist checking off spots, but as a wanderer embracing the genuine warmth, high-altitude air, and nomadic freedom of the mountains.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -1949,10 +1949,10 @@ export const TRIPS_DATA: Trip[] = [
         "points": [
           "Wake up to crisp mountain air and panoramic valley views.",
           "Arrive in Manali by morning, where your private cab receives you for a smooth check-in at your hotel.",
-          "After unwinding and having lunch, step out for private local exploration\u2014visit the 500-year-old wooden Hadimba Devi Temple ensconced in towering deodars, discover peace at the Tibetan Monastery, stroll the pine-lined trails of Van Vihar, and spend your evening exploring the lively cafes and vibrant handicrafts of Mall Road.",
+          "After unwinding and having lunch, step out for private local exploration—visit the 500-year-old wooden Hadimba Devi Temple ensconced in towering deodars, discover peace at the Tibetan Monastery, stroll the pine-lined trails of Van Vihar, and spend your evening exploring the lively cafes and vibrant handicrafts of Mall Road.",
           "Return to your stay for dinner and an overnight stay in Manali."
         ],
-        "details": "Wake up to crisp mountain air and panoramic valley views. Arrive in Manali by morning, where your private cab receives you for a smooth check-in at your hotel. After unwinding and having lunch, step out for private local exploration\u2014visit the 500-year-old wooden Hadimba Devi Temple ensconced in towering deodars, discover peace at the Tibetan Monastery, stroll the pine-lined trails of Van Vihar, and spend your evening exploring the lively cafes and vibrant handicrafts of Mall Road. Return to your stay for dinner and an overnight stay in Manali."
+        "details": "Wake up to crisp mountain air and panoramic valley views. Arrive in Manali by morning, where your private cab receives you for a smooth check-in at your hotel. After unwinding and having lunch, step out for private local exploration—visit the 500-year-old wooden Hadimba Devi Temple ensconced in towering deodars, discover peace at the Tibetan Monastery, stroll the pine-lined trails of Van Vihar, and spend your evening exploring the lively cafes and vibrant handicrafts of Mall Road. Return to your stay for dinner and an overnight stay in Manali."
       },
       {
         "day": 3,
@@ -1991,10 +1991,10 @@ export const TRIPS_DATA: Trip[] = [
         "title": "Shimla Exploration & Departure",
         "points": [
           "Savor your final mountain breakfast and complete hotel check-out.",
-          "Spend the day soaking in Shimla\u2019s rich colonial heritage\u2014visit the revered Jakhoo Temple perched on the highest peak for panoramic bird's-eye views, walk across the iconic Ridge and historic Christ Church, and wander through Lakkar Bazaar and Mall Road for cedar wood souvenirs.",
+          "Spend the day soaking in Shimla’s rich colonial heritage—visit the revered Jakhoo Temple perched on the highest peak for panoramic bird's-eye views, walk across the iconic Ridge and historic Christ Church, and wander through Lakkar Bazaar and Mall Road for cedar wood souvenirs.",
           "By late evening, your cab drops you at the Shimla Volvo boarding point for your overnight AC Volvo ride back to Delhi."
         ],
-        "details": "Savor your final mountain breakfast and complete hotel check-out. Spend the day soaking in Shimla\u2019s rich colonial heritage\u2014visit the revered Jakhoo Temple perched on the highest peak for panoramic bird's-eye views, walk across the iconic Ridge and historic Christ Church, and wander through Lakkar Bazaar and Mall Road for cedar wood souvenirs. By late evening, your cab drops you at the Shimla Volvo boarding point for your overnight AC Volvo ride back to Delhi."
+        "details": "Savor your final mountain breakfast and complete hotel check-out. Spend the day soaking in Shimla’s rich colonial heritage—visit the revered Jakhoo Temple perched on the highest peak for panoramic bird's-eye views, walk across the iconic Ridge and historic Christ Church, and wander through Lakkar Bazaar and Mall Road for cedar wood souvenirs. By late evening, your cab drops you at the Shimla Volvo boarding point for your overnight AC Volvo ride back to Delhi."
       },
       {
         "day": 7,
@@ -2030,15 +2030,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Couple (1 Room / 2 Pax)",
-        "price": "\u20b918,499 per person"
+        "price": "₹18,499 per person"
       },
       {
         "title": "Triple Sharing (1 Room / 3 Pax)",
-        "price": "\u20b916,499 per person"
+        "price": "₹16,499 per person"
       },
       {
         "title": "4 Pax (2 Rooms / Dzire/Etios)",
-        "price": "\u20b914,499 per person"
+        "price": "₹14,499 per person"
       }
     ],
     "sub_package_options": "",
@@ -2110,7 +2110,7 @@ export const TRIPS_DATA: Trip[] = [
     "duration": "8 Days / 7 Nights",
     "price": "18,400",
     "category": "ladakh_tours, treks, corporate_tours",
-    "route": "Delhi \u2014 Manali \u2014 Shinku La \u2014 Gombo Rangzan \u2014 Phuktal \u2014 Padum \u2014 Drang Drung Glacier \u2014 Jispa \u2014 Delhi",
+    "route": "Delhi — Manali — Shinku La — Gombo Rangzan — Phuktal — Padum — Drang Drung Glacier — Jispa — Delhi",
     "tags": "Zanskar Valley, High Altitude, Phuktal Monastery, Shinku La Pass, Group Trip",
     "image_url": "/assets/images/trips/img_1786723032055_Bringing_Medical_Care_to_Zanskar.jpg",
     "bento_img_1": "/assets/images/trips/img_1786811149854_Bringing_Medical_Care_to_Zanskar.jpg",
@@ -2118,7 +2118,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "/assets/images/trips/img_1786811173623_Zanskar_Padum_City_in_Zanskar_valley.jpg",
     "bento_img_4": "/assets/images/trips/img_1786811181398_Phuktal_Monastery-Himalayas.jpg",
     "bento_img_5": "/assets/images/trips/img_1786811193248_The_Sacred_Mountain_Peak_Of_Gonbo_Rangjon__Altitude__Camping__Night_View__Locati.jpg",
-    "about_text": "<p>Awaken your inner nomad with the <strong>Zanskar Valley Expedition</strong>\u2014an 8-day, high-altitude overland odyssey designed for the true offbeat explorer. Traversing roughly 1,450 km from Delhi into the raw wilderness of Ladakh and Lahaul-Zanskar, this immersive journey takes you far beyond the ordinary tourist trails.</p><p>Feel the thrill of scaling the formidable <strong>Shinku La Pass ($16,580\\text{ ft}$)</strong> and stand in awe before the solitary, sacred rock monolith of <strong>Gombo Rangzan</strong>. Trek deep into the rugged Lungnak Valley to discover the breathtaking 12th-century <strong>Phuktal Cave Monastery</strong>, carved directly into a sheer cliff face. Unwind under a canopy of brilliant Himalayan stars by the riverbanks of Jispa, and witness the sprawling ice vistas of the <strong>Drang Drung Glacier</strong> from Pensi La Pass.</p><p>Curated by Himalayan veterans, this expedition blends raw 4x4 off-road exploration with soulful campfires, local homestays, and professional safety protocols\u2014including continuous oxygen monitoring. If your soul craves silence, sweeping horizons, and untamed mountain magic, answer the call of the high Himalayas. <strong>Book your Zanskar passage with Trail Explorers today!</strong></p>",
+    "about_text": "<p>Awaken your inner nomad with the <strong>Zanskar Valley Expedition</strong>—an 8-day, high-altitude overland odyssey designed for the true offbeat explorer. Traversing roughly 1,450 km from Delhi into the raw wilderness of Ladakh and Lahaul-Zanskar, this immersive journey takes you far beyond the ordinary tourist trails.</p><p>Feel the thrill of scaling the formidable <strong>Shinku La Pass ($16,580\\text{ ft}$)</strong> and stand in awe before the solitary, sacred rock monolith of <strong>Gombo Rangzan</strong>. Trek deep into the rugged Lungnak Valley to discover the breathtaking 12th-century <strong>Phuktal Cave Monastery</strong>, carved directly into a sheer cliff face. Unwind under a canopy of brilliant Himalayan stars by the riverbanks of Jispa, and witness the sprawling ice vistas of the <strong>Drang Drung Glacier</strong> from Pensi La Pass.</p><p>Curated by Himalayan veterans, this expedition blends raw 4x4 off-road exploration with soulful campfires, local homestays, and professional safety protocols—including continuous oxygen monitoring. If your soul craves silence, sweeping horizons, and untamed mountain magic, answer the call of the high Himalayas. <strong>Book your Zanskar passage with Trail Explorers today!</strong></p>",
     "itinerary": [
       {
         "day": 1,
@@ -2135,10 +2135,10 @@ export const TRIPS_DATA: Trip[] = [
         "title": "Manali Arrival",
         "points": [
           "Arrive in Manali by morning and check into your hotel.",
-          "Dedicate the afternoon to gentle acclimatization\u2014explore the historic Hadimba Temple, wander through the vibrant culture and cafes of Old Manali, and stroll down Mall Road.",
+          "Dedicate the afternoon to gentle acclimatization—explore the historic Hadimba Temple, wander through the vibrant culture and cafes of Old Manali, and stroll down Mall Road.",
           "In the evening, gather for a comprehensive safety briefing, route orientation, and mandatory high-altitude gear inspection led by your expedition leader."
         ],
-        "details": "Arrive in Manali by morning and check into your hotel. Dedicate the afternoon to gentle acclimatization\u2014explore the historic Hadimba Temple, wander through the vibrant culture and cafes of Old Manali, and stroll down Mall Road. In the evening, gather for a comprehensive safety briefing, route orientation, and mandatory high-altitude gear inspection led by your expedition leader."
+        "details": "Arrive in Manali by morning and check into your hotel. Dedicate the afternoon to gentle acclimatization—explore the historic Hadimba Temple, wander through the vibrant culture and cafes of Old Manali, and stroll down Mall Road. In the evening, gather for a comprehensive safety briefing, route orientation, and mandatory high-altitude gear inspection led by your expedition leader."
       },
       {
         "day": 3,
@@ -2222,15 +2222,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b918,400"
+        "price": "₹18,400"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b920,400"
+        "price": "₹20,400"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b922,400"
+        "price": "₹22,400"
       }
     ],
     "sub_package_options": "",
@@ -2314,7 +2314,7 @@ export const TRIPS_DATA: Trip[] = [
     "duration": "6 Days / 5 Nights",
     "price": "On Request",
     "category": "kashmir_tours",
-    "route": "Srinagar \u2014 Gulmarg \u2014 Drung \u2014 Pahalgam \u2014 Aru Valley \u2014 Betaab Valley \u2014 Chandanwari \u2014 Yusmarg / Doodhpathri \u2014 Srinagar",
+    "route": "Srinagar — Gulmarg — Drung — Pahalgam — Aru Valley — Betaab Valley — Chandanwari — Yusmarg / Doodhpathri — Srinagar",
     "tags": "Winter Expedition, Snow Experience, Houseboat Stay, Valley Exploration",
     "image_url": "/assets/images/trips/img_1786216504243_img_1786216398063_Gulmarg__A_delight_for_travelers_on_a_wanderlust_.jpg",
     "bento_img_1": "/assets/images/trips/img_1786216511109_img_1786216398063_Gulmarg__A_delight_for_travelers_on_a_wanderlust_.jpg",
@@ -2322,7 +2322,7 @@ export const TRIPS_DATA: Trip[] = [
     "bento_img_3": "",
     "bento_img_4": "",
     "bento_img_5": "",
-    "about_text": "<p>Embark on a magical winter journey through the heart of Kashmir. Experience the perfect blend of tranquility and snow-filled adventure, featuring an iconic houseboat stay on Dal Lake, thrilling rides on Asia\u2019s highest Gondola in Gulmarg, frozen wonders at Drung Waterfall, and scenic exploration of Pahalgam's valleys alongside a trek to Yusmarg.</p>",
+    "about_text": "<p>Embark on a magical winter journey through the heart of Kashmir. Experience the perfect blend of tranquility and snow-filled adventure, featuring an iconic houseboat stay on Dal Lake, thrilling rides on Asia’s highest Gondola in Gulmarg, frozen wonders at Drung Waterfall, and scenic exploration of Pahalgam's valleys alongside a trek to Yusmarg.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -2359,7 +2359,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 4,
-        "title": "Pahalgam\u2019s Untamed Valleys (Aru, Betaab & Chandanwari)",
+        "title": "Pahalgam’s Untamed Valleys (Aru, Betaab & Chandanwari)",
         "points": [
           "Dive deep into the pristine winter wilderness of Pahalgam by exploring its three iconic valleys.",
           "Visit the lush, cinematic stretches of Aru Valley, known for its serene snow-covered meadows.",
@@ -2522,19 +2522,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 115,
     "title": "Kashmir Slow-Paced Expedition",
     "duration": "8 Days / 7 Nights",
-    "price": "\u20b930,800",
+    "price": "₹30,800",
     "image_url": "/assets/images/trips/trip_115_image_url.jpg",
     "link": "trips/kashmir-tours-kashmir-slow-paced-expedition-115.html",
     "created_at": "2026-08-02T11:40:47.807763+00:00",
     "category": "kashmir_tours",
-    "route": "Srinagar \u2013 Doodhpathri \u2013 Pahalgam \u2013 Gulmarg \u2013 Sonmarg \u2013 Srinagar",
+    "route": "Srinagar – Doodhpathri – Pahalgam – Gulmarg – Sonmarg – Srinagar",
     "tags": "Group Tour, Offbeat Kashmir, Slow Travel, Houseboat Stay, Gondola Ride, Sightseeing",
     "bento_img_1": "/assets/images/trips/trip_115_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_115_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_115_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_115_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_115_bento_img_5.jpg",
-    "about_text": "<p>Step away from the rushed tourist trails and embrace the true nomadic spirit with the Trail Explorers Kashmir Slow-Paced Expedition (8 Days / 7 Nights). Designed for free-spirited explorers who believe that the magic of the mountains lies in lingering, this immersive journey lets you experience the soul of paradise at your own pace.</p><p>From the historic, willow-shaded banks of Dal Lake in Srinagar to the lush, milk-fed meadows of Doodhpathri, every stop is crafted for deep connection rather than checklist tourism. Wander through the fragrant apple orchards of Pahalgam, stand in awe before the dramatic peaks of Aru and Betaab valleys, and glide through the snowy realms of Gulmarg on a thrilling Gondola ride. Feel the raw energy of the alpine winds at the golden meadows of Sonmarg, and slow down your heartbeat with cozy evenings under starlit skies.</p><p>True to our Trail Explorer philosophy, this isn\u2019t just a group tour; it\u2019s a journey where strangers become a tight-knit mountain tribe and local stories replace guidebooks. Your experience includes comfortable stays in handpicked hotels and a traditional wooden houseboat, private transport with expert local drivers, and a dedicated Trip Captain who serves as your storyteller and resident photographer.</p>",
+    "about_text": "<p>Step away from the rushed tourist trails and embrace the true nomadic spirit with the Trail Explorers Kashmir Slow-Paced Expedition (8 Days / 7 Nights). Designed for free-spirited explorers who believe that the magic of the mountains lies in lingering, this immersive journey lets you experience the soul of paradise at your own pace.</p><p>From the historic, willow-shaded banks of Dal Lake in Srinagar to the lush, milk-fed meadows of Doodhpathri, every stop is crafted for deep connection rather than checklist tourism. Wander through the fragrant apple orchards of Pahalgam, stand in awe before the dramatic peaks of Aru and Betaab valleys, and glide through the snowy realms of Gulmarg on a thrilling Gondola ride. Feel the raw energy of the alpine winds at the golden meadows of Sonmarg, and slow down your heartbeat with cozy evenings under starlit skies.</p><p>True to our Trail Explorer philosophy, this isn’t just a group tour; it’s a journey where strangers become a tight-knit mountain tribe and local stories replace guidebooks. Your experience includes comfortable stays in handpicked hotels and a traditional wooden houseboat, private transport with expert local drivers, and a dedicated Trip Captain who serves as your storyteller and resident photographer.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -2641,11 +2641,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Double Sharing",
-        "price": "\u20b930,800"
+        "price": "₹30,800"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b926,499"
+        "price": "₹26,499"
       }
     ],
     "sub_package_options": "",
@@ -2694,8 +2694,8 @@ export const TRIPS_DATA: Trip[] = [
         "answer": "Our typical tribe consists of travelers aged 18 to 35. We curate our itineraries for those who enjoy high-energy exploration, shared stays, and a bit of adventure."
       },
       {
-        "question": "I\u2019m a solo traveler. Is it safe for me?",
-        "answer": "Absolutely! A large percentage of our explorers join solo. Safety\u2014especially for solo female travelers\u2014is our top priority. Our Trip Captains are trained to ensure a secure and inclusive environment for everyone."
+        "question": "I’m a solo traveler. Is it safe for me?",
+        "answer": "Absolutely! A large percentage of our explorers join solo. Safety—especially for solo female travelers—is our top priority. Our Trip Captains are trained to ensure a secure and inclusive environment for everyone."
       },
       {
         "question": "How do I book my spot?",
@@ -2707,7 +2707,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "What is the role of a Trip Captain?",
-        "answer": "Your Trip Captain is your storyteller, logistics manager, and resident photographer. They aren\u2019t just guides; they are part of the group, ensuring everything runs smoothly while keeping the energy high."
+        "answer": "Your Trip Captain is your storyteller, logistics manager, and resident photographer. They aren’t just guides; they are part of the group, ensuring everything runs smoothly while keeping the energy high."
       },
       {
         "question": "Are adventure activities (Paragliding, Rafting, ATV) included?",
@@ -2723,7 +2723,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "Will I have network connectivity?",
-        "answer": "In remote areas like parts of Kashmir, connectivity can be patchy. We recommend carrying a postpaid SIM (BSNL or Airtel usually work best). Think of it as a \"digital detox\"\u2014the best connections are the ones made with people, not towers!"
+        "answer": "In remote areas like parts of Kashmir, connectivity can be patchy. We recommend carrying a postpaid SIM (BSNL or Airtel usually work best). Think of it as a \"digital detox\"—the best connections are the ones made with people, not towers!"
       }
     ],
     "reviews": [
@@ -2766,14 +2766,14 @@ export const TRIPS_DATA: Trip[] = [
     "link": "trips/northeast-india-tours-ziro-festival-rhythm-expedition-arunachal-pradesh-122.html",
     "created_at": "2026-08-05T15:28:43.312697+00:00",
     "category": "northeast_india_tours, women_only_tours, festival_tours",
-    "route": "Guwahati \u2014 Ziro Valley \u2014 Apatani Hamlets \u2014 Guwahati",
+    "route": "Guwahati — Ziro Valley — Apatani Hamlets — Guwahati",
     "tags": "Festival Expedition, Music & Nature, Tribal Immersion, Wilderness Camping, North-East India",
     "bento_img_1": "/assets/images/trips/trip_122_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_122_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_122_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_122_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_122_bento_img_5.jpg",
-    "about_text": "<p>Immerse yourself in the ultimate fusion of global indie music, raw Himalayan wilderness, and indigenous tribal heritage with Trail Explorers\u2019s Ziro Festival Rhythm Expedition. Designed for free-spirited wanderers, music lovers, and cultural explorers, this 7-day immersive journey takes you deep into the breathtaking, pine-clad landscapes of Ziro Valley in Arunachal Pradesh.</p><p>Beginning from Guwahati, the expedition winds through lush Himalayan foothills before descending into the tranquil, golden rice terraces of the Apatani plateau. Experience authentic tribal warmth by staying in our curated alpine campsites set right amidst nature, complemented by comfortable stays in Guwahati. Witness world-class sustainable bamboo architecture and soulful indie performances at the iconic Donyi-Polo stages of the Ziro Music Festival.</p><p>Beyond the festival grooves, this journey offers a profound cultural immersion. Wander through ancient bamboo hamlets alongside local tribal guides, explore traditional stilt houses, learn about indigenous farming and paddy fishing techniques, and savor regional delicacies paired with local kiwi wine. Gather around crackling campfires under a starlit mountain sky for intimate acoustic jam sessions that capture the true nomadic energy of the mountains.</p><p>Whether you are traveling solo or with a community of like-minded explorers, Trail Explorers ensures seamless logistics, expert expedition captains, and an eco-conscious travel philosophy. Book your seat for this once-in-a-lifetime North-East adventure and discover the harmonious blend of high-altitude melody and soulful tribal hospitality.</p>",
+    "about_text": "<p>Immerse yourself in the ultimate fusion of global indie music, raw Himalayan wilderness, and indigenous tribal heritage with Trail Explorers’s Ziro Festival Rhythm Expedition. Designed for free-spirited wanderers, music lovers, and cultural explorers, this 7-day immersive journey takes you deep into the breathtaking, pine-clad landscapes of Ziro Valley in Arunachal Pradesh.</p><p>Beginning from Guwahati, the expedition winds through lush Himalayan foothills before descending into the tranquil, golden rice terraces of the Apatani plateau. Experience authentic tribal warmth by staying in our curated alpine campsites set right amidst nature, complemented by comfortable stays in Guwahati. Witness world-class sustainable bamboo architecture and soulful indie performances at the iconic Donyi-Polo stages of the Ziro Music Festival.</p><p>Beyond the festival grooves, this journey offers a profound cultural immersion. Wander through ancient bamboo hamlets alongside local tribal guides, explore traditional stilt houses, learn about indigenous farming and paddy fishing techniques, and savor regional delicacies paired with local kiwi wine. Gather around crackling campfires under a starlit mountain sky for intimate acoustic jam sessions that capture the true nomadic energy of the mountains.</p><p>Whether you are traveling solo or with a community of like-minded explorers, Trail Explorers ensures seamless logistics, expert expedition captains, and an eco-conscious travel philosophy. Book your seat for this once-in-a-lifetime North-East adventure and discover the harmonious blend of high-altitude melody and soulful tribal hospitality.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -2931,19 +2931,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 114,
     "title": "Meghalaya-Kaziranga : Backpacking Trip",
     "duration": "6 Nights / 7 Days",
-    "price": "\u20b927,900",
+    "price": "₹27,900",
     "image_url": "/assets/images/trips/trip_114_image_url.jpg",
     "link": "trips/northeast-india-tours-meghalaya-kaziranga-backpacking-trip-114.html",
     "created_at": "2026-08-02T10:56:13.24701+00:00",
     "category": "northeast_india_tours, women_only_tours, treks, corporate_tours",
-    "route": "Guwahati \u2014 Shillong \u2014 Shnongpdeng (Dawki) \u2014 Mawlynnong \u2014 Cherrapunji \u2014 Kaziranga \u2014 Guwahati",
+    "route": "Guwahati — Shillong — Shnongpdeng (Dawki) — Mawlynnong — Cherrapunji — Kaziranga — Guwahati",
     "tags": "Backpacking, Group Tour, Waterfall Trekking, Living Root Bridges, Wildlife Safari, Meghalaya, Kaziranga",
     "bento_img_1": "/assets/images/trips/trip_114_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_114_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_114_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_114_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_114_bento_img_5.jpg",
-    "about_text": "<p>Welcome to the land of clouds and the home of the giants. This isn't your typical sightseeing tour; it\u2019s a deep dive into the rainforests of the Khasi Hills and the tall grasslands of the Brahmaputra floodplains.</p><p>At Trail Explorers, we believe the North East is a feeling, not just a destination. We\u2019ll take you walking on bridges made of living roots, swimming in crystal-clear natural pools, and sitting around bonfires in the middle of the jungle. Whether you're a solo traveler or coming with friends, you're joining a tribe that values raw experiences and slow, soulful travel.</p>",
+    "about_text": "<p>Welcome to the land of clouds and the home of the giants. This isn't your typical sightseeing tour; it’s a deep dive into the rainforests of the Khasi Hills and the tall grasslands of the Brahmaputra floodplains.</p><p>At Trail Explorers, we believe the North East is a feeling, not just a destination. We’ll take you walking on bridges made of living roots, swimming in crystal-clear natural pools, and sitting around bonfires in the middle of the jungle. Whether you're a solo traveler or coming with friends, you're joining a tribe that values raw experiences and slow, soulful travel.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -3051,7 +3051,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Solo Traveler",
-        "price": "\u20b927,900"
+        "price": "₹27,900"
       }
     ],
     "sub_package_options": "",
@@ -3138,7 +3138,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "How difficult is the Double Decker Root Bridge trek?",
-        "answer": "It is a physically demanding trek involving approximately 3,500 steps one way (2\u20133 hours down, 3\u20134 hours back up). Basic fitness is recommended."
+        "answer": "It is a physically demanding trek involving approximately 3,500 steps one way (2–3 hours down, 3–4 hours back up). Basic fitness is recommended."
       },
       {
         "question": "What kind of Safari happens in Kaziranga?",
@@ -3200,27 +3200,27 @@ export const TRIPS_DATA: Trip[] = [
     "id": 107,
     "title": "Kashmir Great Lakes Trek",
     "duration": "7 Days / 6 Nights",
-    "price": "\u20b916,499",
+    "price": "₹16,499",
     "image_url": "/assets/images/trips/trip_107_image_url.jpg",
     "link": "trips/kashmir-tours-kashmir-great-lakes-trek-107.html",
     "created_at": "2026-08-02T07:17:22.782784+00:00",
     "category": "kashmir_tours, treks",
-    "route": "Srinagar \u2014 Sonamarg \u2014 Nichnai \u2014 Vishansar Lake \u2014 Gadsar Lake \u2014 Zaj Pass \u2014 Satsar Lake \u2014 Gangabal Lake \u2014 Naranag \u2014 Srinagar",
+    "route": "Srinagar — Sonamarg — Nichnai — Vishansar Lake — Gadsar Lake — Zaj Pass — Satsar Lake — Gangabal Lake — Naranag — Srinagar",
     "tags": "Kashmir Trek, Great Lakes, High Altitude Trek, Himalayan Trek, Group Trek",
     "bento_img_1": "/assets/images/trips/trip_107_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_107_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_107_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_107_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_107_bento_img_5.jpg",
-    "about_text": "<p>Trail Explorers brings you the iconic Kashmir Great Lakes Trek\u2014a thrilling 7-day high-altitude trekking expedition starting from Srinagar. Traverse through lush alpine meadows, cross high mountain passes like Nichnai and Gadsar, and witness turquoise alpine lakes including Vishansar, Gadsar, Satsar, and Gangabal at the foot of Mount Harmukh with expert guides and safety equipment.</p>",
+    "about_text": "<p>Trail Explorers brings you the iconic Kashmir Great Lakes Trek—a thrilling 7-day high-altitude trekking expedition starting from Srinagar. Traverse through lush alpine meadows, cross high mountain passes like Nichnai and Gadsar, and witness turquoise alpine lakes including Vishansar, Gadsar, Satsar, and Gangabal at the foot of Mount Harmukh with expert guides and safety equipment.</p>",
     "itinerary": [
       {
         "day": 1,
-        "title": "Srinagar to Sonamarg (Drive) \u2192 Trek to Nichnai",
+        "title": "Srinagar to Sonamarg (Drive) → Trek to Nichnai",
         "points": [
-          "Drive from Srinagar to Sonamarg (9,186 ft) and begin the 12 km trek to Nichnai (11,500 ft) taking approx 5\u20136 hours."
+          "Drive from Srinagar to Sonamarg (9,186 ft) and begin the 12 km trek to Nichnai (11,500 ft) taking approx 5–6 hours."
         ],
-        "details": "Drive from Srinagar to Sonamarg (9,186 ft) and begin the 12 km trek to Nichnai (11,500 ft) taking approx 5\u20136 hours."
+        "details": "Drive from Srinagar to Sonamarg (9,186 ft) and begin the 12 km trek to Nichnai (11,500 ft) taking approx 5–6 hours."
       },
       {
         "day": 2,
@@ -3276,7 +3276,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Trek Package",
-        "price": "\u20b916,499"
+        "price": "₹16,499"
       }
     ],
     "sub_package_options": "",
@@ -3316,7 +3316,7 @@ export const TRIPS_DATA: Trip[] = [
     "faqs": [
       {
         "question": "WHAT IS THE TOTAL TREKKING DISTANCE?",
-        "answer": "The Kashmir Great Lakes trek covers roughly 65\u201375 km over 6 trekking days."
+        "answer": "The Kashmir Great Lakes trek covers roughly 65–75 km over 6 trekking days."
       },
       {
         "question": "WHAT IS THE MAXIMUM ALTITUDE OF THIS TREK?",
@@ -3356,19 +3356,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 108,
     "title": "Kasol & Manali: Offbeat Himalayan Escape",
     "duration": "6 Days / 5 Nights",
-    "price": "\u20b96,999",
+    "price": "₹6,999",
     "image_url": "/assets/images/trips/trip_108_image_url.jpg",
     "link": "trips/himachal-tours-kasol-manali-offbeat-himalayan-escape-108.html",
     "created_at": "2026-08-02T07:47:22.8632+00:00",
     "category": "himachal_tours",
-    "route": "Delhi \u2014 Manali \u2014 Atal Tunnel \u2014 Sissu \u2014 Solang Valley \u2014 Kullu \u2014 Kasol \u2014 Manikaran \u2014 Delhi",
+    "route": "Delhi — Manali — Atal Tunnel — Sissu — Solang Valley — Kullu — Kasol — Manikaran — Delhi",
     "tags": "Himachal, Kasol, Manali, Offbeat Escape, Budget Trip, Group Tour",
     "bento_img_1": "/assets/images/trips/trip_108_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_108_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_108_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_108_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_108_bento_img_5.jpg",
-    "about_text": "<h3>The Calling: Why Kasol &amp; Manali Isn\u2019t Just a Trip, It\u2019s a Vibe</h3><p>The best stories of your twenties and thirties aren\u2019t born under the harsh fluorescent lights of corporate cubicles, nor do they happen during the mindless, repetitive evening commute on packed metro trains. They are sparked in the unscripted spaces between ordinary days. They come alive at 2:00 AM around a crackling pine-wood bonfire under a canopy of billion high-altitude stars, over shared steel bowls of piping-hot Maggi beside a thundering river, and during unplanned conversations with strangers who feel like childhood friends within forty-eight hours.</p><p>If you have been feeling the weight of the everyday routine creeping up on you, longing to break free from cookie-cutter travel itineraries and tourist traps, this 6-Day / 5-Night Offbeat Himalayan Escape across Kasol, Old Manali, and the trans-Himalayan frontier of Lahaul Valley is where your compass is meant to point.</p><p>We don\u2019t do rushed sightseeing checklists. We don\u2019t do stiff luxury buses or rigid tour guides with clipboards. At Trail Explorers, we believe travel is a state of raw, unpretentious nomadic being\u2014a deliberate step outside the noise to slow down, inhale damp pine air, dip your hands into glacier-fed waters, and rediscover what it truly feels like to be completely present in your own youth.</p><h3>Curated Exclusively for the 18\u201335 Nomadic Community</h3><p>The mountains are only ever as memorable as the people you share the journey with. This community expedition has been intentionally structured from the ground up for modern backpackers, solo souls, creative spirits, corporate wanderers, and spontaneous dreamers aged 18 to 35.</p><p>More than 60% of our travelers choose to join solo. If you are packing your bags alone, you will never walk alone. The journey officially begins the moment you meet your tribe at the designated Delhi assembly point. The initial awkward hellos melt away the second our semi-sleeper Volvo hits the open highway toward the lower Shivalik hills. Before the bus even reaches the morning curves of Bilaspur and Mandi, strangers turn into bus-seat comrades, passing around playlists, laughing through midnight snack stops, and talking about what led them to pack a bag and head up into Himachal.</p><p>By the time our wheels stop in Manali, you are no longer a group of solo individuals\u2014you are a tribe of fellow explorers chasing the exact same alpine high.</p><h3>The Old Manali Chapter: Cedar Forest Trails, Waterfalls &amp; Indie Corners</h3><p>Waking up in Manali to the deep, resonant roar of the Beas River instantly resets your circadian rhythm. While commercial tourism packs into crowded commercial stretches, we head straight toward the quieter, bohemian sanctuary of Old Manali and its heritage hamlets.</p><p>Our exploration takes you off the paved roads and onto the mud-and-root trails winding through centuries-old Deodar forests. We hike steadily upward through high-altitude apple orchards and stone-roofed Himachali cottages to Jogini Waterfall. Standing beneath Jogini, with ice-cold glacier spray misting your face and the vast valley unfurling below, the mental chatter of city life completely dissolves.</p><p>Later, we pay our respects at the historic Hadimba Devi Temple, enveloped by towering, mist-wrapped cedars that have watched over the valley for generations. As afternoon slides into twilight, Old Manali transforms. Cobblestone lanes light up with warm amber bulbs from indie cafes playing acoustic blues and reggae. We gather for warm cups of spiced mountain chai, share authentic Tibetan steamed momos and wood-fired pizzas, and let the relaxed, timeless cadence of the hills take over.</p><h3>Crossing the Divide: Atal Tunnel &amp; The Raw Wilderness of Lahaul Valley</h3><p>Nothing prepares you for the dramatic shift in geography that happens on Day 3. Fueling up on a hearty breakfast, we hop into our dedicated transfers and begin the ascent toward the world-renowned Atal Tunnel.</p><p>Entering the southern portal beneath the Pir Panjal range in lush green Manali and emerging nine kilometers later on the northern portal in Lahaul Valley is nothing short of stepping onto an entirely different planet. The green cedar slopes vanish, instantly replaced by massive, towering, windswept stone cliffs, barren scree slopes, and gigantic snow-capped peaks that command absolute reverence.</p><p>We drive deep into Lahaul up to the legendary Sissu Waterfall, where glacial waters tumble down dark basalt rocks into frozen spray. Out here, with prayer flags snapping against the sharp mountain wind and raw nomadic silence stretching out in every direction, you truly grasp how tiny we are in the grand architecture of nature. On our return loop, we pause at Solang Valley\u2014taking in the high panoramic ridgelines, crisp alpine air, and the adrenaline of the Himalayas before descending back down to the warmth of our base.</p><h3>Kullu Adrenaline to the Mystic Heartbeat of Parvati Valley</h3><p>The journey shifts rhythm once more as we leave the Kullu valley floor behind. For the adrenaline junkies in the tribe, Kullu offers the ultimate rush: plunging into the freezing rapids of the Beas River on a white-water rafting run, paddling together through turbulent crests and cold river foam.</p><p>By midday, the road narrows and begins to twist alongside a river of striking, turquoise intensity: the legendary Parvati. Welcome to Parvati Valley, the bohemian soul of the Indian Himalayas.</p><p>Kasol isn\u2019t merely a town; it\u2019s an emotional frequency. Framed by steep pine-draped cliffs and scented with wild herbs and mountain mist, it welcomes wanderers with an easy, laid-back grace. We check into our riverside stay, where the rushing water of the Parvati River forms the continuous soundtrack to our days. We spend hours wandering along the riverbanks, sitting on sun-warmed river boulders with our feet dangling near the cold stream, hopping between quirky Israeli cafes, sampling fresh shakshuka, warm lafa, and apple crumbles, and letting the stress of deadlines evaporate into thin air.</p><h3>The Chalal Pine Trail &amp; The Sacred Springs of Manikaran</h3><p>No journey into Parvati Valley is complete without crossing the iconic suspension bridge swinging gently over the roaring river into Chalal. The nature walk to Chalal winds through dense, towering pine groves where sunlight filters through in soft green beams and hidden graffiti art adorns roadside rocks. Chalal remains an authentic village enclave where wooden houses, grazing horses, and riverside shacks invite you to pause, sit back with your journal, sketch, or simply sit with your friends in comfortable silence.</p><p>Just a short drive further up the gorge lies Manikaran Sahib, a revered spiritual sanctuary nestled dramatically between high mountain walls. The contrast here is mesmerizing: ice-cold glacial rivers flowing inches away from bubbling natural hot sulfur springs. We dip our feet in the therapeutic hot waters, pay our respects inside the historic Gurudwara, and partake in the warm, humbling langar served with boundless devotion. It is an experience that leaves your soul profoundly quiet, grounded, and cleansed.</p><h3>Starlit Bonfires, Acoustic Jams &amp; The Trail Explorers Family</h3><p>The heart of every Trail Explorers trip lives in the evening hours. When the sun dips behind the snowy crests and the mountain chill sets in, our tribe gathers around a warm, crackling bonfire.</p><p>There are no forced icebreakers or structured agendas here. Instead, an acoustic guitar comes out, someone starts tapping a beat on a djembe or a wooden table, and soon the entire circle is singing along to indie anthems, old-school classics, and mountain folk tunes. Real stories are shared\u2014dreams put on hold, wild college memories, travel ambitions, and unvarnished truths that people rarely share in their daily urban lives.</p><p>Under an alpine sky overflowing with constellations, with cold breezes in your hair and warmth radiating from the fire, you realize that the greatest souvenir you take home from Himachal isn\u2019t a photograph or a souvenir trinket\u2014it is the unbreakable bond formed with people who see you for who you truly are.</p><h3>Effortless Travel, Zero Tourist Gimmicks</h3><p>We obsess over the logistical details so you can focus entirely on living the experience:</p><ul><li><strong>Verified Mountain Stays:</strong> Clean, scenic, and authentic boutique stays and riverside properties handpicked for safety, vibe, hygiene, and unbeatable views.</li><li><strong>Curated Mountain Meals:</strong> Wholesome, piping-hot breakfasts and dinners prepared fresh to fuel your trekking days and keep you warm.</li><li><strong>Seamless Transit:</strong> Round-trip overnight AC semi-sleeper Volvo transfers between Delhi and Himachal, paired with dedicated private vehicles for all local high-altitude sightseeing.</li><li><strong>Dedicated Trail Explorer Trip Captains:</strong> Travel alongside passionate, verified trip leads who aren\u2019t just guides, but friends, troubleshooters, culture insiders, and guardians of the group\u2019s safety and inclusive energy.</li><li><strong>Solo-Traveler Friendly &amp; Female Safe:</strong> Our batches maintain a respectful, welcoming, and empowering environment where solo female travelers and first-time solo wanderers feel secure, celebrated, and free.</li></ul><h3>Pack Your Bags, Find Your Mountain Rhythm</h3><p>The mountains don't ask for your resume, your job title, or your life plan. They only ask for your presence, your openness, and your curiosity.</p><p>Leave the spreadsheet anxiety, the social media burnout, and the predictable weekend plans behind. Give yourself these six days to breathe deeply, hike freely, laugh until your stomach hurts, and find your own tribe in the heart of Himachal.</p><p><strong>Your backpack is waiting. Your mountain family is already gathering. Welcome to the Trail Explorers way of life.</strong></p>",
+    "about_text": "<h3>The Calling: Why Kasol &amp; Manali Isn’t Just a Trip, It’s a Vibe</h3><p>The best stories of your twenties and thirties aren’t born under the harsh fluorescent lights of corporate cubicles, nor do they happen during the mindless, repetitive evening commute on packed metro trains. They are sparked in the unscripted spaces between ordinary days. They come alive at 2:00 AM around a crackling pine-wood bonfire under a canopy of billion high-altitude stars, over shared steel bowls of piping-hot Maggi beside a thundering river, and during unplanned conversations with strangers who feel like childhood friends within forty-eight hours.</p><p>If you have been feeling the weight of the everyday routine creeping up on you, longing to break free from cookie-cutter travel itineraries and tourist traps, this 6-Day / 5-Night Offbeat Himalayan Escape across Kasol, Old Manali, and the trans-Himalayan frontier of Lahaul Valley is where your compass is meant to point.</p><p>We don’t do rushed sightseeing checklists. We don’t do stiff luxury buses or rigid tour guides with clipboards. At Trail Explorers, we believe travel is a state of raw, unpretentious nomadic being—a deliberate step outside the noise to slow down, inhale damp pine air, dip your hands into glacier-fed waters, and rediscover what it truly feels like to be completely present in your own youth.</p><h3>Curated Exclusively for the 18–35 Nomadic Community</h3><p>The mountains are only ever as memorable as the people you share the journey with. This community expedition has been intentionally structured from the ground up for modern backpackers, solo souls, creative spirits, corporate wanderers, and spontaneous dreamers aged 18 to 35.</p><p>More than 60% of our travelers choose to join solo. If you are packing your bags alone, you will never walk alone. The journey officially begins the moment you meet your tribe at the designated Delhi assembly point. The initial awkward hellos melt away the second our semi-sleeper Volvo hits the open highway toward the lower Shivalik hills. Before the bus even reaches the morning curves of Bilaspur and Mandi, strangers turn into bus-seat comrades, passing around playlists, laughing through midnight snack stops, and talking about what led them to pack a bag and head up into Himachal.</p><p>By the time our wheels stop in Manali, you are no longer a group of solo individuals—you are a tribe of fellow explorers chasing the exact same alpine high.</p><h3>The Old Manali Chapter: Cedar Forest Trails, Waterfalls &amp; Indie Corners</h3><p>Waking up in Manali to the deep, resonant roar of the Beas River instantly resets your circadian rhythm. While commercial tourism packs into crowded commercial stretches, we head straight toward the quieter, bohemian sanctuary of Old Manali and its heritage hamlets.</p><p>Our exploration takes you off the paved roads and onto the mud-and-root trails winding through centuries-old Deodar forests. We hike steadily upward through high-altitude apple orchards and stone-roofed Himachali cottages to Jogini Waterfall. Standing beneath Jogini, with ice-cold glacier spray misting your face and the vast valley unfurling below, the mental chatter of city life completely dissolves.</p><p>Later, we pay our respects at the historic Hadimba Devi Temple, enveloped by towering, mist-wrapped cedars that have watched over the valley for generations. As afternoon slides into twilight, Old Manali transforms. Cobblestone lanes light up with warm amber bulbs from indie cafes playing acoustic blues and reggae. We gather for warm cups of spiced mountain chai, share authentic Tibetan steamed momos and wood-fired pizzas, and let the relaxed, timeless cadence of the hills take over.</p><h3>Crossing the Divide: Atal Tunnel &amp; The Raw Wilderness of Lahaul Valley</h3><p>Nothing prepares you for the dramatic shift in geography that happens on Day 3. Fueling up on a hearty breakfast, we hop into our dedicated transfers and begin the ascent toward the world-renowned Atal Tunnel.</p><p>Entering the southern portal beneath the Pir Panjal range in lush green Manali and emerging nine kilometers later on the northern portal in Lahaul Valley is nothing short of stepping onto an entirely different planet. The green cedar slopes vanish, instantly replaced by massive, towering, windswept stone cliffs, barren scree slopes, and gigantic snow-capped peaks that command absolute reverence.</p><p>We drive deep into Lahaul up to the legendary Sissu Waterfall, where glacial waters tumble down dark basalt rocks into frozen spray. Out here, with prayer flags snapping against the sharp mountain wind and raw nomadic silence stretching out in every direction, you truly grasp how tiny we are in the grand architecture of nature. On our return loop, we pause at Solang Valley—taking in the high panoramic ridgelines, crisp alpine air, and the adrenaline of the Himalayas before descending back down to the warmth of our base.</p><h3>Kullu Adrenaline to the Mystic Heartbeat of Parvati Valley</h3><p>The journey shifts rhythm once more as we leave the Kullu valley floor behind. For the adrenaline junkies in the tribe, Kullu offers the ultimate rush: plunging into the freezing rapids of the Beas River on a white-water rafting run, paddling together through turbulent crests and cold river foam.</p><p>By midday, the road narrows and begins to twist alongside a river of striking, turquoise intensity: the legendary Parvati. Welcome to Parvati Valley, the bohemian soul of the Indian Himalayas.</p><p>Kasol isn’t merely a town; it’s an emotional frequency. Framed by steep pine-draped cliffs and scented with wild herbs and mountain mist, it welcomes wanderers with an easy, laid-back grace. We check into our riverside stay, where the rushing water of the Parvati River forms the continuous soundtrack to our days. We spend hours wandering along the riverbanks, sitting on sun-warmed river boulders with our feet dangling near the cold stream, hopping between quirky Israeli cafes, sampling fresh shakshuka, warm lafa, and apple crumbles, and letting the stress of deadlines evaporate into thin air.</p><h3>The Chalal Pine Trail &amp; The Sacred Springs of Manikaran</h3><p>No journey into Parvati Valley is complete without crossing the iconic suspension bridge swinging gently over the roaring river into Chalal. The nature walk to Chalal winds through dense, towering pine groves where sunlight filters through in soft green beams and hidden graffiti art adorns roadside rocks. Chalal remains an authentic village enclave where wooden houses, grazing horses, and riverside shacks invite you to pause, sit back with your journal, sketch, or simply sit with your friends in comfortable silence.</p><p>Just a short drive further up the gorge lies Manikaran Sahib, a revered spiritual sanctuary nestled dramatically between high mountain walls. The contrast here is mesmerizing: ice-cold glacial rivers flowing inches away from bubbling natural hot sulfur springs. We dip our feet in the therapeutic hot waters, pay our respects inside the historic Gurudwara, and partake in the warm, humbling langar served with boundless devotion. It is an experience that leaves your soul profoundly quiet, grounded, and cleansed.</p><h3>Starlit Bonfires, Acoustic Jams &amp; The Trail Explorers Family</h3><p>The heart of every Trail Explorers trip lives in the evening hours. When the sun dips behind the snowy crests and the mountain chill sets in, our tribe gathers around a warm, crackling bonfire.</p><p>There are no forced icebreakers or structured agendas here. Instead, an acoustic guitar comes out, someone starts tapping a beat on a djembe or a wooden table, and soon the entire circle is singing along to indie anthems, old-school classics, and mountain folk tunes. Real stories are shared—dreams put on hold, wild college memories, travel ambitions, and unvarnished truths that people rarely share in their daily urban lives.</p><p>Under an alpine sky overflowing with constellations, with cold breezes in your hair and warmth radiating from the fire, you realize that the greatest souvenir you take home from Himachal isn’t a photograph or a souvenir trinket—it is the unbreakable bond formed with people who see you for who you truly are.</p><h3>Effortless Travel, Zero Tourist Gimmicks</h3><p>We obsess over the logistical details so you can focus entirely on living the experience:</p><ul><li><strong>Verified Mountain Stays:</strong> Clean, scenic, and authentic boutique stays and riverside properties handpicked for safety, vibe, hygiene, and unbeatable views.</li><li><strong>Curated Mountain Meals:</strong> Wholesome, piping-hot breakfasts and dinners prepared fresh to fuel your trekking days and keep you warm.</li><li><strong>Seamless Transit:</strong> Round-trip overnight AC semi-sleeper Volvo transfers between Delhi and Himachal, paired with dedicated private vehicles for all local high-altitude sightseeing.</li><li><strong>Dedicated Trail Explorer Trip Captains:</strong> Travel alongside passionate, verified trip leads who aren’t just guides, but friends, troubleshooters, culture insiders, and guardians of the group’s safety and inclusive energy.</li><li><strong>Solo-Traveler Friendly &amp; Female Safe:</strong> Our batches maintain a respectful, welcoming, and empowering environment where solo female travelers and first-time solo wanderers feel secure, celebrated, and free.</li></ul><h3>Pack Your Bags, Find Your Mountain Rhythm</h3><p>The mountains don't ask for your resume, your job title, or your life plan. They only ask for your presence, your openness, and your curiosity.</p><p>Leave the spreadsheet anxiety, the social media burnout, and the predictable weekend plans behind. Give yourself these six days to breathe deeply, hike freely, laugh until your stomach hurts, and find your own tribe in the heart of Himachal.</p><p><strong>Your backpack is waiting. Your mountain family is already gathering. Welcome to the Trail Explorers way of life.</strong></p>",
     "itinerary": [
       {
         "day": 1,
@@ -3422,11 +3422,11 @@ export const TRIPS_DATA: Trip[] = [
         "title": "Manikaran Hot Springs, Chalal Pine Trails & Farewell Vibe",
         "points": [
           "Start the day with peaceful vibes by visiting the revered Manikaran Sahib Gurudwara and dip your feet in the naturally therapeutic hot sulfur springs.",
-          "Later, take a serene walk along the iconic suspension bridge to Chalal village\u2014breathing in the damp pine scent and exploring hidden graffiti cafes.",
+          "Later, take a serene walk along the iconic suspension bridge to Chalal village—breathing in the damp pine scent and exploring hidden graffiti cafes.",
           "Pick up dreamcatchers, boho woolens, and raw souvenirs from Kasol market.",
           "By evening, gather your backpacks with a heavy heart and board your return Volvo from Bhuntar/Kasol back to Delhi."
         ],
-        "details": "Start the day with peaceful vibes by visiting the revered Manikaran Sahib Gurudwara and dip your feet in the naturally therapeutic hot sulfur springs. Later, take a serene walk along the iconic suspension bridge to Chalal village\u2014breathing in the damp pine scent and exploring hidden graffiti cafes. Pick up dreamcatchers, boho woolens, and raw souvenirs from Kasol market. By evening, gather your backpacks with a heavy heart and board your return Volvo from Bhuntar/Kasol back to Delhi."
+        "details": "Start the day with peaceful vibes by visiting the revered Manikaran Sahib Gurudwara and dip your feet in the naturally therapeutic hot sulfur springs. Later, take a serene walk along the iconic suspension bridge to Chalal village—breathing in the damp pine scent and exploring hidden graffiti cafes. Pick up dreamcatchers, boho woolens, and raw souvenirs from Kasol market. By evening, gather your backpacks with a heavy heart and board your return Volvo from Bhuntar/Kasol back to Delhi."
       },
       {
         "day": 6,
@@ -3453,7 +3453,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "exclusions": [
       "Any Lunch Meals, Extra Snacks, Mineral Water & Personal Cafe Hopping Expenses",
-      "Dinner on Day 1 & Day 5 during Volvo Transit Journey (Delhi\u2013Manali & Kasol\u2013Delhi)",
+      "Dinner on Day 1 & Day 5 during Volvo Transit Journey (Delhi–Manali & Kasol–Delhi)",
       "Adventure Activities in Kullu/Solang (White-Water Rafting, Paragliding, Zip-line, Zorbing, Skiing, etc.)",
       "Monument, Museum, Temple Entry Passes, Parking or Camera Fees (if applicable)",
       "Room Heater / Blower Charges at Hotels or Campsites (Directly payable to stay)",
@@ -3466,15 +3466,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b96,999"
+        "price": "₹6,999"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b97,999"
+        "price": "₹7,999"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b99,499"
+        "price": "₹9,499"
       }
     ],
     "sub_package_options": "",
@@ -3482,7 +3482,7 @@ export const TRIPS_DATA: Trip[] = [
     "faqs": [
       {
         "question": "What makes the Trail Explorers Kasol & Manali escape different from typical commercial tour packages?",
-        "answer": "We don\u2019t do rushed tourist checklists or rigid luxury tours. Trail Explorers focuses on raw, slow-paced Himalayan storytelling\u2014from hidden cafe trails in Old Manali and nomadic drives through the Atal Tunnel to high-altitude views in Sissu and intimate riverside bonfires with acoustic music in Kasol."
+        "answer": "We don’t do rushed tourist checklists or rigid luxury tours. Trail Explorers focuses on raw, slow-paced Himalayan storytelling—from hidden cafe trails in Old Manali and nomadic drives through the Atal Tunnel to high-altitude views in Sissu and intimate riverside bonfires with acoustic music in Kasol."
       },
       {
         "question": "Can I join this 6-day Himachal trip as a solo traveler?",
@@ -3533,7 +3533,7 @@ export const TRIPS_DATA: Trip[] = [
       {
         "name": "Aniket Sharma",
         "location": "Delhi",
-        "text": "Incredible 6-day trip! The visit to Sissu through Atal Tunnel and the vibes in Kasol were unmatched for \u20b96,999.",
+        "text": "Incredible 6-day trip! The visit to Sissu through Atal Tunnel and the vibes in Kasol were unmatched for ₹6,999.",
         "avatar": "/assets/images/reviews/pfp-aniket.jpg"
       },
       {
@@ -3554,7 +3554,7 @@ export const TRIPS_DATA: Trip[] = [
     "updated_at": "2026-11-16T16:55:44.227Z",
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Lightweight cotton t-shirts (3-4 pairs)",
           "Warm fleece jacket / windcheater for chilly evenings",
@@ -3567,7 +3567,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Sturdy trekking / sports shoes with good grip (for Jogini & Chalal trails)",
           "Flip-flops or comfortable slip-ons for stay & riverside cafes",
@@ -3575,7 +3575,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "30-40L backpack or duffel bag with rain cover",
           "Small 10-15L daypack for daytime sightseeing & cafe hopping",
@@ -3585,16 +3585,16 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
-          "Heavy-duty power bank (10,000\u201320,000 mAh)",
+          "Heavy-duty power bank (10,000–20,000 mAh)",
           "Phone charger and multi-plug travel adapter",
           "Camera / GoPro with extra memory cards & batteries",
           "Earphones or portable bluetooth speaker for jam sessions"
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "Sunscreen lotion (SPF 50+) & lip balm with SPF",
           "Cold cream / moisturizing body lotion",
@@ -3604,7 +3604,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Motion sickness tablets (for winding mountain ghats)",
           "Paracetamol & pain relief medication",
@@ -3614,7 +3614,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Government-issued Original ID Card (Aadhaar / Voter ID / Passport)",
           "Adequate hard cash (ATMs in Kasol/Sissu can often be offline)",
@@ -3634,12 +3634,12 @@ export const TRIPS_DATA: Trip[] = [
     "id": 100,
     "title": "Zanskar Moto-Passage: The Monolith Circuit",
     "duration": "6 Days / 5 Nights",
-    "price": "\u20b916,499",
+    "price": "₹16,499",
     "image_url": "/assets/images/trips/trip_100_image_url.jpg",
     "link": "trips/ladakh-tours-zanskar-moto-passage-the-monolith-circuit-100",
     "created_at": "2026-08-01T10:33:21.680299+00:00",
     "category": "ladakh_tours, women_only_tours, treks, bike_tours, corporate_tours",
-    "route": "Manali \u2014 Sissu \u2014 Gonbo Rangjon \u2014 Phuktal Gompa \u2014 Jispa - Manali",
+    "route": "Manali — Sissu — Gonbo Rangjon — Phuktal Gompa — Jispa - Manali",
     "tags": "High Altitude, Zanskar, Monasteries, Valleys, Motorcycling, Expedition",
     "bento_img_1": "/assets/images/trips/trip_100_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_100_bento_img_2.jpg",
@@ -3700,11 +3700,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Dual Rider",
-        "price": "\u20b916,499"
+        "price": "₹16,499"
       },
       {
         "title": "Solo Rider",
-        "price": "\u20b919,499"
+        "price": "₹19,499"
       }
     ],
     "sub_package_options": "Himalayan 411, Himalayan 450",
@@ -3860,19 +3860,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 110,
     "title": "Dev Roopa Trek: Path of the Gods Expedition",
     "duration": "8 Days / 7 Nights",
-    "price": "\u20b915,499",
+    "price": "₹15,499",
     "image_url": "/assets/images/trips/trip_110_image_url.png",
     "link": "trips/himachal-tours-dev-roopa-trek-path-of-the-gods-expedition-110.html",
     "created_at": "2026-08-02T08:03:19.073626+00:00",
     "category": "himachal_tours, women_only_tours, treks",
-    "route": "Delhi \u2014 Manali \u2014 Malana Dam \u2014 Behali \u2014 Mota Grahan \u2014 Dev Roopa \u2014 Bhuntar \u2014 Delhi",
+    "route": "Delhi — Manali — Malana Dam — Behali — Mota Grahan — Dev Roopa — Bhuntar — Delhi",
     "tags": "Dev Roopa, Parvati Valley, High Altitude Trek, Offbeat Trek, Himalayan Treks, Group Trek",
     "bento_img_1": "/assets/images/trips/trip_110_bento_img_1.png",
     "bento_img_2": "/assets/images/trips/trip_110_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_110_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_110_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_110_bento_img_5.jpg",
-    "about_text": "<p>Trail Explorers brings you the sacred \"Path of the Gods: Dev Roopa Expedition\"\u2014an 8-day high-altitude trekking experience in the heart of Himachal Pradesh. Starting from Delhi to Manali, trek through Malana Dam, Behali, and Mota Grahan before reaching the pristine, sacred alpine meadow of Dev Roopa. Enjoy expert guidance, camp under the stars, and experience an exclusive community vibe with top-tier safety standards.</p>",
+    "about_text": "<p>Trail Explorers brings you the sacred \"Path of the Gods: Dev Roopa Expedition\"—an 8-day high-altitude trekking experience in the heart of Himachal Pradesh. Starting from Delhi to Manali, trek through Malana Dam, Behali, and Mota Grahan before reaching the pristine, sacred alpine meadow of Dev Roopa. Enjoy expert guidance, camp under the stars, and experience an exclusive community vibe with top-tier safety standards.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -3892,7 +3892,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 3,
-        "title": "Manali \u2192 Malana Dam \u2192 Behali Campsite (Trek Begins)",
+        "title": "Manali → Malana Dam → Behali Campsite (Trek Begins)",
         "points": [
           "Drive from Manali to Malana Dam and begin the trek towards Behali campsite."
         ],
@@ -3908,7 +3908,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 5,
-        "title": "Mota Grahan \u2192 Dev Roopa \u2192 Mota Grahan (Summit Day)",
+        "title": "Mota Grahan → Dev Roopa → Mota Grahan (Summit Day)",
         "points": [
           "Trek to the sacred alpine plateau of Dev Roopa.",
           "Explore the expansive grasslands and descend back to Mota Grahan."
@@ -3917,7 +3917,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 6,
-        "title": "Mota Grahan \u2192 Behali",
+        "title": "Mota Grahan → Behali",
         "points": [
           "Descend back through the valley from Mota Grahan to Behali campsite."
         ],
@@ -3925,7 +3925,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 7,
-        "title": "Final Descent to Roadhead \u2192 Drive to Bhuntar \u2192 Overnight Volvo to Delhi",
+        "title": "Final Descent to Roadhead → Drive to Bhuntar → Overnight Volvo to Delhi",
         "points": [
           "Final trek down to the roadhead, drive to Bhuntar, and board the overnight Volvo back to Delhi."
         ],
@@ -3957,7 +3957,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Trek Package",
-        "price": "\u20b915,499"
+        "price": "₹15,499"
       }
     ],
     "sub_package_options": "",
@@ -4071,12 +4071,12 @@ export const TRIPS_DATA: Trip[] = [
     "id": 117,
     "title": "Ladakh: High Passes & Blue Waters Expedition",
     "duration": "6 Days / 5 Nights",
-    "price": "\u20b917,600",
+    "price": "₹17,600",
     "image_url": "/assets/images/trips/trip_117_image_url.jpg",
     "link": "trips/ladakh-tours-ladakh-high-passes-blue-waters-expedition-117.html",
     "created_at": "2026-08-04T11:07:11.287705+00:00",
     "category": "ladakh_tours, women_only_tours, bike_tours, corporate_tours",
-    "route": "Leh \u2014 Khardung La \u2014 Nubra Valley (Hunder & Turtuk) \u2014 Shyok River \u2014 Pangong Tso \u2014 Chang La \u2014 Leh",
+    "route": "Leh — Khardung La — Nubra Valley (Hunder & Turtuk) — Shyok River — Pangong Tso — Chang La — Leh",
     "tags": "Group Tour, High Altitude, Ladakh, Pangong Lake, Khardung La, Himalayan Expedition",
     "bento_img_1": "/assets/images/trips/trip_117_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_117_bento_img_2.avif",
@@ -4164,11 +4164,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Group Tour(Min. 6 Pax)",
-        "price": "\u20b917,600"
+        "price": "₹17,600"
       },
       {
         "title": "Group Tour(Min. 4 Pax)",
-        "price": "\u20b920,400"
+        "price": "₹20,400"
       }
     ],
     "sub_package_options": "",
@@ -4259,19 +4259,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 116,
     "title": "Spiti Circuit & Chandratal Lake Moto-Expedition",
     "duration": "10 Days / 9 Nights",
-    "price": "\u20b930,499",
+    "price": "₹30,499",
     "image_url": "/assets/images/trips/trip_116_image_url.jpg",
     "link": "trips/spiti-tours-spiti-circuit-chandratal-lake-moto-expedition-116.html",
     "created_at": "2026-08-04T07:31:43.331308+00:00",
     "category": "spiti_tours, bike_tours, corporate_tours",
-    "route": "Delhi \u2014 Manali \u2014 Jibhi \u2014 Sangla \u2014 Kalpa \u2014 Kaza \u2014 Chandratal \u2014 Manali \u2014 Delhi",
+    "route": "Delhi — Manali — Jibhi — Sangla — Kalpa — Kaza — Chandratal — Manali — Delhi",
     "tags": "Group Tour, Motorbike Expedition, High Altitude, Spiti Circuit, Road Trip, Volvo Package",
     "bento_img_1": "/assets/images/trips/trip_116_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_116_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_116_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_116_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_116_bento_img_5.jpg",
-    "about_text": "<p>Answer the call of the high Himalayas with Trail Explorers' signature Spiti Circuit &amp; Chandratal Lake Moto-Expedition\u2014a soul-stirring 10-Day / 9-Night motorcycle journey designed for true nomads. Starting with an overnight Volvo ride from Delhi to Manali, fire up your Royal Enfield machines and ride through the lush pine trails of Jibhi, cross the challenging Jalori Pass, and descend into the breathtaking Kinnaur Valley. Explore Chitkul\u2014the last inhabited village near the Indo-China border\u2014and witness a mesmerizing sunset over the Kinner Kailash range in Kalpa. Push deeper into the rugged, cold desert of Spiti along the Hindustan-Tibet Highway, uncovering ancient wonders like the 500-year-old mummy at Gue, the world's highest post office at Hikkim, the highest motorable village at Komic, and the serene Buddha statue at Langza. Conquer the mighty Kunzum Pass (14,931 ft), camp under a blanket of stars beside the crescent-shaped sacred Chandratal Lake, and zoom back through the legendary Atal Tunnel. Packed with raw mountain energy, bonfire stories, expert mechanics, inner line permits, and complete backup support, this is the ultimate Himalayan road trip engineered in true Trail Explorers style.</p>",
+    "about_text": "<p>Answer the call of the high Himalayas with Trail Explorers' signature Spiti Circuit &amp; Chandratal Lake Moto-Expedition—a soul-stirring 10-Day / 9-Night motorcycle journey designed for true nomads. Starting with an overnight Volvo ride from Delhi to Manali, fire up your Royal Enfield machines and ride through the lush pine trails of Jibhi, cross the challenging Jalori Pass, and descend into the breathtaking Kinnaur Valley. Explore Chitkul—the last inhabited village near the Indo-China border—and witness a mesmerizing sunset over the Kinner Kailash range in Kalpa. Push deeper into the rugged, cold desert of Spiti along the Hindustan-Tibet Highway, uncovering ancient wonders like the 500-year-old mummy at Gue, the world's highest post office at Hikkim, the highest motorable village at Komic, and the serene Buddha statue at Langza. Conquer the mighty Kunzum Pass (14,931 ft), camp under a blanket of stars beside the crescent-shaped sacred Chandratal Lake, and zoom back through the legendary Atal Tunnel. Packed with raw mountain energy, bonfire stories, expert mechanics, inner line permits, and complete backup support, this is the ultimate Himalayan road trip engineered in true Trail Explorers style.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -4308,12 +4308,12 @@ export const TRIPS_DATA: Trip[] = [
         "day": 4,
         "title": "Sangla Valley to Kalpa (Approx. 40 KM)",
         "points": [
-          "Ride from Sangla Valley to Kalpa via Chitkul\u2014the last inhabited village of India near the Indo-China border.",
+          "Ride from Sangla Valley to Kalpa via Chitkul—the last inhabited village of India near the Indo-China border.",
           "Cruise along the pristine Baspa River, explore Chitkul, and ride up to Kalpa.",
           "Witness a stunning, soul-stirring sunset over the majestic Kinner Kailash range.",
           "Stay overnight in Kalpa."
         ],
-        "details": "Ride from Sangla Valley to Kalpa via Chitkul\u2014the last inhabited village of India near the Indo-China border. Cruise along the pristine Baspa River, explore Chitkul, and ride up to Kalpa. Witness a stunning, soul-stirring sunset over the majestic Kinner Kailash range. Stay overnight in Kalpa."
+        "details": "Ride from Sangla Valley to Kalpa via Chitkul—the last inhabited village of India near the Indo-China border. Cruise along the pristine Baspa River, explore Chitkul, and ride up to Kalpa. Witness a stunning, soul-stirring sunset over the majestic Kinner Kailash range. Stay overnight in Kalpa."
       },
       {
         "day": 5,
@@ -4360,10 +4360,10 @@ export const TRIPS_DATA: Trip[] = [
         "day": 9,
         "title": "Manali to Delhi Departure",
         "points": [
-          "Enjoy a free leisure day in Manali\u2014soak in the bohemian caf\u00e9 culture of Old Manali, visit Hadimba Temple, or pick up local souvenirs on Mall Road.",
+          "Enjoy a free leisure day in Manali—soak in the bohemian café culture of Old Manali, visit Hadimba Temple, or pick up local souvenirs on Mall Road.",
           "Board the evening Volvo bus back to Delhi."
         ],
-        "details": "Enjoy a free leisure day in Manali\u2014soak in the bohemian caf\u00e9 culture of Old Manali, visit Hadimba Temple, or pick up local souvenirs on Mall Road. Board the evening Volvo bus back to Delhi."
+        "details": "Enjoy a free leisure day in Manali—soak in the bohemian café culture of Old Manali, visit Hadimba Temple, or pick up local souvenirs on Mall Road. Board the evening Volvo bus back to Delhi."
       },
       {
         "day": 10,
@@ -4395,11 +4395,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Dual Rider",
-        "price": "\u20b930,499"
+        "price": "₹30,499"
       },
       {
         "title": "Solo Rider",
-        "price": "\u20b936,499"
+        "price": "₹36,499"
       }
     ],
     "sub_package_options": "Himalayan 411, Himalayan 450",
@@ -4525,19 +4525,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 118,
     "title": "Buran Ghati: Where The Trail Ends",
     "duration": "7 Days / 6 Nights",
-    "price": "\u20b9XX,XXX",
+    "price": "₹XX,XXX",
     "image_url": "/assets/images/trips/trip_118_image_url.jpg",
     "link": "trips/himachal-tours-buran-ghati-where-the-trail-ends-118.html",
     "created_at": "2026-08-05T05:30:06.030748+00:00",
     "category": "himachal_tours, women_only_tours, treks",
-    "route": "Shimla \u2014 Janglik \u2014 Dayara Thachh \u2014 Litham \u2014 Chandernahan \u2014 Dhunda \u2014 Buran Pass \u2014 Barua \u2014 Shimla",
+    "route": "Shimla — Janglik — Dayara Thachh — Litham — Chandernahan — Dhunda — Buran Pass — Barua — Shimla",
     "tags": "Himalayan Trek, High Altitude, Pass Crossing, Snow Rappelling, Shimla, Kinnaur, Adventure",
     "bento_img_1": "/assets/images/trips/trip_118_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_118_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_118_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_118_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_118_bento_img_5.jpg",
-    "about_text": "<p>Buran Ghati is the boundary where Shimla\u2019s lush soul meets Kinnaur\u2019s rugged spirit. Known as the \"Untouched Frontier,\" this 7-day high-altitude trek takes you from the historic wooden homes of Janglik to the vast Dayara Meadows, sacred Chandernahan glacial lakes, and base camp at Dhunda. Experience the thrilling technical descent down vertical snow walls using ropes before concluding in the fairytale village of Barua.</p>",
+    "about_text": "<p>Buran Ghati is the boundary where Shimla’s lush soul meets Kinnaur’s rugged spirit. Known as the \"Untouched Frontier,\" this 7-day high-altitude trek takes you from the historic wooden homes of Janglik to the vast Dayara Meadows, sacred Chandernahan glacial lakes, and base camp at Dhunda. Experience the thrilling technical descent down vertical snow walls using ropes before concluding in the fairytale village of Barua.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -4615,7 +4615,7 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "exclusions": [
       "Travel Insurance covering high-altitude trekking and medical evacuation",
-      "Backpack offloading charges (\u20b9400 per bag/day, max 10kg)",
+      "Backpack offloading charges (₹400 per bag/day, max 10kg)",
       "Transit meals during the drive on Day 1 and Day 7",
       "Personal trekking gear (hiking shoes, poles, jackets, headlamps)",
       "Tips for guides, porters, and support staff",
@@ -4625,7 +4625,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "On Request",
-        "price": "\u20b913,999"
+        "price": "₹13,999"
       }
     ],
     "sub_package_options": "",
@@ -4688,14 +4688,14 @@ export const TRIPS_DATA: Trip[] = [
     "link": "trips/ladakh-tours-ladakh-overland-srinagar-to-manali-via-umling-la-tso-moriri-121.html",
     "created_at": "2026-08-05T10:18:46.875073+00:00",
     "category": "ladakh_tours, women_only_tours, bike_tours, corporate_tours, educational_trips",
-    "route": "Srinagar \u2014 Kargil \u2014 Leh \u2014 Khardung La \u2014 Nubra Valley \u2014 Pangong Tso \u2014 Hanle \u2014 Umling La \u2014 Tso Moriri \u2014 Sarchu \u2014 Manali",
+    "route": "Srinagar — Kargil — Leh — Khardung La — Nubra Valley — Pangong Tso — Hanle — Umling La — Tso Moriri — Sarchu — Manali",
     "tags": "Motorbike Expedition, High Altitude, Himalayan Circuit, Overland Odyssey, Group Tour",
     "bento_img_1": "/assets/images/trips/trip_121_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_121_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_121_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_121_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_121_bento_img_5.jpg",
-    "about_text": "Cross the high-altitude frontier where ancient trade paths meet the raw, unyielding beauty of the Trans-Himalayas. This 11-day overland traverse takes you from the lush, pine-scented vales of Srinagar across legendary high passes into the cold desert sanctuaries of Ladakh, before dropping down into the pine forests of Manali. \n\nExperience the nomadic quietude of Hanle\u2019s stargazing skies, gaze into the sapphire expanse of Tso Moriri, ride through the stark expanse of the More Plains, and stand at Umling La\u2014the highest motorable road on Earth. Crafted for wanderers seeking true high-altitude immersion, this route blends raw mountain grit with seamless Trail Explorer hospitality.",
+    "about_text": "Cross the high-altitude frontier where ancient trade paths meet the raw, unyielding beauty of the Trans-Himalayas. This 11-day overland traverse takes you from the lush, pine-scented vales of Srinagar across legendary high passes into the cold desert sanctuaries of Ladakh, before dropping down into the pine forests of Manali. \n\nExperience the nomadic quietude of Hanle’s stargazing skies, gaze into the sapphire expanse of Tso Moriri, ride through the stark expanse of the More Plains, and stand at Umling La—the highest motorable road on Earth. Crafted for wanderers seeking true high-altitude immersion, this route blends raw mountain grit with seamless Trail Explorer hospitality.",
     "itinerary": [
       {
         "day": 1,
@@ -4729,7 +4729,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 7,
-        "title": "Summit of the World \u2014 Umling La Excursion",
+        "title": "Summit of the World — Umling La Excursion",
         "details": "Ride to the roof of the planet over Photi La to reach Umling La (5,640m). Gaze over the desolate Tibetan borderlands and explore Demchok before returning to Hanle."
       },
       {
@@ -4750,7 +4750,7 @@ export const TRIPS_DATA: Trip[] = [
       {
         "day": 11,
         "title": "Manali Solitude & Homeward Journey",
-        "details": "Spend a relaxed morning exploring Old Manali\u2019s pine-shaded cafes or sacred springs before boarding your evening Volvo transfer towards Delhi."
+        "details": "Spend a relaxed morning exploring Old Manali’s pine-shaded cafes or sacred springs before boarding your evening Volvo transfer towards Delhi."
       }
     ],
     "inclusions": [
@@ -4769,7 +4769,7 @@ export const TRIPS_DATA: Trip[] = [
       "5% GST extra",
       "Airfare, train tickets, or transit to Srinagar / from Delhi",
       "Lunches, personal snacks, and beverages along the highway",
-      "Refundable bike security deposit (\u20b95,000)",
+      "Refundable bike security deposit (₹5,000)",
       "Entry fees for monasteries, monuments, or personal activities (Camel safari, ATV)",
       "Personal expenses, laundry, tips, or phone bills",
       "Expenses incurred due to unexpected landslides, roadblocks, or weather delays"
@@ -4837,23 +4837,23 @@ export const TRIPS_DATA: Trip[] = [
     "id": 111,
     "title": "Spiti : The Highland Circuit (Group Trip)",
     "duration": "7Days / 6Nights",
-    "price": "\u20b912,499",
+    "price": "₹12,499",
     "image_url": "/assets/images/trips/trip_111_image_url.jpg",
     "link": "trips/spiti-tours-spiti-the-highland-circuit-group-trip-111.html",
     "created_at": "2026-08-02T08:18:57.366181+00:00",
     "category": "spiti_tours, himachal_tours, women_only_tours, corporate_tours",
-    "route": "Delhi \u2014 Manali \u2014 Kaza \u2014 Langza \u2014 Komic \u2014 Hikkim \u2014 Key Monastery \u2014 Chicham Bridge \u2014 Kunzum Pass \u2014 Chandratal \u2014 Manali \u2014 Delhi",
+    "route": "Delhi — Manali — Kaza — Langza — Komic — Hikkim — Key Monastery — Chicham Bridge — Kunzum Pass — Chandratal — Manali — Delhi",
     "tags": "Spiti Valley, Highland Circuit, Shared Ride, Road Trip, Group Tour",
     "bento_img_1": "/assets/images/trips/trip_111_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_111_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_111_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_111_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_111_bento_img_5.jpg",
-    "about_text": "<p>Step away from the ordinary city chaos and answer the raw, wild call of the mountains with Trail Explorers signature Spiti: The Highland Circuit. This immersive 7-day soulful expedition takes you from the green, pine-scented valleys of Manali straight into the stark, breathtaking cold desert of Spiti Valley. Feel the nomadic energy as you cross the engineering marvel of the Atal Tunnel, navigate through wild riverbeds, and ascend the mighty windswept heights of Kunzum Pass.</p><p>Live the true Trail Explorer life as you touch the skies in some of the highest human settlements on earth\u2014mail a postcard from the World\u2019s Highest Post Office in Hikkim, gaze at the majestic snow-clad peaks from the giant golden Buddha statue in Langza, and cross Asia\u2019s highest suspension bridge at Chicham. Seek timeless tranquility at the historic cliffside Key Monastery before trading concrete walls for a blanket of million stars during an unforgettable night of alpine camping near the mystical, crescent-shaped Chandratal Lake (Moon Lake).</p><p>Designed for true wanderers and mountain souls, this journey blends rugged thrills with deep local exploration. Come back with a camera full of raw memories, dusty trails, and a heart forever anchored in the high Himalayas.</p>",
+    "about_text": "<p>Step away from the ordinary city chaos and answer the raw, wild call of the mountains with Trail Explorers signature Spiti: The Highland Circuit. This immersive 7-day soulful expedition takes you from the green, pine-scented valleys of Manali straight into the stark, breathtaking cold desert of Spiti Valley. Feel the nomadic energy as you cross the engineering marvel of the Atal Tunnel, navigate through wild riverbeds, and ascend the mighty windswept heights of Kunzum Pass.</p><p>Live the true Trail Explorer life as you touch the skies in some of the highest human settlements on earth—mail a postcard from the World’s Highest Post Office in Hikkim, gaze at the majestic snow-clad peaks from the giant golden Buddha statue in Langza, and cross Asia’s highest suspension bridge at Chicham. Seek timeless tranquility at the historic cliffside Key Monastery before trading concrete walls for a blanket of million stars during an unforgettable night of alpine camping near the mystical, crescent-shaped Chandratal Lake (Moon Lake).</p><p>Designed for true wanderers and mountain souls, this journey blends rugged thrills with deep local exploration. Come back with a camera full of raw memories, dusty trails, and a heart forever anchored in the high Himalayas.</p>",
     "itinerary": [
       {
         "day": 1,
-        "title": "Delhi to Manali \u2014 Overnight Volvo Journey",
+        "title": "Delhi to Manali — Overnight Volvo Journey",
         "points": [
           "Your Himalayan journey begins as you board a comfortable overnight Volvo bus from Delhi in the evening.",
           "Leave the city chaos behind and enjoy a smooth, scenic overnight ride through winding mountain roads as you head toward the cool air of Himachal Pradesh."
@@ -4865,11 +4865,11 @@ export const TRIPS_DATA: Trip[] = [
         "title": "Welcome to Manali & Local Town Exploration",
         "points": [
           "Arrive in Manali by morning and check into your stay to shake off the travel fatigue.",
-          "Spend the afternoon soaking in local mountain culture\u2014wander through the towering pine trees of the sacred Hadimba Devi Temple, explore the rustic lanes of Old Manali, or take a peaceful stroll through Van Vihar.",
+          "Spend the afternoon soaking in local mountain culture—wander through the towering pine trees of the sacred Hadimba Devi Temple, explore the rustic lanes of Old Manali, or take a peaceful stroll through Van Vihar.",
           "Spend your evening soaking up the vibrant vibe of Mall Road.",
           "Stay overnight in Manali."
         ],
-        "details": "Arrive in Manali by morning and check into your stay to shake off the travel fatigue. Spend the afternoon soaking in local mountain culture\u2014wander through the towering pine trees of the sacred Hadimba Devi Temple, explore the rustic lanes of Old Manali, or take a peaceful stroll through Van Vihar. Spend your evening soaking up the vibrant vibe of Mall Road. Stay overnight in Manali."
+        "details": "Arrive in Manali by morning and check into your stay to shake off the travel fatigue. Spend the afternoon soaking in local mountain culture—wander through the towering pine trees of the sacred Hadimba Devi Temple, explore the rustic lanes of Old Manali, or take a peaceful stroll through Van Vihar. Spend your evening soaking up the vibrant vibe of Mall Road. Stay overnight in Manali."
       },
       {
         "day": 3,
@@ -4884,14 +4884,14 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 4,
-        "title": "Exploring High Villages \u2014 Langza, Hikkim & Komik",
+        "title": "Exploring High Villages — Langza, Hikkim & Komik",
         "points": [
           "Today is all about touching the skies in some of the world's highest human settlements.",
-          "Visit Langza to witness the giant golden Buddha statue gazing over snow-clad peaks, head up to Hikkim to mail a postcard from the World\u2019s Highest Post Office, and explore Komik, one of the highest motorable villages on earth.",
+          "Visit Langza to witness the giant golden Buddha statue gazing over snow-clad peaks, head up to Hikkim to mail a postcard from the World’s Highest Post Office, and explore Komik, one of the highest motorable villages on earth.",
           "Return to Kaza by evening for a cozy night.",
           "Stay overnight in Kaza."
         ],
-        "details": "Today is all about touching the skies in some of the world's highest human settlements. Visit Langza to witness the giant golden Buddha statue gazing over snow-clad peaks, head up to Hikkim to mail a postcard from the World\u2019s Highest Post Office, and explore Komik, one of the highest motorable villages on earth. Return to Kaza by evening for a cozy night. Stay overnight in Kaza."
+        "details": "Today is all about touching the skies in some of the world's highest human settlements. Visit Langza to witness the giant golden Buddha statue gazing over snow-clad peaks, head up to Hikkim to mail a postcard from the World’s Highest Post Office, and explore Komik, one of the highest motorable villages on earth. Return to Kaza by evening for a cozy night. Stay overnight in Kaza."
       },
       {
         "day": 5,
@@ -4940,15 +4940,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b912,499"
+        "price": "₹12,499"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b913,999"
+        "price": "₹13,999"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b916,499"
+        "price": "₹16,499"
       }
     ],
     "sub_package_options": "",
@@ -5012,7 +5012,7 @@ export const TRIPS_DATA: Trip[] = [
       {
         "name": "Karan Patel",
         "location": "Delhi",
-        "text": "The Spiti Highland Circuit was super well-organized. Visiting Hikkim and camping at Chandratal for \u20b912,499 was incredible value!",
+        "text": "The Spiti Highland Circuit was super well-organized. Visiting Hikkim and camping at Chandratal for ₹12,499 was incredible value!",
         "avatar": "/assets/images/reviews/pfp-karan.jpg"
       },
       {
@@ -5034,7 +5034,7 @@ export const TRIPS_DATA: Trip[] = [
     "gallery_images": [],
     "packing_list": [],
     "seo_title": "Spiti Valley Summer Trip via Manali & Chandratal | Trail Explorers",
-    "meta_description": "Summer Spiti circuit from Delhi via Manali, 7D/6N from \u20b912,499: Kaza, Langza, Hikkim, Key Monastery, Chicham Bridge, Kunzum Pass & Chandratal Lake.",
+    "meta_description": "Summer Spiti circuit from Delhi via Manali, 7D/6N from ₹12,499: Kaza, Langza, Hikkim, Key Monastery, Chicham Bridge, Kunzum Pass & Chandratal Lake.",
     "is_coming_soon": false,
     "listing": "custom",
     "slug": "spiti-the-highland-circuit-group-trip-111"
@@ -5043,19 +5043,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 112,
     "title": "Spiti : Manali Spiti (Moto Expedition)",
     "duration": "7 Days / 6 Nights",
-    "price": "\u20b922,499",
+    "price": "₹22,499",
     "image_url": "/assets/images/trips/trip_112_image_url.jpg",
     "link": "trips/spiti-tours-spiti-manali-spiti-moto-expedition-112.html",
     "created_at": "2026-08-02T08:50:14.758486+00:00",
     "category": "spiti_tours, himachal_tours, bike_tours",
-    "route": "Delhi \u2014 Manali \u2014 Kaza \u2014 Langza \u2014 Komic \u2014 Hikkim \u2014 Key Monastery \u2014 Chicham Bridge \u2014 Kunzum Pass \u2014 Chandratal \u2014 Manali \u2014 Delhi",
+    "route": "Delhi — Manali — Kaza — Langza — Komic — Hikkim — Key Monastery — Chicham Bridge — Kunzum Pass — Chandratal — Manali — Delhi",
     "tags": "Spiti Valley, Motorbike Expedition, Highland Circuit, Road Trip, Group Tour, Bike Tour",
     "bento_img_1": "/assets/images/trips/trip_112_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_112_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_112_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_112_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_112_bento_img_5.jpg",
-    "about_text": "<p>Awaken your inner nomad with the ultimate Himalayan ride on Trail Explorers' Spiti Highland Circuit Motorbike Expedition. Designed for true wanderers and soulful petrolheads, this 7-day high-octane journey takes you deep into the raw, wind-swept cold deserts of Spiti Valley. Kick off your engines from Manali, cross engineering marvels like the Atal Tunnel, and conquer legendary high-altitude passes including Kunzum Pass.</p><p>Live the true Trail Explorer philosophy as you ride across the roof of the world, exploring remote highland hamlets like Langza (The Fossil Village), Komic, and Hikkim\u2014home to the world's highest post office. Marvel at the ancient architectural brilliance of Key Monastery and cross Asia\u2019s highest suspension bridge at Chicham. After riding through rugged, untamed terrain, unwind under a blanket of sparkling stars at our alpine campsite near the mystical, crescent-shaped Chandratal Lake.</p><p>Backed by professional mechanics, support vehicles, and expert lead captains, this expedition blends heart-pounding adventure with soulful campfire stories. Whether you ride solo or grab a dual-rider beast, answer the call of the mountains and let the open road redefine your soul. Secure your spot on the ultimate Spiti motorcycle tour today!</p>",
+    "about_text": "<p>Awaken your inner nomad with the ultimate Himalayan ride on Trail Explorers' Spiti Highland Circuit Motorbike Expedition. Designed for true wanderers and soulful petrolheads, this 7-day high-octane journey takes you deep into the raw, wind-swept cold deserts of Spiti Valley. Kick off your engines from Manali, cross engineering marvels like the Atal Tunnel, and conquer legendary high-altitude passes including Kunzum Pass.</p><p>Live the true Trail Explorer philosophy as you ride across the roof of the world, exploring remote highland hamlets like Langza (The Fossil Village), Komic, and Hikkim—home to the world's highest post office. Marvel at the ancient architectural brilliance of Key Monastery and cross Asia’s highest suspension bridge at Chicham. After riding through rugged, untamed terrain, unwind under a blanket of sparkling stars at our alpine campsite near the mystical, crescent-shaped Chandratal Lake.</p><p>Backed by professional mechanics, support vehicles, and expert lead captains, this expedition blends heart-pounding adventure with soulful campfire stories. Whether you ride solo or grab a dual-rider beast, answer the call of the mountains and let the open road redefine your soul. Secure your spot on the ultimate Spiti motorcycle tour today!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -5104,7 +5104,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 6,
-        "title": "Chandratal to Manali Return Ride \u2192 Overnight Volvo to Delhi (Approx. 130 KM)",
+        "title": "Chandratal to Manali Return Ride → Overnight Volvo to Delhi (Approx. 130 KM)",
         "points": [
           "Conquer the final leg of your mountain ride back from Chandratal to Manali.",
           "Drop off your motorbikes, share epic stories around the debrief, and board the evening overnight AC Volvo bus back to Delhi."
@@ -5138,7 +5138,7 @@ export const TRIPS_DATA: Trip[] = [
       "Early check-in (Before 1:00 PM) & Late Check-out (After 11:00 AM) at the hotel.",
       "Any additional expenses such as of personal nature.",
       "Additional accommodation/food costs incurred due to any delayed travel.",
-      "Any Airfare / Rail fare other than what is mentioned in \u201cInclusions\u201d or any type of transportation.",
+      "Any Airfare / Rail fare other than what is mentioned in “Inclusions” or any type of transportation.",
       "Parking and monument entry fees during sightseeing.",
       "Additional Costs due to Flight Cancellations, Landslides, Roadblocks, and other natural calamities.",
       "Any other services not specified above in inclusions",
@@ -5147,11 +5147,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Dual Rider",
-        "price": "\u20b922,499"
+        "price": "₹22,499"
       },
       {
         "title": "Solo Rider",
-        "price": "\u20b927,499"
+        "price": "₹27,499"
       }
     ],
     "sub_package_options": "Himalayan 411, Himalayan 450",
@@ -5237,19 +5237,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 119,
     "title": "Uttarakhand : Backpacking Odyssey",
     "duration": "8 Days / 7 Nights",
-    "price": "\u20b921,900",
+    "price": "₹21,900",
     "image_url": "/assets/images/trips/trip_119_image_url.jpg",
     "link": "trips/uttarakhand-tours-uttarakhand-backpacking-odyssey-119.html",
     "created_at": "2026-08-05T08:16:24.162012+00:00",
     "category": "uttarakhand_tours, women_only_tours, treks, corporate_tours",
-    "route": "Delhi \u2014 Joshimath \u2014 Auli \u2014 Chopta \u2014 Tungnath \u2014 Deoria Tal \u2014 Rishikesh \u2014 Delhi",
+    "route": "Delhi — Joshimath — Auli — Chopta — Tungnath — Deoria Tal — Rishikesh — Delhi",
     "tags": "Uttarakhand, Trekking, Backpacking, Auli, Chopta, Rishikesh, River Rafting",
     "bento_img_1": "/assets/images/trips/trip_119_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_119_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_119_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_119_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_119_bento_img_5.jpg",
-    "about_text": "<p>Forget the typical tourist trails. We\u2019re taking you deep into the Garhwal Himalayas for an experience that spans from 1,120 ft to 13,123 ft. At Trail Explorers, we believe Uttarakhand is best explored on foot and in good company. Whether we're summiting the world\u2019s highest Shiva temple at Tungnath, catching the sunrise over Nanda Devi from the Auli meadows, or cliff-jumping into the emerald waters of the Ganges, this trip is about pushing your limits and finding your tribe.</p>",
+    "about_text": "<p>Forget the typical tourist trails. We’re taking you deep into the Garhwal Himalayas for an experience that spans from 1,120 ft to 13,123 ft. At Trail Explorers, we believe Uttarakhand is best explored on foot and in good company. Whether we're summiting the world’s highest Shiva temple at Tungnath, catching the sunrise over Nanda Devi from the Auli meadows, or cliff-jumping into the emerald waters of the Ganges, this trip is about pushing your limits and finding your tribe.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -5346,11 +5346,11 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Standard Sharing",
-        "price": "\u20b921,900"
+        "price": "₹21,900"
       },
       {
         "title": "Premium Sharing",
-        "price": "\u20b925,950"
+        "price": "₹25,950"
       }
     ],
     "sub_package_options": "",
@@ -5362,7 +5362,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "What is the best time for this trip?",
-        "answer": "Winter (Dec\u2013Feb) for snow and skiing, Spring/Summer (Mar\u2013Jun) for blooming meadows, and Autumn (Oct\u2013Nov) for clear peak views."
+        "answer": "Winter (Dec–Feb) for snow and skiing, Spring/Summer (Mar–Jun) for blooming meadows, and Autumn (Oct–Nov) for clear peak views."
       },
       {
         "question": "I don't know how to swim. Can I still do River Rafting in Rishikesh?",
@@ -5426,112 +5426,112 @@ export const TRIPS_DATA: Trip[] = [
     "id": 103,
     "title": "Spiti : Winter 4X4 Expedition",
     "duration": "9 Days / 8Nights",
-    "price": "\u20b925,499",
+    "price": "₹25,499",
     "image_url": "/assets/images/trips/trip_103_image_url.jpg",
     "link": "trips/spiti-tours-spiti-winter-4x4-expedition-103.html",
     "created_at": "2026-08-01T16:46:13.584415+00:00",
     "category": "spiti_tours, himachal_tours, women_only_tours, corporate_tours",
-    "route": "Delhi - Shimla \u2014 Chitkul \u2014 Nako \u2014 Tabo \u2014 Hikkim \u2014 Komic \u2014 Langza  \u2014 Key Monastery \u2014 Chicham Bridge \u2014 Kalpa - Shimla - Delhi",
+    "route": "Delhi - Shimla — Chitkul — Nako — Tabo — Hikkim — Komic — Langza  — Key Monastery — Chicham Bridge — Kalpa - Shimla - Delhi",
     "tags": "Winter Expedition, 4x4 Expedition, Spiti Valley, High Altitude",
     "bento_img_1": "/assets/images/trips/trip_103_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_103_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_103_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_103_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_103_bento_img_5.jpg",
-    "about_text": "<p>Step into the raw, untamed heart of the Trans-Himalayas with Trail Explorers\u2019s signature Spiti Winter 4x4 Expedition\u2014an immersive 8-night / 9-day journey crafted exclusively for true mountain wanderers. Unlike standard tours, this expedition is built around our core Trail Explorer philosophy: deep local immersion, slow exploration, and the raw thrill of conquering high-altitude snow deserts when the rest of the world locks its doors.</p><p>From the moment you transition into our specially geared 4x4 expedition fleet in Shimla, you leave the ordinary behind. Trace the roaring Sutlej river into the deep gorges of Kinnaur, cross over into India's last inhabited borderland village of Chitkul, and witness the eerie, spellbinding beauty of Nako\u2019s frozen high-altitude lake and the 500-year-old mummified monk at Gue.</p><p>As you push deeper into the cold desert, you will stand in awe before the 1,000-year-old frescoes of Tabo Monastery\u2014the Ajanta of the Himalayas\u2014and conquer the cliffside perch of Dhankar. Every day brings a new frontier: mailing a postcard from the world\u2019s highest operational post office in Hikkim, gazing upon the giant Buddha statue watching over the fossil-rich plateau of Langza, and crossing the dizzying, suspension heights of the Chicham Bridge.</p><p>Designed with absolute safety, cozy homestays, expert local captains, and onboard oxygen support, this journey balances raw adventure with soulful warmth. Gather around heaters with fellow travelers, swap stories under starlit Himalayan skies, and experience the majestic Kinner Kailash glowing gold at sunset. If you are seeking more than just a vacation\u2014if you are chasing the authentic, unscripted spirit of the mountains\u2014this journey belongs with Trail Explorers.</p><p>First winter in the mountains? The <a href=\"/trips/spiti-tours-spiti-group-trip-1790411548930\">Spiti Group Trip</a> follows the same Kinnaur route in November and December at a lower price.</p><p>Planning your winter trip? Read our <a href=\"/winter-spiti\">winter Spiti guide</a> for the route, the weather month by month and what to pack.</p>",
+    "about_text": "<p>Step into the raw, untamed heart of the Trans-Himalayas with Trail Explorers’s signature Spiti Winter 4x4 Expedition—an immersive 8-night / 9-day journey crafted exclusively for true mountain wanderers. Unlike standard tours, this expedition is built around our core Trail Explorer philosophy: deep local immersion, slow exploration, and the raw thrill of conquering high-altitude snow deserts when the rest of the world locks its doors.</p><p>From the moment you transition into our specially geared 4x4 expedition fleet in Shimla, you leave the ordinary behind. Trace the roaring Sutlej river into the deep gorges of Kinnaur, cross over into India's last inhabited borderland village of Chitkul, and witness the eerie, spellbinding beauty of Nako’s frozen high-altitude lake and the 500-year-old mummified monk at Gue.</p><p>As you push deeper into the cold desert, you will stand in awe before the 1,000-year-old frescoes of Tabo Monastery—the Ajanta of the Himalayas—and conquer the cliffside perch of Dhankar. Every day brings a new frontier: mailing a postcard from the world’s highest operational post office in Hikkim, gazing upon the giant Buddha statue watching over the fossil-rich plateau of Langza, and crossing the dizzying, suspension heights of the Chicham Bridge.</p><p>Designed with absolute safety, cozy homestays, expert local captains, and onboard oxygen support, this journey balances raw adventure with soulful warmth. Gather around heaters with fellow travelers, swap stories under starlit Himalayan skies, and experience the majestic Kinner Kailash glowing gold at sunset. If you are seeking more than just a vacation—if you are chasing the authentic, unscripted spirit of the mountains—this journey belongs with Trail Explorers.</p><p>First winter in the mountains? The <a href=\"/trips/spiti-tours-spiti-group-trip-1790411548930\">Spiti Group Trip</a> follows the same Kinnaur route in November and December at a lower price.</p><p>Planning your winter trip? Read our <a href=\"/winter-spiti\">winter Spiti guide</a> for the route, the weather month by month and what to pack.</p>",
     "itinerary": [
       {
         "day": 1,
         "title": "Delhi to Shimla",
         "points": [
-          "Leaving the Plains Behind \u2014 Board your overnight transit vehicle (Volvo/Tempo Traveller) from Delhi, leaving the bustling urban plains behind.",
+          "Leaving the Plains Behind — Board your overnight transit vehicle (Volvo/Tempo Traveller) from Delhi, leaving the bustling urban plains behind.",
           "Sit back, relax, and transition into the rhythm of the mountains as the overnight drive winds upward into the scenic Himalayan foothills, setting the stage for the raw, snow-draped winter wilderness awaiting you in Spiti with Trail Explorers."
         ],
-        "details": "Leaving the Plains Behind \u2014 Board your overnight transit vehicle (Volvo/Tempo Traveller) from Delhi, leaving the bustling urban plains behind. Sit back, relax, and transition into the rhythm of the mountains as the overnight drive winds upward into the scenic Himalayan foothills, setting the stage for the raw, snow-draped winter wilderness awaiting you in Spiti with Trail Explorers."
+        "details": "Leaving the Plains Behind — Board your overnight transit vehicle (Volvo/Tempo Traveller) from Delhi, leaving the bustling urban plains behind. Sit back, relax, and transition into the rhythm of the mountains as the overnight drive winds upward into the scenic Himalayan foothills, setting the stage for the raw, snow-draped winter wilderness awaiting you in Spiti with Trail Explorers."
       },
       {
         "day": 2,
         "title": "Shimla to Chitkul via Sangla Valley",
         "points": [
-          "Entering Kinnaur's Frozen Lap \u2014 Arrive in Shimla early in the morning to meet your expedition captain and crew.",
+          "Entering Kinnaur's Frozen Lap — Arrive in Shimla early in the morning to meet your expedition captain and crew.",
           "Transition into comfortable 4x4 vehicles specially geared to handle challenging winter terrain and black-ice conditions.",
           "Embark on a dramatic drive through the Kinnaur region, tracing the roaring Sutlej River before climbing into the breathtaking Sangla Valley.",
           "Explore local landscapes and snow-blanketed wooden houses, with your overnight stay arranged in Sangla or Chitkul near the border."
         ],
-        "details": "Entering Kinnaur's Frozen Lap \u2014 Arrive in Shimla early in the morning to meet your expedition captain and crew. Transition into comfortable 4x4 vehicles specially geared to handle challenging winter terrain and black-ice conditions. Embark on a dramatic drive through the Kinnaur region, tracing the roaring Sutlej River before climbing into the breathtaking Sangla Valley. Explore local landscapes and snow-blanketed wooden houses, with your overnight stay arranged in Sangla or Chitkul near the border."
+        "details": "Entering Kinnaur's Frozen Lap — Arrive in Shimla early in the morning to meet your expedition captain and crew. Transition into comfortable 4x4 vehicles specially geared to handle challenging winter terrain and black-ice conditions. Embark on a dramatic drive through the Kinnaur region, tracing the roaring Sutlej River before climbing into the breathtaking Sangla Valley. Explore local landscapes and snow-blanketed wooden houses, with your overnight stay arranged in Sangla or Chitkul near the border."
       },
       {
         "day": 3,
         "title": "Chitkul to Tabo via Nako Lake & Gue Mummy",
         "points": [
-          "Into the Cold Desert \u2014  Depart Chitkul and begin an awe-inspiring exploration drive deeper into the Trans-Himalayan rain shadow region toward Tabo.",
+          "Into the Cold Desert —  Depart Chitkul and begin an awe-inspiring exploration drive deeper into the Trans-Himalayan rain shadow region toward Tabo.",
           "En route, stop at the serene Nako village to witness its high-altitude lake frozen solid into a shimmering sheet of ice.",
           "Next, take a fascinating detour to Gue village to view the remarkable 500-year-old naturally mummified monk preserved at the local monastery.",
           "Continue your 4x4 expedition across stark, moon-like winter landscapes before arriving in Tabo for a warm, starlit overnight stay."
         ],
-        "details": "Into the Cold Desert \u2014  Depart Chitkul and begin an awe-inspiring exploration drive deeper into the Trans-Himalayan rain shadow region toward Tabo. En route, stop at the serene Nako village to witness its high-altitude lake frozen solid into a shimmering sheet of ice. Next, take a fascinating detour to Gue village to view the remarkable 500-year-old naturally mummified monk preserved at the local monastery. Continue your 4x4 expedition across stark, moon-like winter landscapes before arriving in Tabo for a warm, starlit overnight stay."
+        "details": "Into the Cold Desert —  Depart Chitkul and begin an awe-inspiring exploration drive deeper into the Trans-Himalayan rain shadow region toward Tabo. En route, stop at the serene Nako village to witness its high-altitude lake frozen solid into a shimmering sheet of ice. Next, take a fascinating detour to Gue village to view the remarkable 500-year-old naturally mummified monk preserved at the local monastery. Continue your 4x4 expedition across stark, moon-like winter landscapes before arriving in Tabo for a warm, starlit overnight stay."
       },
       {
         "day": 4,
         "title": "Tabo to Kaza via Dhankar Monastery",
         "points": [
-          "The Ajanta of the Himalayas \u2014  Begin your morning exploring the ancient Tabo Monastery, revered as the \"Ajanta of the Himalayas\" for its priceless 1,000-year-old frescoes and mud-brick heritage.",
+          "The Ajanta of the Himalayas —  Begin your morning exploring the ancient Tabo Monastery, revered as the \"Ajanta of the Himalayas\" for its priceless 1,000-year-old frescoes and mud-brick heritage.",
           "After immersing yourself in its tranquil, spiritual aura, hit the rugged tracks toward Kaza.",
           "Along the way, take a thrilling 4x4 detour to the cliffside Dhankar Monastery, dramatically perched on a jagged ridge overlooking the frozen confluence of the Spiti and Pin rivers.",
           "Arrive in Kaza, the high-altitude headquarters of Spiti, for your overnight stay."
         ],
-        "details": "The Ajanta of the Himalayas \u2014  Begin your morning exploring the ancient Tabo Monastery, revered as the \"Ajanta of the Himalayas\" for its priceless 1,000-year-old frescoes and mud-brick heritage. After immersing yourself in its tranquil, spiritual aura, hit the rugged tracks toward Kaza. Along the way, take a thrilling 4x4 detour to the cliffside Dhankar Monastery, dramatically perched on a jagged ridge overlooking the frozen confluence of the Spiti and Pin rivers. Arrive in Kaza, the high-altitude headquarters of Spiti, for your overnight stay."
+        "details": "The Ajanta of the Himalayas —  Begin your morning exploring the ancient Tabo Monastery, revered as the \"Ajanta of the Himalayas\" for its priceless 1,000-year-old frescoes and mud-brick heritage. After immersing yourself in its tranquil, spiritual aura, hit the rugged tracks toward Kaza. Along the way, take a thrilling 4x4 detour to the cliffside Dhankar Monastery, dramatically perched on a jagged ridge overlooking the frozen confluence of the Spiti and Pin rivers. Arrive in Kaza, the high-altitude headquarters of Spiti, for your overnight stay."
       },
       {
         "day": 5,
         "title": "Kaza High-Altitude Circuit",
         "points": [
-          "Hikkim, Komic & Langza \u2014 Dedicate the day to conquering Spiti\u2019s highest motorable loops and remote nomadic settlements surrounding Kaza.",
-          "Navigate snow-lined tracks to dispatch a postcard from Hikkim, home to the world\u2019s highest operational post office.",
+          "Hikkim, Komic & Langza — Dedicate the day to conquering Spiti’s highest motorable loops and remote nomadic settlements surrounding Kaza.",
+          "Navigate snow-lined tracks to dispatch a postcard from Hikkim, home to the world’s highest operational post office.",
           "Continue driving up to Komic, one of the highest permanently inhabited villages on earth, and admire the majestic giant Buddha statue keeping watch over the fossil-rich valley of Langza.",
           "Return to Kaza by evening to share stories by the heater and enjoy your overnight stay."
         ],
-        "details": "Hikkim, Komic & Langza \u2014 Dedicate the day to conquering Spiti\u2019s highest motorable loops and remote nomadic settlements surrounding Kaza. Navigate snow-lined tracks to dispatch a postcard from Hikkim, home to the world\u2019s highest operational post office. Continue driving up to Komic, one of the highest permanently inhabited villages on earth, and admire the majestic giant Buddha statue keeping watch over the fossil-rich valley of Langza. Return to Kaza by evening to share stories by the heater and enjoy your overnight stay."
+        "details": "Hikkim, Komic & Langza — Dedicate the day to conquering Spiti’s highest motorable loops and remote nomadic settlements surrounding Kaza. Navigate snow-lined tracks to dispatch a postcard from Hikkim, home to the world’s highest operational post office. Continue driving up to Komic, one of the highest permanently inhabited villages on earth, and admire the majestic giant Buddha statue keeping watch over the fossil-rich valley of Langza. Return to Kaza by evening to share stories by the heater and enjoy your overnight stay."
       },
       {
         "day": 6,
         "title": "Kaza to Key Monastery, Kibber & Chicham Bridge",
         "points": [
-          "Hanging Over the Abyss \u2014 After breakfast, put your 4x4 capability to the test on high-altitude mountain passes as you drive toward the iconic, snow-draped Key Monastery perched dramatically on a hilltop fortress.",
+          "Hanging Over the Abyss — After breakfast, put your 4x4 capability to the test on high-altitude mountain passes as you drive toward the iconic, snow-draped Key Monastery perched dramatically on a hilltop fortress.",
           "Explore Kibber wildlife territory, then cross the engineering marvel of the Chicham Bridge, suspended precariously over a deep, dizzying gorge.",
           "Spend the afternoon soaking in the dramatic winter panoramas of the upper Spiti valley before returning to Kaza for your final night in the heartland."
         ],
-        "details": "Hanging Over the Abyss \u2014 After breakfast, put your 4x4 capability to the test on high-altitude mountain passes as you drive toward the iconic, snow-draped Key Monastery perched dramatically on a hilltop fortress. Explore Kibber wildlife territory, then cross the engineering marvel of the Chicham Bridge, suspended precariously over a deep, dizzying gorge. Spend the afternoon soaking in the dramatic winter panoramas of the upper Spiti valley before returning to Kaza for your final night in the heartland."
+        "details": "Hanging Over the Abyss — After breakfast, put your 4x4 capability to the test on high-altitude mountain passes as you drive toward the iconic, snow-draped Key Monastery perched dramatically on a hilltop fortress. Explore Kibber wildlife territory, then cross the engineering marvel of the Chicham Bridge, suspended precariously over a deep, dizzying gorge. Spend the afternoon soaking in the dramatic winter panoramas of the upper Spiti valley before returning to Kaza for your final night in the heartland."
       },
       {
         "day": 7,
         "title": "Kaza to Kalpa",
         "points": [
-          "Retracing the Kinnaur Trail \u2014  Begin your return journey, heading back down through the rugged terrain toward the lush pine forests and charming village of Kalpa.",
+          "Retracing the Kinnaur Trail —  Begin your return journey, heading back down through the rugged terrain toward the lush pine forests and charming village of Kalpa.",
           "The scenic winter drive offers shifting perspectives of towering rock faces and distant snowfields.",
           "Upon arrival in Kalpa, witness the magical phenomenon of the sacred Kinner Kailash mountain range glowing fiery gold and pink as the sun sets.",
           "Spend a peaceful evening wrapped in the quiet beauty of Kinnaur and settle in for an overnight stay."
         ],
-        "details": "Retracing the Kinnaur Trail \u2014  Begin your return journey, heading back down through the rugged terrain toward the lush pine forests and charming village of Kalpa. The scenic winter drive offers shifting perspectives of towering rock faces and distant snowfields. Upon arrival in Kalpa, witness the magical phenomenon of the sacred Kinner Kailash mountain range glowing fiery gold and pink as the sun sets. Spend a peaceful evening wrapped in the quiet beauty of Kinnaur and settle in for an overnight stay."
+        "details": "Retracing the Kinnaur Trail —  Begin your return journey, heading back down through the rugged terrain toward the lush pine forests and charming village of Kalpa. The scenic winter drive offers shifting perspectives of towering rock faces and distant snowfields. Upon arrival in Kalpa, witness the magical phenomenon of the sacred Kinner Kailash mountain range glowing fiery gold and pink as the sun sets. Spend a peaceful evening wrapped in the quiet beauty of Kinnaur and settle in for an overnight stay."
       },
       {
         "day": 8,
         "title": "Kalpa to Shimla",
         "points": [
-          "Descent Through the Gorge \u2014  Depart Kalpa and navigate the winding mountain roads back down through the Kinnaur valley toward Shimla.",
+          "Descent Through the Gorge —  Depart Kalpa and navigate the winding mountain roads back down through the Kinnaur valley toward Shimla.",
           "Enjoy your final shifting glimpses of high Himalayan crags as the altitude drops and green valleys return.",
           "Upon reaching Shimla in the evening, board your overnight return transit vehicle back toward Delhi, giving you time to unwind and reflect on an unforgettable winter expedition."
         ],
-        "details": "Descent Through the Gorge \u2014  Depart Kalpa and navigate the winding mountain roads back down through the Kinnaur valley toward Shimla. Enjoy your final shifting glimpses of high Himalayan crags as the altitude drops and green valleys return. Upon reaching Shimla in the evening, board your overnight return transit vehicle back toward Delhi, giving you time to unwind and reflect on an unforgettable winter expedition."
+        "details": "Descent Through the Gorge —  Depart Kalpa and navigate the winding mountain roads back down through the Kinnaur valley toward Shimla. Enjoy your final shifting glimpses of high Himalayan crags as the altitude drops and green valleys return. Upon reaching Shimla in the evening, board your overnight return transit vehicle back toward Delhi, giving you time to unwind and reflect on an unforgettable winter expedition."
       },
       {
         "day": 9,
         "title": "Arrival in Delhi",
         "points": [
-          "Carrying the Explorer Spirit Home \u2014  Arrive early in the morning back in Delhi, marking the successful conclusion of your 8-night / 9-day Spiti winter 4x4 expedition.",
+          "Carrying the Explorer Spirit Home —  Arrive early in the morning back in Delhi, marking the successful conclusion of your 8-night / 9-day Spiti winter 4x4 expedition.",
           "Head back to your onward destination carrying unforgettable memories, raw photographs of frozen Himalayan passes, and the timeless, untamed spirit of the mountains."
         ],
-        "details": "Carrying the Explorer Spirit Home \u2014  Arrive early in the morning back in Delhi, marking the successful conclusion of your 8-night / 9-day Spiti winter 4x4 expedition. Head back to your onward destination carrying unforgettable memories, raw photographs of frozen Himalayan passes, and the timeless, untamed spirit of the mountains."
+        "details": "Carrying the Explorer Spirit Home —  Arrive early in the morning back in Delhi, marking the successful conclusion of your 8-night / 9-day Spiti winter 4x4 expedition. Head back to your onward destination carrying unforgettable memories, raw photographs of frozen Himalayan passes, and the timeless, untamed spirit of the mountains."
       }
     ],
     "inclusions": [
@@ -5555,7 +5555,7 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Triple Sharing(Minimum 6 pax)",
-        "price": "\u20b925,499"
+        "price": "₹25,499"
       }
     ],
     "sub_package_options": "",
@@ -5658,7 +5658,7 @@ export const TRIPS_DATA: Trip[] = [
     "gallery_images": [],
     "packing_list": [],
     "seo_title": "Spiti Winter 4x4 Expedition from Delhi | 9D/8N | Trail Explorers",
-    "meta_description": "Winter Spiti by 4x4, 9D/8N from Delhi in January: Chitkul, Nako, Tabo, Kaza, Key Monastery, Hikkim & Kalpa in deep snow. From \u20b925,499 per person.",
+    "meta_description": "Winter Spiti by 4x4, 9D/8N from Delhi in January: Chitkul, Nako, Tabo, Kaza, Key Monastery, Hikkim & Kalpa in deep snow. From ₹25,499 per person.",
     "is_coming_soon": false,
     "listing": "community",
     "weather_spot": "",
@@ -5668,12 +5668,12 @@ export const TRIPS_DATA: Trip[] = [
     "id": 104,
     "title": "Udaipur & Kumbhalgarh Expedition",
     "duration": "3 Days / 2 Nights",
-    "price": "\u20b9XX,XXX",
+    "price": "₹XX,XXX",
     "image_url": "/assets/images/trips/trip_104_image_url.jpg",
     "link": "trips/rajasthan-tours-udaipur-kumbhalgarh-expedition-104.html",
     "created_at": "2026-08-01T17:17:23.131272+00:00",
     "category": "rajasthan_tours",
-    "route": "Udaipur \u2014 Lake Pichola \u2014 City Palace \u2014 Kumbhalgarh Fort \u2014 Saheliyon Ki Bari \u2014 Fateh Sagar Lake",
+    "route": "Udaipur — Lake Pichola — City Palace — Kumbhalgarh Fort — Saheliyon Ki Bari — Fateh Sagar Lake",
     "tags": "Royal Rajasthan, Cultural Tour, Weekend Getaway, Forts & Palaces, Lake City",
     "bento_img_1": "/assets/images/trips/trip_104_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_104_bento_img_2.jpg",
@@ -5745,15 +5745,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Triple Sharing",
-        "price": "\u20b96,999"
+        "price": "₹6,999"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b97,499"
+        "price": "₹7,499"
       },
       {
         "title": "Single Occupancy",
-        "price": "\u20b97,999"
+        "price": "₹7,999"
       }
     ],
     "sub_package_options": "",
@@ -5847,12 +5847,12 @@ export const TRIPS_DATA: Trip[] = [
     "id": 113,
     "title": "Hamta Pass and Chandratal Trek",
     "duration": "5 Days / 4 Nights",
-    "price": "\u20b99,499",
+    "price": "₹9,499",
     "image_url": "/assets/images/trips/trip_113_image_url.jpg",
     "link": "trips/himachal-tours-hamta-pass-and-chandratal-trek-113.html",
     "created_at": "2026-08-02T10:30:28.098553+00:00",
     "category": "himachal_tours, women_only_tours, treks",
-    "route": "Manali \u2014 Jobra \u2014 Chika \u2014 Balu Ka Ghera \u2014 Hampta Pass \u2014 Shea Goru \u2014 Chatru \u2014 Chandratal \u2014 Manali",
+    "route": "Manali — Jobra — Chika — Balu Ka Ghera — Hampta Pass — Shea Goru — Chatru — Chandratal — Manali",
     "tags": "Hamta Pass, Chandratal, High Altitude Trek, Crossover Trek, Himalayan Treks, Group Trek",
     "bento_img_1": "/assets/images/trips/trip_113_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_113_bento_img_2.jpg",
@@ -5888,10 +5888,10 @@ export const TRIPS_DATA: Trip[] = [
         "title": "Balu Ka Ghera to Shea Goru via Hampta Pass Summit (7-8 Hours Trek)",
         "points": [
           "The grand summit day!",
-          "Start early for the steep, zig-zag alpine climb to the majestic Hampta Pass standing at 14,100 ft. At the crest, witness the dramatic crossover contrast\u2014the lush, mist-draped green valleys of Kullu meeting the raw, barren, cold desert mountains of Lahaul & Spiti.",
+          "Start early for the steep, zig-zag alpine climb to the majestic Hampta Pass standing at 14,100 ft. At the crest, witness the dramatic crossover contrast—the lush, mist-draped green valleys of Kullu meeting the raw, barren, cold desert mountains of Lahaul & Spiti.",
           "After soaking in panoramic views of Indrasan and Deo Tibba, begin a careful, steady descent into the tranquil, emerald meadows of Shea Goru for an overnight riverside camp."
         ],
-        "details": "The grand summit day! Start early for the steep, zig-zag alpine climb to the majestic Hampta Pass standing at 14,100 ft. At the crest, witness the dramatic crossover contrast\u2014the lush, mist-draped green valleys of Kullu meeting the raw, barren, cold desert mountains of Lahaul & Spiti. After soaking in panoramic views of Indrasan and Deo Tibba, begin a careful, steady descent into the tranquil, emerald meadows of Shea Goru for an overnight riverside camp."
+        "details": "The grand summit day! Start early for the steep, zig-zag alpine climb to the majestic Hampta Pass standing at 14,100 ft. At the crest, witness the dramatic crossover contrast—the lush, mist-draped green valleys of Kullu meeting the raw, barren, cold desert mountains of Lahaul & Spiti. After soaking in panoramic views of Indrasan and Deo Tibba, begin a careful, steady descent into the tranquil, emerald meadows of Shea Goru for an overnight riverside camp."
       },
       {
         "day": 4,
@@ -5933,12 +5933,12 @@ export const TRIPS_DATA: Trip[] = [
       "Travel and medical insurance of any kind",
       "Any fees and permits for Foreigners",
       "Unscheduled delay due to landslides, Force Majeure, or evacuation charges",
-      "Backpack offloading charges (\u20b91,500 up to 10 kg optional)"
+      "Backpack offloading charges (₹1,500 up to 10 kg optional)"
     ],
     "package_options": [
       {
         "title": "Trek Package",
-        "price": "\u20b99,499"
+        "price": "₹9,499"
       }
     ],
     "sub_package_options": "",
@@ -6072,19 +6072,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 120,
     "title": "Bir Billing Escape: Paragliding, Rajgundha Valley & Prashar Lake",
     "duration": "3 Days / 2 Nights",
-    "price": "\u20b910,499",
+    "price": "₹10,499",
     "image_url": "/assets/images/trips/trip_120_image_url.jpg",
     "link": "trips/himachal-tours-bir-billing-escape-paragliding-rajgundha-valley-prashar-lake-120.html",
     "created_at": "2026-08-05T08:37:45.624959+00:00",
     "category": "himachal_tours, women_only_tours, treks, corporate_tours",
-    "route": "Delhi \u2014 Bir \u2014 Billing \u2014 Rajgundha Valley \u2014 Hanumangarh \u2014 Prashar Lake \u2014 Mandi \u2014 Delhi",
+    "route": "Delhi — Bir — Billing — Rajgundha Valley — Hanumangarh — Prashar Lake — Mandi — Delhi",
     "tags": "Himachal, Paragliding, Bir Billing, Prashar Lake, Rajgundha, Weekend Getaway, Trekking, Camping",
     "bento_img_1": "/assets/images/trips/img_1793292252593___.jpg",
     "bento_img_2": "/assets/images/trips/trip_120_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_120_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/img_1793292149694_Tempo_Traveller_Hire_in_Delhi.jpg",
     "bento_img_5": "/assets/images/trips/trip_120_bento_img_5.jpg",
-    "about_text": "<p><strong>ESCAPE THE ORDINARY: THE ULTIMATE HIMALAYAN EXPEDITION</strong></p><p>&nbsp;Tired of the mundane city routine and staring at screens all day? The mountains aren't just calling\u2014they are waiting for you to answer.</p><p>Welcome to the [B] Bir Billing, Rajgundha Valley &amp; Prashar Lake Expedition \u2014a masterfully curated 3-day Himalayan getaway by Trail Explorers. Forget the rushed, clich\u00e9 sightseeing tours. This is a raw, soul-stirring, and adrenaline-fueled journey crafted exclusively for backpackers, solo travelers, and thrill-seekers craving the authentic essence of Himachal Pradesh.</p><p><strong>&nbsp;TAKE FLIGHT: THE ADRENALINE RUSH OF BIR BILLING</strong></p><p>&nbsp;Our adventure begins with an overnight journey from Delhi, where strangers quickly become family over shared stories, music, and that signature Trail Explorers vibe. Wake up to the crisp, pure air of the Kangra Valley as we roll into Bir.</p><p>Bir Billing is globally renowned as the second-highest paragliding site in the world , and the undisputed best in Asia. We don\u2019t just admire the mountains; we soar above them. After driving up to Billing at a dizzying 2,400 meters, you will strap in with an expert pilot and take the leap.</p><p>&nbsp;Glide on thermal currents over dense pine forests, cascading streams, and sprawling tea gardens. Back on the ground, the evening is yours to enjoy. We will go caf\u00e9 hopping through the vibrant Tibetan colony, devour authentic local food, and wrap up the night around a crackling bonfire at our cozy campsite.<br><strong>INTO THE WILD: THE UNTOUCHED RAJGUNDHA VALLEY</strong></p><p>While casual tourists head home, true explorers venture deeper. On day two, we disconnect from the grid and step into the untamed wilderness of Rajgundha Valley.</p><p>Rajgundha is a rare Himalayan gem \u2014a remote, roadless village accessible only on foot. We will embark on the stunning [B] Hanumangarh Trek , winding through enchanting forests of oak, rhododendron, and deodar.</p><p>Surrounded by terraced fields and traditional wooden houses, this valley offers unparalleled 360-degree views of towering peaks. As night falls, the valley plunges into absolute silence. Sitting under a sky ablaze with millions of stars, nursing a hot cup of chai, you will finally find the peace you\u2019ve been seeking.</p><p><strong>THE MYSTICAL AURA OF PRASHAR LAKE</strong></p><p>Our grand finale takes us where pristine geography meets deep spirituality\u2014the legendary [B] Prashar Lake . Perched at an imposing altitude of 2,730 meters, this glacial lake rests like a flawless blue sapphire amidst lush alpine meadows.</p><p>Marvel at the jaw-dropping panoramic views of the Dhauladhar, Pir Panjal, and Kinnaur ranges. Witness the lake's profound mystery: a floating island of dense organic matter that slowly moves across the water.</p><p>Standing on the banks is a stunning 14th-century pagoda-style temple dedicated to Sage Prashar. The overwhelming spiritual energy and a quiet walk around the lake will leave a lasting imprint on your soul.</p><p><strong>WHY TRAVEL WITH TRAIL EXPLORERS?</strong></p><p><strong>THE ULTIMATE COMMUNITY VIBE:</strong> We build a family on the road. Led by our passionate Trip Captains, the energy is always electric. Solo travelers and groups alike fit right in.&nbsp;&nbsp;<strong>CURATED PERFECTION: </strong>A flawless balance of extreme adventure, offbeat trekking, cultural immersion, and spiritual sightseeing in one seamless itinerary.<strong>&nbsp;HASSLE-FREE EXPLORATION:</strong> We handle all logistics\u2014overnight Volvos, internal mountain transfers, paragliding arrangements, cozy stays, and delicious meals. You just show up and live the moment.\n<strong>SUSTAINABLE &amp; AUTHENTIC: </strong>We proudly support local communities by choosing authentic homestays and local cafes, ensuring a positive footprint.</p><p>Grab your backpack, lace up your trekking shoes, and join the Trail Explorers tribe for a weekend that will redefine how you travel. Epic mountain memories await!</p>",
+    "about_text": "<p><strong>ESCAPE THE ORDINARY: THE ULTIMATE HIMALAYAN EXPEDITION</strong></p><p>&nbsp;Tired of the mundane city routine and staring at screens all day? The mountains aren't just calling—they are waiting for you to answer.</p><p>Welcome to the [B] Bir Billing, Rajgundha Valley &amp; Prashar Lake Expedition —a masterfully curated 3-day Himalayan getaway by Trail Explorers. Forget the rushed, cliché sightseeing tours. This is a raw, soul-stirring, and adrenaline-fueled journey crafted exclusively for backpackers, solo travelers, and thrill-seekers craving the authentic essence of Himachal Pradesh.</p><p><strong>&nbsp;TAKE FLIGHT: THE ADRENALINE RUSH OF BIR BILLING</strong></p><p>&nbsp;Our adventure begins with an overnight journey from Delhi, where strangers quickly become family over shared stories, music, and that signature Trail Explorers vibe. Wake up to the crisp, pure air of the Kangra Valley as we roll into Bir.</p><p>Bir Billing is globally renowned as the second-highest paragliding site in the world , and the undisputed best in Asia. We don’t just admire the mountains; we soar above them. After driving up to Billing at a dizzying 2,400 meters, you will strap in with an expert pilot and take the leap.</p><p>&nbsp;Glide on thermal currents over dense pine forests, cascading streams, and sprawling tea gardens. Back on the ground, the evening is yours to enjoy. We will go café hopping through the vibrant Tibetan colony, devour authentic local food, and wrap up the night around a crackling bonfire at our cozy campsite.<br><strong>INTO THE WILD: THE UNTOUCHED RAJGUNDHA VALLEY</strong></p><p>While casual tourists head home, true explorers venture deeper. On day two, we disconnect from the grid and step into the untamed wilderness of Rajgundha Valley.</p><p>Rajgundha is a rare Himalayan gem —a remote, roadless village accessible only on foot. We will embark on the stunning [B] Hanumangarh Trek , winding through enchanting forests of oak, rhododendron, and deodar.</p><p>Surrounded by terraced fields and traditional wooden houses, this valley offers unparalleled 360-degree views of towering peaks. As night falls, the valley plunges into absolute silence. Sitting under a sky ablaze with millions of stars, nursing a hot cup of chai, you will finally find the peace you’ve been seeking.</p><p><strong>THE MYSTICAL AURA OF PRASHAR LAKE</strong></p><p>Our grand finale takes us where pristine geography meets deep spirituality—the legendary [B] Prashar Lake . Perched at an imposing altitude of 2,730 meters, this glacial lake rests like a flawless blue sapphire amidst lush alpine meadows.</p><p>Marvel at the jaw-dropping panoramic views of the Dhauladhar, Pir Panjal, and Kinnaur ranges. Witness the lake's profound mystery: a floating island of dense organic matter that slowly moves across the water.</p><p>Standing on the banks is a stunning 14th-century pagoda-style temple dedicated to Sage Prashar. The overwhelming spiritual energy and a quiet walk around the lake will leave a lasting imprint on your soul.</p><p><strong>WHY TRAVEL WITH TRAIL EXPLORERS?</strong></p><p><strong>THE ULTIMATE COMMUNITY VIBE:</strong> We build a family on the road. Led by our passionate Trip Captains, the energy is always electric. Solo travelers and groups alike fit right in.&nbsp;&nbsp;<strong>CURATED PERFECTION: </strong>A flawless balance of extreme adventure, offbeat trekking, cultural immersion, and spiritual sightseeing in one seamless itinerary.<strong>&nbsp;HASSLE-FREE EXPLORATION:</strong> We handle all logistics—overnight Volvos, internal mountain transfers, paragliding arrangements, cozy stays, and delicious meals. You just show up and live the moment.\n<strong>SUSTAINABLE &amp; AUTHENTIC: </strong>We proudly support local communities by choosing authentic homestays and local cafes, ensuring a positive footprint.</p><p>Grab your backpack, lace up your trekking shoes, and join the Trail Explorers tribe for a weekend that will redefine how you travel. Epic mountain memories await!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -6098,14 +6098,14 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "day": 2,
-        "title": "Arrival In Bir (Paragliding & Caf\u00e9 Hopping)",
+        "title": "Arrival In Bir (Paragliding & Café Hopping)",
         "points": [
           "Wake up to fresh mountain air and check into our cozy Swiss Camps in Bir to freshen up.",
           "Head straight to Billing, the world's second-highest paragliding site, and take a thrilling paragliding flight over the Dhauladhar ranges.",
-          "Spend a relaxed evening caf\u00e9 hopping, soaking in the local Tibetan culture, and watching a magical sunset at the landing site.",
+          "Spend a relaxed evening café hopping, soaking in the local Tibetan culture, and watching a magical sunset at the landing site.",
           "End the day with a warm bonfire, delicious dinner, and travel stories with your new friends under the stars."
         ],
-        "details": "Wake up to fresh mountain air and check into our cozy Swiss Camps in Bir to freshen up. Head straight to Billing, the world's second-highest paragliding site, and take a thrilling paragliding flight over the Dhauladhar ranges. Spend a relaxed evening caf\u00e9 hopping, soaking in the local Tibetan culture, and watching a magical sunset at the landing site. End the day with a warm bonfire, delicious dinner, and travel stories with your new friends under the stars."
+        "details": "Wake up to fresh mountain air and check into our cozy Swiss Camps in Bir to freshen up. Head straight to Billing, the world's second-highest paragliding site, and take a thrilling paragliding flight over the Dhauladhar ranges. Spend a relaxed evening café hopping, soaking in the local Tibetan culture, and watching a magical sunset at the landing site. End the day with a warm bonfire, delicious dinner, and travel stories with your new friends under the stars."
       },
       {
         "day": 3,
@@ -6140,7 +6140,7 @@ export const TRIPS_DATA: Trip[] = [
       }
     ],
     "inclusions": [
-      "Entire travel as per itinerary (Delhi \u2192 Bir | Mandi \u2192 Delhi in Semi-Sleeper Volvo; internal transfers in Sumo/Tempo)",
+      "Entire travel as per itinerary (Delhi → Bir | Mandi → Delhi in Semi-Sleeper Volvo; internal transfers in Sumo/Tempo)",
       "4 meals during the trip: Breakfast (Day 1 to 3) and Dinner on Day 2",
       "Accommodation for 2 nights (1N in Swiss Camps at Bir, 1N homestay/camps in Rajgundha)",
       "Paragliding charges",
@@ -6156,8 +6156,8 @@ export const TRIPS_DATA: Trip[] = [
     ],
     "package_options": [
       {
-        "title": "\u20b910,499/-",
-        "price": "\u20b913,999"
+        "title": "₹10,499/-",
+        "price": "₹13,999"
       }
     ],
     "sub_package_options": "",
@@ -6210,7 +6210,7 @@ export const TRIPS_DATA: Trip[] = [
     "gallery_images": [],
     "packing_list": [
       {
-        "category": "\ud83e\udde5 Clothing",
+        "category": "🧥 Clothing",
         "items": [
           "Comfortable trekking pants or track pants (avoid jeans for the trek)",
           "Quick-dry full-sleeve t-shirts (for layering)",
@@ -6222,14 +6222,14 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udd7e Footwear",
+        "category": "🥾 Footwear",
         "items": [
           "Sturdy trekking shoes with good ankle support and grip (essential for the Hanumangarh trek)",
           "Comfortable flip-flops or slip-ons (to relax at the campsite/homestay in Bir and Rajgundha)"
         ]
       },
       {
-        "category": "\u2b50 Essentials",
+        "category": "⭐ Essentials",
         "items": [
           "Rucksack / Backpack (40-50 Liters)",
           "Small daypack (10-15 Liters) for carrying water and snacks during the trek",
@@ -6240,7 +6240,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\uddfc Personal Care",
+        "category": "🧼 Personal Care",
         "items": [
           "High SPF Sunscreen and lip balm",
           "Hand sanitizer and wet wipes (very useful during the trek and Volvo journey)",
@@ -6249,7 +6249,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udc8a Medical",
+        "category": "💊 Medical",
         "items": [
           "Medicines for motion sickness (for the winding mountain roads towards Mandi and Bir)",
           "Personal basic first-aid kit (Band-aids, antiseptic cream)",
@@ -6257,7 +6257,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83d\udd0b Gadgets",
+        "category": "🔋 Gadgets",
         "items": [
           "Good capacity Power Bank (10,000mAh+ is highly recommended, charging points are limited in Rajgundha)",
           "Charging adapters and sturdy cables",
@@ -6265,7 +6265,7 @@ export const TRIPS_DATA: Trip[] = [
         ]
       },
       {
-        "category": "\ud83e\udeaa Documents & Money",
+        "category": "🪪 Documents & Money",
         "items": [
           "Original valid Government ID Proof (Aadhar Card, Driving License, or Voter ID)",
           "Sufficient physical cash (ATMs are rarely available in Bir, and zero in Rajgundha/Prashar Lake)"
@@ -6280,21 +6280,21 @@ export const TRIPS_DATA: Trip[] = [
   },
   {
     "id": 105,
-    "title": "Escape to Zanskar \u2014 The High Pass Caravan",
+    "title": "Escape to Zanskar — The High Pass Caravan",
     "duration": "6 Days / 5 Nights",
-    "price": "\u20b911,499",
+    "price": "₹11,499",
     "image_url": "/assets/images/trips/img_1790182015862____8_.jpg",
     "link": "trips/ladakh-tours-escape-to-zanskar-the-high-pass-caravan-105.html",
     "created_at": "2026-08-01T17:45:30.495451+00:00",
     "category": "ladakh_tours, treks, bike_tours, corporate_tours",
-    "route": "Delhi \u2014 Manali \u2014 Sissu \u2014 Gonbo Rangjon \u2014 Phuktal Gompa \u2014 Jispa \u2014 Delhi",
+    "route": "Delhi — Manali — Sissu — Gonbo Rangjon — Phuktal Gompa — Jispa — Delhi",
     "tags": "Zanskar Valley, High Altitude, Himalayan Expedition, Monolith Circuit, Group Tour",
     "bento_img_1": "/assets/images/trips/img_1790182028742____8_.jpg",
     "bento_img_2": "/assets/images/trips/img_1790182033708_Zanskar__rugged__remote__and_ridiculously_beautiful___1_.jpg",
     "bento_img_3": "/assets/images/trips/trip_105_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_105_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_105_bento_img_5.jpg",
-    "about_text": "<h3>The Untamed Frontier: Where the Road Ends, the Soul Awakes</h3><p>There is the Himalayas you see on postcards, and then there is Zanskar\u2014a mystical, razor-sharp trans-Himalayan realm sculpted by roaring glacial rivers, towering vertical monoliths, and ancient Buddhist serenity. Hidden behind formidable high-altitude mountain passes, Zanskar is not just a destination; it is an initiation into the raw, unhurried wild.</p><p>Our Escape to Zanskar (6-Day Expedition) is curated for the true wanderers\u2014those who refuse to be bound by generic tourist itineraries and seek journeys that leave dust on their boots and fire in their spirits. Spanning across legendary mountain corridors\u2014from the verdant cedar valleys of Manali to the windswept heights of Shinku La Pass (16,580 ft), the sacred shadow of Gonbo Rangjon, and the mythical cliffside cave hermitage of Phuktal Gompa\u2014this is trans-Himalayan road tripping in its purest, most authentic form.</p><h3>The Trail Explorers Way: How We Travel</h3><p>At Trail Explorers, we do not sell standardized package holidays. We curate community-led, raw mountain expeditions.</p><p><strong>Nomadic Energy &amp; Authentic Tribe Vibe:</strong> You don\u2019t travel with a coach of strangers; you journey with a tribe of like-minded explorers. From sharing stories around crackling riverside bonfires in Jispa to gazing at the silver canopy of the Milky Way beside the holy monolith of Gonbo Rangjon, our journeys forge lifelong bonds.</p><p><strong>Safety First, Always Grounded:</strong> Raw adventure does not mean reckless travel. We build our expeditions with dedicated acclimatization hikes (like the Jogini Waterfall trail in Manali), seasoned trans-Himalayan expedition captains, certified 4x4/tempo logistics, and on-board emergency oxygen and high-altitude medical support.</p><p><strong>Slow, Immersive Storytelling:</strong> We believe in pausing where the mass crowds rush. We let you soak in the acoustic reverberations of 12th-century monastic chants inside the caves of Phuktal Gompa, taste authentic local butter tea with mountain elders, and wake up to unfiltered golden sunrises over glacial monoliths.</p><h3>Key Expedition Highlights</h3><p><strong>Conquer Shinku La Pass (16,580 ft):</strong> Ascend the formidable high-mountain pass connecting Lahaul Valley to the secluded gorges of Zanskar, cutting through rugged terrains and snow-carved ridges.</p><p><strong>Camp in the Shadow of Gonbo Rangjon:</strong> Experience an unforgettable, high-altitude starlit night camp beneath the sacred standalone monolith revered by locals as the protective deity of the valley.</p><p><strong>Trek to the Cliff-Hanging Phuktal Cave Monastery:</strong> Embark on a dramatic hike along the turquoise Tsarap River to reach one of the world's most remote Buddhist cave monasteries, carved directly into a sheer limestone cliff.</p><p><strong>Riverside Solace in Jispa &amp; Lahaul:</strong> Unwind along the turquoise waters of the Bhaga River, breathing in pristine alpine air away from all urban noise.</p><h3>Ready to Answer the Mountain's Call?</h3><p>Zanskar is wild, unforgiving, and breathtakingly beautiful. If you are seeking an expedition that strips away the ordinary, challenges your boundaries, and reconnects your soul with the raw rhythm of the earth, your seat in the tribe is waiting. Pack your rucksack, leave the city behind, and Escape to Zanskar the Trail Explorers way.</p>",
+    "about_text": "<h3>The Untamed Frontier: Where the Road Ends, the Soul Awakes</h3><p>There is the Himalayas you see on postcards, and then there is Zanskar—a mystical, razor-sharp trans-Himalayan realm sculpted by roaring glacial rivers, towering vertical monoliths, and ancient Buddhist serenity. Hidden behind formidable high-altitude mountain passes, Zanskar is not just a destination; it is an initiation into the raw, unhurried wild.</p><p>Our Escape to Zanskar (6-Day Expedition) is curated for the true wanderers—those who refuse to be bound by generic tourist itineraries and seek journeys that leave dust on their boots and fire in their spirits. Spanning across legendary mountain corridors—from the verdant cedar valleys of Manali to the windswept heights of Shinku La Pass (16,580 ft), the sacred shadow of Gonbo Rangjon, and the mythical cliffside cave hermitage of Phuktal Gompa—this is trans-Himalayan road tripping in its purest, most authentic form.</p><h3>The Trail Explorers Way: How We Travel</h3><p>At Trail Explorers, we do not sell standardized package holidays. We curate community-led, raw mountain expeditions.</p><p><strong>Nomadic Energy &amp; Authentic Tribe Vibe:</strong> You don’t travel with a coach of strangers; you journey with a tribe of like-minded explorers. From sharing stories around crackling riverside bonfires in Jispa to gazing at the silver canopy of the Milky Way beside the holy monolith of Gonbo Rangjon, our journeys forge lifelong bonds.</p><p><strong>Safety First, Always Grounded:</strong> Raw adventure does not mean reckless travel. We build our expeditions with dedicated acclimatization hikes (like the Jogini Waterfall trail in Manali), seasoned trans-Himalayan expedition captains, certified 4x4/tempo logistics, and on-board emergency oxygen and high-altitude medical support.</p><p><strong>Slow, Immersive Storytelling:</strong> We believe in pausing where the mass crowds rush. We let you soak in the acoustic reverberations of 12th-century monastic chants inside the caves of Phuktal Gompa, taste authentic local butter tea with mountain elders, and wake up to unfiltered golden sunrises over glacial monoliths.</p><h3>Key Expedition Highlights</h3><p><strong>Conquer Shinku La Pass (16,580 ft):</strong> Ascend the formidable high-mountain pass connecting Lahaul Valley to the secluded gorges of Zanskar, cutting through rugged terrains and snow-carved ridges.</p><p><strong>Camp in the Shadow of Gonbo Rangjon:</strong> Experience an unforgettable, high-altitude starlit night camp beneath the sacred standalone monolith revered by locals as the protective deity of the valley.</p><p><strong>Trek to the Cliff-Hanging Phuktal Cave Monastery:</strong> Embark on a dramatic hike along the turquoise Tsarap River to reach one of the world's most remote Buddhist cave monasteries, carved directly into a sheer limestone cliff.</p><p><strong>Riverside Solace in Jispa &amp; Lahaul:</strong> Unwind along the turquoise waters of the Bhaga River, breathing in pristine alpine air away from all urban noise.</p><h3>Ready to Answer the Mountain's Call?</h3><p>Zanskar is wild, unforgiving, and breathtakingly beautiful. If you are seeking an expedition that strips away the ordinary, challenges your boundaries, and reconnects your soul with the raw rhythm of the earth, your seat in the tribe is waiting. Pack your rucksack, leave the city behind, and Escape to Zanskar the Trail Explorers way.</p>",
     "itinerary": [
       {
         "day": 1,
@@ -6325,23 +6325,23 @@ export const TRIPS_DATA: Trip[] = [
         "points": [
           "The real trans-Himalayan overland adventure kicks off at dawn.",
           "Drive through the marvel of Atal Tunnel and enter the rugged barren beauty of Lahaul Valley.",
-          "Pass through Sissu and Darcha before testing your limits at the formidable Shinku La Pass (16,580 ft)\u2014the gateway to Ladakh\u2019s Zanskar region.",
+          "Pass through Sissu and Darcha before testing your limits at the formidable Shinku La Pass (16,580 ft)—the gateway to Ladakh’s Zanskar region.",
           "Descend into the untouched Lungnak Valley to reach the colossal, stand-alone holy monolith of Gonbo Rangjon.",
           "Settle into our riverside eco-campsite and experience a night of jaw-dropping raw wilderness under the glowing Milky Way and a million stars."
         ],
-        "details": "The real trans-Himalayan overland adventure kicks off at dawn. Drive through the marvel of Atal Tunnel and enter the rugged barren beauty of Lahaul Valley. Pass through Sissu and Darcha before testing your limits at the formidable Shinku La Pass (16,580 ft)\u2014the gateway to Ladakh\u2019s Zanskar region. Descend into the untouched Lungnak Valley to reach the colossal, stand-alone holy monolith of Gonbo Rangjon. Settle into our riverside eco-campsite and experience a night of jaw-dropping raw wilderness under the glowing Milky Way and a million stars."
+        "details": "The real trans-Himalayan overland adventure kicks off at dawn. Drive through the marvel of Atal Tunnel and enter the rugged barren beauty of Lahaul Valley. Pass through Sissu and Darcha before testing your limits at the formidable Shinku La Pass (16,580 ft)—the gateway to Ladakh’s Zanskar region. Descend into the untouched Lungnak Valley to reach the colossal, stand-alone holy monolith of Gonbo Rangjon. Settle into our riverside eco-campsite and experience a night of jaw-dropping raw wilderness under the glowing Milky Way and a million stars."
       },
       {
         "day": 4,
         "title": "Phuktal Monastery Cliff Trek & Sunset Drive to Jispa",
         "points": [
           "Wake up to the early morning sun casting golden reflections on the holy Gonbo Rangjon monolith.",
-          "Post breakfast, take an exhilarating off-road transit to the trail-head and begin the iconic trek along the turquoise Tsarap/Lungnak river to Phuktal Gompa (Phugtal Monastery)\u2014a legendary 12th-century Buddhist cave hermitage hanging dramatically from a vertical limestone cliff.",
+          "Post breakfast, take an exhilarating off-road transit to the trail-head and begin the iconic trek along the turquoise Tsarap/Lungnak river to Phuktal Gompa (Phugtal Monastery)—a legendary 12th-century Buddhist cave hermitage hanging dramatically from a vertical limestone cliff.",
           "Absorb the profound cave chants, trek back, and drive back across Shinku La to reach the serene riverside stays of Jispa.",
           "Unwind with a cozy campsite bonfire and hearty mountain meal.",
           "Overnight stay in Jispa."
         ],
-        "details": "Wake up to the early morning sun casting golden reflections on the holy Gonbo Rangjon monolith. Post breakfast, take an exhilarating off-road transit to the trail-head and begin the iconic trek along the turquoise Tsarap/Lungnak river to Phuktal Gompa (Phugtal Monastery)\u2014a legendary 12th-century Buddhist cave hermitage hanging dramatically from a vertical limestone cliff. Absorb the profound cave chants, trek back, and drive back across Shinku La to reach the serene riverside stays of Jispa. Unwind with a cozy campsite bonfire and hearty mountain meal. Overnight stay in Jispa."
+        "details": "Wake up to the early morning sun casting golden reflections on the holy Gonbo Rangjon monolith. Post breakfast, take an exhilarating off-road transit to the trail-head and begin the iconic trek along the turquoise Tsarap/Lungnak river to Phuktal Gompa (Phugtal Monastery)—a legendary 12th-century Buddhist cave hermitage hanging dramatically from a vertical limestone cliff. Absorb the profound cave chants, trek back, and drive back across Shinku La to reach the serene riverside stays of Jispa. Unwind with a cozy campsite bonfire and hearty mountain meal. Overnight stay in Jispa."
       },
       {
         "day": 5,
@@ -6392,15 +6392,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b911,499"
+        "price": "₹11,499"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b912,499"
+        "price": "₹12,499"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b914,999"
+        "price": "₹14,999"
       }
     ],
     "sub_package_options": "",
@@ -6453,7 +6453,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "What is the best time of year to undertake this high-altitude Zanskar road trip?",
-        "answer": "The prime operational season for Zanskar is from late May to early October. During these months, Shinku La Pass is clear of heavy snowdrifts, river crossings are stable, and daylight temperatures remain pleasant (12\u00b0C to 20\u00b0C). Nights at high-altitude campsites like Gonbo Rangjon drop between 0\u00b0C and 5\u00b0C, making warm layering essential."
+        "answer": "The prime operational season for Zanskar is from late May to early October. During these months, Shinku La Pass is clear of heavy snowdrifts, river crossings are stable, and daylight temperatures remain pleasant (12°C to 20°C). Nights at high-altitude campsites like Gonbo Rangjon drop between 0°C and 5°C, making warm layering essential."
       },
       {
         "question": "What kind of vehicle is used for the road expedition from Manali to Zanskar?",
@@ -6508,11 +6508,11 @@ export const TRIPS_DATA: Trip[] = [
           "Fleece or warm mid-layer",
           "Windproof & waterproof outer jacket",
           "Quick-dry trek pants (2 pairs)",
-          "Full-sleeve T-shirts (3\u20134)",
+          "Full-sleeve T-shirts (3–4)",
           "Woollen cap",
           "Buff / neck gaiter",
           "Woollen gloves + waterproof outer gloves",
-          "Warm socks (4\u20135 pairs)"
+          "Warm socks (4–5 pairs)"
         ]
       },
       {
@@ -6530,7 +6530,7 @@ export const TRIPS_DATA: Trip[] = [
           "Lip balm with SPF",
           "Moisturiser / cold cream",
           "Reusable water bottle",
-          "Day backpack (20\u201330 L) with rain cover",
+          "Day backpack (20–30 L) with rain cover",
           "Rain poncho",
           "Head torch with spare batteries",
           "Power bank (20,000 mAh)",
@@ -6571,19 +6571,19 @@ export const TRIPS_DATA: Trip[] = [
     "id": 106,
     "title": "Spiti : Full Summer Circuit",
     "duration": "8 Days / 7 Nights",
-    "price": "\u20b916,499",
+    "price": "₹16,499",
     "image_url": "/assets/images/trips/trip_106_image_url.jpg",
     "link": "trips/spiti-tours-spiti-full-summer-circuit-106",
     "created_at": "2026-08-02T04:35:18.715013+00:00",
     "category": "spiti_tours, himachal_tours, women_only_tours, corporate_tours, educational_trips",
-    "route": "Delhi \u2014 Shimla \u2014 Sangla \u2014 Chitkul \u2014 Nako \u2014 Gue \u2014 Tabo \u2014 Dhankar \u2014 Kaza \u2014 Key \u2014 Kibber \u2014 Chandratal \u2014 Batal \u2014 Chhatru \u2014 Atal Tunnel \u2014 Manali \u2014 Delhi",
+    "route": "Delhi — Shimla — Sangla — Chitkul — Nako — Gue — Tabo — Dhankar — Kaza — Key — Kibber — Chandratal — Batal — Chhatru — Atal Tunnel — Manali — Delhi",
     "tags": "Spiti Valley, Summer Expedition, Circuit Tour, Road Trip, Group Tour",
     "bento_img_1": "/assets/images/trips/trip_106_bento_img_1.jpg",
     "bento_img_2": "/assets/images/trips/trip_106_bento_img_2.jpg",
     "bento_img_3": "/assets/images/trips/trip_106_bento_img_3.jpg",
     "bento_img_4": "/assets/images/trips/trip_106_bento_img_4.jpg",
     "bento_img_5": "/assets/images/trips/trip_106_bento_img_5.jpg",
-    "about_text": "<h3>Spiti Full Summer Circuit: The Ultimate Himalayan Odyssey with Trail Explorers</h3><p>There is travel that lets you see places, and then there is the Trail Explorers journey\u2014where the mountains don't just surround you; they become a part of your soul. Welcome to the Spiti Full Summer Circuit (8 Days / 7 Nights), an epic overland expedition that transitions from the chaotic rhythm of city life into the raw, silence-carved landscapes of the Middle Land. Starting from Delhi and traversing through the emerald gorges of Kinnaur, ancient cliffside monasteries, the highest inhabited villages on Earth, and the mystic shores of Chandratal Lake, this is not just a road trip\u2014it is an initiation into the true Explorer spirit.</p><h3>The Journey: From Kinnaur\u2019s Deep Gorges to the Cold Desert of Spiti</h3><p>The complete Spiti circuit is widely regarded as one of the world\u2019s most legendary high-altitude road trips. Unlike short back-and-forth routes, our full circuit enters via the gradual ascent of Shimla and Kinnaur Valley and exits through the wild, adrenaline-fueled off-road terrain of Kunzum Pass, Batal, and Manali. This clockwise route ensures natural acclimatization, allowing your body and mind to seamlessly adapt to the thin Himalayan air.</p><p>Your nomadic expedition begins with an overnight transition from Delhi into the misty pine hills of Shimla. From here, our rugged expedition vehicles roll alongside the roaring Sutlej River through the dramatic, rock-carved cliff roads of Kinnaur. Settle into the rustic beauty of Sangla Valley and Chitkul\u2014the last inhabited village near the Indo-Tibet border\u2014where wooden cottages, crisp mountain breezes, and views of the snow-dusted Kinnaur Kailash range set the tone for the adventure ahead.</p><p>As we cross the sacred Khab Sangam\u2014the raw confluence of the Spiti and Sutlej rivers\u2014the green alpine forests dramatically yield to the barren, sculpted moonscapes of the trans-Himalayan desert. Along the way, we pause by the reflective serenity of Nako Lake and take a detour to the remote outpost of Gue, home to the 500-year-old naturally preserved mummified body of Buddhist monk Sangha Tenzin.</p><h3>Ancient Monasteries &amp; Postcards from the Clouds</h3><p>In the heart of Spiti Valley, history breathes through mud brick and ancient sacred chants. Step inside the 1,000-year-old Tabo Monastery, revered as the \u2018Ajanta of the Himalayas\u2019, where sacred wall murals and ancient meditation caves transport you back across centuries. Feel your spine tingle as you gaze upon the dramatic, cliff-hanging Dhankar Gompa, standing defiantly on razor-sharp spires high above the Pin-Spiti river confluence.</p><p>Based out of the vibrant desert hub of Kaza, our high-altitude village safari takes you to the literal rooftop of the world:</p><p><strong>Hikkim (14,567 ft):</strong> Write a heartfelt, ink-on-paper letter from the World\u2019s Highest Post Office and send a piece of the Himalayas directly to your loved ones.</p><p><strong>Komic (15,027 ft):</strong> Feel the quiet reverence of the World\u2019s Highest Motorable Village, standing beneath fluttering multi-colored prayer flags.</p><p><strong>Langza (The Fossil Village):</strong> Gaze upon the iconic giant Golden Buddha statue facing the mighty Chau Chau Kang Nilda peak, and walk across ancient shale beds to discover million-year-old marine fossils from the ancient Tethys Sea.</p><h3>Over Kunzum Pass to the Mystic Waters of Chandratal</h3><p>No Spiti expedition is complete without visiting the fortress-like Key Monastery, where young monks warmly offer steaming butter tea, and crossing the staggering Chicham Bridge\u2014Asia's highest suspension bridge spanning a thousand-foot vertical gorge.</p><p>Conquer the mighty Kunzum Pass (14,931 ft), pay homage at the Kunzum Mata shrine, and descend into the hidden sanctuary of Chandratal (The Moon Lake). Hike along its ever-changing turquoise and deep-blue waters, surrounded by amphitheaters of snow-capped peaks. As night falls over our alpine campsite, sit around the warmth of community conversations and look up at the unpolluted, dazzling expanse of the Milky Way Galaxy stretching from horizon to horizon.</p><h3>The Wild Off-Road Exit via Manali &amp; Atal Tunnel</h3><p>The final leg tests the nomadic spirit on the raw off-road trails of Batal, Chhatru, and Gramphu. Navigate glacial water crossings (pagal nalas) and boulder-strewn Chenab riverbeds before piercing through the engineering triumph of the Atal Tunnel. In an instant, the arid desert transforms back into the lush, pine-scented warmth of Manali. Celebrate the triumph of completing the entire circuit with cafe hopping in Old Manali before your overnight Volvo returns you to Delhi.</p><h3>Why Experience Spiti with Trail Explorers?</h3><p><strong>Raw, Authentic &amp; Non-Commercial:</strong> We don\u2019t run cookie-cutter tourist trips. We travel like a nomadic tribe\u2014staying in handpicked local homestays, sharing regional food, and connecting with local cultures.</p><p><strong>High-Altitude Safety First:</strong> Dedicated trip captains, certified drivers, continuous acclimatization management, portable medical oxygen cylinders, and emergency protocols.</p><p><strong>Seamless, Transparent &amp; Soulful:</strong> From permits and comfortable transport to verified stays and stargazing nights\u2014every detail is curated so you can fully lose yourself in the mountain magic.</p><p>Pack your rucksack, leave the city routine behind, and claim your seat on the ultimate Spiti Summer Circuit. The Middle Land is calling!</p>",
+    "about_text": "<h3>Spiti Full Summer Circuit: The Ultimate Himalayan Odyssey with Trail Explorers</h3><p>There is travel that lets you see places, and then there is the Trail Explorers journey—where the mountains don't just surround you; they become a part of your soul. Welcome to the Spiti Full Summer Circuit (8 Days / 7 Nights), an epic overland expedition that transitions from the chaotic rhythm of city life into the raw, silence-carved landscapes of the Middle Land. Starting from Delhi and traversing through the emerald gorges of Kinnaur, ancient cliffside monasteries, the highest inhabited villages on Earth, and the mystic shores of Chandratal Lake, this is not just a road trip—it is an initiation into the true Explorer spirit.</p><h3>The Journey: From Kinnaur’s Deep Gorges to the Cold Desert of Spiti</h3><p>The complete Spiti circuit is widely regarded as one of the world’s most legendary high-altitude road trips. Unlike short back-and-forth routes, our full circuit enters via the gradual ascent of Shimla and Kinnaur Valley and exits through the wild, adrenaline-fueled off-road terrain of Kunzum Pass, Batal, and Manali. This clockwise route ensures natural acclimatization, allowing your body and mind to seamlessly adapt to the thin Himalayan air.</p><p>Your nomadic expedition begins with an overnight transition from Delhi into the misty pine hills of Shimla. From here, our rugged expedition vehicles roll alongside the roaring Sutlej River through the dramatic, rock-carved cliff roads of Kinnaur. Settle into the rustic beauty of Sangla Valley and Chitkul—the last inhabited village near the Indo-Tibet border—where wooden cottages, crisp mountain breezes, and views of the snow-dusted Kinnaur Kailash range set the tone for the adventure ahead.</p><p>As we cross the sacred Khab Sangam—the raw confluence of the Spiti and Sutlej rivers—the green alpine forests dramatically yield to the barren, sculpted moonscapes of the trans-Himalayan desert. Along the way, we pause by the reflective serenity of Nako Lake and take a detour to the remote outpost of Gue, home to the 500-year-old naturally preserved mummified body of Buddhist monk Sangha Tenzin.</p><h3>Ancient Monasteries &amp; Postcards from the Clouds</h3><p>In the heart of Spiti Valley, history breathes through mud brick and ancient sacred chants. Step inside the 1,000-year-old Tabo Monastery, revered as the ‘Ajanta of the Himalayas’, where sacred wall murals and ancient meditation caves transport you back across centuries. Feel your spine tingle as you gaze upon the dramatic, cliff-hanging Dhankar Gompa, standing defiantly on razor-sharp spires high above the Pin-Spiti river confluence.</p><p>Based out of the vibrant desert hub of Kaza, our high-altitude village safari takes you to the literal rooftop of the world:</p><p><strong>Hikkim (14,567 ft):</strong> Write a heartfelt, ink-on-paper letter from the World’s Highest Post Office and send a piece of the Himalayas directly to your loved ones.</p><p><strong>Komic (15,027 ft):</strong> Feel the quiet reverence of the World’s Highest Motorable Village, standing beneath fluttering multi-colored prayer flags.</p><p><strong>Langza (The Fossil Village):</strong> Gaze upon the iconic giant Golden Buddha statue facing the mighty Chau Chau Kang Nilda peak, and walk across ancient shale beds to discover million-year-old marine fossils from the ancient Tethys Sea.</p><h3>Over Kunzum Pass to the Mystic Waters of Chandratal</h3><p>No Spiti expedition is complete without visiting the fortress-like Key Monastery, where young monks warmly offer steaming butter tea, and crossing the staggering Chicham Bridge—Asia's highest suspension bridge spanning a thousand-foot vertical gorge.</p><p>Conquer the mighty Kunzum Pass (14,931 ft), pay homage at the Kunzum Mata shrine, and descend into the hidden sanctuary of Chandratal (The Moon Lake). Hike along its ever-changing turquoise and deep-blue waters, surrounded by amphitheaters of snow-capped peaks. As night falls over our alpine campsite, sit around the warmth of community conversations and look up at the unpolluted, dazzling expanse of the Milky Way Galaxy stretching from horizon to horizon.</p><h3>The Wild Off-Road Exit via Manali &amp; Atal Tunnel</h3><p>The final leg tests the nomadic spirit on the raw off-road trails of Batal, Chhatru, and Gramphu. Navigate glacial water crossings (pagal nalas) and boulder-strewn Chenab riverbeds before piercing through the engineering triumph of the Atal Tunnel. In an instant, the arid desert transforms back into the lush, pine-scented warmth of Manali. Celebrate the triumph of completing the entire circuit with cafe hopping in Old Manali before your overnight Volvo returns you to Delhi.</p><h3>Why Experience Spiti with Trail Explorers?</h3><p><strong>Raw, Authentic &amp; Non-Commercial:</strong> We don’t run cookie-cutter tourist trips. We travel like a nomadic tribe—staying in handpicked local homestays, sharing regional food, and connecting with local cultures.</p><p><strong>High-Altitude Safety First:</strong> Dedicated trip captains, certified drivers, continuous acclimatization management, portable medical oxygen cylinders, and emergency protocols.</p><p><strong>Seamless, Transparent &amp; Soulful:</strong> From permits and comfortable transport to verified stays and stargazing nights—every detail is curated so you can fully lose yourself in the mountain magic.</p><p>Pack your rucksack, leave the city routine behind, and claim your seat on the ultimate Spiti Summer Circuit. The Middle Land is calling!</p>",
     "itinerary": [
       {
         "day": 1,
@@ -6602,10 +6602,10 @@ export const TRIPS_DATA: Trip[] = [
           "The Kinnaur Gate & India's Last Village.",
           "Wake up to crisp Shimla breeze, meet your Trail Explorers trip captain, and board your expedition vehicle.",
           "Drive alongside the roaring Sutlej River through the jaw-dropping cliff-carved roads of Kinnaur Valley.",
-          "Journey towards the magical Baspa Valley to reach Sangla/Chitkul\u2014India's last inhabited border village.",
+          "Journey towards the magical Baspa Valley to reach Sangla/Chitkul—India's last inhabited border village.",
           "Check in, soak in views of snow-dusted Kinnaur Kailash peaks, and enjoy a warm riverside evening dinner under clear skies."
         ],
-        "details": "The Kinnaur Gate & India's Last Village. Wake up to crisp Shimla breeze, meet your Trail Explorers trip captain, and board your expedition vehicle. Drive alongside the roaring Sutlej River through the jaw-dropping cliff-carved roads of Kinnaur Valley. Journey towards the magical Baspa Valley to reach Sangla/Chitkul\u2014India's last inhabited border village. Check in, soak in views of snow-dusted Kinnaur Kailash peaks, and enjoy a warm riverside evening dinner under clear skies."
+        "details": "The Kinnaur Gate & India's Last Village. Wake up to crisp Shimla breeze, meet your Trail Explorers trip captain, and board your expedition vehicle. Drive alongside the roaring Sutlej River through the jaw-dropping cliff-carved roads of Kinnaur Valley. Journey towards the magical Baspa Valley to reach Sangla/Chitkul—India's last inhabited border village. Check in, soak in views of snow-dusted Kinnaur Kailash peaks, and enjoy a warm riverside evening dinner under clear skies."
       },
       {
         "day": 3,
@@ -6626,10 +6626,10 @@ export const TRIPS_DATA: Trip[] = [
           "The Ajanta of the Himalayas & Cliffside Citadels.",
           "Start your morning exploring the 1000-year-old UNESCO-listed Tabo Monastery, admiring ancient mud murals and sacred meditation caves.",
           "Drive along the Spiti River towards the dramatic cliff-hanging Dhankar Monastery, perched precariously on razor-sharp mud spires overlooking the Pin-Spiti river confluence.",
-          "Arrive in the heart of Spiti\u2014Kaza.",
+          "Arrive in the heart of Spiti—Kaza.",
           "Spend the evening exploring the vibrant Kaza market, sipping hot seabuckthorn tea, and cafe hopping."
         ],
-        "details": "The Ajanta of the Himalayas & Cliffside Citadels. Start your morning exploring the 1000-year-old UNESCO-listed Tabo Monastery, admiring ancient mud murals and sacred meditation caves. Drive along the Spiti River towards the dramatic cliff-hanging Dhankar Monastery, perched precariously on razor-sharp mud spires overlooking the Pin-Spiti river confluence. Arrive in the heart of Spiti\u2014Kaza. Spend the evening exploring the vibrant Kaza market, sipping hot seabuckthorn tea, and cafe hopping."
+        "details": "The Ajanta of the Himalayas & Cliffside Citadels. Start your morning exploring the 1000-year-old UNESCO-listed Tabo Monastery, admiring ancient mud murals and sacred meditation caves. Drive along the Spiti River towards the dramatic cliff-hanging Dhankar Monastery, perched precariously on razor-sharp mud spires overlooking the Pin-Spiti river confluence. Arrive in the heart of Spiti—Kaza. Spend the evening exploring the vibrant Kaza market, sipping hot seabuckthorn tea, and cafe hopping."
       },
       {
         "day": 5,
@@ -6637,23 +6637,23 @@ export const TRIPS_DATA: Trip[] = [
         "points": [
           "Postcards, Prayer Flags & Ancient Sea Fossils.",
           "Embark on an epic high-altitude safari to the world's most iconic remote outposts.",
-          "Drop a handwritten postcard to loved ones from Hikkim (World\u2019s Highest Post Office at 14,567 ft).",
-          "Ascend further to Komic (World\u2019s Highest Motorable Village connected by motorable road at 15,027 ft) and feel the divine energy at the highest monastery.",
+          "Drop a handwritten postcard to loved ones from Hikkim (World’s Highest Post Office at 14,567 ft).",
+          "Ascend further to Komic (World’s Highest Motorable Village connected by motorable road at 15,027 ft) and feel the divine energy at the highest monastery.",
           "Head to the prehistoric fossil village of Langza, stand under the giant golden Buddha statue gazing at Mt. Chau Chau Kang Nilda, and hunt for million-year-old marine fossils with local kids.",
           "Return to Kaza for leisure time."
         ],
-        "details": "Postcards, Prayer Flags & Ancient Sea Fossils. Embark on an epic high-altitude safari to the world's most iconic remote outposts. Drop a handwritten postcard to loved ones from Hikkim (World\u2019s Highest Post Office at 14,567 ft). Ascend further to Komic (World\u2019s Highest Motorable Village connected by motorable road at 15,027 ft) and feel the divine energy at the highest monastery. Head to the prehistoric fossil village of Langza, stand under the giant golden Buddha statue gazing at Mt. Chau Chau Kang Nilda, and hunt for million-year-old marine fossils with local kids. Return to Kaza for leisure time."
+        "details": "Postcards, Prayer Flags & Ancient Sea Fossils. Embark on an epic high-altitude safari to the world's most iconic remote outposts. Drop a handwritten postcard to loved ones from Hikkim (World’s Highest Post Office at 14,567 ft). Ascend further to Komic (World’s Highest Motorable Village connected by motorable road at 15,027 ft) and feel the divine energy at the highest monastery. Head to the prehistoric fossil village of Langza, stand under the giant golden Buddha statue gazing at Mt. Chau Chau Kang Nilda, and hunt for million-year-old marine fossils with local kids. Return to Kaza for leisure time."
       },
       {
         "day": 6,
         "title": "Kaza to Chandratal Lake (via Key, Chicham & Kunzum Pass)",
         "points": [
           "Over 15,000 Ft to the Mystic Moon Lake.",
-          "Visit the iconic, fortress-like Key Monastery where young monks share butter tea, then test your nerves driving over Chicham Bridge\u2014Asia's highest suspension bridge towering 1,000 ft above a deadly gorge.",
+          "Visit the iconic, fortress-like Key Monastery where young monks share butter tea, then test your nerves driving over Chicham Bridge—Asia's highest suspension bridge towering 1,000 ft above a deadly gorge.",
           "Cross the formidable Kunzum Pass (14,931 ft), seek blessings from Kunzum Mata, and descend towards the mystical turquoise waters of Chandratal (Moon Lake).",
           "Hike along the pristine lakeshore and experience a magical night of cozy dome camping under the Milky Way galaxy."
         ],
-        "details": "Over 15,000 Ft to the Mystic Moon Lake. Visit the iconic, fortress-like Key Monastery where young monks share butter tea, then test your nerves driving over Chicham Bridge\u2014Asia's highest suspension bridge towering 1,000 ft above a deadly gorge. Cross the formidable Kunzum Pass (14,931 ft), seek blessings from Kunzum Mata, and descend towards the mystical turquoise waters of Chandratal (Moon Lake). Hike along the pristine lakeshore and experience a magical night of cozy dome camping under the Milky Way galaxy."
+        "details": "Over 15,000 Ft to the Mystic Moon Lake. Visit the iconic, fortress-like Key Monastery where young monks share butter tea, then test your nerves driving over Chicham Bridge—Asia's highest suspension bridge towering 1,000 ft above a deadly gorge. Cross the formidable Kunzum Pass (14,931 ft), seek blessings from Kunzum Mata, and descend towards the mystical turquoise waters of Chandratal (Moon Lake). Hike along the pristine lakeshore and experience a magical night of cozy dome camping under the Milky Way galaxy."
       },
       {
         "day": 7,
@@ -6661,10 +6661,10 @@ export const TRIPS_DATA: Trip[] = [
         "points": [
           "The Wild Chhatru Off-Road & Atal Tunnel.",
           "Conquer the legendary rugged trails of Batal and Chhatru, navigating adrenaline-pumping glacial water crossings (pagal nalas) and roaring Chenab riverbeds.",
-          "Cross through the engineering marvel\u2014Atal Tunnel\u2014to instantly switch from cold desert to the lush pine forests of Manali.",
+          "Cross through the engineering marvel—Atal Tunnel—to instantly switch from cold desert to the lush pine forests of Manali.",
           "Enjoy leisure time for cafe hopping in Old Manali, shopping at Mall Road, and celebrating the complete Spiti circuit before boarding your evening AC Volvo to Delhi."
         ],
-        "details": "The Wild Chhatru Off-Road & Atal Tunnel. Conquer the legendary rugged trails of Batal and Chhatru, navigating adrenaline-pumping glacial water crossings (pagal nalas) and roaring Chenab riverbeds. Cross through the engineering marvel\u2014Atal Tunnel\u2014to instantly switch from cold desert to the lush pine forests of Manali. Enjoy leisure time for cafe hopping in Old Manali, shopping at Mall Road, and celebrating the complete Spiti circuit before boarding your evening AC Volvo to Delhi."
+        "details": "The Wild Chhatru Off-Road & Atal Tunnel. Conquer the legendary rugged trails of Batal and Chhatru, navigating adrenaline-pumping glacial water crossings (pagal nalas) and roaring Chenab riverbeds. Cross through the engineering marvel—Atal Tunnel—to instantly switch from cold desert to the lush pine forests of Manali. Enjoy leisure time for cafe hopping in Old Manali, shopping at Mall Road, and celebrating the complete Spiti circuit before boarding your evening AC Volvo to Delhi."
       },
       {
         "day": 8,
@@ -6702,15 +6702,15 @@ export const TRIPS_DATA: Trip[] = [
     "package_options": [
       {
         "title": "Quad Sharing",
-        "price": "\u20b916,499"
+        "price": "₹16,499"
       },
       {
         "title": "Triple Sharing",
-        "price": "\u20b917,499"
+        "price": "₹17,499"
       },
       {
         "title": "Double Sharing",
-        "price": "\u20b918,499"
+        "price": "₹18,499"
       }
     ],
     "sub_package_options": "",
@@ -6764,7 +6764,7 @@ export const TRIPS_DATA: Trip[] = [
     "faqs": [
       {
         "question": "WHAT EXACTLY IS THE \"TRAIL EXPLORER STYLE\" OF EXPERIENCING SPITI?",
-        "answer": "Unlike commercial, rigid group tours, our Trail Explorer style means traveling like a nomadic tribe\u2014embracing raw mountain rhythms, staying in handpicked soulful homestays rather than sterile hotels, sharing local food stories around bonfire embers, and deeply connecting with local culture instead of just checking off tourist spots."
+        "answer": "Unlike commercial, rigid group tours, our Trail Explorer style means traveling like a nomadic tribe—embracing raw mountain rhythms, staying in handpicked soulful homestays rather than sterile hotels, sharing local food stories around bonfire embers, and deeply connecting with local culture instead of just checking off tourist spots."
       },
       {
         "question": "WHY DO WE ENTER VIA SHIMLA AND EXIT VIA MANALI IN THIS CLOCKWISE CIRCUIT?",
@@ -6780,7 +6780,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "WHAT IS THE VIBE OF THE HOMESTAYS WE STAY IN?",
-        "answer": "We skip luxury commercial hotels in favor of authentic, family-run Spitian homestays and scenic riverside properties. You\u2019ll experience traditional mud-brick architecture, warm wooden interiors, local hospitality, and home-cooked meals straight from local kitchens."
+        "answer": "We skip luxury commercial hotels in favor of authentic, family-run Spitian homestays and scenic riverside properties. You’ll experience traditional mud-brick architecture, warm wooden interiors, local hospitality, and home-cooked meals straight from local kitchens."
       },
       {
         "question": "DO I NEED ANY PREVIOUS OFF-ROAD DRIVING OR TREKKING EXPERIENCE FOR THIS TRIP?",
@@ -6788,7 +6788,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "ARE THERE NETWORK OR INTERNET CONNECTIVITY ISSUES IN SPITI VALLEY?",
-        "answer": "Yes, Spiti is a digital detox zone. Postpaid BSNL and Jio sims work intermittently in major pockets like Kaza, while Kinnaur and upper Spiti have little to no network. Embrace the disconnect\u2014the mountains are your real Wi-Fi here!"
+        "answer": "Yes, Spiti is a digital detox zone. Postpaid BSNL and Jio sims work intermittently in major pockets like Kaza, while Kinnaur and upper Spiti have little to no network. Embrace the disconnect—the mountains are your real Wi-Fi here!"
       },
       {
         "question": "WHAT KIND OF FOOD CAN WE EXPECT DURING THE HIGH-ALTITUDE JOURNEY?",
@@ -6796,7 +6796,7 @@ export const TRIPS_DATA: Trip[] = [
       },
       {
         "question": "WHAT SHOULD I PACK TO HANDLE RAPID WEATHER CHANGES IN SPITI?",
-        "answer": "Spiti is famous for four seasons in a single day\u2014intense high-altitude sun, biting mountain winds, and sudden evening chills. Layering is your best friend: pack thermal innerwear, windproof/waterproof jackets, UV sunglasses, sunscreen, sturdy trekking shoes, and a woolen beanie."
+        "answer": "Spiti is famous for four seasons in a single day—intense high-altitude sun, biting mountain winds, and sudden evening chills. Layering is your best friend: pack thermal innerwear, windproof/waterproof jackets, UV sunglasses, sunscreen, sturdy trekking shoes, and a woolen beanie."
       },
       {
         "question": "HOW DO WE MANAGE MEDICAL EMERGENCIES OR HIGH ALTITUDE SICKNESS?",
@@ -6847,5 +6847,1938 @@ export const TRIPS_DATA: Trip[] = [
     "is_featured_lemonade": true,
     "updated_at": "2026-09-26T04:41:00.439Z",
     "slug": "spiti-full-summer-circuit-106"
+  },
+  {
+    "title": "Jaisalmer Desert Safari & Golden City Expedition",
+    "duration": "3 Days / 2 Nights",
+    "price": "₹6,499",
+    "category": "rajasthan_tours",
+    "route": "Ahmedabad / Palanpur — Jaisalmer — Sam Sand Dunes — Kuldhara — Rajasthan",
+    "pickup_location": "Ahmedabad / Palanpur",
+    "weather_spot": "Jaisalmer",
+    "tags": "Explorer, Adventure Lovers, Nature Lovers, Friends & Family, Easy",
+    "image_url": "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/jaisalmer-desert-safari/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>3 Days of Thar Desert Camping, Sam Sand Dunes, Living Fort &amp; Folk Culture</strong></p><p>Explore Jaisalmer, Rajasthan&#x27;s &#x27;Golden City&#x27;. Experience desert camel safaris on Sam Sand Dunes, visit the haunted Kuldhara village, Gadisar Lake, and the living Golden Fort.</p><p>Jaisalmer is a historic city in Rajasthan, known as the &#x27;Golden City&#x27; for its yellow sandstone architecture and location in the Thar Desert. Founded in 1156 by Rawal Jaisal, it was a key medieval trading center. Highlights include the living Jaisalmer Fort, Patwon Ki Haveli, Gadisar Lake, Sam Sand Dunes camel safari, musical evenings with Rajasthani folk dance, and stargazing in the Thar desert.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Jaisalmer & Kuldhara to Sam Sand Dunes",
+        "details": "Depart from Ahmedabad at 8:00 PM previous night. Route breakfast and freshen up. Visit the mysterious Kuldhara Haunted Village. Arrive at Sam Desert around noon. Check into Swiss desert tents with traditional welcome (tikka & dhol). Evening camel safari into Sam Dunes for sunset. Enjoy Rajasthani folk dance, cultural program, DJ party, and authentic Rajasthani dinner under starlit desert sky.",
+        "description": "Depart from Ahmedabad at 8:00 PM previous night. Route breakfast and freshen up. Visit the mysterious Kuldhara Haunted Village. Arrive at Sam Desert around noon. Check into Swiss desert tents with traditional welcome (tikka & dhol). Evening camel safari into Sam Dunes for sunset. Enjoy Rajasthani folk dance, cultural program, DJ party, and authentic Rajasthani dinner under starlit desert sky.",
+        "meals": "Evening Tea, Snacks & Rajasthani Buffet Dinner",
+        "stay": "Luxury Swiss Tent at Sam Sand Dunes",
+        "highlights": [
+          "Kuldhara Abandoned Village",
+          "Sunset Camel Safari",
+          "Rajasthani Folk Dance & Kalbelia",
+          "Desert Campfire & DJ"
+        ],
+        "points": [
+          "Depart from Ahmedabad at 8:00 PM previous night",
+          "Route breakfast and freshen up",
+          "Visit the mysterious Kuldhara Haunted Village",
+          "Arrive at Sam Desert around noon",
+          "Check into Swiss desert tents with traditional welcome (tikka & dhol)",
+          "Evening camel safari into Sam Dunes for sunset",
+          "Enjoy Rajasthani folk dance, cultural program, DJ party, and authentic Rajasthani dinner under starlit desert sky."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Sam Dunes Sunrise, Jeep Safari, War Museum & Jaisalmer Fort",
+        "details": "Early morning jeep safari on Thar sand dunes. Breakfast at camp. Visit Jaisalmer War Museum (Longewala war artifacts). Explore the UNESCO World Heritage Jaisalmer Living Fort, Jain Temples, and opulent Patwon Ki Haveli. Evening serene walk around Gadisar Lake. Local market shopping for handicrafts and leather items. Overnight stay at Jaisalmer hotel.",
+        "description": "Early morning jeep safari on Thar sand dunes. Breakfast at camp. Visit Jaisalmer War Museum (Longewala war artifacts). Explore the UNESCO World Heritage Jaisalmer Living Fort, Jain Temples, and opulent Patwon Ki Haveli. Evening serene walk around Gadisar Lake. Local market shopping for handicrafts and leather items. Overnight stay at Jaisalmer hotel.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Heritage Hotel in Jaisalmer City",
+        "highlights": [
+          "Thar Jeep Dune Bashing",
+          "Jaisalmer Living Fort",
+          "Patwon Ki Haveli",
+          "Gadisar Lake Sunset Walk"
+        ],
+        "points": [
+          "Early morning jeep safari on Thar sand dunes",
+          "Breakfast at camp",
+          "Visit Jaisalmer War Museum (Longewala war artifacts)",
+          "Explore the UNESCO World Heritage Jaisalmer Living Fort, Jain Temples, and opulent Patwon Ki Haveli",
+          "Evening serene walk around Gadisar Lake",
+          "Local market shopping for handicrafts and leather items",
+          "Overnight stay at Jaisalmer hotel."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Tanot Mata Temple & Return Journey to Ahmedabad",
+        "details": "Morning breakfast and hotel checkout. Optional excursion to holy Tanot Mata Temple near the Indo-Pak border. Begin return journey toward Ahmedabad. Lunch on highway. Arrive back in Ahmedabad late night with unforgettable golden desert memories.",
+        "description": "Morning breakfast and hotel checkout. Optional excursion to holy Tanot Mata Temple near the Indo-Pak border. Begin return journey toward Ahmedabad. Lunch on highway. Arrive back in Ahmedabad late night with unforgettable golden desert memories.",
+        "meals": "Breakfast & Route Lunch",
+        "stay": "Return Journey / Home",
+        "highlights": [
+          "Tanot Mata Temple Excursion",
+          "Scenic Thar Desert Highway Drive",
+          "Arrival in Ahmedabad"
+        ],
+        "points": [
+          "Morning breakfast and hotel checkout",
+          "Optional excursion to holy Tanot Mata Temple near the Indo-Pak border",
+          "Begin return journey toward Ahmedabad",
+          "Lunch on highway",
+          "Arrive back in Ahmedabad late night with unforgettable golden desert memories."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Comfortable AC pushback bus / tempo traveller transportation ex-Ahmedabad & Palanpur",
+      "1-Night luxury desert camp stay in Sam Sand Dunes + 1-Night hotel stay in Jaisalmer City",
+      "Meals as per plan: 2 Breakfasts, 1 Highway Lunch, 2 Dinners + Evening Hi-Tea & Snacks",
+      "Sunset Camel Safari on Sam Sand Dunes",
+      "Evening Rajasthani Cultural Folk Dance, Fire Dance & DJ night",
+      "All toll taxes, parking fees, interstate driver allowances",
+      "Experienced Tour Leader throughout the trip"
+    ],
+    "exclusions": [
+      "Monument entry tickets (Jaisalmer Fort museum, Havelis, War Museum)",
+      "Jeep dune bashing / Quad biking / Parasailing charges (available at camp on direct payment)",
+      "Day 1 breakfast during transit",
+      "Any personal expenses, tips, laundry, mineral water",
+      "GST (5%) or emergency expenses"
+    ],
+    "packing_list": [
+      {
+        "category": "Clothing",
+        "items": [
+          "Light cotton clothes for day (25-30°C)",
+          "Warm woolen jacket/sweater for night (8-12°C)",
+          "Comfortable walking shoes/sandals",
+          "Scarf/dupatta to protect against desert sand"
+        ]
+      },
+      {
+        "category": "Essentials & Toiletries",
+        "items": [
+          "Sunscreen (SPF 50+) & Sunglasses",
+          "Lip balm & moisturizer",
+          "Power bank & phone charger",
+          "Valid government ID proof (Aadhar/Voter ID)",
+          "Personal first aid kit & prescribed medicines"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Four Sharing (Quad Occupancy) (Quad)",
+        "price": "₹6,499",
+        "description": "Spacious Swiss tent & hotel room shared by 4 travelers. Ideal for groups & college friends."
+      },
+      {
+        "title": "Three Sharing (Triple Occupancy) (Triple)",
+        "price": "₹6,999",
+        "description": "Triple sharing tent and hotel room with extra bed. Perfect for friends."
+      },
+      {
+        "title": "Two Sharing (Double / Couple Occupancy) (Double)",
+        "price": "₹7,999",
+        "description": "Private double room & luxury tent for couples or paired friends."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "What is the pickup point and departure timing from Ahmedabad?",
+        "answer": "Departure is at 8:00 PM on Day 0 from RTO Circle / Iscon Cross Roads, Ahmedabad with an additional pickup at Palanpur."
+      },
+      {
+        "question": "Is desert camping safe for solo female travelers and families?",
+        "answer": "Yes, our Swiss desert camps in Sam are fully gated, family-friendly, well-lit, with private attached western washrooms and 24/7 on-ground tour managers."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Jaisalmer Desert Safari 3D/2N Tour from Ahmedabad | Trail Explorers",
+    "meta_description": "Book 3 Days Jaisalmer & Sam Sand Dunes group tour from Ahmedabad. Includes luxury desert tent, camel safari, Rajasthani folk dance, and fort sightseeing. Starts at ₹6,499/-.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/jaisalmer-desert-safari-golden-city-expedition-3d2n",
+    "id": "pdf_jaisalmer_3d2n",
+    "slug": "jaisalmer-desert-safari-golden-city-expedition-3d2n"
+  },
+  {
+    "title": "Kashmir Alpine Paradise & Snow Experience",
+    "duration": "10 Days / 9 Nights",
+    "price": "₹26,000",
+    "category": "kashmir_tours",
+    "route": "Ahmedabad (via Udhampur train) — Srinagar — Gulmarg — Pahalgam — Sonamarg — Dal Lake — Kashmir",
+    "pickup_location": "Ahmedabad (via Udhampur train)",
+    "weather_spot": "Srinagar",
+    "tags": "Explorer, Adventure Lovers, Nature Lovers, Friends & Family, Easy to Moderate",
+    "image_url": "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/kashmir-alpine-paradise/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>10 Days Himalayan Journey Covering Srinagar, Gulmarg, Pahalgam, Sonamarg &amp; Dal Lake Houseboat</strong></p><p>Blessed with snow-clad peaks, pine forests, and shimmering alpine lakes. Ride the Gulmarg Gondola, stay in a heritage wooden houseboat on Dal Lake, explore Betaab Valley, and witness Sonamarg glaciers.</p><p>Blessed with snow-clad mountains, lush valleys, and shimmering lakes, Kashmir is truly a slice of heaven nestled in the lap of the Himalayas. From the peaceful Dal Lake with its charming houseboats and shikaras to the stunning landscapes of Gulmarg, Pahalgam, and Sonmarg, every corner of Kashmir radiates beauty and serenity.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Udhampur (Train Journey)",
+        "details": "Board the train from Ahmedabad Railway Station and start your scenic journey to North India. Relax, socialize with fellow travelers, enjoy local snacks and chai at stations along Gujarat, Rajasthan, and Punjab. Overnight train journey.",
+        "description": "Board the train from Ahmedabad Railway Station and start your scenic journey to North India. Relax, socialize with fellow travelers, enjoy local snacks and chai at stations along Gujarat, Rajasthan, and Punjab. Overnight train journey.",
+        "meals": "Meals during train journey at own cost",
+        "stay": "Train (Sleeper / 3AC as booked)",
+        "highlights": [
+          "Ahmedabad Departure",
+          "Scenic Inter-State Rail Transit",
+          "Group Bonding"
+        ],
+        "points": [
+          "Board the train from Ahmedabad Railway Station and start your scenic journey to North India",
+          "Relax, socialize with fellow travelers, enjoy local snacks and chai at stations along Gujarat, Rajasthan, and Punjab",
+          "Overnight train journey."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Arrival at Udhampur & Scenic Drive to Srinagar",
+        "details": "Arrive at Udhampur Railway Station in the morning. Meet our private transport and drive through the Chenani-Nashri Tunnel and Banihal Pass into the breathtaking Kashmir Valley. Check into hotel in Srinagar. Evening free to stroll along Boulevard Road.",
+        "description": "Arrive at Udhampur Railway Station in the morning. Meet our private transport and drive through the Chenani-Nashri Tunnel and Banihal Pass into the breathtaking Kashmir Valley. Check into hotel in Srinagar. Evening free to stroll along Boulevard Road.",
+        "meals": "Dinner",
+        "stay": "Deluxe Hotel in Srinagar",
+        "highlights": [
+          "Chenani-Nashri Tunnel (India’s longest road tunnel)",
+          "First Glimpse of Pir Panjal Valley",
+          "Srinagar Arrival"
+        ],
+        "points": [
+          "Arrive at Udhampur Railway Station in the morning",
+          "Meet our private transport and drive through the Chenani-Nashri Tunnel and Banihal Pass into the breathtaking Kashmir Valley",
+          "Check into hotel in Srinagar",
+          "Evening free to stroll along Boulevard Road."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Srinagar Local Sightseeing & Mughal Gardens",
+        "details": "Full day dedicated to the crown jewels of Srinagar: Shalimar Bagh, Nishat Bagh, and Chashme Shahi Mughal Gardens. Visit the ancient hilltop Shankaracharya Temple offering panoramic 360-degree views of Srinagar city and Dal Lake. Evening shopping for authentic saffron, dry fruits, and pashmina shawls.",
+        "description": "Full day dedicated to the crown jewels of Srinagar: Shalimar Bagh, Nishat Bagh, and Chashme Shahi Mughal Gardens. Visit the ancient hilltop Shankaracharya Temple offering panoramic 360-degree views of Srinagar city and Dal Lake. Evening shopping for authentic saffron, dry fruits, and pashmina shawls.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Deluxe Hotel in Srinagar",
+        "highlights": [
+          "Nishat & Shalimar Gardens",
+          "Shankaracharya Shiva Temple (9th century)",
+          "Old Srinagar Bazaar"
+        ],
+        "points": [
+          "Full day dedicated to the crown jewels of Srinagar: Shalimar Bagh, Nishat Bagh, and Chashme Shahi Mughal Gardens",
+          "Visit the ancient hilltop Shankaracharya Temple offering panoramic 360-degree views of Srinagar city and Dal Lake",
+          "Evening shopping for authentic saffron, dry fruits, and pashmina shawls."
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Day Excursion to Sonamarg — Meadow of Gold",
+        "details": "Drive alongside the roaring Sindh River to Sonamarg (8,950 ft). Behold dramatic glacier views of Thajiwas Glacier. Enjoy pony rides, snow sledging, or riverside walks. Return to Srinagar hotel in the evening.",
+        "description": "Drive alongside the roaring Sindh River to Sonamarg (8,950 ft). Behold dramatic glacier views of Thajiwas Glacier. Enjoy pony rides, snow sledging, or riverside walks. Return to Srinagar hotel in the evening.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Deluxe Hotel in Srinagar",
+        "highlights": [
+          "Sindh River Valley Drive",
+          "Thajiwas Glacier Snow Point",
+          "Sonamarg Meadow Walks"
+        ],
+        "points": [
+          "Drive alongside the roaring Sindh River to Sonamarg (8,950 ft)",
+          "Behold dramatic glacier views of Thajiwas Glacier",
+          "Enjoy pony rides, snow sledging, or riverside walks",
+          "Return to Srinagar hotel in the evening."
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Srinagar to Gulmarg — Meadow of Flowers & Gondola Ride",
+        "details": "Morning drive to world-renowned ski resort Gulmarg (8,690 ft). Board the famous Gulmarg Gondola (Asia's highest cable car) up to Phase 1 (Kongdoori) and Phase 2 (Apharwat Peak at 13,780 ft). Enjoy skiing, snowboarding, and untouched snowscapes. Check into hotel in Gulmarg or return to Srinagar.",
+        "description": "Morning drive to world-renowned ski resort Gulmarg (8,690 ft). Board the famous Gulmarg Gondola (Asia's highest cable car) up to Phase 1 (Kongdoori) and Phase 2 (Apharwat Peak at 13,780 ft). Enjoy skiing, snowboarding, and untouched snowscapes. Check into hotel in Gulmarg or return to Srinagar.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Comfort Hotel in Gulmarg / Srinagar",
+        "highlights": [
+          "Gulmarg Gondola Phase 1 & 2",
+          "Apharwat Peak Snow Walk",
+          "Historic St. Mary's Church"
+        ],
+        "points": [
+          "Morning drive to world-renowned ski resort Gulmarg (8,690 ft)",
+          "Board the famous Gulmarg Gondola (Asia's highest cable car) up to Phase 1 (Kongdoori) and Phase 2 (Apharwat Peak at 13,780 ft)",
+          "Enjoy skiing, snowboarding, and untouched snowscapes",
+          "Check into hotel in Gulmarg or return to Srinagar."
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Gulmarg to Pahalgam — Valley of Shepherds",
+        "details": "Depart for Pahalgam (7,200 ft), passing through saffron fields of Pampore and Apple Valley of Anantnag. Stop at historic Avantipur Ruins. Arrive in Pahalgam beside the turquoise Lidder River. Relax in the cedar-scented mountain air.",
+        "description": "Depart for Pahalgam (7,200 ft), passing through saffron fields of Pampore and Apple Valley of Anantnag. Stop at historic Avantipur Ruins. Arrive in Pahalgam beside the turquoise Lidder River. Relax in the cedar-scented mountain air.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Riverside Hotel in Pahalgam",
+        "highlights": [
+          "Pampore Saffron Farms",
+          "Avantipur Temple Ruins",
+          "Lidder River Valley"
+        ],
+        "points": [
+          "Depart for Pahalgam (7,200 ft), passing through saffron fields of Pampore and Apple Valley of Anantnag",
+          "Stop at historic Avantipur Ruins",
+          "Arrive in Pahalgam beside the turquoise Lidder River",
+          "Relax in the cedar-scented mountain air."
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Pahalgam Valley Exploration — Aru, Betaab & Chandanwari",
+        "details": "Hire local union taxis to visit Betaab Valley (named after the Bollywood hit), scenic Aru Valley, and Chandanwari (the start point of holy Amarnath Yatra). Optional pony trek to Baisaran Meadow (often called Mini Switzerland). Evening bonfire by Lidder River.",
+        "description": "Hire local union taxis to visit Betaab Valley (named after the Bollywood hit), scenic Aru Valley, and Chandanwari (the start point of holy Amarnath Yatra). Optional pony trek to Baisaran Meadow (often called Mini Switzerland). Evening bonfire by Lidder River.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Riverside Hotel in Pahalgam",
+        "highlights": [
+          "Betaab Valley",
+          "Aru Village",
+          "Chandanwari Glacier Point",
+          "Baisaran Mini Switzerland"
+        ],
+        "points": [
+          "Hire local union taxis to visit Betaab Valley (named after the Bollywood hit), scenic Aru Valley, and Chandanwari (the start point of holy Amarnath Yatra)",
+          "Optional pony trek to Baisaran Meadow (often called Mini Switzerland)",
+          "Evening bonfire by Lidder River."
+        ]
+      },
+      {
+        "day": 8,
+        "title": "Pahalgam to Srinagar & Heritage Dal Lake Houseboat Stay",
+        "details": "Drive back to Srinagar. Check into an authentic hand-carved cedarwood luxury houseboat on Dal Lake or Nigeen Lake. In the evening, enjoy a 1-hour sunset Shikara ride across the floating gardens, lotus marshes, and Meena Bazaar.",
+        "description": "Drive back to Srinagar. Check into an authentic hand-carved cedarwood luxury houseboat on Dal Lake or Nigeen Lake. In the evening, enjoy a 1-hour sunset Shikara ride across the floating gardens, lotus marshes, and Meena Bazaar.",
+        "meals": "Breakfast & Traditional Kashmiri Dinner",
+        "stay": "Heritage Houseboat on Dal Lake",
+        "highlights": [
+          "Luxury Houseboat Stay",
+          "Sunset Shikara Ride",
+          "Floating Market & Kashmiri Kahwa"
+        ],
+        "points": [
+          "Drive back to Srinagar",
+          "Check into an authentic hand-carved cedarwood luxury houseboat on Dal Lake or Nigeen Lake",
+          "In the evening, enjoy a 1-hour sunset Shikara ride across the floating gardens, lotus marshes, and Meena Bazaar."
+        ]
+      },
+      {
+        "day": 9,
+        "title": "Srinagar to Udhampur & Board Return Train",
+        "details": "After breakfast on the houseboat, depart Srinagar and drive down to Udhampur Railway Station. Board the return train to Ahmedabad.",
+        "description": "After breakfast on the houseboat, depart Srinagar and drive down to Udhampur Railway Station. Board the return train to Ahmedabad.",
+        "meals": "Breakfast",
+        "stay": "Overnight Train Journey",
+        "highlights": [
+          "Scenic Return Drive",
+          "Boarding Train to Ahmedabad"
+        ],
+        "points": [
+          "After breakfast on the houseboat, depart Srinagar and drive down to Udhampur Railway Station",
+          "Board the return train to Ahmedabad."
+        ]
+      },
+      {
+        "day": 10,
+        "title": "Arrival back in Ahmedabad",
+        "details": "Arrive at Ahmedabad Railway Station with hearts full of memories, camera rolls packed with snow pictures, and a lifetime of mountain friendships.",
+        "description": "Arrive at Ahmedabad Railway Station with hearts full of memories, camera rolls packed with snow pictures, and a lifetime of mountain friendships.",
+        "meals": "Train journey meals at own cost",
+        "stay": "Home",
+        "highlights": [
+          "Safe Arrival in Ahmedabad"
+        ],
+        "points": [
+          "Arrive at Ahmedabad Railway Station with hearts full of memories, camera rolls packed with snow pictures, and a lifetime of mountain friendships."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip train tickets (Ahmedabad ↔ Udhampur) in chosen class (Sleeper or 3AC)",
+      "Private sanitized Tempo Traveller / Mini Bus for all valley transfers as per itinerary",
+      "7 Nights accommodation: 5N Srinagar Hotel + 1N Pahalgam Hotel + 1N Heritage Dal Lake Houseboat",
+      "Meals: 7 Breakfasts & 7 Dinners (delicious vegetarian & Jain food available)",
+      "1-Hour Sunset Shikara Ride on Dal Lake",
+      "All toll taxes, parking fees, driver night allowances, state permits",
+      "Dedicated Trail Explorers Trip Captain"
+    ],
+    "exclusions": [
+      "Gulmarg Gondola cable car tickets (Phase 1 & 2 to be booked online at jammukashmircablecar.com)",
+      "Local union taxi in Pahalgam (for Aru, Betaab & Chandanwari) as outside vehicles are restricted by union",
+      "Pony/horse rides in Sonamarg, Gulmarg, or Baisaran",
+      "Peak Season Surcharge: 10% applicable for travel between 20th Dec and 10th Jan",
+      "Train transit meals and personal shopping",
+      "Emergency train fund: ₹500 buffer to be carried in cash"
+    ],
+    "packing_list": [
+      {
+        "category": "Warm Clothing",
+        "items": [
+          "Heavy down jacket / parka (-5°C rated)",
+          "Thermal innerwear (2-3 pairs)",
+          "Fleece sweaters",
+          "Woolen gloves & woolen caps (covering ears)",
+          "Woolen socks (4 pairs)"
+        ]
+      },
+      {
+        "category": "Toiletries & Meds",
+        "items": [
+          "Cold cream, lip balm & sunscreen SPF 50+",
+          "Motion sickness tablets (for ghat roads)",
+          "Personal first aid kit",
+          "Small hot water bag (optional but recommended)"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Non-AC Sleeper Train Package (Triple / Quad)",
+        "price": "₹26,000",
+        "description": "Round-trip Sleeper Class train tickets (Ahmedabad ↔ Udhampur) + all valley transfers & stays."
+      },
+      {
+        "title": "3-Tier AC Sleeper Train Package (Triple / Quad)",
+        "price": "₹28,000",
+        "description": "Round-trip 3AC Class train tickets (Ahmedabad ↔ Udhampur) + all valley transfers & stays."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "How do we book Gulmarg Gondola tickets?",
+        "answer": "Gulmarg Gondola tickets must be pre-booked online through the official Jammu & Kashmir Cable Car portal (jammukashmircablecar.com) at least 15-20 days in advance as on-spot tickets are unavailable."
+      },
+      {
+        "question": "Is post-paid SIM card required in Kashmir?",
+        "answer": "Yes. Pre-paid SIM cards from outside Jammu & Kashmir do not work due to telecom regulations. Only Postpaid SIMs (Jio, Airtel, BSNL) work. You can also purchase a local tourist SIM in Srinagar with your Aadhar card."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Kashmir 10D/9N Group Tour from Ahmedabad by Train | Trail Explorers",
+    "meta_description": "Book complete 10-day Kashmir group tour package from Ahmedabad. Srinagar, Gulmarg, Pahalgam, Sonamarg, and Dal Lake houseboat. Starts at ₹26,000/- with train tickets.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/kashmir-alpine-paradise-snow-experience-10d9n",
+    "id": "pdf_kashmir_10d9n",
+    "slug": "kashmir-alpine-paradise-snow-experience-10d9n"
+  },
+  {
+    "title": "Kasol, Manali & Sissu Himalayan Odyssey",
+    "duration": "8 Days / 7 Nights",
+    "price": "₹17,500",
+    "category": "himachal_tours",
+    "route": "Ahmedabad (via Chandigarh train) — Kasol — Manali — Sissu — Solang Valley — Manikaran — Himachal Pradesh",
+    "pickup_location": "Ahmedabad (via Chandigarh train)",
+    "weather_spot": "Kasol",
+    "tags": "Explorer, Adventure Lovers, Nature Lovers, Friends & Family, Easy to Moderate",
+    "image_url": "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/kasol-manali-sissu/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>8 Days Backpacking Across Parvati Valley, Solang, Atal Tunnel &amp; Lahaul Valley</strong></p><p>Experience the bohemian vibes of Kasol and Parvati Valley, Manikaran hot springs, cafe hopping, combined with the alpine charm of Manali, Solang adventure valley, and crossing Atal Tunnel into snowy Sissu.</p><p>Manali, nestled in the Kullu Valley of Himachal Pradesh, is a scenic hill station surrounded by snow-capped mountains and lush greenery, offering a perfect blend of adventure and leisure. Kasol, a serene village in the Parvati Valley, is famous for its peaceful riverside cafés, scenic trails, and relaxed vibe, often called the &#x27;Mini Israel of India&#x27;. Cross the engineering marvel of Atal Tunnel to witness the dramatic frozen waterfalls of Sissu in Lahaul Valley.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Chandigarh (Train Journey)",
+        "details": "Board the train from Ahmedabad Railway Station for an overnight journey to Chandigarh. Socialize with the group and rest for the mountain adventures.",
+        "description": "Board the train from Ahmedabad Railway Station for an overnight journey to Chandigarh. Socialize with the group and rest for the mountain adventures.",
+        "meals": "At own cost during train travel",
+        "stay": "Train (Sleeper / 3AC)",
+        "highlights": [
+          "Ahmedabad Departure",
+          "Overnight Rail Transit"
+        ],
+        "points": [
+          "Board the train from Ahmedabad Railway Station for an overnight journey to Chandigarh",
+          "Socialize with the group and rest for the mountain adventures."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Chandigarh Arrival & Scenic Drive to Kasol",
+        "details": "Arrive at Chandigarh in the morning. Board our private Tempo Traveller. Drive through Mandi, Pandoh Dam, and the scenic Aut Tunnel into Parvati Valley. Reach Kasol by evening. Check into riverside camp/hotel. Relax beside the roaring Parvati River.",
+        "description": "Arrive at Chandigarh in the morning. Board our private Tempo Traveller. Drive through Mandi, Pandoh Dam, and the scenic Aut Tunnel into Parvati Valley. Reach Kasol by evening. Check into riverside camp/hotel. Relax beside the roaring Parvati River.",
+        "meals": "Dinner",
+        "stay": "Riverside Camp / Hotel in Kasol",
+        "highlights": [
+          "Pandoh Dam",
+          "Aut Tunnel",
+          "Parvati River Sunset",
+          "Kasol Market Stroll"
+        ],
+        "points": [
+          "Arrive at Chandigarh in the morning",
+          "Board our private Tempo Traveller",
+          "Drive through Mandi, Pandoh Dam, and the scenic Aut Tunnel into Parvati Valley",
+          "Reach Kasol by evening",
+          "Check into riverside camp/hotel",
+          "Relax beside the roaring Parvati River."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Kasol, Manikaran Sahib Gurudwara & Chalal Trek",
+        "details": "Morning hike across the cable suspension bridge to Chalal village through pine forests. Visit holy Manikaran Sahib Gurudwara, known for its natural hot sulfur springs and sacred langar. Afternoon cafe hopping in Kasol (Evergreen Cafe, Moon Dance Cafe). Evening bonfire and music.",
+        "description": "Morning hike across the cable suspension bridge to Chalal village through pine forests. Visit holy Manikaran Sahib Gurudwara, known for its natural hot sulfur springs and sacred langar. Afternoon cafe hopping in Kasol (Evergreen Cafe, Moon Dance Cafe). Evening bonfire and music.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Riverside Camp / Hotel in Kasol",
+        "highlights": [
+          "Chalal Village Nature Walk",
+          "Manikaran Sahib Hot Springs",
+          "Israeli Cafe Culture",
+          "Bonfire"
+        ],
+        "points": [
+          "Morning hike across the cable suspension bridge to Chalal village through pine forests",
+          "Visit holy Manikaran Sahib Gurudwara, known for its natural hot sulfur springs and sacred langar",
+          "Afternoon cafe hopping in Kasol (Evergreen Cafe, Moon Dance Cafe)",
+          "Evening bonfire and music."
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Kasol to Manali & Local Sightseeing",
+        "details": "Scenic drive from Kasol to Manali through Kullu Valley. Stop for river rafting and paragliding in Kullu. Arrive in Manali. Visit 500-year-old Hadimba Devi Temple amidst giant deodars, Club House, Vashisht Hot Springs, and evening shopping on bustling Mall Road.",
+        "description": "Scenic drive from Kasol to Manali through Kullu Valley. Stop for river rafting and paragliding in Kullu. Arrive in Manali. Visit 500-year-old Hadimba Devi Temple amidst giant deodars, Club House, Vashisht Hot Springs, and evening shopping on bustling Mall Road.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Hotel in Manali",
+        "highlights": [
+          "Kullu River Rafting Point",
+          "Hadimba Temple",
+          "Vashisht Sulfur Baths",
+          "Mall Road Cafe Hopping"
+        ],
+        "points": [
+          "Scenic drive from Kasol to Manali through Kullu Valley",
+          "Stop for river rafting and paragliding in Kullu",
+          "Arrive in Manali",
+          "Visit 500-year-old Hadimba Devi Temple amidst giant deodars, Club House, Vashisht Hot Springs, and evening shopping on bustling Mall Road."
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Solang Valley, Atal Tunnel & Snowy Sissu (Lahaul)",
+        "details": "Drive towards Solang Valley for snow activities (ATV rides, zorbing, tube sliding). Cross the 9.02 km long Atal Tunnel — emerging from lush green Kullu into the barren, snow-laden Lahaul Valley. Explore the icy Palchan and Sissu Waterfall. Return to Manali for dinner.",
+        "description": "Drive towards Solang Valley for snow activities (ATV rides, zorbing, tube sliding). Cross the 9.02 km long Atal Tunnel — emerging from lush green Kullu into the barren, snow-laden Lahaul Valley. Explore the icy Palchan and Sissu Waterfall. Return to Manali for dinner.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Hotel in Manali",
+        "highlights": [
+          "Atal Tunnel Crossing",
+          "Sissu Frozen Waterfall",
+          "Solang Valley Snow Sports"
+        ],
+        "points": [
+          "Drive towards Solang Valley for snow activities (ATV rides, zorbing, tube sliding)",
+          "Cross the 9.02 km long Atal Tunnel — emerging from lush green Kullu into the barren, snow-laden Lahaul Valley",
+          "Explore the icy Palchan and Sissu Waterfall",
+          "Return to Manali for dinner."
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Jogini Waterfall Hike & Old Manali Vibe",
+        "details": "Scenic trek from Vashisht to the cascading Jogini Waterfall. Soak in the mist and panoramic mountain vistas. Afternoon exploration of rustic Old Manali, art cafes, and handcrafted winter wear boutiques. Overnight stay in Manali.",
+        "description": "Scenic trek from Vashisht to the cascading Jogini Waterfall. Soak in the mist and panoramic mountain vistas. Afternoon exploration of rustic Old Manali, art cafes, and handcrafted winter wear boutiques. Overnight stay in Manali.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Hotel in Manali",
+        "highlights": [
+          "Jogini Waterfall Trek",
+          "Old Manali Wooden Architecture",
+          "Cafe Culture"
+        ],
+        "points": [
+          "Scenic trek from Vashisht to the cascading Jogini Waterfall",
+          "Soak in the mist and panoramic mountain vistas",
+          "Afternoon exploration of rustic Old Manali, art cafes, and handcrafted winter wear boutiques",
+          "Overnight stay in Manali."
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Manali to Chandigarh & Board Train",
+        "details": "Check out after breakfast. Drive back from Manali to Chandigarh Railway Station. Catch return train to Ahmedabad.",
+        "description": "Check out after breakfast. Drive back from Manali to Chandigarh Railway Station. Catch return train to Ahmedabad.",
+        "meals": "Breakfast",
+        "stay": "Overnight Train Journey",
+        "highlights": [
+          "Scenic Descent",
+          "Chandigarh Boarding"
+        ],
+        "points": [
+          "Check out after breakfast",
+          "Drive back from Manali to Chandigarh Railway Station",
+          "Catch return train to Ahmedabad."
+        ]
+      },
+      {
+        "day": 8,
+        "title": "Arrival in Ahmedabad",
+        "details": "Reach Ahmedabad Railway Station in the morning with refreshing memories of snowy passes and pine valleys.",
+        "description": "Reach Ahmedabad Railway Station in the morning with refreshing memories of snowy passes and pine valleys.",
+        "meals": "At own cost",
+        "stay": "Home",
+        "highlights": [
+          "Safe Return to Ahmedabad"
+        ],
+        "points": [
+          "Reach Ahmedabad Railway Station in the morning with refreshing memories of snowy passes and pine valleys."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip train tickets (Ahmedabad ↔ Chandigarh) in chosen class",
+      "All internal road transfers in sanitized pushback Tempo Traveller",
+      "5 Nights accommodation: 2N Kasol + 3N Manali",
+      "Meals: 5 Breakfasts & 5 Dinners",
+      "Full day excursion to Solang Valley, Atal Tunnel & Sissu",
+      "All driver charges, fuel, parking, and toll taxes",
+      "Experienced Tour Guide throughout the trip"
+    ],
+    "exclusions": [
+      "Adventure activity charges (Rafting, Paragliding, Snow ATV, Skiing)",
+      "Peak season surcharge (10-15% between 20th Dec – 10th Jan)",
+      "Personal expenses, room heaters, laundry, mineral water",
+      "Train journey meals",
+      "Emergency train buffer fund: ₹500 in cash"
+    ],
+    "packing_list": [
+      {
+        "category": "Apparel",
+        "items": [
+          "Heavy jacket / Parka (-2°C to 5°C)",
+          "Thermal inners (2 sets)",
+          "Comfortable trekking shoes with good grip",
+          "Woolen cap, muffler & gloves"
+        ]
+      },
+      {
+        "category": "Accessories",
+        "items": [
+          "UV protection sunglasses",
+          "Sunscreen & cold cream",
+          "Power bank",
+          "Valid Photo ID proof"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Non-AC Sleeper Train Package (Triple / Quad)",
+        "price": "₹17,500",
+        "description": "Round trip sleeper train Ahmedabad ↔ Chandigarh + private tempo traveller + stays & meals."
+      },
+      {
+        "title": "3-Tier AC Sleeper Train Package (Triple / Quad)",
+        "price": "₹19,500",
+        "description": "Round trip 3AC train Ahmedabad ↔ Chandigarh + private tempo traveller + stays & meals."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "Does this trip include Atal Tunnel and Sissu?",
+        "answer": "Yes! Sissu (in Lahaul Valley) via Atal Tunnel is a core highlight of this trip, subject to border road organization (BRO) winter snow clearance."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Kasol, Manali & Sissu 8D/7N Tour from Ahmedabad | Trail Explorers",
+    "meta_description": "Join 8 Days Kasol Manali Sissu group trip from Ahmedabad by train. Covers Atal Tunnel, Solang Valley, Parvati Valley, and Manikaran. From ₹17,500/-.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/kasol-manali-sissu-himalayan-odyssey-8d7n",
+    "id": "pdf_kasol_manali_sissu_8d7n",
+    "slug": "kasol-manali-sissu-himalayan-odyssey-8d7n"
+  },
+  {
+    "title": "Matheran Eco Hill Station & Red Soil Trails",
+    "duration": "3 Days / 2 Nights",
+    "price": "₹7,499",
+    "category": "weekend_getaways, treks",
+    "route": "Ahmedabad / Vadodara / Mumbai — Matheran — Neral — Maharashtra — Western Ghats",
+    "pickup_location": "Ahmedabad / Vadodara / Mumbai",
+    "weather_spot": "Matheran",
+    "tags": "Explorer, Nature Lovers, Friends & Family, Easy",
+    "image_url": "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/matheran-eco-hill-station/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>3 Days in Asia&#x27;s Only Automobile-Free Hill Station on the Western Ghats</strong></p><p>Matheran is a tranquil, car-free hill station in Maharashtra&#x27;s Raigad district, renowned for lush greenery, colonial heritage, toy train trails, panoramic cliffs, and Charlotte Lake.</p><p>Matheran is a tranquil, car-free hill station in Maharashtra&#x27;s Raigad district, renowned for its lush greenery, colonial charm, and eco-tourism, located on the Western Ghats. Key attractions include the scenic Neral-Matheran toy train, panoramic viewpoints like Louisa Point and Panorama Point, and the serene Charlotte Lake.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Overnight Train from Ahmedabad to Neral & Arrival at Matheran",
+        "details": "Board evening train from Ahmedabad/Vadodara to Neral. Arrive at Neral in the morning. Transfer to Dasturi Naka via sharing taxi. Walk or ride horseback into the car-free hill station of Matheran through dense evergreen forests. Check into campsite/resort. Afternoon trek to Charlotte Lake and Lord Point.",
+        "description": "Board evening train from Ahmedabad/Vadodara to Neral. Arrive at Neral in the morning. Transfer to Dasturi Naka via sharing taxi. Walk or ride horseback into the car-free hill station of Matheran through dense evergreen forests. Check into campsite/resort. Afternoon trek to Charlotte Lake and Lord Point.",
+        "meals": "Lunch & Dinner",
+        "stay": "Campsite / Nature Resort in Matheran",
+        "highlights": [
+          "Car-Free Forest Walk",
+          "Charlotte Lake",
+          "Lord Point Sunset"
+        ],
+        "points": [
+          "Board evening train from Ahmedabad/Vadodara to Neral",
+          "Arrive at Neral in the morning",
+          "Transfer to Dasturi Naka via sharing taxi",
+          "Walk or ride horseback into the car-free hill station of Matheran through dense evergreen forests",
+          "Check into campsite/resort",
+          "Afternoon trek to Charlotte Lake and Lord Point."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Viewpoints Trek & Colonial Heritage Walk",
+        "details": "Sunrise walk to Panorama Point. After breakfast, trek to Louisa Point, Echo Point, and King George Point. Marvel at the dramatic cliffs and waterfalls cascading into deep valleys. Evening shopping for famous Matheran Chikki and handmade leather items on Mall Road.",
+        "description": "Sunrise walk to Panorama Point. After breakfast, trek to Louisa Point, Echo Point, and King George Point. Marvel at the dramatic cliffs and waterfalls cascading into deep valleys. Evening shopping for famous Matheran Chikki and handmade leather items on Mall Road.",
+        "meals": "Breakfast, Lunch & Dinner",
+        "stay": "Campsite / Nature Resort in Matheran",
+        "highlights": [
+          "Louisa Point Clifftop Vistas",
+          "Echo Point fun",
+          "Matheran Chikki Tasting"
+        ],
+        "points": [
+          "Sunrise walk to Panorama Point",
+          "After breakfast, trek to Louisa Point, Echo Point, and King George Point",
+          "Marvel at the dramatic cliffs and waterfalls cascading into deep valleys",
+          "Evening shopping for famous Matheran Chikki and handmade leather items on Mall Road."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Sunrise at Alexander Point & Return Train to Ahmedabad",
+        "details": "Early morning walk to Alexander Point. Breakfast at camp. Check out and walk back to Dasturi Naka. Transfer to Neral Railway Station. Board return train to Vadodara and Ahmedabad. Arrive by late evening.",
+        "description": "Early morning walk to Alexander Point. Breakfast at camp. Check out and walk back to Dasturi Naka. Transfer to Neral Railway Station. Board return train to Vadodara and Ahmedabad. Arrive by late evening.",
+        "meals": "Breakfast & Lunch",
+        "stay": "Home",
+        "highlights": [
+          "Alexander Point",
+          "Return Train Journey"
+        ],
+        "points": [
+          "Early morning walk to Alexander Point",
+          "Breakfast at camp",
+          "Check out and walk back to Dasturi Naka",
+          "Transfer to Neral Railway Station",
+          "Board return train to Vadodara and Ahmedabad",
+          "Arrive by late evening."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip train travel (Ahmedabad/Vadodara ↔ Neral)",
+      "Internal sharing taxi transfers Neral ↔ Dasturi Naka",
+      "2 Nights tent/resort accommodation in Matheran",
+      "All Meals: 2 Breakfasts, 3 Lunches, 2 Dinners (Pure vegetarian food)",
+      "Guided viewpoint treks with experienced trek leader",
+      "Matheran Eco-tourism entry fees"
+    ],
+    "exclusions": [
+      "Horse riding or hand-pulled rickshaw charges in Matheran",
+      "Toy train tickets (subject to availability)",
+      "Personal snacks, tips, and mineral water"
+    ],
+    "packing_list": [
+      {
+        "category": "Gear",
+        "items": [
+          "Good trekking/walking shoes with rubber grip",
+          "Raincoat or poncho (essential in monsoon)",
+          "Torch/headlamp",
+          "Comfortable cotton clothes"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Non-AC Sleeper Package (Triple / Quad)",
+        "price": "₹7,499",
+        "description": "Round trip Non-AC Sleeper train tickets + campsite accommodation + all meals."
+      },
+      {
+        "title": "AC Sleeper Package (Triple / Quad)",
+        "price": "₹8,299",
+        "description": "Round trip AC Sleeper train tickets + campsite accommodation + all meals."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "Are vehicles allowed in Matheran?",
+        "answer": "No vehicles of any kind are permitted inside Matheran. All commuting inside the town is done by walking, horses, or hand-pulled rickshaws."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Matheran Weekend Tour Package from Ahmedabad | Trail Explorers",
+    "meta_description": "Book 3D/2N Matheran car-free hill station tour from Ahmedabad & Vadodara. Forest camping, Charlotte Lake, and cliff viewpoints. Starts at ₹7,499/-.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/matheran-eco-hill-station-red-soil-trails-3d2n",
+    "id": "pdf_matheran_3d2n",
+    "slug": "matheran-eco-hill-station-red-soil-trails-3d2n"
+  },
+  {
+    "title": "Mount Abu Hill Station & Aravalli Nature Retreat",
+    "duration": "3 Days / 2 Nights",
+    "price": "₹3,999",
+    "category": "rajasthan_tours, weekend_getaways",
+    "route": "Ahmedabad / Palanpur — Mount Abu — Nakki Lake — Guru Shikhar — Rajasthan",
+    "pickup_location": "Ahmedabad / Palanpur",
+    "weather_spot": "Mount Abu",
+    "tags": "Explorer, Adventure Lovers, Nature Lovers, Friends & Family, Easy",
+    "image_url": "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/mount-abu-hill-station/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>3 Days in Rajasthan&#x27;s Oasis: Nakki Lake, Sunset Point, Guru Shikhar &amp; Dilwara Temples</strong></p><p>Mount Abu is Rajasthan&#x27;s only hill station, nestled in the Aravalli Range, known as an &#x27;oasis in the desert&#x27; for its lush forests, lakes, waterfalls, cool climate, and Dilwara Jain Temples.</p><p>Mount Abu is Rajasthan&#x27;s only hill station, nestled in the Aravalli Range, known as an &#x27;oasis in the desert&#x27; for its lush forests, lakes, and waterfalls, offering respite with its cool climate, spiritual significance (home to Dilwara Jain Temples, Guru Shikhar peak), and scenic beauty.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Mount Abu & Nakki Lake Sunset",
+        "details": "Early morning 6:00 AM departure from Ahmedabad by bus. Scenic climb up the Aravalli ghats. Reach Mount Abu campsite by noon. Check-in and lunch. Evening visit to Nakki Lake for pedal boating and walking along Toad Rock trail. Watch the sunset from famous Sunset Point. Bonfire and dinner.",
+        "description": "Early morning 6:00 AM departure from Ahmedabad by bus. Scenic climb up the Aravalli ghats. Reach Mount Abu campsite by noon. Check-in and lunch. Evening visit to Nakki Lake for pedal boating and walking along Toad Rock trail. Watch the sunset from famous Sunset Point. Bonfire and dinner.",
+        "meals": "Lunch & Dinner",
+        "stay": "Adventure Campsite (Sharing Basis Tent) in Mount Abu",
+        "highlights": [
+          "Aravalli Ghat Drive",
+          "Nakki Lake Boating",
+          "Toad Rock",
+          "Sunset Point Vistas"
+        ],
+        "points": [
+          "Early morning 6:00 AM departure from Ahmedabad by bus",
+          "Scenic climb up the Aravalli ghats",
+          "Reach Mount Abu campsite by noon",
+          "Check-in and lunch",
+          "Evening visit to Nakki Lake for pedal boating and walking along Toad Rock trail",
+          "Watch the sunset from famous Sunset Point",
+          "Bonfire and dinner."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Guru Shikhar Trek & Dilwara Marble Temples",
+        "details": "Drive to Guru Shikhar, the highest peak in Rajasthan (5,650 ft), for stunning 360-degree views and temple visit. Afternoon visit to the world-renowned 11th-century Dilwara Jain Temples, famous for breathtaking marble carvings. Visit Achalgarh Fort. Evening free for Mall Road cafe hopping and shopping.",
+        "description": "Drive to Guru Shikhar, the highest peak in Rajasthan (5,650 ft), for stunning 360-degree views and temple visit. Afternoon visit to the world-renowned 11th-century Dilwara Jain Temples, famous for breathtaking marble carvings. Visit Achalgarh Fort. Evening free for Mall Road cafe hopping and shopping.",
+        "meals": "Breakfast, Lunch & Dinner",
+        "stay": "Adventure Campsite in Mount Abu",
+        "highlights": [
+          "Guru Shikhar Summit",
+          "Dilwara Marble Artistry",
+          "Achalgarh Fort Ruins"
+        ],
+        "points": [
+          "Drive to Guru Shikhar, the highest peak in Rajasthan (5,650 ft), for stunning 360-degree views and temple visit",
+          "Afternoon visit to the world-renowned 11th-century Dilwara Jain Temples, famous for breathtaking marble carvings",
+          "Visit Achalgarh Fort",
+          "Evening free for Mall Road cafe hopping and shopping."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Trevor's Tank Crocodile Park & Return to Ahmedabad",
+        "details": "Morning nature walk around Trevor's Tank, an eco-tourism wildlife park known for bird watching and crocodile sightings. Breakfast at camp. Checkout and begin descent. Return to Ahmedabad by evening.",
+        "description": "Morning nature walk around Trevor's Tank, an eco-tourism wildlife park known for bird watching and crocodile sightings. Breakfast at camp. Checkout and begin descent. Return to Ahmedabad by evening.",
+        "meals": "Breakfast & Lunch",
+        "stay": "Home",
+        "highlights": [
+          "Trevor's Tank Wildlife Spotting",
+          "Return Drive to Ahmedabad"
+        ],
+        "points": [
+          "Morning nature walk around Trevor's Tank, an eco-tourism wildlife park known for bird watching and crocodile sightings",
+          "Breakfast at camp",
+          "Checkout and begin descent",
+          "Return to Ahmedabad by evening."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round trip Non-AC bus transportation (Ahmedabad / Palanpur ↔ Mount Abu)",
+      "2 Nights accommodation in adventure campsite tents",
+      "All meals: 3 Breakfasts, 2 Lunches, 2 Dinners",
+      "All sightseeing transfers as per itinerary",
+      "Certified Group Instructor / Trek Leader"
+    ],
+    "exclusions": [
+      "Boating charges at Nakki Lake",
+      "Entry fees at Trevor's Tank or monuments",
+      "Campfire (chargeable extra on request)",
+      "Personal expenses"
+    ],
+    "packing_list": [
+      {
+        "category": "Essentials",
+        "items": [
+          "Cap/hat & Sunglasses",
+          "Toothbrush, soap, towel",
+          "Light sweater/jacket for chilly evenings",
+          "ID proof (Original)",
+          "Torch / Flashlight"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Standard Camp Package (Ahmedabad / Palanpur) (Tent Sharing (2/4/8 pax))",
+        "price": "₹3,999",
+        "description": "Round trip Non-AC 2x2 / 3x2 bus transport + tent accommodation + all meals & group instructor."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "What is the stay type in Mount Abu?",
+        "answer": "Stay is in authentic alpine adventure tents on 2/4/8 sharing basis with clean common washrooms, located amidst peaceful pine woods."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Mount Abu 3D/2N Budget Camping Tour from Ahmedabad | Trail Explorers",
+    "meta_description": "Book Mount Abu 3 days camping trip from Ahmedabad for ₹3,999/-. Includes Nakki Lake, Guru Shikhar, Dilwara Temples, bus transport and meals.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/mount-abu-hill-station-aravalli-retreat-3d2n",
+    "id": "pdf_mount_abu_3d2n",
+    "slug": "mount-abu-hill-station-aravalli-retreat-3d2n"
+  },
+  {
+    "title": "Nal Village Resort One Day Picnic & Adventure Escape",
+    "duration": "1 Day (9:00 AM – 8:00 PM)",
+    "price": "₹1,499",
+    "category": "gujarat_tours, day_picnics",
+    "route": "Ahmedabad / Deesa — Nal Village — Sanand — Ahmedabad — Gujarat",
+    "pickup_location": "Ahmedabad / Deesa",
+    "weather_spot": "Nal Village",
+    "tags": "Friends & Family, Corporate Offsite, Day Picnickers, Easy",
+    "image_url": "/assets/images/trips/tours/nal-village-resort/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/nal-village-resort/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/nal-village-resort/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/nal-village-resort/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/nal-village-resort/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/nal-village-resort/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/nal-village-resort/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/nal-village-resort/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/nal-village-resort/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/nal-village-resort/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/nal-village-resort/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/nal-village-resort/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/nal-village-resort/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/nal-village-resort/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/nal-village-resort/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/nal-village-resort/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/nal-village-resort/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/nal-village-resort/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/nal-village-resort/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>Full Day Family &amp; Friends Retreat near Ahmedabad with Adventure Activities &amp; Water Pool</strong></p><p>Nal Village Resort is a nature retreat near Ahmedabad (45 km away), offering a relaxing day picnic with lush gardens, swimming pool, adventure rope course, and authentic Gujarati food.</p><p>Nal Village Resort is a nature retreat near Ahmedabad, offering a getaway for day picnics with lush gardens and peaceful vibes. Located approximately 45 km from Ahmedabad, it provides a relaxing escape with amenities including swimming pool, rain dance, zip line, high rope obstacle course, indoor-outdoor games, and 4 meals (Breakfast, Lunch, Hi-Tea, Dinner).</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Full Day Resort Activities, Adventure Sports & Pool Party",
+        "details": "9:00 AM Arrival at resort with traditional welcome. 9:30 AM to 10:30 AM Buffet Breakfast. Enjoy swimming pool, water slides, and rain dance with DJ music. Thrilling adventure activities: Zip Line, High Rope Course, Burma Bridge, and Tyre Walk. 1:00 PM to 2:30 PM Grand Gujarati & Punjabi Buffet Lunch. Afternoon indoor-outdoor games: Cricket, Volleyball, Badminton, Carrom, Chess. 5:00 PM Evening Hi-Tea with hot snacks. 7:00 PM Buffet Dinner. 8:00 PM Departure back to Ahmedabad.",
+        "description": "9:00 AM Arrival at resort with traditional welcome. 9:30 AM to 10:30 AM Buffet Breakfast. Enjoy swimming pool, water slides, and rain dance with DJ music. Thrilling adventure activities: Zip Line, High Rope Course, Burma Bridge, and Tyre Walk. 1:00 PM to 2:30 PM Grand Gujarati & Punjabi Buffet Lunch. Afternoon indoor-outdoor games: Cricket, Volleyball, Badminton, Carrom, Chess. 5:00 PM Evening Hi-Tea with hot snacks. 7:00 PM Buffet Dinner. 8:00 PM Departure back to Ahmedabad.",
+        "meals": "Welcome Drink, Breakfast, Buffet Lunch, Evening Hi-Tea & Dinner (4 Full Meals)",
+        "stay": "Day Visit (No overnight stay)",
+        "highlights": [
+          "Swimming Pool & Rain Dance",
+          "Zip Line & High Rope Obstacles",
+          "4 Unlimited Meals",
+          "Cricket & Lawn Games"
+        ],
+        "points": [
+          "9:00 AM Arrival at resort with traditional welcome",
+          "9:30 AM to 10:30 AM Buffet Breakfast",
+          "Enjoy swimming pool, water slides, and rain dance with DJ music",
+          "Thrilling adventure activities: Zip Line, High Rope Course, Burma Bridge, and Tyre Walk",
+          "1:00 PM to 2:30 PM Grand Gujarati & Punjabi Buffet Lunch",
+          "Afternoon indoor-outdoor games: Cricket, Volleyball, Badminton, Carrom, Chess",
+          "5:00 PM Evening Hi-Tea with hot snacks",
+          "7:00 PM Buffet Dinner",
+          "8:00 PM Departure back to Ahmedabad."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip AC bus transportation from Ahmedabad or Deesa",
+      "Full-day resort entry pass",
+      "4 Complete Meals: Breakfast, Grand Buffet Lunch, Evening Hi-Tea & Buffet Dinner",
+      "Access to Swimming Pool & Rain Dance DJ setup",
+      "Adventure Activities: Zip Line, High Rope Course, Burma Bridge",
+      "Access to all lawn sports: Cricket, Volleyball, Badminton, Carrom"
+    ],
+    "exclusions": [
+      "Chargeable extra games: Archery, Air Gun shooting, Horse Riding",
+      "Costume / towel rental at pool",
+      "Personal expenses"
+    ],
+    "packing_list": [
+      {
+        "category": "Essentials",
+        "items": [
+          "Nylon swimming costume for pool",
+          "Extra pair of clothes and towel",
+          "Sunscreen & Sunglasses",
+          "Comfortable sports shoes for adventure activities"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Ex-Ahmedabad Day Picnic Package (Day Pass)",
+        "price": "₹1,499",
+        "description": "Full day resort entry + 4 meals + pool & adventure activities + AC bus transport from Ahmedabad."
+      },
+      {
+        "title": "Ex-Deesa Day Picnic Package (Day Pass)",
+        "price": "₹1,799",
+        "description": "Full day resort entry + 4 meals + pool & adventure activities + AC bus transport from Deesa."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "Is pre-booking required for Nal Village Resort?",
+        "answer": "Yes, pre-booking is compulsory at least 4 days in advance. No walk-in guests are permitted on the day."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Nal Village Resort One Day Picnic Package from Ahmedabad | Trail Explorers",
+    "meta_description": "Book Nal Village Resort 1-day picnic near Ahmedabad for ₹1,499/-. Includes 4 meals, swimming pool, zip line, high rope activities, and AC transport.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/nal-village-resort-one-day-picnic-1d",
+    "id": "pdf_nalvillage_resort_1d",
+    "slug": "nal-village-resort-one-day-picnic-1d"
+  },
+  {
+    "title": "Polo Forest Heritage Trek & Riverside Nature Walk",
+    "duration": "1 Day (6:00 AM – 9:30 PM)",
+    "price": "₹1,499",
+    "category": "gujarat_tours, day_picnics, treks",
+    "route": "Ahmedabad / Deesa — Polo Forest — Harnav River — Idar — Gujarat",
+    "pickup_location": "Ahmedabad / Deesa",
+    "weather_spot": "Polo Forest",
+    "tags": "Explorer, Adventure Lovers, Nature Lovers, Friends & Family, Easy to Moderate",
+    "image_url": "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/polo-forest-heritage/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>One Day Eco-Trek in North Gujarat: Ancient 14th Century Jain Temples, Harnav River &amp; Green Canopy</strong></p><p>Polo Forest is a biologically rich forest in Gujarat, known for diverse flora and fauna, ancient 14th-century Jain temples, Harnav river dam, and lush green monsoon trekking trails.</p><p>Polo Forest is a biologically rich forest in Gujarat, known for its diverse flora and fauna, ancient temples, and as a popular weekend getaway near Ahmedabad. It offers eco-tourism with activities like guided forest trekking, exploring historical sites such as the 14th-century Polo Jain temples, Sarneshwar Shiv Temple, Harnav River Walk, and Vanaj Dam.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Polo Forest & Guided Jungle Trek",
+        "details": "6:00 AM departure from Ahmedabad. 9:00 AM arrival at Polo campsite and welcome. 9:30 AM breakfast. Guided trekking session through lush deciduous forest trails. Explore 14th-century Polo Jain Temples, carving ruins, and Sarneshwar Shiv Temple. 1:30 PM delicious vegetarian buffet lunch at camp. Afternoon visit to Harnav River and Vanaj Dam for river crossing and swimming. 5:00 PM Hi-Tea and snacks. Departure at 6:00 PM, reaching Ahmedabad by 9:30 PM.",
+        "description": "6:00 AM departure from Ahmedabad. 9:00 AM arrival at Polo campsite and welcome. 9:30 AM breakfast. Guided trekking session through lush deciduous forest trails. Explore 14th-century Polo Jain Temples, carving ruins, and Sarneshwar Shiv Temple. 1:30 PM delicious vegetarian buffet lunch at camp. Afternoon visit to Harnav River and Vanaj Dam for river crossing and swimming. 5:00 PM Hi-Tea and snacks. Departure at 6:00 PM, reaching Ahmedabad by 9:30 PM.",
+        "meals": "Breakfast, Forest Lunch & Evening Hi-Tea",
+        "stay": "Day Trip (No overnight stay)",
+        "highlights": [
+          "14th-Century Polo Jain Temples",
+          "Harnav River Walk",
+          "Vanaj Dam Viewpoint",
+          "Guided Forest Nature Trek"
+        ],
+        "points": [
+          "6:00 AM departure from Ahmedabad",
+          "9:00 AM arrival at Polo campsite and welcome",
+          "9:30 AM breakfast",
+          "Guided trekking session through lush deciduous forest trails",
+          "Explore 14th-century Polo Jain Temples, carving ruins, and Sarneshwar Shiv Temple",
+          "1:30 PM delicious vegetarian buffet lunch at camp",
+          "Afternoon visit to Harnav River and Vanaj Dam for river crossing and swimming",
+          "5:00 PM Hi-Tea and snacks",
+          "Departure at 6:00 PM, reaching Ahmedabad by 9:30 PM."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip bus transportation (Ahmedabad / Deesa ↔ Polo Forest)",
+      "All meals: Breakfast, Buffet Lunch, and Evening Hi-Tea",
+      "Guided forest trekking with certified nature guide",
+      "Sightseeing: Ancient Jain Temples, Sarneshwar Temple, Harnav River, Vanaj Dam",
+      "Forest permit and entry permissions"
+    ],
+    "exclusions": [
+      "Personal expenses and camera fees",
+      "Dinner on return highway"
+    ],
+    "packing_list": [
+      {
+        "category": "Gear",
+        "items": [
+          "Trekking shoes or sports shoes with good grip",
+          "Extra pair of clothes (for river crossing)",
+          "Raincoat / Umbrella (during monsoon)",
+          "Water bottle & small backpack"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "One Day Polo Forest Package (Ex-Ahmedabad / Deesa) (Day Pass)",
+        "price": "₹1,499",
+        "description": "Round trip AC bus transport + all meals + guided forest trek & entry permits."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "What is the best time to visit Polo Forest?",
+        "answer": "July to October (monsoon and post-monsoon) is the absolute best time, when the forest is lush green and Harnav river is flowing."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Polo Forest One Day Trek Package from Ahmedabad | Trail Explorers",
+    "meta_description": "Book 1-Day Polo Forest eco-trek from Ahmedabad & Deesa for ₹1,499/-. Includes guided jungle trek, ancient Jain temples, Vanaj dam, transport, and meals.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/polo-forest-heritage-trek-nature-walk-1d",
+    "id": "pdf_polo_forest_1d",
+    "slug": "polo-forest-heritage-trek-nature-walk-1d"
+  },
+  {
+    "title": "Rann Utsav of Kutch — White Desert Cultural Carnival",
+    "duration": "3 Days / 2 Nights",
+    "price": "₹8,499",
+    "category": "gujarat_tours, festival_tours",
+    "route": "Ahmedabad — Dhordo — Great Rann of Kutch — Bhuj — Kalo Dungar — Gujarat",
+    "pickup_location": "Ahmedabad",
+    "weather_spot": "Dhordo",
+    "tags": "Explorer, Nature Lovers, Culture & Heritage, Friends & Family, Easy",
+    "image_url": "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/rann-utsav-kutch/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>3 Days of White Salt Desert, Full Moon Stargazing, Bhuj Heritage &amp; Luxury Tent City</strong></p><p>Rann Utsav is a vibrant cultural festival celebrating the rich heritage of Gujarat, held annually in the Great Rann of Kutch salt desert. Experience white desert sunsets, camel safaris, and Kutchi folk crafts.</p><p>Rann Utsav is a vibrant cultural festival celebrating the rich heritage of Gujarat, held annually in the Great Rann of Kutch salt desert from November to February. It features a unique blend of cultural performances, local crafts, traditional music, and dance, set against the backdrop of the stunning white salt desert. Activities include camel safaris, handicraft village tours (Nirona), Aina Mahal, and luxury tent stays.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Bhuj & Kalo Dungar (Black Hill)",
+        "details": "Early morning 6:00 AM departure from Ahmedabad. Drive across Saurashtra to Bhuj. Head directly to Kalo Dungar (Highest point in Kutch at 462m) for sunset views over the vast expanse of the Rann. Visit the 400-year-old Dattatreya Temple. Check into resort near Dhordo. Traditional Kutchi dinner.",
+        "description": "Early morning 6:00 AM departure from Ahmedabad. Drive across Saurashtra to Bhuj. Head directly to Kalo Dungar (Highest point in Kutch at 462m) for sunset views over the vast expanse of the Rann. Visit the 400-year-old Dattatreya Temple. Check into resort near Dhordo. Traditional Kutchi dinner.",
+        "meals": "Lunch & Dinner",
+        "stay": "Traditional Bhunga Resort / Swiss Tent near Dhordo",
+        "highlights": [
+          "Kalo Dungar Sunset",
+          "Dattatreya Temple",
+          "Magnetic Hill Phenomenon",
+          "Authentic Kutchi Cuisine"
+        ],
+        "points": [
+          "Early morning 6:00 AM departure from Ahmedabad",
+          "Drive across Saurashtra to Bhuj",
+          "Head directly to Kalo Dungar (Highest point in Kutch at 462m) for sunset views over the vast expanse of the Rann",
+          "Visit the 400-year-old Dattatreya Temple",
+          "Check into resort near Dhordo",
+          "Traditional Kutchi dinner."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "White Desert Sunset, Camel Safari & Rann Utsav Fair",
+        "details": "Breakfast at resort. Visit Gandhi Nu Gaam (handicraft village in Ludiya) to witness mud mirror work (Lippan art) and colorful embroidery. Afternoon transfer to the Great White Rann. Watch the sun dip below the shimmering white salt horizon. Stroll through the buzzing Rann Utsav tent city cultural fair, folk dances, and food stalls.",
+        "description": "Breakfast at resort. Visit Gandhi Nu Gaam (handicraft village in Ludiya) to witness mud mirror work (Lippan art) and colorful embroidery. Afternoon transfer to the Great White Rann. Watch the sun dip below the shimmering white salt horizon. Stroll through the buzzing Rann Utsav tent city cultural fair, folk dances, and food stalls.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Resort / Tent near White Desert",
+        "highlights": [
+          "Gandhi Nu Gaam Lippan Art",
+          "Sunset on Endless White Salt Flats",
+          "Camel Cart Ride",
+          "Cultural Folk Music"
+        ],
+        "points": [
+          "Breakfast at resort",
+          "Visit Gandhi Nu Gaam (handicraft village in Ludiya) to witness mud mirror work (Lippan art) and colorful embroidery",
+          "Afternoon transfer to the Great White Rann",
+          "Watch the sun dip below the shimmering white salt horizon",
+          "Stroll through the buzzing Rann Utsav tent city cultural fair, folk dances, and food stalls."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Bhuj Heritage Sightseeing & Return to Ahmedabad",
+        "details": "Breakfast and checkout. Drive to Bhuj city. Visit the ornate Prag Mahal (Italian Gothic palace with bell tower) and Aina Mahal (Hall of Mirrors). Visit the poignant Smritivan Earthquake Memorial. Begin return drive to Ahmedabad, arriving by midnight.",
+        "description": "Breakfast and checkout. Drive to Bhuj city. Visit the ornate Prag Mahal (Italian Gothic palace with bell tower) and Aina Mahal (Hall of Mirrors). Visit the poignant Smritivan Earthquake Memorial. Begin return drive to Ahmedabad, arriving by midnight.",
+        "meals": "Breakfast & Lunch",
+        "stay": "Home",
+        "highlights": [
+          "Prag Mahal & Aina Mahal",
+          "Smritivan Memorial",
+          "Kutch Local Shopping",
+          "Ahmedabad Return"
+        ],
+        "points": [
+          "Breakfast and checkout",
+          "Drive to Bhuj city",
+          "Visit the ornate Prag Mahal (Italian Gothic palace with bell tower) and Aina Mahal (Hall of Mirrors)",
+          "Visit the poignant Smritivan Earthquake Memorial",
+          "Begin return drive to Ahmedabad, arriving by midnight."
+        ]
+      }
+    ],
+    "inclusions": [
+      "AC pushback transportation Ahmedabad ↔ Kutch (Round Trip)",
+      "2 Nights accommodation in Traditional Kutchi Bhunga / Deluxe Tents",
+      "Meals: 2 Breakfasts, 2 Lunches, 2 Dinners (Pure Veg & Jain food)",
+      "White Desert Entry Permit charges & government permissions",
+      "Sightseeing to Kalo Dungar, Dhordo White Rann, Gandhi Nu Gaam & Bhuj",
+      "Experienced Tour Captain"
+    ],
+    "exclusions": [
+      "Monument tickets (Aina Mahal, Prag Mahal)",
+      "Camel cart ride or paramotoring charges in White Desert",
+      "Peak season surcharge (10-15% between 20th Dec – 10th Jan)",
+      "Personal shopping & tips"
+    ],
+    "packing_list": [
+      {
+        "category": "Clothing",
+        "items": [
+          "Warm jacket/shawl for cold desert nights (10-14°C)",
+          "Light breathable cottons for daytime",
+          "Comfortable walking shoes/slip-ons"
+        ]
+      },
+      {
+        "category": "Essentials",
+        "items": [
+          "Sunglasses & Sunscreen (crucial due to white salt glare)",
+          "Valid government ID proof for border permits",
+          "Power bank"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Standard Group Package (Triple Sharing) (Triple)",
+        "price": "₹8,499",
+        "description": "Round trip AC transport from Ahmedabad + 2N traditional Bhunga resort + meals & white desert permits."
+      },
+      {
+        "title": "Couple / Double Sharing Package (Double)",
+        "price": "₹9,499",
+        "description": "Private room/bhunga for couples + AC transport from Ahmedabad + all sightseeing."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "Is government permit required to visit the White Rann?",
+        "answer": "Yes, Indian and foreign travelers require border permits to enter the Great Rann. Our tour package includes all official permit fees and processing."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Rann Utsav Kutch 3D/2N Tour Package from Ahmedabad | Trail Explorers",
+    "meta_description": "Book Rann Utsav of Kutch 3 Days tour from Ahmedabad. Explore the White Desert, Kalo Dungar, Bhuj palaces, and traditional Bhungas. Starts at ₹8,499/-.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/rann-utsav-kutch-white-desert-carnival-3d2n",
+    "id": "pdf_kutch_rann_utsav_3d2n",
+    "slug": "rann-utsav-kutch-white-desert-carnival-3d2n"
+  },
+  {
+    "title": "Saputara Hill Station & Dang Forest Monsoon Caravan",
+    "duration": "3 Days / 2 Nights",
+    "price": "₹3,299",
+    "category": "gujarat_tours, weekend_getaways",
+    "route": "Ahmedabad / Vadodara / Deesa / Mehsana — Saputara — Gira Waterfalls — Dang Forest — Gujarat",
+    "pickup_location": "Ahmedabad / Vadodara / Deesa / Mehsana",
+    "weather_spot": "Saputara",
+    "tags": "Explorer, Adventure Lovers, Nature Lovers, Friends & Family, Easy",
+    "image_url": "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/saputara-hill-station/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>3 Days in Gujarat&#x27;s Only Hill Station: Saputara Lake, Sunset Point, Gira Waterfalls &amp; Governor Hill</strong></p><p>Saputara, the &#x27;Lake City of Gujarat,&#x27; is the state&#x27;s only hill station nestled in the Sahyadri range at 1,000 meters altitude. Enjoy cool climes, misty valleys, Gira waterfalls, and tribal culture.</p><p>Saputara, often called the &#x27;Lake City of Gujarat,&#x27; is the only hill station in the state and a perfect retreat for nature lovers. Nestled in the Sahyadri range at an altitude of about 1,000 meters, it offers a cool climate, lush green surroundings, and picturesque landscapes. Legend says Lord Rama spent 11 years of exile in the surrounding Dang forests.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Departure from Ahmedabad/Deesa (Late Night)",
+        "details": "Depart late night at 11:00 PM on Thursday from Ahmedabad / Vadodara / Deesa. Overnight comfortable bus journey across South Gujarat.",
+        "description": "Depart late night at 11:00 PM on Thursday from Ahmedabad / Vadodara / Deesa. Overnight comfortable bus journey across South Gujarat.",
+        "meals": "At own cost during transit",
+        "stay": "Overnight Bus Travel",
+        "highlights": [
+          "Night Journey",
+          "Ghat Ascent into Dang"
+        ],
+        "points": [
+          "Depart late night at 11:00 PM on Thursday from Ahmedabad / Vadodara / Deesa",
+          "Overnight comfortable bus journey across South Gujarat."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Arrival at Saputara, Campsite Setup & Lake Sightseeing",
+        "details": "10:00 AM arrival at Saputara campsite. Check-in, tent allotment, and freshen up. Delicious Gujarati lunch. Afternoon visit to Saputara Lake for boating. Take the ropeway cable car to Sunset Point for valley views. Visit the Rose Garden and Step Garden. Evening music, campfire, and dinner.",
+        "description": "10:00 AM arrival at Saputara campsite. Check-in, tent allotment, and freshen up. Delicious Gujarati lunch. Afternoon visit to Saputara Lake for boating. Take the ropeway cable car to Sunset Point for valley views. Visit the Rose Garden and Step Garden. Evening music, campfire, and dinner.",
+        "meals": "Lunch & Dinner",
+        "stay": "Adventure Tent Campsite in Saputara",
+        "highlights": [
+          "Saputara Lake Boating",
+          "Ropeway Cable Car",
+          "Sunset Point",
+          "Campfire & Music"
+        ],
+        "points": [
+          "10:00 AM arrival at Saputara campsite",
+          "Check-in, tent allotment, and freshen up",
+          "Delicious Gujarati lunch",
+          "Afternoon visit to Saputara Lake for boating",
+          "Take the ropeway cable car to Sunset Point for valley views",
+          "Visit the Rose Garden and Step Garden",
+          "Evening music, campfire, and dinner."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Governor Hill Sunrise, Gira Waterfalls & Return",
+        "details": "Early morning 6:00 AM hike to Governor Hill for sunrise over Sahyadri ranges. Breakfast at camp. Checkout and drive to spectacular Gira Waterfalls in Waghai. Explore the Waghai Botanical Garden. Begin return journey, reaching Ahmedabad late night.",
+        "description": "Early morning 6:00 AM hike to Governor Hill for sunrise over Sahyadri ranges. Breakfast at camp. Checkout and drive to spectacular Gira Waterfalls in Waghai. Explore the Waghai Botanical Garden. Begin return journey, reaching Ahmedabad late night.",
+        "meals": "Breakfast & Highway Lunch",
+        "stay": "Home",
+        "highlights": [
+          "Governor Hill Sunrise Hike",
+          "Gira Waterfalls Cascade",
+          "Waghai Botanical Gardens"
+        ],
+        "points": [
+          "Early morning 6:00 AM hike to Governor Hill for sunrise over Sahyadri ranges",
+          "Breakfast at camp",
+          "Checkout and drive to spectacular Gira Waterfalls in Waghai",
+          "Explore the Waghai Botanical Garden",
+          "Begin return journey, reaching Ahmedabad late night."
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip bus transportation from chosen pickup city",
+      "1 Night tent accommodation at Saputara campsite (mattress & blanket provided)",
+      "All meals: 1 Breakfast, 2 Lunches, 1 Dinner (Pure veg / Jain)",
+      "All sightseeing transfers: Saputara Lake, Sunset Point, Gira Waterfalls, Governor Hill",
+      "Group Leader and Guide support"
+    ],
+    "exclusions": [
+      "Boating & Ropeway cable car tickets at Saputara Lake",
+      "Personal shopping and adventure ride fees",
+      "Any medical expenses"
+    ],
+    "packing_list": [
+      {
+        "category": "Essentials",
+        "items": [
+          "Torch / flashlight",
+          "Blanket / bedsheet (for personal comfort)",
+          "Comfortable trekking shoes",
+          "Cap, Sunglasses & Raincoat (in monsoon)",
+          "Cash (ATMs may have queues)"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Ex-Ahmedabad & Vadodara Package (Tent Sharing)",
+        "price": "₹3,299",
+        "description": "Round trip bus transport from Ahmedabad / Vadodara + tent stay + all meals & sightseeing."
+      },
+      {
+        "title": "Ex-Deesa & Mehsana Package (Tent Sharing)",
+        "price": "₹3,799",
+        "description": "Round trip bus transport from Deesa / Mehsana + tent stay + all meals & sightseeing."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "Where does the Saputara tour depart from?",
+        "answer": "Departures are available from Ahmedabad, Vadodara, Mehsana, and Deesa."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Saputara 3D/2N Weekend Camping Tour from Ahmedabad | Trail Explorers",
+    "meta_description": "Book Saputara 3 days hill station camping tour from Ahmedabad & Vadodara for ₹3,299/-. Includes Gira waterfalls, ropeway, lake boating, and tent stay.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/saputara-hill-station-dang-forest-caravan-3d2n",
+    "id": "pdf_saputara_3d2n",
+    "slug": "saputara-hill-station-dang-forest-caravan-3d2n"
+  },
+  {
+    "title": "Spiti Valley Winter White Wonderland Expedition",
+    "duration": "11 Days / 10 Nights",
+    "price": "₹25,000",
+    "category": "spiti_tours, himachal_tours",
+    "route": "Ahmedabad (via Chandigarh train) — Spiti Valley — Kaza — Chitkul — Tabo — Kalpa — Nako — Hikkim — Himachal Pradesh",
+    "pickup_location": "Ahmedabad (via Chandigarh train)",
+    "weather_spot": "Spiti Valley",
+    "tags": "Adventure Lovers, Extreme Trekkers, Photographers, Challenging / Extreme Cold",
+    "image_url": "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_01.jpg",
+    "bento_img_1": "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_01.jpg",
+    "bento_img_2": "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_02.jpg",
+    "bento_img_3": "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_03.jpg",
+    "bento_img_4": "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_04.jpg",
+    "bento_img_5": "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_05.jpg",
+    "gallery_images": [
+      "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_01.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_02.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_03.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_04.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_05.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/landscape/landscape_06.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/mobile/mobile_01.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/mobile/mobile_02.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/mobile/mobile_03.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/mobile/mobile_04.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/mobile/mobile_05.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/mobile/mobile_06.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_01.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_02.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_03.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_04.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_05.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_06.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_07.jpg",
+      "/assets/images/trips/tours/spiti-valley-winter/gallery/gallery_08.jpg"
+    ],
+    "about_text": "<p><strong>11 Days Extreme Winter Expedition Across Frozen Rivers, Tabo, Kaza, Key Gompa &amp; Chicham Bridge</strong></p><p>Spiti Valley in winter transforms into a breathtaking white wonderland blanketed by thick snow. Temperatures drop below -20°C, creating frozen rivers, icy waterfalls, and rare snow leopard sightings.</p><p>Spiti Valley in winter transforms into a breathtaking white wonderland, blanketed by thick layers of snow. The temperature often drops below freezing, creating frozen rivers, icy waterfalls, and serene silence across the valley. Accessed exclusively via the Hindustan-Tibet Highway through Kinnaur, this extreme winter expedition covers Chitkul, Nako, Tabo, Kaza, Key Monastery, Hikkim, and the dizzying Chicham Bridge.</p>",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ahmedabad to Chandigarh (Train Journey)",
+        "details": "Board the train from Ahmedabad Railway Station to Chandigarh. Overnight train journey filled with excitement for the extreme high-altitude adventure.",
+        "description": "Board the train from Ahmedabad Railway Station to Chandigarh. Overnight train journey filled with excitement for the extreme high-altitude adventure.",
+        "meals": "At own cost",
+        "stay": "Train (Sleeper / 3AC as booked)",
+        "highlights": [
+          "Ahmedabad Departure",
+          "Overnight Rail Transit"
+        ],
+        "points": [
+          "Board the train from Ahmedabad Railway Station to Chandigarh",
+          "Overnight train journey filled with excitement for the extreme high-altitude adventure."
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Chandigarh to Shimla — Queen of Hills",
+        "details": "Morning arrival at Chandigarh. Board our specialized winter mountain tempo traveller or 4x4 vehicles. Drive up the Himalayan Expressway to Shimla. Stroll along Mall Road and Ridge. Overnight stay in Shimla.",
+        "description": "Morning arrival at Chandigarh. Board our specialized winter mountain tempo traveller or 4x4 vehicles. Drive up the Himalayan Expressway to Shimla. Stroll along Mall Road and Ridge. Overnight stay in Shimla.",
+        "meals": "Dinner",
+        "stay": "Hotel in Shimla",
+        "highlights": [
+          "Himalayan Expressway Drive",
+          "Shimla Ridge & Mall Road"
+        ],
+        "points": [
+          "Morning arrival at Chandigarh",
+          "Board our specialized winter mountain tempo traveller or 4x4 vehicles",
+          "Drive up the Himalayan Expressway to Shimla",
+          "Stroll along Mall Road and Ridge",
+          "Overnight stay in Shimla."
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Shimla to Chitkul (Last Village of India)",
+        "details": "Drive through Rampur Bushahr alongside the surging Sutlej River into Kinnaur Valley. Ascend into Sangla Valley to reach Chitkul (11,320 ft), the last inhabited village on the Indo-Tibetan border. Witness snow-covered wooden houses and Baspa River. Overnight in Chitkul/Sangla.",
+        "description": "Drive through Rampur Bushahr alongside the surging Sutlej River into Kinnaur Valley. Ascend into Sangla Valley to reach Chitkul (11,320 ft), the last inhabited village on the Indo-Tibetan border. Witness snow-covered wooden houses and Baspa River. Overnight in Chitkul/Sangla.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Heated Homestay in Chitkul / Sangla",
+        "highlights": [
+          "Kinnaur Gateway",
+          "Baspa River Valley",
+          "Chitkul Last Village of India"
+        ],
+        "points": [
+          "Drive through Rampur Bushahr alongside the surging Sutlej River into Kinnaur Valley",
+          "Ascend into Sangla Valley to reach Chitkul (11,320 ft), the last inhabited village on the Indo-Tibetan border",
+          "Witness snow-covered wooden houses and Baspa River",
+          "Overnight in Chitkul/Sangla."
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Chitkul to Kalpa — Views of Kinner Kailash",
+        "details": "Drive to Kalpa (9,711 ft), perched high above Reckong Peo. Enjoy jaw-dropping views of the sacred Kinner Kailash peak (holy Shiva lingam rock). Visit Roghi suicide point and centuries-old wooden temples. Overnight in Kalpa.",
+        "description": "Drive to Kalpa (9,711 ft), perched high above Reckong Peo. Enjoy jaw-dropping views of the sacred Kinner Kailash peak (holy Shiva lingam rock). Visit Roghi suicide point and centuries-old wooden temples. Overnight in Kalpa.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Homestay in Kalpa",
+        "highlights": [
+          "Kinner Kailash Sunrise & Sunset",
+          "Roghi Village Cliff",
+          "Ancient Hu-Bu-Lan-Kar Monastery"
+        ],
+        "points": [
+          "Drive to Kalpa (9,711 ft), perched high above Reckong Peo",
+          "Enjoy jaw-dropping views of the sacred Kinner Kailash peak (holy Shiva lingam rock)",
+          "Visit Roghi suicide point and centuries-old wooden temples",
+          "Overnight in Kalpa."
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Kalpa to Nako & Frozen Nako Lake",
+        "details": "Drive through the Khab bridge (confluence of Spiti and Sutlej rivers). Ascend the Kazigs bends to Nako village (12,014 ft). Walk on the frozen surface of Nako Lake surrounded by willow trees. Overnight in Nako.",
+        "description": "Drive through the Khab bridge (confluence of Spiti and Sutlej rivers). Ascend the Kazigs bends to Nako village (12,014 ft). Walk on the frozen surface of Nako Lake surrounded by willow trees. Overnight in Nako.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Traditional Spitian Homestay in Nako",
+        "highlights": [
+          "Khab Sangam",
+          "Frozen Nako Lake",
+          "Nako Gompa (11th Century)"
+        ],
+        "points": [
+          "Drive through the Khab bridge (confluence of Spiti and Sutlej rivers)",
+          "Ascend the Kazigs bends to Nako village (12,014 ft)",
+          "Walk on the frozen surface of Nako Lake surrounded by willow trees",
+          "Overnight in Nako."
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Nako to Tabo (Ajanta of the Himalayas) & Drive to Kaza",
+        "details": "Enter the heart of Spiti Valley. Stop at Gue village to see the 550-year-old naturally preserved Mummy of Monk Sangha Tenzin. Visit Tabo Monastery (founded in 996 AD, a UNESCO world heritage wonder with priceless mud sculptures). Continue to Kaza (12,500 ft), the administrative capital of Spiti. Overnight stay.",
+        "description": "Enter the heart of Spiti Valley. Stop at Gue village to see the 550-year-old naturally preserved Mummy of Monk Sangha Tenzin. Visit Tabo Monastery (founded in 996 AD, a UNESCO world heritage wonder with priceless mud sculptures). Continue to Kaza (12,500 ft), the administrative capital of Spiti. Overnight stay.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Winterized Homestay in Kaza (with traditional Bukari heating)",
+        "highlights": [
+          "550-Year-Old Gue Monk Mummy",
+          "Tabo Monastery 996 AD",
+          "Arrival in Kaza"
+        ],
+        "points": [
+          "Enter the heart of Spiti Valley",
+          "Stop at Gue village to see the 550-year-old naturally preserved Mummy of Monk Sangha Tenzin",
+          "Visit Tabo Monastery (founded in 996 AD, a UNESCO world heritage wonder with priceless mud sculptures)",
+          "Continue to Kaza (12,500 ft), the administrative capital of Spiti",
+          "Overnight stay."
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Key Monastery, Kibber & The High Chicham Bridge",
+        "details": "Visit the iconic 1,000-year-old Key Monastery perched like a fortress on a conical hill. Drink butter tea with monks. Drive to Kibber wildlife sanctuary (prime snow leopard habitat). Cross Chicham Bridge, the highest suspension bridge in Asia at 13,596 ft over a 1,000 ft deep gorge. Return to Kaza.",
+        "description": "Visit the iconic 1,000-year-old Key Monastery perched like a fortress on a conical hill. Drink butter tea with monks. Drive to Kibber wildlife sanctuary (prime snow leopard habitat). Cross Chicham Bridge, the highest suspension bridge in Asia at 13,596 ft over a 1,000 ft deep gorge. Return to Kaza.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Winterized Homestay in Kaza",
+        "highlights": [
+          "Key Gompa Fortress",
+          "Kibber Snow Leopard Trail",
+          "Chicham Bridge 13,596 ft"
+        ],
+        "points": [
+          "Visit the iconic 1,000-year-old Key Monastery perched like a fortress on a conical hill",
+          "Drink butter tea with monks",
+          "Drive to Kibber wildlife sanctuary (prime snow leopard habitat)",
+          "Cross Chicham Bridge, the highest suspension bridge in Asia at 13,596 ft over a 1,000 ft deep gorge",
+          "Return to Kaza."
+        ]
+      },
+      {
+        "day": 8,
+        "title": "Highest Villages: Hikkim, Komic & Langza Buddha",
+        "details": "Ascend to Hikkim (14,567 ft) and send handwritten postcards from the World's Highest Post Office. Visit Komic (15,027 ft), the world's highest village connected by motorable road. Stop at Langza to stand before the giant golden Buddha statue gazing at Chau Chau Kang Nilda peak. Return to Kaza.",
+        "description": "Ascend to Hikkim (14,567 ft) and send handwritten postcards from the World's Highest Post Office. Visit Komic (15,027 ft), the world's highest village connected by motorable road. Stop at Langza to stand before the giant golden Buddha statue gazing at Chau Chau Kang Nilda peak. Return to Kaza.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Winterized Homestay in Kaza",
+        "highlights": [
+          "Hikkim Highest Post Office",
+          "Komic Highest Village",
+          "Langza Golden Buddha Statue"
+        ],
+        "points": [
+          "Ascend to Hikkim (14,567 ft) and send handwritten postcards from the World's Highest Post Office",
+          "Visit Komic (15,027 ft), the world's highest village connected by motorable road",
+          "Stop at Langza to stand before the giant golden Buddha statue gazing at Chau Chau Kang Nilda peak",
+          "Return to Kaza."
+        ]
+      },
+      {
+        "day": 9,
+        "title": "Kaza to Kalpa / Rampur (Descent Journey)",
+        "details": "Begin the return journey retracing the Kinnaur highway. Enjoy the changing colors of the barren Spiti canyons as you descend into lower altitudes. Overnight in Kalpa or Rampur.",
+        "description": "Begin the return journey retracing the Kinnaur highway. Enjoy the changing colors of the barren Spiti canyons as you descend into lower altitudes. Overnight in Kalpa or Rampur.",
+        "meals": "Breakfast & Dinner",
+        "stay": "Hotel in Kalpa / Rampur",
+        "highlights": [
+          "Descent through Kinnaur Gate",
+          "Himalayan Highway Views"
+        ],
+        "points": [
+          "Begin the return journey retracing the Kinnaur highway",
+          "Enjoy the changing colors of the barren Spiti canyons as you descend into lower altitudes",
+          "Overnight in Kalpa or Rampur."
+        ]
+      },
+      {
+        "day": 10,
+        "title": "Rampur to Chandigarh & Board Train to Ahmedabad",
+        "details": "Drive down from the mountains to Chandigarh Railway Station. Board the return train to Ahmedabad. Relish the memories of braving sub-zero Spiti.",
+        "description": "Drive down from the mountains to Chandigarh Railway Station. Board the return train to Ahmedabad. Relish the memories of braving sub-zero Spiti.",
+        "meals": "Breakfast",
+        "stay": "Overnight Train",
+        "highlights": [
+          "Arrival at Chandigarh Station",
+          "Return Train Journey"
+        ],
+        "points": [
+          "Drive down from the mountains to Chandigarh Railway Station",
+          "Board the return train to Ahmedabad",
+          "Relish the memories of braving sub-zero Spiti."
+        ]
+      },
+      {
+        "day": 11,
+        "title": "Arrival back in Ahmedabad",
+        "details": "Arrive at Ahmedabad Railway Station. You are now officially a veteran of one of the harshest and most rewarding winter expeditions in the world!",
+        "description": "Arrive at Ahmedabad Railway Station. You are now officially a veteran of one of the harshest and most rewarding winter expeditions in the world!",
+        "meals": "At own cost",
+        "stay": "Home",
+        "highlights": [
+          "Safe Arrival in Ahmedabad"
+        ],
+        "points": [
+          "Arrive at Ahmedabad Railway Station",
+          "You are now officially a veteran of one of the harshest and most rewarding winter expeditions in the world!"
+        ]
+      }
+    ],
+    "inclusions": [
+      "Round-trip train tickets (Ahmedabad ↔ Chandigarh) in chosen class",
+      "Specialized winter vehicle (Tempo Traveller / 4x4 SUV with anti-skid snow chains)",
+      "8 Nights winterized homestays & hotels with Bukari wood fire heating and heavy blankets",
+      "Meals: 8 Breakfasts & 8 Dinners (Hot, nutritious vegetarian meals)",
+      "Oxygen cylinder and basic medical altitude kit with trip lead",
+      "All inner line permits, green tax, toll taxes, and driver allowances",
+      "Experienced Mountain Captain with winter expedition expertise"
+    ],
+    "exclusions": [
+      "Personal heavy winter gear (snow boots, down jackets - available for rent in Shimla/Kaza)",
+      "Train transit meals",
+      "Peak season surcharge (10-15% between 20th Dec – 10th Jan)",
+      "Any additional hotel stay caused by landslides/snow roadblocks beyond itinerary",
+      "Emergency train buffer fund: ₹500 in cash"
+    ],
+    "packing_list": [
+      {
+        "category": "Extreme Winter Wear (-20°C to -5°C)",
+        "items": [
+          "Heavy down feather jacket (-20°C rated)",
+          "Thermal innerwear (3-4 sets)",
+          "Fleece sweaters & windproof softshell jacket",
+          "Waterproof snow pants or fleece-lined trekking pants",
+          "Waterproof winter snow boots with high ankle support",
+          "Woolen socks (5-6 pairs) + fleece-lined waterproof gloves"
+        ]
+      },
+      {
+        "category": "High Altitude Protection",
+        "items": [
+          "UV category 4 polarized sunglasses (snow blindness prevention)",
+          "Diamox (acetazolamide) for AMS",
+          "Thermos flask (1 Litre - water freezes in normal bottles)",
+          "Cold cream, petroleum jelly, and SPF 50+ sunscreen",
+          "Hot water bag & power bank (batteries drain 3x faster in cold)"
+        ]
+      }
+    ],
+    "package_options": [
+      {
+        "title": "Non-AC Sleeper Train Package (Triple / Quad)",
+        "price": "₹25,000",
+        "description": "Round trip Non-AC Sleeper train tickets (Ahmedabad ↔ Chandigarh) + winterized transport + heated homestays."
+      },
+      {
+        "title": "3-Tier AC Sleeper Train Package (Triple / Quad)",
+        "price": "₹27,000",
+        "description": "Round trip 3AC Sleeper train tickets (Ahmedabad ↔ Chandigarh) + winterized transport + heated homestays."
+      }
+    ],
+    "sub_package_options": "",
+    "departure_dates": [],
+    "faqs": [
+      {
+        "question": "How cold does Spiti get in winter, and are dry toilets used?",
+        "answer": "Temperatures drop to -15°C to -25°C at night in Kaza. Running water pipes freeze solid; therefore, traditional Spitian dry compost toilets are used in high-altitude homestays, which are completely hygienic and odorless."
+      },
+      {
+        "question": "Is the route via Manali open in winter?",
+        "answer": "No. Rohtang Pass and Kunzum Pass are heavily snowed in and shut from November to May. The only way in and out is the Hindustan-Tibet Road via Shimla, Kinnaur, and Kaza."
+      }
+    ],
+    "reviews": [],
+    "seo_title": "Spiti Valley Winter Expedition 11D/10N from Ahmedabad | Trail Explorers",
+    "meta_description": "Join extreme 11 Days Spiti Valley Winter Expedition from Ahmedabad by train. Covers frozen Nako Lake, Key Monastery, Chicham Bridge, and Hikkim. Starts at ₹25,000/-.",
+    "reserve_banner_title": "",
+    "custom_quote_title": "",
+    "is_featured_reels": false,
+    "is_featured_stack": false,
+    "is_featured_lemonade": false,
+    "is_coming_soon": false,
+    "listing": "pdf_trip",
+    "link": "trips/spiti-valley-winter-white-wonderland-expedition-11d10n",
+    "id": "pdf_spiti_winter_11d10n",
+    "slug": "spiti-valley-winter-white-wonderland-expedition-11d10n"
   }
 ];
