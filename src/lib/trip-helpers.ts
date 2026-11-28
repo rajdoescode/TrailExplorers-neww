@@ -206,25 +206,21 @@ export function getTripWeather(trip: Trip): WeatherInfo {
  * Extract full gallery of photos for a trip
  */
 export function getTripGallery(trip: Trip): string[] {
-  // If trip has full 5-bento set (like Spiti), preserve that exact 5-tile arrangement
-  if (trip.bento_img_1 && trip.bento_img_2 && trip.bento_img_3 && trip.bento_img_4 && trip.bento_img_5) {
-    return [
-      trip.bento_img_1,
-      trip.bento_img_2,
-      trip.bento_img_3,
-      trip.bento_img_4,
-      trip.bento_img_5,
-    ].map((u) => (u.startsWith("/") || u.startsWith("http") ? u : `/${u}`));
-  }
-
   const list: string[] = [];
-  if (trip.image_url) list.push(trip.image_url);
-  if (trip.bento_img_2) list.push(trip.bento_img_2);
+
+  // 1. Bento 5-images first (preserve exact order for compact bento gallery)
   if (trip.bento_img_1) list.push(trip.bento_img_1);
+  if (trip.bento_img_2) list.push(trip.bento_img_2);
   if (trip.bento_img_3) list.push(trip.bento_img_3);
   if (trip.bento_img_4) list.push(trip.bento_img_4);
   if (trip.bento_img_5) list.push(trip.bento_img_5);
 
+  // 2. Main hero/card image (only if not already in list)
+  if (trip.image_url && !list.includes(trip.image_url)) {
+    list.push(trip.image_url);
+  }
+
+  // 3. Trip gallery_images if explicitly present on this trip
   if (Array.isArray(trip.gallery_images)) {
     for (const img of trip.gallery_images) {
       if (img && typeof img === "string" && !list.includes(img)) {
@@ -233,12 +229,12 @@ export function getTripGallery(trip: Trip): string[] {
     }
   }
 
-  // Deduplicate and ensure starting slash
+  // 4. Clean and deduplicate strictly so ZERO duplicate images exist
   const clean = Array.from(new Set(list))
     .filter(Boolean)
     .map((url) => (url.startsWith("/") || url.startsWith("http") ? url : `/${url}`));
 
-  // Fallbacks if fewer than 3
+  // Fallback only if trip has fewer than 3 images
   if (clean.length < 3) {
     clean.push("/assets/images/destinations/domestic/himachal.jpg");
     clean.push("/assets/images/destinations/domestic/spiti.jpg");
